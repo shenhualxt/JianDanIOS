@@ -1,0 +1,15 @@
+//
+//  JianDan_PrefixHeader.pch
+//  JianDan
+//
+//  Created by 刘献亭 on 15/8/28.
+//  Copyright © 2015年 刘献亭. All rights reserved.
+//
+
+#ifndef JianDan_PrefixHeader_pch
+#define JianDan_PrefixHeader_pch
+
+// Include any system framework and library headers here that should be included in all compilation units.
+// You will also need to set the Prefix Header build setting of one or more of your targets to reference this file.
+
+#endif /* JianDan_PrefixHeader_pch */

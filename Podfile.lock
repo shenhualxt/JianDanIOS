@@ -1,0 +1,108 @@
+PODS:
+  - AFNetworking (2.6.0):
+    - AFNetworking/NSURLConnection (= 2.6.0)
+    - AFNetworking/NSURLSession (= 2.6.0)
+    - AFNetworking/Reachability (= 2.6.0)
+    - AFNetworking/Security (= 2.6.0)
+    - AFNetworking/Serialization (= 2.6.0)
+    - AFNetworking/UIKit (= 2.6.0)
+  - AFNetworking-RACExtensions (0.1.3):
+    - AFNetworking (~> 2.0)
+    - ReactiveCocoa (~> 2.0)
+  - AFNetworking/NSURLConnection (2.6.0):
+    - AFNetworking/Reachability
+    - AFNetworking/Security
+    - AFNetworking/Serialization
+  - AFNetworking/NSURLSession (2.6.0):
+    - AFNetworking/Reachability
+    - AFNetworking/Security
+    - AFNetworking/Serialization
+  - AFNetworking/Reachability (2.6.0)
+  - AFNetworking/Security (2.6.0)
+  - AFNetworking/Serialization (2.6.0)
+  - AFNetworking/UIKit (2.6.0):
+    - AFNetworking/NSURLConnection
+    - AFNetworking/NSURLSession
+  - CocoaLumberjack (2.0.1):
+    - CocoaLumberjack/Default (= 2.0.1)
+    - CocoaLumberjack/Extensions (= 2.0.1)
+  - CocoaLumberjack/Core (2.0.1)
+  - CocoaLumberjack/Default (2.0.1):
+    - CocoaLumberjack/Core
+  - CocoaLumberjack/Extensions (2.0.1):
+    - CocoaLumberjack/Default
+  - FMDB (2.5):
+    - FMDB/standard (= 2.5)
+  - FMDB/common (2.5)
+  - FMDB/standard (2.5):
+    - FMDB/common
+  - Kiwi (2.4.0)
+  - MJExtension (2.5.9)
+  - MJRefresh (2.4.7)
+  - MMDrawerController (0.6.0):
+    - MMDrawerController/Core (= 0.6.0)
+    - MMDrawerController/MMDrawerBarButtonItem (= 0.6.0)
+    - MMDrawerController/MMDrawerVisualStates (= 0.6.0)
+    - MMDrawerController/Subclass (= 0.6.0)
+  - MMDrawerController/Core (0.6.0)
+  - MMDrawerController/MMDrawerBarButtonItem (0.6.0):
+    - MMDrawerController/Core
+  - MMDrawerController/MMDrawerVisualStates (0.6.0):
+    - MMDrawerController/Core
+  - MMDrawerController/Subclass (0.6.0):
+    - MMDrawerController/Core
+  - PureLayout (3.0.0)
+  - ReactiveCocoa (2.5):
+    - ReactiveCocoa/UI (= 2.5)
+  - ReactiveCocoa/Core (2.5):
+    - ReactiveCocoa/no-arc
+  - ReactiveCocoa/no-arc (2.5)
+  - ReactiveCocoa/UI (2.5):
+    - ReactiveCocoa/Core
+  - ReactiveViewModel (0.3):
+    - ReactiveCocoa (~> 2.4)
+  - SDWebImage (3.7.3):
+    - SDWebImage/Core (= 3.7.3)
+  - SDWebImage/Core (3.7.3)
+  - TPKeyboardAvoiding (1.2.9)
+
+DEPENDENCIES:
+  - AFNetworking
+  - AFNetworking-RACExtensions (from `https://github.com/knshiro/AFNetworking-RACExtensions.git`)
+  - CocoaLumberjack
+  - FMDB
+  - Kiwi
+  - MJExtension
+  - MJRefresh
+  - MMDrawerController
+  - PureLayout
+  - ReactiveCocoa
+  - ReactiveViewModel
+  - SDWebImage
+  - TPKeyboardAvoiding
+
+EXTERNAL SOURCES:
+  AFNetworking-RACExtensions:
+    :git: https://github.com/knshiro/AFNetworking-RACExtensions.git
+
+CHECKOUT OPTIONS:
+  AFNetworking-RACExtensions:
+    :commit: d4c6097d3f22be212c66339f850b1be180162747
+    :git: https://github.com/knshiro/AFNetworking-RACExtensions.git
+
+SPEC CHECKSUMS:
+  AFNetworking: 79f7eb1a0fcfa7beb409332b2ca49afe9ce53b05
+  AFNetworking-RACExtensions: b9b18c486fe4e257fb6c1ce6a848e82581af2170
+  CocoaLumberjack: 019d1361244274a6138c788c6cb80baabc13fb8f
+  FMDB: 96e8f1bcc1329e269330f99770ad4285d9003e52
+  Kiwi: f49c9d54b28917df5928fe44968a39ed198cb8a8
+  MJExtension: 2330aeb6c83428c820749290bf766e81827cda65
+  MJRefresh: 6eb2f61338f89f64fd628fd43debcf479381ff59
+  MMDrawerController: e3a54a5570388463ad3b36975251575b50c4e1a0
+  PureLayout: 270dfee2236f697ab1d5e2771c2e5c248495fa0d
+  ReactiveCocoa: e2db045570aa97c695e7aa97c2bcab222ae51f4a
+  ReactiveViewModel: 58918dcbcec2d3151195ab1ed9163c57a8163999
+  SDWebImage: 1d2b1a1efda1ade1b00b6f8498865f8ddedc8a84
+  TPKeyboardAvoiding: ff1ee4e5a5a0c119b965552af8f183868ea20207
+
+COCOAPODS: 0.38.2

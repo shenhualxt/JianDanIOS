@@ -11,7 +11,6 @@
 		110C42D91B9089010069719E /* BaseTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 110C42BC1B9089010069719E /* BaseTableViewController.m */; };
 		110C42DA1B9089010069719E /* BaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 110C42BE1B9089010069719E /* BaseViewController.m */; };
 		110C42DB1B9089010069719E /* AFNetWorkUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = 110C42C11B9089010069719E /* AFNetWorkUtils.m */; };
-		110C42DC1B9089010069719E /* CacheTools.m in Sources */ = {isa = PBXBuildFile; fileRef = 110C42C31B9089010069719E /* CacheTools.m */; };
 		110C42DD1B9089010069719E /* CommonUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = 110C42C51B9089010069719E /* CommonUtils.m */; };
 		110C42DE1B9089010069719E /* HVTableView.m in Sources */ = {isa = PBXBuildFile; fileRef = 110C42C71B9089010069719E /* HVTableView.m */; };
 		110C42DF1B9089010069719E /* MJExtensionConfig.mm in Sources */ = {isa = PBXBuildFile; fileRef = 110C42C91B9089010069719E /* MJExtensionConfig.mm */; };
@@ -60,8 +59,6 @@
 		110C42BE1B9089010069719E /* BaseViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BaseViewController.m; sourceTree = "<group>"; };
 		110C42C01B9089010069719E /* AFNetWorkUtils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AFNetWorkUtils.h; sourceTree = "<group>"; };
 		110C42C11B9089010069719E /* AFNetWorkUtils.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AFNetWorkUtils.m; sourceTree = "<group>"; };
-		110C42C21B9089010069719E /* CacheTools.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CacheTools.h; sourceTree = "<group>"; };
-		110C42C31B9089010069719E /* CacheTools.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CacheTools.m; sourceTree = "<group>"; };
 		110C42C41B9089010069719E /* CommonUtils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CommonUtils.h; sourceTree = "<group>"; };
 		110C42C51B9089010069719E /* CommonUtils.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CommonUtils.m; sourceTree = "<group>"; };
 		110C42C61B9089010069719E /* HVTableView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HVTableView.h; sourceTree = "<group>"; };
@@ -153,8 +150,6 @@
 			children = (
 				110C42C01B9089010069719E /* AFNetWorkUtils.h */,
 				110C42C11B9089010069719E /* AFNetWorkUtils.m */,
-				110C42C21B9089010069719E /* CacheTools.h */,
-				110C42C31B9089010069719E /* CacheTools.m */,
 				110C42C41B9089010069719E /* CommonUtils.h */,
 				110C42C51B9089010069719E /* CommonUtils.m */,
 				110C42C61B9089010069719E /* HVTableView.h */,
@@ -230,7 +225,6 @@
 				110C42CE1B9089010069719E /* UITableViewBindingHelper */,
 				1119C49D1B9005B6007C8C56 /* Assets.xcassets */,
 				1119C4911B9005B5007C8C56 /* Supporting Files */,
-				1119C4A21B9005B7007C8C56 /* Info.plist */,
 			);
 			path = JianDan;
 			sourceTree = "<group>";
@@ -238,6 +232,7 @@
 		1119C4911B9005B5007C8C56 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				1119C4A21B9005B7007C8C56 /* Info.plist */,
 				110C42E61B90891F0069719E /* JianDan_PrefixHeader.pch */,
 				1119C49F1B9005B6007C8C56 /* LaunchScreen.storyboard */,
 				1119C4921B9005B5007C8C56 /* main.m */,
@@ -497,7 +492,6 @@
 				110C42D81B9089010069719E /* BaseNavigationController.m in Sources */,
 				110C42E51B9089010069719E /* HRTableViewBindingHelper.m in Sources */,
 				110C42E11B9089010069719E /* PopoverView.m in Sources */,
-				110C42DC1B9089010069719E /* CacheTools.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

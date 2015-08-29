@@ -16,8 +16,6 @@
       <sourceFolder url="file://$MODULE_DIR$/JianDan/JianDan_PrefixHeader.pch" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/JianDan/LittleTools/AFNetWorkUtils.h" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/JianDan/LittleTools/AFNetWorkUtils.m" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/JianDan/LittleTools/CacheTools.h" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/JianDan/LittleTools/CacheTools.m" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/JianDan/LittleTools/CommonUtils.h" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/JianDan/LittleTools/CommonUtils.m" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/JianDan/LittleTools/HVTableView.h" isTestSource="false" />

@@ -17,9 +17,15 @@
 #import "CommonUtils.h"
 #import <CocoaLumberjack/CocoaLumberjack.h>
 #import <ReactiveCocoa.h>
-#import "CETableViewBindingHelper.h"
+#import "HRCollectionViewBindingHelper.h"
 #import "CEReactiveView.h"
+#import "CETableViewBindingHelper.h"
+#import <SDWebImage/UIImageView+WebCache.h>
 //-------------------常用类-------------------------
+
+//-------------------本项目常用类-------------------------
+#import "Urls.h"
+//-------------------本项目常用类-------------------------
 
 //-------------------获取设备大小-------------------------
 //NavBar高度
@@ -136,6 +142,26 @@ return nil; \
 \
 - (id)copyWithZone:(NSZone *)zone \
 { \
+return self; \
+}
+
+
+#define DEFINE_SINGLETON_IMPLEMENTATION(className) \
+static className *shared##className = nil; \
+static dispatch_once_t pred; \
+\
++ (className *)shared##className { \
+dispatch_once(&pred, ^{ \
+shared##className = [[super allocWithZone:NULL] init]; \
+}); \
+return shared##className; \
+} \
+\
++ (id)allocWithZone:(NSZone *)zone { \
+return [self shared##className];\
+} \
+\
+- (id)copyWithZone:(NSZone *)zone { \
 return self; \
 }
 //-------------------单例化一个类-------------------------

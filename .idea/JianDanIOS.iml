@@ -1,45 +1,62 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <module type="CIDR_MODULE" version="4">
   <component name="NewModuleRootManager">
+    <content url="file:///Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk/usr/lib/libz.dylib">
+      <sourceFolder url="file:///Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk/usr/lib/libz.dylib" isTestSource="false" />
+    </content>
     <content url="file://$MODULE_DIR$">
-      <sourceFolder url="file://$MODULE_DIR$/JianDan/AppDelegate.h" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/JianDan/AppDelegate.m" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/JianDan/Assets.xcassets" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/JianDan/Base.lproj/LaunchScreen.storyboard" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/JianDan/BaseViewController/BaseNavigationController.h" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/JianDan/BaseViewController/BaseNavigationController.m" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/JianDan/BaseViewController/BaseTableViewController.h" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/JianDan/BaseViewController/BaseTableViewController.m" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/JianDan/BaseViewController/BaseViewController.h" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/JianDan/BaseViewController/BaseViewController.m" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/JianDan/Helper/BaseViewController/BaseNavigationController.h" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/JianDan/Helper/BaseViewController/BaseNavigationController.m" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/JianDan/Helper/BaseViewController/BaseTableViewController.h" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/JianDan/Helper/BaseViewController/BaseTableViewController.m" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/JianDan/Helper/BaseViewController/BaseViewController.h" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/JianDan/Helper/BaseViewController/BaseViewController.m" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/JianDan/Helper/CustomView/UILabelEx.h" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/JianDan/Helper/CustomView/UILabelEx.m" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/JianDan/Helper/LittleTools/AFNetWorkUtils.h" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/JianDan/Helper/LittleTools/AFNetWorkUtils.m" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/JianDan/Helper/LittleTools/CacheTools.h" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/JianDan/Helper/LittleTools/CacheTools.m" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/JianDan/Helper/LittleTools/CommonUtils.h" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/JianDan/Helper/LittleTools/CommonUtils.m" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/JianDan/Helper/LittleTools/HVTableView.h" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/JianDan/Helper/LittleTools/HVTableView.m" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/JianDan/Helper/LittleTools/MJExtensionConfig.h" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/JianDan/Helper/LittleTools/MJExtensionConfig.m" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/JianDan/Helper/LittleTools/NSCodingTools.h" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/JianDan/Helper/LittleTools/NSCodingTools.m" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/JianDan/Helper/LittleTools/NetTypeUtils.h" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/JianDan/Helper/LittleTools/NetTypeUtils.m" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/JianDan/Helper/LittleTools/PopoverView.h" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/JianDan/Helper/LittleTools/PopoverView.m" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/JianDan/Helper/UITableViewBindingHelper/CEObservableMutableArray.h" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/JianDan/Helper/UITableViewBindingHelper/CEObservableMutableArray.m" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/JianDan/Helper/UITableViewBindingHelper/CEReactiveView.h" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/JianDan/Helper/UITableViewBindingHelper/CETableViewBindingHelper.h" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/JianDan/Helper/UITableViewBindingHelper/CETableViewBindingHelper.m" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/JianDan/Helper/UITableViewBindingHelper/HRCollectionViewBindingHelper.h" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/JianDan/Helper/UITableViewBindingHelper/HRCollectionViewBindingHelper.m" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/JianDan/Info.plist" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/JianDan/JianDan_PrefixHeader.pch" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/JianDan/LittleTools/AFNetWorkUtils.h" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/JianDan/LittleTools/AFNetWorkUtils.m" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/JianDan/LittleTools/CommonUtils.h" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/JianDan/LittleTools/CommonUtils.m" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/JianDan/LittleTools/HVTableView.h" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/JianDan/LittleTools/HVTableView.m" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/JianDan/LittleTools/MJExtensionConfig.h" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/JianDan/LittleTools/MJExtensionConfig.mm" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/JianDan/LittleTools/NSCodingTools.h" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/JianDan/LittleTools/NSCodingTools.m" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/JianDan/LittleTools/PopoverView.h" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/JianDan/LittleTools/PopoverView.m" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/JianDan/MainController.h" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/JianDan/MainController.m" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/JianDan/Section/LeftMenuController.h" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/JianDan/Section/LeftMenuController.m" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/JianDan/Section/LeftMenuController.xib" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/JianDan/UITableViewBindingHelper/CEObservableMutableArray.h" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/JianDan/UITableViewBindingHelper/CEObservableMutableArray.m" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/JianDan/UITableViewBindingHelper/CEReactiveView.h" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/JianDan/UITableViewBindingHelper/CETableViewBindingHelper.h" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/JianDan/UITableViewBindingHelper/CETableViewBindingHelper.m" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/JianDan/UITableViewBindingHelper/HRCollectionViewBindingHelper.h" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/JianDan/UITableViewBindingHelper/HRCollectionViewBindingHelper.m" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/JianDan/UITableViewBindingHelper/HRTableViewBindingHelper.h" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/JianDan/UITableViewBindingHelper/HRTableViewBindingHelper.m" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/JianDan/Main/AppDelegate.h" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/JianDan/Main/AppDelegate.m" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/JianDan/Main/Urls.h" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/JianDan/Section/FreshNews/Model/FreshNews.h" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/JianDan/Section/FreshNews/Model/FreshNews.m" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/JianDan/Section/FreshNews/View/FreshNewsCell.h" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/JianDan/Section/FreshNews/View/FreshNewsCell.m" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/JianDan/Section/FreshNews/View/FreshNewsCell.xib" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/JianDan/Section/FreshNews/View/FreshNewsController.h" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/JianDan/Section/FreshNews/View/FreshNewsController.m" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/JianDan/Section/FreshNews/ViewModel/FreshNewsViewModel.h" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/JianDan/Section/FreshNews/ViewModel/FreshNewsViewModel.m" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/JianDan/Section/LeftMenu/LeftMenu.h" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/JianDan/Section/LeftMenu/LeftMenu.m" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/JianDan/Section/LeftMenu/LeftMenuCell.h" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/JianDan/Section/LeftMenu/LeftMenuCell.m" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/JianDan/Section/LeftMenu/LeftMenuController.h" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/JianDan/Section/LeftMenu/LeftMenuController.m" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/JianDan/main.m" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/JianDanTests/Info.plist" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/JianDanTests/JianDanTests.m" isTestSource="false" />
@@ -769,6 +786,7 @@
           <root url="file:///Applications/Xcode.app/Contents/PlugIns/Xcode3Core.ideplugin/Contents/SharedSupport/Developer/Library/Frameworks/InterfaceBuilderKit.framework/Headers" />
           <root url="file://$MODULE_DIR$/Pods/Headers/Private" />
           <root url="file://$MODULE_DIR$/Pods/Headers/Public" />
+          <root url="file://$MODULE_DIR$/Reveal.framework/Headers" />
         </CLASSES>
         <SOURCES>
           <root url="file:///Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/Library/Frameworks/XCTest.framework/Headers" />
@@ -853,6 +871,7 @@
           <root url="file:///Applications/Xcode.app/Contents/PlugIns/Xcode3Core.ideplugin/Contents/SharedSupport/Developer/Library/Frameworks/InterfaceBuilderKit.framework/Headers" />
           <root url="file://$MODULE_DIR$/Pods/Headers/Private" />
           <root url="file://$MODULE_DIR$/Pods/Headers/Public" />
+          <root url="file://$MODULE_DIR$/Reveal.framework/Headers" />
         </SOURCES>
       </library>
     </orderEntry>

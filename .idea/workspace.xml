@@ -19,7 +19,7 @@
   <component name="CreatePatchCommitExecutor">
     <option name="PATCH_PATH" value="" />
   </component>
-  <component name="ExecutionTargetManager" SELECTED_TARGET="iphoneos_bd84b77d637a2f8f5486caa86b636093f0a25dbe" />
+  <component name="ExecutionTargetManager" SELECTED_TARGET="iphoneos" />
   <component name="FavoritesManager">
     <favorites_list name="JianDan">
       <favorite_root url="67A58472F02AFCDB90916FE2" type="Xcode.pbxref" klass="com.jetbrains.cidr.projectView.XcodeViewNode" />
@@ -62,7 +62,7 @@
       <file leaf-file-name="FreshNews.m" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/JianDan/Section/FreshNews/Model/FreshNews.m">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.8333333">
+            <state vertical-scroll-proportion="1.2990196">
               <caret line="53" column="4" selection-start-line="53" selection-start-column="4" selection-end-line="53" selection-end-column="4" />
               <folding />
             </state>
@@ -90,7 +90,6 @@
         <option value="$PROJECT_DIR$/JianDan/Section/LeftMenu/View/LeftMenuCell.m" />
         <option value="$PROJECT_DIR$/JianDan/Section/FreshNews/View/MainController.h" />
         <option value="$PROJECT_DIR$/JianDan/Section/LeftMenu/View/LeftMenuController.m" />
-        <option value="$PROJECT_DIR$/JianDan/Section/FreshNews/Model/FreshNews.m" />
         <option value="$PROJECT_DIR$/JianDan/JianDan_PrefixHeader.pch" />
         <option value="$PROJECT_DIR$/JianDan/Helper/LittleTools/NetTypeUtils.h" />
         <option value="$PROJECT_DIR$/JianDan/Helper/LittleTools/NetTypeUtils.m" />
@@ -101,6 +100,7 @@
         <option value="$PROJECT_DIR$/JianDan/Section/FreshNews/View/FreshNewsController.m" />
         <option value="$PROJECT_DIR$/JianDan/Main/AppDelegate.m" />
         <option value="$PROJECT_DIR$/JianDan/Section/FreshNews/View/FreshNewsCell.m" />
+        <option value="$PROJECT_DIR$/JianDan/Section/FreshNews/Model/FreshNews.m" />
       </list>
     </option>
   </component>
@@ -856,7 +856,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/JianDan/Section/FreshNews/Model/FreshNews.m">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.8333333">
+        <state vertical-scroll-proportion="1.2990196">
           <caret line="53" column="4" selection-start-line="53" selection-start-column="4" selection-end-line="53" selection-end-column="4" />
           <folding />
         </state>

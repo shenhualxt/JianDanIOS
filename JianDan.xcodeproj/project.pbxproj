@@ -10,13 +10,11 @@
 		1119C4931B9005B5007C8C56 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 1119C4921B9005B5007C8C56 /* main.m */; };
 		1119C49E1B9005B6007C8C56 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1119C49D1B9005B6007C8C56 /* Assets.xcassets */; };
 		1119C4AC1B9005B7007C8C56 /* JianDanTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 1119C4AB1B9005B7007C8C56 /* JianDanTests.m */; };
-		1119C4B71B9005B7007C8C56 /* JianDanUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 1119C4B61B9005B7007C8C56 /* JianDanUITests.m */; };
 		112159BB1B9407D1007B02DC /* CacheTools.m in Sources */ = {isa = PBXBuildFile; fileRef = 112159BA1B9407D1007B02DC /* CacheTools.m */; };
 		1164BA761B9C17D800764636 /* LeftMenu.m in Sources */ = {isa = PBXBuildFile; fileRef = 1164BA711B9C17D800764636 /* LeftMenu.m */; };
 		1164BA771B9C17D800764636 /* LeftMenuCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 1164BA731B9C17D800764636 /* LeftMenuCell.m */; };
 		1164BA781B9C17D800764636 /* LeftMenuController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1164BA751B9C17D800764636 /* LeftMenuController.m */; };
 		1170977F1B93E0F300896DB4 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 1170977E1B93E0F300896DB4 /* AppDelegate.m */; };
-		118329E11B91FAB500FDE9E7 /* Reveal.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 118329E01B91FAB500FDE9E7 /* Reveal.framework */; };
 		118329E31B91FB3700FDE9E7 /* libz.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 118329E21B91FB3700FDE9E7 /* libz.tbd */; };
 		11925A791B92E18000608BCC /* libz.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 11925A781B92E18000608BCC /* libz.dylib */; };
 		11925A7B1B92ED4F00608BCC /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 11925A7A1B92ED4F00608BCC /* QuartzCore.framework */; };
@@ -50,13 +48,6 @@
 			remoteGlobalIDString = 1119C48D1B9005B5007C8C56;
 			remoteInfo = JianDan;
 		};
-		1119C4B31B9005B7007C8C56 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 1119C4861B9005B5007C8C56 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 1119C48D1B9005B5007C8C56;
-			remoteInfo = JianDan;
-		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
@@ -68,9 +59,6 @@
 		1119C4A71B9005B7007C8C56 /* JianDanTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = JianDanTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		1119C4AB1B9005B7007C8C56 /* JianDanTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = JianDanTests.m; sourceTree = "<group>"; };
 		1119C4AD1B9005B7007C8C56 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		1119C4B21B9005B7007C8C56 /* JianDanUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = JianDanUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		1119C4B61B9005B7007C8C56 /* JianDanUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = JianDanUITests.m; sourceTree = "<group>"; };
-		1119C4B81B9005B7007C8C56 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		112159B91B9407D1007B02DC /* CacheTools.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CacheTools.h; sourceTree = "<group>"; };
 		112159BA1B9407D1007B02DC /* CacheTools.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CacheTools.m; sourceTree = "<group>"; };
 		1164BA701B9C17D800764636 /* LeftMenu.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LeftMenu.h; sourceTree = "<group>"; };
@@ -139,7 +127,6 @@
 				11925A791B92E18000608BCC /* libz.dylib in Frameworks */,
 				118329E31B91FB3700FDE9E7 /* libz.tbd in Frameworks */,
 				E534EFA7F1E03B4CF0907D65 /* libPods.a in Frameworks */,
-				118329E11B91FAB500FDE9E7 /* Reveal.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -148,13 +135,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				2AE014670AE53A5B1BA4E2A5 /* libPods-JianDanTests.a in Frameworks */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		1119C4AF1B9005B7007C8C56 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -185,7 +165,6 @@
 			children = (
 				1119C4901B9005B5007C8C56 /* JianDan */,
 				1119C4AA1B9005B7007C8C56 /* JianDanTests */,
-				1119C4B51B9005B7007C8C56 /* JianDanUITests */,
 				1119C48F1B9005B5007C8C56 /* Products */,
 				822B97C4979BE211217A7A0F /* Pods */,
 				5E1333910615C096DD9549DA /* Frameworks */,
@@ -197,7 +176,6 @@
 			children = (
 				1119C48E1B9005B5007C8C56 /* JianDan.app */,
 				1119C4A71B9005B7007C8C56 /* JianDanTests.xctest */,
-				1119C4B21B9005B7007C8C56 /* JianDanUITests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -231,15 +209,6 @@
 				1119C4AD1B9005B7007C8C56 /* Info.plist */,
 			);
 			path = JianDanTests;
-			sourceTree = "<group>";
-		};
-		1119C4B51B9005B7007C8C56 /* JianDanUITests */ = {
-			isa = PBXGroup;
-			children = (
-				1119C4B61B9005B7007C8C56 /* JianDanUITests.m */,
-				1119C4B81B9005B7007C8C56 /* Info.plist */,
-			);
-			path = JianDanUITests;
 			sourceTree = "<group>";
 		};
 		11925A7C1B92F24E00608BCC /* LeftMenu */ = {
@@ -429,24 +398,6 @@
 			productReference = 1119C4A71B9005B7007C8C56 /* JianDanTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
-		1119C4B11B9005B7007C8C56 /* JianDanUITests */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 1119C4C11B9005B7007C8C56 /* Build configuration list for PBXNativeTarget "JianDanUITests" */;
-			buildPhases = (
-				1119C4AE1B9005B7007C8C56 /* Sources */,
-				1119C4AF1B9005B7007C8C56 /* Frameworks */,
-				1119C4B01B9005B7007C8C56 /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				1119C4B41B9005B7007C8C56 /* PBXTargetDependency */,
-			);
-			name = JianDanUITests;
-			productName = JianDanUITests;
-			productReference = 1119C4B21B9005B7007C8C56 /* JianDanUITests.xctest */;
-			productType = "com.apple.product-type.bundle.ui-testing";
-		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -460,10 +411,6 @@
 						CreatedOnToolsVersion = 7.0;
 					};
 					1119C4A61B9005B7007C8C56 = {
-						CreatedOnToolsVersion = 7.0;
-						TestTargetID = 1119C48D1B9005B5007C8C56;
-					};
-					1119C4B11B9005B7007C8C56 = {
 						CreatedOnToolsVersion = 7.0;
 						TestTargetID = 1119C48D1B9005B5007C8C56;
 					};
@@ -484,7 +431,6 @@
 			targets = (
 				1119C48D1B9005B5007C8C56 /* JianDan */,
 				1119C4A61B9005B7007C8C56 /* JianDanTests */,
-				1119C4B11B9005B7007C8C56 /* JianDanUITests */,
 			);
 		};
 /* End PBXProject section */
@@ -500,13 +446,6 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 		1119C4A51B9005B7007C8C56 /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		1119C4B01B9005B7007C8C56 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -617,14 +556,6 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		1119C4AE1B9005B7007C8C56 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				1119C4B71B9005B7007C8C56 /* JianDanUITests.m in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
@@ -632,11 +563,6 @@
 			isa = PBXTargetDependency;
 			target = 1119C48D1B9005B5007C8C56 /* JianDan */;
 			targetProxy = 1119C4A81B9005B7007C8C56 /* PBXContainerItemProxy */;
-		};
-		1119C4B41B9005B7007C8C56 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = 1119C48D1B9005B5007C8C56 /* JianDan */;
-			targetProxy = 1119C4B31B9005B7007C8C56 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -816,30 +742,6 @@
 			};
 			name = Release;
 		};
-		1119C4C21B9005B7007C8C56 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				INFOPLIST_FILE = JianDanUITests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.shenhualxt.JianDanUITests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				TEST_TARGET_NAME = JianDan;
-				USES_XCTRUNNER = YES;
-			};
-			name = Debug;
-		};
-		1119C4C31B9005B7007C8C56 /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				INFOPLIST_FILE = JianDanUITests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.shenhualxt.JianDanUITests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				TEST_TARGET_NAME = JianDan;
-				USES_XCTRUNNER = YES;
-			};
-			name = Release;
-		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -866,15 +768,6 @@
 			buildConfigurations = (
 				1119C4BF1B9005B7007C8C56 /* Debug */,
 				1119C4C01B9005B7007C8C56 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		1119C4C11B9005B7007C8C56 /* Build configuration list for PBXNativeTarget "JianDanUITests" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				1119C4C21B9005B7007C8C56 /* Debug */,
-				1119C4C31B9005B7007C8C56 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

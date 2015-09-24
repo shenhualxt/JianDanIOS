@@ -19,6 +19,11 @@
 
 - (void)initBackGround;
 
+- (instancetype)initWithSendObject:(id)sendObject;
+
++ (instancetype)controllerWithSendObject:(id)sendObject;
+
+
 -(UIBarButtonItem *)createButtonItem:(NSString*)imageName;
 
 -(void)whenNetErrorHappened:(NSString *)tipText command:(RACCommand *)command;

@@ -16,6 +16,23 @@
 
 @implementation BaseTableViewController
 
+- (instancetype)initWithSendObject:(id)sendObject {
+    self = [super init];
+    if (self) {
+        if ([self respondsToSelector:@selector(edgesForExtendedLayout)]) {
+            self.edgesForExtendedLayout = UIRectEdgeNone;
+        }
+        self.sendObject = sendObject;
+    }
+
+    return self;
+}
+
++ (instancetype)controllerWithSendObject:(id)sendObject {
+    return [[self alloc] initWithSendObject:sendObject];
+}
+
+
 - (id)initWithStyle:(UITableViewStyle)style {
   self = [super initWithStyle:style];
 

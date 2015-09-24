@@ -14,7 +14,12 @@
 
 -(void)pushViewController:(Class)class object:(id)sendObject;
 
--(void)popViewController:(Class)class object:(id)sendObject;
+-(void)popViewController:(Class)class object:(id)resultObject;
+
+-(instancetype)initWithSendObject:(id)sendObject;
+
++ (instancetype)controllerWithSendObject:(id)sendObject;
+
 
 -(UIBarButtonItem *)createButtonItem:(NSString*)imageName;
 

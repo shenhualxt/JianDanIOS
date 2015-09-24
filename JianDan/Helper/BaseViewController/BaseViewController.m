@@ -18,6 +18,23 @@
 
 @implementation BaseViewController
 
+- (instancetype)initWithSendObject:(id)sendObject {
+    self = [super init];
+    if (self) {
+        if ([self respondsToSelector:@selector(edgesForExtendedLayout)]) {
+            self.edgesForExtendedLayout = UIRectEdgeNone;
+        }
+        self.sendObject = sendObject;
+    }
+
+    return self;
+}
+
++ (instancetype)controllerWithSendObject:(id)sendObject {
+    return [[self alloc] initWithSendObject:sendObject];
+}
+
+
 - (id)initWithNibName:(NSString*)nibNameOrNil bundle:(NSBundle*)nibBundleOrNil
 {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];

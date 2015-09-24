@@ -12,6 +12,7 @@
 #import "BoredPictursCell.h"
 #import "MJRefresh.h"
 #import "UIViewController+MMDrawerController.h"
+#import "BoredPicturesDetailController.h"
 
 @interface BoredPicturesController ()<UIScrollViewDelegate>
 
@@ -55,7 +56,8 @@
 
 -(void)bindingViewModel{
     self.viewModel=[MainViewModel new];
-    RACCommand *selectCommand=[[RACCommand alloc] initWithSignalBlock:^RACSignal *(id input) {
+    RACCommand *selectCommand=[[RACCommand alloc] initWithSignalBlock:^RACSignal *(RACTuple *turple) {
+        [self.mm_drawerController.navigationController pushViewController:[BoredPicturesDetailController controllerWithSendObject:turple.first] animated:YES];
         return [RACSignal empty];
     }];
     self.helper=[CETableViewBindingHelper bindingHelperForTableView:self.tableView sourceSignal:[self.viewModel.sourceCommand.executionSignals switchToLatest] selectionCommand:selectCommand customCellClass:[BoredPictursCell class]];

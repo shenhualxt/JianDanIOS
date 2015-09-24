@@ -13,7 +13,6 @@
 		1119C4AC1B9005B7007C8C56 /* JianDanTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 1119C4AB1B9005B7007C8C56 /* JianDanTests.m */; };
 		112159BB1B9407D1007B02DC /* CacheTools.m in Sources */ = {isa = PBXBuildFile; fileRef = 112159BA1B9407D1007B02DC /* CacheTools.m */; };
 		1122B31F1B9ED10C00868096 /* NSDictionary+JSONString.m in Sources */ = {isa = PBXBuildFile; fileRef = 1122B31E1B9ED10C00868096 /* NSDictionary+JSONString.m */; };
-		1122B3251B9EE70300868096 /* Reveal.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1122B3241B9EE70300868096 /* Reveal.framework */; };
 		11290CB61BAE3295004AD5F5 /* MainViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 11290CB51BAE3295004AD5F5 /* MainViewModel.m */; };
 		113491C71BAA95A3007D133B /* InsetsLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = 113491C61BAA95A3007D133B /* InsetsLabel.m */; };
 		113491CA1BAAA823007D133B /* NSDate+MJ.m in Sources */ = {isa = PBXBuildFile; fileRef = 113491C91BAAA823007D133B /* NSDate+MJ.m */; };
@@ -257,7 +256,6 @@
 				11925A791B92E18000608BCC /* libz.dylib in Frameworks */,
 				E534EFA7F1E03B4CF0907D65 /* libPods.a in Frameworks */,
 				11B82B901BA29A2700283A93 /* libUMSocial_Sdk_4.2.3.a in Frameworks */,
-				1122B3251B9EE70300868096 /* Reveal.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -745,7 +743,7 @@
 				TargetAttributes = {
 					1119C48D1B9005B5007C8C56 = {
 						CreatedOnToolsVersion = 7.0;
-						DevelopmentTeam = 93QP7RMD2S;
+						DevelopmentTeam = NL23PW9H44;
 					};
 					1119C4A61B9005B7007C8C56 = {
 						CreatedOnToolsVersion = 7.0;
@@ -1078,7 +1076,6 @@
 					"-l\"MMDrawerController\"",
 					"-l\"PureLayout\"",
 					"-l\"ReactiveCocoa\"",
-					"-l\"ReactiveViewModel\"",
 					"-l\"SDWebImage\"",
 					"-l\"TPKeyboardAvoiding\"",
 					"-l\"sqlite3\"",

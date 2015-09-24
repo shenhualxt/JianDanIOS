@@ -40,17 +40,11 @@
     [window makeKeyAndVisible];
     //设置图片缓存策略（最多缓存5M的图片）
     [SDImageCache sharedImageCache].maxCacheAge = 1024 * 1024 * 5;
-    [self initURLMapping];
     [[AFNetWorkUtils sharedAFNetWorkUtils] startMonitoring];
     [UMSocialData setAppKey:UmengAppkey];
     //打开调试log的开关
 //    [UMSocialData openLog:YES];
     return YES;
-}
-
--(void)initURLMapping{
-    Class class=objc_getClass([@"PushCommentController" cStringUsingEncoding:NSUTF8StringEncoding]);
-    [[HHRouter shared] map:@"/FreshNews/:html/" toControllerClass:class];
 }
 
 - (void)loadRootViewController {

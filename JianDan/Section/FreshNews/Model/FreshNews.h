@@ -7,15 +7,6 @@
 //
 
 #import <Foundation/Foundation.h>
-@interface Tags : NSObject
-
-@property(nonatomic,assign) int id;
-@property(nonatomic,strong) NSString *slug;
-@property(nonatomic,strong) NSString *title;
-@property(nonatomic,strong) NSString *desc;
-@property(nonatomic,assign) int post_count;
-
-@end
 
 @interface Author : NSObject
 
@@ -38,7 +29,7 @@
 @property(nonatomic,strong) NSString *viewsCount;
 @end
 
-@interface Posts : NSObject
+@interface FreshNews : NSObject
 
 @property(nonatomic,strong) Author *author;
 @property(nonatomic,strong) Custom_fields *custom_fields;
@@ -46,17 +37,6 @@
 @property(nonatomic,strong) NSString *title;
 @property(nonatomic,strong) NSString *date;
 @property(nonatomic,assign) int comment_count;
-@property(nonatomic,strong) NSArray *tags;
 @property(nonatomic,strong) NSString *url;
-
-@end
-
-@interface FreshNews : NSObject
-
-@property(nonatomic,strong) NSString *status;
-@property(nonatomic,assign) int pages;
-@property(nonatomic,assign) int count_total;
-@property(nonatomic,assign) int count;
-@property(nonatomic,strong) NSMutableArray *posts;
 
 @end

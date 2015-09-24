@@ -15,18 +15,23 @@
                 <rect key="frame" x="0.0" y="0.0" width="320" height="248.5"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
-                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Z7D-y4-wdc">
-                        <rect key="frame" x="8" y="4" width="304" height="241.5"/>
+                    <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Z7D-y4-wdc">
+                        <rect key="frame" x="8" y="4" width="304" height="242"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="ic_loading_large" translatesAutoresizingMaskIntoConstraints="NO" id="2yr-2U-Qp0">
-                                <rect key="frame" x="1" y="0.0" width="304" height="200"/>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ic_loading_large" translatesAutoresizingMaskIntoConstraints="NO" id="2yr-2U-Qp0">
+                                <rect key="frame" x="0.0" y="0.0" width="304" height="200"/>
                                 <animations/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="200" id="gzy-fP-wLW"/>
                                 </constraints>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                        <integer key="value" value="4"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
                             </imageView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="6Kg-lC-tbk">
-                                <rect key="frame" x="0.0" y="200" width="304" height="41.5"/>
+                                <rect key="frame" x="0.0" y="200" width="304" height="42"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="shenhualxt" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hvn-rA-lTb">
                                         <rect key="frame" x="12" y="12" width="70" height="17"/>
@@ -87,6 +92,11 @@
                             <constraint firstAttribute="bottom" secondItem="6Kg-lC-tbk" secondAttribute="bottom" id="xjB-OT-otF"/>
                             <constraint firstItem="2yr-2U-Qp0" firstAttribute="top" secondItem="Z7D-y4-wdc" secondAttribute="top" id="zoS-3m-EL8"/>
                         </constraints>
+                        <userDefinedRuntimeAttributes>
+                            <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                <integer key="value" value="4"/>
+                            </userDefinedRuntimeAttribute>
+                        </userDefinedRuntimeAttributes>
                         <variation key="default">
                             <mask key="constraints">
                                 <exclude reference="Eg4-CP-BzD"/>
@@ -119,6 +129,6 @@
         </tableViewCell>
     </objects>
     <resources>
-        <image name="ic_loading_large" width="400" height="400"/>
+        <image name="ic_loading_large" width="200" height="200"/>
     </resources>
 </document>

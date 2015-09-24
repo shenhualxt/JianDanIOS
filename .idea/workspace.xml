@@ -2,8 +2,365 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="6450072b-e65c-48d5-a992-224fe3e6d909" name="Default" comment="">
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Reveal.framework/Versions/Current" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Reveal.framework/Headers" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/JianDan/Assets.xcassets/AppIcon.appiconset/Icon-29@2x.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/JianDan/Assets.xcassets/AppIcon.appiconset/Icon-29@3x.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/JianDan/Assets.xcassets/AppIcon.appiconset/Icon-40@2x.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/JianDan/Assets.xcassets/AppIcon.appiconset/Icon-40@3x.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/JianDan/Assets.xcassets/AppIcon.appiconset/Icon-60@2x.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Reveal.framework/Reveal" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Reveal.framework/Versions/A/Reveal" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/JianDan/Helper/Vender/UMSocial_Sdk_4.2.3/UMSocialSDKResourcesNew.bundle/Buttons/UMS_Check.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/JianDan/Helper/Vender/UMSocial_Sdk_4.2.3/UMSocialSDKResourcesNew.bundle/Buttons/UMS_Check@2x.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/JianDan/Helper/Vender/UMSocial_Sdk_4.2.3/UMSocialSDKResourcesNew.bundle/Buttons/UMS_No_Location.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/JianDan/Helper/Vender/UMSocial_Sdk_4.2.3/UMSocialSDKResourcesNew.bundle/Buttons/UMS_No_Location@2x.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/JianDan/Helper/Vender/UMSocial_Sdk_4.2.3/UMSocialSDKResourcesNew.bundle/Buttons/UMS_User-Avatar-Placeholder@2x.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/JianDan/Helper/Vender/UMSocial_Sdk_4.2.3/UMSocialSDKResourcesNew.bundle/Buttons/UMS_User_profile_default@2x.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/JianDan/Helper/Vender/UMSocial_Sdk_4.2.3/UMSocialSDKResourcesNew.bundle/Buttons/UMS_account_login@2x.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/JianDan/Helper/Vender/UMSocial_Sdk_4.2.3/UMSocialSDKResourcesNew.bundle/SocialSDKBar/UMS_account_normal_white.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/JianDan/Helper/Vender/UMSocial_Sdk_4.2.3/UMSocialSDKResourcesNew.bundle/SocialSDKBar/UMS_account_normal_white@2x.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/JianDan/Helper/Vender/UMSocial_Sdk_4.2.3/UMSocialSDKResourcesNew.bundle/SocialSDKBar/UMS_account_tap_white.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/JianDan/Helper/Vender/UMSocial_Sdk_4.2.3/UMSocialSDKResourcesNew.bundle/SocialSDKBar/UMS_account_tap_white@2x.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/JianDan/Helper/Vender/UMSocial_Sdk_4.2.3/UMSocialSDKResourcesNew.bundle/OtherTheme/UMS_actionsheet_panel@2x.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/JianDan/Helper/Vender/UMSocial_Sdk_4.2.3/UMSocialSDKResourcesNew.bundle/Buttons/UMS_add_friend_off.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/JianDan/Helper/Vender/UMSocial_Sdk_4.2.3/UMSocialSDKResourcesNew.bundle/Buttons/UMS_add_friend_off@2x.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/JianDan/Helper/Vender/UMSocial_Sdk_4.2.3/UMSocialSDKResourcesNew.bundle/Buttons/UMS_add_friend_on.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/JianDan/Helper/Vender/UMSocial_Sdk_4.2.3/UMSocialSDKResourcesNew.bundle/Buttons/UMS_add_friend_on@2x.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/JianDan/Helper/Vender/UMSocial_Sdk_4.2.3/UMSocialSDKResourcesNew.bundle/Buttons/UMS_comment_input@2x.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/JianDan/Helper/Vender/UMSocial_Sdk_4.2.3/UMSocialSDKResourcesNew.bundle/SocialSDKBar/UMS_comment_normal_white.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/JianDan/Helper/Vender/UMSocial_Sdk_4.2.3/UMSocialSDKResourcesNew.bundle/SocialSDKBar/UMS_comment_normal_white@2x.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/JianDan/Helper/Vender/UMSocial_Sdk_4.2.3/UMSocialSDKResourcesNew.bundle/SocialSDKBar/UMS_comment_tap_white.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/JianDan/Helper/Vender/UMSocial_Sdk_4.2.3/UMSocialSDKResourcesNew.bundle/SocialSDKBar/UMS_comment_tap_white@2x.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/JianDan/Helper/Vender/UMSocial_Sdk_4.2.3/UMSocialSDKResourcesNew.bundle/Buttons/UMS_comment_view_cell.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/JianDan/Helper/Vender/UMSocial_Sdk_4.2.3/UMSocialSDKResourcesNew.bundle/Buttons/UMS_comment_view_cell_white@2x.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/JianDan/Helper/Vender/UMSocial_Sdk_4.2.3/UMSocialSDKResourcesNew.bundle/Buttons/UMS_delete_image_button_normal.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/JianDan/Helper/Vender/UMSocial_Sdk_4.2.3/UMSocialSDKResourcesNew.bundle/Buttons/UMS_delete_image_button_normal@2x.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/JianDan/Helper/Vender/UMSocial_Sdk_4.2.3/UMSocialSDKResourcesNew.bundle/SnsPlatform/UMS_douban_icon.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/JianDan/Helper/Vender/UMSocial_Sdk_4.2.3/UMSocialSDKResourcesNew.bundle/SnsPlatform/UMS_douban_icon@2x.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/JianDan/Helper/Vender/UMSocial_Sdk_4.2.3/UMSocialSDKResourcesNew.bundle/SnsPlatform/UMS_douban_off.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/JianDan/Helper/Vender/UMSocial_Sdk_4.2.3/UMSocialSDKResourcesNew.bundle/SnsPlatform/UMS_douban_off@2x.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/JianDan/Helper/Vender/UMSocial_Sdk_4.2.3/UMSocialSDKResourcesNew.bundle/SnsPlatform/UMS_douban_on.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/JianDan/Helper/Vender/UMSocial_Sdk_4.2.3/UMSocialSDKResourcesNew.bundle/SnsPlatform/UMS_douban_on@2x.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/JianDan/Helper/Vender/UMSocial_Sdk_4.2.3/UMSocialSDKResourcesNew.bundle/SnsPlatform/UMS_email_icon.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/JianDan/Helper/Vender/UMSocial_Sdk_4.2.3/UMSocialSDKResourcesNew.bundle/SnsPlatform/UMS_email_icon@2x.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/JianDan/Helper/Vender/UMSocial_Sdk_4.2.3/UMSocialSDKResourcesNew.bundle/SnsPlatform/UMS_email_off.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/JianDan/Helper/Vender/UMSocial_Sdk_4.2.3/UMSocialSDKResourcesNew.bundle/SnsPlatform/UMS_email_off@2x.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/JianDan/Helper/Vender/UMSocial_Sdk_4.2.3/UMSocialSDKResourcesNew.bundle/SnsPlatform/UMS_email_on@2x.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/JianDan/Helper/Vender/UMSocial_Sdk_4.2.3/UMSocialSDKResourcesNew.bundle/SnsPlatform/UMS_facebook_icon.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/JianDan/Helper/Vender/UMSocial_Sdk_4.2.3/UMSocialSDKResourcesNew.bundle/SnsPlatform/UMS_facebook_icon@2x.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/JianDan/Helper/Vender/UMSocial_Sdk_4.2.3/UMSocialSDKResourcesNew.bundle/SnsPlatform/UMS_facebook_off.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/JianDan/Helper/Vender/UMSocial_Sdk_4.2.3/UMSocialSDKResourcesNew.bundle/SnsPlatform/UMS_facebook_off@2x.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/JianDan/Helper/Vender/UMSocial_Sdk_4.2.3/UMSocialSDKResourcesNew.bundle/SnsPlatform/UMS_facebook_on.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/JianDan/Helper/Vender/UMSocial_Sdk_4.2.3/UMSocialSDKResourcesNew.bundle/SnsPlatform/UMS_facebook_on@2x.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/JianDan/Helper/Vender/UMSocial_Sdk_4.2.3/UMSocialSDKResourcesNew.bundle/Buttons/UMS_find@2x.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/JianDan/Helper/Vender/UMSocial_Sdk_4.2.3/UMSocialSDKResourcesNew.bundle/Buttons/UMS_follow_off@2x.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/JianDan/Helper/Vender/UMSocial_Sdk_4.2.3/UMSocialSDKResourcesNew.bundle/Buttons/UMS_follow_on@2x.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/JianDan/Helper/Vender/UMSocial_Sdk_4.2.3/UMSocialSDKResourcesNew.bundle/SnsPlatform/UMS_instagram.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/JianDan/Helper/Vender/UMSocial_Sdk_4.2.3/UMSocialSDKResourcesNew.bundle/SnsPlatform/UMS_instagram@2x.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/JianDan/Helper/Vender/UMSocial_Sdk_4.2.3/UMSocialSDKResourcesNew.bundle/SnsPlatform/UMS_laiwang_session@2x.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/JianDan/Helper/Vender/UMSocial_Sdk_4.2.3/UMSocialSDKResourcesNew.bundle/SnsPlatform/UMS_laiwang_timeline@2x.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/JianDan/Helper/Vender/UMSocial_Sdk_4.2.3/UMSocialSDKResourcesNew.bundle/SocialSDKBar/UMS_like_off_white.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/JianDan/Helper/Vender/UMSocial_Sdk_4.2.3/UMSocialSDKResourcesNew.bundle/SocialSDKBar/UMS_like_off_white@2x.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/JianDan/Helper/Vender/UMSocial_Sdk_4.2.3/UMSocialSDKResourcesNew.bundle/SocialSDKBar/UMS_like_on_white.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/JianDan/Helper/Vender/UMSocial_Sdk_4.2.3/UMSocialSDKResourcesNew.bundle/SocialSDKBar/UMS_like_on_white@2x.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/JianDan/Helper/Vender/UMSocial_Sdk_4.2.3/UMSocialSDKResourcesNew.bundle/SnsPlatform/UMS_line_icon@2x.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/JianDan/Helper/Vender/UMSocial_Sdk_4.2.3/UMSocialSDKResourcesNew.bundle/OtherTheme/UMS_nav_back_button_normal.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/JianDan/Helper/Vender/UMSocial_Sdk_4.2.3/UMSocialSDKResourcesNew.bundle/OtherTheme/UMS_nav_back_button_normal@2x.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/JianDan/Helper/Vender/UMSocial_Sdk_4.2.3/UMSocialSDKResourcesNew.bundle/OtherTheme/UMS_nav_back_button_tap.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/JianDan/Helper/Vender/UMSocial_Sdk_4.2.3/UMSocialSDKResourcesNew.bundle/OtherTheme/UMS_nav_back_button_tap@2x.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/JianDan/Helper/Vender/UMSocial_Sdk_4.2.3/UMSocialSDKResourcesNew.bundle/OtherTheme/UMS_nav_bar_bg_black.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/JianDan/Helper/Vender/UMSocial_Sdk_4.2.3/UMSocialSDKResourcesNew.bundle/OtherTheme/UMS_nav_bar_bg_black@2x.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/JianDan/Helper/Vender/UMSocial_Sdk_4.2.3/UMSocialSDKResourcesNew.bundle/Buttons/UMS_nav_bar_bg_white@2x.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/JianDan/Helper/Vender/UMSocial_Sdk_4.2.3/UMSocialSDKResourcesNew.bundle/Buttons/UMS_nav_button_back.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/JianDan/Helper/Vender/UMSocial_Sdk_4.2.3/UMSocialSDKResourcesNew.bundle/Buttons/UMS_nav_button_back@2x.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/JianDan/Helper/Vender/UMSocial_Sdk_4.2.3/UMSocialSDKResourcesNew.bundle/Buttons/UMS_nav_button_close.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/JianDan/Helper/Vender/UMSocial_Sdk_4.2.3/UMSocialSDKResourcesNew.bundle/Buttons/UMS_nav_button_close@2x.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/JianDan/Helper/Vender/UMSocial_Sdk_4.2.3/UMSocialSDKResourcesNew.bundle/OtherTheme/UMS_nav_button_normal.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/JianDan/Helper/Vender/UMSocial_Sdk_4.2.3/UMSocialSDKResourcesNew.bundle/OtherTheme/UMS_nav_button_normal@2x.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/JianDan/Helper/Vender/UMSocial_Sdk_4.2.3/UMSocialSDKResourcesNew.bundle/Buttons/UMS_nav_button_refresh.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/JianDan/Helper/Vender/UMSocial_Sdk_4.2.3/UMSocialSDKResourcesNew.bundle/Buttons/UMS_nav_button_refresh@2x.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/JianDan/Helper/Vender/UMSocial_Sdk_4.2.3/UMSocialSDKResourcesNew.bundle/Buttons/UMS_nav_button_send.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/JianDan/Helper/Vender/UMSocial_Sdk_4.2.3/UMSocialSDKResourcesNew.bundle/Buttons/UMS_nav_button_send@2x.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/JianDan/Helper/Vender/UMSocial_Sdk_4.2.3/UMSocialSDKResourcesNew.bundle/OtherTheme/UMS_nav_button_tap.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/JianDan/Helper/Vender/UMSocial_Sdk_4.2.3/UMSocialSDKResourcesNew.bundle/OtherTheme/UMS_nav_button_tap@2x.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/JianDan/Helper/Vender/UMSocial_Sdk_4.2.3/UMSocialSDKResourcesNew.bundle/Buttons/UMS_oauth_off.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/JianDan/Helper/Vender/UMSocial_Sdk_4.2.3/UMSocialSDKResourcesNew.bundle/Buttons/UMS_oauth_off@2x.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/JianDan/Helper/Vender/UMSocial_Sdk_4.2.3/UMSocialSDKResourcesNew.bundle/Buttons/UMS_oauth_on.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/JianDan/Helper/Vender/UMSocial_Sdk_4.2.3/UMSocialSDKResourcesNew.bundle/Buttons/UMS_oauth_on@2x.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/JianDan/Helper/Vender/UMSocial_Sdk_4.2.3/UMSocialSDKResourcesNew.bundle/Buttons/UMS_place_map.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/JianDan/Helper/Vender/UMSocial_Sdk_4.2.3/UMSocialSDKResourcesNew.bundle/Buttons/UMS_place_map@2x.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/JianDan/Helper/Vender/UMSocial_Sdk_4.2.3/UMSocialSDKResourcesNew.bundle/Buttons/UMS_place_off.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/JianDan/Helper/Vender/UMSocial_Sdk_4.2.3/UMSocialSDKResourcesNew.bundle/Buttons/UMS_place_off@2x.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/JianDan/Helper/Vender/UMSocial_Sdk_4.2.3/UMSocialSDKResourcesNew.bundle/Buttons/UMS_place_tap.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/JianDan/Helper/Vender/UMSocial_Sdk_4.2.3/UMSocialSDKResourcesNew.bundle/Buttons/UMS_place_tap@2x.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/JianDan/Helper/Vender/UMSocial_Sdk_4.2.3/UMSocialSDKResourcesNew.bundle/SnsPlatform/UMS_qq_icon.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/JianDan/Helper/Vender/UMSocial_Sdk_4.2.3/UMSocialSDKResourcesNew.bundle/SnsPlatform/UMS_qq_icon@2x.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/JianDan/Helper/Vender/UMSocial_Sdk_4.2.3/UMSocialSDKResourcesNew.bundle/SnsPlatform/UMS_qq_off.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/JianDan/Helper/Vender/UMSocial_Sdk_4.2.3/UMSocialSDKResourcesNew.bundle/SnsPlatform/UMS_qq_off@2x.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/JianDan/Helper/Vender/UMSocial_Sdk_4.2.3/UMSocialSDKResourcesNew.bundle/SnsPlatform/UMS_qq_on.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/JianDan/Helper/Vender/UMSocial_Sdk_4.2.3/UMSocialSDKResourcesNew.bundle/SnsPlatform/UMS_qq_on@2x.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/JianDan/Helper/Vender/UMSocial_Sdk_4.2.3/UMSocialSDKResourcesNew.bundle/SnsPlatform/UMS_qzone_icon.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/JianDan/Helper/Vender/UMSocial_Sdk_4.2.3/UMSocialSDKResourcesNew.bundle/SnsPlatform/UMS_qzone_icon@2x.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/JianDan/Helper/Vender/UMSocial_Sdk_4.2.3/UMSocialSDKResourcesNew.bundle/SnsPlatform/UMS_qzone_off.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/JianDan/Helper/Vender/UMSocial_Sdk_4.2.3/UMSocialSDKResourcesNew.bundle/SnsPlatform/UMS_qzone_off@2x.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/JianDan/Helper/Vender/UMSocial_Sdk_4.2.3/UMSocialSDKResourcesNew.bundle/SnsPlatform/UMS_qzone_on.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/JianDan/Helper/Vender/UMSocial_Sdk_4.2.3/UMSocialSDKResourcesNew.bundle/SnsPlatform/UMS_qzone_on@2x.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/JianDan/Helper/Vender/UMSocial_Sdk_4.2.3/UMSocialSDKResourcesNew.bundle/SnsPlatform/UMS_renren_icon.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/JianDan/Helper/Vender/UMSocial_Sdk_4.2.3/UMSocialSDKResourcesNew.bundle/SnsPlatform/UMS_renren_icon@2x.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/JianDan/Helper/Vender/UMSocial_Sdk_4.2.3/UMSocialSDKResourcesNew.bundle/SnsPlatform/UMS_renren_off.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/JianDan/Helper/Vender/UMSocial_Sdk_4.2.3/UMSocialSDKResourcesNew.bundle/SnsPlatform/UMS_renren_off@2x.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/JianDan/Helper/Vender/UMSocial_Sdk_4.2.3/UMSocialSDKResourcesNew.bundle/SnsPlatform/UMS_renren_on.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/JianDan/Helper/Vender/UMSocial_Sdk_4.2.3/UMSocialSDKResourcesNew.bundle/SnsPlatform/UMS_renren_on@2x.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/JianDan/Helper/Vender/UMSocial_Sdk_4.2.3/UMSocialSDKResourcesNew.bundle/Buttons/UMS_shake__share_button@2x.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/JianDan/Helper/Vender/UMSocial_Sdk_4.2.3/UMSocialSDKResourcesNew.bundle/Buttons/UMS_shake_close.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/JianDan/Helper/Vender/UMSocial_Sdk_4.2.3/UMSocialSDKResourcesNew.bundle/Buttons/UMS_shake_close@2x.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/JianDan/Helper/Vender/UMSocial_Sdk_4.2.3/UMSocialSDKResourcesNew.bundle/Buttons/UMS_shake_close_tap.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/JianDan/Helper/Vender/UMSocial_Sdk_4.2.3/UMSocialSDKResourcesNew.bundle/Buttons/UMS_shake_close_tap@2x.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/JianDan/Helper/Vender/UMSocial_Sdk_4.2.3/UMSocialSDKResourcesNew.bundle/Buttons/UMS_share_change_account.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/JianDan/Helper/Vender/UMSocial_Sdk_4.2.3/UMSocialSDKResourcesNew.bundle/Buttons/UMS_share_change_account@2x.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/JianDan/Helper/Vender/UMSocial_Sdk_4.2.3/UMSocialSDKResourcesNew.bundle/Buttons/UMS_share_change_account_bg@2x.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/JianDan/Helper/Vender/UMSocial_Sdk_4.2.3/UMSocialSDKResourcesNew.bundle/Buttons/UMS_share_change_account_tap.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/JianDan/Helper/Vender/UMSocial_Sdk_4.2.3/UMSocialSDKResourcesNew.bundle/Buttons/UMS_share_change_account_tap@2x.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/JianDan/Helper/Vender/UMSocial_Sdk_4.2.3/UMSocialSDKResourcesNew.bundle/Buttons/UMS_share_change_to_account@2x.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/JianDan/Helper/Vender/UMSocial_Sdk_4.2.3/UMSocialSDKResourcesNew.bundle/Buttons/UMS_share_change_to_account_tap@2x.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/JianDan/Helper/Vender/UMSocial_Sdk_4.2.3/UMSocialSDKResourcesNew.bundle/SocialSDKBar/UMS_share_normal_white.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/JianDan/Helper/Vender/UMSocial_Sdk_4.2.3/UMSocialSDKResourcesNew.bundle/SocialSDKBar/UMS_share_normal_white@2x.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/JianDan/Helper/Vender/UMSocial_Sdk_4.2.3/UMSocialSDKResourcesNew.bundle/Buttons/UMS_share_oauth@2x.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/JianDan/Helper/Vender/UMSocial_Sdk_4.2.3/UMSocialSDKResourcesNew.bundle/SocialSDKBar/UMS_share_tap_white.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/JianDan/Helper/Vender/UMSocial_Sdk_4.2.3/UMSocialSDKResourcesNew.bundle/SocialSDKBar/UMS_share_tap_white@2x.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/JianDan/Helper/Vender/UMSocial_Sdk_4.2.3/UMSocialSDKResourcesNew.bundle/SnsPlatform/UMS_sina_icon.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/JianDan/Helper/Vender/UMSocial_Sdk_4.2.3/UMSocialSDKResourcesNew.bundle/SnsPlatform/UMS_sina_icon@2x.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/JianDan/Helper/Vender/UMSocial_Sdk_4.2.3/UMSocialSDKResourcesNew.bundle/SnsPlatform/UMS_sina_off.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/JianDan/Helper/Vender/UMSocial_Sdk_4.2.3/UMSocialSDKResourcesNew.bundle/SnsPlatform/UMS_sina_off@2x.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/JianDan/Helper/Vender/UMSocial_Sdk_4.2.3/UMSocialSDKResourcesNew.bundle/SnsPlatform/UMS_sina_on.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/JianDan/Helper/Vender/UMSocial_Sdk_4.2.3/UMSocialSDKResourcesNew.bundle/SnsPlatform/UMS_sina_on@2x.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/JianDan/Helper/Vender/UMSocial_Sdk_4.2.3/UMSocialSDKResourcesNew.bundle/SnsPlatform/UMS_sms_icon.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/JianDan/Helper/Vender/UMSocial_Sdk_4.2.3/UMSocialSDKResourcesNew.bundle/SnsPlatform/UMS_sms_icon@2x.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/JianDan/Helper/Vender/UMSocial_Sdk_4.2.3/UMSocialSDKResourcesNew.bundle/SnsPlatform/UMS_sms_off.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/JianDan/Helper/Vender/UMSocial_Sdk_4.2.3/UMSocialSDKResourcesNew.bundle/SnsPlatform/UMS_sms_off@2x.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/JianDan/Helper/Vender/UMSocial_Sdk_4.2.3/UMSocialSDKResourcesNew.bundle/SnsPlatform/UMS_sms_on@2x.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/JianDan/Helper/Vender/UMSocial_Sdk_4.2.3/UMSocialSDKResourcesNew.bundle/SnsPlatform/UMS_tencent_icon.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/JianDan/Helper/Vender/UMSocial_Sdk_4.2.3/UMSocialSDKResourcesNew.bundle/SnsPlatform/UMS_tencent_icon@2x.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/JianDan/Helper/Vender/UMSocial_Sdk_4.2.3/UMSocialSDKResourcesNew.bundle/SnsPlatform/UMS_tencent_off.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/JianDan/Helper/Vender/UMSocial_Sdk_4.2.3/UMSocialSDKResourcesNew.bundle/SnsPlatform/UMS_tencent_off@2x.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/JianDan/Helper/Vender/UMSocial_Sdk_4.2.3/UMSocialSDKResourcesNew.bundle/SnsPlatform/UMS_tencent_on.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/JianDan/Helper/Vender/UMSocial_Sdk_4.2.3/UMSocialSDKResourcesNew.bundle/SnsPlatform/UMS_tencent_on@2x.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/JianDan/Helper/Vender/UMSocial_Sdk_4.2.3/UMSocialSDKResourcesNew.bundle/SnsPlatform/UMS_tumblr_icon@2x.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/JianDan/Helper/Vender/UMSocial_Sdk_4.2.3/UMSocialSDKResourcesNew.bundle/SnsPlatform/UMS_twitter_icon.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/JianDan/Helper/Vender/UMSocial_Sdk_4.2.3/UMSocialSDKResourcesNew.bundle/SnsPlatform/UMS_twitter_icon@2x.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/JianDan/Helper/Vender/UMSocial_Sdk_4.2.3/UMSocialSDKResourcesNew.bundle/SnsPlatform/UMS_twitter_off.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/JianDan/Helper/Vender/UMSocial_Sdk_4.2.3/UMSocialSDKResourcesNew.bundle/SnsPlatform/UMS_twitter_off@2x.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/JianDan/Helper/Vender/UMSocial_Sdk_4.2.3/UMSocialSDKResourcesNew.bundle/SnsPlatform/UMS_twitter_on.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/JianDan/Helper/Vender/UMSocial_Sdk_4.2.3/UMSocialSDKResourcesNew.bundle/SnsPlatform/UMS_twitter_on@2x.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/JianDan/Helper/Vender/UMSocial_Sdk_4.2.3/UMSocialSDKResourcesNew.bundle/Buttons/UMS_umeng_share_at.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/JianDan/Helper/Vender/UMSocial_Sdk_4.2.3/UMSocialSDKResourcesNew.bundle/Buttons/UMS_umeng_share_at@2x.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/JianDan/Helper/Vender/UMSocial_Sdk_4.2.3/UMSocialSDKResourcesNew.bundle/Buttons/UMS_umeng_share_atSel.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/JianDan/Helper/Vender/UMSocial_Sdk_4.2.3/UMSocialSDKResourcesNew.bundle/Buttons/UMS_umeng_share_atSel@2x.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/JianDan/Helper/Vender/UMSocial_Sdk_4.2.3/UMSocialSDKResourcesNew.bundle/Buttons/UMS_umeng_share_at_tap.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/JianDan/Helper/Vender/UMSocial_Sdk_4.2.3/UMSocialSDKResourcesNew.bundle/Buttons/UMS_umeng_share_toolbarBg.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/JianDan/Helper/Vender/UMSocial_Sdk_4.2.3/UMSocialSDKResourcesNew.bundle/Buttons/UMS_umeng_share_toolbarBg@2x.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/JianDan/Helper/Vender/UMSocial_Sdk_4.2.3/UMSocialSDKResourcesNew.bundle/Buttons/UMS_url_image.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/JianDan/Helper/Vender/UMSocial_Sdk_4.2.3/UMSocialSDKResourcesNew.bundle/Buttons/UMS_url_image@2x.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/JianDan/Helper/Vender/UMSocial_Sdk_4.2.3/UMSocialSDKResourcesNew.bundle/Buttons/UMS_url_music.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/JianDan/Helper/Vender/UMSocial_Sdk_4.2.3/UMSocialSDKResourcesNew.bundle/Buttons/UMS_url_music@2x.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/JianDan/Helper/Vender/UMSocial_Sdk_4.2.3/UMSocialSDKResourcesNew.bundle/Buttons/UMS_url_video.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/JianDan/Helper/Vender/UMSocial_Sdk_4.2.3/UMSocialSDKResourcesNew.bundle/Buttons/UMS_url_video@2x.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/JianDan/Helper/Vender/UMSocial_Sdk_4.2.3/UMSocialSDKResourcesNew.bundle/SnsPlatform/UMS_wechat_favorite_icon.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/JianDan/Helper/Vender/UMSocial_Sdk_4.2.3/UMSocialSDKResourcesNew.bundle/SnsPlatform/UMS_wechat_favorite_icon@2x.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/JianDan/Helper/Vender/UMSocial_Sdk_4.2.3/UMSocialSDKResourcesNew.bundle/SnsPlatform/UMS_wechat_icon.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/JianDan/Helper/Vender/UMSocial_Sdk_4.2.3/UMSocialSDKResourcesNew.bundle/SnsPlatform/UMS_wechat_icon@2x.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/JianDan/Helper/Vender/UMSocial_Sdk_4.2.3/UMSocialSDKResourcesNew.bundle/SnsPlatform/UMS_wechat_off.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/JianDan/Helper/Vender/UMSocial_Sdk_4.2.3/UMSocialSDKResourcesNew.bundle/SnsPlatform/UMS_wechat_off@2x.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/JianDan/Helper/Vender/UMSocial_Sdk_4.2.3/UMSocialSDKResourcesNew.bundle/SnsPlatform/UMS_wechat_on@2x.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/JianDan/Helper/Vender/UMSocial_Sdk_4.2.3/UMSocialSDKResourcesNew.bundle/SnsPlatform/UMS_wechat_session_icon.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/JianDan/Helper/Vender/UMSocial_Sdk_4.2.3/UMSocialSDKResourcesNew.bundle/SnsPlatform/UMS_wechat_session_icon@2x.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/JianDan/Helper/Vender/UMSocial_Sdk_4.2.3/UMSocialSDKResourcesNew.bundle/SnsPlatform/UMS_wechat_timeline_icon.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/JianDan/Helper/Vender/UMSocial_Sdk_4.2.3/UMSocialSDKResourcesNew.bundle/SnsPlatform/UMS_wechat_timeline_icon@2x.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/JianDan/Helper/Vender/UMSocial_Sdk_4.2.3/UMSocialSDKResourcesNew.bundle/SnsPlatform/UMS_wechat_timeline_off.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/JianDan/Helper/Vender/UMSocial_Sdk_4.2.3/UMSocialSDKResourcesNew.bundle/SnsPlatform/UMS_wechat_timeline_off@2x.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/JianDan/Helper/Vender/UMSocial_Sdk_4.2.3/UMSocialSDKResourcesNew.bundle/SnsPlatform/UMS_wechat_timeline_on.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/JianDan/Helper/Vender/UMSocial_Sdk_4.2.3/UMSocialSDKResourcesNew.bundle/SnsPlatform/UMS_wechat_timeline_on@2x.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/JianDan/Helper/Vender/UMSocial_Sdk_4.2.3/UMSocialSDKResourcesNew.bundle/SnsPlatform/UMS_whatsapp_icon@2x.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/JianDan/Helper/Vender/UMSocial_Sdk_4.2.3/UMSocialSDKResourcesNew.bundle/SnsPlatform/UMS_yixin_session@2x.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/JianDan/Helper/Vender/UMSocial_Sdk_4.2.3/UMSocialSDKResourcesNew.bundle/SnsPlatform/UMS_yixin_timeline@2x.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/JianDan/Helper/Vender/UMSocial_Sdk_4.2.3/UMSocialSDKResourcesNew.bundle/EGO/blackArrow.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/JianDan/Helper/Vender/UMSocial_Sdk_4.2.3/UMSocialSDKResourcesNew.bundle/EGO/blackArrow@2x.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/JianDan/Helper/Vender/UMSocial_Sdk_4.2.3/UMSocialSDKResourcesNew.bundle/EGO/blueArrow.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/JianDan/Helper/Vender/UMSocial_Sdk_4.2.3/UMSocialSDKResourcesNew.bundle/EGO/blueArrow@2x.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/JianDan/Assets.xcassets/common_icon_back.imageset/common_icon_back.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/JianDan/Assets.xcassets/common_icon_back.imageset/common_icon_back@2x.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/JianDan/Assets.xcassets/common_icon_back.imageset/common_icon_back@3x.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/JianDan/Helper/Vender/UMSocial_Sdk_4.2.3/UMSocialSDKResourcesNew.bundle/EGO/grayArrow.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/JianDan/Helper/Vender/UMSocial_Sdk_4.2.3/UMSocialSDKResourcesNew.bundle/EGO/grayArrow@2x.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/JianDan/Assets.xcassets/FreshNews/ic_action_send_now.imageset/ic_action_send_now.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/JianDan/Assets.xcassets/FreshNews/ic_action_send_now.imageset/ic_action_send_now@2x.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/JianDan/Assets.xcassets/FreshNews/ic_action_send_now.imageset/ic_action_send_now@3x.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/JianDan/Helper/Vender/UMSocial_Sdk_4.2.3/libUMSocial_Sdk_4.2.3.a" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/JianDan/Helper/Vender/UMSocial_Sdk_4.2.3/UMSocialSDKResourcesNew.bundle/Sound/shake_sound.mp3" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/JianDan/Helper/Vender/UMSocial_Sdk_4.2.3/UMSocialSDKResourcesNew.bundle/EGO/whiteArrow.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/JianDan/Helper/Vender/UMSocial_Sdk_4.2.3/UMSocialSDKResourcesNew.bundle/EGO/whiteArrow@2x.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/JianDan/Section/BoredPictures/Model/BoredPictures.h" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/JianDan/Section/BoredPictures/Model/BoredPictures.m" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/JianDan/Section/BoredPictures/View/BoredPictursCell.h" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/JianDan/Section/BoredPictures/View/BoredPictursCell.m" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/JianDan/Section/BoredPictures/View/BoredPictursCell.xib" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/JianDan/Section/FreshNews/View/CommentClickAlertView.xib" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/JianDan/Section/FreshNews/View/CommentController.h" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/JianDan/Section/FreshNews/View/CommentController.m" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/JianDan/Section/FreshNews/ViewModel/CommentViewModel.h" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/JianDan/Section/FreshNews/ViewModel/CommentViewModel.m" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/JianDan/Section/FreshNews/View/CommentsCell.h" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/JianDan/Section/FreshNews/View/CommentsCell.m" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/JianDan/Section/FreshNews/View/CommentsCell.xib" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/JianDan/Main/Constant.h" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/JianDan/Assets.xcassets/FreshNews/ic_action_send_now.imageset/Contents.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/JianDan/Assets.xcassets/common_icon_back.imageset/Contents.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/JianDan/Helper/CustomView/DMLazyScrollView/DMLazyScrollView.h" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/JianDan/Helper/CustomView/DMLazyScrollView/DMLazyScrollView.m" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/JianDan/Section/FreshNews/Model/FreshNewsComment.h" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/JianDan/Section/FreshNews/Model/FreshNewsComment.m" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/JianDan/Section/FreshNews/Model/FreshNewsDetail.h" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/JianDan/Section/FreshNews/Model/FreshNewsDetail.m" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/JianDan/Section/FreshNews/View/FreshNewsDetailController.h" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/JianDan/Section/FreshNews/View/FreshNewsDetailController.m" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/JianDan/Section/FreshNews/ViewModel/FreshNewsDetailViewModel.h" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/JianDan/Section/FreshNews/ViewModel/FreshNewsDetailViewModel.m" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Reveal.framework/Versions/A/Headers/IBANetServiceTypes.h" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Reveal.framework/Versions/A/Headers/IBARevealLoader.h" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Reveal.framework/Versions/A/Headers/IBARevealLogger.h" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/JianDan/Helper/CustomView/InsetsLabel.h" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/JianDan/Helper/CustomView/InsetsLabel.m" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/JianDan/Helper/CustomView/DXAlertView/LTAlertView.h" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/JianDan/Helper/CustomView/DXAlertView/LTAlertView.m" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/JianDan/Helper/CustomView/FloorView/LTFloorView.h" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/JianDan/Helper/CustomView/FloorView/LTFloorView.m" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/JianDan/LaunchScreen.xib" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/JianDan/Main/View/MainController.h" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/JianDan/Main/View/MainController.m" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/JianDan/Main/ViewModel/MainViewModel.h" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/JianDan/Main/ViewModel/MainViewModel.m" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/JianDan/Helper/Category/NSDate+MJ.h" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/JianDan/Helper/Category/NSDate+MJ.m" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/JianDan/Helper/Category/NSDictionary+JSONString.h" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/JianDan/Helper/Category/NSDictionary+JSONString.m" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/JianDan/Section/FreshNews/View/PushCommentController.h" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/JianDan/Section/FreshNews/View/PushCommentController.m" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Reveal.framework/Versions/A/Headers/Reveal.h" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/JianDan/Helper/CustomView/ScaleImageView.h" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/JianDan/Helper/CustomView/ScaleImageView.m" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/JianDan/Section/FreshNews/View/ShareToSinaController.h" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/JianDan/Section/FreshNews/View/ShareToSinaController.m" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/JianDan/Section/FreshNews/ViewModel/ShareToViewModel.h" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/JianDan/Section/FreshNews/ViewModel/ShareToViewModel.m" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/JianDan/Section/FreshNews/View/SubCommentView.xib" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/JianDan/Helper/LittleTools/ToastHelper.h" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/JianDan/Helper/LittleTools/ToastHelper.m" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/JianDan/Section/FreshNews/View/TouristAlertView.xib" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/JianDan/Helper/CustomView/UITextViewEx.h" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/JianDan/Helper/CustomView/UITextViewEx.m" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/JianDan/Helper/Category/UIWebView+RAC.h" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/JianDan/Helper/Category/UIWebView+RAC.m" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/JianDan/Helper/Vender/UMSocial_Sdk_4.2.3/SocialSDKXib/UMSCommentDetailController.xib" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/JianDan/Helper/Vender/UMSocial_Sdk_4.2.3/SocialSDKXib/UMSCommentInputController.xib" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/JianDan/Helper/Vender/UMSocial_Sdk_4.2.3/SocialSDKXib/UMSCommentInputControlleriPad.xib" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/JianDan/Helper/Vender/UMSocial_Sdk_4.2.3/SocialSDKXib/UMSLoginViewController.xib" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/JianDan/Helper/Vender/UMSocial_Sdk_4.2.3/SocialSDKXib/UMSShareListController.xib" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/JianDan/Helper/Vender/UMSocial_Sdk_4.2.3/SocialSDKXib/UMShareEditViewController.xib" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/JianDan/Helper/Vender/UMSocial_Sdk_4.2.3/SocialSDKXib/UMShareEditViewControlleriPad.xib" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/JianDan/Helper/Vender/UMSocial_Sdk_4.2.3/SocialSDKXib/UMSnsAccountViewController.xib" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/JianDan/Helper/Vender/UMSocial_Sdk_4.2.3/Header/UMSocial.h" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/JianDan/Helper/Vender/UMSocial_Sdk_4.2.3/Header/UMSocialAccountManager.h" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/JianDan/Helper/Vender/UMSocial_Sdk_4.2.3/Header/UMSocialBar.h" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/JianDan/Helper/Vender/UMSocial_Sdk_4.2.3/Header/UMSocialConfig.h" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/JianDan/Helper/Vender/UMSocial_Sdk_4.2.3/Header/UMSocialControllerService.h" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/JianDan/Helper/Vender/UMSocial_Sdk_4.2.3/Header/UMSocialControllerServiceComment.h" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/JianDan/Helper/Vender/UMSocial_Sdk_4.2.3/Header/UMSocialData.h" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/JianDan/Helper/Vender/UMSocial_Sdk_4.2.3/Header/UMSocialDataService.h" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/JianDan/Helper/Vender/UMSocial_Sdk_4.2.3/en.lproj/UMSocialLocalizable.strings" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/JianDan/Helper/Vender/UMSocial_Sdk_4.2.3/zh-Hans.lproj/UMSocialLocalizable.strings" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/JianDan/Helper/Vender/UMSocial_Sdk_4.2.3/Header/UMSocialSnsData.h" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/JianDan/Helper/Vender/UMSocial_Sdk_4.2.3/Header/UMSocialSnsPlatformManager.h" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/JianDan/Helper/Vender/UMSocial_Sdk_4.2.3/Header/UMSocialSnsService.h" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/JianDan/style.css" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/JianDan/Assets.xcassets/AppIcon.appiconset/._Contents.json" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/JianDan/Assets.xcassets/ic_launcher.imageset" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/JianDan/Helper/LittleTools/NetTypeUtils.h" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/JianDan/Helper/LittleTools/NetTypeUtils.m" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/JianDan/Section/BoredPictures/ViewModel/FreshNewsViewModel.h" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/JianDan/Section/FreshNews/View/MainController.h" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/JianDan/Section/FreshNews/View/MainController.m" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/JianDan/Section/FreshNews/ViewModel/MainViewModel.m" afterPath="" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/._.gitignore" afterPath="$PROJECT_DIR$/._.gitignore" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gitignore" afterPath="$PROJECT_DIR$/.gitignore" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/._Podfile" afterPath="$PROJECT_DIR$/._Podfile" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/JianDan/Helper/LittleTools/AFNetWorkUtils.h" afterPath="$PROJECT_DIR$/JianDan/Helper/LittleTools/AFNetWorkUtils.h" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/JianDan/Helper/LittleTools/AFNetWorkUtils.m" afterPath="$PROJECT_DIR$/JianDan/Helper/LittleTools/AFNetWorkUtils.m" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Pods/Target Support Files/AFNetworking/AFNetworking-Private.xcconfig" afterPath="$PROJECT_DIR$/Pods/Target Support Files/AFNetworking/AFNetworking-Private.xcconfig" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Pods/Target Support Files/AFNetworking-RACExtensions/AFNetworking-RACExtensions-Private.xcconfig" afterPath="$PROJECT_DIR$/Pods/Target Support Files/AFNetworking-RACExtensions/AFNetworking-RACExtensions-Private.xcconfig" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Pods/PureLayout/PureLayout/PureLayout/ALView+PureLayout.h" afterPath="$PROJECT_DIR$/Pods/PureLayout/PureLayout/PureLayout/ALView+PureLayout.h" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Pods/PureLayout/PureLayout/PureLayout/ALView+PureLayout.m" afterPath="$PROJECT_DIR$/Pods/PureLayout/PureLayout/PureLayout/ALView+PureLayout.m" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/JianDan/Main/AppDelegate.h" afterPath="$PROJECT_DIR$/JianDan/Main/AppDelegate.h" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/JianDan/Main/AppDelegate.m" afterPath="$PROJECT_DIR$/JianDan/Main/AppDelegate.m" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/JianDan/Helper/BaseViewController/BaseTableViewController.h" afterPath="$PROJECT_DIR$/JianDan/Helper/BaseViewController/BaseTableViewController.h" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/JianDan/Helper/BaseViewController/BaseTableViewController.m" afterPath="$PROJECT_DIR$/JianDan/Helper/BaseViewController/BaseTableViewController.m" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/JianDan/Helper/BaseViewController/BaseViewController.h" afterPath="$PROJECT_DIR$/JianDan/Helper/BaseViewController/BaseViewController.h" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/JianDan/Helper/BaseViewController/BaseViewController.m" afterPath="$PROJECT_DIR$/JianDan/Helper/BaseViewController/BaseViewController.m" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/JianDan/Helper/UITableViewBindingHelper/CETableViewBindingHelper.h" afterPath="$PROJECT_DIR$/JianDan/Helper/UITableViewBindingHelper/CETableViewBindingHelper.h" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/JianDan/Helper/UITableViewBindingHelper/CETableViewBindingHelper.m" afterPath="$PROJECT_DIR$/JianDan/Helper/UITableViewBindingHelper/CETableViewBindingHelper.m" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/JianDan/Helper/LittleTools/CacheTools.m" afterPath="$PROJECT_DIR$/JianDan/Helper/LittleTools/CacheTools.m" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Pods/Target Support Files/CocoaLumberjack/CocoaLumberjack-Private.xcconfig" afterPath="$PROJECT_DIR$/Pods/Target Support Files/CocoaLumberjack/CocoaLumberjack-Private.xcconfig" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/JianDan/Helper/LittleTools/CommonUtils.h" afterPath="$PROJECT_DIR$/JianDan/Helper/LittleTools/CommonUtils.h" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/JianDan/Helper/LittleTools/CommonUtils.m" afterPath="$PROJECT_DIR$/JianDan/Helper/LittleTools/CommonUtils.m" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/JianDan/Assets.xcassets/AppIcon.appiconset/Contents.json" afterPath="$PROJECT_DIR$/JianDan/Assets.xcassets/AppIcon.appiconset/Contents.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Pods/Target Support Files/FMDB/FMDB-Private.xcconfig" afterPath="$PROJECT_DIR$/Pods/Target Support Files/FMDB/FMDB-Private.xcconfig" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/JianDan/Section/FreshNews/Model/FreshNews.h" afterPath="$PROJECT_DIR$/JianDan/Section/FreshNews/Model/FreshNews.h" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/JianDan/Section/FreshNews/Model/FreshNews.m" afterPath="$PROJECT_DIR$/JianDan/Section/FreshNews/Model/FreshNews.m" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/JianDan/Section/FreshNews/View/FreshNewsCell.m" afterPath="$PROJECT_DIR$/JianDan/Section/FreshNews/View/FreshNewsCell.m" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/JianDan/Section/FreshNews/View/FreshNewsCell.xib" afterPath="$PROJECT_DIR$/JianDan/Section/FreshNews/View/FreshNewsCell.xib" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/JianDan/Info.plist" afterPath="$PROJECT_DIR$/JianDan/Info.plist" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/JianDanIOS.iml" afterPath="$PROJECT_DIR$/.idea/JianDanIOS.iml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/JianDanTests/JianDanTests.m" afterPath="$PROJECT_DIR$/JianDanTests/JianDanTests.m" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/JianDan/JianDan_PrefixHeader.pch" afterPath="$PROJECT_DIR$/JianDan/JianDan_PrefixHeader.pch" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Pods/Target Support Files/Kiwi/Kiwi-Private.xcconfig" afterPath="$PROJECT_DIR$/Pods/Target Support Files/Kiwi/Kiwi-Private.xcconfig" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/JianDan/Section/LeftMenu/LeftMenu.h" afterPath="$PROJECT_DIR$/JianDan/Section/LeftMenu/LeftMenu.h" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/JianDan/Section/LeftMenu/LeftMenu.m" afterPath="$PROJECT_DIR$/JianDan/Section/LeftMenu/LeftMenu.m" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/JianDan/Section/LeftMenu/LeftMenuController.m" afterPath="$PROJECT_DIR$/JianDan/Section/LeftMenu/LeftMenuController.m" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Pods/Target Support Files/MJExtension/MJExtension-Private.xcconfig" afterPath="$PROJECT_DIR$/Pods/Target Support Files/MJExtension/MJExtension-Private.xcconfig" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Pods/Target Support Files/MJRefresh/MJRefresh-Private.xcconfig" afterPath="$PROJECT_DIR$/Pods/Target Support Files/MJRefresh/MJRefresh-Private.xcconfig" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Pods/MJRefresh/MJRefresh/Base/MJRefreshAutoFooter.h" afterPath="$PROJECT_DIR$/Pods/MJRefresh/MJRefresh/Base/MJRefreshAutoFooter.h" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Pods/MJRefresh/MJRefresh/Base/MJRefreshAutoFooter.m" afterPath="$PROJECT_DIR$/Pods/MJRefresh/MJRefresh/Base/MJRefreshAutoFooter.m" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Pods/MJRefresh/MJRefresh/Base/MJRefreshBackFooter.m" afterPath="$PROJECT_DIR$/Pods/MJRefresh/MJRefresh/Base/MJRefreshBackFooter.m" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Pods/MJRefresh/MJRefresh/Base/MJRefreshComponent.h" afterPath="$PROJECT_DIR$/Pods/MJRefresh/MJRefresh/Base/MJRefreshComponent.h" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Pods/MJRefresh/MJRefresh/Base/MJRefreshComponent.m" afterPath="$PROJECT_DIR$/Pods/MJRefresh/MJRefresh/Base/MJRefreshComponent.m" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Pods/MJRefresh/MJRefresh/Base/MJRefreshHeader.m" afterPath="$PROJECT_DIR$/Pods/MJRefresh/MJRefresh/Base/MJRefreshHeader.m" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Pods/Target Support Files/MMDrawerController/MMDrawerController-Private.xcconfig" afterPath="$PROJECT_DIR$/Pods/Target Support Files/MMDrawerController/MMDrawerController-Private.xcconfig" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Pods/Manifest.lock" afterPath="$PROJECT_DIR$/Pods/Manifest.lock" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Pods/PureLayout/PureLayout/PureLayout/NSArray+PureLayout.h" afterPath="$PROJECT_DIR$/Pods/PureLayout/PureLayout/PureLayout/NSArray+PureLayout.h" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Pods/PureLayout/PureLayout/PureLayout/NSArray+PureLayout.m" afterPath="$PROJECT_DIR$/Pods/PureLayout/PureLayout/PureLayout/NSArray+PureLayout.m" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Pods/PureLayout/PureLayout/PureLayout/NSLayoutConstraint+PureLayout.h" afterPath="$PROJECT_DIR$/Pods/PureLayout/PureLayout/PureLayout/NSLayoutConstraint+PureLayout.h" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Pods/PureLayout/PureLayout/PureLayout/NSLayoutConstraint+PureLayout.m" afterPath="$PROJECT_DIR$/Pods/PureLayout/PureLayout/PureLayout/NSLayoutConstraint+PureLayout.m" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Podfile.lock" afterPath="$PROJECT_DIR$/Podfile.lock" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Podfile" afterPath="$PROJECT_DIR$/Podfile" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Pods/Target Support Files/Pods-JianDanTests/Pods-JianDanTests.debug.xcconfig" afterPath="$PROJECT_DIR$/Pods/Target Support Files/Pods-JianDanTests/Pods-JianDanTests.debug.xcconfig" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Pods/Target Support Files/Pods-JianDanTests/Pods-JianDanTests.release.xcconfig" afterPath="$PROJECT_DIR$/Pods/Target Support Files/Pods-JianDanTests/Pods-JianDanTests.release.xcconfig" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Pods/Target Support Files/Pods/Pods-acknowledgements.markdown" afterPath="$PROJECT_DIR$/Pods/Target Support Files/Pods/Pods-acknowledgements.markdown" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Pods/Target Support Files/Pods/Pods-acknowledgements.plist" afterPath="$PROJECT_DIR$/Pods/Target Support Files/Pods/Pods-acknowledgements.plist" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Pods/Target Support Files/Pods/Pods.debug.xcconfig" afterPath="$PROJECT_DIR$/Pods/Target Support Files/Pods/Pods.debug.xcconfig" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Pods/Target Support Files/Pods/Pods.release.xcconfig" afterPath="$PROJECT_DIR$/Pods/Target Support Files/Pods/Pods.release.xcconfig" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Pods/PureLayout/PureLayout/PureLayout/PureLayout+Internal.h" afterPath="$PROJECT_DIR$/Pods/PureLayout/PureLayout/PureLayout/PureLayout+Internal.h" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Pods/Target Support Files/PureLayout/PureLayout-Private.xcconfig" afterPath="$PROJECT_DIR$/Pods/Target Support Files/PureLayout/PureLayout-Private.xcconfig" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Pods/PureLayout/PureLayout/PureLayout/PureLayout.h" afterPath="$PROJECT_DIR$/Pods/PureLayout/PureLayout/PureLayout/PureLayout.h" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Pods/PureLayout/PureLayout/PureLayout/PureLayoutDefines.h" afterPath="$PROJECT_DIR$/Pods/PureLayout/PureLayout/PureLayout/PureLayoutDefines.h" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Pods/MJRefresh/README.md" afterPath="$PROJECT_DIR$/Pods/MJRefresh/README.md" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Pods/PureLayout/README.md" afterPath="$PROJECT_DIR$/Pods/PureLayout/README.md" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Pods/Target Support Files/ReactiveCocoa/ReactiveCocoa-Private.xcconfig" afterPath="$PROJECT_DIR$/Pods/Target Support Files/ReactiveCocoa/ReactiveCocoa-Private.xcconfig" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Pods/Target Support Files/ReactiveViewModel/ReactiveViewModel-Private.xcconfig" afterPath="$PROJECT_DIR$/Pods/Target Support Files/ReactiveViewModel/ReactiveViewModel-Private.xcconfig" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Pods/Target Support Files/SDWebImage/SDWebImage-Private.xcconfig" afterPath="$PROJECT_DIR$/Pods/Target Support Files/SDWebImage/SDWebImage-Private.xcconfig" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Pods/Target Support Files/TPKeyboardAvoiding/TPKeyboardAvoiding-Private.xcconfig" afterPath="$PROJECT_DIR$/Pods/Target Support Files/TPKeyboardAvoiding/TPKeyboardAvoiding-Private.xcconfig" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Pods/MJRefresh/MJRefresh/UIScrollView+MJRefresh.m" afterPath="$PROJECT_DIR$/Pods/MJRefresh/MJRefresh/UIScrollView+MJRefresh.m" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/JianDan/Main/Urls.h" afterPath="$PROJECT_DIR$/JianDan/Main/Urls.h" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/JianDan.xcodeproj/project.pbxproj" afterPath="$PROJECT_DIR$/JianDan.xcodeproj/project.pbxproj" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Pods/Pods.xcodeproj/project.pbxproj" afterPath="$PROJECT_DIR$/Pods/Pods.xcodeproj/project.pbxproj" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="JianDanIOS.iws" />
@@ -27,44 +384,26 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="FreshNewsViewModel.m" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/JianDan/Section/FreshNews/ViewModel/FreshNewsViewModel.m">
+      <file leaf-file-name="MainController.m" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/JianDan/Main/View/MainController.m">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
-              <caret line="49" column="0" selection-start-line="49" selection-start-column="0" selection-end-line="49" selection-end-column="0" />
+              <caret line="91" column="8" selection-start-line="91" selection-start-column="8" selection-end-line="91" selection-end-column="8" />
               <folding>
-                <element signature="e#202#232#0" expanded="true" />
+                <element signature="e#122#148#0" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="CETableViewBindingHelper.m" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/JianDan/Helper/UITableViewBindingHelper/CETableViewBindingHelper.m">
+      <file leaf-file-name="MainViewModel.m" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/JianDan/Main/ViewModel/MainViewModel.m">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="135" column="76" selection-start-line="135" selection-start-column="76" selection-end-line="135" selection-end-column="76" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="FreshNewsCell.m" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/JianDan/Section/FreshNews/View/FreshNewsCell.m">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="37" column="25" selection-start-line="37" selection-start-column="25" selection-end-line="37" selection-end-column="25" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="FreshNews.m" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/JianDan/Section/FreshNews/Model/FreshNews.m">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="1.2990196">
-              <caret line="53" column="4" selection-start-line="53" selection-start-column="4" selection-end-line="53" selection-end-column="4" />
-              <folding />
+            <state vertical-scroll-proportion="1.0152284">
+              <caret line="70" column="24" selection-start-line="70" selection-start-column="24" selection-end-line="70" selection-end-column="24" />
+              <folding>
+                <element signature="e#202#227#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -80,10 +419,8 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/Podfile" />
         <option value="$PROJECT_DIR$/JianDan/AppDelegate.m" />
         <option value="$PROJECT_DIR$/JianDan/LittleTools/AFNetWorkUtils.m" />
-        <option value="$PROJECT_DIR$/JianDan/Section/LeftMenu/LeftMenuController.m" />
         <option value="$PROJECT_DIR$/JianDan/Section/LeftMenu/Model/LeftMenu.h" />
         <option value="$PROJECT_DIR$/JianDan/Section/LeftMenu/Model/LeftMenu.m" />
         <option value="$PROJECT_DIR$/JianDan/Section/LeftMenu/View/LeftMenuCell.h" />
@@ -94,13 +431,27 @@
         <option value="$PROJECT_DIR$/JianDan/Helper/LittleTools/NetTypeUtils.h" />
         <option value="$PROJECT_DIR$/JianDan/Helper/LittleTools/NetTypeUtils.m" />
         <option value="$PROJECT_DIR$/JianDan/Helper/LittleTools/CacheTools.h" />
-        <option value="$PROJECT_DIR$/JianDan/Helper/LittleTools/CacheTools.m" />
         <option value="$PROJECT_DIR$/JianDan/Section/FreshNews/ViewModel/FreshNewsViewModel.m" />
         <option value="$PROJECT_DIR$/JianDan/Helper/UITableViewBindingHelper/CETableViewBindingHelper.m" />
-        <option value="$PROJECT_DIR$/JianDan/Section/FreshNews/View/FreshNewsController.m" />
         <option value="$PROJECT_DIR$/JianDan/Main/AppDelegate.m" />
         <option value="$PROJECT_DIR$/JianDan/Section/FreshNews/View/FreshNewsCell.m" />
         <option value="$PROJECT_DIR$/JianDan/Section/FreshNews/Model/FreshNews.m" />
+        <option value="$PROJECT_DIR$/JianDan/Helper/LittleTools/CacheTools.m" />
+        <option value="$PROJECT_DIR$/Podfile" />
+        <option value="$PROJECT_DIR$/JianDan/Section/FreshNews/View/FreshNewsDetailController.m" />
+        <option value="$PROJECT_DIR$/JianDan/Section/FreshNews/ViewModel/FreshNewsDetailViewModel.m" />
+        <option value="$PROJECT_DIR$/JianDan/Section/FreshNews/ViewModel/ShareToViewModel.h" />
+        <option value="$PROJECT_DIR$/JianDan/Section/FreshNews/ViewModel/ShareToViewModel.m" />
+        <option value="$PROJECT_DIR$/JianDan/Section/FreshNews/View/ShareToSinaController.m" />
+        <option value="$PROJECT_DIR$/JianDan/Section/FreshNews/ViewModel/CommentViewModel.m" />
+        <option value="$PROJECT_DIR$/JianDan/Section/FreshNews/ViewModel/CommentViewModel.h" />
+        <option value="$PROJECT_DIR$/JianDan/Helper/CustomView/DXAlertView/LTAlertView.m" />
+        <option value="$PROJECT_DIR$/JianDan/Section/FreshNews/View/FreshNewsController.m" />
+        <option value="$PROJECT_DIR$/JianDan/Section/FreshNews/View/MainController.m" />
+        <option value="$PROJECT_DIR$/JianDan/Section/LeftMenu/LeftMenu.h" />
+        <option value="$PROJECT_DIR$/JianDan/Section/LeftMenu/LeftMenuController.m" />
+        <option value="$PROJECT_DIR$/JianDan/Main/View/MainController.m" />
+        <option value="$PROJECT_DIR$/JianDan/Main/ViewModel/MainViewModel.m" />
       </list>
     </option>
   </component>
@@ -146,14 +497,8 @@
               <option name="myItemId" />
               <option name="myItemType" value="com.jetbrains.cidr.projectView.XcodeRootNode" />
             </PATH_ELEMENT>
-          </PATH>
-          <PATH>
             <PATH_ELEMENT>
-              <option name="myItemId" />
-              <option name="myItemType" value="com.jetbrains.cidr.projectView.XcodeRootNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="JianDan" />
+              <option name="myItemId" value="Pods" />
               <option name="myItemType" value="com.jetbrains.cidr.projectView.XcodeProjectNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -166,10 +511,6 @@
               <option name="myItemId" value="JianDan" />
               <option name="myItemType" value="com.jetbrains.cidr.projectView.XcodeProjectNode" />
             </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="JianDan" />
-              <option name="myItemType" value="com.jetbrains.cidr.projectView.XcodeViewNode" />
-            </PATH_ELEMENT>
           </PATH>
           <PATH>
             <PATH_ELEMENT>
@@ -182,10 +523,6 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="JianDan" />
-              <option name="myItemType" value="com.jetbrains.cidr.projectView.XcodeViewNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Supporting Files" />
               <option name="myItemType" value="com.jetbrains.cidr.projectView.XcodeViewNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -204,58 +541,6 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="Section" />
-              <option name="myItemType" value="com.jetbrains.cidr.projectView.XcodeViewNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="LeftMenu" />
-              <option name="myItemType" value="com.jetbrains.cidr.projectView.XcodeViewNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" />
-              <option name="myItemType" value="com.jetbrains.cidr.projectView.XcodeRootNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="JianDan" />
-              <option name="myItemType" value="com.jetbrains.cidr.projectView.XcodeProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="JianDan" />
-              <option name="myItemType" value="com.jetbrains.cidr.projectView.XcodeViewNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Section" />
-              <option name="myItemType" value="com.jetbrains.cidr.projectView.XcodeViewNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="FreshNews" />
-              <option name="myItemType" value="com.jetbrains.cidr.projectView.XcodeViewNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" />
-              <option name="myItemType" value="com.jetbrains.cidr.projectView.XcodeRootNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="JianDan" />
-              <option name="myItemType" value="com.jetbrains.cidr.projectView.XcodeProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="JianDan" />
-              <option name="myItemType" value="com.jetbrains.cidr.projectView.XcodeViewNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Section" />
-              <option name="myItemType" value="com.jetbrains.cidr.projectView.XcodeViewNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="FreshNews" />
-              <option name="myItemType" value="com.jetbrains.cidr.projectView.XcodeViewNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Model" />
               <option name="myItemType" value="com.jetbrains.cidr.projectView.XcodeViewNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -291,7 +576,11 @@
               <option name="myItemType" value="com.jetbrains.cidr.projectView.XcodeViewNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="Helper" />
+              <option name="myItemId" value="Main" />
+              <option name="myItemType" value="com.jetbrains.cidr.projectView.XcodeViewNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="ViewModel" />
               <option name="myItemType" value="com.jetbrains.cidr.projectView.XcodeViewNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -321,7 +610,7 @@
     <property name="recentsLimit" value="5" />
     <property name="FullScreen" value="false" />
     <property name="OBJC.PRESERVED_TARGET_SELECTION" value="JianDan" />
-    <property name="settings.editor.selected.configurable" value="editor.preferences.completion" />
+    <property name="settings.editor.selected.configurable" value="CocoaPods" />
     <property name="settings.editor.splitter.proportion" value="0.2" />
   </component>
   <component name="RecentsManager">
@@ -466,7 +755,28 @@
       </EXTENSION>
       <method />
     </configuration>
-    <list size="16">
+    <configuration default="false" name="HHRouter" type="AppleRunConfiguration" factoryName="Application" WORKING_DIR="" PASS_PARENT_ENVS="FALSE" PROJECT_NAME="Pods" TARGET_NAME="HHRouter" CONFIG_NAME="Debug" SCHEME_NAME="HHRouter" MAKE_ACTIVE="TRUE" WAIT_FOR="FALSE">
+      <envs />
+      <EXTENSION ID="org.jetbrains.appcode.reveal.RevealRunConfigurationExtension">
+        <REVEAL_SETTINGS autoInject="false" autoInstall="true" askToEnableAutoInstall="true" />
+      </EXTENSION>
+      <method />
+    </configuration>
+    <configuration default="false" name="MBProgressHUD" type="AppleRunConfiguration" factoryName="Application" WORKING_DIR="" PASS_PARENT_ENVS="FALSE" PROJECT_NAME="Pods" TARGET_NAME="MBProgressHUD" CONFIG_NAME="Debug" SCHEME_NAME="MBProgressHUD" MAKE_ACTIVE="TRUE" WAIT_FOR="FALSE">
+      <envs />
+      <EXTENSION ID="org.jetbrains.appcode.reveal.RevealRunConfigurationExtension">
+        <REVEAL_SETTINGS autoInject="false" autoInstall="true" askToEnableAutoInstall="true" />
+      </EXTENSION>
+      <method />
+    </configuration>
+    <configuration default="false" name="UITableView+FDTemplateLayoutCell" type="AppleRunConfiguration" factoryName="Application" WORKING_DIR="" PASS_PARENT_ENVS="FALSE" PROJECT_NAME="Pods" TARGET_NAME="UITableView+FDTemplateLayoutCell" CONFIG_NAME="Debug" SCHEME_NAME="UITableView+FDTemplateLayoutCell" MAKE_ACTIVE="TRUE" WAIT_FOR="FALSE">
+      <envs />
+      <EXTENSION ID="org.jetbrains.appcode.reveal.RevealRunConfigurationExtension">
+        <REVEAL_SETTINGS autoInject="false" autoInstall="true" askToEnableAutoInstall="true" />
+      </EXTENSION>
+      <method />
+    </configuration>
+    <list size="19">
       <item index="0" class="java.lang.String" itemvalue="Application.JianDan" />
       <item index="1" class="java.lang.String" itemvalue="Application.AFNetworking-RACExtensions" />
       <item index="2" class="java.lang.String" itemvalue="Application.AFNetworking" />
@@ -483,6 +793,9 @@
       <item index="13" class="java.lang.String" itemvalue="Application.SDWebImage" />
       <item index="14" class="java.lang.String" itemvalue="Application.TPKeyboardAvoiding" />
       <item index="15" class="java.lang.String" itemvalue="Application.MMDrawerController" />
+      <item index="16" class="java.lang.String" itemvalue="Application.HHRouter" />
+      <item index="17" class="java.lang.String" itemvalue="Application.MBProgressHUD" />
+      <item index="18" class="java.lang.String" itemvalue="Application.UITableView+FDTemplateLayoutCell" />
     </list>
   </component>
   <component name="ShelveChangesManager" show_recycled="false" />
@@ -499,29 +812,29 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="0" y="23" width="1280" height="709" extended-state="0" />
-    <editor active="true" />
+    <frame x="0" y="23" width="1280" height="709" extended-state="6" />
+    <editor active="false" />
     <layout>
       <window_info id="Palette&#9;" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.24921875" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.27958697" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.32806325" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.3279743" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
-      <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
     </layout>
   </component>
   <component name="Vcs.Log.UiProperties">
@@ -542,13 +855,24 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/JianDan/Section/FreshNews/ViewModel/FreshNewsViewModel.m">
+    <entry file="file://$PROJECT_DIR$/JianDan/Section/FreshNews/Model/FreshNews.m">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
-          <caret line="47" column="0" selection-start-line="47" selection-start-column="0" selection-end-line="47" selection-end-column="0" />
-          <folding>
-            <element signature="e#202#232#0" expanded="true" />
-          </folding>
+          <caret line="31" column="80" selection-start-line="31" selection-start-column="80" selection-end-line="31" selection-end-column="80" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/JianDan/Helper/LittleTools/CacheTools.m">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="27" column="28" selection-start-line="27" selection-start-column="28" selection-end-line="27" selection-end-column="28" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Podfile">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
         </state>
       </provider>
     </entry>
@@ -556,7 +880,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="135" column="76" selection-start-line="135" selection-start-column="76" selection-end-line="135" selection-end-column="76" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -564,7 +887,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -572,7 +894,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="20" column="0" selection-start-line="20" selection-start-column="0" selection-end-line="20" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -580,24 +901,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/JianDan/Section/FreshNews/ViewModel/FreshNewsViewModel.h">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/JianDan/Section/FreshNews/ViewModel/FreshNewsViewModel.m">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="35" column="0" selection-start-line="35" selection-start-column="0" selection-end-line="35" selection-end-column="0" />
-          <folding>
-            <element signature="e#202#232#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -619,7 +922,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="20" column="0" selection-start-line="20" selection-start-column="0" selection-end-line="20" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -627,31 +929,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/JianDan/Section/FreshNews/ViewModel/FreshNewsViewModel.h">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/JianDan/Section/FreshNews/View/FreshNewsController.m">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="33" column="34" selection-start-line="33" selection-start-column="34" selection-end-line="33" selection-end-column="34" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/JianDan/Section/FreshNews/ViewModel/FreshNewsViewModel.m">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="6" column="2" selection-start-line="6" selection-start-column="2" selection-end-line="6" selection-end-column="2" />
-          <folding>
-            <element signature="e#202#232#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -659,44 +936,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/JianDan/Section/FreshNews/View/FreshNewsController.h">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="10" column="30" selection-start-line="10" selection-start-column="11" selection-end-line="10" selection-end-column="30" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/JianDan/Section/FreshNews/View/FreshNewsController.m">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/JianDan/Section/FreshNews/ViewModel/FreshNewsViewModel.m">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding>
-            <element signature="e#202#232#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/JianDan/Section/FreshNews/View/FreshNewsController.h">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="10" column="30" selection-start-line="10" selection-start-column="11" selection-end-line="10" selection-end-column="30" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Pods/Headers/Public/MMDrawerController/UIViewController+MMDrawerController.h">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.75663716">
-          <caret line="37" column="59" selection-start-line="37" selection-start-column="59" selection-end-line="37" selection-end-column="59" />
         </state>
       </provider>
     </entry>
@@ -714,13 +953,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Pods/Headers/Public/FMDB/FMDatabase.h">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-4.5975423">
-          <caret line="126" column="56" selection-start-line="126" selection-start-column="51" selection-end-line="126" selection-end-column="56" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file:///Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk/System/Library/Frameworks/Foundation.framework/Headers/NSFileManager.h">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.33333334">
@@ -735,22 +967,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Pods/Headers/Public/FMDB/FMResultSet.h">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-10.004902">
-          <caret line="25" column="11" selection-start-line="25" selection-start-column="11" selection-end-line="25" selection-end-column="11" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/JianDan/Section/FreshNews/Model/FreshNews.h">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/JianDan/Section/FreshNews/ViewModel/FreshNewsViewModel.h">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
@@ -761,27 +978,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.31862745">
           <caret line="14" column="15" selection-start-line="14" selection-start-column="15" selection-end-line="14" selection-end-column="15" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/JianDan/JianDan_PrefixHeader.pch">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.30882353">
-          <caret line="65" column="0" selection-start-line="65" selection-start-column="0" selection-end-line="65" selection-end-column="62" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Pods/Headers/Public/ReactiveCocoa/RACDisposable.h">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.3382353">
-          <caret line="14" column="11" selection-start-line="14" selection-start-column="11" selection-end-line="14" selection-end-column="11" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/JianDan/Helper/LittleTools/NetTypeUtils.h">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.26960784">
-          <caret line="11" column="2" selection-start-line="11" selection-start-column="2" selection-end-line="11" selection-end-column="2" />
         </state>
       </provider>
     </entry>
@@ -799,30 +995,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/JianDan/Helper/LittleTools/NetTypeUtils.m">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.49019608">
-          <caret line="20" column="25" selection-start-line="20" selection-start-column="25" selection-end-line="20" selection-end-column="25" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/JianDan/Helper/LittleTools/CacheTools.m">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.6764706">
-          <caret line="92" column="1" selection-start-line="92" selection-start-column="1" selection-end-line="92" selection-end-column="1" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/JianDan/Section/FreshNews/ViewModel/FreshNewsViewModel.m">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="49" column="0" selection-start-line="49" selection-start-column="0" selection-end-line="49" selection-end-column="0" />
-          <folding>
-            <element signature="e#202#232#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/JianDan/Main/AppDelegate.m">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.46078432">
@@ -830,19 +1002,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/JianDan/Section/FreshNews/View/FreshNewsController.m">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.4362745">
-          <caret line="30" column="64" selection-start-line="30" selection-start-column="64" selection-end-line="30" selection-end-column="64" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/JianDan/Helper/UITableViewBindingHelper/CETableViewBindingHelper.m">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="135" column="76" selection-start-line="135" selection-start-column="76" selection-end-line="135" selection-end-column="76" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -850,15 +1013,170 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="37" column="25" selection-start-line="37" selection-start-column="25" selection-end-line="37" selection-end-column="25" />
-          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file:///Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk/System/Library/Frameworks/Foundation.framework/Headers/NSString.h">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.33333334">
+          <caret line="317" column="8" selection-start-line="317" selection-start-column="8" selection-end-line="317" selection-end-column="8" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/JianDan/Section/FreshNews/Model/FreshNews.m">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="1.2990196">
-          <caret line="53" column="4" selection-start-line="53" selection-start-column="4" selection-end-line="53" selection-end-column="4" />
+        <state vertical-scroll-proportion="0.0">
+          <caret line="34" column="22" selection-start-line="34" selection-start-column="22" selection-end-line="34" selection-end-column="22" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/JianDan/Helper/LittleTools/CacheTools.m">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="31" column="28" selection-start-line="31" selection-start-column="28" selection-end-line="31" selection-end-column="28" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Podfile">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="14" column="13" selection-start-line="14" selection-start-column="13" selection-end-line="14" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/JianDan/Section/FreshNews/ViewModel/FreshNewsDetailViewModel.m">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="33" column="7" selection-start-line="33" selection-start-column="7" selection-end-line="33" selection-end-column="7" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/JianDan/Section/FreshNews/View/FreshNewsDetailController.m">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="133" column="0" selection-start-line="133" selection-start-column="0" selection-end-line="133" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/JianDan/Section/FreshNews/View/ShareToSinaController.m">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="58" column="9" selection-start-line="58" selection-start-column="9" selection-end-line="58" selection-end-column="9" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/JianDan/Section/FreshNews/Model/FreshNewsComment.h">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.33333334">
+          <caret line="29" column="30" selection-start-line="29" selection-start-column="30" selection-end-line="29" selection-end-column="30" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/JianDan/Section/FreshNews/ViewModel/ShareToViewModel.h">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.40609136">
+          <caret line="16" column="0" selection-start-line="16" selection-start-column="0" selection-end-line="16" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/JianDan/Section/FreshNews/ViewModel/ShareToViewModel.m">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="61" column="19" selection-start-line="61" selection-start-column="19" selection-end-line="61" selection-end-column="19" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/JianDan/JianDan_PrefixHeader.pch">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.48349836">
+          <caret line="37" column="0" selection-start-line="37" selection-start-column="0" selection-end-line="38" selection-end-column="64" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/JianDan/Section/FreshNews/View/FreshNewsDetailController.h">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.37751678">
+          <caret line="15" column="0" selection-start-line="15" selection-start-column="0" selection-end-line="15" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/JianDan/Helper/CustomView/DXAlertView/LTAlertView.m">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="162" column="31" selection-start-line="162" selection-start-column="31" selection-end-line="162" selection-end-column="31" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/JianDan/Section/LeftMenu/LeftMenu.m">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/JianDan/Section/LeftMenu/LeftMenuController.m">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-0.12690355">
+          <caret line="10" column="24" selection-start-line="10" selection-start-column="24" selection-end-line="10" selection-end-column="24" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/JianDan/Section/LeftMenu/LeftMenu.h">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.4568528">
+          <caret line="18" column="0" selection-start-line="18" selection-start-column="0" selection-end-line="18" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/JianDan/Main/View/MainController.h">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/JianDan/Section/FreshNews/ViewModel/CommentViewModel.h">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.2284264">
+          <caret line="9" column="10" selection-start-line="9" selection-start-column="10" selection-end-line="9" selection-end-column="10" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/JianDan/Section/FreshNews/ViewModel/CommentViewModel.m">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-0.02538071">
+          <caret line="59" column="0" selection-start-line="57" selection-start-column="0" selection-end-line="57" selection-end-column="79" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/JianDan/Main/View/MainController.m">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="91" column="8" selection-start-line="91" selection-start-column="8" selection-end-line="91" selection-end-column="8" />
+          <folding>
+            <element signature="e#122#148#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/JianDan/Main/ViewModel/MainViewModel.m">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="1.0152284">
+          <caret line="70" column="24" selection-start-line="70" selection-start-column="24" selection-end-line="70" selection-end-column="24" />
+          <folding>
+            <element signature="e#202#227#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>

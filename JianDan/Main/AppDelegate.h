@@ -12,7 +12,7 @@
 
 @property (strong, nonatomic) UIWindow *window;
 
--(void)replaceContentViewController:(UIViewController *)controller;
+-(void)replaceContentViewController:(NSInteger)index;
 
 @end
 

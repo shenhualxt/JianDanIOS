@@ -7,6 +7,7 @@
 //
 
 #import <XCTest/XCTest.h>
+#import "CommonUtils.h"
 
 @interface JianDanTests : XCTestCase
 
@@ -25,8 +26,7 @@
 }
 
 - (void)testExample {
-    // This is an example of a functional test case.
-    // Use XCTAssert and related functions to verify your tests produce the correct results.
+    XCTAssertEqual([CommonUtils convertToInt:@"i'm a 苹果。..."], 15,@"统计错误");
 }
 
 - (void)testPerformanceExample {

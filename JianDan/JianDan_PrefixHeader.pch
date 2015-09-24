@@ -21,10 +21,14 @@
 #import "CEReactiveView.h"
 #import "CETableViewBindingHelper.h"
 #import <SDWebImage/UIImageView+WebCache.h>
+#import <HHRouter/HHRouter.h>
+
 //-------------------常用类-------------------------
 
 //-------------------本项目常用类-------------------------
 #import "Urls.h"
+#import "Constant.h"
+#import "ToastHelper.h"
 //-------------------本项目常用类-------------------------
 
 //-------------------获取设备大小-------------------------
@@ -37,6 +41,23 @@
 #define IOS8    [[[UIDevice currentDevice] systemVersion] floatValue] >= 8.0 ? YES : NO
 
 //-------------------获取设备大小-------------------------
+//-------------------GCD-------------------------
+
+#define dispatch_main_sync_safe(block)\
+if ([NSThread isMainThread]) {\
+block();\
+} else {\
+dispatch_sync(dispatch_get_main_queue(), block);\
+}
+
+#define dispatch_main_async_safe(block)\
+if ([NSThread isMainThread]) {\
+block();\
+} else {\
+dispatch_async(dispatch_get_main_queue(), block);\
+}
+
+//-------------------GCD-------------------------
 
 //-------------------带颜色的log-------------------------
 #define XCODE_COLORS_ESCAPE_MAC @"\033["
@@ -153,6 +174,9 @@ static dispatch_once_t pred; \
 + (className *)shared##className { \
 dispatch_once(&pred, ^{ \
 shared##className = [[super allocWithZone:NULL] init]; \
+if ([shared##className respondsToSelector:@selector(setUp)]) {\
+[shared##className setUp];\
+}\
 }); \
 return shared##className; \
 } \

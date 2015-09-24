@@ -15,6 +15,13 @@
 // forwards the UITableViewDelegate methods
 @property (weak, nonatomic) id<UITableViewDelegate> delegate;
 
+@property (weak, nonatomic) id<UIScrollViewDelegate> scrollViewDelegate;
+
+@property (assign, nonatomic) BOOL isDynamicHeight;
+
+@property (strong, nonatomic,readonly) NSArray *data;
+
+-(void)switchCellClass:(Class)clazz;
 
 + (instancetype)bindingHelperForTableView:(UITableView *)tableView
                              sourceSignal:(RACSignal *)source

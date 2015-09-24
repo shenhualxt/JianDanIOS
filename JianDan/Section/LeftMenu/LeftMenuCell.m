@@ -21,7 +21,7 @@
   return self;
 }
 
-- (void)bindViewModel:(LeftMenu *)leftMenu {
+- (void)bindViewModel:(LeftMenu *)leftMenu forIndexPath:(NSIndexPath *)indexPath{
     self.textLabel.text=leftMenu.menuName;
     self.imageView.image=[UIImage imageNamed:leftMenu.imageName];
 }

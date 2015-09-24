@@ -7,12 +7,31 @@
 //
 
 #import <Foundation/Foundation.h>
+#import <UIKit/UIKit.h>
 
 @interface CommonUtils : NSObject
 
++(CGSize)getStringRect:(NSString*)aString;
+
++(BOOL)isMatch:(NSString*)strPlace regex:(NSString *)regex;
+
++(BOOL)isChinese:(const NSString *)newText;
+
++(BOOL)isSpecialHansChar:(const NSString *)text;
+
++(BOOL)isHansInput:(UITextView*)textView;
+
++ (UITextPosition *)isHasHighlightText:(UITextView*)textView;
+
++ (NSInteger)convertToInt:(NSString*)strtemp;
+
++(NSInteger)countHansNum:(NSString *)text;
+
+//+(NSInteger)countWord:(NSString *)s;
+
 + (UIImage *) createImageWithColor: (UIColor *) color;
 
-+(void)call:(NSString *)num text:(NSString *)text;
+//+(void)call:(NSString *)num text:(NSString *)text;
 +(void)setLastCellSeperatorToLeft:(UITableViewCell*)cell;
 
 +(float) heightForString:(NSString *)value fontSize:(UIFont *)fontSize andWidth:(float)width;

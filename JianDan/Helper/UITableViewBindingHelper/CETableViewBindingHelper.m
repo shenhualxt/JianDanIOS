@@ -10,6 +10,7 @@
 #import "CEReactiveView.h"
 #import <ReactiveCocoa/RACEXTScope.h>
 #import "CEObservableMutableArray.h"
+#import "UITableView+FDTemplateLayoutCell.h"
 
 @interface CETableViewBindingHelper () <UITableViewDataSource, UITableViewDelegate, CEObservableMutableArrayDelegate>
 
@@ -67,27 +68,29 @@
     uint didHighlightRowAtIndexPath:1;
     uint didUnhighlightRowAtIndexPath:1;
 
+} delegateRespondsTo;
 
+@property(nonatomic, readwrite, assign) struct scrollViewDelegateMethodsCaching {
 // UIScrollViewDelegate
 //Responding to Scrolling and Dragging
-    uint scrollViewDidScroll:1;
-    uint scrollViewWillBeginDragging:1;
-    uint scrollViewWillEndDraggingWithVelocityTargetContentOffset:1;
-    uint scrollViewDidEndDraggingWillDecelerate:1;
-    uint scrollViewShouldScrollToTop:1;
-    uint scrollViewDidScrollToTop:1;
-    uint scrollViewWillBeginDecelerating:1;
-    uint scrollViewDidEndDecelerating:1;
+uint scrollViewDidScroll:1;
+uint scrollViewWillBeginDragging:1;
+uint scrollViewWillEndDraggingWithVelocityTargetContentOffset:1;
+uint scrollViewDidEndDraggingWillDecelerate:1;
+uint scrollViewShouldScrollToTop:1;
+uint scrollViewDidScrollToTop:1;
+uint scrollViewWillBeginDecelerating:1;
+uint scrollViewDidEndDecelerating:1;
 
 //Managing Zooming
-    uint viewForZoomingInScrollView:1;
-    uint scrollViewWillBeginZoomingWithView:1;
-    uint scrollViewDidEndZoomingWithViewAtScale:1;
-    uint scrollViewDidZoom:1;
+uint viewForZoomingInScrollView:1;
+uint scrollViewWillBeginZoomingWithView:1;
+uint scrollViewDidEndZoomingWithViewAtScale:1;
+uint scrollViewDidZoom:1;
 
 //Responding to Scrolling Animations
-    uint scrollViewDidEndScrollingAnimation:1;
-} delegateRespondsTo;
+uint scrollViewDidEndScrollingAnimation:1;
+} scrollViewDelegateRespondsTo;
 
 @end
 
@@ -130,13 +133,17 @@
 - (instancetype)initWithTableView:(UITableView *)tableView sourceSignal:(RACSignal *)source selectionCommand:(RACCommand *)selection customCellClass:(Class)clazz {
     self = [self initWithTableView:tableView sourceSignal:source selectionCommand:selection];
     if (self) {
-        _reuseIdentifier = [NSString stringWithFormat:@"%s", object_getClassName(clazz)];
-        UINib *nib = [UINib nibWithNibName:_reuseIdentifier bundle:nil];
-        _templateCell = [[nib instantiateWithOwner:nil options:nil] firstObject];
-        [tableView registerNib:nib forCellReuseIdentifier:_reuseIdentifier];
-        _tableView.rowHeight = _templateCell.bounds.size.height;
+        [self switchCellClass:clazz];
     }
     return self;
+}
+
+-(void)switchCellClass:(Class)clazz{
+    _reuseIdentifier = NSStringFromClass(clazz);
+    UINib *nib = [UINib nibWithNibName:_reuseIdentifier bundle:nil];
+    _templateCell = [[nib instantiateWithOwner:nil options:nil] firstObject];
+    [_tableView registerNib:nib forCellReuseIdentifier:_reuseIdentifier];
+    _tableView.rowHeight = _templateCell.bounds.size.height;
 }
 
 - (instancetype)initWithTableView:(UITableView *)tableView sourceSignal:(RACSignal *)source selectionCommand:(RACCommand *)selection templateCellClass:(Class)clazz {
@@ -175,6 +182,33 @@
 }
 
 #pragma mark - Setters
+-(void)setScrollViewDelegate:(id<UIScrollViewDelegate>)scrollViewDelegate{
+    if (self.scrollViewDelegate != scrollViewDelegate) {
+        _scrollViewDelegate = scrollViewDelegate;
+        
+    struct scrollViewDelegateMethodsCaching newMethodCaching;
+    // UIScrollViewDelegate
+    //Responding to Scrolling and Dragging
+    newMethodCaching.scrollViewDidScroll = [_scrollViewDelegate respondsToSelector:@selector(scrollViewDidScroll:)];
+    newMethodCaching.scrollViewWillBeginDragging = [_scrollViewDelegate respondsToSelector:@selector(scrollViewWillBeginDragging:)];
+    newMethodCaching.scrollViewWillEndDraggingWithVelocityTargetContentOffset = [_scrollViewDelegate respondsToSelector:@selector(scrollViewWillEndDragging:withVelocity:targetContentOffset:)];
+    newMethodCaching.scrollViewDidEndDraggingWillDecelerate = [_scrollViewDelegate respondsToSelector:@selector(scrollViewDidEndDragging:willDecelerate:)];
+    newMethodCaching.scrollViewShouldScrollToTop = [_scrollViewDelegate respondsToSelector:@selector(scrollViewShouldScrollToTop:)];
+    newMethodCaching.scrollViewDidScrollToTop = [_scrollViewDelegate respondsToSelector:@selector(scrollViewDidScrollToTop:)];
+    newMethodCaching.scrollViewWillBeginDecelerating = [_scrollViewDelegate respondsToSelector:@selector(scrollViewWillBeginDecelerating:)];
+    newMethodCaching.scrollViewDidEndDecelerating = [_scrollViewDelegate respondsToSelector:@selector(scrollViewDidEndDecelerating:)];
+    
+    //Managing Zooming
+    newMethodCaching.viewForZoomingInScrollView = [_scrollViewDelegate respondsToSelector:@selector(viewForZoomingInScrollView:)];
+    newMethodCaching.scrollViewWillBeginZoomingWithView = [_scrollViewDelegate respondsToSelector:@selector(scrollViewWillBeginZooming:withView:)];
+    newMethodCaching.scrollViewDidEndZoomingWithViewAtScale = [_scrollViewDelegate respondsToSelector:@selector(scrollViewDidEndZooming:withView:atScale:)];
+    newMethodCaching.scrollViewDidZoom = [_scrollViewDelegate respondsToSelector:@selector(scrollViewDidZoom:)];
+    
+    //Responding to Scrolling Animations
+    newMethodCaching.scrollViewDidEndScrollingAnimation = [_scrollViewDelegate respondsToSelector:@selector(scrollViewDidEndScrollingAnimation:)];
+    self.scrollViewDelegateRespondsTo=newMethodCaching;
+    }
+}
 
 - (void)setDelegate:(id <UITableViewDelegate>)delegate {
     if (self.delegate != delegate) {
@@ -233,27 +267,6 @@
         newMethodCaching.didHighlightRowAtIndexPath = [_delegate respondsToSelector:@selector(tableView:didHighlightRowAtIndexPath:)];
         newMethodCaching.didUnhighlightRowAtIndexPath = [_delegate respondsToSelector:@selector(tableView:didUnhighlightRowAtIndexPath:)];
 
-
-        // UIScrollViewDelegate
-        //Responding to Scrolling and Dragging
-        newMethodCaching.scrollViewDidScroll = [_delegate respondsToSelector:@selector(scrollViewDidScroll:)];
-        newMethodCaching.scrollViewWillBeginDragging = [_delegate respondsToSelector:@selector(scrollViewWillBeginDragging:)];
-        newMethodCaching.scrollViewWillEndDraggingWithVelocityTargetContentOffset = [_delegate respondsToSelector:@selector(scrollViewWillEndDragging:withVelocity:targetContentOffset:)];
-        newMethodCaching.scrollViewDidEndDraggingWillDecelerate = [_delegate respondsToSelector:@selector(scrollViewDidEndDragging:willDecelerate:)];
-        newMethodCaching.scrollViewShouldScrollToTop = [_delegate respondsToSelector:@selector(scrollViewShouldScrollToTop:)];
-        newMethodCaching.scrollViewDidScrollToTop = [_delegate respondsToSelector:@selector(scrollViewDidScrollToTop:)];
-        newMethodCaching.scrollViewWillBeginDecelerating = [_delegate respondsToSelector:@selector(scrollViewWillBeginDecelerating:)];
-        newMethodCaching.scrollViewDidEndDecelerating = [_delegate respondsToSelector:@selector(scrollViewDidEndDecelerating:)];
-
-        //Managing Zooming
-        newMethodCaching.viewForZoomingInScrollView = [_delegate respondsToSelector:@selector(viewForZoomingInScrollView:)];
-        newMethodCaching.scrollViewWillBeginZoomingWithView = [_delegate respondsToSelector:@selector(scrollViewWillBeginZooming:withView:)];
-        newMethodCaching.scrollViewDidEndZoomingWithViewAtScale = [_delegate respondsToSelector:@selector(scrollViewDidEndZooming:withView:atScale:)];
-        newMethodCaching.scrollViewDidZoom = [_delegate respondsToSelector:@selector(scrollViewDidZoom:)];
-
-        //Responding to Scrolling Animations
-        newMethodCaching.scrollViewDidEndScrollingAnimation = [_delegate respondsToSelector:@selector(scrollViewDidEndScrollingAnimation:)];
-
         self.delegateRespondsTo = newMethodCaching;
     }
 }
@@ -270,10 +283,10 @@
         cell = (id <CEReactiveView>) _templateCell;
     }
 
-//    NSAssert([cell respondsToSelector:@selector(bindViewModel:)], @"The cells supplied to the CETableViewBindingHelper must implement the CEReactiveView protocol");
+    NSAssert([cell respondsToSelector:@selector(bindViewModel:forIndexPath:)], @"The cells supplied to the CETableViewBindingHelper must implement the CEReactiveView protocol");
 
-    if ([cell respondsToSelector:@selector(bindViewModel:)]) {
-        [cell bindViewModel:_data[indexPath.row]];
+    if ([cell respondsToSelector:@selector(bindViewModel:forIndexPath:)]) {
+            [cell bindViewModel:_data[indexPath.row] forIndexPath:indexPath];
     }
 
     return (UITableViewCell *) cell;
@@ -296,7 +309,14 @@
 - (CGFloat)   tableView:(UITableView *)tableView
 heightForRowAtIndexPath:(NSIndexPath *)indexPath {
     CGFloat heightForRowAtIndexPath = tableView.rowHeight;
-
+    if (_isDynamicHeight) {
+        heightForRowAtIndexPath=[_tableView fd_heightForCellWithIdentifier:_reuseIdentifier cacheByIndexPath:indexPath configuration:^(id<CEReactiveView> cell) {
+            if ([cell respondsToSelector:@selector(bindViewModel:forIndexPath:)]) {
+                [cell bindViewModel:_data[indexPath.row] forIndexPath:indexPath];
+            }
+        }];
+    }
+    
     if (self.delegateRespondsTo.heightForRowAtIndexPath) {
         heightForRowAtIndexPath = [self.delegate tableView:tableView heightForRowAtIndexPath:indexPath];
     }
@@ -365,7 +385,8 @@ accessoryButtonTappedForRowWithIndexPath:(NSIndexPath *)indexPath {
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
     // execute the command
-    [_selection execute:_data[indexPath.row]];
+    RACTuple *turple=[RACTuple tupleWithObjects:_data[indexPath.row],indexPath, nil];
+    [_selection execute:turple];
 
     // forward the delegate method
     if (_delegateRespondsTo.didSelectRowAtIndexPath == 1) {
@@ -618,56 +639,56 @@ didUnhighlightRowAtIndexPath:(NSIndexPath *)indexPath {
 #pragma mark Responding to Scrolling and Dragging
 
 - (void)scrollViewDidScroll:(UIScrollView *)scrollView {
-    if (_delegateRespondsTo.scrollViewDidScroll) {
-        [self.delegate scrollViewDidScroll:scrollView];
+    if (_scrollViewDelegateRespondsTo.scrollViewDidScroll) {
+        [self.scrollViewDelegate scrollViewDidScroll:scrollView];
     }
 }
 
 - (void)scrollViewWillBeginDragging:(UIScrollView *)scrollView {
-    if (_delegateRespondsTo.scrollViewWillBeginDragging) {
-        [self.delegate scrollViewWillBeginDragging:scrollView];
+    if (_scrollViewDelegateRespondsTo.scrollViewWillBeginDragging) {
+        [self.scrollViewDelegate scrollViewWillBeginDragging:scrollView];
     }
 }
 
 - (void)scrollViewWillEndDragging:(UIScrollView *)scrollView
                      withVelocity:(CGPoint)velocity
               targetContentOffset:(inout CGPoint *)targetContentOffset {
-    if (_delegateRespondsTo.scrollViewWillEndDraggingWithVelocityTargetContentOffset) {
-        [self.delegate scrollViewWillEndDragging:scrollView withVelocity:velocity targetContentOffset:targetContentOffset];
+    if (_scrollViewDelegateRespondsTo.scrollViewWillEndDraggingWithVelocityTargetContentOffset) {
+        [self.scrollViewDelegate scrollViewWillEndDragging:scrollView withVelocity:velocity targetContentOffset:targetContentOffset];
     }
 }
 
 - (void)scrollViewDidEndDragging:(UIScrollView *)scrollView
                   willDecelerate:(BOOL)decelerate {
-    if (_delegateRespondsTo.scrollViewDidEndDraggingWillDecelerate) {
-        [self.delegate scrollViewDidEndDragging:scrollView willDecelerate:decelerate];
+    if (_scrollViewDelegateRespondsTo.scrollViewDidEndDraggingWillDecelerate) {
+        [self.scrollViewDelegate scrollViewDidEndDragging:scrollView willDecelerate:decelerate];
     }
 }
 
 - (BOOL)scrollViewShouldScrollToTop:(UIScrollView *)scrollView {
     BOOL scrollViewShouldScrollToTop = YES;
 
-    if (_delegateRespondsTo.scrollViewShouldScrollToTop) {
-        scrollViewShouldScrollToTop = [self.delegate scrollViewShouldScrollToTop:scrollView];
+    if (_scrollViewDelegateRespondsTo.scrollViewShouldScrollToTop) {
+        scrollViewShouldScrollToTop = [self.scrollViewDelegate scrollViewShouldScrollToTop:scrollView];
     }
     return scrollViewShouldScrollToTop;
 }
 
 - (void)scrollViewDidScrollToTop:(UIScrollView *)scrollView {
-    if (_delegateRespondsTo.scrollViewDidScrollToTop) {
-        [self.delegate scrollViewDidScrollToTop:scrollView];
+    if (_scrollViewDelegateRespondsTo.scrollViewDidScrollToTop) {
+        [self.scrollViewDelegate scrollViewDidScrollToTop:scrollView];
     }
 }
 
 - (void)scrollViewWillBeginDecelerating:(UIScrollView *)scrollView {
-    if (_delegateRespondsTo.scrollViewWillBeginDecelerating) {
-        [self.delegate scrollViewWillBeginDecelerating:scrollView];
+    if (_scrollViewDelegateRespondsTo.scrollViewWillBeginDecelerating) {
+        [self.scrollViewDelegate scrollViewWillBeginDecelerating:scrollView];
     }
 }
 
 - (void)scrollViewDidEndDecelerating:(UIScrollView *)scrollView {
-    if (_delegateRespondsTo.scrollViewDidEndDecelerating) {
-        [self.delegate scrollViewDidEndDecelerating:scrollView];
+    if (_scrollViewDelegateRespondsTo.scrollViewDidEndDecelerating) {
+        [self.scrollViewDelegate scrollViewDidEndDecelerating:scrollView];
     }
 }
 
@@ -676,16 +697,16 @@ didUnhighlightRowAtIndexPath:(NSIndexPath *)indexPath {
 - (UIView *)viewForZoomingInScrollView:(UIScrollView *)scrollView {
     UIView *viewForZoomingInScrollView = nil;
 
-    if (_delegateRespondsTo.viewForZoomingInScrollView) {
-        viewForZoomingInScrollView = [self.delegate viewForZoomingInScrollView:scrollView];
+    if (_scrollViewDelegateRespondsTo.viewForZoomingInScrollView) {
+        viewForZoomingInScrollView = [self.scrollViewDelegate viewForZoomingInScrollView:scrollView];
     }
     return viewForZoomingInScrollView;
 }
 
 - (void)scrollViewWillBeginZooming:(UIScrollView *)scrollView
                           withView:(UIView *)view {
-    if (_delegateRespondsTo.scrollViewWillBeginZoomingWithView) {
-        [self.delegate scrollViewWillBeginZooming:scrollView withView:view];
+    if (_scrollViewDelegateRespondsTo.scrollViewWillBeginZoomingWithView) {
+        [self.scrollViewDelegate scrollViewWillBeginZooming:scrollView withView:view];
     }
 }
 
@@ -693,22 +714,22 @@ didUnhighlightRowAtIndexPath:(NSIndexPath *)indexPath {
 - (void)scrollViewDidEndZooming:(UIScrollView *)scrollView
                        withView:(UIView *)view
                         atScale:(CGFloat)scale {
-    if (_delegateRespondsTo.scrollViewDidEndZoomingWithViewAtScale) {
-        [self.delegate scrollViewDidEndZooming:scrollView withView:view atScale:scale];
+    if (_scrollViewDelegateRespondsTo.scrollViewDidEndZoomingWithViewAtScale) {
+        [self.scrollViewDelegate scrollViewDidEndZooming:scrollView withView:view atScale:scale];
     }
 }
 
 - (void)scrollViewDidZoom:(UIScrollView *)scrollView {
-    if (_delegateRespondsTo.scrollViewDidZoom) {
-        [self.delegate scrollViewDidZoom:scrollView];
+    if (_scrollViewDelegateRespondsTo.scrollViewDidZoom) {
+        [self.scrollViewDelegate scrollViewDidZoom:scrollView];
     }
 }
 
 #pragma mark Responding to Scrolling Animations
 
 - (void)scrollViewDidEndScrollingAnimation:(UIScrollView *)scrollView {
-    if (_delegateRespondsTo.scrollViewDidEndScrollingAnimation) {
-        [self.delegate scrollViewDidEndScrollingAnimation:scrollView];
+    if (_scrollViewDelegateRespondsTo.scrollViewDidEndScrollingAnimation) {
+        [self.scrollViewDelegate scrollViewDidEndScrollingAnimation:scrollView];
     }
 }
 

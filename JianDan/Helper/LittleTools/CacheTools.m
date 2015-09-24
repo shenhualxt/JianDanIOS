@@ -21,9 +21,9 @@ static FMDatabaseQueue *queue;
 
 + (CacheTools *)sharedCacheTools {
     dispatch_once(&pred, ^{
+         sharedCacheTools = [[super allocWithZone:NULL] init];
         _db = [FMDatabase databaseWithPath:[self getPath:dbName]];
-        sharedCacheTools = [[super allocWithZone:NULL] init];
-        queue=[FMDatabaseQueue databaseQueueWithPath:[self getPath:dbName]];
+        queue = [FMDatabaseQueue databaseQueueWithPath:[self getPath:dbName]];
     });
     return sharedCacheTools;
 }
@@ -34,6 +34,10 @@ static FMDatabaseQueue *queue;
 
 - (id)copyWithZone:(NSZone *)zone {
     return self;
+}
+
+-(void)setUp{
+    
 }
 
 - (RACSignal *)read:(Class)clazz page:(NSInteger)page {
@@ -50,43 +54,62 @@ static FMDatabaseQueue *queue;
 
 //分页从数据库中取数据
 - (NSArray *)syncRead:(Class)clazz page:(NSInteger)page {
-    NSString *kTableName = [NSString stringWithFormat:@"%@", clazz];
-    // 3.打开数据库
+    // 异常数据
+    if (page < 0) {
+        return nil;
+    }
+    NSString *tableName = [NSString stringWithFormat:@"%@", clazz];
+    // 打开数据库
     if (![_db open]) {
         [_db close];
         LogBlue(@"数据库打开失败");
         [_db logsErrors];
     }
     //如果表不存在，直接返回nil
-    if (![self isTableExist:kTableName]) {
+    if (![self isTableExist:tableName]) {
         return nil;
     }
-
-    // 创建数组缓存数据
-    NSMutableArray *infoArray = [NSMutableArray array];
-
-   NSInteger totalCount= [self getTableItemCount:kTableName];
-    NSInteger start = (page - 1) * pageNum;
-    NSInteger length = pageNum;
-    if (totalCount <= pageNum) {//小于20条数据
-        length = totalCount;
-    } else if (totalCount <= page * pageNum) {//最后几条数据
-        length = totalCount - (page - 1) * pageNum;
+    //拼接sql语句
+    NSString *querySql = [self getSelectSqlTextWith:page tableName:tableName];
+    if (!querySql) {
+        return nil;
     }
-   // 根据请求参数查询数据
-    NSString *querySql = [NSString stringWithFormat:
-            @"SELECT * FROM %@ ORDER BY %@_idstr DESC limit %ld offset %ld", kTableName, kTableName,(long)length,(long)start];
+    //开始查询
     FMResultSet *resultSet = [_db executeQuery:querySql];
-    [_db logsErrors];
-    // 遍历查询结果
+
+    //遍历查询结果，放入数组中
+    NSMutableArray *infoArray = [NSMutableArray array];
     while (resultSet.next) {
         @autoreleasepool {
-            NSData *data = [resultSet objectForColumnName:[NSString stringWithFormat:@"%@_dict", kTableName]];
+            NSData *data = [resultSet objectForColumnName:[NSString stringWithFormat:@"%@_dict", tableName]];
             NSObject *obj = [NSKeyedUnarchiver unarchiveObjectWithData:data];
-            [infoArray addObject:obj];// 添加模型到数组中
+            [infoArray addObject:obj];
         }
     }
     return infoArray;
+}
+
+/**
+ * 分页和不分页的情况
+ */
+- (NSMutableString *)getSelectSqlTextWith:(NSInteger)page tableName:(NSString *)tableName {
+    NSMutableString *querySql =[NSMutableString stringWithFormat:@"SELECT * FROM %@ ORDER BY %@_idstr DESC", tableName, tableName];
+    if (page == 0) {//需要分页
+        NSInteger totalCount = [self getTableItemCount:tableName];//数据库中的行数
+        NSInteger start = (page - 1) * pageNum;
+        NSInteger length = pageNum;
+        if (totalCount <= pageNum) {//小于20条数据
+            length = totalCount;
+        } else if (totalCount <= page * pageNum) {//最后几条数据
+            length = totalCount - (page - 1) * pageNum;
+        }
+        if (length <= 0) {
+            return nil;
+        }
+        // 实现分页
+        [querySql appendFormat:@" limit %ld offset %ld", length, start];
+    }
+    return querySql;
 }
 
 - (void)save:(NSArray *)objectArray sortArgument:(NSString *)idStr {
@@ -101,46 +124,47 @@ static FMDatabaseQueue *queue;
 
 // 向数据库中存数据
 - (void)syncSave:(NSArray *)objectArray sortArgument:(NSString *)idStr {
+    //数据异常时
     if (!objectArray || ![objectArray isKindOfClass:[NSArray class]] || ![objectArray count]) {
         return;
     }
     //打开数据库
     if (![_db open]) {
         [_db close];
-        LogBlue(@"数据库打开失败");
         [_db logsErrors];
+        LogBlue(@"数据库打开失败");
         return;
     }
+    //创建表格
     Class clazz = [objectArray[0] class];
-    //第一次的话创建表
-    if (![self createTable:clazz]) {
+    NSString *tableName = [NSString stringWithFormat:@"%@", clazz];
+    if (![self createTable:tableName]) {
+        //创建表失败
         return;
     }
-
-    [queue inTransaction:^(FMDatabase *db, BOOL *rollback){
-        //存入数据
+    //存入数据
+    [queue inTransaction:^(FMDatabase *db, BOOL *rollback) {
         for (NSObject *obj in objectArray) {
             @autoreleasepool {
                 //如果已经有了,就不在存入
                 NSString *querySql = [NSString stringWithFormat:@"SELECT * FROM %@ where %@_idstr=%@",
-                                      clazz, clazz, [obj valueForKey:idStr]];
+                                                                clazz, clazz, [obj valueForKey:idStr]];
                 FMResultSet *resultSet = [db executeQuery:querySql];
                 if (resultSet.next) continue;
-                
+
                 //数据库中没有，存入
                 NSData *data = [NSKeyedArchiver archivedDataWithRootObject:obj];// 把dict字典对象序列化成NSData二进制数据
                 NSString *updateSql = [NSString stringWithFormat:@"INSERT INTO %@ (%@_idstr, " @"%@_dict) VALUES (?, ?);",
-                                       clazz, clazz, clazz];
+                                                                 clazz, clazz, clazz];
                 BOOL success = [db executeUpdate:updateSql, [obj valueForKey:idStr], data];
                 if (!success) {
                     LogBlue(@"插入数据失败");
-//                    *rollback=YES;
+                    //*rollback=YES;
                 }
             }
         }
-       
-    }];
 
+    }];
 }
 
 
@@ -152,12 +176,10 @@ static FMDatabaseQueue *queue;
 }
 
 // 获得表的数据条数
-- (NSInteger)getTableItemCount:(NSString *)tableName
-{
+- (NSInteger)getTableItemCount:(NSString *)tableName {
     NSString *sqlstr = [NSString stringWithFormat:@"SELECT count(*) as 'count' FROM %@", tableName];
     FMResultSet *rs = [_db executeQuery:sqlstr];
-    while ([rs next])
-    {
+    while ([rs next]) {
         return [rs intForColumn:@"count"];
     }
     return 0;
@@ -165,8 +187,7 @@ static FMDatabaseQueue *queue;
 
 
 // 创建表
-- (BOOL)createTable:(Class)clazz {
-    NSString *tableName = [NSString stringWithFormat:@"%@", clazz];
+- (BOOL)createTable:(NSString *)tableName {
     NSString *updateSql = [NSString stringWithFormat:@"CREATE TABLE IF NOT EXISTS %@ "
                                                              @"(id integer PRIMARY KEY "
                                                              @"AUTOINCREMENT,%@_idstr text NOT "

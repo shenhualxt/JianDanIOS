@@ -12,6 +12,6 @@
 @protocol CEReactiveView <NSObject>
 
 /// Binds the given view model to the view
-- (void)bindViewModel:(id)viewModel;
+- (void)bindViewModel:(id)viewModel forIndexPath:(NSIndexPath *)indexPath;
 
 @end

@@ -9,9 +9,13 @@
 #import "LeftMenuController.h"
 #import "LeftMenu.h"
 #import "LeftMenuCell.h"
-#import "AppDelegate.h"
-#import "FreshNewsController.h"
 #import "UIViewController+MMDrawerController.h"
+#import "FreshNews.h"
+#import "BoredPictures.h"
+#import "FreshNewsCell.h"
+#import "BoredPictursCell.h"
+#import "AppDelegate.h"
+#import "BoredPicturesController.h"
 
 @interface LeftMenuController ()
 
@@ -29,9 +33,10 @@
 
 - (void)bindingTableView {
     self.tableView.backgroundColor = [UIColor darkGrayColor];
-    RACCommand *menuCommand = [[RACCommand alloc] initWithSignalBlock:^RACSignal *(id input) {
+    RACCommand *menuCommand = [[RACCommand alloc] initWithSignalBlock:^RACSignal *(RACTuple *turple) {
         AppDelegate *delegate = (AppDelegate *) [UIApplication sharedApplication].delegate;
-        [delegate replaceContentViewController:[FreshNewsController new]];
+        NSIndexPath *indexPath=turple.second;
+        [delegate replaceContentViewController:indexPath.row];
         return [RACSignal empty];
     }];
     [CETableViewBindingHelper bindingHelperForTableView:self.tableView sourceSignal:RACObserve(self, menuArray) selectionCommand:menuCommand templateCellClass:[LeftMenuCell class]];
@@ -52,7 +57,7 @@
     [settingButton setBackgroundImage:[CommonUtils createImageWithColor:RGBA(255, 255, 255, 0.6)] forState:UIControlStateHighlighted];
     [[settingButton rac_signalForControlEvents:UIControlEventTouchUpInside] subscribeNext:^(id x) {
         MMDrawerController *drawerController = self.mm_drawerController;
-        [drawerController.navigationController pushViewController:[FreshNewsController new] animated:YES];
+        [drawerController.navigationController pushViewController:[BoredPicturesController new] animated:YES];
     }];
 }
 
@@ -61,6 +66,7 @@
         _menuArray = [NSMutableArray array];
         NSArray *imageNameArray = @[@"ic_explore_white_24dp", @"ic_mood_white_24dp", @"ic_local_florist_white_24dp", @"ic_chat_white_24dp", @"ic_movie_white_24dp"];
         NSArray *menuNameArray = @[@"新鲜事", @"无聊图", @"妹子图", @"段子", @"小电影"];
+
         for (int i = 0; i < [menuNameArray count]; ++i) {
             LeftMenu *menu = [LeftMenu menuWithImageName:imageNameArray[i] menuName:menuNameArray[i]];
             [_menuArray addObject:menu];

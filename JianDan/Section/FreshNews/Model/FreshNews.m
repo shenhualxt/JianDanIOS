@@ -10,7 +10,7 @@
 
 static NSDateFormatter *formatter;
 
-@implementation Posts
+@implementation FreshNews
 
 +(NSDateFormatter *)formatter{
     if (!formatter) {
@@ -22,25 +22,12 @@ static NSDateFormatter *formatter;
     return formatter;
 }
 
-+(NSDictionary *)objectClassInArray{
-  return @{@"tags":[Tags class]};
-}
-
 - (NSString *)date {
 //  "2015-08-30 12:40:26"  ---> NSDate --> 1363948516
-  NSDate* date = [[Posts formatter] dateFromString:_date];
+  NSDate* date = [[FreshNews formatter] dateFromString:_date];
   return [NSString stringWithFormat:@"%ld", (long)[date timeIntervalSince1970]];
 }
 
-MJCodingImplementation
-@end
-
-@implementation Tags
-
-+ (NSDictionary*)replacedKeyFromPropertyName
-{
-  return @{ @"desc" : @"description" };
-}
 MJCodingImplementation
 @end
 
@@ -86,10 +73,6 @@ MJCodingImplementation
 MJCodingImplementation
 @end
 
-@implementation FreshNews
 
-+(NSDictionary *)objectClassInArray{
-  return @{@"posts":[Posts class]};
-}
-MJCodingImplementation
-@end
+
+

@@ -12,8 +12,24 @@
       <sourceFolder url="file://$MODULE_DIR$/JianDan/Helper/BaseViewController/BaseTableViewController.m" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/JianDan/Helper/BaseViewController/BaseViewController.h" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/JianDan/Helper/BaseViewController/BaseViewController.m" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/JianDan/Helper/CustomView/UILabelEx.h" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/JianDan/Helper/CustomView/UILabelEx.m" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/JianDan/Helper/Category/NSDate+MJ.h" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/JianDan/Helper/Category/NSDate+MJ.m" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/JianDan/Helper/Category/NSDictionary+JSONString.h" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/JianDan/Helper/Category/NSDictionary+JSONString.m" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/JianDan/Helper/Category/UIWebView+RAC.h" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/JianDan/Helper/Category/UIWebView+RAC.m" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/JianDan/Helper/CustomView/DMLazyScrollView/DMLazyScrollView.h" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/JianDan/Helper/CustomView/DMLazyScrollView/DMLazyScrollView.m" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/JianDan/Helper/CustomView/DXAlertView/LTAlertView.h" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/JianDan/Helper/CustomView/DXAlertView/LTAlertView.m" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/JianDan/Helper/CustomView/FloorView/LTFloorView.h" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/JianDan/Helper/CustomView/FloorView/LTFloorView.m" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/JianDan/Helper/CustomView/InsetsLabel.h" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/JianDan/Helper/CustomView/InsetsLabel.m" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/JianDan/Helper/CustomView/ScaleImageView.h" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/JianDan/Helper/CustomView/ScaleImageView.m" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/JianDan/Helper/CustomView/UITextViewEx.h" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/JianDan/Helper/CustomView/UITextViewEx.m" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/JianDan/Helper/LittleTools/AFNetWorkUtils.h" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/JianDan/Helper/LittleTools/AFNetWorkUtils.m" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/JianDan/Helper/LittleTools/CacheTools.h" isTestSource="false" />
@@ -26,10 +42,10 @@
       <sourceFolder url="file://$MODULE_DIR$/JianDan/Helper/LittleTools/MJExtensionConfig.m" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/JianDan/Helper/LittleTools/NSCodingTools.h" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/JianDan/Helper/LittleTools/NSCodingTools.m" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/JianDan/Helper/LittleTools/NetTypeUtils.h" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/JianDan/Helper/LittleTools/NetTypeUtils.m" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/JianDan/Helper/LittleTools/PopoverView.h" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/JianDan/Helper/LittleTools/PopoverView.m" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/JianDan/Helper/LittleTools/ToastHelper.h" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/JianDan/Helper/LittleTools/ToastHelper.m" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/JianDan/Helper/UITableViewBindingHelper/CEObservableMutableArray.h" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/JianDan/Helper/UITableViewBindingHelper/CEObservableMutableArray.m" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/JianDan/Helper/UITableViewBindingHelper/CEReactiveView.h" isTestSource="false" />
@@ -37,20 +53,74 @@
       <sourceFolder url="file://$MODULE_DIR$/JianDan/Helper/UITableViewBindingHelper/CETableViewBindingHelper.m" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/JianDan/Helper/UITableViewBindingHelper/HRCollectionViewBindingHelper.h" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/JianDan/Helper/UITableViewBindingHelper/HRCollectionViewBindingHelper.m" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/JianDan/Helper/Vender/UMSocial_Sdk_4.2.3/Header/UMSocial.h" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/JianDan/Helper/Vender/UMSocial_Sdk_4.2.3/Header/UMSocialAccountManager.h" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/JianDan/Helper/Vender/UMSocial_Sdk_4.2.3/Header/UMSocialBar.h" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/JianDan/Helper/Vender/UMSocial_Sdk_4.2.3/Header/UMSocialConfig.h" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/JianDan/Helper/Vender/UMSocial_Sdk_4.2.3/Header/UMSocialControllerService.h" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/JianDan/Helper/Vender/UMSocial_Sdk_4.2.3/Header/UMSocialControllerServiceComment.h" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/JianDan/Helper/Vender/UMSocial_Sdk_4.2.3/Header/UMSocialData.h" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/JianDan/Helper/Vender/UMSocial_Sdk_4.2.3/Header/UMSocialDataService.h" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/JianDan/Helper/Vender/UMSocial_Sdk_4.2.3/Header/UMSocialSnsData.h" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/JianDan/Helper/Vender/UMSocial_Sdk_4.2.3/Header/UMSocialSnsPlatformManager.h" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/JianDan/Helper/Vender/UMSocial_Sdk_4.2.3/Header/UMSocialSnsService.h" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/JianDan/Helper/Vender/UMSocial_Sdk_4.2.3/SocialSDKXib/UMSCommentDetailController.xib" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/JianDan/Helper/Vender/UMSocial_Sdk_4.2.3/SocialSDKXib/UMSCommentInputController.xib" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/JianDan/Helper/Vender/UMSocial_Sdk_4.2.3/SocialSDKXib/UMSCommentInputControlleriPad.xib" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/JianDan/Helper/Vender/UMSocial_Sdk_4.2.3/SocialSDKXib/UMSLoginViewController.xib" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/JianDan/Helper/Vender/UMSocial_Sdk_4.2.3/SocialSDKXib/UMSShareListController.xib" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/JianDan/Helper/Vender/UMSocial_Sdk_4.2.3/SocialSDKXib/UMShareEditViewController.xib" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/JianDan/Helper/Vender/UMSocial_Sdk_4.2.3/SocialSDKXib/UMShareEditViewControlleriPad.xib" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/JianDan/Helper/Vender/UMSocial_Sdk_4.2.3/SocialSDKXib/UMSnsAccountViewController.xib" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/JianDan/Helper/Vender/UMSocial_Sdk_4.2.3/UMSocialSDKResourcesNew.bundle" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/JianDan/Helper/Vender/UMSocial_Sdk_4.2.3/en.lproj/UMSocialLocalizable.strings" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/JianDan/Helper/Vender/UMSocial_Sdk_4.2.3/libUMSocial_Sdk_4.2.3.a" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/JianDan/Helper/Vender/UMSocial_Sdk_4.2.3/zh-Hans.lproj/UMSocialLocalizable.strings" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/JianDan/Info.plist" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/JianDan/JianDan_PrefixHeader.pch" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/JianDan/LaunchScreen.xib" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/JianDan/Main/AppDelegate.h" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/JianDan/Main/AppDelegate.m" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/JianDan/Main/Constant.h" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/JianDan/Main/Urls.h" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/JianDan/Main/View/MainController.h" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/JianDan/Main/View/MainController.m" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/JianDan/Main/ViewModel/MainViewModel.h" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/JianDan/Main/ViewModel/MainViewModel.m" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/JianDan/Section/BoredPictures/Model/BoredPictures.h" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/JianDan/Section/BoredPictures/Model/BoredPictures.m" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/JianDan/Section/BoredPictures/View/BoredPictursCell.h" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/JianDan/Section/BoredPictures/View/BoredPictursCell.m" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/JianDan/Section/BoredPictures/View/BoredPictursCell.xib" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/JianDan/Section/FreshNews/Model/FreshNews.h" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/JianDan/Section/FreshNews/Model/FreshNews.m" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/JianDan/Section/FreshNews/Model/FreshNewsComment.h" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/JianDan/Section/FreshNews/Model/FreshNewsComment.m" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/JianDan/Section/FreshNews/Model/FreshNewsDetail.h" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/JianDan/Section/FreshNews/Model/FreshNewsDetail.m" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/JianDan/Section/FreshNews/View/CommentClickAlertView.xib" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/JianDan/Section/FreshNews/View/CommentController.h" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/JianDan/Section/FreshNews/View/CommentController.m" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/JianDan/Section/FreshNews/View/CommentsCell.h" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/JianDan/Section/FreshNews/View/CommentsCell.m" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/JianDan/Section/FreshNews/View/CommentsCell.xib" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/JianDan/Section/FreshNews/View/FreshNewsCell.h" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/JianDan/Section/FreshNews/View/FreshNewsCell.m" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/JianDan/Section/FreshNews/View/FreshNewsCell.xib" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/JianDan/Section/FreshNews/View/FreshNewsController.h" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/JianDan/Section/FreshNews/View/FreshNewsController.m" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/JianDan/Section/FreshNews/ViewModel/FreshNewsViewModel.h" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/JianDan/Section/FreshNews/ViewModel/FreshNewsViewModel.m" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/JianDan/Section/FreshNews/View/FreshNewsDetailController.h" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/JianDan/Section/FreshNews/View/FreshNewsDetailController.m" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/JianDan/Section/FreshNews/View/PushCommentController.h" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/JianDan/Section/FreshNews/View/PushCommentController.m" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/JianDan/Section/FreshNews/View/ShareToSinaController.h" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/JianDan/Section/FreshNews/View/ShareToSinaController.m" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/JianDan/Section/FreshNews/View/SubCommentView.xib" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/JianDan/Section/FreshNews/View/TouristAlertView.xib" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/JianDan/Section/FreshNews/ViewModel/CommentViewModel.h" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/JianDan/Section/FreshNews/ViewModel/CommentViewModel.m" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/JianDan/Section/FreshNews/ViewModel/FreshNewsDetailViewModel.h" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/JianDan/Section/FreshNews/ViewModel/FreshNewsDetailViewModel.m" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/JianDan/Section/FreshNews/ViewModel/ShareToViewModel.h" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/JianDan/Section/FreshNews/ViewModel/ShareToViewModel.m" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/JianDan/Section/LeftMenu/LeftMenu.h" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/JianDan/Section/LeftMenu/LeftMenu.m" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/JianDan/Section/LeftMenu/LeftMenuCell.h" isTestSource="false" />
@@ -58,10 +128,9 @@
       <sourceFolder url="file://$MODULE_DIR$/JianDan/Section/LeftMenu/LeftMenuController.h" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/JianDan/Section/LeftMenu/LeftMenuController.m" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/JianDan/main.m" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/JianDan/style.css" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/JianDanTests/Info.plist" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/JianDanTests/JianDanTests.m" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/JianDanUITests/Info.plist" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/JianDanUITests/JianDanUITests.m" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/Podfile" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/Pods/AFNetworking-RACExtensions/ReactiveAFNetworking/AFHTTPRequestOperationManager+RACSupport.h" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/Pods/AFNetworking-RACExtensions/ReactiveAFNetworking/AFHTTPRequestOperationManager+RACSupport.m" isTestSource="false" />
@@ -141,6 +210,8 @@
       <sourceFolder url="file://$MODULE_DIR$/Pods/FMDB/src/fmdb/FMDatabaseQueue.m" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/Pods/FMDB/src/fmdb/FMResultSet.h" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/Pods/FMDB/src/fmdb/FMResultSet.m" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Pods/HHRouter/HHRouter/HHRouter.h" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Pods/HHRouter/HHRouter/HHRouter.m" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/Pods/Kiwi/Classes/Config/KWAllTestsSuite.m" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/Pods/Kiwi/Classes/Config/KWSuiteConfigurationBase.h" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/Pods/Kiwi/Classes/Config/KWSuiteConfigurationBase.m" isTestSource="false" />
@@ -325,6 +396,8 @@
       <sourceFolder url="file://$MODULE_DIR$/Pods/Kiwi/Classes/Verifiers/KWMatchVerifier.h" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/Pods/Kiwi/Classes/Verifiers/KWMatchVerifier.m" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/Pods/Kiwi/Classes/Verifiers/KWVerifying.h" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Pods/MBProgressHUD/MBProgressHUD.h" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Pods/MBProgressHUD/MBProgressHUD.m" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/Pods/MJExtension/MJExtension/MJDictionaryCache.h" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/Pods/MJExtension/MJExtension/MJDictionaryCache.m" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/Pods/MJExtension/MJExtension/MJExtension.h" isTestSource="false" />
@@ -650,10 +723,18 @@
       <sourceFolder url="file://$MODULE_DIR$/Pods/Target Support Files/FMDB/FMDB-dummy.m" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/Pods/Target Support Files/FMDB/FMDB-prefix.pch" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/Pods/Target Support Files/FMDB/FMDB.xcconfig" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Pods/Target Support Files/HHRouter/HHRouter-Private.xcconfig" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Pods/Target Support Files/HHRouter/HHRouter-dummy.m" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Pods/Target Support Files/HHRouter/HHRouter-prefix.pch" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Pods/Target Support Files/HHRouter/HHRouter.xcconfig" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/Pods/Target Support Files/Kiwi/Kiwi-Private.xcconfig" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/Pods/Target Support Files/Kiwi/Kiwi-dummy.m" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/Pods/Target Support Files/Kiwi/Kiwi-prefix.pch" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/Pods/Target Support Files/Kiwi/Kiwi.xcconfig" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Pods/Target Support Files/MBProgressHUD/MBProgressHUD-Private.xcconfig" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Pods/Target Support Files/MBProgressHUD/MBProgressHUD-dummy.m" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Pods/Target Support Files/MBProgressHUD/MBProgressHUD-prefix.pch" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Pods/Target Support Files/MBProgressHUD/MBProgressHUD.xcconfig" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/Pods/Target Support Files/MJExtension/MJExtension-Private.xcconfig" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/Pods/Target Support Files/MJExtension/MJExtension-dummy.m" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/Pods/Target Support Files/MJExtension/MJExtension-prefix.pch" isTestSource="false" />
@@ -698,6 +779,12 @@
       <sourceFolder url="file://$MODULE_DIR$/Pods/Target Support Files/TPKeyboardAvoiding/TPKeyboardAvoiding-dummy.m" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/Pods/Target Support Files/TPKeyboardAvoiding/TPKeyboardAvoiding-prefix.pch" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/Pods/Target Support Files/TPKeyboardAvoiding/TPKeyboardAvoiding.xcconfig" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Pods/Target Support Files/UITableView+FDTemplateLayoutCell/UITableView+FDTemplateLayoutCell-Private.xcconfig" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Pods/Target Support Files/UITableView+FDTemplateLayoutCell/UITableView+FDTemplateLayoutCell-dummy.m" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Pods/Target Support Files/UITableView+FDTemplateLayoutCell/UITableView+FDTemplateLayoutCell-prefix.pch" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Pods/Target Support Files/UITableView+FDTemplateLayoutCell/UITableView+FDTemplateLayoutCell.xcconfig" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Pods/UITableView+FDTemplateLayoutCell/Classes/UITableView+FDTemplateLayoutCell.h" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Pods/UITableView+FDTemplateLayoutCell/Classes/UITableView+FDTemplateLayoutCell.m" isTestSource="false" />
     </content>
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />

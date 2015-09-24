@@ -8,6 +8,9 @@
 
 #import "FreshNewsCell.h"
 #import "FreshNews.h"
+#import "UITableViewCell+TableView.h"
+#import "ShareToSinaController.h"
+#import "UIViewController+MMDrawerController.h"
 
 @interface FreshNewsCell ()
 
@@ -24,10 +27,8 @@
 
 - (void)awakeFromNib {
     [super awakeFromNib];
-    self.imageFreshNews.layer.cornerRadius = self.freshNewsView.layer.cornerRadius = 4;
-    self.imageFreshNews.layer.masksToBounds = self.freshNewsView.layer.masksToBounds = YES;
     self.btnTitle.titleLabel.numberOfLines = 0;
-
+     self.selectionStyle = UITableViewCellSelectionStyleNone;
     //设置阴影
     self.freshNewsView.layer.shadowColor = RGBA(0, 0, 0, 0.5).CGColor;
     self.freshNewsView.layer.shadowOffset = CGSizeMake(0, 1);
@@ -36,16 +37,24 @@
     self.freshNewsView.clipsToBounds = NO;
     
     [self setShadowPath];
-    
 }
 
-- (void)bindViewModel:(Posts *)posts {
-    [self.btnTitle setTitle:posts.title forState:UIControlStateNormal];
-    self.labelAuthorName.text = [posts.author name];
-    [self.imageFreshNews sd_setImageWithURL:posts.custom_fields.thumb_m];
-    self.labelViewTimes.text = posts.custom_fields.viewsCount;
+- (void)bindViewModel:(FreshNews *)freshNews forIndexPath:(NSIndexPath *)indexPath{
+    [self.btnTitle setTitle:freshNews.title forState:UIControlStateNormal];
+    self.labelAuthorName.text = [freshNews.author name];
+    [self.imageFreshNews sd_setImageWithURL:freshNews.custom_fields.thumb_m placeholderImage:[UIImage imageNamed:@"ic_loading_large"]];
+    self.labelViewTimes.text = freshNews.custom_fields.viewsCount;
+    @weakify(self)
+    self.buttonShare.rac_command=[[RACCommand alloc] initWithSignalBlock:^RACSignal *(id input) {
+         @strongify(self)
+        NSMutableString *shareText=[NSMutableString stringWithFormat:@"【%@】", freshNews.title];
+        [shareText appendFormat:@"%@ (来自 @煎蛋网)", freshNews.url];
+        ShareToSinaController *shareToSinaController=[ShareToSinaController new];
+        shareToSinaController.sendObject=shareText;
+        [[self controller].mm_drawerController.navigationController pushViewController:shareToSinaController animated:YES];
+        return [RACSignal empty];
+    }];;
 }
-
 
 - (void)setShadowPath {
     //右下路径阴影

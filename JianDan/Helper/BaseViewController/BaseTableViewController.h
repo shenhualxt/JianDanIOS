@@ -9,4 +9,15 @@
 #import <UIKit/UIKit.h>
 
 @interface BaseTableViewController : UITableViewController
+@property(nonatomic,strong) id sendObject;
+@property(nonatomic,strong) id resultObject;
+
+-(void)pushViewController:(Class)class object:(id)sendObject;
+
+-(void)popViewController:(Class)class object:(id)sendObject;
+
+-(UIBarButtonItem *)createButtonItem:(NSString*)imageName;
+
+-(void)whenNetErrorHappened:(NSString *)tipText command:(RACCommand *)command;
+
 @end

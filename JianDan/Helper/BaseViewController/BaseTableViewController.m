@@ -7,6 +7,8 @@
 //
 
 #import "BaseTableViewController.h"
+#import "BaseViewController.h"
+#import "PureLayout.h"
 
 @interface BaseTableViewController ()
 
@@ -35,10 +37,6 @@
 
   //设置透明
   self.tableView.separatorStyle = UITableViewCellSelectionStyleNone;
-//  self.tableView.backgroundView = nil;
-//  self.tableView.backgroundView.alpha = 0;
-//  self.tableView.backgroundColor = [UIColor clearColor];
-//  self.tableView.opaque = NO;
 
   //处理UIViewController的可视区域的高度
   if ([self respondsToSelector:@selector(edgesForExtendedLayout)]) {
@@ -46,29 +44,77 @@
 
     //减去导航条的高度
     if (!self.navigationController.navigationBarHidden) {
-      contentRect.size.height -=
-          self.navigationController.navigationBar.frame.size.height;
-      contentRect.origin.y +=
-          self.navigationController.navigationBar.frame.size.height;
+      contentRect.size.height -=self.navigationController.navigationBar.frame.size.height;
+      contentRect.origin.y +=self.navigationController.navigationBar.frame.size.height;
 
       //减去状态栏的高度
       if (![UIApplication sharedApplication].statusBarHidden) {
-        contentRect.size.height -=
-            [UIApplication sharedApplication].statusBarFrame.size.height;
-        contentRect.origin.y +=
-            [UIApplication sharedApplication].statusBarFrame.size.height;
+        contentRect.size.height -=[UIApplication sharedApplication].statusBarFrame.size.height;
+        contentRect.origin.y +=[UIApplication sharedApplication].statusBarFrame.size.height;
       }
     }
 
     //减去tabBar的高度
     if ((self.tabBarController != nil) &&
         !self.tabBarController.hidesBottomBarWhenPushed) {
-      contentRect.size.height = contentRect.size.height -
-                                self.tabBarController.tabBar.frame.size.height;
+      contentRect.size.height = contentRect.size.height -self.tabBarController.tabBar.frame.size.height;
     }
 
     self.view.frame = contentRect;
   }
+}
+
+-(void)pushViewController:(Class)class object:(id)sendObject{
+    if (![class isSubclassOfClass:[BaseViewController class]]&&![class isSubclassOfClass:[BaseTableViewController class]]) {
+        return;
+    }
+    
+    BaseViewController *vc=[class new];
+    vc.sendObject=sendObject;
+    [self.navigationController pushViewController:vc animated:YES];
+}
+
+-(void)popViewController:(Class)class object:(id)resultObject{
+    if (![class isSubclassOfClass:[BaseViewController class]]&&![class isSubclassOfClass:[BaseTableViewController class]]) {
+        return;
+    }
+    BaseViewController *vc=(BaseViewController*)[self findViewController:class];
+    vc.resultObject=resultObject;
+    [self.navigationController popToViewController:vc animated:YES];
+}
+
+- (UIViewController*)findViewController:(Class)aClass
+{
+    for (UIViewController* controller in self.navigationController.viewControllers) {
+        if ([controller isKindOfClass:aClass]) {
+            return controller;
+        }
+    }
+    return nil;
+}
+
+-(void)whenNetErrorHappened:(NSString *)tipText command:(RACCommand *)command{
+    self.navigationController.navigationBar.hidden=NO;
+    UIImageView *netErrorView=[[[NSBundle mainBundle] loadNibNamed:@"NetError" owner:nil options:nil] lastObject];
+    netErrorView.image=[UIImage imageNamed:@"rightBg"];
+    [self.view addSubview:netErrorView];
+    [netErrorView autoPinEdgesToSuperviewEdgesWithInsets:UIEdgeInsetsZero];
+    UILabel *labelTip=(UILabel *)[netErrorView viewWithTag:3];
+    labelTip.text=tipText;
+    UIButton *buttonRetry=(UIButton *)[netErrorView viewWithTag:4];
+    buttonRetry.rac_command=command;
+    [[command.executionSignals switchToLatest] subscribeNext:^(id x) {
+        [netErrorView removeFromSuperview];
+    }];
+}
+
+-(UIBarButtonItem *)createButtonItem:(NSString*)imageName{
+    UIButton* rightButton = [UIButton buttonWithType:UIButtonTypeCustom];
+    UIImage* imageRight = [UIImage imageNamed:imageName];
+    rightButton.frame = CGRectMake(0, 0, 30, imageRight.size.height);
+    [rightButton setImage:imageRight forState:UIControlStateNormal];
+    rightButton.backgroundColor = [UIColor clearColor];
+    return [[UIBarButtonItem alloc] initWithCustomView:rightButton];
 }
 
 - (void)initLeftnavigationBar {

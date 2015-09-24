@@ -153,8 +153,8 @@
       cell=(id<CEReactiveView>)_templateCell;
     }
 
-    if ([cell respondsToSelector:@selector(bindViewModel:)]) {
-      [cell bindViewModel:_data[indexPath.row]];
+    if ([cell respondsToSelector:@selector(bindViewModel:forIndexPath:)]) {
+      [cell bindViewModel:_data[indexPath.row] forIndexPath:indexPath];
     }
     return (UICollectionViewCell *)cell;
 }

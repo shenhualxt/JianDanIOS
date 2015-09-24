@@ -12,6 +12,106 @@
 
 @implementation CommonUtils
 
++(CGSize)getStringRect:(NSString*)aString
+{
+    CGSize size;
+    NSAttributedString* atrString = [[NSAttributedString alloc] initWithString:aString];
+    NSRange range = NSMakeRange(0, atrString.length);
+    NSDictionary* dic = [atrString attributesAtIndex:0 effectiveRange:&range];
+    size = [aString boundingRectWithSize:CGSizeMake(237, 200)  options:NSStringDrawingUsesLineFragmentOrigin attributes:dic context:nil].size;
+    return  size;
+}
+
++(BOOL)isMatch:(NSString*)strPlace regex:(NSString *)regex
+{
+    //    NSString* regex = regex;//@"\\d{7}";
+    NSPredicate* predicateTest = [NSPredicate predicateWithFormat:@"SELF MATCHES %@", regex];
+    
+    return [predicateTest evaluateWithObject:strPlace];
+}
+
+#pragma mark TextView method
++(BOOL)isChinese:(const NSString *)newText {
+    if (!newText.length){
+        return NO;
+    }
+    unichar c = [newText characterAtIndex:0];
+    return (c >= 0x4e00 && c <= 0x9fff);
+}
+
++(BOOL)isSpecialHansChar:(const NSString *)text {
+    if (!text.length) {
+        return NO;
+    }
+    int asciiCode = [text characterAtIndex:0]; //65
+    BOOL isSpecialHansChar = (asciiCode >= 10123 && asciiCode <= 10130);
+    return isSpecialHansChar;
+}
+
++(BOOL)isHansInput:(UITextView*)textView  {
+    NSString *lang = [textView.textInputMode primaryLanguage];
+    BOOL isHansInput = [lang isEqualToString:@"zh-Hans"];
+    return isHansInput;
+}
+
++ (UITextPosition *)isHasHighlightText:(UITextView*)textView {
+    UITextRange *selectedRange = [textView markedTextRange];
+    UITextPosition *position = [textView positionFromPosition:selectedRange.start offset:0];
+    return position;
+}
+
++ (NSInteger)convertToInt:(NSString*)strtemp//判断中英混合的的字符串长度
+{
+    CGFloat strlength = 0;
+    char* p = (char*)[strtemp cStringUsingEncoding:NSUnicodeStringEncoding];
+    for (int i=0 ; i<[strtemp lengthOfBytesUsingEncoding:NSUnicodeStringEncoding] ;i++) {
+        if (*p) {
+            p++;
+            strlength++;
+        }
+        else {
+            p++;
+        }
+    }
+    return strlength/2;
+}
+
+
++(NSInteger)countHansNum:(NSString *)text{
+    NSInteger count=0;
+    NSInteger length = [text length];
+    for (int i=0; i<length; ++i)
+    {
+        NSRange range = NSMakeRange(i, 1);
+        NSString *subString = [text substringWithRange:range];
+        const char    *cString = [subString UTF8String];
+        if (strlen(cString) == 3)
+        {
+            count++;
+        }
+    }
+    
+    return count;
+}
+
++(NSInteger)countWord:(NSString *)s
+{
+    int i,n=(int)[s length],l=0,a=0,b=0;
+    unichar c;
+    for(i=0;i<n;i++){
+        c=[s characterAtIndex:i];
+        if(isblank(c)){
+            b++;
+        }else if(isascii(c)){
+            a++;
+        }else{
+            l++;
+        }
+    }
+    if(a==0 && l==0) return 0;
+    return l+(int)ceilf((float)(a+b)/2.0);
+}
+
 + (UIImage *) createImageWithColor: (UIColor *) color
 {
   CGRect rect=CGRectMake(0.0f, 0.0f, 1.0f, 1.0f);
@@ -122,7 +222,7 @@
 
         [result appendString:[NSString stringWithFormat:@"@property(nonatomic,%@) %@ %@%@;\n", property, type, isObject, key]];
     }
-    LogBlue(@"%@一共%d个字段", result, i);
+    NSLog(@"%@一共%d个字段", result, i);
 }
 
 + (NSString*)sha1:(NSString*)str

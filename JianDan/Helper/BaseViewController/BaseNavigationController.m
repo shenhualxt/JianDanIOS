@@ -19,7 +19,7 @@
     self.view.backgroundColor=UIColorFromRGB(0xFFFFFF);
     self.navigationBar.barStyle = UIStatusBarStyleDefault;
     [[UINavigationBar appearance] setBarTintColor:[UIColor darkGrayColor]];//设置当行条颜色
-    int fontSize = iPhone6 ? 20 : 23;
+    int fontSize = iPhone6 ? 18 : 20;
     [[UINavigationBar appearance] setTitleTextAttributes:[NSDictionary dictionaryWithObjectsAndKeys:[UIColor whiteColor], NSForegroundColorAttributeName, [UIFont systemFontOfSize:fontSize], NSFontAttributeName, nil]];
 }
 

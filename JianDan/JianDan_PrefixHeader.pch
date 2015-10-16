@@ -40,23 +40,6 @@
 #define IOS8    [[[UIDevice currentDevice] systemVersion] floatValue] >= 8.0 ? YES : NO
 
 //-------------------获取设备大小-------------------------
-//-------------------GCD-------------------------
-
-#define dispatch_main_sync_safe(block)\
-if ([NSThread isMainThread]) {\
-block();\
-} else {\
-dispatch_sync(dispatch_get_main_queue(), block);\
-}
-
-#define dispatch_main_async_safe(block)\
-if ([NSThread isMainThread]) {\
-block();\
-} else {\
-dispatch_async(dispatch_get_main_queue(), block);\
-}
-
-//-------------------GCD-------------------------
 
 //-------------------带颜色的log-------------------------
 #define XCODE_COLORS_ESCAPE_MAC @"\033["
@@ -81,6 +64,20 @@ dispatch_async(dispatch_get_main_queue(), block);\
 #endif
 //-------------------带颜色的log-------------------------
 
+#define toString(key,value) @"%@%@",key,value
+
+//用法
+//NSString *test;
+//appendCString(&test, "hello", 2);
+
+#define appendCString(result,key,value) \
+char cString[16];\
+sprintf(cString, "%s%ld",key,value);\
+*result=[NSString stringWithUTF8String:cString];\
+
+#define appendString(key,value)  [NSString stringWithFormat:@"%@%@",key,value]
+
+#define ConvertToString(value) [NSString stringWithFormat:@"%@",value]
 
 //定义弱引用
 #define WS(weakSelf)  __weak __typeof(&*self) weakSelf = self;
@@ -120,13 +117,23 @@ dispatch_async(dispatch_get_main_queue(), block);\
 //----------------------颜色类--------------------------
 
 //-------------------如何快速的查看一段代码的执行时间-------------------------
-#define TICK   NSDate *startTime = [NSDate date]
-#define TOCK   NSLog(@"Time: %f", -[startTime timeIntervalSinceNow])
+#define TICK   NSDate *startTime = [NSDate date];
+#define TOCK   NSLog(@"Time: %f", -[startTime timeIntervalSinceNow]);
 //实例
 //TICK
 /// do your work here
 //TOCK
 //-------------------如何快速的查看一段代码的执行时间-------------------------
+
+#define INITWITHSETUP \
+\
+- (instancetype)init {\
+self = [super init];\
+if (self) {\
+    [self setUp];\
+}\
+return self;\
+}\
 
 //-------------------单例化一个类-------------------------
 #define SYNTHESIZE_SINGLETON_FOR_CLASS(classname) \
@@ -164,6 +171,11 @@ return nil; \
 { \
 return self; \
 }
+
+// @interface
+
+#define DEFINE_SINGLETON_INTERFACE(className) \
++ (className *)shared##className;
 
 
 #define DEFINE_SINGLETON_IMPLEMENTATION(className) \

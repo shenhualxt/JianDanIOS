@@ -73,7 +73,11 @@
     self.title = @"新浪微博";
     UITextViewEx *textView = [[UITextViewEx alloc] initWithFrame:self.view.frame];
     [self.view addSubview:textView];
-    textView.text = self.sendObject;
+    NSString *text=self.sendObject;
+    if([self.sendObject isKindOfClass:[RACTuple class]]){
+        text=[(RACTuple *)self.sendObject second];
+    }
+    textView.text = text;
     //解决输入汉字时界面的晃动
     textView.layoutManager.allowsNonContiguousLayout = NO;
     textView.font = [UIFont systemFontOfSize:18];
@@ -89,7 +93,14 @@
     @weakify(self)
     [[(UIButton *) sendItem.customView rac_signalForControlEvents:UIControlEventTouchUpInside] subscribeNext:^(id x) {
         @strongify(self)
-        [[UMSocialDataService defaultDataService] postSNSWithTypes:@[UMShareToSina] content:self.textView.text image:nil location:nil urlResource:nil presentedController:self completion:^(UMSocialResponseEntity *response) {
+        NSString *urlResoures=nil;
+        if([self.sendObject isKindOfClass:[RACTuple class]]){
+            urlResoures=[(RACTuple *)self.sendObject first];
+        }
+        [[UMSocialDataService defaultDataService] postSNSWithTypes:@[UMShareToSina] content:self.textView.text image:nil location:nil urlResource:[[UMSocialUrlResource alloc] initWithSnsResourceType:UMSocialUrlResourceTypeImage url:urlResoures] presentedController:self completion:^(UMSocialResponseEntity *response) {
+            if(response.responseCode==UMSResponseCodeSuccess){
+                [self BackClick];
+            }
             [[ToastHelper sharedToastHelper] toast:response.responseCode == UMSResponseCodeSuccess ? @"分享成功" : @"分享失败"];
         }];
     }];

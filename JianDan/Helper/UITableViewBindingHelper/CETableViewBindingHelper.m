@@ -101,6 +101,10 @@ uint scrollViewDidEndScrollingAnimation:1;
     RACCommand *_selection;
     NSString *_reuseIdentifier;
     UIView *_customView;
+    
+    //优化
+    NSMutableArray *needLoadArr;
+    BOOL scrollToToping;
 }
 
 #pragma  mark - initialization
@@ -111,7 +115,7 @@ uint scrollViewDidEndScrollingAnimation:1;
         _data = [NSArray array];
         _selection = selection;
 
-        [source subscribeNext:^(id x) {
+      [source subscribeNext:^(id x) {
             if ([x isKindOfClass:[CEObservableMutableArray class]]) {
                 ((CEObservableMutableArray *) x).delegate = self;
             }
@@ -121,7 +125,8 @@ uint scrollViewDidEndScrollingAnimation:1;
             self->_data = x;
             [self->_tableView reloadData];
         }];
-
+        
+        needLoadArr = [[NSMutableArray alloc] init];
         _tableView.separatorStyle = UITableViewCellSelectionStyleNone;
         _tableView.dataSource = self;
         _tableView.delegate = self;
@@ -133,17 +138,13 @@ uint scrollViewDidEndScrollingAnimation:1;
 - (instancetype)initWithTableView:(UITableView *)tableView sourceSignal:(RACSignal *)source selectionCommand:(RACCommand *)selection customCellClass:(Class)clazz {
     self = [self initWithTableView:tableView sourceSignal:source selectionCommand:selection];
     if (self) {
-        [self switchCellClass:clazz];
+        _reuseIdentifier = NSStringFromClass(clazz);
+        UINib *nib = [UINib nibWithNibName:_reuseIdentifier bundle:nil];
+        _templateCell = [[nib instantiateWithOwner:nil options:nil] firstObject];
+        [_tableView registerNib:nib forCellReuseIdentifier:_reuseIdentifier];
+        _tableView.rowHeight = _templateCell.bounds.size.height;
     }
     return self;
-}
-
--(void)switchCellClass:(Class)clazz{
-    _reuseIdentifier = NSStringFromClass(clazz);
-    UINib *nib = [UINib nibWithNibName:_reuseIdentifier bundle:nil];
-    _templateCell = [[nib instantiateWithOwner:nil options:nil] firstObject];
-    [_tableView registerNib:nib forCellReuseIdentifier:_reuseIdentifier];
-    _tableView.rowHeight = _templateCell.bounds.size.height;
 }
 
 - (instancetype)initWithTableView:(UITableView *)tableView sourceSignal:(RACSignal *)source selectionCommand:(RACCommand *)selection templateCellClass:(Class)clazz {
@@ -271,24 +272,33 @@ uint scrollViewDidEndScrollingAnimation:1;
     }
 }
 
+
 #pragma mark - UITableViewDataSource methods
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
     return _data.count;
 }
 
+- (void)configureCell:(id<CEReactiveView>)cell withIndexPath:(NSIndexPath *)indexPath{
+//    if (needLoadArr.count>0&&[needLoadArr indexOfObject:indexPath]==NSNotFound) {
+//        return;
+//    }
+//    if (scrollToToping) {
+//        return;
+//    }
+
+    [cell bindViewModel:_data[indexPath.row] forIndexPath:indexPath];
+}
+
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    id <CEReactiveView> cell = [tableView dequeueReusableCellWithIdentifier:_reuseIdentifier];
-    if (!cell) {
-        cell = (id <CEReactiveView>) _templateCell;
-    }
-
-    NSAssert([cell respondsToSelector:@selector(bindViewModel:forIndexPath:)], @"The cells supplied to the CETableViewBindingHelper must implement the CEReactiveView protocol");
-
-    if ([cell respondsToSelector:@selector(bindViewModel:forIndexPath:)]) {
-            [cell bindViewModel:_data[indexPath.row] forIndexPath:indexPath];
-    }
-
+//    NSDate *startTime = [NSDate date];
+    TICK
+    id <CEReactiveView> cell = [tableView dequeueReusableCellWithIdentifier:_reuseIdentifier forIndexPath:indexPath];
+    [self configureCell:cell withIndexPath:indexPath];
+    TOCK
+//    if (-[startTime timeIntervalSinceNow]>0.00999999) {
+//         NSLog(@"Time: %f", -[startTime timeIntervalSinceNow]);
+//    }
     return (UITableViewCell *) cell;
 }
 
@@ -305,21 +315,24 @@ uint scrollViewDidEndScrollingAnimation:1;
 
 #pragma mark - UITableViewDelegate methods
 #pragma mark Configuring Rows for the Table View
-
 - (CGFloat)   tableView:(UITableView *)tableView
 heightForRowAtIndexPath:(NSIndexPath *)indexPath {
-    CGFloat heightForRowAtIndexPath = tableView.rowHeight;
-    if (_isDynamicHeight) {
-        heightForRowAtIndexPath=[_tableView fd_heightForCellWithIdentifier:_reuseIdentifier cacheByIndexPath:indexPath configuration:^(id<CEReactiveView> cell) {
-            if ([cell respondsToSelector:@selector(bindViewModel:forIndexPath:)]) {
-                [cell bindViewModel:_data[indexPath.row] forIndexPath:indexPath];
-            }
-        }];
-    }
     
     if (self.delegateRespondsTo.heightForRowAtIndexPath) {
-        heightForRowAtIndexPath = [self.delegate tableView:tableView heightForRowAtIndexPath:indexPath];
+        return  [self.delegate tableView:tableView heightForRowAtIndexPath:indexPath];
     }
+    
+    CGFloat heightForRowAtIndexPath = tableView.rowHeight;
+    if (_isDynamicHeight) {
+        if(IOS8){
+            heightForRowAtIndexPath=UITableViewAutomaticDimension;
+        }else{
+            heightForRowAtIndexPath=[_tableView fd_heightForCellWithIdentifier:_reuseIdentifier cacheByIndexPath:indexPath configuration:^(id<CEReactiveView> cell) {
+                [self configureCell:cell withIndexPath:indexPath];
+            }];
+        }
+    }
+    
     return heightForRowAtIndexPath;
 }
 
@@ -352,7 +365,6 @@ forRowAtIndexPath:(NSIndexPath *)indexPath {
 }
 
 #pragma mark Managing Accessory Views
-
 - (NSArray *)      tableView:(UITableView *)tableView
 editActionsForRowAtIndexPath:(NSIndexPath *)indexPath {
     NSArray *editActionsForRowAtIndexPath = nil;
@@ -384,6 +396,9 @@ accessoryButtonTappedForRowWithIndexPath:(NSIndexPath *)indexPath {
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
+    if (_selection==nil) {
+        return;
+    }
     // execute the command
     RACTuple *turple=[RACTuple tupleWithObjects:_data[indexPath.row],indexPath, nil];
     [_selection execute:turple];
@@ -644,53 +659,54 @@ didUnhighlightRowAtIndexPath:(NSIndexPath *)indexPath {
     }
 }
 
-- (void)scrollViewWillBeginDragging:(UIScrollView *)scrollView {
-    if (_scrollViewDelegateRespondsTo.scrollViewWillBeginDragging) {
-        [self.scrollViewDelegate scrollViewWillBeginDragging:scrollView];
-    }
-}
+//- (void)scrollViewWillBeginDragging:(UIScrollView *)scrollView {
+//    
+//    if (_scrollViewDelegateRespondsTo.scrollViewWillBeginDragging) {
+//        [self.scrollViewDelegate scrollViewWillBeginDragging:scrollView];
+//    }
+//}
 
-- (void)scrollViewWillEndDragging:(UIScrollView *)scrollView
-                     withVelocity:(CGPoint)velocity
-              targetContentOffset:(inout CGPoint *)targetContentOffset {
-    if (_scrollViewDelegateRespondsTo.scrollViewWillEndDraggingWithVelocityTargetContentOffset) {
-        [self.scrollViewDelegate scrollViewWillEndDragging:scrollView withVelocity:velocity targetContentOffset:targetContentOffset];
-    }
-}
+//- (void)scrollViewWillEndDragging:(UIScrollView *)scrollView
+//                     withVelocity:(CGPoint)velocity
+//              targetContentOffset:(inout CGPoint *)targetContentOffset {
+//    if (_scrollViewDelegateRespondsTo.scrollViewWillEndDraggingWithVelocityTargetContentOffset) {
+//        [self.scrollViewDelegate scrollViewWillEndDragging:scrollView withVelocity:velocity targetContentOffset:targetContentOffset];
+//    }
+//}
 
-- (void)scrollViewDidEndDragging:(UIScrollView *)scrollView
-                  willDecelerate:(BOOL)decelerate {
-    if (_scrollViewDelegateRespondsTo.scrollViewDidEndDraggingWillDecelerate) {
-        [self.scrollViewDelegate scrollViewDidEndDragging:scrollView willDecelerate:decelerate];
-    }
-}
+//- (void)scrollViewDidEndDragging:(UIScrollView *)scrollView
+//                  willDecelerate:(BOOL)decelerate {
+//    if (_scrollViewDelegateRespondsTo.scrollViewDidEndDraggingWillDecelerate) {
+//        [self.scrollViewDelegate scrollViewDidEndDragging:scrollView willDecelerate:decelerate];
+//    }
+//}
 
-- (BOOL)scrollViewShouldScrollToTop:(UIScrollView *)scrollView {
-    BOOL scrollViewShouldScrollToTop = YES;
-
-    if (_scrollViewDelegateRespondsTo.scrollViewShouldScrollToTop) {
-        scrollViewShouldScrollToTop = [self.scrollViewDelegate scrollViewShouldScrollToTop:scrollView];
-    }
-    return scrollViewShouldScrollToTop;
-}
-
-- (void)scrollViewDidScrollToTop:(UIScrollView *)scrollView {
-    if (_scrollViewDelegateRespondsTo.scrollViewDidScrollToTop) {
-        [self.scrollViewDelegate scrollViewDidScrollToTop:scrollView];
-    }
-}
+//- (BOOL)scrollViewShouldScrollToTop:(UIScrollView *)scrollView {
+//    BOOL scrollViewShouldScrollToTop = YES;
+//
+//    if (_scrollViewDelegateRespondsTo.scrollViewShouldScrollToTop) {
+//        scrollViewShouldScrollToTop = [self.scrollViewDelegate scrollViewShouldScrollToTop:scrollView];
+//    }
+//    return scrollViewShouldScrollToTop;
+//}
+//
+//- (void)scrollViewDidScrollToTop:(UIScrollView *)scrollView {
+//    if (_scrollViewDelegateRespondsTo.scrollViewDidScrollToTop) {
+//        [self.scrollViewDelegate scrollViewDidScrollToTop:scrollView];
+//    }
+//}
 
 - (void)scrollViewWillBeginDecelerating:(UIScrollView *)scrollView {
-    if (_scrollViewDelegateRespondsTo.scrollViewWillBeginDecelerating) {
-        [self.scrollViewDelegate scrollViewWillBeginDecelerating:scrollView];
-    }
+//    if (_scrollViewDelegateRespondsTo.scrollViewWillBeginDecelerating) {
+//        [self.scrollViewDelegate scrollViewWillBeginDecelerating:scrollView];
+//    }
 }
 
-- (void)scrollViewDidEndDecelerating:(UIScrollView *)scrollView {
-    if (_scrollViewDelegateRespondsTo.scrollViewDidEndDecelerating) {
-        [self.scrollViewDelegate scrollViewDidEndDecelerating:scrollView];
-    }
-}
+//- (void)scrollViewDidEndDecelerating:(UIScrollView *)scrollView {
+//    if (_scrollViewDelegateRespondsTo.scrollViewDidEndDecelerating) {
+//        [self.scrollViewDelegate scrollViewDidEndDecelerating:scrollView];
+//    }
+//}
 
 #pragma mark Managing Zooming
 
@@ -727,12 +743,131 @@ didUnhighlightRowAtIndexPath:(NSIndexPath *)indexPath {
 
 #pragma mark Responding to Scrolling Animations
 
-- (void)scrollViewDidEndScrollingAnimation:(UIScrollView *)scrollView {
+//- (void)scrollViewDidEndScrollingAnimation:(UIScrollView *)scrollView {
+//    if (_scrollViewDelegateRespondsTo.scrollViewDidEndScrollingAnimation) {
+//        [self.scrollViewDelegate scrollViewDidEndScrollingAnimation:scrollView];
+//    }
+//}
+
+
+#pragma mark -UITabbleView优化
+-(void)scrollViewWillBeginDragging:(UIScrollView *)scrollView{
+    [needLoadArr removeAllObjects];
+    if (_scrollViewDelegateRespondsTo.scrollViewWillBeginDragging) {
+        [self.scrollViewDelegate scrollViewWillBeginDragging:scrollView];
+    }
+}
+
+- (void)scrollViewDidEndDecelerating:(UIScrollView *)scrollView {
+    if (_scrollViewDelegateRespondsTo.scrollViewDidEndDecelerating) {
+        [self.scrollViewDelegate scrollViewDidEndDecelerating:scrollView];
+    }
+}
+
+- (void)scrollViewDidEndDragging:(UIScrollView *)scrollView
+                  willDecelerate:(BOOL)decelerate {
+    if (_scrollViewDelegateRespondsTo.scrollViewDidEndDraggingWillDecelerate) {
+        [self.scrollViewDelegate scrollViewDidEndDragging:scrollView willDecelerate:decelerate];
+    }
+
+}
+
+//按需加载 - 如果目标行与当前行相差超过指定行数，只在目标滚动范围的前后指定3行加载。
+- (void)scrollViewWillEndDragging:(UIScrollView *)scrollView withVelocity:(CGPoint)velocity targetContentOffset:(inout CGPoint *)targetContentOffset{
+    if (_scrollViewDelegateRespondsTo.scrollViewWillEndDraggingWithVelocityTargetContentOffset) {
+        [self.scrollViewDelegate scrollViewWillEndDragging:scrollView withVelocity:velocity targetContentOffset:targetContentOffset];
+    }
+    
+    if (_tableView.numberOfSections>1) {
+        return;
+    }
+    //滑动结束时到达的indexPath.row
+    NSIndexPath *ip = [_tableView indexPathForRowAtPoint:CGPointMake(0, targetContentOffset->y)];
+    //当前的indexPath.row
+    NSIndexPath *cip = [[_tableView indexPathsForVisibleRows] firstObject];
+    NSInteger skipCount = 8;
+    //如果超过8个
+    if (labs(cip.row-ip.row)>skipCount) {
+        //滑到结果下面的indexPaths
+        NSArray *temp = [_tableView indexPathsForRowsInRect:CGRectMake(0, targetContentOffset->y, _tableView.frame.size.width, _tableView.frame.size.height)];
+        NSMutableArray *arr = [NSMutableArray arrayWithArray:temp];
+        if (velocity.y<0) {//向下滑
+            NSIndexPath *indexPath = [temp lastObject];
+            //加载下面的三条
+            if (indexPath.row+3<_data.count) {
+                [arr addObject:[NSIndexPath indexPathForRow:indexPath.row+1 inSection:0]];
+                [arr addObject:[NSIndexPath indexPathForRow:indexPath.row+2 inSection:0]];
+                [arr addObject:[NSIndexPath indexPathForRow:indexPath.row+3 inSection:0]];
+            }
+        } else {//向上滑
+            //加载上面的三条
+            NSIndexPath *indexPath = [temp firstObject];
+            if (indexPath.row>3) {
+                [arr addObject:[NSIndexPath indexPathForRow:indexPath.row-3 inSection:0]];
+                [arr addObject:[NSIndexPath indexPathForRow:indexPath.row-2 inSection:0]];
+                [arr addObject:[NSIndexPath indexPathForRow:indexPath.row-1 inSection:0]];
+            }
+        }
+        [needLoadArr addObjectsFromArray:arr];
+    }
+}
+
+
+- (BOOL)scrollViewShouldScrollToTop:(UIScrollView *)scrollView{
+    scrollToToping = YES;
+    if (_scrollViewDelegateRespondsTo.scrollViewShouldScrollToTop) {
+        scrollToToping = [self.scrollViewDelegate scrollViewShouldScrollToTop:scrollView];
+    }
+    return scrollToToping;
+}
+
+- (void)scrollViewDidEndScrollingAnimation:(UIScrollView *)scrollView{
+    scrollToToping = NO;
     if (_scrollViewDelegateRespondsTo.scrollViewDidEndScrollingAnimation) {
         [self.scrollViewDelegate scrollViewDidEndScrollingAnimation:scrollView];
     }
 }
 
+- (void)scrollViewDidScrollToTop:(UIScrollView *)scrollView{
+    scrollToToping = NO;
+    if (_scrollViewDelegateRespondsTo.scrollViewDidScrollToTop) {
+        [self.scrollViewDelegate scrollViewDidScrollToTop:scrollView];
+    }
+}
+
+//- (void)loadImageForVisibleCells
+//{
+//    NSArray *cells = [_tableView visibleCells];
+//    for (id<CEReactiveView> cell in cells) {
+//        NSIndexPath *indexPath = [_tableView indexPathForCell:(UITableViewCell *)cell];
+//        if ([cell respondsToSelector:@selector(loadImage:forIndexPath:helper:)]) {
+//            [cell loadImage:_data[indexPath.row] forIndexPath:indexPath helper:self];
+//        }
+//    }
+//}
+
+//- (void)loadImageForBottomOfVisibleCells{
+//    if (scrollToToping) {
+//        return;
+//    }
+//    
+//    if (_tableView.dragging||_tableView.decelerating||_tableView.tracking) {
+//        return;
+//    }
+//    
+//    if (_tableView.numberOfSections>1) {
+//        return;
+//    }
+//    //加载当前显示的后三条
+//    NSInteger lastRow=[_tableView.indexPathsForVisibleRows lastObject].row+1;
+//    for (NSInteger i=lastRow; i<lastRow+1&&i<_data.count; i++) {
+//        NSIndexPath *indexPath=[NSIndexPath indexPathForRow:i inSection:0];
+//        id<CEReactiveView> cell=[_tableView dequeueReusableCellWithIdentifier:_reuseIdentifier];
+//        if ([cell respondsToSelector:@selector(loadImage:forIndexPath:)]) {
+//            [cell loadImage:_data[indexPath.row] forIndexPath:indexPath];
+//        }
+//    }
+//}
 #pragma mark - CEObservableMutableArrayDelegate methods
 
 - (void)array:(CEObservableMutableArray *)array didAddItemAtIndex:(NSUInteger)index {

@@ -28,6 +28,10 @@ static NSDateFormatter *formatter;
   return [NSString stringWithFormat:@"%ld", (long)[date timeIntervalSince1970]];
 }
 
+-(BOOL)isEqual:(FreshNews *)object{
+    return _id==object.id;
+}
+
 MJCodingImplementation
 @end
 
@@ -70,6 +74,8 @@ MJCodingImplementation
   }
   return _viewsCount;
 }
+
+
 MJCodingImplementation
 @end
 

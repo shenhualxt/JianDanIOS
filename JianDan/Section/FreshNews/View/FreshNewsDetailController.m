@@ -15,8 +15,11 @@
 #import "UIWebView+RAC.h"
 #import "ToastHelper.h"
 #import "CommentController.h"
+#import "LTAlertView.h"
+#import "UMSocial.h"
+#import <Social/Social.h>
 
-@interface FreshNewsDetailController()<UIWebViewRACDelegate,UIWebViewDelegate,DMLazyScrollViewDelegate>
+@interface FreshNewsDetailController()<UIWebViewDelegate,DMLazyScrollViewDelegate>
 
 @property(nonatomic,strong) NSMutableArray *viewControllerArray;
 
@@ -45,19 +48,18 @@
     self.index=[[(RACTuple *)self.sendObject second] integerValue];
     UIBarButtonItem* itemShare = [self createButtonItem:@"ic_action_share"];
     UIBarButtonItem* itemChat = [self createButtonItem:@"ic_action_chat"];
+     FreshNews *freshNews=self.freshNewsArray[self.index];
     [[(UIButton *)itemShare.customView rac_signalForControlEvents:UIControlEventTouchUpInside] subscribeNext:^(id x) {
-        FreshNews *freshNews=self.freshNewsArray[self.index];
         NSMutableString *shareText=[NSMutableString stringWithFormat:@"【%@】", freshNews.title];
         [shareText appendFormat:@"%@ (来自 @煎蛋网)", freshNews.url];
         [self pushViewController:[ShareToSinaController class] object:shareText];
     }];
     [[(UIButton *)itemChat.customView rac_signalForControlEvents:UIControlEventTouchUpInside] subscribeNext:^(id x) {
-        FreshNews *freshNews=self.freshNewsArray[self.index];
         [self pushViewController:[CommentController class] object:@(freshNews.id)];
+       
     }];
     self.navigationItem.rightBarButtonItems=@[itemChat,itemShare];
 }
-
 
 - (void)initLazyScrollView {
     //加载网页数据
@@ -65,7 +67,6 @@
     for (NSUInteger k = 0; k < self.freshNewsArray.count; ++k) {
         [_viewControllerArray addObject:[NSNull null]];
     }
-    
     CGRect rect = CGRectMake(0, 0, SCREEN_WIDTH, SCREEN_HEIGHT);
     self.lazyScrollView = [[DMLazyScrollView alloc] initWithFrame:rect];
     [self.view addSubview: self.lazyScrollView];
@@ -96,7 +97,7 @@
     }];
     
     [viewModel.soureCommand.errors subscribeNext:^(id x) {
-        [[ToastHelper sharedToastHelper] toast:[AFNetWorkUtils handleErrorMessage:x]];
+        [[ToastHelper sharedToastHelper] toast:[NSErrorHelper handleErrorMessage:x]];
     }];
     
     //开始获取详情信息
@@ -104,7 +105,6 @@
         RACTuple *turple=[RACTuple tupleWithObjects:self.freshNewsArray,x, nil];
         [viewModel.soureCommand execute:turple];
     }];
-    
 }
 
 - (UIViewController *) controllerAtIndex:(NSInteger) index {
@@ -115,10 +115,10 @@
         UIWebView *webView=[[UIWebView alloc] initWithFrame:self.view.frame];
         [contr.view addSubview:webView];
         [_viewControllerArray replaceObjectAtIndex:index withObject:contr];
-        [webView setRACDelegate:self];
+        webView.rac_delegate=self;
         [webView.rac_isLoadingSignal subscribeNext:^(id x) {
             [UIApplication sharedApplication].networkActivityIndicatorVisible=[x boolValue];
-            [ToastHelper sharedToastHelper].simleProgressVisiable=[x boolValue];
+//            [ToastHelper sharedToastHelper].simleProgressVisiable=[x boolValue];
         }];
         return contr;
     }
@@ -126,7 +126,7 @@
 }
 
 #pragma mark -webView delegate
--(void)rac_webViewDidFinishLoad:(UIWebView *)webView{
+-(void)webViewDidFinishLoad:(UIWebView *)webView{
     [[NSUserDefaults standardUserDefaults] setInteger:0 forKey:@"WebKitCacheModelPreferenceKey"];
     [[NSUserDefaults standardUserDefaults] setBool:NO forKey:@"WebKitDiskImageCacheEnabled"];
     [[NSUserDefaults standardUserDefaults] setBool:NO forKey:@"WebKitOfflineWebApplicationCacheEnabled"];

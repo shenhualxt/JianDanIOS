@@ -15,7 +15,7 @@
     if ([object isKindOfClass:[NSDictionary class]] && self.type == MJPropertyKeyTypeDictionary) {
         return object[self.name];
     } else if ([object isKindOfClass:[NSArray class]] && self.type == MJPropertyKeyTypeArray) {
-        return [object count] ? object[self.name.intValue] : nil;
+        return ((NSArray *)object).count ? object[self.name.intValue] : nil;
     }
     return nil;
 }

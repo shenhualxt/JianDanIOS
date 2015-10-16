@@ -8,22 +8,56 @@
 
 #import "ScaleImageView.h"
 #import "UIImage+Scale.h"
+#import "PureLayout.h"
+
+#define kPlaceholderSize [UIImage imageNamed:@"ic_loading_large"].size
 
 @implementation ScaleImageView
 
 -(void)setImage:(UIImage *)image{
-    CGFloat ratio = self.frame.size.width/ image.size.width;
-    CGFloat mHeight = image.size.height * ratio;
+     CGImageRef imageRef=image.CGImage;
+    // 1，设定基本动画参数
+    CABasicAnimation *contentsAnimation = [CABasicAnimation animationWithKeyPath:@"contents"];
+    contentsAnimation.fromValue         =  self.layer.contents;
+    contentsAnimation.toValue           =  (__bridge id)imageRef;
+    contentsAnimation.duration          = 0.2f;
     
-//    if(mHeight>=[UIScreen mainScreen].bounds.size.height*4/3){
-//        mHeight=[UIScreen mainScreen].bounds.size.height*2/3;
-//        image=[image getImageFromImageWithRect:CGRectMake(0, 0, image.size.width, mHeight)];
-//        image=[image scaleImageToSize:CGSizeMake(self.frame.size.width, mHeight)];
-//    }else{
-        image=[image scaleImageToSize:CGSizeMake(self.frame.size.width, mHeight)];
-//    }
-
-    [super setImage:image];
+    // 2，设定layer动画结束后的contents值
+    self.layer.contents         = (__bridge id)imageRef;
+    
+    //3， 让layer开始执行动画
+    [self.layer addAnimation:contentsAnimation forKey:nil];
 }
 
+-(CGSize)adjustSize:(CGSize)size{
+    if (!size.height) {
+        size=kPlaceholderSize;
+    }
+    CGFloat ratio = self.frame.size.width/ size.width;
+    CGFloat mHeight = size.height * ratio;
+    return CGSizeMake(self.frame.size.width, mHeight);
+}
+
+
+-(void)updateIntrinsicContentSize:(CGSize)size{
+    CGFloat mHeight =[self adjustSize:size].height;
+    if(mHeight>=SCREEN_HEIGHT){
+        mHeight=SCREEN_HEIGHT*2.0/3.0;
+        self.layer.masksToBounds=YES;
+        [self.layer setContentsScale:[[UIScreen mainScreen] scale]];
+        self.layer.contentsGravity=kCAGravityResizeAspectFill;
+    }else{
+        self.layer.contentsGravity=kCAGravityResize;
+    }
+     self.mHeight=mHeight;
+    [self invalidateIntrinsicContentSize];
+}
+
+-(CGSize)intrinsicContentSize{
+    if (self.mHeight) {
+         return CGSizeMake(self.frame.size.width, self.mHeight);
+    }
+    return [super intrinsicContentSize];
+   
+}
 @end

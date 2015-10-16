@@ -7,6 +7,10 @@
 //
 @interface BaseViewController : UIViewController <UITextFieldDelegate>
 
+@property(nonatomic,assign) NSInteger statusBarStyle;
+
+@property(nonatomic,assign) BOOL navigationBarHidden;
+
 @property(nonatomic,strong) id sendObject;
 
 @property(nonatomic,strong) id resultObject;
@@ -14,6 +18,8 @@
 -(void)pushViewController:(Class)class object:(id)sendObject;
 
 -(void)popViewController:(Class)class object:(id)sendObject;
+
+-(void)presentViewController:(Class)class object:(id)sendObject;
 
 - (void)BackClick;
 

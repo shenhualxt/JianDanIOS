@@ -12,6 +12,6 @@
 
 @property(nonatomic,strong,readonly) RACCommand *sourceCommand;
 
-- (void)scrollViewDidScroll:(UIScrollView *)scrollView;
+-(void)loadNextPageData;
 
 @end

@@ -16,4 +16,7 @@ static NSString* const commentTooShort = @"你的..太短..";
 static NSString* const pushCommentError = @"神秘力量导致评论失败 ⊙︿⊙";
 
 static NSString* const copySuccess = @"已复制到剪贴板";
+
+static NSString* const unExpectedResult = @"卧槽，发生了什么！";
+
 #endif

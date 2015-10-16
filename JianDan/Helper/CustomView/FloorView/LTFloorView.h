@@ -33,15 +33,9 @@
 
 @property (nonatomic, weak) id <LTFloorViewDelegate> delegate;
 
-@property(nonatomic,assign) NSInteger numOfSubFloors;
-
-@property(nonatomic,assign) CGFloat height;
 
 @property(nonatomic,strong) UIColor *bgColor;
 
-@property(nonatomic,strong) UIImage *bgImage;
-
-@property (nonatomic, assign) BOOL didSetupConstraints;
-
+@property(nonatomic,strong) UIColor *borderColor;
 
 @end

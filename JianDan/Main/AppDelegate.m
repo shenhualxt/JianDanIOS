@@ -15,6 +15,9 @@
 #import "UMSocial.h"
 #import "MMDrawerBarButtonItem.h"
 #import "BoredPicturesController.h"
+#import "UIImage+Scale.h"
+#import "FastImageCacehHelper.h"
+#import "LittleMoveController.h"
 
 #define UmengAppkey @"55f2639e67e58ed7da000371"
 
@@ -22,15 +25,13 @@
 
 @property(nonatomic,strong) NSMutableArray *controllerArray;
 
-@property(nonatomic,strong) NSMutableArray *controllerClassArray;
-
 @end
 
 @implementation AppDelegate
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     self.controllerArray=[NSMutableArray arrayWithCapacity:5];
-    self.controllerClassArray=[NSMutableArray arrayWithObjects:[FreshNewsController class],[BoredPicturesController class],[BoredPicturesController class],[BoredPicturesController class],[BoredPicturesController class], nil];
+
     for (int i=0; i<5; i++) {
         [self.controllerArray addObject:[NSNull null]];
     }
@@ -38,12 +39,9 @@
     self.window = window;
     [self loadRootViewController];
     [window makeKeyAndVisible];
-    //设置图片缓存策略（最多缓存5M的图片）
-    [SDImageCache sharedImageCache].maxCacheAge = 1024 * 1024 * 5;
+    [SDWebImageDownloader sharedDownloader].downloadTimeout=60.0f;
     [[AFNetWorkUtils sharedAFNetWorkUtils] startMonitoring];
     [UMSocialData setAppKey:UmengAppkey];
-    //打开调试log的开关
-//    [UMSocialData openLog:YES];
     return YES;
 }
 
@@ -68,8 +66,23 @@
 
 -(void)replaceContentViewController:(NSInteger)index{
     if (self.controllerArray[index]==[NSNull null]) {
-        Class class=self.controllerClassArray[index];
-        [self.controllerArray replaceObjectAtIndex:index withObject:[class new]];
+            UIViewController *vc=nil;
+            switch (index) {
+                case 0:
+                    vc=[FreshNewsController new];
+                    break;
+                case 1://无聊图
+                case 2://妹子图
+                case 3://段子
+                    vc=[[BoredPicturesController alloc] initWithControllerType:index];
+                    break;
+                case 4:
+                    vc=[LittleMoveController new];
+                    break;
+                default:
+                    break;
+            }
+            [self.controllerArray replaceObjectAtIndex:index withObject:vc];
     }
     MMDrawerController *drawerController = self.window.rootViewController.childViewControllers[0];
     BaseNavigationController *mainNavigationVC = [[BaseNavigationController alloc] initWithRootViewController:self.controllerArray[index]];

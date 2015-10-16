@@ -21,7 +21,7 @@
 
 @property (strong, nonatomic,readonly) NSArray *data;
 
--(void)switchCellClass:(Class)clazz;
+@property (assign,nonatomic)  CGRect targetRect;
 
 + (instancetype)bindingHelperForTableView:(UITableView *)tableView
                              sourceSignal:(RACSignal *)source

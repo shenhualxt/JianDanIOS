@@ -8,18 +8,20 @@
 
 #import <UIKit/UIKit.h>
 
-@protocol UIWebViewRACDelegate <NSObject>
+//@protocol UIWebViewRACDelegate <NSObject>
+//
+//@optional
+//- (void)rac_webViewDidStartLoad:(UIWebView *)webView;
+//- (void)rac_webViewDidFinishLoad:(UIWebView *)webView;
+//- (void)rac_webView:(UIWebView *)webView didFailLoadWithError:(NSError *)error;
+//
+//@end
 
-@optional
-- (void)rac_webViewDidStartLoad:(UIWebView *)webView;
-- (void)rac_webViewDidFinishLoad:(UIWebView *)webView;
-- (void)rac_webView:(UIWebView *)webView didFailLoadWithError:(NSError *)error;
+@interface UIWebView (RAC)<UIWebViewDelegate>
 
-@end
+//-(void)setRACDelegate:(id<UIWebViewDelegate>)delegate;
 
-@interface UIWebView (RAC)
-
--(void)setRACDelegate:(id<UIWebViewRACDelegate>)delegate;
+@property (weak, nonatomic) id<UIWebViewDelegate> rac_delegate;
 
 -(RACSignal *)rac_isLoadingSignal;
 

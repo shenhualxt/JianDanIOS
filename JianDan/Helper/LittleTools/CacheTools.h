@@ -15,6 +15,18 @@
 
 - (void)save:(NSArray *)objectArray sortArgument:(NSString *)idStr;
 
+- (void)save:(NSArray *)objectArray sortArgument:(NSString *)idStr tableName:(NSString *)tableName;
+
+- (RACSignal *)racSave:(NSArray *)objectArray sortArgument:(NSString *)idStr;
+
+- (RACSignal *)racSave:(NSArray *)objectArray sortArgument:(NSString *)idStr tableName:(NSString *)tableName;
+
+- (RACSignal *)read:(Class)clazz;
+
 - (RACSignal *)read:(Class)clazz page:(NSInteger)page;
+
+- (RACSignal *)read:(Class)clazz page:(NSInteger)page tableName:(NSString *)tableName;
+
+- (CGFloat)getSize;
 
 @end

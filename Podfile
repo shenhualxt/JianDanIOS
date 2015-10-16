@@ -10,7 +10,10 @@ pod 'MJExtension'
 pod 'MMDrawerController', '~> 0.6.0'
 pod 'TPKeyboardAvoiding'
 pod 'MBProgressHUD', '~> 0.9.1'
-pod 'UITableView+FDTemplateLayoutCell'
+pod 'UITableView+FDTemplateLayoutCell', '~> 1.4.beta'
+pod 'FastImageCache'
+pod 'TMCache'
+pod 'NJKWebViewProgress'
 
 target :JianDanTests, :exclusive => true do
  pod 'Kiwi','~> 2.4.0'

@@ -64,8 +64,4 @@
     [self setSelectedTextRange:selectionRange];
 }
 
--(void)dealloc{
-    LogBlue(@"textView delloc");
-}
-
 @end

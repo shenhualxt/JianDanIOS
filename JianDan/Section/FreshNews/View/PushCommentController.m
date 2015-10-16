@@ -1,10 +1,8 @@
 #import "PushCommentController.h"
 #import "LTAlertView.h"
 #import "CommentController.h"
-#import "FreshNewsComment.h"
-
-#define kName @"name"
-#define kEmail @"email"
+#import "Comments.h"
+#import "PushCommentViewModel.h"
 
 @interface PushCommentController ()<UITextViewDelegate>
 //对话框自定义view中的控件
@@ -71,6 +69,8 @@
     [[[NSNotificationCenter defaultCenter] rac_addObserverForName:UIKeyboardWillHideNotification object:nil] subscribeNext:^(NSNotification *notification) {
         [ws adjustTextViewHeight:nil];
     }];
+    
+#pragma mark -alertView
     //创建用户名，邮箱对话框
     UIView *view=[[[NSBundle mainBundle] loadNibNamed:@"TouristAlertView" owner:self options:nil] lastObject];
     LTAlertView *alertView=[[LTAlertView alloc] initWithNib:view];
@@ -81,29 +81,7 @@
         self.textFieldName.text=name;
         self.textFieldEmail.text=email;
     }
-    RACCommand *pushCommand=[[RACCommand alloc] initWithSignalBlock:^RACSignal *(id input) {
-        if (!self.textFieldName.text.length||!self.textFieldEmail.text.length) {
-            [[ToastHelper sharedToastHelper] toast:touristInfoNotEnough];
-            return [RACSignal empty];
-        }
-        [alertView dismiss];
-        [self.textView resignFirstResponder];
-        [[NSUserDefaults standardUserDefaults] setObject:self.textFieldName.text forKey:kName];
-        [[NSUserDefaults standardUserDefaults] setObject:self.textFieldEmail.text forKey:kEmail];
-        return [AFNetWorkUtils racGETWithURL:[self jointURL] class:[Comments class]];
-    }];
-    //发送评论后的返回结果
-    [[pushCommand.executionSignals switchToLatest] subscribeNext:^(id x) {
-        [self popViewController:[CommentController class] object:x];
-    }];
     
-    [pushCommand.errors subscribeNext:^(NSError *error) {
-        [[ToastHelper sharedToastHelper] toast:pushCommentError];
-    }];
-    self.buttonRight.rac_command=pushCommand;
-    [[self.buttonLeft rac_signalForControlEvents:UIControlEventTouchUpInside] subscribeNext:^(id x) {
-        [alertView dismiss];
-    }];
     //下划线的响应
     [self changeLineColorWhenEdit:self.textFieldName line:ws.lineName];
     [self changeLineColorWhenEdit:self.textFieldEmail line:ws.lineEmail];
@@ -116,8 +94,35 @@
         }
         [self.textView resignFirstResponder];
         [alertView show];
-     }];
-}
+    }];
+
+    
+#pragma mark -pushComment
+    PushCommentViewModel *viewModel=[PushCommentViewModel modelWithSendObject:self.sendObject];
+    RACCommand *pushCommand=[[RACCommand alloc] initWithSignalBlock:^RACSignal *(id input) {
+        if (!self.textFieldName.text.length||!self.textFieldEmail.text.length) {
+            [[ToastHelper sharedToastHelper] toast:touristInfoNotEnough];
+            return [RACSignal empty];
+        }
+        [alertView dismiss];
+        [self.textView resignFirstResponder];
+        [[NSUserDefaults standardUserDefaults] setObject:self.textFieldName.text forKey:kName];
+        [[NSUserDefaults standardUserDefaults] setObject:self.textFieldEmail.text forKey:kEmail];
+        return viewModel.pushCommentSignal;
+    }];
+    //发送评论后的返回结果
+    [[pushCommand.executionSignals switchToLatest] subscribeNext:^(Comments *comment) {
+        [self popViewController:[CommentController class] object:comment];
+    }];
+    
+    [pushCommand.errors subscribeNext:^(NSError *error) {
+        [[ToastHelper sharedToastHelper] toast:pushCommentError];
+    }];
+    self.buttonRight.rac_command=pushCommand;
+    [[self.buttonLeft rac_signalForControlEvents:UIControlEventTouchUpInside] subscribeNext:^(id x) {
+        [alertView dismiss];
+    }];
+   }
 
 -(void)changeLineColorWhenEdit:(UITextField *)textField line:(UIView *)line{
     [[[NSNotificationCenter defaultCenter] rac_addObserverForName:UITextFieldTextDidBeginEditingNotification
@@ -142,19 +147,6 @@
     CGSize kbSize = [[[notification userInfo] objectForKey:UIKeyboardFrameEndUserInfoKey] CGRectValue].size;
     frame.size.height=self.textViewHeight-kbSize.height;
     self.textView.frame=frame;
-}
-
--(NSString *)jointURL{
-    //http:/\/jandan.net/?oxwlxojflwblxbsapi=respond.submit_comment&content=顶煎蛋 &email=1540717369@qq.com&name=shenhualxt&post_id=69106
-    NSString *content=self.textView.text;
-    id post_id=self.sendObject;
-    if ([self.sendObject isKindOfClass:[RACTuple class]]) {
-        Comments *parentComment=((RACTuple *)self.sendObject).first;
-        content=[NSString stringWithFormat:@"<a href=\"#comment-%ld\">%@</a>: %@",(long)parentComment.id,parentComment.name,content];
-        post_id=((RACTuple *)self.sendObject).second;
-    }
-    NSString *url=[NSMutableString stringWithFormat:@"%@&content=%@&email=%@&name=%@&post_id=%@",pushCommentlUrl,content,self.textFieldEmail.text,self.textFieldName.text,post_id];
-    return [url stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding];
 }
 
 -(void)BackClick{

@@ -48,4 +48,6 @@ typedef void (^CollectionSelectionBlock)(id model);
 
 // forwards the UITableViewDelegate methods
 @property (weak, nonatomic) id<UICollectionViewDelegateFlowLayout> delegate;
+
+@property (strong,nonatomic) RACDisposable *disposable;
 @end

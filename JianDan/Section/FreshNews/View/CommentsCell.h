@@ -23,4 +23,10 @@
 
 @property(strong,nonatomic) NSArray *subCommentArray;
 
+@property (weak, nonatomic) IBOutlet UIImageView *imageViewAvatar;
+@property (weak, nonatomic) IBOutlet NSLayoutConstraint *constraintAvatarWidth;
+@property (weak, nonatomic) IBOutlet NSLayoutConstraint *constraintLineLeading;
+
+@property (weak, nonatomic) IBOutlet UIView *viewLine;
+
 @end

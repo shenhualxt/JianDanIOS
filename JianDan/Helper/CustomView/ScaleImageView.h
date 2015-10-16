@@ -10,6 +10,13 @@
 
 @interface ScaleImageView : UIImageView
 
-@property(assign,nonatomic) NSInteger progress;
+@property(assign,nonatomic) NSInteger mHeight;
+
+@property(assign,nonatomic) BOOL hasImage;
+
+
+-(void)updateIntrinsicContentSize:(CGSize)size;
+
+-(CGSize)adjustSize:(CGSize)size;
 
 @end

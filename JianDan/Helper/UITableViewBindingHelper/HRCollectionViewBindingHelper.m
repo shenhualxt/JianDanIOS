@@ -40,7 +40,7 @@
     _selectCommand = command;
     _data = [NSMutableArray array];
     
-    [source subscribeNext:^(NSArray *dataList) {
+   _disposable=[source subscribeNext:^(NSArray *dataList) {
         _data = [NSMutableArray arrayWithArray:dataList];
         [_collectionView reloadData];
     }];

@@ -61,6 +61,27 @@
     [self initLeftnavigationBar];
 }
 
+-(void)viewWillAppear:(BOOL)animated{
+    [super viewWillAppear:animated];
+    if (self.navigationBarHidden) {
+        self.navigationController.navigationBar.hidden=YES;
+    }
+    //默认的是黑色
+    if (self.statusBarStyle==UIStatusBarStyleLightContent) {
+        [[UIApplication sharedApplication] setStatusBarStyle:UIStatusBarStyleLightContent];
+    }
+}
+
+-(void)viewWillDisappear:(BOOL)animated{
+    if (self.navigationBarHidden) {
+        self.navigationController.navigationBar.hidden=NO;
+    }
+    
+    if (self.statusBarStyle==UIStatusBarStyleLightContent) {
+        [[UIApplication sharedApplication] setStatusBarStyle:UIStatusBarStyleDefault];
+    }
+}
+
 - (void)initLeftnavigationBar
 {
     UIImage* image = [UIImage imageNamed:@"common_icon_back"];
@@ -81,6 +102,17 @@
     BaseViewController *vc=[class new];
     vc.sendObject=sendObject;
     [self.navigationController pushViewController:vc animated:YES];
+}
+
+-(void)presentViewController:(Class)class object:(id)sendObject{
+    if (![class isSubclassOfClass:[BaseViewController class]]&&![class isSubclassOfClass:[BaseTableViewController class]]) {
+        return;
+    }
+    BaseViewController *vc=[class new];
+
+     BaseNavigationController *navigationController=[[BaseNavigationController alloc] initWithRootViewController:vc];
+       vc.sendObject=sendObject;
+    [self presentViewController:navigationController animated:YES completion:nil];
 }
 
 -(void)popViewController:(Class)class object:(id)resultObject{

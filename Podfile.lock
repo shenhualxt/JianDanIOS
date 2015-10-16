@@ -28,6 +28,7 @@ PODS:
     - CocoaLumberjack/Core
   - CocoaLumberjack/Extensions (2.0.1):
     - CocoaLumberjack/Default
+  - FastImageCache (1.3)
   - FMDB (2.5):
     - FMDB/standard (= 2.5)
   - FMDB/common (2.5)
@@ -35,8 +36,8 @@ PODS:
     - FMDB/common
   - Kiwi (2.4.0)
   - MBProgressHUD (0.9.1)
-  - MJExtension (2.5.9)
-  - MJRefresh (2.4.8)
+  - MJExtension (2.5.12)
+  - MJRefresh (2.4.11)
   - MMDrawerController (0.6.0):
     - MMDrawerController/Core (= 0.6.0)
     - MMDrawerController/MMDrawerBarButtonItem (= 0.6.0)
@@ -49,6 +50,11 @@ PODS:
     - MMDrawerController/Core
   - MMDrawerController/Subclass (0.6.0):
     - MMDrawerController/Core
+  - NJKWebViewProgress (0.2.3):
+    - NJKWebViewProgress/Core (= 0.2.3)
+    - NJKWebViewProgress/ProgressView (= 0.2.3)
+  - NJKWebViewProgress/Core (0.2.3)
+  - NJKWebViewProgress/ProgressView (0.2.3)
   - PureLayout (3.0.1)
   - ReactiveCocoa (2.5):
     - ReactiveCocoa/UI (= 2.5)
@@ -60,37 +66,44 @@ PODS:
   - SDWebImage (3.7.3):
     - SDWebImage/Core (= 3.7.3)
   - SDWebImage/Core (3.7.3)
+  - TMCache (2.1.0)
   - TPKeyboardAvoiding (1.2.9)
-  - UITableView+FDTemplateLayoutCell (1.3)
+  - UITableView+FDTemplateLayoutCell (1.4.beta)
 
 DEPENDENCIES:
   - AFNetworking
   - CocoaLumberjack
+  - FastImageCache
   - FMDB
   - Kiwi (~> 2.4.0)
   - MBProgressHUD (~> 0.9.1)
   - MJExtension
   - MJRefresh
   - MMDrawerController (~> 0.6.0)
+  - NJKWebViewProgress
   - PureLayout
   - ReactiveCocoa
   - SDWebImage
+  - TMCache
   - TPKeyboardAvoiding
-  - UITableView+FDTemplateLayoutCell
+  - UITableView+FDTemplateLayoutCell (~> 1.4.beta)
 
 SPEC CHECKSUMS:
   AFNetworking: 79f7eb1a0fcfa7beb409332b2ca49afe9ce53b05
   CocoaLumberjack: 019d1361244274a6138c788c6cb80baabc13fb8f
+  FastImageCache: 25f214fd46405daca3d1995d783fb83b9036c62e
   FMDB: 96e8f1bcc1329e269330f99770ad4285d9003e52
   Kiwi: f49c9d54b28917df5928fe44968a39ed198cb8a8
   MBProgressHUD: c47f2c166c126cf2ce36498d80f33e754d4e93ad
-  MJExtension: 2330aeb6c83428c820749290bf766e81827cda65
-  MJRefresh: 887c9ee5ff155533d7d9c20098bebb7b847b2fcb
+  MJExtension: 5ab633484e431f777387c70b676c80f993361f1b
+  MJRefresh: b327947f35ab3eb16ca42646b26f7347e6aa7186
   MMDrawerController: e3a54a5570388463ad3b36975251575b50c4e1a0
+  NJKWebViewProgress: f481fd424cb5ecc27eacae11b5397db92fba9a4d
   PureLayout: f35f5384c9c4e4479df041dbe33ad7577b71ddfb
   ReactiveCocoa: e2db045570aa97c695e7aa97c2bcab222ae51f4a
   SDWebImage: 1d2b1a1efda1ade1b00b6f8498865f8ddedc8a84
+  TMCache: 95ebcc9b3c7e90fb5fd8fc3036cba3aa781c9bed
   TPKeyboardAvoiding: ff1ee4e5a5a0c119b965552af8f183868ea20207
-  UITableView+FDTemplateLayoutCell: d5be6056b5060313f5955a2590ecd33142ad713d
+  UITableView+FDTemplateLayoutCell: 9d20bf0518f3c01e42ae614243b97f1161063d27
 
-COCOAPODS: 0.38.2
+COCOAPODS: 0.39.0.beta.4

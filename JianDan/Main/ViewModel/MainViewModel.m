@@ -4,7 +4,7 @@
 /**
  * 缓存逻辑
  * 如果没有网络：则从缓存的数据库中分页取出
- * 如果有网络：则从网络获取（只加载新获取的第一页数据），并保存到数据库中
+ * 如果有网络：则取出缓存数据，再从网络获取，并保存到数据库中
  */
 //  Created by 刘献亭 on 15/8/29.
 //  Copyright © 2015年 刘献亭. All rights reserved.
@@ -12,113 +12,201 @@
 
 #import "MainViewModel.h"
 #import "CacheTools.h"
+#import "BoredPictures.h"
+#import "BLImageSize.h"
 
+//数据库取出数据时，按时间排序
 static NSString *_sortArgument=@"date";
 
 @interface MainViewModel ()
 
+//执行获取数据的Command
 @property(nonatomic, strong) RACCommand *sourceCommand;
+//获取的数据
 @property(nonatomic, strong) NSMutableArray *sourceArray;
-@property(nonatomic, assign) NSInteger currentPage;
+//当前页
+@property(nonatomic, assign) int currentPage;
+//加载的是否是缓存
 @property(nonatomic, assign) BOOL loadFromDB;
-@property(nonatomic, strong) RACTuple *turple;
-@property(nonatomic, assign) BOOL isLoadingMore;
+//是否是下拉加载更多(为了通用性，参数多了点)
+@property(nonatomic, assign) BOOL isLoadMore;
+//表名
+@property(nonatomic, strong) NSString *tableName;
+//模型
+@property(nonatomic, assign) Class modelClass;
+//接口地址
+@property (strong,nonatomic) NSString *url;
+//最终数据对应的key
+@property (strong,nonatomic) NSString *modelArgument;
 
 @end
 
 @implementation MainViewModel
 
-- (instancetype)init {
-    self = [super init];
-    if (self) {
-        self.sourceArray = [NSMutableArray array];
-        self.currentPage = 1;
-        [self setup];
-    }
-    return self;
-}
+INITWITHSETUP
 
-- (void)setup {
+- (void)setUp {
+    self.currentPage=1;
     @weakify(self)
     self.sourceCommand = [[RACCommand alloc] initWithSignalBlock:^RACSignal *(RACTuple *turple) {
-        self.turple=turple;
-        id isLoadMore=turple.first;
-        NSString *modelArgument=turple.second;
-        Class modelClass=turple.third;
-        NSString *url=turple.fourth;
         @strongify(self)
-        //获得需要加载的是第几页的数据
-        NSInteger page = 1;
-        if ([isLoadMore boolValue]) {
+        self.isLoadMore=[turple.first boolValue];
+        self.modelArgument=turple.second;
+        self.modelClass=turple.third;
+        self.url=turple.fourth;
+        self.tableName=turple.fifth;
+        
+        int page = 1;
+        if (self.isLoadMore) {
             page = ++self.currentPage;
         }
-        //获取新鲜事的数据
-        if ([AFNetWorkUtils sharedAFNetWorkUtils].netType==NONet){
+        //数据源信号
+        RACSignal *dbSignal=[self requestFromDBSignal:page];
+        RACSignal *netSignal=[[self requestFromNetSignal:page] map:^id(NSMutableArray *array) {
+            return [self handleResult:array];
+        }];
+
+        //1、没有网络 ----只加载缓存数据
+        BOOL isNoNet=[AFNetWorkUtils sharedAFNetWorkUtils].netType==NONet;
+        if(isNoNet){
             self.loadFromDB=YES;
-            return [self requestFromDBSignalWithPage:page class:modelClass];
-        }else{
-            self.loadFromDB=NO;
-            //执行了两次
-            return [self requestFromNetSignal:isLoadMore page:page subClass:modelClass url:url modelArgument:modelArgument];
+            return dbSignal;
         }
+        //2、有网络时第一次加载 先加载缓存，后加载服务器数据
+        BOOL isFirstLoad=page==1&&!self.isLoadMore&&!self.sourceArray.count&&!self.loadFromDB;
+        if (isFirstLoad) {
+            self.loadFromDB=YES;
+            return [RACSignal merge:@[dbSignal,netSignal]];
+        }
+        //3、网络获取数据--- 上拉刷新，或者上拉加载更多
+        self.loadFromDB=NO;
+        return netSignal;
     }];
 }
 
-- (RACSignal *)requestFromNetSignal:(const id)isLoadMore page:(NSInteger)page subClass:(Class)modelClass url:(NSString *)url modelArgument:(NSString*)modelArgument{
-    url = [NSString stringWithFormat:@"%@%ld", url, (long)page];
+/**
+ *  获取服务器数据
+ *
+ *  @param page 分页加载的当前页
+ *
+ *  @return 结果数据
+ */
+- (RACSignal *)requestFromNetSignal:(int)page{
+
+    if (![self.modelClass isSubclassOfClass:[BoredPictures class]]) {
+        return [self getObjectArraySignal:page];
+    }
+    
+    //还需要获取评论数量
     @weakify(self)
-    return [[[AFNetWorkUtils get2racWthURL:url] map:^id(NSDictionary *result) {
-        NSArray *dicArray=[result objectForKey:modelArgument];
-        NSMutableArray *array=[modelClass objectArrayWithKeyValuesArray:dicArray];
+    return [[self getObjectArraySignal:page] flattenMap:^RACStream *(NSMutableArray *resultArray) {
         @strongify(self)
-        self.isLoadingMore=NO;
-        //1，第一次加载数据 或者先前加载的是缓存的数据 获得切换了数据源
-        BOOL isSwitchModel=self.sourceArray.count&&![self.sourceArray[0] isKindOfClass:modelClass];
-        if (![self.sourceArray count]||self.loadFromDB ||isSwitchModel) {
-            return [self firstLoad:array];
-        }
-        //2，上拉加载更多
-        if ([isLoadMore boolValue]) {
-            return [self pullUpLoadMore:array];
-        }
-        //3，下拉加载更多
-        return [self pullDownLoadMore:array];
+        return [self getCommentCountsSignal:resultArray];
+    }];
+}
+
+/**
+ *  转成模型
+ */
+-(RACSignal *)getObjectArraySignal:(int)page{
+     NSString *url = [NSString stringWithFormat:@"%@%d", self.url, page];
+    
+    @weakify(self)
+    return [[[[[[AFNetWorkUtils get2racWthURL:url] filter:^BOOL(NSDictionary *result) {
+        return [result isKindOfClass:[NSDictionary class]]&&result;//保证结果不为空
+    }] map:^id(NSDictionary *result) {
+        return  [result objectForKey:self.modelArgument];//获取字典数组
+    }] filter:^BOOL(NSMutableArray *dicArray) {
+        return [dicArray isKindOfClass:[NSArray class]]&&dicArray.count;//保证数组不为空
+    }] map:^id(NSMutableArray *dicArray) {
+        @strongify(self)
+        return [self.modelClass objectArrayWithKeyValuesArray:dicArray];//字典转模型
     }] doError:^(NSError *error) {
         @strongify(self)
-        NSLog(@"%@",error);
-        if ([isLoadMore boolValue]) {
-            self.isLoadingMore = NO;
+        if (self.isLoadMore) {
+            self.currentPage--;
         }
     }];
 }
 
-- (RACSignal *)requestFromDBSignalWithPage:(NSInteger)page class:(Class)clazz{
+/**
+ *  异步保存到数据库
+ */
+-(NSMutableArray *)handleResult:(NSMutableArray *)array{
+    //1，第一次加载数据 或者先前加载的是缓存的数据
+    if (![self.sourceArray count]||self.loadFromDB ) {
+        return [self firstLoad:array];
+    }
+    //2，上拉加载更多
+    if (self.isLoadMore) {
+        return [self pullUpLoadMore:array];
+    }
+    //3，下拉加载更多
+    return [self pullDownLoadMore:array];
+}
+
+/**
+ *  获取评论数量（除了新鲜事）
+ */
+-(RACSignal *)getCommentCountsSignal:(NSMutableArray *)array{
+    NSMutableString *param=[NSMutableString string];
+    for (BoredPictures *boredPictures in array) {
+        [param appendFormat:@"comment-%@,", boredPictures.post_id];
+    }
+    return [[AFNetWorkUtils get2racWthURL:appendString(commentCountUrl, param)]  map:^id(NSDictionary *resultDic) {
+        NSDictionary *response=[resultDic objectForKey:@"response"];
+        if (![response isKindOfClass:[NSDictionary class]]) {
+            NSLog(@"获取评论数量失败");
+            return array;
+        }
+        
+        for (BoredPictures *boredPictures in array) {
+            NSString *key=appendString(@"comment-", boredPictures.post_id);
+            NSDictionary *result=[response objectForKey:key];
+            boredPictures.comment_count=ConvertToString([result objectForKey:@"comments"]);
+        }
+        return array;
+    }];
+}
+/**
+ *  获取缓存数据
+ */
+- (RACSignal *)requestFromDBSignal:(int)page{
     @weakify(self)
-    return [[[CacheTools sharedCacheTools] read:clazz page:page] map:^id(NSArray *array) {
+    return [[[CacheTools sharedCacheTools] read:self.modelClass page:page tableName:self.tableName] map:^id(NSArray *array) {
         @strongify(self)
-        self.isLoadingMore = NO;
         if(!array|| ![array count]){
             return self.sourceArray;
         }
-        [[ToastHelper sharedToastHelper] toast:@"无网络，当前显示为缓存数据"];
+        NSLog(@"无网络，当前显示为缓存数据(有网时，第一次正常)");
         [self.sourceArray addObjectsFromArray:array];
         return self.sourceArray;
     }];
 }
 
-- (NSArray *)firstLoad:(NSMutableArray *)array {
+/**
+ *  第一次加载
+ */
+- (NSMutableArray *)firstLoad:(NSMutableArray *)array {
     self.sourceArray=array;
-    [[CacheTools sharedCacheTools] save:array sortArgument:_sortArgument];
+    [self save:array];
     return  self.sourceArray;
 }
 
-- (NSArray *)pullUpLoadMore:(NSArray *)array {
+/**
+ *  上拉加载
+ */
+- (NSMutableArray *)pullUpLoadMore:(NSMutableArray *)array {
     [self.sourceArray addObjectsFromArray:array];
-    [[CacheTools sharedCacheTools] save:array sortArgument:_sortArgument];
+    [self save:array];
     return self.sourceArray;
 }
 
-- (NSArray *)pullDownLoadMore:(NSArray *)array {
+/**
+ *  下拉刷新
+ */
+- (NSMutableArray *)pullDownLoadMore:(NSMutableArray *)array {
+    NSInteger prevoiusCount=self.sourceArray.count;
     [array enumerateObjectsUsingBlock:^(id object, NSUInteger idx, BOOL *stop) {
         if ([object isEqual:self.sourceArray[0]]) {
             *stop = YES;
@@ -126,23 +214,84 @@ static NSString *_sortArgument=@"date";
             if (!subArray || [subArray count]) {
                 NSIndexSet *indexSet = [NSIndexSet indexSetWithIndexesInRange:NSMakeRange(0, [subArray count])];
                 [self.sourceArray insertObjects:subArray atIndexes:indexSet];
-                [[CacheTools sharedCacheTools] save:subArray sortArgument:_sortArgument];
+                [self save:[subArray mutableCopy]];
             }
         }
     }];
+    NSInteger offset=self.sourceArray.count-prevoiusCount;
+    [[ToastHelper sharedToastHelper] toast:offset?[NSString stringWithFormat:@"%d条新数据",(int)offset]:@"没有新数据"];
     return self.sourceArray;
 }
 
-#pragma mark -scrollView delegate
-- (void)scrollViewDidScroll:(UIScrollView *)scrollView {
-    CGFloat height = scrollView.frame.size.height;
-    CGFloat contentOffsetY = scrollView.contentOffset.y;
-    CGFloat distanceFromBottom = scrollView.contentSize.height - contentOffsetY;
-    if (distanceFromBottom < 12 * height && [self.sourceArray count] && !self.isLoadingMore) {
-        self.isLoadingMore = YES;
-        RACTuple *newTurple=[RACTuple tupleWithObjects:@(YES),self.turple.second,self.turple.third,self.turple.fourth, nil];
-        [self.sourceCommand execute:newTurple];
+/**
+ *  下载图片大小（除了新鲜事）并缓存到数据库
+ */
+-(void)save:(NSMutableArray *)array{
+    if ([array[0] isKindOfClass:[BoredPictures class]]) {
+       [self downloadImageSizes:array count:0];
+    }else{
+       [[CacheTools sharedCacheTools] save:array sortArgument:_sortArgument tableName:self.tableName];
     }
+}
+
+/**
+ *  下载图片大小
+ */
+-(void)downloadImageSizes:(NSMutableArray *)array count:(int)count{
+        dispatch_group_t group = dispatch_group_create();
+        [array enumerateObjectsUsingBlock:^(BoredPictures *_Nonnull pictures, NSUInteger idx, BOOL * _Nonnull stop) {
+            if (!pictures.picUrl) return ;
+            if (pictures.picSize.height) return;
+            //不会存在线程安全问题
+            dispatch_group_async(group, dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
+                pictures.picSize=[BLImageSize downloadImageSizeWithURL:pictures.picUrl];
+            });
+        }];
+        //等group中所有的任务都执行完了，再执行其他操作
+        dispatch_group_notify(group, dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
+            [[CacheTools sharedCacheTools] save:array sortArgument:_sortArgument tableName:self.tableName];
+        });
+}
+
+/**
+ *  下载图片大小
+ */
+-(RACSignal *)downloadImageSize:(NSMutableArray *)array count:(int)count{
+    return [RACSignal createSignal:^RACDisposable *(id<RACSubscriber> subscriber) {
+        dispatch_group_t group = dispatch_group_create();
+        [array enumerateObjectsUsingBlock:^(BoredPictures *_Nonnull pictures, NSUInteger idx, BOOL * _Nonnull stop) {
+            if (!pictures.picUrl) return ;
+            if (pictures.picSize.height) return;
+            //不会存在线程安全问题
+            dispatch_group_async(group, dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
+                pictures.picSize=[BLImageSize downloadImageSizeWithURL:pictures.picUrl];
+            });
+        }];
+        //等group中所有的任务都执行完了，再执行其他操作
+        dispatch_group_notify(group, dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
+            [subscriber sendNext:array];
+            [subscriber sendCompleted];
+        });
+        return nil;
+    }];
+   
+}
+
+#pragma mark -scrollView delegate
+//滑到底部，自动加载新的数据
+- (void)scrollViewDidScroll:(UIScrollView *)scrollView {
+    CGFloat distanceFromBottom = scrollView.contentSize.height - scrollView.contentOffset.y;
+    if (distanceFromBottom < 3*SCREEN_HEIGHT&&[self.sourceArray count]) {
+        [self loadNextPageData];
+    }
+}
+
+/**
+ *  加载下一页的数据
+ */
+-(void)loadNextPageData{
+    RACTuple *newTurple=RACTuplePack(@(YES),self.modelArgument,self.modelClass,self.url,self.tableName);
+    [self.sourceCommand execute:newTurple];
 }
 
 @end

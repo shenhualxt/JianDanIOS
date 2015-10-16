@@ -16,6 +16,7 @@
 #import "BoredPictursCell.h"
 #import "AppDelegate.h"
 #import "BoredPicturesController.h"
+#import "SettingController.h"
 
 @interface LeftMenuController ()
 
@@ -57,7 +58,7 @@
     [settingButton setBackgroundImage:[CommonUtils createImageWithColor:RGBA(255, 255, 255, 0.6)] forState:UIControlStateHighlighted];
     [[settingButton rac_signalForControlEvents:UIControlEventTouchUpInside] subscribeNext:^(id x) {
         MMDrawerController *drawerController = self.mm_drawerController;
-        [drawerController.navigationController pushViewController:[BoredPicturesController new] animated:YES];
+        [drawerController.navigationController pushViewController:[SettingController new] animated:YES];
     }];
 }
 

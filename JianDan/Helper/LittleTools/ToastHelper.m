@@ -26,7 +26,9 @@ DEFINE_SINGLETON_IMPLEMENTATION(ToastHelper)
  */
 -(void)toast:(NSString *)textString delayTime:(int)delayTime {
     dispatch_async(dispatch_get_main_queue(), ^{
-        MBProgressHUD *hud = [MBProgressHUD showHUDAddedTo:[[UIApplication sharedApplication].windows objectAtIndex:1] animated:YES];
+        UIView *view=[[UIApplication sharedApplication].windows objectAtIndex:1];
+      
+        MBProgressHUD *hud = [MBProgressHUD showHUDAddedTo:view animated:YES];
         hud.mode = MBProgressHUDModeText;
         hud.animationType = MBProgressHUDAnimationZoomOut;
         hud.labelText = textString;
@@ -43,6 +45,7 @@ DEFINE_SINGLETON_IMPLEMENTATION(ToastHelper)
 
 -(void)setUp{
     UIView *view=[UIApplication sharedApplication].keyWindow;
+   
     self.HUD = [[MBProgressHUD alloc] initWithView:view];
     [view addSubview:self.HUD];
 }

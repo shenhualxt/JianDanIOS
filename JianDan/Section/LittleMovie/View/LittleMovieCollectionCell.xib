@@ -1,0 +1,131 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="8191" systemVersion="15A284" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="8154"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="LittleMovieCollectionCell" id="gTV-IL-0wX" customClass="LittleMovieCollectionCell">
+            <rect key="frame" x="0.0" y="0.0" width="202" height="177"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                <rect key="frame" x="0.0" y="0.0" width="202" height="177"/>
+                <subviews>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ejE-jW-e8R" customClass="CardView">
+                        <rect key="frame" x="6" y="6" width="190" height="165"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" placeholderIntrinsicWidth="infinite" placeholderIntrinsicHeight="89" translatesAutoresizingMaskIntoConstraints="NO" id="PZ4-As-cJF">
+                                <rect key="frame" x="0.0" y="0.0" width="190" height="89"/>
+                                <animations/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="89" id="Z7R-5q-yPf"/>
+                                </constraints>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalCompressionResistancePriority="751" text="TwoLines-TitleTwoLines-TitleTwoLines-TitleTwoLines-Title" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QlC-Md-5Ur">
+                                <rect key="frame" x="9" y="97" width="173" height="42"/>
+                                <animations/>
+                                <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="F1X-yb-KE8">
+                                <rect key="frame" x="41" y="139" width="30" height="26"/>
+                                <animations/>
+                                <fontDescription key="fontDescription" type="system" pointSize="11"/>
+                                <state key="normal" title="XX 0">
+                                    <color key="titleColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="252" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8KW-qG-0If">
+                                <rect key="frame" x="73" y="139" width="33" height="26"/>
+                                <animations/>
+                                <fontDescription key="fontDescription" type="system" pointSize="11"/>
+                                <state key="normal" title="吐槽 0">
+                                    <color key="titleColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="749" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KsK-I7-41P">
+                                <rect key="frame" x="162" y="142" width="20" height="20"/>
+                                <animations/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="20" id="nJs-cr-BnP"/>
+                                    <constraint firstAttribute="height" constant="20" id="rVM-Wv-jKk"/>
+                                </constraints>
+                                <state key="normal" image="ic_more_horiz_grey600_24dp">
+                                    <color key="titleColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pD7-Eh-bF1">
+                                <rect key="frame" x="9" y="139" width="30" height="26"/>
+                                <animations/>
+                                <fontDescription key="fontDescription" type="system" pointSize="11"/>
+                                <state key="normal" title="OO 0">
+                                    <color key="titleColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                            </button>
+                        </subviews>
+                        <animations/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="pD7-Eh-bF1" firstAttribute="top" secondItem="QlC-Md-5Ur" secondAttribute="bottom" id="31I-rB-t9z"/>
+                            <constraint firstItem="F1X-yb-KE8" firstAttribute="centerY" secondItem="pD7-Eh-bF1" secondAttribute="centerY" id="HYp-YD-Tpj"/>
+                            <constraint firstItem="PZ4-As-cJF" firstAttribute="leading" secondItem="ejE-jW-e8R" secondAttribute="leading" id="Hgd-n6-rhs"/>
+                            <constraint firstItem="KsK-I7-41P" firstAttribute="trailing" secondItem="QlC-Md-5Ur" secondAttribute="trailing" id="IvS-CE-ss3"/>
+                            <constraint firstItem="QlC-Md-5Ur" firstAttribute="top" secondItem="PZ4-As-cJF" secondAttribute="bottom" constant="8" id="N4X-fP-vKe"/>
+                            <constraint firstItem="QlC-Md-5Ur" firstAttribute="leading" secondItem="PZ4-As-cJF" secondAttribute="leading" constant="9" id="Uzj-Ng-Nrd"/>
+                            <constraint firstAttribute="trailing" secondItem="QlC-Md-5Ur" secondAttribute="trailing" constant="8" id="av1-2t-i6b"/>
+                            <constraint firstAttribute="trailing" secondItem="PZ4-As-cJF" secondAttribute="trailing" id="g23-tc-cBV"/>
+                            <constraint firstItem="pD7-Eh-bF1" firstAttribute="leading" secondItem="QlC-Md-5Ur" secondAttribute="leading" id="j7o-vA-UOF"/>
+                            <constraint firstItem="8KW-qG-0If" firstAttribute="centerY" secondItem="F1X-yb-KE8" secondAttribute="centerY" id="ja5-zG-svE"/>
+                            <constraint firstItem="KsK-I7-41P" firstAttribute="centerY" secondItem="8KW-qG-0If" secondAttribute="centerY" id="neA-xr-NHa"/>
+                            <constraint firstItem="8KW-qG-0If" firstAttribute="leading" secondItem="F1X-yb-KE8" secondAttribute="trailing" constant="2" id="wME-Rn-IQx"/>
+                            <constraint firstItem="F1X-yb-KE8" firstAttribute="leading" secondItem="pD7-Eh-bF1" secondAttribute="trailing" constant="2" id="wqJ-o8-0uz"/>
+                            <constraint firstItem="pD7-Eh-bF1" firstAttribute="top" secondItem="QlC-Md-5Ur" secondAttribute="bottom" id="wxA-W3-TAk"/>
+                            <constraint firstItem="PZ4-As-cJF" firstAttribute="top" secondItem="ejE-jW-e8R" secondAttribute="top" id="ydW-BF-R1w"/>
+                            <constraint firstAttribute="bottom" secondItem="pD7-Eh-bF1" secondAttribute="bottom" id="z16-TK-TrS"/>
+                        </constraints>
+                        <variation key="default">
+                            <mask key="constraints">
+                                <exclude reference="31I-rB-t9z"/>
+                            </mask>
+                        </variation>
+                    </view>
+                </subviews>
+                <animations/>
+                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+            </view>
+            <animations/>
+            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+            <constraints>
+                <constraint firstItem="ejE-jW-e8R" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" constant="6" id="KED-IQ-lSQ"/>
+                <constraint firstAttribute="bottom" secondItem="ejE-jW-e8R" secondAttribute="bottom" constant="6" id="joI-6y-aJj"/>
+                <constraint firstItem="ejE-jW-e8R" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" constant="6" id="jrc-bP-R4k"/>
+                <constraint firstAttribute="trailing" secondItem="ejE-jW-e8R" secondAttribute="trailing" constant="6" id="knE-qN-hXa"/>
+            </constraints>
+            <size key="customSize" width="202" height="177"/>
+            <userDefinedRuntimeAttributes>
+                <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                    <integer key="value" value="4"/>
+                </userDefinedRuntimeAttribute>
+            </userDefinedRuntimeAttributes>
+            <connections>
+                <outlet property="buttonChat" destination="8KW-qG-0If" id="bBu-la-Wgq"/>
+                <outlet property="buttonMore" destination="KsK-I7-41P" id="Uc5-3Y-R8r"/>
+                <outlet property="buttonOO" destination="pD7-Eh-bF1" id="2hr-MU-7OQ"/>
+                <outlet property="buttonXX" destination="F1X-yb-KE8" id="A0a-ln-bHg"/>
+                <outlet property="imagePictures" destination="PZ4-As-cJF" id="ABS-JB-bLS"/>
+                <outlet property="labelTitle" destination="QlC-Md-5Ur" id="XXW-mx-szu"/>
+            </connections>
+            <point key="canvasLocation" x="231" y="273.5"/>
+        </collectionViewCell>
+    </objects>
+    <resources>
+        <image name="ic_more_horiz_grey600_24dp" width="48" height="48"/>
+    </resources>
+</document>

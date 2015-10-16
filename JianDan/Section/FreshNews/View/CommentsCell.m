@@ -7,40 +7,55 @@
 //
 
 #import "CommentsCell.h"
-#import "FreshNewsComment.h"
-#import "UITableView+FDTemplateLayoutCell.h"
-static NSString *reuseIdentifier=@"CommentsCell";
+#import "VoteViewModel.h"
+#import "Comments.h"
+#import "LTAlertView.h"
+#import "PureLayout.h"
+#import "NSString+Date.h"
+
 @implementation CommentsCell
+
 
 -(void)awakeFromNib{
     self.selectionStyle=UITableViewCellSelectionStyleNone;
+    self.imageViewAvatar.layer.masksToBounds=YES;
+    self.imageViewAvatar.layer.cornerRadius=17;
 }
 
 -(void)bindViewModel:(Comments *)comment forIndexPath:(NSIndexPath *)indexPath{
     //如果名字过长 重置控件优先级
-    if (comment.nameWidth>[UIScreen mainScreen].bounds.size.width/3) {
+    if (comment.nameWidth>SCREEN_WIDTH/3) {
         self.userNameWidthConstraint.priority=750;
     }
-    
-    //绑定数据
+    //公用数据
     self.labelUserName.text=comment.name;
     self.labelContent.text=comment.content;
     self.labelTime.text=comment.date;
-    [self.buttonOO setTitle:[NSString stringWithFormat:@"OO %ld",(long)comment.vote_positive] forState:UIControlStateNormal];
-    [self.buttonXX setTitle:[NSString stringWithFormat:@"XX %ld",(long)comment.vote_negative] forState:UIControlStateNormal];
     if(comment.parentCommentsArray.count>0){
         self.subCommentArray=comment.parentCommentsArray;
         self.floorView.dataSource=self;
     }else{
         self.subCommentArray=nil;
+        self.floorView.dataSource=nil;
+    }
+    
+    //无聊图 有头像，无顶和踩
+    if (comment.created_at) {
+        [self.imageViewAvatar sd_setImageWithURL:[NSURL URLWithString:comment.avatar_url] placeholderImage:[UIImage imageNamed:@"ic_play_gif"]];
+        self.constraintAvatarWidth.constant=34;
+        self.buttonOO.hidden=YES;
+        self.buttonXX.hidden=YES;
+        [self.constraintLineLeading autoRemove];
+        [self.viewLine autoPinEdge:ALEdgeLeading toEdge:ALEdgeLeading ofView:self.labelUserName];
+    }else{//新鲜事 无头像 有顶和踩 在其他地方通用
+        [VoteViewModel setVoteButtonOO:self.buttonOO buttonXX:self.buttonXX cell:self vote:comment];
     }
 }
 
 #pragma mark -LTFloorViewDataSource
 -(UIView *)floorView:(LTFloorView *)floorView subFloorViewAtIndex:(NSInteger)index{
-    UIView *view=nil;
      Comments *comment=self.subCommentArray[index];
-    view=[[[NSBundle mainBundle] loadNibNamed:@"SubCommentView" owner:self options:nil] firstObject];
+    UIView *view=[[[NSBundle mainBundle] loadNibNamed:@"SubCommentView" owner:self options:nil] firstObject];
     UILabel *labelAuthorName=(UILabel *)[view viewWithTag:3];
     labelAuthorName.text=comment.name;
     UILabel *labContent=(UILabel *)[view viewWithTag:4];
@@ -52,5 +67,4 @@ static NSString *reuseIdentifier=@"CommentsCell";
 -(NSInteger)numberOfSubFloorsInFloorView:(LTFloorView *)floorView{
     return self.subCommentArray.count;
 }
-
 @end

@@ -11,14 +11,19 @@
 
 #define kUIWebViewRACDelegate @"UIWebViewRACDelegate"
 
-@interface UIWebView()<UIWebViewDelegate>
+@interface UIWebView()
 
 @end
 
 @implementation UIWebView (RAC)
 
--(void)setRACDelegate:(id<UIWebViewRACDelegate>)delegate{
-    objc_setAssociatedObject(self, kUIWebViewRACDelegate, delegate, OBJC_ASSOCIATION_RETAIN_NONATOMIC);
+
+-(void)setRac_delegate:(id<UIWebViewDelegate>)rac_delegate{
+    objc_setAssociatedObject(self, kUIWebViewRACDelegate, rac_delegate, OBJC_ASSOCIATION_RETAIN_NONATOMIC);
+}
+
+-(id<UIWebViewDelegate>)rac_delegate{
+    return objc_getAssociatedObject(self, kUIWebViewRACDelegate);
 }
 
 -(RACSignal *)rac_isLoadingSignal{
@@ -29,23 +34,21 @@
         return signal;
     }
     
-    id<UIWebViewRACDelegate> delegate=objc_getAssociatedObject(self, kUIWebViewRACDelegate);
-    
     RACSignal *startLoadSignal=[[[self rac_signalForSelector:@selector(webViewDidStartLoad:) fromProtocol:@protocol(UIWebViewDelegate)] doNext:^(id x) {
-        if ([delegate respondsToSelector:@selector(rac_webViewDidStartLoad:)]) {
-            [delegate rac_webViewDidStartLoad:self];
+        if ([self.rac_delegate respondsToSelector:@selector(webViewDidStartLoad:)]) {
+            [self.rac_delegate webViewDidStartLoad:self];
         }
     }]mapReplace:@YES];
     
     RACSignal *finishLoadSignal=[[[self rac_signalForSelector:@selector(webViewDidFinishLoad:) fromProtocol:@protocol(UIWebViewDelegate)] doNext:^(id x) {
-        if ([delegate respondsToSelector:@selector(rac_webViewDidFinishLoad:)]) {
-            [delegate rac_webViewDidFinishLoad:self];
+        if ([self.rac_delegate respondsToSelector:@selector(webViewDidFinishLoad:)]) {
+            [self.rac_delegate webViewDidFinishLoad:self];
         }
     }] mapReplace:@NO];
     
     RACSignal *failLoadSignal= [[[self rac_signalForSelector:@selector(webView:didFailLoadWithError:) fromProtocol:@protocol(UIWebViewDelegate)] doNext:^(id x) {
-        if ([delegate respondsToSelector:@selector(rac_webView:didFailLoadWithError:)]) {
-            [delegate rac_webView:self didFailLoadWithError:x];
+        if ([self.rac_delegate respondsToSelector:@selector(webView:didFailLoadWithError:)]) {
+            [self.rac_delegate webView:self didFailLoadWithError:x];
         }
     }] mapReplace:@NO];
 

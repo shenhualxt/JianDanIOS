@@ -7,11 +7,18 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "CETableViewBindingHelper.h"
 
 /// A protocol which is adopted by views which are backed by view models.
 @protocol CEReactiveView <NSObject>
 
-/// Binds the given view model to the view
+@optional
+- (void)bindViewModel:(id)viewModel;
+
 - (void)bindViewModel:(id)viewModel forIndexPath:(NSIndexPath *)indexPath;
+
+- (void)bindViewModel:(CETableViewBindingHelper *)helper viewModel:(id)viewModel forIndexPath:(NSIndexPath *)indexPath;
+
+- (void)loadImage:(id)viewModel forIndexPath:(NSIndexPath *)indexPath helper:(CETableViewBindingHelper *)helper;
 
 @end

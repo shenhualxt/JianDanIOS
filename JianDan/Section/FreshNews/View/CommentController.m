@@ -2,10 +2,10 @@
 #import "CommentViewModel.h"
 #import "CommentsCell.h"
 #import "UITableView+FDTemplateLayoutCell.h"
-#import "FreshNewsComment.h"
 #import "InsetsLabel.h"
 #import "PushCommentController.h"
 #import "LTAlertView.h"
+#import "Comments.h"
 
 static NSString *reuseIdentifier=@"CommentsCell";
 static NSString *reuseIdentifierWithParent=@"CommentsCellWithParentComent";
@@ -13,12 +13,9 @@ static NSString *reuseIdentifierWithParent=@"CommentsCellWithParentComent";
 @interface CommentController()<LTFloorViewDelegate>
 
 @property(strong,nonatomic) NSMutableArray *commentsArray;
-@property(assign,nonatomic) NSInteger hotCommentCount;
 @property (nonatomic, strong) CommentsCell *prototypeCell;
 @property (nonatomic, strong) CommentViewModel *viewModel;
-@property (weak, nonatomic) IBOutlet UILabel *labelUserName;
-@property (weak, nonatomic) IBOutlet UIButton *buttonReply;
-@property (weak, nonatomic) IBOutlet UIButton *buttonCopy;
+@property (nonatomic, strong) NSString *thread_id;
 
 @end
 
@@ -26,7 +23,6 @@ static NSString *reuseIdentifierWithParent=@"CommentsCellWithParentComent";
 
 -(void)viewDidLoad{
     [super viewDidLoad];
-  
     [self initView];
     [self bindingViewModel];
 }
@@ -34,7 +30,7 @@ static NSString *reuseIdentifierWithParent=@"CommentsCellWithParentComent";
 -(void)initView{
     self.title=@"评论";
     //设置tableView
-    self.tableView.estimatedRowHeight = 180;
+    self.tableView.estimatedRowHeight = 140;
     UINib *nib=[UINib nibWithNibName:reuseIdentifier bundle:nil];
     [self.tableView registerNib:nib forCellReuseIdentifier:reuseIdentifier];
     [self.tableView registerNib:nib forCellReuseIdentifier:reuseIdentifierWithParent];
@@ -42,22 +38,28 @@ static NSString *reuseIdentifierWithParent=@"CommentsCellWithParentComent";
     UIBarButtonItem *rightItem=[self createButtonItem:@"ic_action_edit"];
     self.navigationItem.rightBarButtonItem=rightItem;
     [[(UIButton *)rightItem.customView rac_signalForControlEvents:UIControlEventTouchUpInside] subscribeNext:^(id x) {
-        [self pushViewController:[PushCommentController class] object:self.sendObject];
+        [self pushViewController:[PushCommentController class] object:self.thread_id];
     }];
 }
 
 -(void)bindingViewModel{
-    self.viewModel=[CommentViewModel new];
-    [[self.viewModel.sourceCommand.executionSignals switchToLatest] subscribeNext:^(RACTuple *turple) {
-        self.commentsArray=turple.first;
+    self.thread_id=[NSString stringWithFormat:@"%@",self.sendObject];
+    BOOL isFreshNewsComment=self.thread_id.length==5;
+    self.viewModel=[[CommentViewModel alloc] initWithType:isFreshNewsComment?CommentsTypeFreshNews:CommentsTypeBoredPicture];
+    [[self.viewModel.sourceCommand.executionSignals switchToLatest] subscribeNext:^(id result) {
+        self.commentsArray=result;
+        if ([result isKindOfClass:[RACTuple class]]) {
+            self.commentsArray=[(RACTuple *)result first];
+            self.thread_id=[(RACTuple *)result second]; //thread_id在这里被更换
+        }
+
         if (self.commentsArray.count) {
-            self.hotCommentCount=[turple.second integerValue];
             [self.tableView reloadData];
         }else{
             self.tableView.tableFooterView=[UIView new];
         }
     }];
-    [self.viewModel.sourceCommand execute:self.sendObject];
+    [self.viewModel.sourceCommand execute:self.thread_id];
     
     [self.viewModel.sourceCommand.executing subscribeNext:^(id x) {
         [ToastHelper sharedToastHelper].simleProgressVisiable=[x boolValue];
@@ -68,16 +70,21 @@ static NSString *reuseIdentifierWithParent=@"CommentsCellWithParentComent";
     [super viewWillAppear:animated];
     //将该条数据插到评论区中
     if ([self.resultObject isKindOfClass:[Comments class]]) {
-        [self.viewModel getParentComment:self.commentsArray comment:self.resultObject];
-        [self.commentsArray insertObject:self.resultObject atIndex:self.hotCommentCount];
-        NSIndexPath *indexPath=[NSIndexPath indexPathForRow:0 inSection:self.hotCommentCount?1:0];
+        NSString *threadId=[NSString stringWithFormat:@"%@",self.sendObject];
+        BOOL isFreshNewsComment=threadId.length==5;
+        if (isFreshNewsComment) {
+            [self.viewModel getParentComment:self.commentsArray comment:self.resultObject];
+        }
+        BOOL hasHotComments=self.commentsArray.count==2;
+        [[self.commentsArray objectAtIndex:hasHotComments?1:0] insertObject:self.resultObject atIndex:0];
+        NSIndexPath *indexPath=[NSIndexPath indexPathForRow:0 inSection:hasHotComments?1:0];
         [self.tableView insertRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationNone];
     }
 }
 
 #pragma mark -tableView delegate
 -(NSInteger)numberOfSectionsInTableView:(UITableView *)tableView{
-    return self.commentsArray.count?(self.hotCommentCount?2:1):0;
+    return self.commentsArray.count;
 }
 
 -(UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section{
@@ -87,7 +94,7 @@ static NSString *reuseIdentifierWithParent=@"CommentsCellWithParentComent";
     label.backgroundColor=[UIColor whiteColor];
     
     //没有热门评论
-    if (!self.hotCommentCount) {
+    if (self.commentsArray.count==1) {
         label.text=@"最新评价";
     }else{
         label.text=section?@"最新评价":@"热门评价";
@@ -101,51 +108,42 @@ static NSString *reuseIdentifierWithParent=@"CommentsCellWithParentComent";
 
 //第section个分段有多少行
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    //没有热门评论
-    if (self.hotCommentCount==0) {
-        return self.commentsArray.count;
-    }
-    //有热门评论
-    return section?self.commentsArray.count-self.hotCommentCount:self.hotCommentCount;
+    return [self.commentsArray[section] count];
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    CommentsCell *cell =(CommentsCell*)[tableView dequeueReusableCellWithIdentifier:[self reuseIdentifierAtIndexPath:indexPath]];
-    [cell bindViewModel:[self commentAtIndexPath:indexPath] forIndexPath:indexPath];
-    cell.floorView.delegate=self;
-    cell.floorView.tag=indexPath.row+self.hotCommentCount*indexPath.section;
+    BOOL isHasParent=[self.commentsArray[indexPath.section][indexPath.row] parentCommentsArray].count;
+    CommentsCell *cell =(CommentsCell*)[tableView dequeueReusableCellWithIdentifier:isHasParent?reuseIdentifierWithParent:reuseIdentifier];
+    [cell bindViewModel:self.commentsArray[indexPath.section][indexPath.row] forIndexPath:indexPath];
+    if(isHasParent){
+        cell.floorView.delegate=self;
+        cell.floorView.superview.tag=indexPath.section;
+        cell.floorView.tag=indexPath.row;
+    }
     return cell;
 }
 
 -(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
-    return [tableView fd_heightForCellWithIdentifier:[self reuseIdentifierAtIndexPath:indexPath] cacheByIndexPath:indexPath configuration:^(CommentsCell *cell) {
-        [cell bindViewModel:[self commentAtIndexPath:indexPath] forIndexPath:indexPath];
-    }];
+    if (IOS8) {
+        return UITableViewAutomaticDimension;
+    }else{
+        Comments *comment=self.commentsArray[indexPath.section][indexPath.row];
+        BOOL isHasParent=comment.parentCommentsArray.count;
+        return [tableView fd_heightForCellWithIdentifier:isHasParent?reuseIdentifierWithParent:reuseIdentifier cacheByKey:comment.post_id configuration:^(CommentsCell *cell) {
+            [cell bindViewModel:comment forIndexPath:indexPath];
+        }];
+    }
 }
 
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
-    [self showAlertView:[self commentAtIndexPath:indexPath]];
-}
-
-- (Comments *)commentAtIndexPath:(NSIndexPath *)indexPath {
-    NSInteger index=indexPath.row+self.hotCommentCount*indexPath.section;
-    return  self.commentsArray[index];
-}
-
--(NSString *)reuseIdentifierAtIndexPath:(NSIndexPath *)indexPath{
-     BOOL isHasParent=[self commentAtIndexPath:indexPath].parentCommentsArray.count;
-    return isHasParent?reuseIdentifierWithParent:reuseIdentifier;
+    [self showAlertView:self.commentsArray[indexPath.section][indexPath.row]];
 }
 
 #pragma mark LTFloorView delegate
 -(void)floorView:(LTFloorView *)floorView didSelectRowAtIndex:(NSInteger)index{
-    if (floorView.tag>=self.commentsArray.count) {
-        return;
-    }
-    Comments *comment=self.commentsArray[floorView.tag];
-    if (index>=comment.parentCommentsArray.count) {
-        return;
-    }
+    NSInteger row=floorView.tag;
+    NSInteger selection=floorView.superview.tag;
+    Comments *comment=self.commentsArray[selection][row];
     Comments *subComment=comment.parentCommentsArray[index];
     [self showAlertView:subComment];
 }
@@ -154,13 +152,16 @@ static NSString *reuseIdentifierWithParent=@"CommentsCellWithParentComent";
     UIView *view=[[[NSBundle mainBundle] loadNibNamed:@"CommentClickAlertView" owner:self options:nil] lastObject];
      LTAlertView *alertView=[[LTAlertView alloc] initWithNib:view];
     [alertView show];
-    self.labelUserName.text=comment.name;
-    [[self.buttonReply rac_signalForControlEvents:UIControlEventTouchUpInside] subscribeNext:^(id x) {
+    UILabel *labelUserName=(UILabel *)[alertView viewWithTag:1];
+    labelUserName.text=comment.name;
+    UIButton *buttonReply=(UIButton *)[alertView viewWithTag:2];
+    [[buttonReply rac_signalForControlEvents:UIControlEventTouchUpInside] subscribeNext:^(id x) {
         [alertView dismiss];
-        RACTuple *turple=[RACTuple tupleWithObjects:comment,self.sendObject, nil];
+        RACTuple *turple=[RACTuple tupleWithObjects:comment,self.thread_id, nil];
         [self pushViewController:[PushCommentController class] object:turple];
     }];
-    [[self.buttonCopy rac_signalForControlEvents:UIControlEventTouchUpInside] subscribeNext:^(id x) {
+    UIButton *buttonCopy=(UIButton *)[alertView viewWithTag:3];
+    [[buttonCopy rac_signalForControlEvents:UIControlEventTouchUpInside] subscribeNext:^(id x) {
         [alertView dismiss];
         [UIPasteboard generalPasteboard].string=comment.content;
         if (comment.content.length) {

@@ -7,193 +7,221 @@
 //
 #import "CacheTools.h"
 #import "FMDB.h"
+#import "NSErrorHelper.h"
+
+NSString * const CacheToolsDomain=@"http://CacheTools";
+
 
 @implementation CacheTools
 
-//注意：数据库表名和模型名相同（如果同一种模型数据，需要缓存多次，需另行扩展）
-static FMDatabase *_db;
 static NSString *dbName = @"jiandan.sqlite";
-static NSInteger pageNum = 20;
+static NSInteger pageNum = 24;
 
-static CacheTools *sharedCacheTools = nil;
-static dispatch_once_t pred;
 static FMDatabaseQueue *queue;
 
-+ (CacheTools *)sharedCacheTools {
-    dispatch_once(&pred, ^{
-         sharedCacheTools = [[super allocWithZone:NULL] init];
-        _db = [FMDatabase databaseWithPath:[self getPath:dbName]];
-        queue = [FMDatabaseQueue databaseQueueWithPath:[self getPath:dbName]];
-    });
-    return sharedCacheTools;
-}
-
-+ (id)allocWithZone:(NSZone *)zone {
-    return [self sharedCacheTools];
-}
-
-- (id)copyWithZone:(NSZone *)zone {
-    return self;
-}
+DEFINE_SINGLETON_IMPLEMENTATION(CacheTools)
 
 -(void)setUp{
-    
+   queue = [FMDatabaseQueue databaseQueueWithPath:[self getPath:dbName]];
 }
 
-- (RACSignal *)read:(Class)clazz page:(NSInteger)page {
+- (RACSignal *)read:(Class)clazz {
+    return  [self read:clazz page:0 tableName:nil];
+}
+
+- (RACSignal *)read:(Class)clazz page:(NSInteger)page{
+   return  [self read:clazz page:page tableName:nil];
+}
+
+- (RACSignal *)read:(NSInteger)page tableName:(NSString *)tableName{
+    return  [self read:nil page:page tableName:tableName];
+}
+
+- (RACSignal *)read:(Class)clazz page:(NSInteger)page tableName:( NSString *)tableName{
     RACScheduler *scheduler = [RACScheduler schedulerWithPriority:RACSchedulerPriorityBackground];
+    if (!tableName) {
+        tableName = [NSString stringWithFormat:@"%@", clazz];
+    }
     @weakify(self)
     return [[[RACSignal createSignal:^RACDisposable *(id <RACSubscriber> subscriber) {
         @strongify(self)
-        NSArray *objectArray = [self syncRead:clazz page:page];
-        [subscriber sendNext:objectArray];
-        [subscriber sendCompleted];
+        if (page<0) {
+            [subscriber sendError:[self createError:@"page不能小于0" tableName:tableName]];
+            return nil;
+        };
+        [queue inDatabase:^(FMDatabase *db) {
+            if (![self isTableExist:tableName database:db] ) {
+                [self createError:@"不存在(可能是第一次还未缓存数据)" tableName:tableName];
+                [subscriber sendCompleted];
+                return ;
+            }
+            
+            //拼接sql语句
+            RACTuple *turple = [self getSelectSqlTextWith:page tableName:tableName database:db];
+            
+            if (![turple.first integerValue]) {
+                 NSLog(@"%@",@"没有更多的缓存数据");
+                [subscriber sendError:[NSErrorHelper createErrorWithErrorInfo:@"没有更多的缓存数据" domain:CacheToolsDomain]];
+                return ;
+            }
+            
+            //开始查询
+            NSString *querySql=turple.second;
+            FMResultSet *resultSet = [db executeQuery:querySql];
+            
+            //遍历查询结果，放入数组中
+            NSMutableArray *infoArray = [NSMutableArray array];
+            while (resultSet.next) {
+                @autoreleasepool {
+                    NSData *data = [resultSet objectForColumnName:[NSString stringWithFormat:@"%@_dict", tableName]];
+                    NSObject *obj = [NSKeyedUnarchiver unarchiveObjectWithData:data];
+                    [infoArray addObject:obj];
+                }
+            }
+            
+            if(infoArray.count==0){
+                [self createError:@"没有从数据库中取到数据" tableName:tableName];
+            }
+            [resultSet close];
+            [subscriber sendNext:infoArray];
+            [subscriber sendCompleted];
+        }];
+        
         return nil;
     }] subscribeOn:scheduler] deliverOnMainThread];
 }
 
-//分页从数据库中取数据
-- (NSArray *)syncRead:(Class)clazz page:(NSInteger)page {
-    // 异常数据
-    if (page < 0) {
-        return nil;
-    }
-    NSString *tableName = [NSString stringWithFormat:@"%@", clazz];
-    // 打开数据库
-    if (![_db open]) {
-        [_db close];
-        LogBlue(@"数据库打开失败");
-        [_db logsErrors];
-    }
-    //如果表不存在，直接返回nil
-    if (![self isTableExist:tableName]) {
-        return nil;
-    }
-    //拼接sql语句
-    NSString *querySql = [self getSelectSqlTextWith:page tableName:tableName];
-    if (!querySql) {
-        return nil;
-    }
-    //开始查询
-    FMResultSet *resultSet = [_db executeQuery:querySql];
-
-    //遍历查询结果，放入数组中
-    NSMutableArray *infoArray = [NSMutableArray array];
-    while (resultSet.next) {
-        @autoreleasepool {
-            NSData *data = [resultSet objectForColumnName:[NSString stringWithFormat:@"%@_dict", tableName]];
-            NSObject *obj = [NSKeyedUnarchiver unarchiveObjectWithData:data];
-            [infoArray addObject:obj];
-        }
-    }
-    return infoArray;
+-(NSError *)createError:(NSString *)tipInfo tableName:(NSString *)tableName{
+    tipInfo=[NSString stringWithFormat:@"%@表_%@",tableName,tipInfo];
+    NSLog(@"%@",tipInfo);
+    return [NSErrorHelper createErrorWithErrorInfo:tipInfo domain:CacheToolsDomain];
 }
 
 /**
  * 分页和不分页的情况
  */
-- (NSMutableString *)getSelectSqlTextWith:(NSInteger)page tableName:(NSString *)tableName {
+- (RACTuple *)getSelectSqlTextWith:(NSInteger)page tableName:(NSString *)tableName database:(FMDatabase *)db{
     NSMutableString *querySql =[NSMutableString stringWithFormat:@"SELECT * FROM %@ ORDER BY %@_idstr DESC", tableName, tableName];
-    if (page == 0) {//需要分页
-        NSInteger totalCount = [self getTableItemCount:tableName];//数据库中的行数
+     NSInteger length = pageNum;
+    if (page != 0) {//需要分页
+        NSInteger totalCount = [self getTableItemCount:tableName database:db];//数据库中的行数
         NSInteger start = (page - 1) * pageNum;
-        NSInteger length = pageNum;
+       
         if (totalCount <= pageNum) {//小于20条数据
             length = totalCount;
         } else if (totalCount <= page * pageNum) {//最后几条数据
             length = totalCount - (page - 1) * pageNum;
         }
         if (length <= 0) {
-            return nil;
+            //数据取完了
+            length=0;
         }
         // 实现分页
         [querySql appendFormat:@" limit %ld offset %ld", length, start];
     }
-    return querySql;
+    return RACTuplePack(@(length),querySql);
 }
 
 - (void)save:(NSArray *)objectArray sortArgument:(NSString *)idStr {
-    dispatch_queue_t concurrentQueue = dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0);
-    @weakify(self)
-    dispatch_async(concurrentQueue, ^{
-        @strongify(self)
-        [self syncSave:objectArray sortArgument:idStr];
-    });
+    [[self racSave:objectArray sortArgument:idStr tableName:nil] subscribeError:^(NSError *error) {
+         NSLog(@"%@",error);
+    }];
 }
 
+-(void)save:(NSArray *)objectArray sortArgument:(NSString *)idStr tableName:(NSString *)tableName{
+    [[self racSave:objectArray sortArgument:idStr tableName:tableName] subscribeError:^(NSError *error) {
+        NSLog(@"%@",error);
+    }];
+}
+
+- (RACSignal *)racSave:(NSArray *)objectArray sortArgument:(NSString *)idStr {
+   return [self racSave:objectArray sortArgument:idStr tableName:nil];
+}
 
 // 向数据库中存数据
-- (void)syncSave:(NSArray *)objectArray sortArgument:(NSString *)idStr {
-    //数据异常时
-    if (!objectArray || ![objectArray isKindOfClass:[NSArray class]] || ![objectArray count]) {
-        return;
-    }
-    //打开数据库
-    if (![_db open]) {
-        [_db close];
-        [_db logsErrors];
-        LogBlue(@"数据库打开失败");
-        return;
-    }
+- (RACSignal *)racSave:(NSArray *)objectArray sortArgument:(NSString *)idStr tableName:(NSString *)tableName{
+    if (!objectArray.count) return [RACSignal empty];
     //创建表格
     Class clazz = [objectArray[0] class];
-    NSString *tableName = [NSString stringWithFormat:@"%@", clazz];
-    if (![self createTable:tableName]) {
-        //创建表失败
-        return;
+    if (!tableName) {
+        tableName = [NSString stringWithFormat:@"%@", clazz];
     }
-    //存入数据
-    [queue inTransaction:^(FMDatabase *db, BOOL *rollback) {
-        for (NSObject *obj in objectArray) {
-            @autoreleasepool {
-                //如果已经有了,就不在存入
-                NSString *querySql = [NSString stringWithFormat:@"SELECT * FROM %@ where %@_idstr=%@",
-                                                                clazz, clazz, [obj valueForKey:idStr]];
-                FMResultSet *resultSet = [db executeQuery:querySql];
-                if (resultSet.next) continue;
-
-                //数据库中没有，存入
-                NSData *data = [NSKeyedArchiver archivedDataWithRootObject:obj];// 把dict字典对象序列化成NSData二进制数据
-                NSString *updateSql = [NSString stringWithFormat:@"INSERT INTO %@ (%@_idstr, " @"%@_dict) VALUES (?, ?);",
-                                                                 clazz, clazz, clazz];
-                BOOL success = [db executeUpdate:updateSql, [obj valueForKey:idStr], data];
-                if (!success) {
-                    LogBlue(@"插入数据失败");
-                    //*rollback=YES;
-                }
-            }
+    return [RACSignal createSignal:^RACDisposable *(id <RACSubscriber> subscriber) {
+        //数据异常时
+        if (!objectArray || ![objectArray isKindOfClass:[NSArray class]] || ![objectArray count]) {
+            [subscriber sendError:[self createError:@"缓存数据类型不正确" tableName:tableName]];
+            return nil;
         }
-
+        
+        //存入数据
+        dispatch_queue_t concurrentQueue = dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0);
+        dispatch_async(concurrentQueue, ^{
+            [queue inTransaction:^(FMDatabase *db, BOOL *rollback) {
+                if (![self createTable:tableName database:db]) {
+                    //创建表失败
+                    [subscriber sendError:[self createError:@"创建表失败" tableName:tableName]];
+                    return;
+                }
+                
+                for (NSObject *obj in objectArray) {
+                    @autoreleasepool {
+                        //如果已经有了,就不在存入
+                        NSString *querySql = [NSString stringWithFormat:@"SELECT * FROM %@ where %@_idstr=%@",
+                                              tableName, tableName, [obj valueForKey:idStr]];
+                        FMResultSet *resultSet = [db executeQuery:querySql];
+                        if (resultSet.next) {
+                            [resultSet close];
+                            continue;
+                        }
+                        [resultSet close];
+                        //数据库中没有，存入
+                        NSData *data = [NSKeyedArchiver archivedDataWithRootObject:obj];// 把dict字典对象序列化成NSData二进制数据
+                        NSString *updateSql = [NSString stringWithFormat:@"INSERT INTO %@ (%@_idstr, " @"%@_dict) VALUES (?, ?);",
+                                               tableName, tableName, tableName];
+                        BOOL success = [db executeUpdate:updateSql, [obj valueForKey:idStr], data];
+                        if (!success) {
+                            LogBlue(@"%@_插入数据失败",tableName);
+                        }
+                    }
+                }
+                [subscriber sendNext:objectArray];
+                [subscriber sendCompleted];
+            }];
+        });
+        return nil;
     }];
 }
 
 
 // 数据库存储路径(内部使用)
-+ (NSString *)getPath:(NSString *)dbName {
+-(NSString *)getPath:(NSString *)dbName {
     NSArray *paths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
     NSString *documentsDirectory = [paths objectAtIndex:0];
     return [documentsDirectory stringByAppendingPathComponent:dbName];
 }
 
 // 获得表的数据条数
-- (NSInteger)getTableItemCount:(NSString *)tableName {
+- (NSInteger)getTableItemCount:(NSString *)tableName database:(FMDatabase *)db{
     NSString *sqlstr = [NSString stringWithFormat:@"SELECT count(*) as 'count' FROM %@", tableName];
-    FMResultSet *rs = [_db executeQuery:sqlstr];
+    FMResultSet *rs = [db executeQuery:sqlstr];
     while ([rs next]) {
-        return [rs intForColumn:@"count"];
+        NSInteger tableItemCount=[rs intForColumn:@"count"];
+        [rs close];
+        return tableItemCount;
     }
+    [rs close];
     return 0;
 }
 
 
 // 创建表
-- (BOOL)createTable:(NSString *)tableName {
+- (BOOL)createTable:(NSString *)tableName database:(FMDatabase *)db{
     NSString *updateSql = [NSString stringWithFormat:@"CREATE TABLE IF NOT EXISTS %@ "
                                                              @"(id integer PRIMARY KEY "
-                                                             @"AUTOINCREMENT,%@_idstr text NOT "
+                                                             @"AUTOINCREMENT,%@_idstr BIGINT NOT "
                                                              @"NULL, %@_dict blob NOT NULL);",
                                                      tableName, tableName, tableName];
-    if (![_db executeUpdate:updateSql]) {
+    if (![db executeUpdate:updateSql]) {
         NSLog(@"Create db error!");
         LogBlue(@"Create db error!");
         return NO;
@@ -204,28 +232,41 @@ static FMDatabaseQueue *queue;
 
 
 //判断表是否存在
-- (BOOL)isTableExist:(NSString *)tableName {
-    FMResultSet *resultSet = [_db executeQuery:@"select count(*) as 'count' from sqlite_master "
+- (BOOL)isTableExist:(NSString *)tableName database:(FMDatabase *)db{
+    FMResultSet *resultSet = [db executeQuery:@"select count(*) as 'count' from sqlite_master "
                                                        "where type ='table' and name = ?", tableName];
     while ([resultSet next]) {
-        return [resultSet intForColumn:@"count"];
+        BOOL isExist=[resultSet intForColumn:@"count"];
+        [resultSet close];
+        return isExist;
     }
+    [resultSet close];
     return NO;
 }
 
 // 删除数据库
-- (void)deleteDatabse {
+- (void)deleteDatabse{
     BOOL success;
     NSError *error;
     NSFileManager *fileManager = [NSFileManager defaultManager];
     // delete the old db.
-    if ([fileManager fileExistsAtPath:[CacheTools getPath:dbName]]) {
-        [_db close];
-        success = [fileManager removeItemAtPath:[CacheTools getPath:dbName] error:&error];
+    if ([fileManager fileExistsAtPath:[self getPath:dbName]]) {
+        success = [fileManager removeItemAtPath:[self getPath:dbName] error:&error];
         if (!success) {
             NSAssert1(0, @"Failed to delete old database file with message '%@'.", [error localizedDescription]);
         }
     }
+}
+
+//获得数据库大小（仅一个数据库的情况）
+- (CGFloat)getSize {
+    CGFloat totalSize = 0;
+    NSFileManager *fileManager = [NSFileManager defaultManager];
+    if ([fileManager fileExistsAtPath:[self getPath:dbName]]) {
+        NSDictionary *attrs = [[NSFileManager defaultManager] attributesOfItemAtPath:[self getPath:dbName] error:nil];
+        totalSize+=[attrs fileSize];
+    }
+    return totalSize;
 }
 
 

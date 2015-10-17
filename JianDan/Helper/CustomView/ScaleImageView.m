@@ -55,7 +55,7 @@
 
 -(CGSize)intrinsicContentSize{
     if (self.mHeight) {
-         return CGSizeMake(self.frame.size.width, self.mHeight);
+         return CGSizeMake(self.frame.size.width, (int)self.mHeight);
     }
     return [super intrinsicContentSize];
    

@@ -61,9 +61,14 @@
 //    父类会进行self.helper viewModel初始化等操作，
 //    [self bindingViewModel];
     
-    self.tableView.estimatedRowHeight=300;
+//    self.tableView.estimatedRowHeight=300;
     //一句代码解决动态高度问题（前提cell 设置好约束）
     self.helper.isDynamicHeight=YES;
+    self.helper.delegate=self;
+}
+
+-(CGFloat)tableView:(UITableView *)tableView estimatedHeightForRowAtIndexPath:(NSIndexPath *)indexPath{
+    return 180;
 }
 
 

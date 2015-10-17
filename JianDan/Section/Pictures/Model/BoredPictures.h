@@ -26,7 +26,7 @@
 //原始日期
 @property (nonatomic, copy) NSString *comment_date;
 
-@property (nonatomic, copy) NSString *comment_author;
+@property (nonatomic, strong) NSString *comment_author;
 
 @property (nonatomic, copy) NSString *text_content;
 
@@ -39,6 +39,8 @@
 #pragma mar -新添加
 //图片地址
 @property (nonatomic, strong) NSString *picUrl;
+
+@property (nonatomic, strong) NSString *thumnailGiFUrl;
 
 //评论数量
 @property (nonatomic, strong) NSString *comment_count;

@@ -44,7 +44,16 @@ MJCodingImplementation
 -(void)setPics:(NSArray *)pics{
     if (pics.count) {
         _picUrl=pics[0];
+        if ([_picUrl hasPrefix:@".gif"]) {
+             _thumnailGiFUrl=[BoredPictures thumbGIFURLFromURL:_picUrl];
+        }
     }
+}
+
++(NSString *)thumbGIFURLFromURL:(NSString *)imageURL{
+    imageURL=[imageURL stringByReplacingOccurrencesOfString:@"mw600" withString:@"small"];
+    imageURL=[imageURL stringByReplacingOccurrencesOfString:@"mw1200" withString:@"small"];
+    return [imageURL stringByReplacingOccurrencesOfString:@"large" withString:@"small"];
 }
 
 -(void)setComment_date:(NSString *)comment_date{
@@ -62,13 +71,6 @@ MJCodingImplementation
     if (!_comment_count) {
         appendCString(&_comment_count, "吐槽 ",[comment_count integerValue]);
     }
-}
- 
--(NSString *)comment_count{
-    if(!_comment_count){
-        _comment_count=@"吐槽 0";
-    }
-    return _comment_count;
 }
 
 -(void)setText_content:(NSString *)text_content{

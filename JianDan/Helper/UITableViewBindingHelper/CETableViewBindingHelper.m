@@ -116,6 +116,7 @@ uint scrollViewDidEndScrollingAnimation:1;
         _selection = selection;
 
       [source subscribeNext:^(id x) {
+          NSLog(@"reloaddata");
             if ([x isKindOfClass:[CEObservableMutableArray class]]) {
                 ((CEObservableMutableArray *) x).delegate = self;
             }
@@ -280,12 +281,12 @@ uint scrollViewDidEndScrollingAnimation:1;
 }
 
 - (void)configureCell:(id<CEReactiveView>)cell withIndexPath:(NSIndexPath *)indexPath{
-//    if (needLoadArr.count>0&&[needLoadArr indexOfObject:indexPath]==NSNotFound) {
-//        return;
-//    }
-//    if (scrollToToping) {
-//        return;
-//    }
+    if (needLoadArr.count>0&&[needLoadArr indexOfObject:indexPath]==NSNotFound) {
+        return;
+    }
+    if (scrollToToping) {
+        return;
+    }
 
     [cell bindViewModel:_data[indexPath.row] forIndexPath:indexPath];
 }
@@ -293,7 +294,7 @@ uint scrollViewDidEndScrollingAnimation:1;
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
 //    NSDate *startTime = [NSDate date];
     TICK
-    id <CEReactiveView> cell = [tableView dequeueReusableCellWithIdentifier:_reuseIdentifier forIndexPath:indexPath];
+    id <CEReactiveView> cell = [tableView dequeueReusableCellWithIdentifier:_reuseIdentifier];
     [self configureCell:cell withIndexPath:indexPath];
     TOCK
 //    if (-[startTime timeIntervalSinceNow]>0.00999999) {
@@ -317,7 +318,7 @@ uint scrollViewDidEndScrollingAnimation:1;
 #pragma mark Configuring Rows for the Table View
 - (CGFloat)   tableView:(UITableView *)tableView
 heightForRowAtIndexPath:(NSIndexPath *)indexPath {
-    
+//    NSLog(@"heightForRowAtIndexPath--%@---%@",NSStringFromClass([self.data[0] class]),indexPath);
     if (self.delegateRespondsTo.heightForRowAtIndexPath) {
         return  [self.delegate tableView:tableView heightForRowAtIndexPath:indexPath];
     }
@@ -332,7 +333,6 @@ heightForRowAtIndexPath:(NSIndexPath *)indexPath {
             }];
         }
     }
-    
     return heightForRowAtIndexPath;
 }
 
@@ -759,6 +759,7 @@ didUnhighlightRowAtIndexPath:(NSIndexPath *)indexPath {
 }
 
 - (void)scrollViewDidEndDecelerating:(UIScrollView *)scrollView {
+    [self loadImageForVisibleCells];
     if (_scrollViewDelegateRespondsTo.scrollViewDidEndDecelerating) {
         [self.scrollViewDelegate scrollViewDidEndDecelerating:scrollView];
     }
@@ -835,16 +836,16 @@ didUnhighlightRowAtIndexPath:(NSIndexPath *)indexPath {
     }
 }
 
-//- (void)loadImageForVisibleCells
-//{
-//    NSArray *cells = [_tableView visibleCells];
-//    for (id<CEReactiveView> cell in cells) {
-//        NSIndexPath *indexPath = [_tableView indexPathForCell:(UITableViewCell *)cell];
-//        if ([cell respondsToSelector:@selector(loadImage:forIndexPath:helper:)]) {
-//            [cell loadImage:_data[indexPath.row] forIndexPath:indexPath helper:self];
-//        }
-//    }
-//}
+- (void)loadImageForVisibleCells
+{
+    NSArray *cells = [_tableView visibleCells];
+    for (id<CEReactiveView> cell in cells) {
+        NSIndexPath *indexPath = [_tableView indexPathForCell:(UITableViewCell *)cell];
+        if ([cell respondsToSelector:@selector(loadImage:forIndexPath:helper:)]) {
+            [cell loadImage:_data[indexPath.row] forIndexPath:indexPath helper:self];
+        }
+    }
+}
 
 //- (void)loadImageForBottomOfVisibleCells{
 //    if (scrollToToping) {

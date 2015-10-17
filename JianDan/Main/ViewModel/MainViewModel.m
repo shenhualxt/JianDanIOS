@@ -28,6 +28,8 @@ static NSString *_sortArgument=@"date";
 @property(nonatomic, assign) int currentPage;
 //加载的是否是缓存
 @property(nonatomic, assign) BOOL loadFromDB;
+
+@property(nonatomic, assign) BOOL isLoading;
 //是否是下拉加载更多(为了通用性，参数多了点)
 @property(nonatomic, assign) BOOL isLoadMore;
 //表名
@@ -49,6 +51,8 @@ INITWITHSETUP
     self.currentPage=1;
     @weakify(self)
     self.sourceCommand = [[RACCommand alloc] initWithSignalBlock:^RACSignal *(RACTuple *turple) {
+        self.isLoading=YES;
+        NSLog(@"command");
         @strongify(self)
         self.isLoadMore=[turple.first boolValue];
         self.modelArgument=turple.second;
@@ -70,17 +74,23 @@ INITWITHSETUP
         BOOL isNoNet=[AFNetWorkUtils sharedAFNetWorkUtils].netType==NONet;
         if(isNoNet){
             self.loadFromDB=YES;
-            return dbSignal;
+            return [dbSignal doCompleted:^{
+                self.isLoading=NO;
+            }];
         }
         //2、有网络时第一次加载 先加载缓存，后加载服务器数据
         BOOL isFirstLoad=page==1&&!self.isLoadMore&&!self.sourceArray.count&&!self.loadFromDB;
         if (isFirstLoad) {
             self.loadFromDB=YES;
-            return [RACSignal merge:@[dbSignal,netSignal]];
+            return [[RACSignal merge:@[dbSignal,netSignal]] doCompleted:^{
+                self.isLoading=NO;
+            }];
         }
         //3、网络获取数据--- 上拉刷新，或者上拉加载更多
         self.loadFromDB=NO;
-        return netSignal;
+        return [netSignal doCompleted:^{
+            self.isLoading=YES;
+        }];
     }];
 }
 
@@ -261,7 +271,7 @@ INITWITHSETUP
 //滑到底部，自动加载新的数据
 - (void)scrollViewDidScroll:(UIScrollView *)scrollView {
     CGFloat distanceFromBottom = scrollView.contentSize.height - scrollView.contentOffset.y;
-    if (distanceFromBottom < 3*SCREEN_HEIGHT&&[self.sourceArray count]) {
+    if (distanceFromBottom < 3*SCREEN_HEIGHT&&[self.sourceArray count]&&!self.isLoading) {
         [self loadNextPageData];
     }
 }

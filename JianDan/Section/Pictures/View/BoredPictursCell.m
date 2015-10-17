@@ -52,26 +52,26 @@
     self.labelTime.text=boredPictures.deltaToNow;
     self.labelContent.text=boredPictures.text_content;
     [self.buttonChat setTitle:boredPictures.comment_count forState:UIControlStateNormal];
-    //vote
-    [VoteViewModel setVoteButtonOO:self.buttonOO buttonXX:self.buttonXX cell:self vote:boredPictures];
-   
-    //评论
-    WS(ws)
-    [[[self.buttonChat rac_signalForControlEvents:UIControlEventTouchUpInside] takeUntil:self.rac_prepareForReuseSignal] subscribeNext:^(id x) {
-        CommentController *vc=[CommentController new];
-        vc.sendObject=boredPictures.post_id;
-        [[ws controller].mm_drawerController.navigationController pushViewController:vc animated:YES];
-    }];
-   
-    //分享
-    [[[self.buttonMore rac_signalForControlEvents:UIControlEventTouchUpInside] takeUntil:self.rac_prepareForReuseSignal] subscribeNext:^(id x) {
-        NSString *content=[boredPictures.text_content stringByReplacingOccurrencesOfString:@"\r\n" withString:@""];
-        RACTuple *turple=[RACTuple tupleWithObjects:boredPictures.picUrl,[NSString stringWithFormat:@"%@（来自 @煎蛋网）",content], nil];
-        ShareToSinaController *shareToSinaController=[ShareToSinaController new];
-        shareToSinaController.sendObject=turple;
-        [[ws controller].mm_drawerController.navigationController pushViewController:shareToSinaController animated:YES];
-    }];
-    
+////    //vote
+//    [VoteViewModel setVoteButtonOO:self.buttonOO buttonXX:self.buttonXX cell:self vote:boredPictures];
+//
+//    //评论
+//    WS(ws)
+//    [[[self.buttonChat rac_signalForControlEvents:UIControlEventTouchUpInside] takeUntil:self.rac_prepareForReuseSignal] subscribeNext:^(id x) {
+//        CommentController *vc=[CommentController new];
+//        vc.sendObject=boredPictures.post_id;
+//        [[ws controller].mm_drawerController.navigationController pushViewController:vc animated:YES];
+//    }];
+//   
+//    //分享
+//    [[[self.buttonMore rac_signalForControlEvents:UIControlEventTouchUpInside] takeUntil:self.rac_prepareForReuseSignal] subscribeNext:^(id x) {
+//        NSString *content=[boredPictures.text_content stringByReplacingOccurrencesOfString:@"\r\n" withString:@""];
+//        RACTuple *turple=[RACTuple tupleWithObjects:boredPictures.picUrl,[NSString stringWithFormat:@"%@（来自 @煎蛋网）",content], nil];
+//        ShareToSinaController *shareToSinaController=[ShareToSinaController new];
+//        shareToSinaController.sendObject=turple;
+//        [[ws controller].mm_drawerController.navigationController pushViewController:shareToSinaController animated:YES];
+//    }];
+//    
     //1，设置ImageView初始大小
     if (!boredPictures.picUrl) return;//段子（没有图片）
     self.picSize=boredPictures.picSize;
@@ -82,13 +82,12 @@
 }
 
 -(void)loadImage:(BoredPictures *)boredPictures forIndexPath:(NSIndexPath *)indexPath {
-    NSString *imageURL=boredPictures.picUrl;
-    BOOL isGIF=[imageURL hasSuffix:@".gif"];
-    if (isGIF) {
+    NSString *imageURL=boredPictures.thumnailGiFUrl;
+    if (imageURL) {
         self.imageGIF.hidden=NO;
-        imageURL=[self thumbGIFURLFromURL:imageURL];
     }else{
         self.imageGIF.hidden=YES;
+        imageURL=boredPictures.picUrl;
     }
     WS(ws)
     [self.imagePicture setImageWithURL:[NSURL URLWithString:imageURL] placeholderImage:self.placeholder options:SDWebImageHighPriority completed:^(UIImage *image, NSError *error, SDImageCacheType cacheType, NSURL *imageURL) {
@@ -102,10 +101,6 @@
     }  usingProgressViewStyle:UIProgressViewStyleDefault];
 }
 
--(NSString *)thumbGIFURLFromURL:(NSString *)imageURL{
-    imageURL=[imageURL stringByReplacingOccurrencesOfString:@"mw600" withString:@"small"];
-    imageURL=[imageURL stringByReplacingOccurrencesOfString:@"mw1200" withString:@"small"];
-    return [imageURL stringByReplacingOccurrencesOfString:@"large" withString:@"small"];
-}
+
 
 @end

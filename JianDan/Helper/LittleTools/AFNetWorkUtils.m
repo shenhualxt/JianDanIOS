@@ -48,7 +48,7 @@ DEFINE_SINGLETON_IMPLEMENTATION(AFNetWorkUtils)
     AFNetworkReachabilityManager *mgr =[AFNetworkReachabilityManager sharedManager];
     [mgr startMonitoring];
     WS(ws)
-    return [RACSignal createSignal:^RACDisposable *(id<RACSubscriber> subscriber) {
+    return [[RACSignal createSignal:^RACDisposable *(id<RACSubscriber> subscriber) {
         [mgr setReachabilityStatusChangeBlock:^(AFNetworkReachabilityStatus status) {
             switch (status) {
                 case AFNetworkReachabilityStatusReachableViaWiFi:
@@ -78,7 +78,7 @@ DEFINE_SINGLETON_IMPLEMENTATION(AFNetWorkUtils)
             //            [subscriber sendCompleted];
         }];
         return nil;
-    }];
+    }] setNameWithFormat:@"<%@: %p> -startMonitoringNet", self.class, self];
 }
 
 #pragma mark -RAC
@@ -95,7 +95,7 @@ DEFINE_SINGLETON_IMPLEMENTATION(AFNetWorkUtils)
     if ([AFNetWorkUtils sharedAFNetWorkUtils].netType==NONet) {
         return [self getNoNetSignal];
     }
-    return [RACSignal createSignal:^RACDisposable *(id<RACSubscriber> subscriber) {
+    return [[RACSignal createSignal:^RACDisposable *(id<RACSubscriber> subscriber) {
         
         AFHTTPRequestOperationManager *manager = [self sharedHTTPOperationManager];
         AFHTTPRequestOperation *operation= [manager POST:url parameters:params success:^(AFHTTPRequestOperation * operation, id responseObject) {
@@ -106,15 +106,15 @@ DEFINE_SINGLETON_IMPLEMENTATION(AFNetWorkUtils)
         return [RACDisposable disposableWithBlock:^{
             [operation cancel];
         }];
-    }];
+    }] setNameWithFormat:@"<%@: %p> -post2racWthURL: %@, params: %@", self.class, self, url, params];
 }
 
 + (RACSignal *)get2racWthURL:(NSString *)url{
-    return [self get2racWthURL:url isJSON:YES];
+    return [[self get2racWthURL:url isJSON:YES] setNameWithFormat:@"<%@: %p> -get2racWthURL: %@", self.class, self, url];
 }
 
 + (RACSignal *)get2racUNJSONWthURL:(NSString *)url{
-    return [self get2racWthURL:url isJSON:NO];
+    return [[self get2racWthURL:url isJSON:NO] setNameWithFormat:@"<%@: %p> -get2racUNJSONWthURL: %@", self.class, self, url];
 }
 
 + (RACSignal *)get2racWthURL:(NSString *)url isJSON:(BOOL)isJSON{
@@ -161,13 +161,13 @@ DEFINE_SINGLETON_IMPLEMENTATION(AFNetWorkUtils)
         return [self getNoNetSignal];
     }
     //有网络
-    return [[[self post2racWthURL:url params:params] map:^id(id responseObject) {
+    return [[[[self post2racWthURL:url params:params] map:^id(id responseObject) {
         if([responseObject isKindOfClass:[NSArray class]]){
             return [clazz objectArrayWithKeyValuesArray:responseObject];
         }else{
             return [clazz objectWithKeyValues:responseObject];
         }
-    }] replayLazily];
+    }] replayLazily] setNameWithFormat:@"<%@: %p> -racPOSTWithURL: %@, params: %@ class: %@", self.class, self, url, params,NSStringFromClass(clazz)];
 }
 
 
@@ -177,20 +177,20 @@ DEFINE_SINGLETON_IMPLEMENTATION(AFNetWorkUtils)
         return [self getNoNetSignal];
     }
     //有网络
-    return [[[self get2racWthURL:url] map:^id(id responseObject) {
+    return [[[[self get2racWthURL:url] map:^id(id responseObject) {
         if([responseObject isKindOfClass:[NSArray class]]){
             return [clazz objectArrayWithKeyValuesArray:responseObject];
         }else{
             return [clazz objectWithKeyValues:responseObject];
         }
-    }] replayLazily];
+    }] replayLazily] setNameWithFormat:@"<%@: %p> -racGETWithURL: %@,class: %@", self.class, self, url,NSStringFromClass(clazz)];
 }
 
 +(RACSignal *)getNoNetSignal{
-    return [RACSignal createSignal:^RACDisposable *(id<RACSubscriber> subscriber) {
+    return [[RACSignal createSignal:^RACDisposable *(id<RACSubscriber> subscriber) {
         [subscriber sendError:[NSErrorHelper createErrorWithDomain:netWorkUtilsDomain code:kCFURLErrorNotConnectedToInternet]];
         return nil;
-    }];
+    }] setNameWithFormat:@"<%@: %p> -getNoNetSignal", self.class, self];
 }
 
 + (void)handleErrorResultWithSubscriber:(id<RACSubscriber>)subscriber operation:(AFHTTPRequestOperation *)operation error:(NSError *)error {

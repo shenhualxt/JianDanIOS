@@ -99,9 +99,12 @@ INITWITHSETUP
     
     //还需要获取评论数量
     @weakify(self)
-    return [[self getObjectArraySignal:page] flattenMap:^RACStream *(NSMutableArray *resultArray) {
+    return [[[self getObjectArraySignal:page] flattenMap:^RACStream *(NSMutableArray *resultArray) {
         @strongify(self)
         return [self getCommentCountsSignal:resultArray];
+    }]flattenMap:^RACStream *(NSMutableArray *resultArray) {
+        @strongify(self)
+        return [self downloadImageSize:resultArray];
     }];
 }
 
@@ -227,36 +230,13 @@ INITWITHSETUP
  *  下载图片大小（除了新鲜事）并缓存到数据库
  */
 -(void)save:(NSMutableArray *)array{
-    if ([array[0] isKindOfClass:[BoredPictures class]]) {
-       [self downloadImageSizes:array count:0];
-    }else{
-       [[CacheTools sharedCacheTools] save:array sortArgument:_sortArgument tableName:self.tableName];
-    }
+    [[CacheTools sharedCacheTools] save:array sortArgument:_sortArgument tableName:self.tableName];
 }
 
 /**
  *  下载图片大小
  */
--(void)downloadImageSizes:(NSMutableArray *)array count:(int)count{
-        dispatch_group_t group = dispatch_group_create();
-        [array enumerateObjectsUsingBlock:^(BoredPictures *_Nonnull pictures, NSUInteger idx, BOOL * _Nonnull stop) {
-            if (!pictures.picUrl) return ;
-            if (pictures.picSize.height) return;
-            //不会存在线程安全问题
-            dispatch_group_async(group, dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
-                pictures.picSize=[BLImageSize downloadImageSizeWithURL:pictures.picUrl];
-            });
-        }];
-        //等group中所有的任务都执行完了，再执行其他操作
-        dispatch_group_notify(group, dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
-            [[CacheTools sharedCacheTools] save:array sortArgument:_sortArgument tableName:self.tableName];
-        });
-}
-
-/**
- *  下载图片大小
- */
--(RACSignal *)downloadImageSize:(NSMutableArray *)array count:(int)count{
+-(RACSignal *)downloadImageSize:(NSMutableArray *)array{
     return [RACSignal createSignal:^RACDisposable *(id<RACSubscriber> subscriber) {
         dispatch_group_t group = dispatch_group_create();
         [array enumerateObjectsUsingBlock:^(BoredPictures *_Nonnull pictures, NSUInteger idx, BOOL * _Nonnull stop) {

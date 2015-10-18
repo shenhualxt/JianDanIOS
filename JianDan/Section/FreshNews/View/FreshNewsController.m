@@ -13,6 +13,7 @@
 #import "FreshNewsDetailController.h"
 #import "MJRefresh.h"
 #import "MainViewModel.h"
+#import "FreshNewsLittleCell.h"
 
 @interface FreshNewsController()
 
@@ -126,7 +127,7 @@
  */
 -(Class)cellClass{
     if (!_cellClass) {
-        _cellClass=[FreshNewsCell class];
+        _cellClass=[FreshNewsLittleCell class];
     }
     return _cellClass;
 }

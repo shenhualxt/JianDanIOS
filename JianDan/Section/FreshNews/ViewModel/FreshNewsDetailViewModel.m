@@ -61,7 +61,7 @@
     [html appendString:freshNews.title];
     [html appendString:@"</a>"];
     [html appendString:@"</h2>"];
-    [html appendFormat:@"%@ @ %@",freshNews.author.name,freshNews.date];
+    [html appendFormat:@"%@ @ %@",freshNews.authorName,freshNews.date];
     [html appendString:@"</div>"];
     [html appendString:@"<div class=\"entry\">"];
     [html appendString:content];

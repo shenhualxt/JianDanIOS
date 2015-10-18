@@ -78,7 +78,7 @@
                     vc=[[BoredPicturesController alloc] initWithControllerType:index];
                     break;
                 case 4:
-                    vc=[UITableViewdController new];
+                    vc=[LittleMoveController new];
                     break;
                 default:
                     break;

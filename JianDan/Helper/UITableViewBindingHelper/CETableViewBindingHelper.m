@@ -102,15 +102,15 @@ heightForRowAtIndexPath:(NSIndexPath *)indexPath {
 }
 
 -(void)configureCell:(id<CEReactiveView>)cell forIndexPath:(NSIndexPath *)indexPath{
-    if (needLoadArr.count>0&&[needLoadArr indexOfObject:indexPath]==NSNotFound) {
-        if ([cell respondsToSelector:@selector(clear)]) {
-            [cell clear];
-        }
-        return;
-    }
-    if (scrollToToping) {
-        return;
-    }
+//    if (needLoadArr.count>0&&[needLoadArr indexOfObject:indexPath]==NSNotFound) {
+//        if ([cell respondsToSelector:@selector(clear)]) {
+//            [cell clear];
+//        }
+//        return;
+//    }
+//    if (scrollToToping) {
+//        return;
+//    }
 
     [cell bindViewModel:_data[indexPath.row] forIndexPath:indexPath];
 }

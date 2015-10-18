@@ -104,6 +104,11 @@
     return _selectCommand;
 }
 
+-(void)viewWillDisappear:(BOOL)animated{
+    [super viewWillDisappear:animated];
+    [SDWebImageManager sharedManager].delegate=nil;
+}
+
 - (UIImage *)imageManager:(SDWebImageManager *)imageManager transformDownloadedImage:(UIImage *)image withURL:(NSURL *)imageURL{
     BoredPictursCell *cell=[self.tableView dequeueReusableCellWithIdentifier:@"BoredPictursCell"];
     CGSize itemSize = [cell.imagePicture adjustSize:image.size];

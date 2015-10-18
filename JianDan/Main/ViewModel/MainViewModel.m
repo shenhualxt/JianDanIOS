@@ -52,6 +52,7 @@ INITWITHSETUP
 
 - (void)setUp {
     self.currentPage=1;
+    self.sourceArray=[NSMutableArray array];
     @weakify(self)
     self.sourceCommand = [[RACCommand alloc] initWithSignalBlock:^RACSignal *(RACTuple *turple) {
         self.isLoading=YES;
@@ -80,7 +81,7 @@ INITWITHSETUP
                 self.isLoading=NO;
             }];
         }
-//        //2、有网络时第一次加载 先加载缓存，后加载服务器数据
+        //2、有网络时第一次加载 先加载缓存，后加载服务器数据
         BOOL isFirstLoad=page==1&&!self.isLoadMore&&!self.sourceArray.count&&!self.loadFromDB;
         if (isFirstLoad) {
             self.loadFromDB=YES;
@@ -104,20 +105,30 @@ INITWITHSETUP
  *  @return 结果数据
  */
 - (RACSignal *)requestFromNetSignal:(int)page{
-
-    if (![self.modelClass isSubclassOfClass:[BoredPictures class]]) {
-        return [self getObjectArraySignal:page];
+    RACSignal *signal=[self getObjectArraySignal:page];
+    
+    //新鲜事，无需下载图片大小和获取评论数
+    if ([self.url isEqualToString:freshNewUrl]) {
+        return signal;
     }
-
-    //还需要获取评论数量
+    
     @weakify(self)
-    return [[[self getObjectArraySignal:page] flattenMap:^RACStream *(NSMutableArray *resultArray) {
+    signal=[signal flattenMap:^RACStream *(NSMutableArray *resultArray) {
         @strongify(self)
         return [self getCommentCountsSignal:resultArray];
-    }] flattenMap:^RACStream *(NSMutableArray *resultArray) {
-        @strongify(self)
-        return [self downloadImageSize:resultArray];
     }];
+    
+    //段子 无需下载图片大小
+    if ([self.url isEqualToString:JokeUrl]) {
+        return signal;
+    }
+    
+    //都需要
+    return [signal flattenMap:^RACStream *(NSMutableArray *resultArray) {
+        @strongify(self)
+       return [self downloadImageSize:resultArray];
+    }];
+    
 }
 
 /**

@@ -19,7 +19,6 @@
                 <outlet property="constraintRight" destination="ami-67-w6Y" id="ewr-bk-8OJ"/>
                 <outlet property="constraintTop" destination="5UI-Wo-tlh" id="I3f-Wt-3eF"/>
                 <outlet property="imageViewDetail" destination="7QY-aJ-pvm" id="E9Q-OG-UOK"/>
-                <outlet property="progressView" destination="qLU-b5-I7Q" id="1gN-36-mSd"/>
                 <outlet property="scrollView" destination="pcV-kf-FtW" id="u1h-Kg-XUk"/>
                 <outlet property="topView" destination="jhF-OM-q9n" id="JkY-FC-IT0"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
@@ -33,7 +32,7 @@
                 <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" bounces="NO" alwaysBounceHorizontal="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" maximumZoomScale="3" translatesAutoresizingMaskIntoConstraints="NO" id="pcV-kf-FtW">
                     <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                     <subviews>
-                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" placeholderIntrinsicWidth="320" placeholderIntrinsicHeight="200" image="ic_loading_large" translatesAutoresizingMaskIntoConstraints="NO" id="7QY-aJ-pvm" customClass="WidthFixImageView">
+                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ic_loading_large" translatesAutoresizingMaskIntoConstraints="NO" id="7QY-aJ-pvm" customClass="WidthFixImageView">
                             <rect key="frame" x="0.0" y="-1" width="320" height="200"/>
                             <animations/>
                             <color key="backgroundColor" red="0.78047902960000004" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
@@ -52,10 +51,10 @@
                     <rect key="frame" x="0.0" y="0.0" width="320" height="68"/>
                     <subviews>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Yin-eD-poZ">
-                            <rect key="frame" x="8" y="26" width="40" height="42"/>
+                            <rect key="frame" x="0.0" y="26" width="60" height="42"/>
                             <animations/>
                             <constraints>
-                                <constraint firstAttribute="width" constant="40" id="6VB-kj-A3Y"/>
+                                <constraint firstAttribute="width" constant="60" id="6VB-kj-A3Y"/>
                             </constraints>
                             <inset key="contentEdgeInsets" minX="0.0" minY="10" maxX="0.0" maxY="10"/>
                             <state key="normal" image="common_icon_back"/>
@@ -72,17 +71,13 @@
                     <animations/>
                     <color key="backgroundColor" white="0.0" alpha="0.25" colorSpace="calibratedWhite"/>
                     <constraints>
-                        <constraint firstItem="Yin-eD-poZ" firstAttribute="leading" secondItem="jhF-OM-q9n" secondAttribute="leading" constant="8" id="5MP-wp-ZeP"/>
+                        <constraint firstItem="Yin-eD-poZ" firstAttribute="leading" secondItem="jhF-OM-q9n" secondAttribute="leading" id="5MP-wp-ZeP"/>
                         <constraint firstItem="Yin-eD-poZ" firstAttribute="top" secondItem="jhF-OM-q9n" secondAttribute="top" constant="26" id="7c2-5u-cDh"/>
                         <constraint firstItem="j1U-Fe-wo1" firstAttribute="centerY" secondItem="Yin-eD-poZ" secondAttribute="centerY" id="8gI-YR-RWZ"/>
                         <constraint firstAttribute="trailing" secondItem="j1U-Fe-wo1" secondAttribute="trailing" constant="10" id="SVW-c8-YrL"/>
                         <constraint firstAttribute="bottom" secondItem="Yin-eD-poZ" secondAttribute="bottom" id="kX3-f9-aqs"/>
                     </constraints>
                 </view>
-                <progressView hidden="YES" opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="qLU-b5-I7Q">
-                    <rect key="frame" x="0.0" y="68" width="320" height="2"/>
-                    <animations/>
-                </progressView>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="gOC-Sy-CuO">
                     <rect key="frame" x="0.0" y="518" width="320" height="50"/>
                     <subviews>
@@ -165,22 +160,17 @@
                 <constraint firstAttribute="trailing" secondItem="pcV-kf-FtW" secondAttribute="trailing" id="1nm-vb-xQq"/>
                 <constraint firstAttribute="bottom" secondItem="pcV-kf-FtW" secondAttribute="bottom" id="2Cl-v0-oGM"/>
                 <constraint firstAttribute="bottom" secondItem="pcV-kf-FtW" secondAttribute="bottom" id="3lY-sp-EBu"/>
-                <constraint firstItem="qLU-b5-I7Q" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="71V-Bn-z2T"/>
                 <constraint firstItem="jhF-OM-q9n" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="AD7-ae-Mev"/>
-                <constraint firstItem="qLU-b5-I7Q" firstAttribute="top" secondItem="jhF-OM-q9n" secondAttribute="bottom" id="CKj-Jr-rKf"/>
                 <constraint firstItem="gOC-Sy-CuO" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="FyU-fQ-iMj"/>
                 <constraint firstItem="pcV-kf-FtW" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="MnF-cn-NHv"/>
                 <constraint firstItem="jhF-OM-q9n" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="Ob1-D8-dcB"/>
                 <constraint firstItem="gOC-Sy-CuO" firstAttribute="top" secondItem="pcV-kf-FtW" secondAttribute="bottom" id="TTf-T9-vc6"/>
-                <constraint firstItem="pcV-kf-FtW" firstAttribute="top" secondItem="qLU-b5-I7Q" secondAttribute="bottom" id="VTG-YS-EeA"/>
                 <constraint firstAttribute="trailing" secondItem="jhF-OM-q9n" secondAttribute="trailing" id="Xs3-aO-Gv6"/>
-                <constraint firstItem="qLU-b5-I7Q" firstAttribute="top" secondItem="jhF-OM-q9n" secondAttribute="bottom" constant="233" id="d7R-xE-k3T"/>
                 <constraint firstItem="pcV-kf-FtW" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="dM0-ce-hBm"/>
                 <constraint firstItem="7QY-aJ-pvm" firstAttribute="width" secondItem="i5M-Pr-FkT" secondAttribute="width" id="hlC-e4-sHr"/>
                 <constraint firstItem="pcV-kf-FtW" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="lVs-CV-imm"/>
                 <constraint firstAttribute="trailing" secondItem="pcV-kf-FtW" secondAttribute="trailing" id="qZb-LK-yPa"/>
                 <constraint firstAttribute="bottom" secondItem="gOC-Sy-CuO" secondAttribute="bottom" id="rpN-Lc-4JE"/>
-                <constraint firstAttribute="trailing" secondItem="qLU-b5-I7Q" secondAttribute="trailing" id="tW6-YA-rul"/>
                 <constraint firstAttribute="trailing" secondItem="gOC-Sy-CuO" secondAttribute="trailing" id="xpE-um-co5"/>
             </constraints>
             <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
@@ -189,9 +179,7 @@
                     <exclude reference="1fa-zK-1Ss"/>
                     <exclude reference="1nm-vb-xQq"/>
                     <exclude reference="3lY-sp-EBu"/>
-                    <exclude reference="VTG-YS-EeA"/>
                     <exclude reference="dM0-ce-hBm"/>
-                    <exclude reference="d7R-xE-k3T"/>
                     <exclude reference="TTf-T9-vc6"/>
                 </mask>
             </variation>

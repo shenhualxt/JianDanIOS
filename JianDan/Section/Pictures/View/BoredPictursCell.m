@@ -64,7 +64,7 @@
     //3、设置ImageView初始大小
     if (!boredPictures.picUrl) return;//段子（没有图片）
     self.picSize=boredPictures.picSize;
-    [self.imagePicture updateIntrinsicContentSize:self.picSize];
+    [self.imagePicture updateIntrinsicContentSize:self.picSize withMaxHeight:YES];
     [self.imagePicture setImageWithURL:[self getImageURL:boredPictures] placeholderImage:self.placeholder options:SDWebImageHighPriority usingProgressViewStyle:UIProgressViewStyleDefault];
 }
 

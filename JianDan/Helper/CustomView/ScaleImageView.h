@@ -12,11 +12,8 @@
 
 @property(assign,nonatomic) NSInteger mHeight;
 
-@property(assign,nonatomic) BOOL hasImage;
 
+-(void)updateIntrinsicContentSize:(CGSize)size withMaxHeight:(BOOL)maxHeight;
 
--(void)updateIntrinsicContentSize:(CGSize)size;
-
--(CGSize)adjustSize:(CGSize)size;
 
 @end

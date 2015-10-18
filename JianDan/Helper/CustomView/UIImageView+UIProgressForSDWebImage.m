@@ -86,6 +86,30 @@ static char TAG_PROGRESSVIEW;
     [self setImageWithURL:url placeholderImage:placeholder options:options progress:nil completed:completedBlock usingProgressViewStyle:progressViewStyle];
 }
 
+- (void)setGIFImageWithURL:(NSURL *)url placeholderImage:(UIImage *)placeholder options:(SDWebImageDownloaderOptions)options progress:(SDWebImageDownloaderProgressBlock)progressBlock completed:(SDWebImageDownloaderCompletedBlock)completedBlock usingProgressViewStyle:(UIProgressViewStyle)progressViewStyle{
+    
+    __weak typeof(self) weakSelf = self;
+    [[SDWebImageDownloader sharedDownloader] downloadImageWithURL:url options:options progress:^(NSInteger receivedSize, NSInteger expectedSize) {
+        if (progressBlock) {
+            progressBlock(receivedSize,expectedSize);
+        }
+        if (expectedSize<0) return ;
+        [self addProgressWithStyle:progressViewStyle];
+        float pvalue=MAX(0,MIN(1,(float)receivedSize/(float)expectedSize));
+        [weakSelf updateProgressView:pvalue];
+        if (pvalue>=1) {
+            [weakSelf removeProgressView];
+        }
+    } completed:^(UIImage *image, NSData *data, NSError *error, BOOL finished) {
+        [weakSelf removeProgressView];
+        weakSelf.image=image;
+        if (completedBlock) {
+            completedBlock(image,data,error,finished);
+        }
+    }];
+    
+}
+
 - (void)setImageWithURL:(NSURL *)url placeholderImage:(UIImage *)placeholder options:(SDWebImageOptions)options progress:(SDWebImageDownloaderProgressBlock)progressBlock completed:(SDWebImageCompletionBlock)completedBlock usingProgressViewStyle:(UIProgressViewStyle)progressViewStyle{
     
     __weak typeof(self) weakSelf = self;

@@ -86,7 +86,7 @@
 {
     UIImage* image = [UIImage imageNamed:@"common_icon_back"];
     UIButton* btn = [UIButton buttonWithType:UIButtonTypeCustom];
-    btn.frame = CGRectMake(0, 0, image.size.width*2, image.size.height);
+    btn.frame = CGRectMake(0, 0, image.size.width*3, image.size.height);
     [btn addTarget:self action:@selector(BackClick) forControlEvents:UIControlEventTouchUpInside];
     [btn setImage:image forState:UIControlStateNormal];
   

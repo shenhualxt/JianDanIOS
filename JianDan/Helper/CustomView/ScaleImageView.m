@@ -39,9 +39,9 @@
 }
 
 
--(void)updateIntrinsicContentSize:(CGSize)size{
+-(void)updateIntrinsicContentSize:(CGSize)size withMaxHeight:(BOOL)maxHeight{
     CGFloat mHeight =[self adjustSize:size].height;
-    if(mHeight>=SCREEN_HEIGHT){
+    if(mHeight>=SCREEN_HEIGHT&&maxHeight){
         mHeight=SCREEN_HEIGHT*2.0/3.0;
         self.layer.masksToBounds=YES;
         [self.layer setContentsScale:[[UIScreen mainScreen] scale]];

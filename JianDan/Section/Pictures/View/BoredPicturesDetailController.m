@@ -17,6 +17,7 @@
 #import "TMCache.h"
 #import "NSString+Date.h"
 #import "UIImageView+UIProgressForSDWebImage.h"
+#import "UIImage+GIF.h"
 
 @interface BoredPicturesDetailController ()<UIScrollViewDelegate>
 @property (weak, nonatomic) IBOutlet UIScrollView *scrollView;
@@ -47,7 +48,27 @@
     BoredPictures *boredPictures=(BoredPictures *)self.sendObject;
     if (!boredPictures.picUrl)return;
     NSString *imageURL=boredPictures.picUrl;
-    [self.imageViewDetail setImageWithURL:[NSURL URLWithString:imageURL] placeholderImage:[UIImage imageNamed:@"ic_loading_large"] usingProgressViewStyle:UIProgressViewStyleDefault];
+    
+    if ([imageURL hasSuffix:@".gif"]) {
+        [[TMCache sharedCache] objectForKey:imageURL block:^(TMCache *cache, NSString *key, id object) {
+            if (object) {
+                UIImage *image=[UIImage sd_animatedGIFWithData:object];
+                self.imageViewDetail.image=image;
+            }else{
+                [self.imageViewDetail setGIFImageWithURL:[NSURL URLWithString:imageURL] placeholderImage:[UIImage imageNamed:@"ic_loading_large"] options:SDWebImageDownloaderLowPriority progress:^(NSInteger receivedSize, NSInteger expectedSize) {
+                    
+                } completed:^(UIImage *image, NSData *data, NSError *error, BOOL finished) {
+                    if ([imageURL hasSuffix:@".gif" ]) {
+                        [[TMCache sharedCache] setObject:data forKey:imageURL];
+                    }
+                    [self adjustLocation];
+                } usingProgressViewStyle:UIProgressViewStyleDefault];
+            }
+        }];
+    }
+    [self.imageViewDetail setImageWithURL:[NSURL URLWithString:imageURL] placeholderImage:[UIImage imageNamed:@"ic_loading_large"] completed:^(UIImage *image, NSError *error, SDImageCacheType cacheType, NSURL *imageURL) {
+        [self adjustLocation];
+    }  usingProgressViewStyle:UIProgressViewStyleDefault];
 }
 
 -(void)initClick{
@@ -69,10 +90,10 @@
     [self.buttonOO setTitle:[NSString stringWithKey:"OO " value:(int)boredPictures.vote_positive] forState:UIControlStateNormal];
     [self.buttonXX setTitle:[NSString stringWithKey:"XX " value:(int)boredPictures.vote_negative] forState:UIControlStateNormal];
     [[self.buttonOO rac_signalForControlEvents:UIControlEventTouchUpInside] subscribeNext:^(id x) {
-        [VoteViewModel voteWithOption:OO vote:boredPictures button:x];
+        [VoteViewModel voteWithOption:OO vote:(id<Vote>)boredPictures button:x];
     }];
     [[self.buttonXX rac_signalForControlEvents:UIControlEventTouchUpInside] subscribeNext:^(id x) {
-        [VoteViewModel voteWithOption:XX vote:boredPictures button:x];
+        [VoteViewModel voteWithOption:XX vote:(id<Vote>)boredPictures button:x];
     }];
     //下载图片
     [[self.buttonDownload rac_signalForControlEvents:UIControlEventTouchUpInside] subscribeNext:^(id x) {
@@ -120,14 +141,17 @@
 }
 
 -(void)adjustLocation{
+    self.imageViewDetail.contentScaleFactor=[UIScreen mainScreen].scale;
     float imageHeight = self.imageViewDetail.image.size.height;
     float imageWidth = self.imageViewDetail.image.size.width;
+    
     CGFloat ratio = SCREEN_WIDTH/imageWidth;
     CGFloat mHeight =imageHeight*ratio;
     float topPadding = (SCREEN_HEIGHT - mHeight) / 2;
      if (topPadding < 0) topPadding = 0;
     self.constraintTop.constant=topPadding;
     self.constraintBottom.constant=topPadding;
+    
     [self.view layoutIfNeeded];
 }
 
@@ -136,7 +160,6 @@
     float vPadding = (SCREEN_HEIGHT - self.scrollView.zoomScale * imageHeight) / 2;
     if (vPadding < 0) vPadding = 0;
     self.constraintTop.constant = vPadding;
-    self.constraintBottom.constant = vPadding;
     [self.view layoutIfNeeded];
 }
 

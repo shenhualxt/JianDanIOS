@@ -250,8 +250,9 @@ INITWITHSETUP
  */
 -(RACSignal *)downloadImageSize:(NSMutableArray *)array{
     return [RACSignal createSignal:^RACDisposable *(id<RACSubscriber> subscriber) {
+        NSMutableArray *tempArray=[NSMutableArray arrayWithArray:array];
         dispatch_group_t group = dispatch_group_create();
-        [array enumerateObjectsUsingBlock:^(BoredPictures *_Nonnull pictures, NSUInteger idx, BOOL * _Nonnull stop) {
+        [tempArray enumerateObjectsUsingBlock:^(BoredPictures *_Nonnull pictures, NSUInteger idx, BOOL * _Nonnull stop) {
             if (!pictures.picUrl) return ;
             if (pictures.picSize.height) return;
             dispatch_group_async(group, dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
@@ -260,7 +261,7 @@ INITWITHSETUP
         }];
         //等group中所有的任务都执行完了，再执行其他操作
         dispatch_group_notify(group, dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
-            [subscriber sendNext:array];
+            [subscriber sendNext:tempArray];
             [subscriber sendCompleted];
         });
         return nil;

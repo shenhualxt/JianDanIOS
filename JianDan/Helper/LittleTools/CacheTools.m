@@ -22,7 +22,7 @@ static FMDatabaseQueue *queue;
 DEFINE_SINGLETON_IMPLEMENTATION(CacheTools)
 
 -(void)setUp{
-   queue = [FMDatabaseQueue databaseQueueWithPath:[self getPath:dbName] flags:SQLITE_OPEN_READWRITE];
+   queue = [FMDatabaseQueue databaseQueueWithPath:[self getPath:dbName] flags:SQLITE_OPEN_READWRITE | SQLITE_OPEN_CREATE];
 }
 
 - (RACSignal *)read:(Class)clazz {
@@ -49,6 +49,11 @@ DEFINE_SINGLETON_IMPLEMENTATION(CacheTools)
             [subscriber sendError:[self createError:@"page不能小于0" tableName:tableName]];
             return nil;
         };
+        if (!queue) {
+            [self createError:@"create database queue failed" tableName:tableName];
+            [subscriber sendError:nil];
+            return nil;
+        }
         dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
             [queue inTransaction:^(FMDatabase *db, BOOL *rollback) {
                 if (![self isTableExist:tableName database:db] ) {

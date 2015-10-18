@@ -15,6 +15,7 @@
  #import <AssetsLibrary/AssetsLibrary.h>
 #import "VoteViewModel.h"
 #import "TMCache.h"
+#import "NSString+Date.h"
 #import "UIImageView+UIProgressForSDWebImage.h"
 
 @interface BoredPicturesDetailController ()<UIScrollViewDelegate>
@@ -65,7 +66,14 @@
         [ws BackClick];
     }];
     //vote
-    [VoteViewModel setVoteButtonOO:self.buttonOO buttonXX:self.buttonXX cell:nil vote:boredPictures];
+    [self.buttonOO setTitle:[NSString stringWithKey:"OO " value:(int)boredPictures.vote_positive] forState:UIControlStateNormal];
+    [self.buttonXX setTitle:[NSString stringWithKey:"XX " value:(int)boredPictures.vote_negative] forState:UIControlStateNormal];
+    [[self.buttonOO rac_signalForControlEvents:UIControlEventTouchUpInside] subscribeNext:^(id x) {
+        [VoteViewModel voteWithOption:OO vote:boredPictures button:x];
+    }];
+    [[self.buttonXX rac_signalForControlEvents:UIControlEventTouchUpInside] subscribeNext:^(id x) {
+        [VoteViewModel voteWithOption:XX vote:boredPictures button:x];
+    }];
     //下载图片
     [[self.buttonDownload rac_signalForControlEvents:UIControlEventTouchUpInside] subscribeNext:^(id x) {
         BOOL isGIF=[imageURL hasSuffix:@".gif"];

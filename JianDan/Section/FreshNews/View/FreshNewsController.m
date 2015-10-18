@@ -71,6 +71,8 @@
     //列表绑定数据
     self.helper = [CETableViewBindingHelper bindingHelperForTableView:self.tableView sourceSignal:sourceSignal selectionCommand:self.selectCommand customCellClass:self.cellClass];
     
+    [self.viewModel.sourceCommand execute:self.turple];
+    
     //滑动到底部时，自动加载新的数据
     self.helper.scrollViewDelegate=self.viewModel;
     
@@ -89,18 +91,18 @@
     }];
     //设置下拉刷新
     self.tableView.header = [MJRefreshNormalHeader headerWithRefreshingBlock:^{
-         @strongify(self)
+        @strongify(self)
         [self.viewModel.sourceCommand execute:self.turple];
     }];
     
     //设置上拉加载更多
     self.tableView.footer = [MJRefreshAutoNormalFooter footerWithRefreshingBlock:^{
-         @strongify(self)
+        @strongify(self)
         [self.viewModel loadNextPageData];
     }];
     
     //开始获取数据
-   [self.tableView.header beginRefreshing];
+    [self.tableView.header beginRefreshing];
 }
 
 /**
@@ -144,6 +146,11 @@
     }
     
     return _selectCommand;
+}
+
+
+-(void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event{
+    [self.helper hitTest];
 }
 
 

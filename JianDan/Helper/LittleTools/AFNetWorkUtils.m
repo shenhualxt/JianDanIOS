@@ -35,7 +35,6 @@ DEFINE_SINGLETON_IMPLEMENTATION(AFNetWorkUtils)
 
 -(void)startMonitoring{
     [[self startMonitoringNet] subscribeNext:^(id x) {
-        NSLog(@"%@",x);
     }];
 }
 

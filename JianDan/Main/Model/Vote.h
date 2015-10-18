@@ -8,12 +8,13 @@
 
 #import <Foundation/Foundation.h>
 
-@interface Vote : NSObject
+@protocol Vote <NSObject>
 
-@property (nonatomic, assign) NSInteger vote_positive;
+@required
+-(NSString *)getPost_id;
 
-@property (nonatomic, strong) NSString *post_id;
+-(NSInteger)encreaseVote_negative;
 
-@property (nonatomic, assign) NSInteger vote_negative;
+-(NSInteger)encreaseVote_positive;
 
 @end

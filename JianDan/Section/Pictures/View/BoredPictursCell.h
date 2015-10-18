@@ -14,5 +14,4 @@
 
 @property (weak, nonatomic) IBOutlet ScaleImageView *imagePicture;
 
-
 @end

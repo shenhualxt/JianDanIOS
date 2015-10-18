@@ -7,35 +7,20 @@
 //
 
 #import "VoteViewModel.h"
-#import "Vote.h"
 #import "NSString+Date.h"
 
 @implementation VoteViewModel
 
-+(void)setVoteButtonOO:(UIButton *)buttonOO buttonXX:(UIButton *)buttonXX cell:(UITableViewCell *)cell vote:(Vote *)vote{
-    [buttonOO setTitle:[NSString stringWithKey:"OO " value:(int)vote.vote_positive] forState:UIControlStateNormal];
-    [buttonXX setTitle:[NSString stringWithKey:"XX " value:(int)vote.vote_negative] forState:UIControlStateNormal];
-    WS(ws)
-    [[[buttonOO rac_signalForControlEvents:UIControlEventTouchUpInside] takeUntil:cell.rac_prepareForReuseSignal] subscribeNext:^(id x) {
-        [ws voteWithOption:OO vote:vote button:x];
-    }];
-    [[[buttonXX rac_signalForControlEvents:UIControlEventTouchUpInside] takeUntil:cell.rac_prepareForReuseSignal] subscribeNext:^(id x) {
-        [ws voteWithOption:XX vote:vote button:x];
-    }];
-}
-
-+(void)voteWithOption:(VoteOption)option vote:(Vote *)vote button:(UIButton *)button{
++(void)voteWithOption:(VoteOption)option vote:(id<Vote>)vote button:(UIButton *)button{
     @weakify(self)
-    [[self voteWithOption:option commentId:vote.post_id] subscribeNext:^(NSString *resultCode) {
+    [[self voteWithOption:option commentId:[vote getPost_id]] subscribeNext:^(NSString *resultCode) {
         @strongify(self)
         if ([resultCode isEqualToString:result_oo_success]) {
             //投赞成票成功
-            vote.vote_positive++;
-            [self setButtonText:button text:vote.vote_positive color:UIColorFromRGB(0xff4444)];
+            [self setButtonText:button text:[vote encreaseVote_positive] color:UIColorFromRGB(0xff4444)];
         }else if([resultCode isEqualToString:result_xx_success]){
             //投反对票成功
-            NSInteger num=vote.vote_negative++;
-            [self setButtonText:button text:num color:UIColorFromRGB(0x99cc00)];
+            [self setButtonText:button text:[vote encreaseVote_negative] color:UIColorFromRGB(0x99cc00)];
         }else if(![resultCode isEqualToString:result_have_voted]){
             [[ToastHelper sharedToastHelper] toast:@"vote接口调试中"];
         }

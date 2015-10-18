@@ -14,6 +14,9 @@
 #import "CacheTools.h"
 #import "BoredPictures.h"
 #import "BLImageSize.h"
+#import "NSString+Additions.h"
+
+#define SIZE_FONT_CONTENT 17
 
 //数据库取出数据时，按时间排序
 static NSString *_sortArgument=@"date";
@@ -52,7 +55,6 @@ INITWITHSETUP
     @weakify(self)
     self.sourceCommand = [[RACCommand alloc] initWithSignalBlock:^RACSignal *(RACTuple *turple) {
         self.isLoading=YES;
-        NSLog(@"command");
         @strongify(self)
         self.isLoadMore=[turple.first boolValue];
         self.modelArgument=turple.second;
@@ -78,7 +80,7 @@ INITWITHSETUP
                 self.isLoading=NO;
             }];
         }
-        //2、有网络时第一次加载 先加载缓存，后加载服务器数据
+//        //2、有网络时第一次加载 先加载缓存，后加载服务器数据
         BOOL isFirstLoad=page==1&&!self.isLoadMore&&!self.sourceArray.count&&!self.loadFromDB;
         if (isFirstLoad) {
             self.loadFromDB=YES;
@@ -106,13 +108,13 @@ INITWITHSETUP
     if (![self.modelClass isSubclassOfClass:[BoredPictures class]]) {
         return [self getObjectArraySignal:page];
     }
-    
+
     //还需要获取评论数量
     @weakify(self)
     return [[[self getObjectArraySignal:page] flattenMap:^RACStream *(NSMutableArray *resultArray) {
         @strongify(self)
         return [self getCommentCountsSignal:resultArray];
-    }]flattenMap:^RACStream *(NSMutableArray *resultArray) {
+    }] flattenMap:^RACStream *(NSMutableArray *resultArray) {
         @strongify(self)
         return [self downloadImageSize:resultArray];
     }];
@@ -169,15 +171,15 @@ INITWITHSETUP
     return [[AFNetWorkUtils get2racWthURL:appendString(commentCountUrl, param)]  map:^id(NSDictionary *resultDic) {
         NSDictionary *response=[resultDic objectForKey:@"response"];
         if (![response isKindOfClass:[NSDictionary class]]) {
-            NSLog(@"获取评论数量失败");
+            LogBlue(@"获取评论数量失败");
             return array;
         }
         
-        for (BoredPictures *boredPictures in array) {
+        [array enumerateObjectsUsingBlock:^(BoredPictures  *_Nonnull boredPictures, NSUInteger idx, BOOL * _Nonnull stop) {
             NSString *key=appendString(@"comment-", boredPictures.post_id);
             NSDictionary *result=[response objectForKey:key];
             boredPictures.comment_count=ConvertToString([result objectForKey:@"comments"]);
-        }
+        }];
         return array;
     }];
 }
@@ -191,7 +193,7 @@ INITWITHSETUP
         if(!array|| ![array count]){
             return self.sourceArray;
         }
-        NSLog(@"无网络，当前显示为缓存数据(有网时，第一次正常)");
+        LogBlue(@"无网络，当前显示为缓存数据(有网时，第一次正常)");
         [self.sourceArray addObjectsFromArray:array];
         return self.sourceArray;
     }];
@@ -252,9 +254,8 @@ INITWITHSETUP
         [array enumerateObjectsUsingBlock:^(BoredPictures *_Nonnull pictures, NSUInteger idx, BOOL * _Nonnull stop) {
             if (!pictures.picUrl) return ;
             if (pictures.picSize.height) return;
-            //不会存在线程安全问题
             dispatch_group_async(group, dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
-                pictures.picSize=[BLImageSize downloadImageSizeWithURL:pictures.picUrl];
+                pictures.picSize=[BLImageSize downloadImageSizeWithURL:pictures.thumnailGiFUrl?:pictures.picUrl];
             });
         }];
         //等group中所有的任务都执行完了，再执行其他操作

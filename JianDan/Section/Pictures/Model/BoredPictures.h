@@ -22,7 +22,13 @@
 @end
 
 
-@interface BoredPictures : Vote
+@interface BoredPictures : NSObject
+
+@property (nonatomic, assign) NSInteger vote_positive;
+
+@property (nonatomic, strong) NSString *post_id;
+
+@property (nonatomic, assign) NSInteger vote_negative;
 //原始日期
 @property (nonatomic, copy) NSString *comment_date;
 

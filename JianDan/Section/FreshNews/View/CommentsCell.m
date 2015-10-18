@@ -48,7 +48,14 @@
         [self.constraintLineLeading autoRemove];
         [self.viewLine autoPinEdge:ALEdgeLeading toEdge:ALEdgeLeading ofView:self.labelUserName];
     }else{//新鲜事 无头像 有顶和踩 在其他地方通用
-        [VoteViewModel setVoteButtonOO:self.buttonOO buttonXX:self.buttonXX cell:self vote:comment];
+        [self.buttonOO setTitle:[NSString stringWithKey:"OO " value:(int)comment.vote_positive] forState:UIControlStateNormal];
+        [self.buttonXX setTitle:[NSString stringWithKey:"XX " value:(int)comment.vote_negative] forState:UIControlStateNormal];
+        [[[self.buttonOO rac_signalForControlEvents:UIControlEventTouchUpInside] takeUntil:self.rac_prepareForReuseSignal] subscribeNext:^(id x) {
+            [VoteViewModel voteWithOption:OO vote:comment button:x];
+        }];
+        [[[self.buttonXX rac_signalForControlEvents:UIControlEventTouchUpInside] takeUntil:self.rac_prepareForReuseSignal] subscribeNext:^(id x) {
+            [VoteViewModel voteWithOption:XX vote:comment button:x];
+        }];
     }
 }
 

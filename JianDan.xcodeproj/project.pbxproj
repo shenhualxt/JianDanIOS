@@ -53,6 +53,10 @@
 		11925AAF1B93360E00608BCC /* BaseTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 11925AA11B93360E00608BCC /* BaseTableViewController.m */; };
 		11925AB01B93360E00608BCC /* BaseNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 11925AA21B93360E00608BCC /* BaseNavigationController.m */; };
 		11925AB11B93360E00608BCC /* BaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 11925AA31B93360E00608BCC /* BaseViewController.m */; };
+		119FC7B21BD239FD00B84DF7 /* ImageIO.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 119FC7B11BD239FD00B84DF7 /* ImageIO.framework */; };
+		119FC7B41BD23A0400B84DF7 /* CoreImage.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 119FC7B31BD23A0400B84DF7 /* CoreImage.framework */; };
+		119FC7B61BD23A0B00B84DF7 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 119FC7B51BD23A0B00B84DF7 /* MapKit.framework */; };
+		119FC7BC1BD2525600B84DF7 /* UITableViewdController.m in Sources */ = {isa = PBXBuildFile; fileRef = 119FC7BB1BD2525600B84DF7 /* UITableViewdController.m */; settings = {ASSET_TAGS = (); }; };
 		11A0C9001BC669FE008656BC /* BoredPictures.m in Sources */ = {isa = PBXBuildFile; fileRef = 11A0C8F31BC669FE008656BC /* BoredPictures.m */; settings = {ASSET_TAGS = (); }; };
 		11A0C9011BC669FE008656BC /* BoredPicturesController.m in Sources */ = {isa = PBXBuildFile; fileRef = 11A0C8F61BC669FE008656BC /* BoredPicturesController.m */; settings = {ASSET_TAGS = (); }; };
 		11A0C9021BC669FE008656BC /* BoredPicturesDetailController.m in Sources */ = {isa = PBXBuildFile; fileRef = 11A0C8F81BC669FE008656BC /* BoredPicturesDetailController.m */; settings = {ASSET_TAGS = (); }; };
@@ -86,7 +90,7 @@
 		11D63CE71B92C32D0059D328 /* FreshNewsCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 11D63CDE1B92C32D0059D328 /* FreshNewsCell.xib */; };
 		11D63CE81B92C32D0059D328 /* FreshNewsCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 11D63CDF1B92C32D0059D328 /* FreshNewsCell.m */; };
 		11D8F6861BD0B1EC0033066F /* Comments.m in Sources */ = {isa = PBXBuildFile; fileRef = 11D8F6851BD0B1EC0033066F /* Comments.m */; settings = {ASSET_TAGS = (); }; };
-		11D8F6891BD0B2000033066F /* Vote.m in Sources */ = {isa = PBXBuildFile; fileRef = 11D8F6881BD0B2000033066F /* Vote.m */; settings = {ASSET_TAGS = (); }; };
+		11E0E21B1BD3325900330F29 /* NSString+Additions.m in Sources */ = {isa = PBXBuildFile; fileRef = 11E0E21A1BD3325900330F29 /* NSString+Additions.m */; settings = {ASSET_TAGS = (); }; };
 		11E6ADA51BAA601300E7E31F /* CommentsCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 11E6ADA41BAA601300E7E31F /* CommentsCell.xib */; };
 		11F43D731B9FCF0E003EDFAF /* DMLazyScrollView.m in Sources */ = {isa = PBXBuildFile; fileRef = 11F43D721B9FCF0E003EDFAF /* DMLazyScrollView.m */; };
 		11F43D761B9FE09F003EDFAF /* FreshNewsDetailViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 11F43D751B9FE09F003EDFAF /* FreshNewsDetailViewModel.m */; };
@@ -210,6 +214,11 @@
 		11925AA11B93360E00608BCC /* BaseTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BaseTableViewController.m; sourceTree = "<group>"; };
 		11925AA21B93360E00608BCC /* BaseNavigationController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BaseNavigationController.m; sourceTree = "<group>"; };
 		11925AA31B93360E00608BCC /* BaseViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BaseViewController.m; sourceTree = "<group>"; };
+		119FC7B11BD239FD00B84DF7 /* ImageIO.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ImageIO.framework; path = System/Library/Frameworks/ImageIO.framework; sourceTree = SDKROOT; };
+		119FC7B31BD23A0400B84DF7 /* CoreImage.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreImage.framework; path = System/Library/Frameworks/CoreImage.framework; sourceTree = SDKROOT; };
+		119FC7B51BD23A0B00B84DF7 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
+		119FC7BA1BD2525600B84DF7 /* UITableViewdController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UITableViewdController.h; sourceTree = "<group>"; };
+		119FC7BB1BD2525600B84DF7 /* UITableViewdController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UITableViewdController.m; sourceTree = "<group>"; };
 		11A0C8F21BC669FE008656BC /* BoredPictures.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BoredPictures.h; sourceTree = "<group>"; };
 		11A0C8F31BC669FE008656BC /* BoredPictures.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BoredPictures.m; sourceTree = "<group>"; };
 		11A0C8F51BC669FE008656BC /* BoredPicturesController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BoredPicturesController.h; sourceTree = "<group>"; };
@@ -273,7 +282,8 @@
 		11D8F6841BD0B1EC0033066F /* Comments.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Comments.h; sourceTree = "<group>"; };
 		11D8F6851BD0B1EC0033066F /* Comments.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Comments.m; sourceTree = "<group>"; };
 		11D8F6871BD0B2000033066F /* Vote.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Vote.h; sourceTree = "<group>"; };
-		11D8F6881BD0B2000033066F /* Vote.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Vote.m; sourceTree = "<group>"; };
+		11E0E2191BD3325900330F29 /* NSString+Additions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+Additions.h"; sourceTree = "<group>"; };
+		11E0E21A1BD3325900330F29 /* NSString+Additions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+Additions.m"; sourceTree = "<group>"; };
 		11E6ADA41BAA601300E7E31F /* CommentsCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CommentsCell.xib; sourceTree = "<group>"; };
 		11F43D711B9FCF0E003EDFAF /* DMLazyScrollView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DMLazyScrollView.h; sourceTree = "<group>"; };
 		11F43D721B9FCF0E003EDFAF /* DMLazyScrollView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DMLazyScrollView.m; sourceTree = "<group>"; };
@@ -313,6 +323,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				119FC7B61BD23A0B00B84DF7 /* MapKit.framework in Frameworks */,
+				119FC7B41BD23A0400B84DF7 /* CoreImage.framework in Frameworks */,
+				119FC7B21BD239FD00B84DF7 /* ImageIO.framework in Frameworks */,
 				11925A7B1B92ED4F00608BCC /* QuartzCore.framework in Frameworks */,
 				11925A791B92E18000608BCC /* libz.dylib in Frameworks */,
 				E534EFA7F1E03B4CF0907D65 /* libPods.a in Frameworks */,
@@ -451,6 +464,8 @@
 		1122B31C1B9ED0FD00868096 /* Category */ = {
 			isa = PBXGroup;
 			children = (
+				11E0E2191BD3325900330F29 /* NSString+Additions.h */,
+				11E0E21A1BD3325900330F29 /* NSString+Additions.m */,
 				113491C81BAAA823007D133B /* NSDate+MJ.h */,
 				113491C91BAAA823007D133B /* NSDate+MJ.m */,
 				1122B31D1B9ED10C00868096 /* NSDictionary+JSONString.h */,
@@ -470,6 +485,8 @@
 		11290CAF1BAE30A4004AD5F5 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				119FC7BA1BD2525600B84DF7 /* UITableViewdController.h */,
+				119FC7BB1BD2525600B84DF7 /* UITableViewdController.m */,
 				114E39F21BB26A4A0001CEBD /* NetErrorView.xib */,
 			);
 			path = View;
@@ -749,7 +766,6 @@
 				11D8F6841BD0B1EC0033066F /* Comments.h */,
 				11D8F6851BD0B1EC0033066F /* Comments.m */,
 				11D8F6871BD0B2000033066F /* Vote.h */,
-				11D8F6881BD0B2000033066F /* Vote.m */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -800,6 +816,9 @@
 		5E1333910615C096DD9549DA /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				119FC7B51BD23A0B00B84DF7 /* MapKit.framework */,
+				119FC7B31BD23A0400B84DF7 /* CoreImage.framework */,
+				119FC7B11BD239FD00B84DF7 /* ImageIO.framework */,
 				1122B3241B9EE70300868096 /* Reveal.framework */,
 				11925A7A1B92ED4F00608BCC /* QuartzCore.framework */,
 				11925A781B92E18000608BCC /* libz.dylib */,
@@ -1014,7 +1033,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				11D8F6891BD0B2000033066F /* Vote.m in Sources */,
 				1170977F1B93E0F300896DB4 /* AppDelegate.m in Sources */,
 				11439A101BB6315700AFA2D3 /* FastImage.m in Sources */,
 				11B3954A1BB7DC2B00C5C8F5 /* ImageHelpers.m in Sources */,
@@ -1058,9 +1076,11 @@
 				11925AAF1B93360E00608BCC /* BaseTableViewController.m in Sources */,
 				11A0C9021BC669FE008656BC /* BoredPicturesDetailController.m in Sources */,
 				11F5150B1BA7DB4100572DF5 /* CommentViewModel.m in Sources */,
+				119FC7BC1BD2525600B84DF7 /* UITableViewdController.m in Sources */,
 				11D8F6861BD0B1EC0033066F /* Comments.m in Sources */,
 				115DCC3A1BB0EF4D00943B6F /* UITableViewCell+TableView.m in Sources */,
 				11C0F8081BC238D3007FBEAA /* PopoverView.m in Sources */,
+				11E0E21B1BD3325900330F29 /* NSString+Additions.m in Sources */,
 				110EFA5F1BC753A100D46333 /* UIImageView+UIProgressForSDWebImage.m in Sources */,
 				11F515081BA7D4F200572DF5 /* LTFloorView.m in Sources */,
 				11AB6ACE1BBB82CB00358621 /* PushCommentViewModel.m in Sources */,

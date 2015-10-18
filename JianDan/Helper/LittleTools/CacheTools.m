@@ -22,7 +22,7 @@ static FMDatabaseQueue *queue;
 DEFINE_SINGLETON_IMPLEMENTATION(CacheTools)
 
 -(void)setUp{
-   queue = [FMDatabaseQueue databaseQueueWithPath:[self getPath:dbName]];
+   queue = [FMDatabaseQueue databaseQueueWithPath:[self getPath:dbName] flags:SQLITE_OPEN_READWRITE];
 }
 
 - (RACSignal *)read:(Class)clazz {
@@ -49,43 +49,45 @@ DEFINE_SINGLETON_IMPLEMENTATION(CacheTools)
             [subscriber sendError:[self createError:@"page不能小于0" tableName:tableName]];
             return nil;
         };
-        [queue inDatabase:^(FMDatabase *db) {
-            if (![self isTableExist:tableName database:db] ) {
-                [self createError:@"不存在(可能是第一次还未缓存数据)" tableName:tableName];
-                [subscriber sendCompleted];
-                return ;
-            }
-            
-            //拼接sql语句
-            RACTuple *turple = [self getSelectSqlTextWith:page tableName:tableName database:db];
-            
-            if (![turple.first integerValue]) {
-                 NSLog(@"%@",@"没有更多的缓存数据");
-                [subscriber sendError:[NSErrorHelper createErrorWithErrorInfo:@"没有更多的缓存数据" domain:CacheToolsDomain]];
-                return ;
-            }
-            
-            //开始查询
-            NSString *querySql=turple.second;
-            FMResultSet *resultSet = [db executeQuery:querySql];
-            
-            //遍历查询结果，放入数组中
-            NSMutableArray *infoArray = [NSMutableArray array];
-            while (resultSet.next) {
-                @autoreleasepool {
-                    NSData *data = [resultSet objectForColumnName:[NSString stringWithFormat:@"%@_dict", tableName]];
-                    NSObject *obj = [NSKeyedUnarchiver unarchiveObjectWithData:data];
-                    [infoArray addObject:obj];
+        dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
+            [queue inTransaction:^(FMDatabase *db, BOOL *rollback) {
+                if (![self isTableExist:tableName database:db] ) {
+                    [self createError:@"不存在(可能是第一次还未缓存数据)" tableName:tableName];
+                    [subscriber sendCompleted];
+                    return ;
                 }
-            }
-            
-            if(infoArray.count==0){
-                [self createError:@"没有从数据库中取到数据" tableName:tableName];
-            }
-            [resultSet close];
-            [subscriber sendNext:infoArray];
-            [subscriber sendCompleted];
-        }];
+                
+                //拼接sql语句
+                RACTuple *turple = [self getSelectSqlTextWith:page tableName:tableName database:db];
+                
+                if (![turple.first integerValue]) {
+                     LogBlue(@"%@",@"没有更多的缓存数据");
+                    [subscriber sendError:[NSErrorHelper createErrorWithErrorInfo:@"没有更多的缓存数据" domain:CacheToolsDomain]];
+                    return ;
+                }
+                
+                //开始查询
+                NSString *querySql=turple.second;
+                FMResultSet *resultSet = [db executeQuery:querySql];
+                
+                //遍历查询结果，放入数组中
+                NSMutableArray *infoArray = [NSMutableArray array];
+                while (resultSet.next) {
+                    @autoreleasepool {
+                        NSData *data = [resultSet objectForColumnName:[NSString stringWithFormat:@"%@_dict", tableName]];
+                        NSObject *obj = [NSKeyedUnarchiver unarchiveObjectWithData:data];
+                        [infoArray addObject:obj];
+                    }
+                }
+                
+                if(infoArray.count==0){
+                    [self createError:@"没有从数据库中取到数据" tableName:tableName];
+                }
+                [resultSet close];
+                [subscriber sendNext:infoArray];
+                [subscriber sendCompleted];
+            }];
+        });
         
         return nil;
     }] subscribeOn:scheduler] deliverOnMainThread];
@@ -93,7 +95,7 @@ DEFINE_SINGLETON_IMPLEMENTATION(CacheTools)
 
 -(NSError *)createError:(NSString *)tipInfo tableName:(NSString *)tableName{
     tipInfo=[NSString stringWithFormat:@"%@表_%@",tableName,tipInfo];
-    NSLog(@"%@",tipInfo);
+    LogBlue(@"%@",tipInfo);
     return [NSErrorHelper createErrorWithErrorInfo:tipInfo domain:CacheToolsDomain];
 }
 
@@ -117,20 +119,20 @@ DEFINE_SINGLETON_IMPLEMENTATION(CacheTools)
             length=0;
         }
         // 实现分页
-        [querySql appendFormat:@" limit %ld offset %ld", length, start];
+        [querySql appendFormat:@" limit %d offset %d", length, start];
     }
     return RACTuplePack(@(length),querySql);
 }
 
 - (void)save:(NSArray *)objectArray sortArgument:(NSString *)idStr {
     [[self racSave:objectArray sortArgument:idStr tableName:nil] subscribeError:^(NSError *error) {
-         NSLog(@"%@",error);
+         LogBlue(@"%@",error);
     }];
 }
 
 -(void)save:(NSArray *)objectArray sortArgument:(NSString *)idStr tableName:(NSString *)tableName{
     [[self racSave:objectArray sortArgument:idStr tableName:tableName] subscribeError:^(NSError *error) {
-        NSLog(@"%@",error);
+        LogBlue(@"%@",error);
     }];
 }
 
@@ -163,30 +165,34 @@ DEFINE_SINGLETON_IMPLEMENTATION(CacheTools)
                     return;
                 }
                 
-                for (NSObject *obj in objectArray) {
+                NSMutableArray *temArray=[objectArray mutableCopy];
+                [temArray enumerateObjectsUsingBlock:^(id  _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
                     @autoreleasepool {
-                        //如果已经有了,就不在存入
-                        NSString *querySql = [NSString stringWithFormat:@"SELECT * FROM %@ where %@_idstr=%@",
-                                              tableName, tableName, [obj valueForKey:idStr]];
-                        FMResultSet *resultSet = [db executeQuery:querySql];
-                        if (resultSet.next) {
-                            [resultSet close];
-                            continue;
-                        }
-                        [resultSet close];
-                        //数据库中没有，存入
-                        NSData *data = [NSKeyedArchiver archivedDataWithRootObject:obj];// 把dict字典对象序列化成NSData二进制数据
-                        NSString *updateSql = [NSString stringWithFormat:@"INSERT INTO %@ (%@_idstr, " @"%@_dict) VALUES (?, ?);",
-                                               tableName, tableName, tableName];
-                        BOOL success = [db executeUpdate:updateSql, [obj valueForKey:idStr], data];
-                        if (!success) {
-                            LogBlue(@"%@_插入数据失败",tableName);
-                        }
-                    }
-                }
+                                //如果已经有了,就不在存入
+                                NSString *querySql = [NSString stringWithFormat:@"SELECT * FROM %@ where %@_idstr=%@",
+                                                      tableName, tableName, [obj valueForKey:idStr]];
+                                FMResultSet *resultSet = [db executeQuery:querySql];
+                                if (resultSet.next) {
+                                    [resultSet close];
+                                    return ;
+                                }
+                                [resultSet close];
+                                //数据库中没有，存入
+                                NSData *data = [NSKeyedArchiver archivedDataWithRootObject:obj];
+                                NSString *updateSql = [NSString stringWithFormat:@"INSERT INTO %@ (%@_idstr, " @"%@_dict) VALUES (?, ?);",
+                                                       tableName, tableName, tableName];
+                                BOOL success = [db executeUpdate:updateSql, [obj valueForKey:idStr], data];
+                                if (!success) {
+                                    LogBlue(@"%@_插入数据失败",tableName);
+                                }
+                            }
+
+                }];
+                
                 [subscriber sendNext:objectArray];
                 [subscriber sendCompleted];
             }];
+            
         });
         return nil;
     }];
@@ -222,7 +228,7 @@ DEFINE_SINGLETON_IMPLEMENTATION(CacheTools)
                                                              @"NULL, %@_dict blob NOT NULL);",
                                                      tableName, tableName, tableName];
     if (![db executeUpdate:updateSql]) {
-        NSLog(@"Create db error!");
+        LogBlue(@"Create db error!");
         LogBlue(@"Create db error!");
         return NO;
     }

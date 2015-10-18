@@ -116,9 +116,12 @@ sprintf(cString, "%s%ld",key,value);\
 
 //----------------------颜色类--------------------------
 
+#define FontWithSize(size) [UIFont systemFontOfSize:size]
+
 //-------------------如何快速的查看一段代码的执行时间-------------------------
 #define TICK   NSDate *startTime = [NSDate date];
 #define TOCK   NSLog(@"Time: %f", -[startTime timeIntervalSinceNow]);
+#define TOCKS(which)   NSLog(@"%@-Time: %f",which, -[startTime timeIntervalSinceNow]);
 //实例
 //TICK
 /// do your work here

@@ -9,7 +9,13 @@
 #import <Foundation/Foundation.h>
 #import "Vote.h"
 
-@interface Comments : Vote
+@interface Comments : NSObject<Vote>
+
+@property (nonatomic, assign) NSInteger vote_positive;
+
+@property (nonatomic, strong) NSString *post_id;
+
+@property (nonatomic, assign) NSInteger vote_negative;
 
 //新鲜事
 @property (nonatomic, copy) NSString *content;

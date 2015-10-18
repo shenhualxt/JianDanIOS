@@ -7,7 +7,7 @@
 //
 
 #import <Foundation/Foundation.h>
-@class Vote;
+#import "Vote.h"
 
 typedef NS_ENUM(NSInteger,VoteOption){
     XX,
@@ -20,6 +20,6 @@ static NSString *result_have_voted=@"0";
 
 @interface VoteViewModel : NSObject
 
-+(void)setVoteButtonOO:(UIButton *)buttonOO buttonXX:(UIButton *)buttonXX cell:(UITableViewCell *)cell vote:(Vote *)vote;
++(void)voteWithOption:(VoteOption)option vote:(id<Vote>)vote button:(UIButton *)button;
 
 @end

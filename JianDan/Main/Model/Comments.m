@@ -34,8 +34,8 @@
 -(void)setThread_id:(NSString *)thread_id{
     if (!_thread_id) {
         _thread_id=thread_id;
-        if (!super.post_id) {
-            super.post_id=_thread_id;
+        if (!_post_id) {
+            _post_id=_thread_id;
         }
     }
 }
@@ -71,5 +71,17 @@
     }
 }
 
+
+-(NSString *)getPost_id{
+    return self.post_id;
+}
+
+-(NSInteger)encreaseVote_negative{
+    return  ++self.vote_negative;
+}
+
+-(NSInteger)encreaseVote_positive{
+    return  ++self.vote_positive;
+}
 
 @end

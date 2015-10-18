@@ -18,6 +18,7 @@
 #import "UIImage+Scale.h"
 #import "FastImageCacehHelper.h"
 #import "LittleMoveController.h"
+#import "UITableViewdController.h"
 
 #define UmengAppkey @"55f2639e67e58ed7da000371"
 
@@ -77,7 +78,7 @@
                     vc=[[BoredPicturesController alloc] initWithControllerType:index];
                     break;
                 case 4:
-                    vc=[LittleMoveController new];
+                    vc=[UITableViewdController new];
                     break;
                 default:
                     break;

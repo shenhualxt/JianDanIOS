@@ -32,6 +32,8 @@
 
 @property (assign,nonatomic) Class cellClass;
 
+@property (assign,nonatomic) NSInteger estimatedRowHeight;
+
 @end
 
 @implementation BoredPicturesController
@@ -43,14 +45,17 @@
         self.currentTitle=@"无聊图";
         self.tableName=@"BoredPicture";
         self.url=BoredPicturesUrl;
+        self.estimatedRowHeight=350;
         if (controllerType==controllerTypeSisterPictures) {
             self.currentTitle=@"妹子图";
             self.tableName=@"SisterPicture";
              self.url=SisterPicturesUrl;
+            self.estimatedRowHeight=500;
         }else if(controllerType==controllerTypeJoke){
             self.currentTitle=@"段子";
             self.tableName=@"Joke";
              self.url=JokeUrl;
+            self.estimatedRowHeight=150;
         }
     }
     return self;
@@ -61,16 +66,10 @@
 //    父类会进行self.helper viewModel初始化等操作，
 //    [self bindingViewModel];
     
-//    self.tableView.estimatedRowHeight=300;
+    self.tableView.estimatedRowHeight=self.estimatedRowHeight;
     //一句代码解决动态高度问题（前提cell 设置好约束）
     self.helper.isDynamicHeight=YES;
-    self.helper.delegate=self;
 }
-
--(CGFloat)tableView:(UITableView *)tableView estimatedHeightForRowAtIndexPath:(NSIndexPath *)indexPath{
-    return 180;
-}
-
 
 -(void)viewWillAppear:(BOOL)animated{
     [super viewWillAppear:animated];

@@ -86,7 +86,7 @@ DEPENDENCIES:
   - SDWebImage
   - TMCache
   - TPKeyboardAvoiding
-  - UITableView+FDTemplateLayoutCell (~> 1.4.beta)
+  - UITableView+FDTemplateLayoutCell (~> 1.4beta)
 
 SPEC CHECKSUMS:
   AFNetworking: 79f7eb1a0fcfa7beb409332b2ca49afe9ce53b05
@@ -106,4 +106,4 @@ SPEC CHECKSUMS:
   TPKeyboardAvoiding: ff1ee4e5a5a0c119b965552af8f183868ea20207
   UITableView+FDTemplateLayoutCell: 9d20bf0518f3c01e42ae614243b97f1161063d27
 
-COCOAPODS: 0.39.0.beta.4
+COCOAPODS: 0.38.2

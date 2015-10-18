@@ -11,6 +11,10 @@
 #import "NSString+Date.h"
 #import "FastImage.h"
 
+@interface BoredPictures()
+
+@end
+
 @implementation Video
 
 -(void)setBigPicUrl:(NSString *)bigPicUrl{
@@ -33,6 +37,23 @@ MJCodingImplementation
     NSString *_comment_count;
 }
 
+-(NSString *)getPost_id{
+    return self.post_id;
+}
+
+-(NSInteger)encreaseVote_negative{
+    return  ++self.vote_negative;
+}
+
+-(NSInteger)encreaseVote_positive{
+    return  ++self.vote_positive;
+}
+
+-(NSString *)idStr{
+    return self.post_id;
+}
+
+
 +(NSDictionary *)objectClassInArray{
     return @{@"pics":[NSString class], @"videos":[Video class]};
 }
@@ -44,8 +65,8 @@ MJCodingImplementation
 -(void)setPics:(NSArray *)pics{
     if (pics.count) {
         _picUrl=pics[0];
-        if ([_picUrl hasPrefix:@".gif"]) {
-             _thumnailGiFUrl=[BoredPictures thumbGIFURLFromURL:_picUrl];
+        if ([_picUrl hasSuffix:@".gif"]) {
+             _thumnailGiFUrl=[BoredPictures thumbGIFURLFromURL:[_picUrl copy]];
         }
     }
 }
@@ -69,7 +90,7 @@ MJCodingImplementation
 
 -(void)setComment_count:(NSString *)comment_count{
     if (!_comment_count) {
-        appendCString(&_comment_count, "吐槽 ",[comment_count integerValue]);
+        appendCString(&_comment_count, "吐槽 ",(long)[comment_count integerValue]);
     }
 }
 

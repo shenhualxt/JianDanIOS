@@ -9,19 +9,21 @@
 #import <Foundation/Foundation.h>
 #import <ReactiveCocoa/ReactiveCocoa.h>
 
-/// A helper class for binding view models with NSArray properties to a UITableView.
+@protocol DynamicHeightModel <NSObject>
+
+-(NSString *)idStr;
+
+@end
+
 @interface CETableViewBindingHelper : NSObject
-
-// forwards the UITableViewDelegate methods
-@property (weak, nonatomic) id<UITableViewDelegate> delegate;
-
-@property (weak, nonatomic) id<UIScrollViewDelegate> scrollViewDelegate;
 
 @property (assign, nonatomic) BOOL isDynamicHeight;
 
 @property (strong, nonatomic,readonly) NSArray *data;
 
-@property (assign,nonatomic)  CGRect targetRect;
+@property (weak, nonatomic) id<UIScrollViewDelegate> scrollViewDelegate;
+
+- (void)hitTest;
 
 + (instancetype)bindingHelperForTableView:(UITableView *)tableView
                              sourceSignal:(RACSignal *)source

@@ -15,5 +15,6 @@
 
 -(void)updateIntrinsicContentSize:(CGSize)size withMaxHeight:(BOOL)maxHeight;
 
+-(CGSize)adjustSize:(CGSize)size;
 
 @end

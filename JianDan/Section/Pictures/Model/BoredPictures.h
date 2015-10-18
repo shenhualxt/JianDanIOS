@@ -42,6 +42,7 @@
 @property (nonatomic, strong) NSArray *videos;
 
 
+@property (nonatomic, assign) BOOL hadLoadImage;
 #pragma mar -新添加
 //图片地址
 @property (nonatomic, strong) NSString *picUrl;

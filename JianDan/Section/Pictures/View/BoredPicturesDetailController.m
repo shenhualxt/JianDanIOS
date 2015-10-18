@@ -61,13 +61,18 @@
                     if ([imageURL hasSuffix:@".gif" ]) {
                         [[TMCache sharedCache] setObject:data forKey:imageURL];
                     }
-                    [self adjustLocation];
+                    dispatch_main_async_safe(^{
+                         [self adjustLocation];
+                    });
+                  
                 } usingProgressViewStyle:UIProgressViewStyleDefault];
             }
         }];
     }
     [self.imageViewDetail setImageWithURL:[NSURL URLWithString:imageURL] placeholderImage:[UIImage imageNamed:@"ic_loading_large"] completed:^(UIImage *image, NSError *error, SDImageCacheType cacheType, NSURL *imageURL) {
-        [self adjustLocation];
+        dispatch_main_async_safe(^{
+            [self adjustLocation];
+        });
     }  usingProgressViewStyle:UIProgressViewStyleDefault];
 }
 
@@ -150,7 +155,7 @@
     float topPadding = (SCREEN_HEIGHT - mHeight) / 2;
      if (topPadding < 0) topPadding = 0;
     self.constraintTop.constant=topPadding;
-    self.constraintBottom.constant=topPadding;
+//    self.constraintBottom.constant=topPadding;
     
     [self.view layoutIfNeeded];
 }

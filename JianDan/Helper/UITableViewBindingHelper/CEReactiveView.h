@@ -23,4 +23,6 @@
 
 -(void)clear;
 
+-(BOOL)hadLoadImage;
+
 @end

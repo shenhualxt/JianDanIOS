@@ -897,7 +897,7 @@
 				TargetAttributes = {
 					1119C48D1B9005B5007C8C56 = {
 						CreatedOnToolsVersion = 7.0;
-						DevelopmentTeam = NL23PW9H44;
+						DevelopmentTeam = 93QP7RMD2S;
 					};
 					1119C4A61B9005B7007C8C56 = {
 						CreatedOnToolsVersion = 7.0;
@@ -1155,8 +1155,8 @@
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				CODE_SIGN_IDENTITY = "iPhone Distribution: Qingdao Lunz Software Technology Co., Ltd. (NL23PW9H44)";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: Qingdao Lunz Software Technology Co., Ltd. (NL23PW9H44)";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = dwarf;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
@@ -1178,7 +1178,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
-				PROVISIONING_PROFILE = "04be4f75-1767-4c4b-8511-29d8dd0d1dd7";
+				PROVISIONING_PROFILE = "";
 				SDKROOT = iphoneos;
 			};
 			name = Debug;
@@ -1200,8 +1200,8 @@
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				CODE_SIGN_IDENTITY = "iPhone Distribution: Qingdao Lunz Software Technology Co., Ltd. (NL23PW9H44)";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: Qingdao Lunz Software Technology Co., Ltd. (NL23PW9H44)";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				ENABLE_NS_ASSERTIONS = NO;
@@ -1216,7 +1216,7 @@
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
-				PROVISIONING_PROFILE = "04be4f75-1767-4c4b-8511-29d8dd0d1dd7";
+				PROVISIONING_PROFILE = "";
 				SDKROOT = iphoneos;
 				VALIDATE_PRODUCT = YES;
 			};
@@ -1227,8 +1227,8 @@
 			baseConfigurationReference = 20390B976642A68C4D0A22F1 /* Pods.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_IDENTITY = "iPhone Distribution: Qingdao Lunz Software Technology Co., Ltd. (NL23PW9H44)";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: Qingdao Lunz Software Technology Co., Ltd. (NL23PW9H44)";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				ENABLE_BITCODE = NO;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
@@ -1270,9 +1270,9 @@
 					"-framework",
 					"\"SystemConfiguration\"",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.qdzr.jiandan;
+				PRODUCT_BUNDLE_IDENTIFIER = com.qdzr.jiandans;
 				PRODUCT_NAME = JianDan;
-				PROVISIONING_PROFILE = "04be4f75-1767-4c4b-8511-29d8dd0d1dd7";
+				PROVISIONING_PROFILE = "";
 			};
 			name = Debug;
 		};
@@ -1281,8 +1281,8 @@
 			baseConfigurationReference = 3D0B996DD2200AC5CD2D1063 /* Pods.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_IDENTITY = "iPhone Distribution: Qingdao Lunz Software Technology Co., Ltd. (NL23PW9H44)";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: Qingdao Lunz Software Technology Co., Ltd. (NL23PW9H44)";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				ENABLE_BITCODE = NO;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
@@ -1297,9 +1297,9 @@
 					"$(inherited)",
 					"$(PROJECT_DIR)/JianDan/Helper/Vender/UMSocial_Sdk_4.2.3",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.qdzr.jiandan;
+				PRODUCT_BUNDLE_IDENTIFIER = com.qdzr.jiandans;
 				PRODUCT_NAME = JianDan;
-				PROVISIONING_PROFILE = "04be4f75-1767-4c4b-8511-29d8dd0d1dd7";
+				PROVISIONING_PROFILE = "";
 			};
 			name = Release;
 		};

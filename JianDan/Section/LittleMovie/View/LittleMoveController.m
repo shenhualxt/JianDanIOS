@@ -76,7 +76,7 @@
         }
         return resultArray;
     }];
-    
+     self.collectionView.panGestureRecognizer.delaysTouchesBegan = self.collectionView.delaysContentTouches;
     RACCommand *selectionCommand=[[RACCommand alloc] initWithSignalBlock:^RACSignal *(BoredPictures *boredPictures) {
         LittleMovieDetailController *vc=[LittleMovieDetailController new];
         vc.sendObject=boredPictures.text_content;

@@ -14,7 +14,7 @@
 #import "MJRefresh.h"
 #import "MainViewModel.h"
 
-@interface BoredPicturesController()
+@interface BoredPicturesController()<SDWebImageManagerDelegate>
 
 @property(strong,nonatomic) MainViewModel *viewModel;
 
@@ -65,7 +65,8 @@
     [super viewDidLoad];
 //    父类会进行self.helper viewModel初始化等操作，
 //    [self bindingViewModel];
-    
+    [SDWebImageManager sharedManager].delegate=self;
+    self.tableView.panGestureRecognizer.delaysTouchesBegan = self.tableView.delaysContentTouches;
     self.tableView.estimatedRowHeight=self.estimatedRowHeight;
     //一句代码解决动态高度问题（前提cell 设置好约束）
     self.helper.isDynamicHeight=YES;
@@ -103,5 +104,16 @@
     return _selectCommand;
 }
 
+- (UIImage *)imageManager:(SDWebImageManager *)imageManager transformDownloadedImage:(UIImage *)image withURL:(NSURL *)imageURL{
+    BoredPictursCell *cell=[self.tableView dequeueReusableCellWithIdentifier:@"BoredPictursCell"];
+    CGSize itemSize = [cell.imagePicture adjustSize:image.size];
+    
+    UIGraphicsBeginImageContextWithOptions(itemSize, NO, [UIScreen mainScreen].scale);
+    CGRect imageRect = CGRectMake(0.0, 0.0, itemSize.width, itemSize.height);
+    [image drawInRect:imageRect];
+    UIImage  *newImage = UIGraphicsGetImageFromCurrentImageContext();
+    UIGraphicsEndImageContext();
+    return newImage;
+}
 
 @end

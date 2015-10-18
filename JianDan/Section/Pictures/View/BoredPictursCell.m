@@ -24,7 +24,7 @@
 #import "ShareToSinaController.h"
 #import "NSString+Date.h"
 
-@interface BoredPictursCell()<CEReactiveView>
+@interface BoredPictursCell()<CEReactiveView,SDWebImageManagerDelegate>
 
 @property (weak, nonatomic) IBOutlet UILabel *labelUserName;
 @property (weak, nonatomic) IBOutlet UIImageView *imageGIF;
@@ -49,6 +49,7 @@
     self.selectionStyle = UITableViewCellSelectionStyleNone;
     // Fix the bug in iOS7 - initial constraints warning
     self.contentView.bounds = [UIScreen mainScreen].bounds;
+
 }
 
 -(void)bindViewModel:(BoredPictures *)boredPictures forIndexPath:(NSIndexPath *)indexPath{
@@ -65,7 +66,19 @@
     if (!boredPictures.picUrl) return;//段子（没有图片）
     self.picSize=boredPictures.picSize;
     [self.imagePicture updateIntrinsicContentSize:self.picSize withMaxHeight:YES];
-    [self.imagePicture setImageWithURL:[self getImageURL:boredPictures] placeholderImage:self.placeholder options:SDWebImageHighPriority usingProgressViewStyle:UIProgressViewStyleDefault];
+    NSString *key=[[SDWebImageManager sharedManager] cacheKeyForURL:[self getImageURL:boredPictures]];
+    [[SDImageCache sharedImageCache] queryDiskCacheForKey:key done:^(UIImage *image, SDImageCacheType cacheType) {
+        self.imagePicture.image=image?:self.placeholder;
+    }];
+}
+
+-(void)loadImage:(BoredPictures *)boredPictures forIndexPath:(NSIndexPath *)indexPath helper:(CETableViewBindingHelper *)helper{
+    if (boredPictures.hadLoadImage) {
+        return;
+    }
+     [self.imagePicture setImageWithURL:[self getImageURL:boredPictures] placeholderImage:self.placeholder options:SDWebImageHighPriority|SDWebImageTransformAnimatedImage completed:^(UIImage *image, NSError *error, SDImageCacheType cacheType, NSURL *imageURL) {
+         boredPictures.hadLoadImage=YES;
+     }  usingProgressViewStyle:UIProgressViewStyleDefault];
 }
 
 -(void)clear{

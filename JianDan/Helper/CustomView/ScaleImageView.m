@@ -34,7 +34,7 @@
         size=kPlaceholderSize;
     }
     CGFloat ratio = self.frame.size.width/ size.width;
-    CGFloat mHeight = size.height * ratio;
+    NSInteger mHeight = size.height * ratio;
     return CGSizeMake(self.frame.size.width, mHeight);
 }
 

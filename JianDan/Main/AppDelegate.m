@@ -18,7 +18,6 @@
 #import "UIImage+Scale.h"
 #import "FastImageCacehHelper.h"
 #import "LittleMoveController.h"
-#import "UITableViewdController.h"
 
 #define UmengAppkey @"55f2639e67e58ed7da000371"
 

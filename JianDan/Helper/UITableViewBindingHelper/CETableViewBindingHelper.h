@@ -13,6 +13,8 @@
 
 -(NSString *)idStr;
 
+-(BOOL)isLoadedImage;
+
 @end
 
 @interface CETableViewBindingHelper : NSObject

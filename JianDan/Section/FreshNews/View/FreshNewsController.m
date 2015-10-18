@@ -70,6 +70,7 @@
      RACSignal *sourceSignal=[[self.viewModel.sourceCommand executionSignals] switchToLatest];
     
     //列表绑定数据
+     self.tableView.panGestureRecognizer.delaysTouchesBegan = self.tableView.delaysContentTouches;
     self.helper = [CETableViewBindingHelper bindingHelperForTableView:self.tableView sourceSignal:sourceSignal selectionCommand:self.selectCommand customCellClass:self.cellClass];
     
     [self.viewModel.sourceCommand execute:self.turple];

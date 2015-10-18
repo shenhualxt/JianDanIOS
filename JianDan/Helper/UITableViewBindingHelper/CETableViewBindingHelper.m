@@ -102,17 +102,25 @@ heightForRowAtIndexPath:(NSIndexPath *)indexPath {
 }
 
 -(void)configureCell:(id<CEReactiveView>)cell forIndexPath:(NSIndexPath *)indexPath{
-//    if (needLoadArr.count>0&&[needLoadArr indexOfObject:indexPath]==NSNotFound) {
-//        if ([cell respondsToSelector:@selector(clear)]) {
-//            [cell clear];
-//        }
-//        return;
-//    }
-//    if (scrollToToping) {
-//        return;
-//    }
+    if (needLoadArr.count>0&&[needLoadArr indexOfObject:indexPath]==NSNotFound) {
+        if ([cell respondsToSelector:@selector(clear)]) {
+            [cell clear];
+        }
+        return;
+    }
+    if (scrollToToping) {
+        return;
+    }
 
-    [cell bindViewModel:_data[indexPath.row] forIndexPath:indexPath];
+    id model=_data[indexPath.row];
+    [cell bindViewModel:model forIndexPath:indexPath];
+    
+    if (_tableView.dragging == NO && _tableView.decelerating == NO)
+    {
+        if ([cell respondsToSelector:@selector(loadImage:forIndexPath:helper:)]) {
+            [cell loadImage:_data[indexPath.row] forIndexPath:indexPath helper:self];
+        }
+    }
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
@@ -169,6 +177,38 @@ heightForRowAtIndexPath:(NSIndexPath *)indexPath {
     }
 }
 
+- (void)scrollViewDidEndDragging:(UIScrollView *)scrollView willDecelerate:(BOOL)decelerate
+{
+    if (!decelerate)
+    {
+       [self loadImagesForOnscreenRows];
+    }
+}
+
+- (void)scrollViewDidEndDecelerating:(UIScrollView *)scrollView
+{
+    [self loadImagesForOnscreenRows];
+}
+
+
+- (void)loadImagesForOnscreenRows
+{
+    if (_data.count > 0)
+    {
+        if (_tableView.indexPathsForVisibleRows.count<=0) {
+            return;
+        }
+        if (_tableView.visibleCells&&_tableView.visibleCells.count>0) {
+            for (id temp in [_tableView.visibleCells copy]) {
+                id<CEReactiveView> cell = temp;
+                NSIndexPath *indexPath = [_tableView indexPathForCell:(UITableViewCell *)cell];
+                if ([cell respondsToSelector:@selector(loadImage:forIndexPath:helper:)]) {
+                    [cell loadImage:_data[indexPath.row] forIndexPath:indexPath helper:self];
+                }
+            }
+        }
+    }
+}
 
 #pragma mark-开速滑动优化
 - (void)scrollViewWillBeginDragging:(UIScrollView *)scrollView{

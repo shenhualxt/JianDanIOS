@@ -60,6 +60,7 @@ static char TAG_PROGRESSVIEW;
     });
 }
 
+
 #pragma mark - Methods
 
 - (void)setImageWithURL:(NSURL *)url usingProgressViewStyle:(UIProgressViewStyle)progressViewStyle {

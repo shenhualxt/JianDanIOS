@@ -62,6 +62,9 @@ uint scrollViewDidScroll:1;
 }
 
 - (instancetype)initWithTableView:(UITableView *)tableView sourceSignal:(RACSignal *)source selectionCommand:(RACCommand *)selection customCellClass:(Class)clazz {
+    if (!clazz) {
+        return nil;
+    }
     self = [self initWithTableView:tableView sourceSignal:source selectionCommand:selection];
     if (self) {
         _reuseIdentifier = NSStringFromClass(clazz);
@@ -76,10 +79,9 @@ uint scrollViewDidScroll:1;
 - (instancetype)initWithTableView:(UITableView *)tableView sourceSignal:(RACSignal *)source selectionCommand:(RACCommand *)selection templateCellClass:(Class)clazz {
     self = [self initWithTableView:tableView sourceSignal:source selectionCommand:selection];
     if (self) {
-        _reuseIdentifier = [NSString stringWithFormat:@"%s", object_getClassName(clazz)];
-        UITableViewCell *cell = [[clazz alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:_reuseIdentifier];
-        _templateCell = cell;
-        [_tableView registerClass:[cell class] forCellReuseIdentifier:_reuseIdentifier];
+        _reuseIdentifier = NSStringFromClass(clazz);
+         _templateCell  = [[clazz alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:_reuseIdentifier];
+        [_tableView registerClass:clazz forCellReuseIdentifier:_reuseIdentifier];
         _tableView.rowHeight = _templateCell.bounds.size.height; // use the template cell to set the row height
     }
     return self;
@@ -87,6 +89,11 @@ uint scrollViewDidScroll:1;
 
 - (CGFloat)   tableView:(UITableView *)tableView
 heightForRowAtIndexPath:(NSIndexPath *)indexPath {
+    
+    if ([self.delegate respondsToSelector:@selector(tableView:heightForRowAtIndexPath:)]) {
+       return  [self.delegate tableView:tableView heightForRowAtIndexPath:indexPath];
+    }
+    
     CGFloat heightForRowAtIndexPath = tableView.rowHeight;
     if (_isDynamicHeight) {
         if(IOS8){
@@ -102,6 +109,9 @@ heightForRowAtIndexPath:(NSIndexPath *)indexPath {
 }
 
 -(void)configureCell:(id<CEReactiveView>)cell forIndexPath:(NSIndexPath *)indexPath{
+    if ([cell respondsToSelector:@selector(clear)]) {
+        [cell clear];
+    }
     if (needLoadArr.count>0&&[needLoadArr indexOfObject:indexPath]==NSNotFound) {
         if ([cell respondsToSelector:@selector(clear)]) {
             [cell clear];
@@ -177,43 +187,26 @@ heightForRowAtIndexPath:(NSIndexPath *)indexPath {
     }
 }
 
+#pragma mark-开速滑动优化
+- (void)scrollViewWillBeginDragging:(UIScrollView *)scrollView{
+    [needLoadArr removeAllObjects];
+    [[SDWebImageDownloader sharedDownloader] setMaxConcurrentDownloads:2];
+}
+
+
 - (void)scrollViewDidEndDragging:(UIScrollView *)scrollView willDecelerate:(BOOL)decelerate
 {
     if (!decelerate)
     {
-       [self loadImagesForOnscreenRows];
+        [[SDWebImageDownloader sharedDownloader] setMaxConcurrentDownloads:5];
     }
 }
 
 - (void)scrollViewDidEndDecelerating:(UIScrollView *)scrollView
 {
-    [self loadImagesForOnscreenRows];
+    [[SDWebImageDownloader sharedDownloader] setMaxConcurrentDownloads:5];
 }
 
-
-- (void)loadImagesForOnscreenRows
-{
-    if (_data.count > 0)
-    {
-        if (_tableView.indexPathsForVisibleRows.count<=0) {
-            return;
-        }
-        if (_tableView.visibleCells&&_tableView.visibleCells.count>0) {
-            for (id temp in [_tableView.visibleCells copy]) {
-                id<CEReactiveView> cell = temp;
-                NSIndexPath *indexPath = [_tableView indexPathForCell:(UITableViewCell *)cell];
-                if ([cell respondsToSelector:@selector(loadImage:forIndexPath:helper:)]) {
-                    [cell loadImage:_data[indexPath.row] forIndexPath:indexPath helper:self];
-                }
-            }
-        }
-    }
-}
-
-#pragma mark-开速滑动优化
-- (void)scrollViewWillBeginDragging:(UIScrollView *)scrollView{
-    [needLoadArr removeAllObjects];
-}
 
 //按需加载 - 如果目标行与当前行相差超过指定行数，只在目标滚动范围的前后指定3行加载。
 - (void)scrollViewWillEndDragging:(UIScrollView *)scrollView withVelocity:(CGPoint)velocity targetContentOffset:(inout CGPoint *)targetContentOffset{

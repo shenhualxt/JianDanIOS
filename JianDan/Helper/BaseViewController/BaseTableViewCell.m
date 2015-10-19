@@ -8,21 +8,27 @@
 
 #import "BaseTableViewCell.h"
 
-@interface CustomCellView : UIView
+@interface CustomCellView : UIImageView{
+    UIView *contentView;
+}
+
 @end
 
 @implementation CustomCellView
 
-- (void)drawRect:(CGRect)rect
-{
-    [(BaseTableViewCell *)[self superview] drawContentView:rect];
-}
+//- (void)drawRect:(CGRect)rect
+//{
+//    [super drawRect:rect];
+//    [(BaseTableViewCell *)[self superview] drawContentView:rect];
+//}
 @end
 
 @interface BaseTableViewCell(){
     
-    UIView *contentView;
+    UIImageView *contentView;
 }
+
+@property(strong,nonatomic) UIProgressView *progressView;
 
 @end
 
@@ -32,10 +38,11 @@
 {
     self = [super initWithStyle:style reuseIdentifier:reuseIdentifier];
     if (self) {
-//        contentView = [[CustomCellView alloc] init];
-//        contentView.backgroundColor=[UIColor whiteColor];
-//        contentView.opaque = YES;
-//        [self addSubview:contentView];
+        contentView = [[UIImageView alloc] init];
+        contentView.opaque = YES;
+        contentView.userInteractionEnabled=YES;
+        [self.contentView addSubview:contentView];
+        self.contentView.backgroundColor=[UIColor lightGrayColor];
     }
     return self;
 }
@@ -48,10 +55,14 @@
     contentView.frame = b;
 }
 
-- (void)setNeedsDisplay
-{
-    [super setNeedsDisplay];
-    [contentView setNeedsDisplay];
+//- (void)setNeedsDisplay
+//{
+//    [super setNeedsDisplay];
+//    [contentView setNeedsDisplay];
+//}
+
+-(UIImageView *)bgView{
+    return contentView;
 }
 
 - (void)drawContentView:(CGRect)rect
@@ -70,6 +81,35 @@
 //    }
     //子类实现
 }
+
+- (void)addProgressView:(CGRect)rect {
+    if (!self.progressView) {
+        self.progressView = [[UIProgressView alloc] initWithProgressViewStyle:UIProgressViewStyleDefault];
+        rect.size.height=2;
+        self.progressView.frame=rect;
+        dispatch_async(dispatch_get_main_queue(), ^(void) {
+            self.progressView.progress=0;
+            self.progressView.hidden=YES;
+            [[self bgView] addSubview:self.progressView];
+        });
+    }
+}
+
+
+-(void)updateProgressView:(CGFloat)progress rect:(CGRect)rect{
+    [self addProgressView:rect];
+    dispatch_async(dispatch_get_main_queue(), ^(void) {
+        if (self.progressView) {
+            self.progressView.hidden=NO;
+            self.progressView.progress=progress;
+            if (progress>=1) {
+                [self.progressView removeFromSuperview];
+                self.progressView = nil;
+            }
+        }
+    });
+}
+
 
 
 

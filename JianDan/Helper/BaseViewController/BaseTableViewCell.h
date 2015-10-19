@@ -12,4 +12,8 @@
 
 - (void)drawContentView:(CGRect)rect;
 
+-(UIImageView *)bgView;
+
+-(void)updateProgressView:(CGFloat)progress rect:(CGRect)rect;
+
 @end

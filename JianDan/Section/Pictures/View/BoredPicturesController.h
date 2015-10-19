@@ -6,7 +6,7 @@
 //  Copyright (c) 2015年 刘献亭. All rights reserved.
 //
 
-#import "FreshNewsController.h"
+#import "BaseTableViewController.h"
 
 typedef NS_ENUM(NSInteger,ControllerType){
     controllerTypeBoredPictures=1,
@@ -14,7 +14,7 @@ typedef NS_ENUM(NSInteger,ControllerType){
     controllerTypeJoke,
 };
 
-@interface BoredPicturesController :FreshNewsController
+@interface BoredPicturesController :BaseTableViewController
 
 - (instancetype)initWithControllerType:(ControllerType)controllerType;
 

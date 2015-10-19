@@ -13,14 +13,14 @@
 #import "BoredPicturesDetailController.h"
 #import "MJRefresh.h"
 #import "MainViewModel.h"
+#import "PictureCell.h"
+#import "PictureFrame.h"
 
 @interface BoredPicturesController()<SDWebImageManagerDelegate>
 
 @property(strong,nonatomic) MainViewModel *viewModel;
 
 @property(strong,nonatomic) CETableViewBindingHelper *helper;
-
-@property(strong,nonatomic) RACTuple *turple;
 
 @property(strong,nonatomic) NSString *tableName;
 
@@ -63,13 +63,25 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-//    父类会进行self.helper viewModel初始化等操作，
-//    [self bindingViewModel];
     
-    self.tableView.panGestureRecognizer.delaysTouchesBegan = self.tableView.delaysContentTouches;
-    self.tableView.estimatedRowHeight=self.estimatedRowHeight;
-    //一句代码解决动态高度问题（前提cell 设置好约束）
-    self.helper.isDynamicHeight=YES;
+    self.viewModel = [MainViewModel new];
+    
+    RACSignal *sourceSignal=[[self.viewModel.sourceCommand executionSignals] switchToLatest];
+
+    self.helper = [CETableViewBindingHelper bindingHelperForTableView:self.tableView sourceSignal:sourceSignal selectionCommand:nil templateCellClass:[PictureCell class]];
+    self.helper.delegate=self;
+    self.tableView.backgroundColor=[UIColor lightGrayColor];
+    
+    RACTuple *turple=[RACTuple tupleWithObjects:@(NO),@"comments",[BoredPictures class], self.url,self.tableName, nil];
+    
+    [self.viewModel.sourceCommand execute:turple];
+}
+
+
+- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    
+    return [[self.helper.data[indexPath.row] picFrame] cellHeight];
 }
 
 -(void)viewWillAppear:(BOOL)animated{
@@ -78,19 +90,6 @@
     [SDWebImageManager sharedManager].delegate=self;
 }
 
--(Class)cellClass{
-    if (!_cellClass) {
-        _cellClass=[BoredPictursCell class];
-    }
-    return _cellClass;
-}
-
--(RACTuple *)turple{
-    if (!_turple) {
-        _turple=[RACTuple tupleWithObjects:@(NO),@"comments",[BoredPictures class], self.url,self.tableName, nil];
-    }
-    return _turple;
-}
 
 -(RACCommand *)selectCommand{
     if (!_selectCommand) {
@@ -111,8 +110,9 @@
 }
 
 - (UIImage *)imageManager:(SDWebImageManager *)imageManager transformDownloadedImage:(UIImage *)image withURL:(NSURL *)imageURL{
-    BoredPictursCell *cell=[self.tableView dequeueReusableCellWithIdentifier:@"BoredPictursCell"];
-    CGSize itemSize = [cell.imagePicture adjustSize:image.size];
+    CGFloat ratio = kWidth/ image.size.width;
+    NSInteger mHeight = image.size.height * ratio;
+    CGSize itemSize = CGSizeMake(kWidth, mHeight);
     
     UIGraphicsBeginImageContextWithOptions(itemSize, NO, [UIScreen mainScreen].scale);
     CGRect imageRect = CGRectMake(0.0, 0.0, itemSize.width, itemSize.height);
@@ -121,5 +121,4 @@
     UIGraphicsEndImageContext();
     return newImage;
 }
-
 @end

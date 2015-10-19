@@ -10,10 +10,13 @@
 #import "MainViewModel.h"
 #import "BoredPictures.h"
 #import "PictureCell.h"
+#import "PictureFrame.h"
 
-@interface TestTableViewController ()
+@interface TestTableViewController ()<SDWebImageManagerDelegate>
 
 @property(strong,nonatomic) NSMutableArray *datas;
+
+@property (strong,nonatomic) CETableViewBindingHelper *helper;
 
 @end
 
@@ -21,46 +24,43 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    
-    [self.tableView registerClass:[PictureCell class] forCellReuseIdentifier:@"PictureCell"];
+    [SDWebImageManager sharedManager].delegate=self;
     
     MainViewModel *viewModel = [MainViewModel new];
     //数据源信号
     RACSignal *sourceSignal=[[viewModel.sourceCommand executionSignals] switchToLatest];
-    
-    [sourceSignal subscribeNext:^(id x) {
-        _datas=x;
-        [self.tableView reloadData];
-    }];
     
     RACTuple *turple=[RACTuple tupleWithObjects:@(NO),@"comments",[BoredPictures class], SisterPicturesUrl,@"SisterPicturesUrl", nil];
     
     //列表绑定数据
     self.tableView.panGestureRecognizer.delaysTouchesBegan = self.tableView.delaysContentTouches;
     
-//    self.helper = [CETableViewBindingHelper bindingHelperForTableView:self.tableView sourceSignal:sourceSignal selectionCommand:self.selectCommand customCellClass:self.cellClass];
+    self.helper = [CETableViewBindingHelper bindingHelperForTableView:self.tableView sourceSignal:sourceSignal selectionCommand:nil templateCellClass:[PictureCell class]];
+    self.helper.delegate=self;
     
     [viewModel.sourceCommand execute:turple];
 }
 
-
-
-- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    return self.datas.count;
-}
-
-- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    id<CEReactiveView> cell = [tableView dequeueReusableCellWithIdentifier:@"PictureCell" forIndexPath:indexPath];
-    [cell bindViewModel:self.datas[indexPath.row] forIndexPath:indexPath];
-    return (PictureCell *)cell;
-}
-
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    CGFloat height=[self.datas[indexPath.row] cellHeight];
-    NSLog(@"heightForRowAtIndexPath:%f",height);
-    return height;
+
+    return [[self.helper.data[indexPath.row] picFrame] cellHeight];
 }
+
+
+- (UIImage *)imageManager:(SDWebImageManager *)imageManager transformDownloadedImage:(UIImage *)image withURL:(NSURL *)imageURL{
+    CGFloat ratio = (SCREEN_WIDTH-32)/ image.size.width;
+    NSInteger mHeight = image.size.height * ratio;
+    CGSize itemSize = CGSizeMake((SCREEN_WIDTH-32), mHeight);
+    
+    UIGraphicsBeginImageContextWithOptions(itemSize, NO, [UIScreen mainScreen].scale);
+    CGRect imageRect = CGRectMake(0.0, 0.0, itemSize.width, itemSize.height);
+    [image drawInRect:imageRect];
+    UIImage  *newImage = UIGraphicsGetImageFromCurrentImageContext();
+    UIGraphicsEndImageContext();
+    return newImage;
+}
+
 
 
 @end

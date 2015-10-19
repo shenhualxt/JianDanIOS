@@ -8,6 +8,7 @@
 
 #import <Foundation/Foundation.h>
 #import "Vote.h"
+@class PictureFrame;
 
 @interface Video : NSObject
 
@@ -60,7 +61,9 @@
 //图片大小
 @property (nonatomic, assign) CGSize picSize;
 
-@property (nonatomic, assign) CGFloat cellHeight;
+@property (nonatomic, strong) PictureFrame *picFrame;
+
+@property (weak, nonatomic) UIImage *image;
 
 @end
 

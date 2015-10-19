@@ -15,6 +15,7 @@
 #import "BoredPictures.h"
 #import "BLImageSize.h"
 #import "NSString+Additions.h"
+#import "PictureFrame.h"
 
 #define SIZE_FONT_CONTENT 17
 
@@ -264,23 +265,14 @@ INITWITHSETUP
         NSMutableArray *tempArray=[NSMutableArray arrayWithArray:array];
         dispatch_group_t group = dispatch_group_create();
         [tempArray enumerateObjectsUsingBlock:^(BoredPictures *_Nonnull pictures, NSUInteger idx, BOOL * _Nonnull stop) {
-            //计算cell高度
-            __block CGFloat totalHeight = 0;
-            totalHeight+=16;
-            CGSize authorSize=[pictures.comment_author sizeWithConstrainedToSize:CGSizeMake(CGFLOAT_MAX, CGFLOAT_MAX) fromFont:FontWithSize(17) lineSpace:0];
-            totalHeight+=authorSize.height;
-            totalHeight+=8;
-            totalHeight+=10;
-            pictures.cellHeight=totalHeight;
             if (!pictures.picUrl) return ;
             if (pictures.picSize.height) return;
             dispatch_group_async(group, dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
                 pictures.picSize=[BLImageSize downloadImageSizeWithURL:pictures.thumnailGiFUrl?:pictures.picUrl];
                 //计算cell高度
-                CGFloat ratio = (SCREEN_WIDTH-32)/pictures.picSize.width;
-                NSInteger mHeight = pictures.picSize.height * ratio;
-                totalHeight+=mHeight;
-                pictures.cellHeight=totalHeight;
+                PictureFrame *pictureFrame=[PictureFrame new];
+                pictureFrame.pictures=pictures;
+                pictures.picFrame=pictureFrame;
             });
             
         }];

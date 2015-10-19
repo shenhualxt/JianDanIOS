@@ -100,6 +100,12 @@ MJCodingImplementation
     }
 }
 
+-(void)setPicSize:(CGSize)picSize{
+    CGFloat ratio = (SCREEN_WIDTH-16)/picSize.width;
+    NSInteger mHeight = picSize.height * ratio;
+    _picSize=CGSizeMake((SCREEN_WIDTH-16), mHeight);
+}
+
 MJCodingImplementation
 @end
 

@@ -15,6 +15,7 @@
 		1116CBD31BBBCD46000C9853 /* LittleMoveController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1116CBD11BBBCD46000C9853 /* LittleMoveController.m */; settings = {ASSET_TAGS = (); }; };
 		1116CBD71BBBD06A000C9853 /* LittleMovieCollectionCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 1116CBD51BBBD06A000C9853 /* LittleMovieCollectionCell.m */; settings = {ASSET_TAGS = (); }; };
 		1116CBD81BBBD06A000C9853 /* LittleMovieCollectionCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1116CBD61BBBD06A000C9853 /* LittleMovieCollectionCell.xib */; settings = {ASSET_TAGS = (); }; };
+		111740E21BD4E6E300E10F43 /* PictureFrame.m in Sources */ = {isa = PBXBuildFile; fileRef = 111740E11BD4E6E300E10F43 /* PictureFrame.m */; settings = {ASSET_TAGS = (); }; };
 		1119C4931B9005B5007C8C56 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 1119C4921B9005B5007C8C56 /* main.m */; };
 		1119C49E1B9005B6007C8C56 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1119C49D1B9005B6007C8C56 /* Assets.xcassets */; };
 		1119C4AC1B9005B7007C8C56 /* JianDanTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 1119C4AB1B9005B7007C8C56 /* JianDanTests.m */; };
@@ -141,6 +142,8 @@
 		1116CBD41BBBD06A000C9853 /* LittleMovieCollectionCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LittleMovieCollectionCell.h; sourceTree = "<group>"; };
 		1116CBD51BBBD06A000C9853 /* LittleMovieCollectionCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LittleMovieCollectionCell.m; sourceTree = "<group>"; };
 		1116CBD61BBBD06A000C9853 /* LittleMovieCollectionCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LittleMovieCollectionCell.xib; sourceTree = "<group>"; };
+		111740E01BD4E6E300E10F43 /* PictureFrame.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PictureFrame.h; sourceTree = "<group>"; };
+		111740E11BD4E6E300E10F43 /* PictureFrame.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PictureFrame.m; sourceTree = "<group>"; };
 		1119C48E1B9005B5007C8C56 /* JianDan.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = JianDan.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1119C4921B9005B5007C8C56 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		1119C49D1B9005B6007C8C56 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -633,6 +636,8 @@
 			children = (
 				11A0C8F21BC669FE008656BC /* BoredPictures.h */,
 				11A0C8F31BC669FE008656BC /* BoredPictures.m */,
+				111740E01BD4E6E300E10F43 /* PictureFrame.h */,
+				111740E11BD4E6E300E10F43 /* PictureFrame.m */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -1098,6 +1103,7 @@
 				11925AAF1B93360E00608BCC /* BaseTableViewController.m in Sources */,
 				11A0C9021BC669FE008656BC /* BoredPicturesDetailController.m in Sources */,
 				11F5150B1BA7DB4100572DF5 /* CommentViewModel.m in Sources */,
+				111740E21BD4E6E300E10F43 /* PictureFrame.m in Sources */,
 				11D8F6861BD0B1EC0033066F /* Comments.m in Sources */,
 				115DCC3A1BB0EF4D00943B6F /* UITableViewCell+TableView.m in Sources */,
 				11C0F8081BC238D3007FBEAA /* PopoverView.m in Sources */,

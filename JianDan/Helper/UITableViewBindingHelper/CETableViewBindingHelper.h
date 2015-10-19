@@ -23,7 +23,10 @@
 
 @property (strong, nonatomic,readonly) NSArray *data;
 
+@property (weak, nonatomic) id<UITableViewDelegate> delegate;
+
 @property (weak, nonatomic) id<UIScrollViewDelegate> scrollViewDelegate;
+
 
 - (void)hitTest;
 

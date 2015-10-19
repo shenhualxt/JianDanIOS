@@ -70,6 +70,9 @@
 		11A856401BC2726800863D9D /* SettingController.m in Sources */ = {isa = PBXBuildFile; fileRef = 11A8563E1BC2726800863D9D /* SettingController.m */; settings = {ASSET_TAGS = (); }; };
 		11A856411BC2726800863D9D /* SettingController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 11A8563F1BC2726800863D9D /* SettingController.xib */; settings = {ASSET_TAGS = (); }; };
 		11AB6ACE1BBB82CB00358621 /* PushCommentViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 11AB6ACD1BBB82CB00358621 /* PushCommentViewModel.m */; settings = {ASSET_TAGS = (); }; };
+		11B06FB81BD479B700941FC7 /* PictureCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 11B06FB71BD479B700941FC7 /* PictureCell.m */; settings = {ASSET_TAGS = (); }; };
+		11B06FBB1BD47F4C00941FC7 /* BaseTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 11B06FBA1BD47F4C00941FC7 /* BaseTableViewCell.m */; settings = {ASSET_TAGS = (); }; };
+		11B06FBE1BD488A100941FC7 /* TestTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 11B06FBD1BD488A100941FC7 /* TestTableViewController.m */; settings = {ASSET_TAGS = (); }; };
 		11B3954A1BB7DC2B00C5C8F5 /* ImageHelpers.m in Sources */ = {isa = PBXBuildFile; fileRef = 11B395491BB7DC2B00C5C8F5 /* ImageHelpers.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		11B82B901BA29A2700283A93 /* libUMSocial_Sdk_4.2.3.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 11B82B761BA29A2700283A93 /* libUMSocial_Sdk_4.2.3.a */; };
 		11B82B911BA29A2700283A93 /* UMSocialLocalizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 11B82B771BA29A2700283A93 /* UMSocialLocalizable.strings */; };
@@ -241,6 +244,12 @@
 		11A8563F1BC2726800863D9D /* SettingController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SettingController.xib; sourceTree = "<group>"; };
 		11AB6ACC1BBB82CB00358621 /* PushCommentViewModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PushCommentViewModel.h; sourceTree = "<group>"; };
 		11AB6ACD1BBB82CB00358621 /* PushCommentViewModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PushCommentViewModel.m; sourceTree = "<group>"; };
+		11B06FB61BD479B700941FC7 /* PictureCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PictureCell.h; sourceTree = "<group>"; };
+		11B06FB71BD479B700941FC7 /* PictureCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PictureCell.m; sourceTree = "<group>"; };
+		11B06FB91BD47F4C00941FC7 /* BaseTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BaseTableViewCell.h; sourceTree = "<group>"; };
+		11B06FBA1BD47F4C00941FC7 /* BaseTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BaseTableViewCell.m; sourceTree = "<group>"; };
+		11B06FBC1BD488A100941FC7 /* TestTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TestTableViewController.h; sourceTree = "<group>"; };
+		11B06FBD1BD488A100941FC7 /* TestTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TestTableViewController.m; sourceTree = "<group>"; };
 		11B395481BB7DC2B00C5C8F5 /* ImageHelpers.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ImageHelpers.h; sourceTree = "<group>"; };
 		11B395491BB7DC2B00C5C8F5 /* ImageHelpers.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ImageHelpers.m; sourceTree = "<group>"; };
 		11B82B761BA29A2700283A93 /* libUMSocial_Sdk_4.2.3.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libUMSocial_Sdk_4.2.3.a; sourceTree = "<group>"; };
@@ -488,6 +497,8 @@
 			isa = PBXGroup;
 			children = (
 				114E39F21BB26A4A0001CEBD /* NetErrorView.xib */,
+				11B06FBC1BD488A100941FC7 /* TestTableViewController.h */,
+				11B06FBD1BD488A100941FC7 /* TestTableViewController.m */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -602,6 +613,8 @@
 				11925AA21B93360E00608BCC /* BaseNavigationController.m */,
 				11925AA01B93360E00608BCC /* BaseViewController.h */,
 				11925AA31B93360E00608BCC /* BaseViewController.m */,
+				11B06FB91BD47F4C00941FC7 /* BaseTableViewCell.h */,
+				11B06FBA1BD47F4C00941FC7 /* BaseTableViewCell.m */,
 			);
 			path = BaseViewController;
 			sourceTree = "<group>";
@@ -638,6 +651,8 @@
 				11A0C8FD1BC669FE008656BC /* CommentsPhotoCell.h */,
 				11A0C8FE1BC669FE008656BC /* CommentsPhotoCell.m */,
 				11A0C8FF1BC669FE008656BC /* CommentsPhotoCell.xib */,
+				11B06FB61BD479B700941FC7 /* PictureCell.h */,
+				11B06FB71BD479B700941FC7 /* PictureCell.m */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -1041,10 +1056,12 @@
 				11439A101BB6315700AFA2D3 /* FastImage.m in Sources */,
 				11B3954A1BB7DC2B00C5C8F5 /* ImageHelpers.m in Sources */,
 				113491D31BAAE003007D133B /* LTAlertView.m in Sources */,
+				11B06FBB1BD47F4C00941FC7 /* BaseTableViewCell.m in Sources */,
 				11925AA91B93360E00608BCC /* NSCodingTools.m in Sources */,
 				11925AB11B93360E00608BCC /* BaseViewController.m in Sources */,
 				11D63CE31B92C32D0059D328 /* FreshNews.m in Sources */,
 				1104B2CC1BAFCA930000EA13 /* UIImage+Scale.m in Sources */,
+				11B06FB81BD479B700941FC7 /* PictureCell.m in Sources */,
 				11F43D731B9FCF0E003EDFAF /* DMLazyScrollView.m in Sources */,
 				1116CBD71BBBD06A000C9853 /* LittleMovieCollectionCell.m in Sources */,
 				11A0C9061BC669FE008656BC /* CommentsPhotoCell.m in Sources */,
@@ -1077,6 +1094,7 @@
 				113491C71BAA95A3007D133B /* InsetsLabel.m in Sources */,
 				1116CBD31BBBCD46000C9853 /* LittleMoveController.m in Sources */,
 				110EFA621BC7988D00D46333 /* BLImageSize.m in Sources */,
+				11B06FBE1BD488A100941FC7 /* TestTableViewController.m in Sources */,
 				11925AAF1B93360E00608BCC /* BaseTableViewController.m in Sources */,
 				11A0C9021BC669FE008656BC /* BoredPicturesDetailController.m in Sources */,
 				11F5150B1BA7DB4100572DF5 /* CommentViewModel.m in Sources */,

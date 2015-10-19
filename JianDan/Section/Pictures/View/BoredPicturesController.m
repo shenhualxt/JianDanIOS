@@ -65,7 +65,7 @@
     [super viewDidLoad];
 //    父类会进行self.helper viewModel初始化等操作，
 //    [self bindingViewModel];
-    [SDWebImageManager sharedManager].delegate=self;
+    
     self.tableView.panGestureRecognizer.delaysTouchesBegan = self.tableView.delaysContentTouches;
     self.tableView.estimatedRowHeight=self.estimatedRowHeight;
     //一句代码解决动态高度问题（前提cell 设置好约束）
@@ -75,6 +75,7 @@
 -(void)viewWillAppear:(BOOL)animated{
     [super viewWillAppear:animated];
     self.mm_drawerController.title=self.currentTitle;
+    [SDWebImageManager sharedManager].delegate=self;
 }
 
 -(Class)cellClass{

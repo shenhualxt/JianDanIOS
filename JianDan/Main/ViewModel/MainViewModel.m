@@ -264,11 +264,25 @@ INITWITHSETUP
         NSMutableArray *tempArray=[NSMutableArray arrayWithArray:array];
         dispatch_group_t group = dispatch_group_create();
         [tempArray enumerateObjectsUsingBlock:^(BoredPictures *_Nonnull pictures, NSUInteger idx, BOOL * _Nonnull stop) {
+            //计算cell高度
+            __block CGFloat totalHeight = 0;
+            totalHeight+=16;
+            CGSize authorSize=[pictures.comment_author sizeWithConstrainedToSize:CGSizeMake(CGFLOAT_MAX, CGFLOAT_MAX) fromFont:FontWithSize(17) lineSpace:0];
+            totalHeight+=authorSize.height;
+            totalHeight+=8;
+            totalHeight+=10;
+            pictures.cellHeight=totalHeight;
             if (!pictures.picUrl) return ;
             if (pictures.picSize.height) return;
             dispatch_group_async(group, dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
                 pictures.picSize=[BLImageSize downloadImageSizeWithURL:pictures.thumnailGiFUrl?:pictures.picUrl];
+                //计算cell高度
+                CGFloat ratio = (SCREEN_WIDTH-32)/pictures.picSize.width;
+                NSInteger mHeight = pictures.picSize.height * ratio;
+                totalHeight+=mHeight;
+                pictures.cellHeight=totalHeight;
             });
+            
         }];
         //等group中所有的任务都执行完了，再执行其他操作
         dispatch_group_notify(group, dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{

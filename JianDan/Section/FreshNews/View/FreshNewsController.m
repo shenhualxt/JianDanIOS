@@ -73,8 +73,6 @@
      self.tableView.panGestureRecognizer.delaysTouchesBegan = self.tableView.delaysContentTouches;
     self.helper = [CETableViewBindingHelper bindingHelperForTableView:self.tableView sourceSignal:sourceSignal selectionCommand:self.selectCommand customCellClass:self.cellClass];
     
-    [self.viewModel.sourceCommand execute:self.turple];
-    
     //滑动到底部时，自动加载新的数据
     self.helper.scrollViewDelegate=self.viewModel;
     

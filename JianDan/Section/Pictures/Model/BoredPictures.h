@@ -60,5 +60,7 @@
 //图片大小
 @property (nonatomic, assign) CGSize picSize;
 
+@property (nonatomic, assign) CGFloat cellHeight;
+
 @end
 

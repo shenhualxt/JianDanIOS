@@ -12,10 +12,11 @@
 #import "NSString+Date.h"
 #import "PictureFrame.h"
 #import "UIColor+Additions.h"
+#import "CardView.h"
 
 @interface PictureCell()<CEReactiveView>
 
-@property(strong,nonatomic) UIView *bgView;
+@property(strong,nonatomic) CardView *bgView;
 
 @property(strong,nonatomic) UIView *netImageView;
 
@@ -27,8 +28,6 @@
 
 @property (assign,nonatomic)  NSInteger drawColorFlag;
 
-@property(strong,nonatomic) NSIndexPath *indexPath;
-
 @end
 
 
@@ -38,25 +37,32 @@
 {
     self = [super initWithStyle:style reuseIdentifier:reuseIdentifier];
     if (self) {
-        _bgView=[UIView new];
-        _bgView.opaque = YES;
+        //背景
+        _bgView=[CardView new];
         [self addSubview:_bgView];
+
+        UITapGestureRecognizer *oneTap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(clickButton:)];
+        oneTap.delegate = self;
+        oneTap.numberOfTouchesRequired = 1;
+        [_bgView addGestureRecognizer:oneTap];
         
+        //网络图片
         _netImageView=[UIView new];
         _netImageView.opaque = YES;
         [self addSubview:_netImageView];
         
+        //gif图片
         _gifImageView=[UIView new];
         _gifImageView.opaque = YES;
         _gifImageView.layer.contents=(__bridge id _Nullable)([UIImage imageNamed:@"ic_play_gif"].CGImage);
         [self addSubview:_gifImageView];
+        self.backgroundColor=UIColorFromRGB(0xDDDDDD);
     }
     return self;
 }
 
 
 -(void)bindViewModel:(BoredPictures *)viewModel forIndexPath:(NSIndexPath *)indexPath{
-    self.indexPath=indexPath;
     self.picture=viewModel;
     if (!viewModel.picUrl) {
         [self draw];
@@ -83,9 +89,7 @@
     [self draw];
     __weak typeof(self) weakSelf = self;
    _operation=[[SDWebImageManager sharedManager] downloadImageWithURL:targetURL options:SDWebImageRetryFailed|SDWebImageTransformAnimatedImage progress:^(NSInteger receivedSize, NSInteger expectedSize) {
-        if (expectedSize<0) return ;
-        float pvalue=MAX(0,MIN(1,(float)receivedSize/(float)expectedSize));
-        [weakSelf updateProgressView:pvalue rect:viewModel.picFrame.pictureFrame];
+       [weakSelf updateProgressViewWithReceivedSize:receivedSize expectedSize:expectedSize rect:_picture.picFrame.pictureFrame];
     } completed:^(UIImage *image, NSError *error, SDImageCacheType cacheType, BOOL finished, NSURL *imageURL) {
         if (image&&finished) {
             viewModel.image=image;
@@ -117,29 +121,33 @@
         if (!_picture.picFrame) return ;
         UIGraphicsBeginImageContextWithOptions(_picture.picFrame.bgViewFrame.size, YES, [UIScreen mainScreen].scale);
         CGContextRef context=UIGraphicsGetCurrentContext();
-        //整个内容的背景
+        
+        //整个内容的背景色
         [[UIColor whiteColor] set];
-        CGContextFillRect(context,_picture.picFrame.bgViewFrame);
+        CGContextFillRect(context,(CGRect){CGPointZero, _picture.picFrame.bgViewFrame.size});
+                          
         //Author
-        [_picture.comment_author drawInContext:context withPosition:_picture.picFrame.authorFrame.origin andFont:kAuthorFont andTextColor:[UIColor blackColor] andHeight:_picture.picFrame.authorFrame.size.height];
+        [_picture.comment_author drawInRect:_picture.picFrame.authorFrame fromFont:kAuthorFont];
         
         //date
-        [_picture.deltaToNow drawInContext:context withPosition:_picture.picFrame.dateFrame.origin andFont:kDateFont andTextColor:[UIColor darkGrayColor] andHeight:_picture.picFrame.dateFrame.size.height];
+        [_picture.deltaToNow drawInRect:_picture.picFrame.dateFrame fromFont:kDateFont];;
         
         //content
         if (_picture.text_content.length) {
             [_picture.text_content drawInRect:_picture.picFrame.textContentFrame fromFont:kContentFont];
         }
-        
+    
         //OO
-        [_picture.vote_positiveStr drawInContext:context withPosition:_picture.picFrame.OOFrame.origin andFont:kDateFont andTextColor:[UIColor blackColor] andHeight:_picture.picFrame.OOFrame.size.height];
+        [_picture.vote_positiveStr drawAtPoint:_picture.picFrame.OOPoint fromFont:kDateFont];
         
         //XX
-        [_picture.vote_negativeStr drawInContext:context withPosition:_picture.picFrame.XXFrame.origin andFont:kDateFont andTextColor:[UIColor blackColor] andHeight:_picture.picFrame.XXFrame.size.height];
+        [_picture.vote_negativeStr drawAtPoint:_picture.picFrame.XXPoint fromFont:kDateFont];
+        
         //吐槽
-        [_picture.comment_count drawInContext:context withPosition:_picture.picFrame.commentFrame.origin andFont:kDateFont andTextColor:[UIColor blackColor] andHeight:_picture.picFrame.commentFrame.size.height];
+        [_picture.comment_count drawAtPoint:_picture.picFrame.commentPoint fromFont:kDateFont];
+        
         //share
-        [@"•••" drawInContext:context withPosition:_picture.picFrame.shareFrame.origin andFont:kDateFont andTextColor:[UIColor blackColor] andHeight:_picture.picFrame.shareFrame.size.height];
+        [@"•••" drawAtPoint:_picture.picFrame.sharePoint fromFont:kDateFont];
     
         UIImage *temp=UIGraphicsGetImageFromCurrentImageContext();
         UIGraphicsEndImageContext();
@@ -148,6 +156,7 @@
                 self.bgView.frame=_picture.picFrame.bgViewFrame;
                 self.bgView.layer.contents=nil;
                 self.bgView.layer.contents=(__bridge id)temp.CGImage;
+
             }else{
                 
             }
@@ -184,37 +193,44 @@
     }
     return [NSURL URLWithString:imageURL];
 }
+-(void)clickButton:(UIGestureRecognizer *)getsture{
+        CGPoint touchPoint=[getsture locationInView:_bgView];
+    
+        CGRect OOFrame=[PictureFrame getButtonFrameFromPoint:_picture.picFrame.OOPoint pictureFrame:_picture.picFrame.pictureFrame];
+        BOOL isInOOButton=CGRectContainsPoint(OOFrame, touchPoint);
+        if (isInOOButton) {
+            NSLog(@"OOO");
+            return;
+        }
+    
+        CGRect XXFrame=[PictureFrame getButtonFrameFromPoint:_picture.picFrame.XXPoint pictureFrame:_picture.picFrame.pictureFrame];
+        BOOL isInXXButton=CGRectContainsPoint(XXFrame, touchPoint);
+        if (isInXXButton) {
+            NSLog(@"XXFrame");
+            return;
+        }
+    
+        CGRect commentFrame=[PictureFrame getButtonFrameFromPoint:_picture.picFrame.commentPoint pictureFrame:_picture.picFrame.pictureFrame];
+        BOOL isIncommentButton=CGRectContainsPoint(commentFrame, touchPoint);
+        if (isIncommentButton) {
+            NSLog(@"comment");
+            return;
+        }
+    
+        CGRect shareFrame=[PictureFrame getButtonFrameFromPoint:_picture.picFrame.sharePoint pictureFrame:_picture.picFrame.pictureFrame];
+        BOOL isInShareButton=CGRectContainsPoint(shareFrame, touchPoint);
+        if (isInShareButton) {
+            NSLog(@"shareFrame");
+            return;
+        }
+}
 
--(void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event{
-    UITouch *touch=[touches anyObject];
-    
-    CGPoint touchPoint=[touch locationInView:self];
-    
-    BOOL isInOOButton=CGRectContainsPoint(_picture.picFrame.OOFrame, touchPoint);
-    if (isInOOButton) {
-        //
-        return;
+- (BOOL)gestureRecognizer:(UIGestureRecognizer *)gestureRecognizer shouldReceiveTouch:(UITouch *)touch
+{
+    if ([NSStringFromClass([touch.view class]) isEqualToString:@"UITableViewCellContentView"]) {
+        return NO;
     }
-    
-    BOOL isInXXButton=CGRectContainsPoint(_picture.picFrame.XXFrame, touchPoint);
-    
-    if (isInXXButton) {
-        
-        return;
-    }
-    
-    
-     BOOL isInCommentButton=CGRectContainsPoint(_picture.picFrame.commentFrame, touchPoint);
-    
-    if (isInCommentButton) {
-        
-        return;
-    }
-    
-    BOOL isInShareButton=CGRectContainsPoint(_picture.picFrame.shareFrame, touchPoint);
-    if (isInShareButton) {
-        return;
-    }
+    return  YES;
 }
 
 @end

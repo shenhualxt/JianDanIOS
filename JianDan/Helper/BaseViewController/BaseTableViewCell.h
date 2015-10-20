@@ -12,6 +12,6 @@
 @interface BaseTableViewCell : UITableViewCell
 
 
--(void)updateProgressView:(CGFloat)progress rect:(CGRect)rect;
+-(void)updateProgressViewWithReceivedSize:(NSInteger)receivedSize expectedSize:(NSInteger)expectedSize rect:(CGRect)rect;
 
 @end

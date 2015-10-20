@@ -16,24 +16,24 @@
 
 -(void)setPictures:(BoredPictures *)picture{
     //Author
-    CGSize authorSze=[picture.comment_author sizeWithConstrainedToSize:CGSizeMake(CGFLOAT_MAX, CGFLOAT_MAX) fromFont:kAuthorFont lineSpace:0];
+    CGSize authorSze=[picture.comment_author sizeOfSimpleTextWithContrainedToSize:CGSizeMake(CGFLOAT_MAX, CGFLOAT_MAX) fromFont:kAuthorFont];
     _authorFrame=CGRectMake(kLeftMargin, kLeftMargin, authorSze.width, authorSze.height);
     
     //date
-    CGSize dateSize=[picture.deltaToNow sizeWithConstrainedToSize:CGSizeMake(CGFLOAT_MAX, CGFLOAT_MAX) fromFont:kDateFont lineSpace:0];
+    CGSize dateSize=[picture.deltaToNow sizeOfSimpleTextWithContrainedToSize:CGSizeMake(CGFLOAT_MAX, CGFLOAT_MAX) fromFont:kDateFont];
     _dateFrame=CGRectMake(CGRectGetMaxX(_authorFrame)+kMiddleMargin, kLeftMargin+(authorSze.height-dateSize.height), dateSize.width, dateSize.height);
     
 
     _textContentFrame=CGRectMake(kLeftMargin,CGRectGetMaxY(_authorFrame)+kMiddleMargin, 0,0);
     if (picture.text_content.length&&![picture.text_content isEqualToString:@""]) {
-        CGSize contentSize=[picture.text_content sizeOfSimpleTextWithContrainedToSize:CGSizeMake(kWidth-2*kLeftMargin, MAXFLOAT) fromFont:kContentFont];
-        _textContentFrame=CGRectMake(kLeftMargin,CGRectGetMaxY(_authorFrame)+kMiddleMargin,kWidth-2*kLeftMargin,contentSize.height);
+        CGSize contentSize=[picture.text_content sizeOfSimpleTextWithContrainedToSize:CGSizeMake(kContentWidth, MAXFLOAT) fromFont:kContentFont];
+        _textContentFrame=CGRectMake(kLeftMargin,CGRectGetMaxY(_authorFrame)+kMiddleMargin,kContentWidth,contentSize.height);
     }
     
     //pic
     _pictureFrame=CGRectMake(kLeftMargin, CGRectGetMaxY(_textContentFrame)+kMiddleMargin, 0, 0);
     if (picture.picUrl) {
-        _pictureFrame=CGRectMake(kLeftMargin, CGRectGetMaxY(_textContentFrame)+kMiddleMargin, kWidth-2*kLeftMargin, _pictureSize.height);
+        _pictureFrame=CGRectMake(2*kLeftMargin, CGRectGetMaxY(_textContentFrame)+2*kMiddleMargin, kContentWidth, _pictureSize.height);
         //gif
         CGFloat gifX=CGRectGetMidX(_pictureFrame)-kGifWidth/2.0;
         CGFloat gifY=CGRectGetMidY(_pictureFrame)-kGifWidth/2.0;
@@ -41,23 +41,22 @@
     }
     
     //OO
-    CGSize OOSize=[picture.vote_negativeStr sizeWithConstrainedToSize:CGSizeMake(CGFLOAT_MAX, CGFLOAT_MAX) fromFont:kDateFont lineSpace:0];
-    _OOFrame=CGRectMake(kLeftMargin, CGRectGetMaxY(_pictureFrame)+kMiddleMargin, OOSize.width+kLeftMargin, OOSize.height);
+    _OOPoint=CGPointMake(kLeftMargin, CGRectGetMaxY(_pictureFrame)+(kButtonHeight-dateSize.height)/2.0);
     
     //XX
-    CGSize XXSize=[picture.vote_positiveStr sizeWithConstrainedToSize:CGSizeMake(CGFLOAT_MAX, CGFLOAT_MAX) fromFont:kDateFont lineSpace:0];
-    _XXFrame=CGRectMake(CGRectGetMaxX(_OOFrame)+kMiddleMargin, _OOFrame.origin.y, XXSize.width+kLeftMargin, XXSize.height);
+    _XXPoint=CGPointMake(_OOPoint.x+kButtonWidth, _OOPoint.y);
     
     //comment
-    CGSize commentSize=[picture.comment_count sizeWithConstrainedToSize:CGSizeMake(CGFLOAT_MAX, CGFLOAT_MAX) fromFont:kDateFont lineSpace:0];
-    _commentFrame=CGRectMake(CGRectGetMaxX(_XXFrame)+kMiddleMargin, _OOFrame.origin.y, commentSize.width+kLeftMargin, commentSize.height);
+    _commentPoint=CGPointMake(_XXPoint.x+kButtonWidth, _OOPoint.y);
     
     //share
     CGSize shareSize=[@"•••" sizeWithConstrainedToSize:CGSizeMake(CGFLOAT_MAX, CGFLOAT_MAX) fromFont:kDateFont lineSpace:0];
-    _shareFrame=CGRectMake(kWidth-kMiddleMargin-shareSize.width, _OOFrame.origin.y, shareSize.width, shareSize.height);
+    _sharePoint=CGPointMake(kContentWidth-shareSize.width, _OOPoint.y);
     
-    _bgViewFrame=CGRectMake(0, 0, kWidth, CGRectGetMaxY(_OOFrame)+kMiddleMargin);
+    //cell背景
+    _bgViewFrame=CGRectMake(kMiddleMargin, kMiddleMargin, kCellWidth, _OOPoint.y+kButtonHeight);
     
+    //cell高度
     _cellHeight=CGRectGetMaxY(_bgViewFrame);
 }
 
@@ -65,13 +64,23 @@
     _pictureSize=[PictureFrame scaleSize:pictureSize];
 }
 
++(CGRect)getButtonFrameFromPoint:(CGPoint)point pictureFrame:(CGRect)pictureFrame{
+    return CGRectMake(point.x, CGRectGetMaxY(pictureFrame), kButtonWidth, kButtonHeight);
+}
+
 +(CGSize)scaleSize:(CGSize)oldSize{
-    CGFloat ratio = (kWidth-2*kLeftMargin)/oldSize.width;
+    CGFloat ratio = (kCellWidth)/oldSize.width;
     NSInteger mHeight = oldSize.height * ratio;
     if (mHeight>SCREEN_HEIGHT) {
         mHeight=SCREEN_HEIGHT;
     }
-    return CGSizeMake(kWidth-2*kLeftMargin, mHeight);
+    return CGSizeMake(kCellWidth, mHeight);
+}
+
++(CGSize)scaleSizeWithMaxHeight:(CGSize)oldSize{
+    CGFloat ratio = (kCellWidth)/oldSize.width;
+    NSInteger mHeight = oldSize.height * ratio;
+    return CGSizeMake(kCellWidth, mHeight);
 }
 
 MJCodingImplementation

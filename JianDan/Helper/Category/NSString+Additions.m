@@ -123,6 +123,11 @@
     [self drawInRect:rect withAttributes:attribute];
 }
 
+-(void)drawAtPoint:(CGPoint)point fromFont:(UIFont *)font1{
+    NSDictionary *attribute = @{NSFontAttributeName: font1};
+    [self drawAtPoint:point withAttributes:attribute];
+}
+
 - (CGSize)sizeWithConstrainedToSize:(CGSize)size fromFont:(UIFont *)font1 lineSpace:(float)lineSpace{
     CGFloat minimumLineHeight = font1.pointSize,maximumLineHeight = minimumLineHeight, linespace = lineSpace;
     CTFontRef font = CTFontCreateWithName((__bridge CFStringRef)font1.fontName,font1.pointSize,NULL);

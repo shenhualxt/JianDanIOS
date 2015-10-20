@@ -15,7 +15,13 @@
 
 #define kGifWidth 50
 
-#define kWidth SCREEN_WIDTH
+#define kButtonWidth 60
+
+#define kButtonHeight 30
+
+#define kCellWidth (SCREEN_WIDTH-2*kMiddleMargin)
+
+#define kContentWidth (kCellWidth-2*kMiddleMargin)
 
 #define kAuthorFont [UIFont boldSystemFontOfSize:17]
 
@@ -38,13 +44,14 @@
 
 @property (nonatomic, assign) CGRect gifFrame;
 
-@property (nonatomic, assign) CGRect OOFrame;
 
-@property (nonatomic, assign) CGRect XXFrame;
+@property (nonatomic, assign) CGPoint OOPoint;
 
-@property (nonatomic, assign) CGRect commentFrame;
+@property (nonatomic, assign) CGPoint XXPoint;
 
-@property (nonatomic, assign) CGRect shareFrame;
+@property (nonatomic, assign) CGPoint commentPoint;
+
+@property (nonatomic, assign) CGPoint sharePoint;
 
 @property (nonatomic, assign) CGRect bgViewFrame;
 
@@ -55,5 +62,9 @@
 @property (nonatomic, strong) BoredPictures *pictures;
 
 +(CGSize)scaleSize:(CGSize)oldSize;
+
++(CGSize)scaleSizeWithMaxHeight:(CGSize)oldSize;
+
++(CGRect)getButtonFrameFromPoint:(CGPoint)point pictureFrame:(CGRect)pictureFrame;
 
 @end

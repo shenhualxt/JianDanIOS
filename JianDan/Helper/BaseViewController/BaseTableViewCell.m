@@ -70,8 +70,9 @@
     if (!self.progressView) {
         self.progressView = [[UIProgressView alloc] initWithProgressViewStyle:UIProgressViewStyleDefault];
         rect.size.height=2;
-        self.progressView.frame=rect;
+        
         dispatch_async(dispatch_get_main_queue(), ^(void) {
+            self.progressView.frame=rect;
             self.progressView.progress=0;
             self.progressView.hidden=YES;
             [self insertSubview:self.progressView atIndex:self.subviews.count];
@@ -80,13 +81,15 @@
 }
 
 
--(void)updateProgressView:(CGFloat)progress rect:(CGRect)rect{
+-(void)updateProgressViewWithReceivedSize:(NSInteger)receivedSize expectedSize:(NSInteger)expectedSize rect:(CGRect)rect{
+    if (expectedSize<0) return ;
+    float pvalue=MAX(0,MIN(1,(float)receivedSize/(float)expectedSize));
     [self addProgressView:rect];
     dispatch_async(dispatch_get_main_queue(), ^(void) {
         if (self.progressView) {
             self.progressView.hidden=NO;
-            self.progressView.progress=progress;
-            if (progress>=1) {
+            self.progressView.progress=pvalue;
+            if (pvalue>=1) {
                 [self.progressView removeFromSuperview];
                 self.progressView = nil;
             }

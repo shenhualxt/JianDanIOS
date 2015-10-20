@@ -141,11 +141,11 @@
 }
 
 - (UIImage *)imageManager:(SDWebImageManager *)imageManager transformDownloadedImage:(UIImage *)image withURL:(NSURL *)imageURL{
-     CGSize itemSize = [PictureFrame scaleSize:image.size];
+     CGSize itemSize = [PictureFrame scaleSizeWithMaxHeight:image.size];
      image=[image scaleImageToSize:itemSize];
-    if (itemSize.height==SCREEN_HEIGHT&&image.size.height!=SCREEN_HEIGHT) {
+    if (itemSize.height>SCREEN_HEIGHT) {
         [[TMCache sharedCache] setObject:[image copy] forKey:imageURL.absoluteString];//存储长图片
-        image=[image getImageFromImageWithRect:CGRectMake(0, 0, image.size.width, itemSize.height)];
+        image=[image getImageFromImageWithRect:CGRectMake(0, 0, kContentWidth, SCREEN_HEIGHT)];
     }
     return image;
 }

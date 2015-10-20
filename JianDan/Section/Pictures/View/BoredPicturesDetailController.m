@@ -18,6 +18,7 @@
 #import "NSString+Date.h"
 #import "UIImageView+UIProgressForSDWebImage.h"
 #import "UIImage+GIF.h"
+#import "PictureFrame.h"
 
 @interface BoredPicturesDetailController ()<UIScrollViewDelegate>
 @property (weak, nonatomic) IBOutlet UIScrollView *scrollView;
@@ -49,6 +50,7 @@
     if (!boredPictures.picUrl)return;
     NSString *imageURL=boredPictures.picUrl;
     
+    //gif
     if ([imageURL hasSuffix:@".gif"]) {
         [[TMCache sharedCache] objectForKey:imageURL block:^(TMCache *cache, NSString *key, id object) {
             if (object) {
@@ -68,7 +70,20 @@
                 } usingProgressViewStyle:UIProgressViewStyleDefault];
             }
         }];
+        
+        return;
     }
+    
+    //长图
+    if(boredPictures.picFrame.pictureSize.height==SCREEN_HEIGHT){
+        UIImage *image=[[TMCache sharedCache] objectForKey:imageURL];
+        if (image) {
+            self.imageViewDetail.image=image;
+            return;
+        }
+    }
+    
+    //普通图片
     [self.imageViewDetail setImageWithURL:[NSURL URLWithString:imageURL] placeholderImage:[UIImage imageNamed:@"ic_loading_large"] completed:^(UIImage *image, NSError *error, SDImageCacheType cacheType, NSURL *imageURL) {
         dispatch_main_async_safe(^{
             [self adjustLocation];

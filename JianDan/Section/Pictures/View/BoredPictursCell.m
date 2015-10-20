@@ -23,6 +23,7 @@
 #import "CommentController.h"
 #import "ShareToSinaController.h"
 #import "NSString+Date.h"
+#import "PictureFrame.h"
 
 @interface BoredPictursCell()<CEReactiveView,SDWebImageManagerDelegate>
 
@@ -64,7 +65,7 @@
     [self initClick:boredPictures];
     //3、设置ImageView初始大小
     if (!boredPictures.picUrl) return;//段子（没有图片）
-    self.picSize=boredPictures.picSize;
+    self.picSize=boredPictures.picFrame.pictureSize;
     [self.imagePicture updateIntrinsicContentSize:self.picSize withMaxHeight:YES];
     NSString *key=[[SDWebImageManager sharedManager] cacheKeyForURL:[self getImageURL:boredPictures]];
     [[SDImageCache sharedImageCache] queryDiskCacheForKey:key done:^(UIImage *image, SDImageCacheType cacheType) {
@@ -73,11 +74,7 @@
 }
 
 -(void)loadImage:(BoredPictures *)boredPictures forIndexPath:(NSIndexPath *)indexPath helper:(CETableViewBindingHelper *)helper{
-    if (boredPictures.hadLoadImage) {
-        return;
-    }
      [self.imagePicture setImageWithURL:[self getImageURL:boredPictures] placeholderImage:self.placeholder options:SDWebImageHighPriority|SDWebImageTransformAnimatedImage completed:^(UIImage *image, NSError *error, SDImageCacheType cacheType, NSURL *imageURL) {
-         boredPictures.hadLoadImage=YES;
      }  usingProgressViewStyle:UIProgressViewStyleDefault];
 }
 

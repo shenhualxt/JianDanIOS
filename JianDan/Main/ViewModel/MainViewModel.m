@@ -120,7 +120,7 @@ INITWITHSETUP
     }];
     
     //段子 无需下载图片大小
-    if ([self.url isEqualToString:JokeUrl]) {
+    if ([self.url isEqualToString:JokeUrl]||[self.url isEqualToString:littleMovieUrl]) {
         return signal;
     }
     
@@ -160,6 +160,17 @@ INITWITHSETUP
  *  异步保存到数据库
  */
 -(NSMutableArray *)handleResult:(NSMutableArray *)array{
+    if (![self.url isEqualToString:freshNewUrl]&&![self.url isEqualToString:littleMovieUrl]) {
+        //计算frame
+        [array enumerateObjectsUsingBlock:^(BoredPictures * _Nonnull pictures, NSUInteger idx, BOOL * _Nonnull stop) {
+            PictureFrame *pictureFrame=[PictureFrame new];
+            pictureFrame.pictureSize=pictures.picSize;
+            //计算cell高度
+            pictureFrame.pictures=pictures;
+            pictures.picFrame=pictureFrame;
+        }];
+    }
+    
     //1，第一次加载数据 或者先前加载的是缓存的数据
     if (![self.sourceArray count]||self.loadFromDB ) {
         return [self firstLoad:array];
@@ -216,6 +227,7 @@ INITWITHSETUP
  */
 - (NSMutableArray *)firstLoad:(NSMutableArray *)array {
     self.sourceArray=array;
+    
     [self save:array];
     return  self.sourceArray;
 }
@@ -266,13 +278,8 @@ INITWITHSETUP
         dispatch_group_t group = dispatch_group_create();
         [tempArray enumerateObjectsUsingBlock:^(BoredPictures *_Nonnull pictures, NSUInteger idx, BOOL * _Nonnull stop) {
             if (!pictures.picUrl) return ;
-            if (pictures.picSize.height) return;
             dispatch_group_async(group, dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
                 pictures.picSize=[BLImageSize downloadImageSizeWithURL:pictures.thumnailGiFUrl?:pictures.picUrl];
-                //计算cell高度
-                PictureFrame *pictureFrame=[PictureFrame new];
-                pictureFrame.pictures=pictures;
-                pictures.picFrame=pictureFrame;
             });
             
         }];

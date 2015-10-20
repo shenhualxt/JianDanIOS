@@ -55,19 +55,31 @@ MJCodingImplementation
 
 
 +(NSDictionary *)objectClassInArray{
-    return @{@"pics":[NSString class], @"videos":[Video class]};
+    return @{@"videos":[Video class]};
 }
 
 +(NSDictionary *)replacedKeyFromPropertyName{
-    return @{@"post_id" : @"comment_ID"};
+    return @{@"post_id" : @"comment_ID",@"picUrl":@"pics[0]"};
 }
 
--(void)setPics:(NSArray *)pics{
-    if (pics.count) {
-        _picUrl=pics[0];
-        if ([_picUrl hasSuffix:@".gif"]) {
-             _thumnailGiFUrl=[BoredPictures thumbGIFURLFromURL:[_picUrl copy]];
-        }
++(NSArray *)ignoredCodingPropertyNames{
+    return @[@"image",];
+}
+
+-(void)setVote_negative:(NSInteger)vote_negative{
+    _vote_negative=vote_negative;
+    appendCString(&_vote_negativeStr, "XX ", (long)vote_negative);
+}
+
+-(void)setVote_positive:(NSInteger)vote_positive{
+    _vote_positive=vote_positive;
+     appendCString(&_vote_positiveStr, "OO ", (long)vote_positive);
+}
+
+-(void)setPicUrl:(NSString *)picUrl{
+    _picUrl=picUrl;
+    if ([_picUrl hasSuffix:@".gif"]) {
+        _thumnailGiFUrl=[BoredPictures thumbGIFURLFromURL:[_picUrl copy]];
     }
 }
 
@@ -78,14 +90,12 @@ MJCodingImplementation
 }
 
 -(void)setComment_date:(NSString *)comment_date{
-    if (!_comment_date) {
-        _comment_date=comment_date;
-        
-        NSDate* date = [_comment_date dateFromString];
-        _date=[NSString stringWithFormat:@"%ld", (long)[date timeIntervalSince1970]];
-        
-        _deltaToNow=[_comment_date deltaTimeToNow];
-    }
+    _comment_date=comment_date;
+    
+    NSDate* date = [_comment_date dateFromString];
+    _date=[NSString stringWithFormat:@"%ld", (long)[date timeIntervalSince1970]];
+    
+    _deltaToNow=[_comment_date deltaTimeToNow];
 }
 
 -(void)setComment_count:(NSString *)comment_count{
@@ -95,18 +105,8 @@ MJCodingImplementation
 }
 
 -(void)setText_content:(NSString *)text_content{
-    if (!_text_content) {
-        _text_content=[text_content stringByReplacingOccurrencesOfString:@"\r\n" withString:@""];
-    }
-}
-
--(void)setPicSize:(CGSize)picSize{
-    CGFloat ratio = (SCREEN_WIDTH-16)/picSize.width;
-    NSInteger mHeight = picSize.height * ratio;
-    _picSize=CGSizeMake((SCREEN_WIDTH-16), mHeight);
+    _text_content=[text_content stringByReplacingOccurrencesOfString:@"\r\n" withString:@""];
 }
 
 MJCodingImplementation
 @end
-
-

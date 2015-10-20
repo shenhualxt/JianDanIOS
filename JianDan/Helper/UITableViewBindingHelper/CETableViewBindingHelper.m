@@ -187,10 +187,10 @@ heightForRowAtIndexPath:(NSIndexPath *)indexPath {
     }
 }
 
-#pragma mark-开速滑动优化
+
 - (void)scrollViewWillBeginDragging:(UIScrollView *)scrollView{
     [needLoadArr removeAllObjects];
-    [[SDWebImageDownloader sharedDownloader] setMaxConcurrentDownloads:2];
+    [[SDWebImageDownloader sharedDownloader] setMaxConcurrentDownloads:1];
 }
 
 
@@ -198,21 +198,21 @@ heightForRowAtIndexPath:(NSIndexPath *)indexPath {
 {
     if (!decelerate)
     {
-        [[SDWebImageDownloader sharedDownloader] setMaxConcurrentDownloads:5];
+        [[SDWebImageDownloader sharedDownloader] setMaxConcurrentDownloads:3];
     }
 }
 
 - (void)scrollViewDidEndDecelerating:(UIScrollView *)scrollView
 {
-    [[SDWebImageDownloader sharedDownloader] setMaxConcurrentDownloads:5];
+    [[SDWebImageDownloader sharedDownloader] setMaxConcurrentDownloads:3];
 }
 
-
+#pragma mark-开速滑动优化
 //按需加载 - 如果目标行与当前行相差超过指定行数，只在目标滚动范围的前后指定3行加载。
 - (void)scrollViewWillEndDragging:(UIScrollView *)scrollView withVelocity:(CGPoint)velocity targetContentOffset:(inout CGPoint *)targetContentOffset{
     NSIndexPath *ip = [_tableView indexPathForRowAtPoint:CGPointMake(0, targetContentOffset->y)];
     NSIndexPath *cip = [[_tableView indexPathsForVisibleRows] firstObject];
-    NSInteger skipCount = 2;
+    NSInteger skipCount = 8;
     if (labs(cip.row-ip.row)>skipCount) {
         NSArray *temp = [_tableView indexPathsForRowsInRect:CGRectMake(0, targetContentOffset->y, _tableView.frame.size.width,  _tableView.frame.size.height)];
         NSMutableArray *arr = [NSMutableArray arrayWithArray:temp];
@@ -242,37 +242,35 @@ heightForRowAtIndexPath:(NSIndexPath *)indexPath {
 
 - (void)scrollViewDidEndScrollingAnimation:(UIScrollView *)scrollView{
     scrollToToping = NO;
-    [self loadContent];
 }
 
 - (void)scrollViewDidScrollToTop:(UIScrollView *)scrollView{
     scrollToToping = NO;
-    [self loadContent];
 }
 
-//用户触摸时第一时间加载内容
-- (void)hitTest{
-    if (!scrollToToping) {
-        [needLoadArr removeAllObjects];
-        [self loadContent];
-    }
-}
-
-- (void)loadContent{
-    if (scrollToToping) {
-        return;
-    }
-    if (_tableView.indexPathsForVisibleRows.count<=0) {
-        return;
-    }
-    if (_tableView.visibleCells&&_tableView.visibleCells.count>0) {
-        for (id temp in [_tableView.visibleCells copy]) {
-            id<CEReactiveView> cell = temp;
-             NSIndexPath *indexPath = [_tableView indexPathForCell:(UITableViewCell *)cell];
-            [cell bindViewModel:_data[indexPath.row] forIndexPath:indexPath];
-        }
-    }
-}
+////用户触摸时第一时间加载内容
+//- (void)hitTest{
+//    if (!scrollToToping) {
+//        [needLoadArr removeAllObjects];
+//        [self loadContent];
+//    }
+//}
+//
+//- (void)loadContent{
+//    if (scrollToToping) {
+//        return;
+//    }
+//    if (_tableView.indexPathsForVisibleRows.count<=0) {
+//        return;
+//    }
+//    if (_tableView.visibleCells&&_tableView.visibleCells.count>0) {
+//        for (id temp in [_tableView.visibleCells copy]) {
+//            id<CEReactiveView> cell = temp;
+//             NSIndexPath *indexPath = [_tableView indexPathForCell:(UITableViewCell *)cell];
+//            [cell bindViewModel:_data[indexPath.row] forIndexPath:indexPath];
+//        }
+//    }
+//}
 
 
 @end

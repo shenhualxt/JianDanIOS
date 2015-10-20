@@ -14,7 +14,9 @@
 #import "MJRefresh.h"
 #import "MainViewModel.h"
 #import "PictureCell.h"
+#import "TMCache.h"
 #import "PictureFrame.h"
+#import "UIImage+Scale.h"
 
 @interface BoredPicturesController()<SDWebImageManagerDelegate>
 
@@ -68,13 +70,42 @@
     
     RACSignal *sourceSignal=[[self.viewModel.sourceCommand executionSignals] switchToLatest];
 
-    self.helper = [CETableViewBindingHelper bindingHelperForTableView:self.tableView sourceSignal:sourceSignal selectionCommand:nil templateCellClass:[PictureCell class]];
+    self.helper = [CETableViewBindingHelper bindingHelperForTableView:self.tableView sourceSignal:sourceSignal selectionCommand:self.selectCommand templateCellClass:[PictureCell class]];
     self.helper.delegate=self;
     self.tableView.backgroundColor=[UIColor lightGrayColor];
     
     RACTuple *turple=[RACTuple tupleWithObjects:@(NO),@"comments",[BoredPictures class], self.url,self.tableName, nil];
     
-    [self.viewModel.sourceCommand execute:turple];
+    //滑动到底部时，自动加载新的数据
+    self.helper.scrollViewDelegate=self.viewModel;
+    
+    //执行完关闭下拉刷新
+    @weakify(self)
+    [self.viewModel.sourceCommand.executing subscribeNext:^(id isExcuting) {
+        @strongify(self)
+        if (![isExcuting boolValue]) {
+            [self.tableView.header endRefreshing];
+            [self.tableView.footer endRefreshing];
+        }
+    }];
+    //错误处理
+    [self.viewModel.sourceCommand.errors subscribeNext:^(id x) {
+        [[ToastHelper sharedToastHelper] toast:[NSErrorHelper handleErrorMessage:x]];
+    }];
+    //设置下拉刷新
+    self.tableView.header = [MJRefreshNormalHeader headerWithRefreshingBlock:^{
+        @strongify(self)
+        [self.viewModel.sourceCommand execute:turple];
+    }];
+    
+    //设置上拉加载更多
+    self.tableView.footer = [MJRefreshAutoNormalFooter footerWithRefreshingBlock:^{
+        @strongify(self)
+        [self.viewModel loadNextPageData];
+    }];
+    
+    //开始获取数据
+    [self.tableView.header beginRefreshing];
 }
 
 
@@ -110,15 +141,15 @@
 }
 
 - (UIImage *)imageManager:(SDWebImageManager *)imageManager transformDownloadedImage:(UIImage *)image withURL:(NSURL *)imageURL{
-    CGFloat ratio = kWidth/ image.size.width;
-    NSInteger mHeight = image.size.height * ratio;
-    CGSize itemSize = CGSizeMake(kWidth, mHeight);
-    
-    UIGraphicsBeginImageContextWithOptions(itemSize, NO, [UIScreen mainScreen].scale);
-    CGRect imageRect = CGRectMake(0.0, 0.0, itemSize.width, itemSize.height);
-    [image drawInRect:imageRect];
-    UIImage  *newImage = UIGraphicsGetImageFromCurrentImageContext();
-    UIGraphicsEndImageContext();
-    return newImage;
+     CGSize itemSize = [PictureFrame scaleSize:image.size];
+     image=[image scaleImageToSize:itemSize];
+    if (itemSize.height==SCREEN_HEIGHT&&image.size.height!=SCREEN_HEIGHT) {
+        [[TMCache sharedCache] setObject:[image copy] forKey:imageURL.absoluteString];//存储长图片
+        image=[image getImageFromImageWithRect:CGRectMake(0, 0, image.size.width, itemSize.height)];
+    }
+    return image;
 }
+
+
+
 @end

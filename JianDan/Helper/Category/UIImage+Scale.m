@@ -13,6 +13,18 @@
 
 @implementation UIImage (Scale)
 
+- (UIImage*) createImageWithColor: (UIColor*) color
+{
+    CGRect rect=CGRectMake(0.0f, 0.0f, 1.0f, 1.0f);
+    UIGraphicsBeginImageContext(rect.size);
+    CGContextRef context = UIGraphicsGetCurrentContext();
+    CGContextSetFillColorWithColor(context, [color CGColor]);
+    CGContextFillRect(context, rect);
+    UIImage *theImage = UIGraphicsGetImageFromCurrentImageContext();
+    UIGraphicsEndImageContext();
+    return theImage;
+}
+
 -(BOOL)isEqual:(UIImage*)image
 {
     BOOL result = NO;
@@ -42,16 +54,10 @@
     
     CGRect scaledImageRect = CGRectZero;
     
-    CGFloat aspectWidth = newSize.width / self.size.width;
-    CGFloat aspectHeight = newSize.height / self.size.height;
-    CGFloat aspectRatio = MIN ( aspectWidth, aspectHeight );
-    
-    scaledImageRect.size.width = self.size.width * aspectRatio;
-    scaledImageRect.size.height = self.size.height * aspectRatio;
-    scaledImageRect.origin.x = (newSize.width - scaledImageRect.size.width) / 2.0f;
-    scaledImageRect.origin.y = (newSize.height - scaledImageRect.size.height) / 2.0f;
-    
-    UIGraphicsBeginImageContextWithOptions( newSize, NO, 1.0);
+    CGFloat ratio = newSize.width / self.size.width;
+    scaledImageRect.size.height = self.size.height * ratio;
+    scaledImageRect.size.width=newSize.width;
+    UIGraphicsBeginImageContextWithOptions(newSize, YES, [UIScreen mainScreen].scale);
     [self drawInRect:scaledImageRect];
     UIImage* scaledImage = UIGraphicsGetImageFromCurrentImageContext();
     UIGraphicsEndImageContext();

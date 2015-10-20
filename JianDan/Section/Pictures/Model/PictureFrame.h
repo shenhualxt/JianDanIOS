@@ -21,6 +21,8 @@
 
 #define kDateFont [UIFont systemFontOfSize:15]
 
+#define kContentFont [UIFont systemFontOfSize:18]
+
 @interface PictureFrame : NSObject
 
 /** 子控件的frame数据 */
@@ -29,6 +31,8 @@
 @property (nonatomic, assign) CGRect dateFrame;
 
 @property (nonatomic, assign) CGRect textContentFrame;
+
+@property (nonatomic, assign) CGSize pictureSize;
 
 @property (nonatomic, assign) CGRect pictureFrame;
 
@@ -49,5 +53,7 @@
 
 /** 数据源 */
 @property (nonatomic, strong) BoredPictures *pictures;
+
++(CGSize)scaleSize:(CGSize)oldSize;
 
 @end

@@ -74,6 +74,7 @@
 		11B06FB81BD479B700941FC7 /* PictureCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 11B06FB71BD479B700941FC7 /* PictureCell.m */; settings = {ASSET_TAGS = (); }; };
 		11B06FBB1BD47F4C00941FC7 /* BaseTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 11B06FBA1BD47F4C00941FC7 /* BaseTableViewCell.m */; settings = {ASSET_TAGS = (); }; };
 		11B06FBE1BD488A100941FC7 /* TestTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 11B06FBD1BD488A100941FC7 /* TestTableViewController.m */; settings = {ASSET_TAGS = (); }; };
+		11B134811BD618AE00574A39 /* UIColor+Additions.m in Sources */ = {isa = PBXBuildFile; fileRef = 11B134801BD618AE00574A39 /* UIColor+Additions.m */; settings = {ASSET_TAGS = (); }; };
 		11B3954A1BB7DC2B00C5C8F5 /* ImageHelpers.m in Sources */ = {isa = PBXBuildFile; fileRef = 11B395491BB7DC2B00C5C8F5 /* ImageHelpers.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		11B82B901BA29A2700283A93 /* libUMSocial_Sdk_4.2.3.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 11B82B761BA29A2700283A93 /* libUMSocial_Sdk_4.2.3.a */; };
 		11B82B911BA29A2700283A93 /* UMSocialLocalizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 11B82B771BA29A2700283A93 /* UMSocialLocalizable.strings */; };
@@ -253,6 +254,8 @@
 		11B06FBA1BD47F4C00941FC7 /* BaseTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BaseTableViewCell.m; sourceTree = "<group>"; };
 		11B06FBC1BD488A100941FC7 /* TestTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TestTableViewController.h; sourceTree = "<group>"; };
 		11B06FBD1BD488A100941FC7 /* TestTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TestTableViewController.m; sourceTree = "<group>"; };
+		11B1347F1BD618AE00574A39 /* UIColor+Additions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIColor+Additions.h"; sourceTree = "<group>"; };
+		11B134801BD618AE00574A39 /* UIColor+Additions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIColor+Additions.m"; sourceTree = "<group>"; };
 		11B395481BB7DC2B00C5C8F5 /* ImageHelpers.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ImageHelpers.h; sourceTree = "<group>"; };
 		11B395491BB7DC2B00C5C8F5 /* ImageHelpers.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ImageHelpers.m; sourceTree = "<group>"; };
 		11B82B761BA29A2700283A93 /* libUMSocial_Sdk_4.2.3.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libUMSocial_Sdk_4.2.3.a; sourceTree = "<group>"; };
@@ -492,6 +495,8 @@
 				115DCC391BB0EF4D00943B6F /* UITableViewCell+TableView.m */,
 				11439A111BB63C0A00AFA2D3 /* NSString+Date.h */,
 				11439A121BB63C0A00AFA2D3 /* NSString+Date.m */,
+				11B1347F1BD618AE00574A39 /* UIColor+Additions.h */,
+				11B134801BD618AE00574A39 /* UIColor+Additions.m */,
 			);
 			path = Category;
 			sourceTree = "<group>";
@@ -1071,6 +1076,7 @@
 				1116CBD71BBBD06A000C9853 /* LittleMovieCollectionCell.m in Sources */,
 				11A0C9061BC669FE008656BC /* CommentsPhotoCell.m in Sources */,
 				11A0C9041BC669FE008656BC /* BoredPictursCell.m in Sources */,
+				11B134811BD618AE00574A39 /* UIColor+Additions.m in Sources */,
 				1183B9371BC1354600446067 /* LittleMovieDetailController.m in Sources */,
 				1164BA761B9C17D800764636 /* LeftMenu.m in Sources */,
 				11B82BA01BA2A7BD00283A93 /* ToastHelper.m in Sources */,

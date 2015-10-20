@@ -103,6 +103,26 @@
     return [self sizeWithConstrainedToSize:CGSizeMake(width, CGFLOAT_MAX) fromFont:font1 lineSpace:lineSpace];
 }
 
+
+-(CGSize)sizeOfSimpleTextWithContrainedToSize:(CGSize)size  fromFont:(UIFont *)font1{
+    NSDictionary *attribute = @{NSFontAttributeName: font1};
+    
+    CGSize retSize = [self boundingRectWithSize:size
+                                             options:
+                      NSStringDrawingTruncatesLastVisibleLine |
+                      NSStringDrawingUsesLineFragmentOrigin |
+                      NSStringDrawingUsesFontLeading
+                                          attributes:attribute
+                                             context:nil].size;
+    
+    return retSize;
+}
+
+-(void)drawInRect:(CGRect)rect fromFont:(UIFont *)font1{
+     NSDictionary *attribute = @{NSFontAttributeName: font1};
+    [self drawInRect:rect withAttributes:attribute];
+}
+
 - (CGSize)sizeWithConstrainedToSize:(CGSize)size fromFont:(UIFont *)font1 lineSpace:(float)lineSpace{
     CGFloat minimumLineHeight = font1.pointSize,maximumLineHeight = minimumLineHeight, linespace = lineSpace;
     CTFontRef font = CTFontCreateWithName((__bridge CFStringRef)font1.fontName,font1.pointSize,NULL);

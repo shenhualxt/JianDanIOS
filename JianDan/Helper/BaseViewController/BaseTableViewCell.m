@@ -7,26 +7,20 @@
 //
 
 #import "BaseTableViewCell.h"
-
-@interface CustomCellView : UIImageView{
-    UIView *contentView;
-}
-
-@end
-
-@implementation CustomCellView
-
+//@interface CustomCellView : UIView
+//
+//@end
+//
+//@implementation CustomCellView
+//
 //- (void)drawRect:(CGRect)rect
 //{
 //    [super drawRect:rect];
 //    [(BaseTableViewCell *)[self superview] drawContentView:rect];
 //}
-@end
+//@end
 
-@interface BaseTableViewCell(){
-    
-    UIImageView *contentView;
-}
+@interface BaseTableViewCell()
 
 @property(strong,nonatomic) UIProgressView *progressView;
 
@@ -34,53 +28,43 @@
 
 @implementation BaseTableViewCell
 
-- (id)initWithStyle:(UITableViewCellStyle)style reuseIdentifier:(NSString *)reuseIdentifier
-{
-    self = [super initWithStyle:style reuseIdentifier:reuseIdentifier];
-    if (self) {
-        contentView = [[UIImageView alloc] init];
-        contentView.opaque = YES;
-        contentView.userInteractionEnabled=YES;
-        [self.contentView addSubview:contentView];
-        self.contentView.backgroundColor=[UIColor lightGrayColor];
-    }
-    return self;
-}
 
-- (void)setFrame:(CGRect)frame
-{
-    [super setFrame:frame];
-    CGRect b = [self bounds];
-    b.size.height -= 1;
-    contentView.frame = b;
-}
 
+//- (void)setFrame:(CGRect)frame
+//{
+//    [super setFrame:frame];
+//    CGRect b = [self bounds];
+//    b.size.height -= 1;
+//    contentView.frame = b;
+//}
+//
 //- (void)setNeedsDisplay
 //{
 //    [super setNeedsDisplay];
 //    [contentView setNeedsDisplay];
 //}
+//
+//
+//-(UIView *)bgView{
+//    return contentView;
+//}
 
--(UIImageView *)bgView{
-    return contentView;
-}
-
-- (void)drawContentView:(CGRect)rect
-{
-//    CGContextRef context = UIGraphicsGetCurrentContext();
-//    CGRect cellRect = self.frame;
-//    if (self.highlighted || self.selected)
-//    {
-//        CGContextSetFillColorWithColor(context, [UIColor lightGrayColor].CGColor);
-//        CGContextFillRect(context, CGRectMake(0, 0, cellRect.size.width, cellRect.size.height));
-//    }
-//    else
-//    {
-//        CGContextSetFillColorWithColor(context, [UIColor whiteColor].CGColor);
-//        CGContextFillRect(context, CGRectMake(0, 0, cellRect.size.width, cellRect.size.height));
-//    }
-    //子类实现
-}
+//- (void)drawContentView:(CGRect)rect
+//{
+////    CGContextRef context = UIGraphicsGetCurrentContext();
+////    CGRect cellRect = self.frame;
+////    if (self.highlighted || self.selected)
+////    {
+////        CGContextSetFillColorWithColor(context, [UIColor lightGrayColor].CGColor);
+////        CGContextFillRect(context, CGRectMake(0, 0, cellRect.size.width, cellRect.size.height));
+////    }
+////    else
+////    {
+////        CGContextSetFillColorWithColor(context, [UIColor whiteColor].CGColor);
+////        CGContextFillRect(context, CGRectMake(0, 0, cellRect.size.width, cellRect.size.height));
+////    }
+//    //子类实现
+//}
 
 - (void)addProgressView:(CGRect)rect {
     if (!self.progressView) {
@@ -90,7 +74,7 @@
         dispatch_async(dispatch_get_main_queue(), ^(void) {
             self.progressView.progress=0;
             self.progressView.hidden=YES;
-            [[self bgView] addSubview:self.progressView];
+            [self insertSubview:self.progressView atIndex:self.subviews.count];
         });
     }
 }

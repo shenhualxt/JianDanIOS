@@ -27,9 +27,13 @@
 
 @property (nonatomic, assign) NSInteger vote_positive;
 
+@property (nonatomic, strong) NSString *vote_positiveStr;
+
 @property (nonatomic, strong) NSString *post_id;
 
 @property (nonatomic, assign) NSInteger vote_negative;
+
+@property (nonatomic, strong) NSString *vote_negativeStr;
 //原始日期
 @property (nonatomic, copy) NSString *comment_date;
 
@@ -37,13 +41,9 @@
 
 @property (nonatomic, copy) NSString *text_content;
 
-//视频缩略图
-@property (nonatomic, strong) NSArray *pics;
 //小视频
 @property (nonatomic, strong) NSArray *videos;
 
-
-@property (nonatomic, assign) BOOL hadLoadImage;
 #pragma mar -新添加
 //图片地址
 @property (nonatomic, strong) NSString *picUrl;
@@ -58,7 +58,7 @@
 
 //离现在时间差
 @property (nonatomic, strong) NSString *deltaToNow;
-//图片大小
+
 @property (nonatomic, assign) CGSize picSize;
 
 @property (nonatomic, strong) PictureFrame *picFrame;

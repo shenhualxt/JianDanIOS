@@ -1,5 +1,5 @@
 # JianDanIOS
-一个仿煎蛋项目的iOS程序
+一个仿煎蛋项目的iOS程序(性能和代码优雅兼顾)
 
 
 # 开发模式
@@ -31,4 +31,8 @@
 + Runtime:动态获取对象的属性，initWithCoder中；
 + 动画：转场动画，帧动画（车赢项目中），CABasicAnimation（图片的缓缓加载），自动布局+动画，SpringAnimation；
 + ReactiveCocoa的深入使用：配合MVVM,解决MVC的问题、RACCommand、RACSignal+Operations、配合AFNetWorking网络访问工具类的封装、配合FMDB数据库的封装、响应式替代代理,notification,target-action,KVO,block；
-+ 持续在改善中（https://github.com/shenhualxt/JianDanIOS）
++ 持续在改善中
+
+
+##2、相关博客（持续更新）：
+

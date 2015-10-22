@@ -31,7 +31,9 @@
 - (CGSize)sizeWithConstrainedToSize:(CGSize)size fromFont:(UIFont *)font1 lineSpace:(float)lineSpace;
 - (void)drawInContext:(CGContextRef)context withPosition:(CGPoint)p andFont:(UIFont *)font andTextColor:(UIColor *)color andHeight:(float)height andWidth:(float)width;
 -(void)drawInRect:(CGRect)rect fromFont:(UIFont *)font1;
+-(void)drawInRect:(CGRect)rect fromFont:(UIFont *)font1 color:(UIColor *)color;
 -(void)drawAtPoint:(CGPoint)point fromFont:(UIFont *)font1;
+-(void)drawAtPoint:(CGPoint)point fromFont:(UIFont *)font1 color:(UIColor *)color;
 - (void)drawInContext:(CGContextRef)context withPosition:(CGPoint)p andFont:(UIFont *)font andTextColor:(UIColor *)color andHeight:(float)height;
 
 @end

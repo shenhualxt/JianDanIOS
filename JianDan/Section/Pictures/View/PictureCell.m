@@ -12,7 +12,6 @@
 #import "NSString+Date.h"
 #import "PictureFrame.h"
 #import "UIColor+Additions.h"
-#import "CardView.h"
 #import "ScaleImageView.h"
 #import "VoteViewModel.h"
 #import "CommentController.h"
@@ -23,7 +22,7 @@
 
 @interface PictureCell () <CEReactiveView>
 
-@property(strong, nonatomic) CardView *bgView;
+@property(strong, nonatomic) UIView *bgView;
 
 @property(strong, nonatomic) ScaleImageView *netImageView;
 
@@ -43,8 +42,9 @@
     if (self) {
         self.selectionStyle = UITableViewCellSelectionStyleNone;
         //1、背景
-        _bgView = [CardView new];
+        _bgView = [UIView new];
         _bgView.layer.cornerRadius=4;
+        _bgView.layer.masksToBounds=YES;
         [self addSubview:_bgView];
 
         //为其中的按钮添加点击事件
@@ -63,6 +63,8 @@
         _gifImageView.layer.contents =(__bridge id _Nullable)([UIImage imageNamed:@"ic_play_gif"].CGImage);
         [self addSubview:_gifImageView];
         self.backgroundColor = UIColorFromRGB(0xDDDDDD);
+        
+        
     }
     return self;
 }
@@ -77,7 +79,8 @@
 
     [self draw];
     self.netImageView.frame = viewModel.picFrame.pictureFrame;
-    [self.netImageView setImageWithURL:[self getImageURL:viewModel] placeholderImage:[self.backgroundColor createImage] options:SDWebImageHighPriority | SDWebImageTransformAnimatedImage usingProgressViewStyle:UIProgressViewStyleDefault];
+    UIImage *placeHoler=[self.backgroundColor createImageWithText:@"煎蛋" size:viewModel.picFrame.pictureFrame.size textColor:[UIColor grayColor]];
+    [self.netImageView setImageWithURL:[self getImageURL:viewModel] placeholderImage:placeHoler options:SDWebImageHighPriority | SDWebImageTransformAnimatedImage usingProgressViewStyle:UIProgressViewStyleDefault];
 }
 
 - (void)draw {
@@ -92,7 +95,7 @@
         //Author
         [_picture.comment_author drawInRect:_picture.picFrame.authorFrame fromFont:kAuthorFont];
         //date
-        [_picture.deltaToNow drawInRect:_picture.picFrame.dateFrame fromFont:kDateFont];;
+        [_picture.deltaToNow drawInRect:_picture.picFrame.dateFrame fromFont:kDateFont color:[UIColor grayColor]];;
         //content
         if (_picture.text_content.length) {
             [_picture.text_content drawInRect:_picture.picFrame.textContentFrame fromFont:kContentFont];

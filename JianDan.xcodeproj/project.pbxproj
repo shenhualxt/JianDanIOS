@@ -35,6 +35,7 @@
 		1164BA761B9C17D800764636 /* LeftMenu.m in Sources */ = {isa = PBXBuildFile; fileRef = 1164BA711B9C17D800764636 /* LeftMenu.m */; };
 		1164BA771B9C17D800764636 /* LeftMenuCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 1164BA731B9C17D800764636 /* LeftMenuCell.m */; };
 		1164BA781B9C17D800764636 /* LeftMenuController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1164BA751B9C17D800764636 /* LeftMenuController.m */; };
+		116DD3021BD8C5F2004ED7CA /* zikutanghzkt.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 116DD3011BD8C5F2004ED7CA /* zikutanghzkt.ttf */; settings = {ASSET_TAGS = (); }; };
 		1170977F1B93E0F300896DB4 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 1170977E1B93E0F300896DB4 /* AppDelegate.m */; };
 		117124EB1B9D79CD00D99879 /* FreshNewsDetailController.m in Sources */ = {isa = PBXBuildFile; fileRef = 117124EA1B9D79CD00D99879 /* FreshNewsDetailController.m */; };
 		1183B9331BC1219D00446067 /* CardView.m in Sources */ = {isa = PBXBuildFile; fileRef = 1183B9321BC1219D00446067 /* CardView.m */; settings = {ASSET_TAGS = (); }; };
@@ -183,6 +184,7 @@
 		1164BA731B9C17D800764636 /* LeftMenuCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LeftMenuCell.m; sourceTree = "<group>"; };
 		1164BA741B9C17D800764636 /* LeftMenuController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LeftMenuController.h; sourceTree = "<group>"; };
 		1164BA751B9C17D800764636 /* LeftMenuController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LeftMenuController.m; sourceTree = "<group>"; };
+		116DD3011BD8C5F2004ED7CA /* zikutanghzkt.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = zikutanghzkt.ttf; sourceTree = "<group>"; };
 		1170977D1B93E0F300896DB4 /* AppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		1170977E1B93E0F300896DB4 /* AppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		117124E91B9D79CD00D99879 /* FreshNewsDetailController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FreshNewsDetailController.h; sourceTree = "<group>"; };
@@ -444,6 +446,7 @@
 		1119C4911B9005B5007C8C56 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				116DD3011BD8C5F2004ED7CA /* zikutanghzkt.ttf */,
 				1119C4A21B9005B7007C8C56 /* Info.plist */,
 				118BBDC61BA5A84F002D79A2 /* LaunchScreen.xib */,
 				11F43D811BA00064003EDFAF /* style.css */,
@@ -965,6 +968,7 @@
 				11B82B991BA29A2700283A93 /* UMSShareListController.xib in Resources */,
 				11D3B9231BABFFAB001B8BB2 /* CommentClickAlertView.xib in Resources */,
 				11A0C9071BC669FE008656BC /* CommentsPhotoCell.xib in Resources */,
+				116DD3021BD8C5F2004ED7CA /* zikutanghzkt.ttf in Resources */,
 				11B82B9A1BA29A2700283A93 /* UMSocialSDKResourcesNew.bundle in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

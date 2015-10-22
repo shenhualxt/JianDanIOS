@@ -13,11 +13,11 @@
 
 - (void)layoutSubviews {
     self.layer.cornerRadius = 4;
-//    self.layer.masksToBounds=YES;
     UIBezierPath *shadowPath = [UIBezierPath bezierPathWithRoundedRect:self.bounds cornerRadius:4];
 
+    self.layer.masksToBounds=YES;
     self.layer.shadowColor = [UIColor blackColor].CGColor;
-    self.layer.shadowOffset = CGSizeMake(0, 2);
+    self.layer.shadowOffset = CGSizeMake(0, 4);
     self.layer.shadowOpacity = 0.5;
     self.layer.shadowPath = shadowPath.CGPath;
 }

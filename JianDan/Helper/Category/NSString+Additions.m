@@ -119,12 +119,20 @@
 }
 
 -(void)drawInRect:(CGRect)rect fromFont:(UIFont *)font1{
-     NSDictionary *attribute = @{NSFontAttributeName: font1};
+    [self drawInRect:rect fromFont:font1 color:[UIColor blackColor]];
+}
+
+-(void)drawInRect:(CGRect)rect fromFont:(UIFont *)font1 color:(UIColor *)color{
+    NSDictionary *attribute = @{NSFontAttributeName: font1,NSForegroundColorAttributeName:color};
     [self drawInRect:rect withAttributes:attribute];
 }
 
--(void)drawAtPoint:(CGPoint)point fromFont:(UIFont *)font1{
-    NSDictionary *attribute = @{NSFontAttributeName: font1};
+-(void)drawAtPoint:(CGPoint)point fromFont:(UIFont *)font1 {
+    [self drawAtPoint:point fromFont:font1 color:[UIColor blackColor]];
+}
+
+-(void)drawAtPoint:(CGPoint)point fromFont:(UIFont *)font1 color:(UIColor *)color{
+    NSDictionary *attribute = @{NSFontAttributeName: font1,NSForegroundColorAttributeName:color};
     [self drawAtPoint:point withAttributes:attribute];
 }
 

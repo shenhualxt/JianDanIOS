@@ -12,4 +12,6 @@
 
 - (UIImage*) createImage;
 
+- (UIImage*) createImageWithText:(NSString *)text size:(CGSize)size textColor:(UIColor*)textColor;
+
 @end

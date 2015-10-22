@@ -7,7 +7,6 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "BaseTableViewCell.h"
 
 @interface PictureCell : UITableViewCell
 

@@ -44,6 +44,7 @@
         self.selectionStyle = UITableViewCellSelectionStyleNone;
         //1、背景
         _bgView = [CardView new];
+        _bgView.layer.cornerRadius=4;
         [self addSubview:_bgView];
 
         //为其中的按钮添加点击事件

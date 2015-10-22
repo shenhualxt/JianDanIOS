@@ -10,6 +10,9 @@
 
 @interface UIImage (Scale)
 
+
+-(UIImage*)getSubImage:(CGRect)rect;
+
 -(BOOL)isEqual:(UIImage*)image;
 
 - (UIImage *)scaleImageToSize:(CGSize)newSize;

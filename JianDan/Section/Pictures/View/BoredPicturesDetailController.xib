@@ -15,8 +15,7 @@
                 <outlet property="buttonShare" destination="j1U-Fe-wo1" id="pOU-87-RjS"/>
                 <outlet property="buttonXX" destination="Qx5-iQ-wPK" id="cKu-Vf-yIV"/>
                 <outlet property="constraintBottom" destination="2vU-4R-754" id="K5b-PD-xps"/>
-                <outlet property="constraintLeft" destination="tve-WP-pMN" id="hmu-wW-6vi"/>
-                <outlet property="constraintRight" destination="ami-67-w6Y" id="ewr-bk-8OJ"/>
+                <outlet property="constraintImageHeight" destination="24a-ec-6r6" id="dUl-hQ-1B8"/>
                 <outlet property="constraintTop" destination="5UI-Wo-tlh" id="I3f-Wt-3eF"/>
                 <outlet property="imageViewDetail" destination="7QY-aJ-pvm" id="E9Q-OG-UOK"/>
                 <outlet property="scrollView" destination="pcV-kf-FtW" id="u1h-Kg-XUk"/>
@@ -32,10 +31,13 @@
                 <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" bounces="NO" alwaysBounceHorizontal="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" maximumZoomScale="3" translatesAutoresizingMaskIntoConstraints="NO" id="pcV-kf-FtW">
                     <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                     <subviews>
-                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ic_loading_large" translatesAutoresizingMaskIntoConstraints="NO" id="7QY-aJ-pvm" customClass="WidthFixImageView">
+                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="7QY-aJ-pvm" customClass="WidthFixImageView">
                             <rect key="frame" x="0.0" y="-1" width="320" height="200"/>
                             <animations/>
                             <color key="backgroundColor" red="0.78047902960000004" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="200" id="24a-ec-6r6"/>
+                            </constraints>
                         </imageView>
                     </subviews>
                     <animations/>
@@ -190,6 +192,5 @@
         <image name="ic_action_chat" width="24" height="24"/>
         <image name="ic_action_download" width="32" height="32"/>
         <image name="ic_action_share" width="24" height="24"/>
-        <image name="ic_loading_large" width="200" height="200"/>
     </resources>
 </document>

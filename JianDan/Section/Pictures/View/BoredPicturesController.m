@@ -141,15 +141,7 @@
 }
 
 - (UIImage *)imageManager:(SDWebImageManager *)imageManager transformDownloadedImage:(UIImage *)image withURL:(NSURL *)imageURL{
-     CGSize itemSize = [PictureFrame scaleSizeWithMaxHeight:image.size];
-     image=[image scaleImageToSize:itemSize];
-    if (itemSize.height>SCREEN_HEIGHT) {
-        [[TMCache sharedCache] setObject:[image copy] forKey:imageURL.absoluteString];//存储长图片
-        image=[image getImageFromImageWithRect:CGRectMake(0, 0, kContentWidth, SCREEN_HEIGHT)];
-    }
-    return image;
+     CGSize itemSize = [PictureFrame scaleSizeWithoutMaxHeight:image.size];
+    return [image scaleImageToSize:itemSize];
 }
-
-
-
 @end

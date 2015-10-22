@@ -10,7 +10,6 @@
                 <outlet property="buttonNext" destination="01Q-kU-H2t" id="hRk-ev-2iA"/>
                 <outlet property="buttonPrevious" destination="e8p-4s-au0" id="EN5-tu-iSp"/>
                 <outlet property="buttonRefreshOrCancel" destination="yHI-4k-t63" id="WE2-bc-sSh"/>
-                <outlet property="progressView" destination="bH6-Sf-LVX" id="eLx-Yb-KEr"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
                 <outlet property="webView" destination="0ZX-xQ-ZI0" id="oUs-yp-ZY0"/>
             </connections>
@@ -20,19 +19,11 @@
             <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <webView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="0ZX-xQ-ZI0">
+                <webView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="0ZX-xQ-ZI0" customClass="LTProgressWebView">
                     <rect key="frame" x="0.0" y="0.0" width="600" height="542"/>
                     <animations/>
                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                 </webView>
-                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="bH6-Sf-LVX" customClass="NJKWebViewProgressView">
-                    <rect key="frame" x="0.0" y="0.0" width="600" height="2"/>
-                    <animations/>
-                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                    <constraints>
-                        <constraint firstAttribute="height" constant="2" id="6Nm-Rl-hQK"/>
-                    </constraints>
-                </view>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="d3o-zy-Wjj">
                     <rect key="frame" x="0.0" y="542" width="600" height="58"/>
                     <subviews>
@@ -68,14 +59,11 @@
             <animations/>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
             <constraints>
-                <constraint firstAttribute="trailing" secondItem="bH6-Sf-LVX" secondAttribute="trailing" id="3GQ-o2-wlS"/>
                 <constraint firstAttribute="bottom" secondItem="d3o-zy-Wjj" secondAttribute="bottom" id="HE2-du-WJc"/>
                 <constraint firstItem="d3o-zy-Wjj" firstAttribute="top" secondItem="0ZX-xQ-ZI0" secondAttribute="bottom" id="PX8-nx-vbu"/>
                 <constraint firstItem="d3o-zy-Wjj" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="RH1-zm-ZHg"/>
                 <constraint firstAttribute="trailing" secondItem="0ZX-xQ-ZI0" secondAttribute="trailing" id="Sda-Jd-yoe"/>
-                <constraint firstItem="bH6-Sf-LVX" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="V9R-UU-mGO"/>
                 <constraint firstItem="0ZX-xQ-ZI0" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="W8x-hI-C7x"/>
-                <constraint firstItem="bH6-Sf-LVX" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="aPa-qX-pg4"/>
                 <constraint firstAttribute="trailing" secondItem="d3o-zy-Wjj" secondAttribute="trailing" id="fwl-U0-J46"/>
                 <constraint firstItem="0ZX-xQ-ZI0" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="orH-Ye-7Cy"/>
                 <constraint firstItem="d3o-zy-Wjj" firstAttribute="top" secondItem="0ZX-xQ-ZI0" secondAttribute="bottom" id="vHw-jc-dDu"/>

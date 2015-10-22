@@ -193,6 +193,7 @@
 {
     [super didReceiveMemoryWarning];
     LogBlue(@"%@---didReceiveMemoryWarning", self.title);
+    [[SDImageCache sharedImageCache] setValue:nil forKey:@"memCache"];
     //清除所有的内存中图片缓存，不影响正在显示的图片
     [[SDImageCache sharedImageCache] clearMemory];
     //停止正在进行的图片下载操作

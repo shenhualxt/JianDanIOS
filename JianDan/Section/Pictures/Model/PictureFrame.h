@@ -63,7 +63,7 @@
 
 +(CGSize)scaleSize:(CGSize)oldSize;
 
-+(CGSize)scaleSizeWithMaxHeight:(CGSize)oldSize;
++(CGSize)scaleSizeWithoutMaxHeight:(CGSize)oldSize;
 
 +(CGRect)getButtonFrameFromPoint:(CGPoint)point pictureFrame:(CGRect)pictureFrame;
 

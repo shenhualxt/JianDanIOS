@@ -41,6 +41,20 @@
     return result;
 }
 
+-(UIImage*)getSubImage:(CGRect)rect
+{
+    CGImageRef subImageRef = CGImageCreateWithImageInRect(self.CGImage, rect);
+    CGRect smallBounds = CGRectMake(0, 0, CGImageGetWidth(subImageRef), CGImageGetHeight(subImageRef));
+    
+    UIGraphicsBeginImageContext(smallBounds.size);
+    CGContextRef context = UIGraphicsGetCurrentContext();
+    CGContextDrawImage(context, smallBounds, subImageRef);
+    UIImage* smallImage = [UIImage imageWithCGImage:subImageRef];
+    UIGraphicsEndImageContext();
+    
+    return smallImage;
+}
+
 /**
  * Scales an image to fit within a bounds with a size governed by
  * the passed size. Also keeps the aspect ratio.
@@ -51,15 +65,19 @@
  * @return a new scaled image.
  */
 - (UIImage *)scaleImageToSize:(CGSize)newSize {
-    
-    CGRect scaledImageRect = CGRectZero;
-    
     CGFloat ratio = newSize.width / self.size.width;
-    scaledImageRect.size.height = self.size.height * ratio;
-    scaledImageRect.size.width=newSize.width;
+    
+    CGFloat height = self.size.height * ratio;
+    
+    CGRect scaledImageRect = CGRectMake(0, 0, newSize.width, height);
+    // 创建一个bitmap的context
+    // 并把它设置成为当前正在使用的contex
     UIGraphicsBeginImageContextWithOptions(newSize, YES, [UIScreen mainScreen].scale);
+     // 绘制改变大小的图片
     [self drawInRect:scaledImageRect];
+     // 从当前context中创建一个改变大小后的图片
     UIImage* scaledImage = UIGraphicsGetImageFromCurrentImageContext();
+     // 使当前的context出堆栈
     UIGraphicsEndImageContext();
     
     return scaledImage;
@@ -80,17 +98,27 @@
 }
 
 
-
 -(UIImage *)getImageFromImageWithRect:(CGRect)rect{
     //大图bigImage
     //定义myImageRect，截图的区域
-    CGImageRef imageRef = self.CGImage;
-    CGImageRef subImageRef = CGImageCreateWithImageInRect(imageRef, rect);
-    UIGraphicsBeginImageContext(rect.size);
+//    CGImageRef imageRef = self.CGImage;
+//    CGImageRef subImageRef = CGImageCreateWithImageInRect(imageRef, rect);
+//    UIGraphicsBeginImageContextWithOptions(rect.size, YES, [UIScreen mainScreen].scale);
+//    CGContextRef context = UIGraphicsGetCurrentContext();
+//    CGContextDrawImage(context, rect, subImageRef);
+//    UIImage* smallImage = [UIImage imageWithCGImage:subImageRef];
+//    UIGraphicsEndImageContext();
+//    return smallImage;
+    
+    CGImageRef subImageRef = CGImageCreateWithImageInRect(self.CGImage, rect);
+    CGRect smallBounds = CGRectMake(0, 0, rect.size.width, CGImageGetHeight(subImageRef));
+    
+    UIGraphicsBeginImageContext(smallBounds.size);
     CGContextRef context = UIGraphicsGetCurrentContext();
-    CGContextDrawImage(context, rect, subImageRef);
+    CGContextDrawImage(context, smallBounds, subImageRef);
     UIImage* smallImage = [UIImage imageWithCGImage:subImageRef];
     UIGraphicsEndImageContext();
+    
     return smallImage;
 }
 

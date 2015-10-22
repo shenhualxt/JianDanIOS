@@ -40,6 +40,7 @@
 		1183B9331BC1219D00446067 /* CardView.m in Sources */ = {isa = PBXBuildFile; fileRef = 1183B9321BC1219D00446067 /* CardView.m */; settings = {ASSET_TAGS = (); }; };
 		1183B9371BC1354600446067 /* LittleMovieDetailController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1183B9351BC1354600446067 /* LittleMovieDetailController.m */; settings = {ASSET_TAGS = (); }; };
 		1183B9381BC1354600446067 /* LittleMovieDetailController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1183B9361BC1354600446067 /* LittleMovieDetailController.xib */; settings = {ASSET_TAGS = (); }; };
+		118AB6691BD7E7630008185A /* NSDate+Additions.m in Sources */ = {isa = PBXBuildFile; fileRef = 118AB6681BD7E7630008185A /* NSDate+Additions.m */; settings = {ASSET_TAGS = (); }; };
 		118BBD611BA53F84002D79A2 /* ShareToViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 118BBD601BA53F84002D79A2 /* ShareToViewModel.m */; };
 		118BBDC71BA5A84F002D79A2 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 118BBDC61BA5A84F002D79A2 /* LaunchScreen.xib */; };
 		1191E22C1BAEC81500D2BBF8 /* ScaleImageView.m in Sources */ = {isa = PBXBuildFile; fileRef = 1191E22B1BAEC81500D2BBF8 /* ScaleImageView.m */; };
@@ -73,7 +74,6 @@
 		11AB6ACE1BBB82CB00358621 /* PushCommentViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 11AB6ACD1BBB82CB00358621 /* PushCommentViewModel.m */; settings = {ASSET_TAGS = (); }; };
 		11B06FB81BD479B700941FC7 /* PictureCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 11B06FB71BD479B700941FC7 /* PictureCell.m */; settings = {ASSET_TAGS = (); }; };
 		11B06FBB1BD47F4C00941FC7 /* BaseTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 11B06FBA1BD47F4C00941FC7 /* BaseTableViewCell.m */; settings = {ASSET_TAGS = (); }; };
-		11B06FBE1BD488A100941FC7 /* TestTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 11B06FBD1BD488A100941FC7 /* TestTableViewController.m */; settings = {ASSET_TAGS = (); }; };
 		11B134811BD618AE00574A39 /* UIColor+Additions.m in Sources */ = {isa = PBXBuildFile; fileRef = 11B134801BD618AE00574A39 /* UIColor+Additions.m */; settings = {ASSET_TAGS = (); }; };
 		11B3954A1BB7DC2B00C5C8F5 /* ImageHelpers.m in Sources */ = {isa = PBXBuildFile; fileRef = 11B395491BB7DC2B00C5C8F5 /* ImageHelpers.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		11B82B901BA29A2700283A93 /* libUMSocial_Sdk_4.2.3.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 11B82B761BA29A2700283A93 /* libUMSocial_Sdk_4.2.3.a */; };
@@ -96,6 +96,7 @@
 		11D63CE71B92C32D0059D328 /* FreshNewsCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 11D63CDE1B92C32D0059D328 /* FreshNewsCell.xib */; };
 		11D63CE81B92C32D0059D328 /* FreshNewsCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 11D63CDF1B92C32D0059D328 /* FreshNewsCell.m */; };
 		11D8F6861BD0B1EC0033066F /* Comments.m in Sources */ = {isa = PBXBuildFile; fileRef = 11D8F6851BD0B1EC0033066F /* Comments.m */; settings = {ASSET_TAGS = (); }; };
+		11DDA99A1BD77B6400CD3E28 /* LTProgressWebView.m in Sources */ = {isa = PBXBuildFile; fileRef = 11DDA9991BD77B6400CD3E28 /* LTProgressWebView.m */; settings = {ASSET_TAGS = (); }; };
 		11E0E21B1BD3325900330F29 /* NSString+Additions.m in Sources */ = {isa = PBXBuildFile; fileRef = 11E0E21A1BD3325900330F29 /* NSString+Additions.m */; settings = {ASSET_TAGS = (); }; };
 		11E6ADA51BAA601300E7E31F /* CommentsCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 11E6ADA41BAA601300E7E31F /* CommentsCell.xib */; };
 		11F43D731B9FCF0E003EDFAF /* DMLazyScrollView.m in Sources */ = {isa = PBXBuildFile; fileRef = 11F43D721B9FCF0E003EDFAF /* DMLazyScrollView.m */; };
@@ -194,6 +195,8 @@
 		1183B9341BC1354600446067 /* LittleMovieDetailController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LittleMovieDetailController.h; sourceTree = "<group>"; };
 		1183B9351BC1354600446067 /* LittleMovieDetailController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LittleMovieDetailController.m; sourceTree = "<group>"; };
 		1183B9361BC1354600446067 /* LittleMovieDetailController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LittleMovieDetailController.xib; sourceTree = "<group>"; };
+		118AB6671BD7E7630008185A /* NSDate+Additions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSDate+Additions.h"; sourceTree = "<group>"; };
+		118AB6681BD7E7630008185A /* NSDate+Additions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSDate+Additions.m"; sourceTree = "<group>"; };
 		118BBD5F1BA53F84002D79A2 /* ShareToViewModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ShareToViewModel.h; sourceTree = "<group>"; };
 		118BBD601BA53F84002D79A2 /* ShareToViewModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ShareToViewModel.m; sourceTree = "<group>"; };
 		118BBDC61BA5A84F002D79A2 /* LaunchScreen.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LaunchScreen.xib; sourceTree = "<group>"; };
@@ -252,8 +255,6 @@
 		11B06FB71BD479B700941FC7 /* PictureCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PictureCell.m; sourceTree = "<group>"; };
 		11B06FB91BD47F4C00941FC7 /* BaseTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BaseTableViewCell.h; sourceTree = "<group>"; };
 		11B06FBA1BD47F4C00941FC7 /* BaseTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BaseTableViewCell.m; sourceTree = "<group>"; };
-		11B06FBC1BD488A100941FC7 /* TestTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TestTableViewController.h; sourceTree = "<group>"; };
-		11B06FBD1BD488A100941FC7 /* TestTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TestTableViewController.m; sourceTree = "<group>"; };
 		11B1347F1BD618AE00574A39 /* UIColor+Additions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIColor+Additions.h"; sourceTree = "<group>"; };
 		11B134801BD618AE00574A39 /* UIColor+Additions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIColor+Additions.m"; sourceTree = "<group>"; };
 		11B395481BB7DC2B00C5C8F5 /* ImageHelpers.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ImageHelpers.h; sourceTree = "<group>"; };
@@ -299,6 +300,8 @@
 		11D8F6841BD0B1EC0033066F /* Comments.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Comments.h; sourceTree = "<group>"; };
 		11D8F6851BD0B1EC0033066F /* Comments.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Comments.m; sourceTree = "<group>"; };
 		11D8F6871BD0B2000033066F /* Vote.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Vote.h; sourceTree = "<group>"; };
+		11DDA9981BD77B6400CD3E28 /* LTProgressWebView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LTProgressWebView.h; sourceTree = "<group>"; };
+		11DDA9991BD77B6400CD3E28 /* LTProgressWebView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LTProgressWebView.m; sourceTree = "<group>"; };
 		11E0E2191BD3325900330F29 /* NSString+Additions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+Additions.h"; sourceTree = "<group>"; };
 		11E0E21A1BD3325900330F29 /* NSString+Additions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+Additions.m"; sourceTree = "<group>"; };
 		11E6ADA41BAA601300E7E31F /* CommentsCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CommentsCell.xib; sourceTree = "<group>"; };
@@ -497,6 +500,8 @@
 				11439A121BB63C0A00AFA2D3 /* NSString+Date.m */,
 				11B1347F1BD618AE00574A39 /* UIColor+Additions.h */,
 				11B134801BD618AE00574A39 /* UIColor+Additions.m */,
+				118AB6671BD7E7630008185A /* NSDate+Additions.h */,
+				118AB6681BD7E7630008185A /* NSDate+Additions.m */,
 			);
 			path = Category;
 			sourceTree = "<group>";
@@ -505,8 +510,6 @@
 			isa = PBXGroup;
 			children = (
 				114E39F21BB26A4A0001CEBD /* NetErrorView.xib */,
-				11B06FBC1BD488A100941FC7 /* TestTableViewController.h */,
-				11B06FBD1BD488A100941FC7 /* TestTableViewController.m */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -818,6 +821,8 @@
 				11FEBA911BBA198400490946 /* WidthFixImageView.m */,
 				1183B9311BC1219D00446067 /* CardView.h */,
 				1183B9321BC1219D00446067 /* CardView.m */,
+				11DDA9981BD77B6400CD3E28 /* LTProgressWebView.h */,
+				11DDA9991BD77B6400CD3E28 /* LTProgressWebView.m */,
 			);
 			path = CustomView;
 			sourceTree = "<group>";
@@ -1105,7 +1110,6 @@
 				113491C71BAA95A3007D133B /* InsetsLabel.m in Sources */,
 				1116CBD31BBBCD46000C9853 /* LittleMoveController.m in Sources */,
 				110EFA621BC7988D00D46333 /* BLImageSize.m in Sources */,
-				11B06FBE1BD488A100941FC7 /* TestTableViewController.m in Sources */,
 				11925AAF1B93360E00608BCC /* BaseTableViewController.m in Sources */,
 				11A0C9021BC669FE008656BC /* BoredPicturesDetailController.m in Sources */,
 				11F5150B1BA7DB4100572DF5 /* CommentViewModel.m in Sources */,
@@ -1117,6 +1121,7 @@
 				110EFA5F1BC753A100D46333 /* UIImageView+UIProgressForSDWebImage.m in Sources */,
 				111127A71BD3944300350C6B /* FreshNewsLittleCell.m in Sources */,
 				11F515081BA7D4F200572DF5 /* LTFloorView.m in Sources */,
+				118AB6691BD7E7630008185A /* NSDate+Additions.m in Sources */,
 				11AB6ACE1BBB82CB00358621 /* PushCommentViewModel.m in Sources */,
 				11925AA61B93360E00608BCC /* MJExtensionConfig.m in Sources */,
 				11F567B91BA65A45000F3393 /* UIWebView+RAC.m in Sources */,
@@ -1130,6 +1135,7 @@
 				11A856401BC2726800863D9D /* SettingController.m in Sources */,
 				11F43D791B9FE616003EDFAF /* FreshNewsDetail.m in Sources */,
 				11925AAE1B93360E00608BCC /* CEObservableMutableArray.m in Sources */,
+				11DDA99A1BD77B6400CD3E28 /* LTProgressWebView.m in Sources */,
 				113491CA1BAAA823007D133B /* NSDate+MJ.m in Sources */,
 				11290CB61BAE3295004AD5F5 /* MainViewModel.m in Sources */,
 				112159BB1B9407D1007B02DC /* CacheTools.m in Sources */,

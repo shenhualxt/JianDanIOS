@@ -15,6 +15,13 @@
 @implementation ScaleImageView
 
 -(void)setImage:(UIImage *)image{
+    if(image.size.height>=SCREEN_HEIGHT){
+        self.layer.masksToBounds=YES;
+        [self.layer setContentsScale:[[UIScreen mainScreen] scale]];
+        self.layer.contentsGravity=kCAGravityResizeAspectFill;
+    }else{
+        self.layer.contentsGravity=kCAGravityResize;
+    }
      CGImageRef imageRef=image.CGImage;
     // 1，设定基本动画参数
     CABasicAnimation *contentsAnimation = [CABasicAnimation animationWithKeyPath:@"contents"];

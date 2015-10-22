@@ -14,4 +14,6 @@
 
 -(void)updateProgressViewWithReceivedSize:(NSInteger)receivedSize expectedSize:(NSInteger)expectedSize rect:(CGRect)rect;
 
+-(void)removeProgressView;
+
 @end

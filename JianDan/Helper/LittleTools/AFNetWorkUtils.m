@@ -64,6 +64,7 @@ DEFINE_SINGLETON_IMPLEMENTATION(AFNetWorkUtils)
                 case AFNetworkReachabilityStatusNotReachable:
                     ws.netType=NONet;
                     ws.netTypeString=@"网络已断开";
+                    [[SDWebImageManager sharedManager] cancelAll];
                     break;
                     
                 case AFNetworkReachabilityStatusUnknown:

@@ -64,23 +64,25 @@
     _pictureSize=[PictureFrame scaleSize:pictureSize];
 }
 
-+(CGRect)getButtonFrameFromPoint:(CGPoint)point pictureFrame:(CGRect)pictureFrame{
-    return CGRectMake(point.x, CGRectGetMaxY(pictureFrame), kButtonWidth, kButtonHeight);
-}
-
 +(CGSize)scaleSize:(CGSize)oldSize{
     CGFloat ratio = (kCellWidth)/oldSize.width;
     NSInteger mHeight = oldSize.height * ratio;
     if (mHeight>SCREEN_HEIGHT) {
         mHeight=SCREEN_HEIGHT;
     }
-    return CGSizeMake(kCellWidth, mHeight);
+    return CGSizeMake(kContentWidth, mHeight);
 }
 
-+(CGSize)scaleSizeWithMaxHeight:(CGSize)oldSize{
-    CGFloat ratio = (kCellWidth)/oldSize.width;
++(CGRect)getButtonFrameFromPoint:(CGPoint)point pictureFrame:(CGRect)pictureFrame{
+    return CGRectMake(point.x, CGRectGetMaxY(pictureFrame), kButtonWidth, kButtonHeight);
+}
+
+
+
++(CGSize)scaleSizeWithoutMaxHeight:(CGSize)oldSize{
+    CGFloat ratio = (kContentWidth)/oldSize.width;
     NSInteger mHeight = oldSize.height * ratio;
-    return CGSizeMake(kCellWidth, mHeight);
+    return CGSizeMake(kContentWidth, mHeight);
 }
 
 MJCodingImplementation

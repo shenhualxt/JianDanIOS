@@ -8,31 +8,8 @@
 
 #import <Foundation/Foundation.h>
 
-//@interface Author : NSObject
-//
-//@property(nonatomic,strong) NSString *slug;
-//@property(nonatomic,strong) NSString *url;
-//@property(nonatomic,assign) int id;
-//@property(nonatomic,strong) NSString *nickname;
-//@property(nonatomic,strong) NSString *last_name;
-//@property(nonatomic,strong) NSString *desc;
-//@property(nonatomic,strong) NSString *name;
-//@property(nonatomic,strong) NSString *first_name;
-//
-//@end
-//
-//@interface Custom_fields : NSObject
-//
-//@property(nonatomic,strong) NSArray *thumb_c;
-//@property(nonatomic,strong) NSURL *thumb_m;
-//@property(nonatomic,strong) NSArray *views;
-//@property(nonatomic,strong) NSString *viewsCount;
-//@end
-
 @interface FreshNews : NSObject
 
-//@property(nonatomic,strong) Author *author;
-//@property(nonatomic,strong) Custom_fields *custom_fields;
 @property(nonatomic,assign) int id;
 
 @property(nonatomic,strong) NSString *title;

@@ -12,12 +12,15 @@
 #import "FreshNewsDetailViewModel.h"
 #import "FreshNewsDetail.h"
 #import "ShareToSinaController.h"
-#import "UIWebView+RAC.h"
 #import "ToastHelper.h"
 #import "CommentController.h"
 #import "LTAlertView.h"
 #import "UMSocial.h"
 #import <Social/Social.h>
+#import "LTProgressWebView.h"
+
+#define ARC4RANDOM_MAX	0x100000000
+
 
 @interface FreshNewsDetailController()<UIWebViewDelegate,DMLazyScrollViewDelegate>
 
@@ -70,10 +73,12 @@
     CGRect rect = CGRectMake(0, 0, SCREEN_WIDTH, SCREEN_HEIGHT);
     self.lazyScrollView = [[DMLazyScrollView alloc] initWithFrame:rect];
     [self.view addSubview: self.lazyScrollView];
-    [self.lazyScrollView setEnableCircularScroll:NO];
+    [self.lazyScrollView setEnableCircularScroll:YES];
     [self.lazyScrollView setAutoPlay:NO];
-    self.lazyScrollView.alwaysBounceHorizontal=YES;
+    self.lazyScrollView.pagingEnabled=YES;
+    self.lazyScrollView.alwaysBounceHorizontal=NO;
     self.lazyScrollView.controlDelegate=self;
+    self.lazyScrollView.directionalLockEnabled=YES;
     WS(ws)
     self.lazyScrollView.dataSource = ^(NSUInteger index) {
         return [ws controllerAtIndex:index];
@@ -88,11 +93,13 @@
     //加载网页
     @weakify(self)
     [[viewModel.soureCommand.executionSignals switchToLatest] subscribeNext:^(NSString *html) {
+        NSLog(@"%@",html);
         @strongify(self)
         //引用css文件的相对路径
         NSString *path = [[NSBundle mainBundle] bundlePath];
         NSURL *baseURL = [NSURL fileURLWithPath:path];
         UIWebView *webView=(UIWebView *)[self.lazyScrollView.visibleViewController.view.subviews objectAtIndex:0];
+        webView.tag=3;
         [webView loadHTMLString:html baseURL:baseURL];
     }];
     
@@ -100,10 +107,16 @@
         [[ToastHelper sharedToastHelper] toast:[NSErrorHelper handleErrorMessage:x]];
     }];
     
+    [viewModel.soureCommand.executing subscribeNext:^(id x) {
+        [[ToastHelper sharedToastHelper] setSimleProgressVisiable:[x boolValue]];
+    }];
+    
     //开始获取详情信息
     [RACObserve(self, index) subscribeNext:^(id x) {
-        RACTuple *turple=[RACTuple tupleWithObjects:self.freshNewsArray,x, nil];
-        [viewModel.soureCommand execute:turple];
+        UIWebView *webView=(UIWebView *)[self.lazyScrollView.visibleViewController.view.subviews objectAtIndex:0];
+        if (webView.tag!=3) {//如果加载过，就不用执行了
+            [viewModel.soureCommand execute:self.freshNewsArray[[x integerValue]]];
+        }
     }];
 }
 
@@ -112,14 +125,12 @@
     id res = [_viewControllerArray objectAtIndex:index];
     if (res == [NSNull null]) {
         UIViewController *contr = [UIViewController new];
-        UIWebView *webView=[[UIWebView alloc] initWithFrame:self.view.frame];
+        contr.view.frame=[UIScreen mainScreen].bounds;
+        UIWebView *webView=[[UIWebView alloc] initWithFrame:contr.view.frame];
         [contr.view addSubview:webView];
+        webView.delegate=self;
+        webView.scrollView.directionalLockEnabled=YES;
         [_viewControllerArray replaceObjectAtIndex:index withObject:contr];
-        webView.rac_delegate=self;
-        [webView.rac_isLoadingSignal subscribeNext:^(id x) {
-            [UIApplication sharedApplication].networkActivityIndicatorVisible=[x boolValue];
-//            [ToastHelper sharedToastHelper].simleProgressVisiable=[x boolValue];
-        }];
         return contr;
     }
     return res;
@@ -134,8 +145,11 @@
 }
 
 -(void)lazyScrollViewDidEndDecelerating:(DMLazyScrollView *)pagingView atPageIndex:(NSInteger)pageIndex{
-    self.index=pageIndex;
+    if (_index!=pageIndex) {
+         self.index=pageIndex;
+    }
 }
+
 
 -(void)didReceiveMemoryWarning{
     [super didReceiveMemoryWarning];

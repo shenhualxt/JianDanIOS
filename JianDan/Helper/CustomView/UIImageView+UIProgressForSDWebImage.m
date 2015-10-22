@@ -31,7 +31,7 @@ static char TAG_PROGRESSVIEW;
 
 - (void)addProgressWithStyle:(UIProgressViewStyle)progressViewStyle {
     if (!self.progressView) {
-        self.progressView = [[UIProgressView alloc] initWithProgressViewStyle:UIProgressViewStyleDefault];
+        self.progressView = [[UIProgressView alloc] initWithProgressViewStyle:progressViewStyle];
         self.progressView.frame = CGRectMake(0, 0, self.frame.size.width, 2);
         
         dispatch_async(dispatch_get_main_queue(), ^(void) {
@@ -87,6 +87,12 @@ static char TAG_PROGRESSVIEW;
     [self setImageWithURL:url placeholderImage:placeholder options:options progress:nil completed:completedBlock usingProgressViewStyle:progressViewStyle];
 }
 
+- (void)setGIFImageWithURL:(NSURL *)url placeholderImage:(UIImage *)placeholder options:(SDWebImageDownloaderOptions)options completed:(SDWebImageDownloaderCompletedBlock)completedBlock usingProgressViewStyle:(UIProgressViewStyle)progressViewStyle{
+    [self setGIFImageWithURL:url placeholderImage:placeholder options:options progress:^(NSInteger receivedSize, NSInteger expectedSize) {
+        
+    } completed:completedBlock usingProgressViewStyle:progressViewStyle];
+}
+
 - (void)setGIFImageWithURL:(NSURL *)url placeholderImage:(UIImage *)placeholder options:(SDWebImageDownloaderOptions)options progress:(SDWebImageDownloaderProgressBlock)progressBlock completed:(SDWebImageDownloaderCompletedBlock)completedBlock usingProgressViewStyle:(UIProgressViewStyle)progressViewStyle{
     
     __weak typeof(self) weakSelf = self;
@@ -94,16 +100,15 @@ static char TAG_PROGRESSVIEW;
         if (progressBlock) {
             progressBlock(receivedSize,expectedSize);
         }
-        if (expectedSize<0) return ;
-        [self addProgressWithStyle:progressViewStyle];
-        float pvalue=MAX(0,MIN(1,(float)receivedSize/(float)expectedSize));
-        [weakSelf updateProgressView:pvalue];
-        if (pvalue>=1) {
-            [weakSelf removeProgressView];
-        }
+        [weakSelf addProgressViewWithReceivedSize:receivedSize expectedSize:expectedSize];
     } completed:^(UIImage *image, NSData *data, NSError *error, BOOL finished) {
         [weakSelf removeProgressView];
-        weakSelf.image=image;
+        if (image&&finished) {
+            dispatch_async(dispatch_get_main_queue(), ^(void) {
+                weakSelf.image=image;
+            });
+
+        }
         if (completedBlock) {
             completedBlock(image,data,error,finished);
         }
@@ -118,20 +123,23 @@ static char TAG_PROGRESSVIEW;
         if (progressBlock) {
             progressBlock(receivedSize,expectedSize);
         }
-        if (expectedSize<0) return ;
-        [self addProgressWithStyle:progressViewStyle];
-        float pvalue=MAX(0,MIN(1,(float)receivedSize/(float)expectedSize));
-        [weakSelf updateProgressView:pvalue];
-        if (pvalue>=1) {
-            [weakSelf removeProgressView];
-        }
+        [weakSelf addProgressViewWithReceivedSize:receivedSize expectedSize:expectedSize];
     } completed:^(UIImage *image, NSError *error, SDImageCacheType cacheType, NSURL *imageURL) {
          [weakSelf removeProgressView];
         if (completedBlock) {
             completedBlock(image, error, cacheType, imageURL);
         }
-       
     }];
+}
+
+-(void)addProgressViewWithReceivedSize:(NSInteger)receivedSize expectedSize:(NSInteger)expectedSize{
+    if (expectedSize<0) return ;
+    [self addProgressWithStyle:UIProgressViewStyleDefault];
+    float pvalue=MAX(0,MIN(1,(float)receivedSize/(float)expectedSize));
+    [self updateProgressView:pvalue];
+    if (pvalue>=1) {
+        [self removeProgressView];
+    }
 }
 
 @end

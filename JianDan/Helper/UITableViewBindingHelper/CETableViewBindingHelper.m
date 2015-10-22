@@ -190,7 +190,7 @@ heightForRowAtIndexPath:(NSIndexPath *)indexPath {
 
 - (void)scrollViewWillBeginDragging:(UIScrollView *)scrollView{
     [needLoadArr removeAllObjects];
-    [[SDWebImageDownloader sharedDownloader] setMaxConcurrentDownloads:1];
+    [[SDWebImageDownloader sharedDownloader] setMaxConcurrentDownloads:3];
 }
 
 
@@ -198,13 +198,13 @@ heightForRowAtIndexPath:(NSIndexPath *)indexPath {
 {
     if (!decelerate)
     {
-        [[SDWebImageDownloader sharedDownloader] setMaxConcurrentDownloads:3];
+        [[SDWebImageDownloader sharedDownloader] setMaxConcurrentDownloads:6];
     }
 }
 
 - (void)scrollViewDidEndDecelerating:(UIScrollView *)scrollView
 {
-    [[SDWebImageDownloader sharedDownloader] setMaxConcurrentDownloads:3];
+    [[SDWebImageDownloader sharedDownloader] setMaxConcurrentDownloads:6];
 }
 
 #pragma mark-开速滑动优化

@@ -12,14 +12,14 @@
 #import "NJKWebViewProgress.h"
 #import "NJKWebViewProgressView.h"
 #import "UIWebView+RAC.h"
+#import "LTProgressWebView.h"
 
 @interface LittleMovieDetailController ()<UIWebViewDelegate>
 
-@property (weak, nonatomic) IBOutlet UIWebView *webView;
+@property (weak, nonatomic) IBOutlet LTProgressWebView *webView;
 @property (weak, nonatomic) IBOutlet UIButton *buttonPrevious;
 @property (weak, nonatomic) IBOutlet UIButton *buttonNext;
 @property (weak, nonatomic) IBOutlet UIButton *buttonRefreshOrCancel;
-@property (weak, nonatomic) IBOutlet NJKWebViewProgressView *progressView;
 
 @property(strong,nonatomic) NJKWebViewProgress *progressProxy;
 
@@ -38,19 +38,12 @@
 -(void)initView{
     //加载网页 self.sendObject:urlString
     [self.webView loadRequest:[NSURLRequest requestWithURL:[NSURL URLWithString:self.sendObject]]];
-    self.progressProxy=[[NJKWebViewProgress alloc] init];//设置进度条
-    self.webView.delegate=self.progressProxy;
-    self.progressProxy.webViewProxyDelegate=self;
-    
-    WS(ws)
-    self.progressProxy.progressBlock=^(float progress){
-        [ws.progressView setProgress:progress];
-    };
     
     //添加右菜单
     UIBarButtonItem *item=[self createButtonItem:@"abc_ic_menu_moreoverflow_mtrl_alpha"];
     self.navigationItem.rightBarButtonItem=item;
     
+    WS(ws)
     [[(UIButton *)item.customView rac_signalForControlEvents:UIControlEventTouchUpInside] subscribeNext:^(id x) {
         NSArray *titles=@[@"分享",@"复制链接",@"浏览器打开"];
         [ws initPopView:titles];

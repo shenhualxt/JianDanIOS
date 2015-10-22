@@ -19,6 +19,7 @@
 #import "UIImageView+UIProgressForSDWebImage.h"
 #import "UIImage+GIF.h"
 #import "PictureFrame.h"
+#import "UIColor+Additions.h"
 
 @interface BoredPicturesDetailController ()<UIScrollViewDelegate>
 @property (weak, nonatomic) IBOutlet UIScrollView *scrollView;
@@ -29,13 +30,12 @@
 @property (weak, nonatomic) IBOutlet UIButton *buttonDownload;
 @property (weak, nonatomic) IBOutlet WidthFixImageView *imageViewDetail;
 @property (weak, nonatomic) IBOutlet UIButton *buttonChat;
-@property (weak, nonatomic) IBOutlet UIProgressView *progressView;
+
 @property (weak, nonatomic) IBOutlet UIView *topView;
 @property (weak, nonatomic) IBOutlet UIView *bottomView;
 @property (weak, nonatomic) IBOutlet NSLayoutConstraint *constraintTop;
-@property (weak, nonatomic) IBOutlet NSLayoutConstraint *constraintLeft;
-@property (weak, nonatomic) IBOutlet NSLayoutConstraint *constraintRight;
 @property (weak, nonatomic) IBOutlet NSLayoutConstraint *constraintBottom;
+@property (weak, nonatomic) IBOutlet NSLayoutConstraint *constraintImageHeight;
 @property (nonatomic) CGFloat lastZoomScale;
 @end
 
@@ -47,8 +47,13 @@
     self.statusBarStyle=UIStatusBarStyleLightContent;
     [self initClick];
     BoredPictures *boredPictures=(BoredPictures *)self.sendObject;
-    if (!boredPictures.picUrl)return;
-    NSString *imageURL=boredPictures.picUrl;
+     NSString *imageURL=boredPictures.picUrl;
+    if (!imageURL)return;
+    
+    UIImage *placeHoler=[UIColorFromRGB(0xDDDDDD) createImage];
+    self.imageViewDetail.image=placeHoler;
+    self.imageViewDetail.frame=boredPictures.picFrame.pictureFrame;
+    [self adjustLocation:YES];
     
     //gif
     if ([imageURL hasSuffix:@".gif"]) {
@@ -56,38 +61,26 @@
             if (object) {
                 UIImage *image=[UIImage sd_animatedGIFWithData:object];
                 self.imageViewDetail.image=image;
+                 [self adjustLocation:NO];
             }else{
-                [self.imageViewDetail setGIFImageWithURL:[NSURL URLWithString:imageURL] placeholderImage:[UIImage imageNamed:@"ic_loading_large"] options:SDWebImageDownloaderLowPriority progress:^(NSInteger receivedSize, NSInteger expectedSize) {
-                    
-                } completed:^(UIImage *image, NSData *data, NSError *error, BOOL finished) {
-                    if ([imageURL hasSuffix:@".gif" ]) {
-                        [[TMCache sharedCache] setObject:data forKey:imageURL];
+                [self.imageViewDetail setGIFImageWithURL:[NSURL URLWithString:imageURL] placeholderImage:placeHoler options:SDWebImageDownloaderLowPriority completed:^(UIImage *image, NSData *data, NSError *error, BOOL finished) {
+                    if (image&&finished) {
+                        if ([imageURL hasSuffix:@".gif" ]) {
+                            [[TMCache sharedCache] setObject:data forKey:imageURL];
+                            [self adjustLocation:NO];
+                        }
                     }
-                    dispatch_main_async_safe(^{
-                         [self adjustLocation];
-                    });
-                  
                 } usingProgressViewStyle:UIProgressViewStyleDefault];
             }
         }];
-        
         return;
     }
     
-    //长图
-    if(boredPictures.picFrame.pictureSize.height==SCREEN_HEIGHT){
-        UIImage *image=[[TMCache sharedCache] objectForKey:imageURL];
-        if (image) {
-            self.imageViewDetail.image=image;
-            return;
-        }
-    }
-    
     //普通图片
-    [self.imageViewDetail setImageWithURL:[NSURL URLWithString:imageURL] placeholderImage:[UIImage imageNamed:@"ic_loading_large"] completed:^(UIImage *image, NSError *error, SDImageCacheType cacheType, NSURL *imageURL) {
-        dispatch_main_async_safe(^{
-            [self adjustLocation];
-        });
+    [self.imageViewDetail setImageWithURL:[NSURL URLWithString:imageURL] placeholderImage:placeHoler completed:^(UIImage *image, NSError *error, SDImageCacheType cacheType, NSURL *imageURL) {
+        if (image) {
+            [self adjustLocation:NO];
+        }
     }  usingProgressViewStyle:UIProgressViewStyleDefault];
 }
 
@@ -140,14 +133,13 @@
 - (void)imageSavedToPhotosAlbum:(UIImage *)image didFinishSavingWithError:(NSError *)error contextInfo:(void *)contextInfo
 {
     NSString *message = @"成功保存到相册";
-    if (error)
-        message = [error description];
+    if (error.code==-3310){
+        message = @"设置-隐私-照片 中打开应用程序访问权限";
+    }else if(error){
+        message= error.userInfo[NSLocalizedDescriptionKey];
+    }
+    
     [[ToastHelper sharedToastHelper] toast:message];
-}
-
--(void)viewWillAppear:(BOOL)animated{
-    [super viewWillAppear:animated];
-    [self adjustLocation];
 }
 
 -(void)viewDidAppear:(BOOL)animated{
@@ -157,27 +149,33 @@
 }
 
 -(void)scrollViewDidZoom:(UIScrollView *)scrollView{
-    [self updateViewConstraints];
+    [self updateConstraints];
 }
 
--(void)adjustLocation{
-    self.imageViewDetail.contentScaleFactor=[UIScreen mainScreen].scale;
-    float imageHeight = self.imageViewDetail.image.size.height;
-    float imageWidth = self.imageViewDetail.image.size.width;
-    
-    CGFloat ratio = SCREEN_WIDTH/imageWidth;
-    CGFloat mHeight =imageHeight*ratio;
-    float topPadding = (SCREEN_HEIGHT - mHeight) / 2;
-     if (topPadding < 0) topPadding = 0;
-    self.constraintTop.constant=topPadding;
-//    self.constraintBottom.constant=topPadding;
-    
-    [self.view layoutIfNeeded];
+-(void)adjustLocation:(BOOL)isPlaceHolder{
+    dispatch_main_async_safe(^{
+        BoredPictures *boredPictures=(BoredPictures *)self.sendObject;
+        CGSize oldSize=boredPictures.picSize;
+        CGFloat ratio = (SCREEN_WIDTH)/oldSize.width;
+        NSInteger mHeight = oldSize.height * ratio;
+        
+        if (!isPlaceHolder) {
+            ratio=(SCREEN_WIDTH)/self.imageViewDetail.image.size.width;
+            mHeight=self.imageViewDetail.image.size.height*ratio;
+        }
+        
+        float topPadding = (SCREEN_HEIGHT - mHeight) / 2;
+        if (topPadding < 0) topPadding = 0;
+        self.constraintTop.constant=topPadding;
+        self.constraintImageHeight.constant=mHeight;
+        
+        [self.view layoutIfNeeded];
+    });
 }
 
 -(void)updateConstraints{
-    float imageHeight = self.imageViewDetail.image.size.height;
-    float vPadding = (SCREEN_HEIGHT - self.scrollView.zoomScale * imageHeight) / 2;
+   BoredPictures *boredPictures=(BoredPictures *)self.sendObject;
+    float vPadding = (SCREEN_HEIGHT - self.scrollView.zoomScale * boredPictures.picFrame.pictureSize.height) / 2;
     if (vPadding < 0) vPadding = 0;
     self.constraintTop.constant = vPadding;
     [self.view layoutIfNeeded];

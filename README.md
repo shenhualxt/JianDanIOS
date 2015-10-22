@@ -23,7 +23,7 @@
 + UIWebView的处理，引用CSS,添加进度条,车赢项目中设计JS交互；
 + 友盟分享，键盘处理，字数统计，复制粘贴；
 + 自定义控件，支持AutoLayoutt和代码两种方式创建；
-+ quartz 2d，优化UITableViewCell层级（有11个变为3个子View）；
++ quartz 2d，优化UITableViewCell层级（子View有11个变为3个）；
 + UITableView的优化（图片，cell，滑动等方面）；
 + 图片处理方面：切割，等比例缩放，GIF缓存，手势放大，下载，FastImageCache；
 + 数据处理：分页加载，缓存（sqlite3，支持分页,线程安全）；

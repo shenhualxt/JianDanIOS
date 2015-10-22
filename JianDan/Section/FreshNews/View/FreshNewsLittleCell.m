@@ -28,9 +28,6 @@
     [[SDImageCache sharedImageCache] queryDiskCacheForKey:key done:^(UIImage *image, SDImageCacheType cacheType) {
         self.imagePicture.image=image?:[UIImage imageNamed:@"ic_loading_small"];
     }];
-}
-
--(void)loadImage:(FreshNews *)viewModel forIndexPath:(NSIndexPath *)indexPath helper:(CETableViewBindingHelper *)helper{
     [self.imagePicture sd_setImageWithURL:[NSURL URLWithString:viewModel.thumb_c] placeholderImage:[UIImage imageNamed:@"ic_loading_small"]];
 }
 

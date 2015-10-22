@@ -28,8 +28,6 @@
 @property (weak, nonatomic) id<UIScrollViewDelegate> scrollViewDelegate;
 
 
-- (void)hitTest;
-
 + (instancetype)bindingHelperForTableView:(UITableView *)tableView
                              sourceSignal:(RACSignal *)source
                          selectionCommand:(RACCommand *)selection

@@ -124,13 +124,6 @@ heightForRowAtIndexPath:(NSIndexPath *)indexPath {
 
     id model=_data[indexPath.row];
     [cell bindViewModel:model forIndexPath:indexPath];
-    
-    if (_tableView.dragging == NO && _tableView.decelerating == NO)
-    {
-        if ([cell respondsToSelector:@selector(loadImage:forIndexPath:helper:)]) {
-            [cell loadImage:_data[indexPath.row] forIndexPath:indexPath helper:self];
-        }
-    }
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {

@@ -44,8 +44,13 @@
 }
 
 - (void)addSettingButton {
-    UIButton *settingButton = [[UIButton alloc] initWithFrame:CGRectMake(0, self.tableView.frame.size.height - 64, 240, 40)];
+    CGFloat height=60;  CGFloat width=240;
+    CGFloat y=SCREEN_HEIGHT-height-64;
+    UIButton *settingButton = [[UIButton alloc] initWithFrame:CGRectMake(0, y, width,height)];
     [self.tableView addSubview:settingButton];
+    UIView *line=[[UIView alloc] initWithFrame:CGRectMake(0, y, width, 1)];
+    line.backgroundColor=RGBA(0, 0, 0, 0.3);
+    [self.tableView addSubview:line];
     settingButton.contentHorizontalAlignment = UIControlContentHorizontalAlignmentLeft;
     UIEdgeInsets contentEdgeInsets = settingButton.contentEdgeInsets;
     contentEdgeInsets.left = 30;

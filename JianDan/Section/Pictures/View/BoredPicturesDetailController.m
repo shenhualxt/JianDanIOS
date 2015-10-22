@@ -50,7 +50,7 @@
     NSString * imageURL = boredPictures.picUrl;
     if (!imageURL)return;
 
-    UIImage * placeHoler = [UIColorFromRGB(0xDDDDDD) createImage];
+     UIImage *placeHoler=[UIColorFromRGB(0xDDDDDD) createImageWithText:@"煎蛋" size:boredPictures.picFrame.pictureFrame.size textColor:[UIColor grayColor]];
     self.imageViewDetail.image = placeHoler;
     self.imageViewDetail.frame = boredPictures.picFrame.pictureFrame;
     [self adjustLocation:YES];

@@ -24,17 +24,9 @@
 
 @property(strong, nonatomic) CETableViewBindingHelper *helper;
 
-@property(strong, nonatomic) NSString *tableName;
-
 @property(strong, nonatomic) NSString *currentTitle;
 
-@property(strong, nonatomic) NSString *url;
-
-@property(strong, nonatomic) RACCommand *selectCommand;
-
-@property(assign, nonatomic) Class cellClass;
-
-@property(assign, nonatomic) NSInteger estimatedRowHeight;
+@property(strong, nonatomic) RACTuple *turple;
 
 @end
 
@@ -44,40 +36,47 @@
     self = [super init];
     if (self) {
         self.currentTitle = @"无聊图";
-        self.tableName = @"BoredPicture";
-        self.url = BoredPicturesUrl;
-        self.estimatedRowHeight = 350;
+         NSString *tableName = @"BoredPicture";
+         NSString *url = BoredPicturesUrl;
         if (controllerType == controllerTypeSisterPictures) {
             self.currentTitle = @"妹子图";
-            self.tableName = @"SisterPicture";
-            self.url = SisterPicturesUrl;
-            self.estimatedRowHeight = 500;
+            tableName = @"SisterPicture";
+            url = SisterPicturesUrl;
         } else if (controllerType == controllerTypeJoke) {
             self.currentTitle = @"段子";
-            self.tableName = @"Joke";
-            self.url = JokeUrl;
-            self.estimatedRowHeight = 150;
+            tableName = @"Joke";
+            url = JokeUrl;
         }
+        _turple = [RACTuple tupleWithObjects:@(NO), @"comments", [BoredPictures class], url, tableName, nil];
     }
     return self;
 }
 
-- (void)viewDidLoad {
-    [super viewDidLoad];
-
+#pragma mark 父类调用
+- (void)bindingViewModel{
+   
+    
     self.viewModel = [MainViewModel new];
-
+    
     RACSignal *sourceSignal = [[self.viewModel.sourceCommand executionSignals] switchToLatest];
+    
+    RACCommand *selectCommand=nil;
+    if (![self.turple.fourth isEqualToString:JokeUrl]) {
+        selectCommand = [[RACCommand alloc] initWithSignalBlock:^RACSignal *(RACTuple *turple) {
+            BoredPicturesDetailController *vc = [BoredPicturesDetailController controllerWithSendObject:(BoredPictures *) turple.first];
+            [self.mm_drawerController.navigationController pushViewController:vc animated:YES];
+            return [RACSignal empty];
+        }];
+    }
 
-    self.helper = [CETableViewBindingHelper bindingHelperForTableView:self.tableView sourceSignal:sourceSignal selectionCommand:self.selectCommand templateCellClass:[PictureCell class]];
+    self.helper = [CETableViewBindingHelper bindingHelperForTableView:self.tableView sourceSignal:sourceSignal selectionCommand:selectCommand templateCellClass:[PictureCell class]];
     self.helper.delegate = self;
     self.tableView.backgroundColor = [UIColor lightGrayColor];
-
-    RACTuple *turple = [RACTuple tupleWithObjects:@(NO), @"comments", [BoredPictures class], self.url, self.tableName, nil];
+    
 
     //滑动到底部时，自动加载新的数据
     self.helper.scrollViewDelegate = self.viewModel;
-
+    
     //执行完关闭下拉刷新
     @weakify(self)
     [self.viewModel.sourceCommand.executing subscribeNext:^(id isExcuting) {
@@ -94,22 +93,21 @@
     //设置下拉刷新
     self.tableView.header = [MJRefreshNormalHeader headerWithRefreshingBlock:^{
         @strongify(self)
-        [self.viewModel.sourceCommand execute:turple];
+        [self.viewModel.sourceCommand execute:self.turple];
     }];
-
+    
     //设置上拉加载更多
     self.tableView.footer = [MJRefreshAutoNormalFooter footerWithRefreshingBlock:^{
         @strongify(self)
         [self.viewModel loadNextPageData];
     }];
-
+    
     //开始获取数据
     [self.tableView.header beginRefreshing];
 }
 
-
+#pragma mark UITableView dataSource
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
-
     return [[self.helper.data[indexPath.row] picFrame] cellHeight];
 }
 
@@ -119,19 +117,6 @@
     [SDWebImageManager sharedManager].delegate = self;
 }
 
-
-- (RACCommand *)selectCommand {
-    if (!_selectCommand) {
-        if (![self.url isEqualToString:JokeUrl]) {
-            _selectCommand = [[RACCommand alloc] initWithSignalBlock:^RACSignal *(RACTuple *turple) {
-                BoredPicturesDetailController *vc = [BoredPicturesDetailController controllerWithSendObject:(BoredPictures *) turple.first];
-                [self.mm_drawerController.navigationController pushViewController:vc animated:YES];
-                return [RACSignal empty];
-            }];
-        }
-    }
-    return _selectCommand;
-}
 
 - (void)viewWillDisappear:(BOOL)animated {
     [super viewWillDisappear:animated];

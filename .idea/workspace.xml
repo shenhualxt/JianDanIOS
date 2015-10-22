@@ -2,271 +2,98 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="6450072b-e65c-48d5-a992-224fe3e6d909" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/JianDan/Helper/LittleTools/BLImageSize.h" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/JianDan/Helper/LittleTools/BLImageSize.m" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/JianDan/Section/FreshNews/ViewModel/BoredPicturesCommensViewModel.h" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/JianDan/Section/FreshNews/ViewModel/BoredPicturesCommensViewModel.m" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/JianDan/Section/FreshNews/View/BoredPicturesDetailViewModel.h" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/JianDan/Section/FreshNews/View/BoredPicturesDetailViewModel.m" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/JianDan/Helper/CustomView/CardView.h" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/JianDan/Helper/CustomView/CardView.m" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/JianDan/Section/FreshNews/ViewModel/Comments.h" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/JianDan/Section/FreshNews/ViewModel/Comments.m" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/JianDan/Helper/FastImageCacheHelper/FastImage.h" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/JianDan/Helper/FastImageCacheHelper/FastImage.m" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/JianDan/Section/LittleMovie/View/LittleMovieCollectionCell.h" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/JianDan/Section/LittleMovie/View/LittleMovieCollectionCell.m" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/JianDan/Section/LittleMovie/View/LittleMovieCollectionCell.xib" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/JianDan/Section/LittleMovie/View/LittleMovieDetailController.h" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/JianDan/Section/LittleMovie/View/LittleMovieDetailController.m" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/JianDan/Section/LittleMovie/View/LittleMovieDetailController.xib" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/JianDan/Helper/Category/NSString+Date.h" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/JianDan/Helper/Category/NSString+Date.m" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/JianDan/Section/FreshNews/ViewModel/PushCommentViewModel.h" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/JianDan/Section/FreshNews/ViewModel/PushCommentViewModel.m" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/JianDan/Section/LeftMenu/SettingController.h" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/JianDan/Section/LeftMenu/SettingController.m" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/JianDan/Section/LeftMenu/SettingController.xib" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/JianDan/Section/FreshNews/View/ShareOptionAlertView.xib" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/JianDan/Section/FreshNews/ViewModel/VoteViewModel.h" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/JianDan/Section/FreshNews/ViewModel/VoteViewModel.m" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/JianDan/Helper/CustomView/WidthFixImageView.h" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/JianDan/Helper/CustomView/WidthFixImageView.m" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/JianDan/Assets.xcassets/comment_item_card_background.9.imageset/Contents.json" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/JianDan/Assets.xcassets/comment_item_card_background.9.imageset/comment_item_card_background.9@2x.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/JianDan/Assets.xcassets/ic_drawer.imageset/ic_drawer@3x.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/JianDan/Assets.xcassets/progress_bg_holo_dark.9.imageset/Contents.json" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/JianDan/Assets.xcassets/progress_bg_holo_dark.9.imageset/progress_bg_holo_dark.9.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/JianDan/Assets.xcassets/progress_bg_holo_dark.9.imageset/progress_bg_holo_dark.9@2x.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/JianDan/Assets.xcassets/progress_bg_holo_dark.9.imageset/progress_bg_holo_dark.9@3x.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/JianDan/Assets.xcassets/progress_primary_holo_dark.9.imageset/Contents.json" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/JianDan/Assets.xcassets/progress_primary_holo_dark.9.imageset/progress_primary_holo_dark.9.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/JianDan/Assets.xcassets/progress_primary_holo_dark.9.imageset/progress_primary_holo_dark.9@2x.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/JianDan/Assets.xcassets/progress_primary_holo_dark.9.imageset/progress_primary_holo_dark.9@3x.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/JianDan/Assets.xcassets/progress_secondary_holo_dark.9.imageset/Contents.json" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/JianDan/Assets.xcassets/progress_secondary_holo_dark.9.imageset/progress_secondary_holo_dark.9.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/JianDan/Assets.xcassets/progress_secondary_holo_dark.9.imageset/progress_secondary_holo_dark.9@2x.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/JianDan/Assets.xcassets/progress_secondary_holo_dark.9.imageset/progress_secondary_holo_dark.9@3x.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/JianDan/Assets.xcassets/progressbar_indeterminate_holo1.imageset/Contents.json" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/JianDan/Assets.xcassets/progressbar_indeterminate_holo1.imageset/progressbar_indeterminate_holo1.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/JianDan/Assets.xcassets/progressbar_indeterminate_holo1.imageset/progressbar_indeterminate_holo1@2x.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/JianDan/Assets.xcassets/progressbar_indeterminate_holo1.imageset/progressbar_indeterminate_holo1@3x.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/JianDan/Assets.xcassets/progressbar_indeterminate_holo2.imageset/Contents.json" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/JianDan/Assets.xcassets/progressbar_indeterminate_holo2.imageset/progressbar_indeterminate_holo2.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/JianDan/Assets.xcassets/progressbar_indeterminate_holo2.imageset/progressbar_indeterminate_holo2@2x.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/JianDan/Assets.xcassets/progressbar_indeterminate_holo2.imageset/progressbar_indeterminate_holo2@3x.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/JianDan/Assets.xcassets/progressbar_indeterminate_holo3.imageset/Contents.json" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/JianDan/Assets.xcassets/progressbar_indeterminate_holo3.imageset/progressbar_indeterminate_holo3.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/JianDan/Assets.xcassets/progressbar_indeterminate_holo3.imageset/progressbar_indeterminate_holo3@2x.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/JianDan/Assets.xcassets/progressbar_indeterminate_holo3.imageset/progressbar_indeterminate_holo3@3x.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/JianDan/Assets.xcassets/progressbar_indeterminate_holo4.imageset/Contents.json" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/JianDan/Assets.xcassets/progressbar_indeterminate_holo4.imageset/progressbar_indeterminate_holo4.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/JianDan/Assets.xcassets/progressbar_indeterminate_holo4.imageset/progressbar_indeterminate_holo4@2x.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/JianDan/Assets.xcassets/progressbar_indeterminate_holo4.imageset/progressbar_indeterminate_holo4@3x.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/JianDan/Assets.xcassets/progressbar_indeterminate_holo5.imageset/Contents.json" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/JianDan/Assets.xcassets/progressbar_indeterminate_holo5.imageset/progressbar_indeterminate_holo5.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/JianDan/Assets.xcassets/progressbar_indeterminate_holo5.imageset/progressbar_indeterminate_holo5@2x.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/JianDan/Assets.xcassets/progressbar_indeterminate_holo5.imageset/progressbar_indeterminate_holo5@3x.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/JianDan/Assets.xcassets/progressbar_indeterminate_holo6.imageset/Contents.json" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/JianDan/Assets.xcassets/progressbar_indeterminate_holo6.imageset/progressbar_indeterminate_holo6.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/JianDan/Assets.xcassets/progressbar_indeterminate_holo6.imageset/progressbar_indeterminate_holo6@2x.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/JianDan/Assets.xcassets/progressbar_indeterminate_holo6.imageset/progressbar_indeterminate_holo6@3x.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/JianDan/Assets.xcassets/progressbar_indeterminate_holo7.imageset/Contents.json" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/JianDan/Assets.xcassets/progressbar_indeterminate_holo7.imageset/progressbar_indeterminate_holo7.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/JianDan/Assets.xcassets/progressbar_indeterminate_holo7.imageset/progressbar_indeterminate_holo7@2x.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/JianDan/Assets.xcassets/progressbar_indeterminate_holo7.imageset/progressbar_indeterminate_holo7@3x.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/JianDan/Assets.xcassets/progressbar_indeterminate_holo8.imageset/Contents.json" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/JianDan/Assets.xcassets/progressbar_indeterminate_holo8.imageset/progressbar_indeterminate_holo8.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/JianDan/Assets.xcassets/progressbar_indeterminate_holo8.imageset/progressbar_indeterminate_holo8@2x.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/JianDan/Assets.xcassets/progressbar_indeterminate_holo8.imageset/progressbar_indeterminate_holo8@3x.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/JianDan/Assets.xcassets/vpi__tab_selected_focused_holo.9.imageset/Contents.json" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/JianDan/Assets.xcassets/vpi__tab_selected_focused_holo.9.imageset/vpi__tab_selected_focused_holo.9@2x.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/JianDan/Assets.xcassets/vpi__tab_selected_holo.9.imageset/Contents.json" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/JianDan/Assets.xcassets/vpi__tab_selected_holo.9.imageset/vpi__tab_selected_holo.9@2x.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/JianDan/Assets.xcassets/vpi__tab_selected_pressed_holo.9.imageset/Contents.json" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/JianDan/Assets.xcassets/vpi__tab_selected_pressed_holo.9.imageset/vpi__tab_selected_pressed_holo.9@2x.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/JianDan/Assets.xcassets/vpi__tab_unselected_focused_holo.9.imageset/Contents.json" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/JianDan/Assets.xcassets/vpi__tab_unselected_focused_holo.9.imageset/vpi__tab_unselected_focused_holo.9@2x.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/JianDan/Assets.xcassets/vpi__tab_unselected_holo.9.imageset/Contents.json" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/JianDan/Assets.xcassets/vpi__tab_unselected_holo.9.imageset/vpi__tab_unselected_holo.9@2x.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/JianDan/Assets.xcassets/vpi__tab_unselected_pressed_holo.9.imageset/Contents.json" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/JianDan/Assets.xcassets/vpi__tab_unselected_pressed_holo.9.imageset/vpi__tab_unselected_pressed_holo.9@2x.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/JianDan/Assets.xcassets/widget_bottom_shadow.9.imageset/Contents.json" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/JianDan/Assets.xcassets/widget_bottom_shadow.9.imageset/widget_bottom_shadow.9.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/JianDan/Assets.xcassets/widget_bottom_shadow.9.imageset/widget_bottom_shadow.9@2x.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/JianDan/Helper/LittleTools/PopoverView.h" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/JianDan/Helper/LittleTools/PopoverView.m" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/JianDan/Section/BoredPictures/Model/BoredPictures.h" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/JianDan/Section/BoredPictures/Model/BoredPictures.m" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/JianDan/Section/BoredPictures/View/BoredPicturesController.h" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/JianDan/Section/BoredPictures/View/BoredPicturesController.m" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/JianDan/Section/BoredPictures/View/BoredPicturesDetailController.h" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/JianDan/Section/BoredPictures/View/BoredPicturesDetailController.m" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/JianDan/Section/BoredPictures/View/BoredPicturesDetailController.xib" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/JianDan/Section/BoredPictures/View/BoredPictursCell.h" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/JianDan/Section/BoredPictures/View/BoredPictursCell.m" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/JianDan/Section/BoredPictures/View/BoredPictursCell.xib" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/JianDan/Section/FreshNews/Model/FreshNewsComment.h" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/JianDan/Section/FreshNews/Model/FreshNewsComment.m" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Pods/Target Support Files/AFNetworking/AFNetworking-Private.xcconfig" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Pods/Target Support Files/CocoaLumberjack/CocoaLumberjack-Private.xcconfig" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Pods/Target Support Files/FMDB/FMDB-Private.xcconfig" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Pods/Target Support Files/Kiwi/Kiwi-Private.xcconfig" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Pods/Target Support Files/MBProgressHUD/MBProgressHUD-Private.xcconfig" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Pods/Target Support Files/MJExtension/MJExtension-Private.xcconfig" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Pods/Target Support Files/MJRefresh/MJRefresh-Private.xcconfig" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Pods/Target Support Files/MMDrawerController/MMDrawerController-Private.xcconfig" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Pods/Target Support Files/PureLayout/PureLayout-Private.xcconfig" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Pods/Target Support Files/ReactiveCocoa/ReactiveCocoa-Private.xcconfig" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Pods/Target Support Files/SDWebImage/SDWebImage-Private.xcconfig" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Pods/Target Support Files/TPKeyboardAvoiding/TPKeyboardAvoiding-Private.xcconfig" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Pods/Target Support Files/UITableView+FDTemplateLayoutCell/UITableView+FDTemplateLayoutCell-Private.xcconfig" afterPath="" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/JianDan/Assets.xcassets/ic_action_share_moment.imageset/ic_action_share_moment@2x.png" afterPath="$PROJECT_DIR$/JianDan/Assets.xcassets/ic_action_share_moment.imageset/ic_action_share_moment@2x.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/JianDan/Assets.xcassets/ic_action_share_moment.imageset/ic_action_share_moment@3x.png" afterPath="$PROJECT_DIR$/JianDan/Assets.xcassets/ic_action_share_moment.imageset/ic_action_share_moment@3x.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/JianDan/Assets.xcassets/ic_action_share_other.imageset/ic_action_share_other@2x.png" afterPath="$PROJECT_DIR$/JianDan/Assets.xcassets/ic_action_share_other.imageset/ic_action_share_other@2x.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/JianDan/Assets.xcassets/ic_action_share_other.imageset/ic_action_share_other@3x.png" afterPath="$PROJECT_DIR$/JianDan/Assets.xcassets/ic_action_share_other.imageset/ic_action_share_other@3x.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/JianDan/Assets.xcassets/ic_action_share_wechat.imageset/ic_action_share_wechat@2x.png" afterPath="$PROJECT_DIR$/JianDan/Assets.xcassets/ic_action_share_wechat.imageset/ic_action_share_wechat@2x.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/JianDan/Assets.xcassets/ic_action_share_wechat.imageset/ic_action_share_wechat@3x.png" afterPath="$PROJECT_DIR$/JianDan/Assets.xcassets/ic_action_share_wechat.imageset/ic_action_share_wechat@3x.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/JianDan/Assets.xcassets/ic_action_share_weibo.imageset/ic_action_share_weibo@2x.png" afterPath="$PROJECT_DIR$/JianDan/Assets.xcassets/ic_action_share_weibo.imageset/ic_action_share_weibo@2x.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/JianDan/Assets.xcassets/ic_action_share_weibo.imageset/ic_action_share_weibo@3x.png" afterPath="$PROJECT_DIR$/JianDan/Assets.xcassets/ic_action_share_weibo.imageset/ic_action_share_weibo@3x.png" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/JianDan/Helper/BaseViewController/BaseTableViewCell.h" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/JianDan/Helper/BaseViewController/BaseTableViewCell.m" afterPath="" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/JianDan/Helper/LittleTools/AFNetWorkUtils.h" afterPath="$PROJECT_DIR$/JianDan/Helper/LittleTools/AFNetWorkUtils.h" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/JianDan/Helper/LittleTools/AFNetWorkUtils.m" afterPath="$PROJECT_DIR$/JianDan/Helper/LittleTools/AFNetWorkUtils.m" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Pods/Target Support Files/AFNetworking/AFNetworking.xcconfig" afterPath="$PROJECT_DIR$/Pods/Target Support Files/AFNetworking/AFNetworking.xcconfig" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/JianDan/Main/AppDelegate.h" afterPath="$PROJECT_DIR$/JianDan/Main/AppDelegate.h" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/JianDan/Main/AppDelegate.m" afterPath="$PROJECT_DIR$/JianDan/Main/AppDelegate.m" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/JianDan/Helper/LittleTools/BLImageSize.h" afterPath="$PROJECT_DIR$/JianDan/Helper/LittleTools/BLImageSize.h" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/JianDan/Helper/LittleTools/BLImageSize.m" afterPath="$PROJECT_DIR$/JianDan/Helper/LittleTools/BLImageSize.m" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/JianDan/Helper/BaseViewController/BaseNavigationController.m" afterPath="$PROJECT_DIR$/JianDan/Helper/BaseViewController/BaseNavigationController.m" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/JianDan/Helper/BaseViewController/BaseTableViewController.m" afterPath="$PROJECT_DIR$/JianDan/Helper/BaseViewController/BaseTableViewController.m" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/JianDan/Helper/BaseViewController/BaseViewController.h" afterPath="$PROJECT_DIR$/JianDan/Helper/BaseViewController/BaseViewController.h" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/JianDan/Helper/BaseViewController/BaseViewController.m" afterPath="$PROJECT_DIR$/JianDan/Helper/BaseViewController/BaseViewController.m" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/JianDan/Section/Pictures/View/BoredPicturesController.h" afterPath="$PROJECT_DIR$/JianDan/Section/Pictures/View/BoredPicturesController.h" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/JianDan/Section/Pictures/View/BoredPicturesController.m" afterPath="$PROJECT_DIR$/JianDan/Section/Pictures/View/BoredPicturesController.m" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/JianDan/Section/Pictures/View/BoredPicturesDetailController.m" afterPath="$PROJECT_DIR$/JianDan/Section/Pictures/View/BoredPicturesDetailController.m" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/JianDan/Section/Pictures/View/BoredPicturesDetailController.xib" afterPath="$PROJECT_DIR$/JianDan/Section/Pictures/View/BoredPicturesDetailController.xib" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/JianDan/Section/Pictures/View/BoredPictursCell.h" afterPath="$PROJECT_DIR$/JianDan/Section/Pictures/View/BoredPictursCell.h" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/JianDan/Section/Pictures/View/BoredPictursCell.m" afterPath="$PROJECT_DIR$/JianDan/Section/Pictures/View/BoredPictursCell.m" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/JianDan/Helper/UITableViewBindingHelper/CEObservableMutableArray.h" afterPath="$PROJECT_DIR$/JianDan/Helper/UITableViewBindingHelper/CEObservableMutableArray.h" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/JianDan/Helper/UITableViewBindingHelper/CEObservableMutableArray.m" afterPath="$PROJECT_DIR$/JianDan/Helper/UITableViewBindingHelper/CEObservableMutableArray.m" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/JianDan/Helper/UITableViewBindingHelper/CEReactiveView.h" afterPath="$PROJECT_DIR$/JianDan/Helper/UITableViewBindingHelper/CEReactiveView.h" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/JianDan/Helper/UITableViewBindingHelper/CETableViewBindingHelper.h" afterPath="$PROJECT_DIR$/JianDan/Helper/UITableViewBindingHelper/CETableViewBindingHelper.h" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/JianDan/Helper/UITableViewBindingHelper/CETableViewBindingHelper.m" afterPath="$PROJECT_DIR$/JianDan/Helper/UITableViewBindingHelper/CETableViewBindingHelper.m" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/JianDan/Helper/LittleTools/CacheTools.h" afterPath="$PROJECT_DIR$/JianDan/Helper/LittleTools/CacheTools.h" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/JianDan/Helper/LittleTools/CacheTools.m" afterPath="$PROJECT_DIR$/JianDan/Helper/LittleTools/CacheTools.m" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Pods/Target Support Files/CocoaLumberjack/CocoaLumberjack.xcconfig" afterPath="$PROJECT_DIR$/Pods/Target Support Files/CocoaLumberjack/CocoaLumberjack.xcconfig" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/JianDan/Section/FreshNews/View/CommentClickAlertView.xib" afterPath="$PROJECT_DIR$/JianDan/Section/FreshNews/View/CommentClickAlertView.xib" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/JianDan/Helper/CustomView/CardView.m" afterPath="$PROJECT_DIR$/JianDan/Helper/CustomView/CardView.m" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/JianDan/Section/FreshNews/View/CommentController.m" afterPath="$PROJECT_DIR$/JianDan/Section/FreshNews/View/CommentController.m" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/JianDan/Section/FreshNews/ViewModel/CommentViewModel.h" afterPath="$PROJECT_DIR$/JianDan/Section/FreshNews/ViewModel/CommentViewModel.h" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/JianDan/Section/FreshNews/ViewModel/CommentViewModel.m" afterPath="$PROJECT_DIR$/JianDan/Section/FreshNews/ViewModel/CommentViewModel.m" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/JianDan/Main/Model/Comments.h" afterPath="$PROJECT_DIR$/JianDan/Main/Model/Comments.h" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/JianDan/Main/Model/Comments.m" afterPath="$PROJECT_DIR$/JianDan/Main/Model/Comments.m" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/JianDan/Section/FreshNews/View/CommentsCell.h" afterPath="$PROJECT_DIR$/JianDan/Section/FreshNews/View/CommentsCell.h" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/JianDan/Section/FreshNews/View/CommentsCell.m" afterPath="$PROJECT_DIR$/JianDan/Section/FreshNews/View/CommentsCell.m" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/JianDan/Section/FreshNews/View/CommentsCell.xib" afterPath="$PROJECT_DIR$/JianDan/Section/FreshNews/View/CommentsCell.xib" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/JianDan/Main/Constant.h" afterPath="$PROJECT_DIR$/JianDan/Main/Constant.h" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/JianDan/Assets.xcassets/ic_action_share_moment.imageset/Contents.json" afterPath="$PROJECT_DIR$/JianDan/Assets.xcassets/ic_action_share_moment.imageset/Contents.json" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/JianDan/Assets.xcassets/ic_action_share_other.imageset/Contents.json" afterPath="$PROJECT_DIR$/JianDan/Assets.xcassets/ic_action_share_other.imageset/Contents.json" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/JianDan/Assets.xcassets/ic_action_share_wechat.imageset/Contents.json" afterPath="$PROJECT_DIR$/JianDan/Assets.xcassets/ic_action_share_wechat.imageset/Contents.json" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/JianDan/Assets.xcassets/ic_action_share_weibo.imageset/Contents.json" afterPath="$PROJECT_DIR$/JianDan/Assets.xcassets/ic_action_share_weibo.imageset/Contents.json" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/JianDan/Assets.xcassets/ic_drawer.imageset/Contents.json" afterPath="$PROJECT_DIR$/JianDan/Assets.xcassets/ic_drawer.imageset/Contents.json" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Pods/Target Support Files/FMDB/FMDB.xcconfig" afterPath="$PROJECT_DIR$/Pods/Target Support Files/FMDB/FMDB.xcconfig" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/JianDan/Section/FreshNews/View/FreshNewsCell.xib" afterPath="$PROJECT_DIR$/JianDan/Section/FreshNews/View/FreshNewsCell.xib" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/JianDan/Helper/LittleTools/CommonUtils.h" afterPath="$PROJECT_DIR$/JianDan/Helper/LittleTools/CommonUtils.h" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/JianDan/Helper/LittleTools/CommonUtils.m" afterPath="$PROJECT_DIR$/JianDan/Helper/LittleTools/CommonUtils.m" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/JianDan/Helper/FastImageCacheHelper/FastImage.h" afterPath="$PROJECT_DIR$/JianDan/Helper/FastImageCacheHelper/FastImage.h" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/JianDan/Helper/FastImageCacheHelper/FastImage.m" afterPath="$PROJECT_DIR$/JianDan/Helper/FastImageCacheHelper/FastImage.m" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/JianDan/Helper/FastImageCacheHelper/FastImageCacehHelper.h" afterPath="$PROJECT_DIR$/JianDan/Helper/FastImageCacheHelper/FastImageCacehHelper.h" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/JianDan/Helper/FastImageCacheHelper/FastImageCacehHelper.m" afterPath="$PROJECT_DIR$/JianDan/Helper/FastImageCacheHelper/FastImageCacehHelper.m" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/JianDan/Section/FreshNews/Model/FreshNews.h" afterPath="$PROJECT_DIR$/JianDan/Section/FreshNews/Model/FreshNews.h" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/JianDan/Section/FreshNews/Model/FreshNews.m" afterPath="$PROJECT_DIR$/JianDan/Section/FreshNews/Model/FreshNews.m" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/JianDan/Section/FreshNews/View/FreshNewsCell.h" afterPath="$PROJECT_DIR$/JianDan/Section/FreshNews/View/FreshNewsCell.h" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/JianDan/Section/FreshNews/View/FreshNewsCell.m" afterPath="$PROJECT_DIR$/JianDan/Section/FreshNews/View/FreshNewsCell.m" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/JianDan/Section/FreshNews/View/FreshNewsController.h" afterPath="$PROJECT_DIR$/JianDan/Section/FreshNews/View/FreshNewsController.h" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/JianDan/Section/FreshNews/View/FreshNewsController.m" afterPath="$PROJECT_DIR$/JianDan/Section/FreshNews/View/FreshNewsController.m" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/JianDan/Section/FreshNews/Model/FreshNewsDetail.h" afterPath="$PROJECT_DIR$/JianDan/Section/FreshNews/Model/FreshNewsDetail.h" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/JianDan/Section/FreshNews/Model/FreshNewsDetail.m" afterPath="$PROJECT_DIR$/JianDan/Section/FreshNews/Model/FreshNewsDetail.m" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/JianDan/Section/FreshNews/View/FreshNewsDetailController.h" afterPath="$PROJECT_DIR$/JianDan/Section/FreshNews/View/FreshNewsDetailController.h" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/JianDan/Section/FreshNews/View/FreshNewsDetailController.m" afterPath="$PROJECT_DIR$/JianDan/Section/FreshNews/View/FreshNewsDetailController.m" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/JianDan/Section/FreshNews/ViewModel/FreshNewsDetailViewModel.h" afterPath="$PROJECT_DIR$/JianDan/Section/FreshNews/ViewModel/FreshNewsDetailViewModel.h" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/JianDan/Info.plist" afterPath="$PROJECT_DIR$/JianDan/Info.plist" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/JianDan/Section/FreshNews/ViewModel/FreshNewsDetailViewModel.m" afterPath="$PROJECT_DIR$/JianDan/Section/FreshNews/ViewModel/FreshNewsDetailViewModel.m" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/JianDan/Section/FreshNews/View/FreshNewsLittleCell.m" afterPath="$PROJECT_DIR$/JianDan/Section/FreshNews/View/FreshNewsLittleCell.m" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/JianDan/Helper/UITableViewBindingHelper/HRCollectionViewBindingHelper.h" afterPath="$PROJECT_DIR$/JianDan/Helper/UITableViewBindingHelper/HRCollectionViewBindingHelper.h" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/JianDan/Helper/UITableViewBindingHelper/HRCollectionViewBindingHelper.m" afterPath="$PROJECT_DIR$/JianDan/Helper/UITableViewBindingHelper/HRCollectionViewBindingHelper.m" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/JianDanIOS.iml" afterPath="$PROJECT_DIR$/.idea/JianDanIOS.iml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/JianDan/JianDan_PrefixHeader.pch" afterPath="$PROJECT_DIR$/JianDan/JianDan_PrefixHeader.pch" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Pods/Target Support Files/Kiwi/Kiwi.xcconfig" afterPath="$PROJECT_DIR$/Pods/Target Support Files/Kiwi/Kiwi.xcconfig" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Pods/MJExtension/LICENSE" afterPath="$PROJECT_DIR$/Pods/MJExtension/LICENSE" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Pods/MJRefresh/LICENSE" afterPath="$PROJECT_DIR$/Pods/MJRefresh/LICENSE" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Pods/UITableView+FDTemplateLayoutCell/LICENSE" afterPath="$PROJECT_DIR$/Pods/UITableView+FDTemplateLayoutCell/LICENSE" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/JianDan/Helper/CustomView/DXAlertView/LTAlertView.h" afterPath="$PROJECT_DIR$/JianDan/Helper/CustomView/DXAlertView/LTAlertView.h" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/JianDan/Helper/CustomView/DXAlertView/LTAlertView.m" afterPath="$PROJECT_DIR$/JianDan/Helper/CustomView/DXAlertView/LTAlertView.m" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/JianDan/Helper/CustomView/FloorView/LTFloorView.h" afterPath="$PROJECT_DIR$/JianDan/Helper/CustomView/FloorView/LTFloorView.h" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/JianDan/Helper/CustomView/FloorView/LTFloorView.m" afterPath="$PROJECT_DIR$/JianDan/Helper/CustomView/FloorView/LTFloorView.m" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/JianDan/LaunchScreen.xib" afterPath="$PROJECT_DIR$/JianDan/LaunchScreen.xib" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/JianDan/Helper/CustomView/LTProgressWebView.h" afterPath="$PROJECT_DIR$/JianDan/Helper/CustomView/LTProgressWebView.h" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/JianDan/Helper/CustomView/LTProgressWebView.m" afterPath="$PROJECT_DIR$/JianDan/Helper/CustomView/LTProgressWebView.m" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/JianDan/Section/LeftMenu/LeftMenu.h" afterPath="$PROJECT_DIR$/JianDan/Section/LeftMenu/LeftMenu.h" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/JianDan/Section/LeftMenu/LeftMenu.m" afterPath="$PROJECT_DIR$/JianDan/Section/LeftMenu/LeftMenu.m" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/JianDan/Section/LeftMenu/LeftMenuCell.h" afterPath="$PROJECT_DIR$/JianDan/Section/LeftMenu/LeftMenuCell.h" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/JianDan/Section/LeftMenu/LeftMenuCell.m" afterPath="$PROJECT_DIR$/JianDan/Section/LeftMenu/LeftMenuCell.m" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/JianDan/Section/LeftMenu/LeftMenuController.m" afterPath="$PROJECT_DIR$/JianDan/Section/LeftMenu/LeftMenuController.m" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Pods/Target Support Files/MBProgressHUD/MBProgressHUD.xcconfig" afterPath="$PROJECT_DIR$/Pods/Target Support Files/MBProgressHUD/MBProgressHUD.xcconfig" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Pods/MJExtension/MJExtension/MJDictionaryCache.h" afterPath="$PROJECT_DIR$/Pods/MJExtension/MJExtension/MJDictionaryCache.h" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Pods/MJExtension/MJExtension/MJDictionaryCache.m" afterPath="$PROJECT_DIR$/Pods/MJExtension/MJExtension/MJDictionaryCache.m" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Pods/Target Support Files/MJExtension/MJExtension.xcconfig" afterPath="$PROJECT_DIR$/Pods/Target Support Files/MJExtension/MJExtension.xcconfig" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Pods/MJExtension/MJExtension/MJExtensionConst.h" afterPath="$PROJECT_DIR$/Pods/MJExtension/MJExtension/MJExtensionConst.h" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Pods/MJExtension/MJExtension/MJExtensionConst.m" afterPath="$PROJECT_DIR$/Pods/MJExtension/MJExtension/MJExtensionConst.m" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Pods/MJExtension/MJExtension/MJFoundation.h" afterPath="$PROJECT_DIR$/Pods/MJExtension/MJExtension/MJFoundation.h" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Pods/MJExtension/MJExtension/MJFoundation.m" afterPath="$PROJECT_DIR$/Pods/MJExtension/MJExtension/MJFoundation.m" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Pods/MJExtension/MJExtension/MJProperty.h" afterPath="$PROJECT_DIR$/Pods/MJExtension/MJExtension/MJProperty.h" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Pods/MJExtension/MJExtension/MJProperty.m" afterPath="$PROJECT_DIR$/Pods/MJExtension/MJExtension/MJProperty.m" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Pods/MJExtension/MJExtension/MJPropertyKey.h" afterPath="$PROJECT_DIR$/Pods/MJExtension/MJExtension/MJPropertyKey.h" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Pods/MJExtension/MJExtension/MJPropertyKey.m" afterPath="$PROJECT_DIR$/Pods/MJExtension/MJExtension/MJPropertyKey.m" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Pods/MJExtension/MJExtension/MJPropertyType.m" afterPath="$PROJECT_DIR$/Pods/MJExtension/MJExtension/MJPropertyType.m" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Pods/MJRefresh/MJRefresh/MJRefresh.h" afterPath="$PROJECT_DIR$/Pods/MJRefresh/MJRefresh/MJRefresh.h" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Pods/Target Support Files/MJRefresh/MJRefresh.xcconfig" afterPath="$PROJECT_DIR$/Pods/Target Support Files/MJRefresh/MJRefresh.xcconfig" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Pods/MJRefresh/MJRefresh/Base/MJRefreshAutoFooter.h" afterPath="$PROJECT_DIR$/Pods/MJRefresh/MJRefresh/Base/MJRefreshAutoFooter.h" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Pods/MJRefresh/MJRefresh/Base/MJRefreshAutoFooter.m" afterPath="$PROJECT_DIR$/Pods/MJRefresh/MJRefresh/Base/MJRefreshAutoFooter.m" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Pods/MJRefresh/MJRefresh/Custom/Footer/Auto/MJRefreshAutoGifFooter.h" afterPath="$PROJECT_DIR$/Pods/MJRefresh/MJRefresh/Custom/Footer/Auto/MJRefreshAutoGifFooter.h" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Pods/MJRefresh/MJRefresh/Custom/Footer/Auto/MJRefreshAutoGifFooter.m" afterPath="$PROJECT_DIR$/Pods/MJRefresh/MJRefresh/Custom/Footer/Auto/MJRefreshAutoGifFooter.m" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Pods/MJRefresh/MJRefresh/Custom/Footer/Auto/MJRefreshAutoNormalFooter.h" afterPath="$PROJECT_DIR$/Pods/MJRefresh/MJRefresh/Custom/Footer/Auto/MJRefreshAutoNormalFooter.h" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Pods/MJRefresh/MJRefresh/Custom/Footer/Auto/MJRefreshAutoNormalFooter.m" afterPath="$PROJECT_DIR$/Pods/MJRefresh/MJRefresh/Custom/Footer/Auto/MJRefreshAutoNormalFooter.m" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Pods/MJRefresh/MJRefresh/Custom/Footer/Auto/MJRefreshAutoStateFooter.h" afterPath="$PROJECT_DIR$/Pods/MJRefresh/MJRefresh/Custom/Footer/Auto/MJRefreshAutoStateFooter.h" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Pods/MJRefresh/MJRefresh/Custom/Footer/Auto/MJRefreshAutoStateFooter.m" afterPath="$PROJECT_DIR$/Pods/MJRefresh/MJRefresh/Custom/Footer/Auto/MJRefreshAutoStateFooter.m" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Pods/MJRefresh/MJRefresh/Base/MJRefreshBackFooter.h" afterPath="$PROJECT_DIR$/Pods/MJRefresh/MJRefresh/Base/MJRefreshBackFooter.h" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Pods/MJRefresh/MJRefresh/Base/MJRefreshBackFooter.m" afterPath="$PROJECT_DIR$/Pods/MJRefresh/MJRefresh/Base/MJRefreshBackFooter.m" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Pods/MJRefresh/MJRefresh/Custom/Footer/Back/MJRefreshBackGifFooter.h" afterPath="$PROJECT_DIR$/Pods/MJRefresh/MJRefresh/Custom/Footer/Back/MJRefreshBackGifFooter.h" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Pods/MJRefresh/MJRefresh/Custom/Footer/Back/MJRefreshBackGifFooter.m" afterPath="$PROJECT_DIR$/Pods/MJRefresh/MJRefresh/Custom/Footer/Back/MJRefreshBackGifFooter.m" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Pods/MJRefresh/MJRefresh/Custom/Footer/Back/MJRefreshBackNormalFooter.h" afterPath="$PROJECT_DIR$/Pods/MJRefresh/MJRefresh/Custom/Footer/Back/MJRefreshBackNormalFooter.h" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Pods/MJRefresh/MJRefresh/Custom/Footer/Back/MJRefreshBackNormalFooter.m" afterPath="$PROJECT_DIR$/Pods/MJRefresh/MJRefresh/Custom/Footer/Back/MJRefreshBackNormalFooter.m" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Pods/MJRefresh/MJRefresh/Custom/Footer/Back/MJRefreshBackStateFooter.h" afterPath="$PROJECT_DIR$/Pods/MJRefresh/MJRefresh/Custom/Footer/Back/MJRefreshBackStateFooter.h" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Pods/MJRefresh/MJRefresh/Custom/Footer/Back/MJRefreshBackStateFooter.m" afterPath="$PROJECT_DIR$/Pods/MJRefresh/MJRefresh/Custom/Footer/Back/MJRefreshBackStateFooter.m" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Pods/MJRefresh/MJRefresh/Base/MJRefreshComponent.h" afterPath="$PROJECT_DIR$/Pods/MJRefresh/MJRefresh/Base/MJRefreshComponent.h" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Pods/MJRefresh/MJRefresh/Base/MJRefreshComponent.m" afterPath="$PROJECT_DIR$/Pods/MJRefresh/MJRefresh/Base/MJRefreshComponent.m" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Pods/MJRefresh/MJRefresh/MJRefreshConst.h" afterPath="$PROJECT_DIR$/Pods/MJRefresh/MJRefresh/MJRefreshConst.h" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Pods/MJRefresh/MJRefresh/MJRefreshConst.m" afterPath="$PROJECT_DIR$/Pods/MJRefresh/MJRefresh/MJRefreshConst.m" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Pods/MJRefresh/MJRefresh/Base/MJRefreshFooter.h" afterPath="$PROJECT_DIR$/Pods/MJRefresh/MJRefresh/Base/MJRefreshFooter.h" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Pods/MJRefresh/MJRefresh/Base/MJRefreshFooter.m" afterPath="$PROJECT_DIR$/Pods/MJRefresh/MJRefresh/Base/MJRefreshFooter.m" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Pods/MJRefresh/MJRefresh/Custom/Header/MJRefreshGifHeader.h" afterPath="$PROJECT_DIR$/Pods/MJRefresh/MJRefresh/Custom/Header/MJRefreshGifHeader.h" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Pods/MJRefresh/MJRefresh/Custom/Header/MJRefreshGifHeader.m" afterPath="$PROJECT_DIR$/Pods/MJRefresh/MJRefresh/Custom/Header/MJRefreshGifHeader.m" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Pods/MJRefresh/MJRefresh/Base/MJRefreshHeader.h" afterPath="$PROJECT_DIR$/Pods/MJRefresh/MJRefresh/Base/MJRefreshHeader.h" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Pods/MJRefresh/MJRefresh/Base/MJRefreshHeader.m" afterPath="$PROJECT_DIR$/Pods/MJRefresh/MJRefresh/Base/MJRefreshHeader.m" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Pods/MJRefresh/MJRefresh/Custom/Header/MJRefreshNormalHeader.h" afterPath="$PROJECT_DIR$/Pods/MJRefresh/MJRefresh/Custom/Header/MJRefreshNormalHeader.h" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Pods/MJRefresh/MJRefresh/Custom/Header/MJRefreshNormalHeader.m" afterPath="$PROJECT_DIR$/Pods/MJRefresh/MJRefresh/Custom/Header/MJRefreshNormalHeader.m" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Pods/MJRefresh/MJRefresh/Custom/Header/MJRefreshStateHeader.h" afterPath="$PROJECT_DIR$/Pods/MJRefresh/MJRefresh/Custom/Header/MJRefreshStateHeader.h" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Pods/MJRefresh/MJRefresh/Custom/Header/MJRefreshStateHeader.m" afterPath="$PROJECT_DIR$/Pods/MJRefresh/MJRefresh/Custom/Header/MJRefreshStateHeader.m" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Pods/Target Support Files/MMDrawerController/MMDrawerController.xcconfig" afterPath="$PROJECT_DIR$/Pods/Target Support Files/MMDrawerController/MMDrawerController.xcconfig" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/JianDan/Section/LittleMovie/View/LittleMoveController.m" afterPath="$PROJECT_DIR$/JianDan/Section/LittleMovie/View/LittleMoveController.m" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/JianDan/Section/LittleMovie/View/LittleMovieCollectionCell.m" afterPath="$PROJECT_DIR$/JianDan/Section/LittleMovie/View/LittleMovieCollectionCell.m" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/JianDan/Section/LittleMovie/View/LittleMovieDetailController.m" afterPath="$PROJECT_DIR$/JianDan/Section/LittleMovie/View/LittleMovieDetailController.m" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/JianDan/Helper/LittleTools/MJExtensionConfig.m" afterPath="$PROJECT_DIR$/JianDan/Helper/LittleTools/MJExtensionConfig.m" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/JianDan/Main/ViewModel/MainViewModel.h" afterPath="$PROJECT_DIR$/JianDan/Main/ViewModel/MainViewModel.h" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/JianDan/Main/ViewModel/MainViewModel.m" afterPath="$PROJECT_DIR$/JianDan/Main/ViewModel/MainViewModel.m" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Pods/Manifest.lock" afterPath="$PROJECT_DIR$/Pods/Manifest.lock" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/JianDan/Helper/Category/NSDate+MJ.m" afterPath="$PROJECT_DIR$/JianDan/Helper/Category/NSDate+MJ.m" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Pods/MJExtension/MJExtension/NSObject+MJClass.h" afterPath="$PROJECT_DIR$/Pods/MJExtension/MJExtension/NSObject+MJClass.h" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Pods/MJExtension/MJExtension/NSObject+MJClass.m" afterPath="$PROJECT_DIR$/Pods/MJExtension/MJExtension/NSObject+MJClass.m" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Pods/MJExtension/MJExtension/NSObject+MJKeyValue.m" afterPath="$PROJECT_DIR$/Pods/MJExtension/MJExtension/NSObject+MJKeyValue.m" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Pods/MJExtension/MJExtension/NSObject+MJProperty.h" afterPath="$PROJECT_DIR$/Pods/MJExtension/MJExtension/NSObject+MJProperty.h" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Pods/MJExtension/MJExtension/NSObject+MJProperty.m" afterPath="$PROJECT_DIR$/Pods/MJExtension/MJExtension/NSObject+MJProperty.m" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Pods/MJExtension/MJExtension/NSString+MJExtension.h" afterPath="$PROJECT_DIR$/Pods/MJExtension/MJExtension/NSString+MJExtension.h" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Pods/MJExtension/MJExtension/NSString+MJExtension.m" afterPath="$PROJECT_DIR$/Pods/MJExtension/MJExtension/NSString+MJExtension.m" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/JianDan/Main/View/NetErrorView.xib" afterPath="$PROJECT_DIR$/JianDan/Main/View/NetErrorView.xib" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Podfile.lock" afterPath="$PROJECT_DIR$/Podfile.lock" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Podfile" afterPath="$PROJECT_DIR$/Podfile" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Pods/Target Support Files/Pods-JianDanTests/Pods-JianDanTests-resources.sh" afterPath="$PROJECT_DIR$/Pods/Target Support Files/Pods-JianDanTests/Pods-JianDanTests-resources.sh" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Pods/Target Support Files/Pods-JianDanTests/Pods-JianDanTests.debug.xcconfig" afterPath="$PROJECT_DIR$/Pods/Target Support Files/Pods-JianDanTests/Pods-JianDanTests.debug.xcconfig" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Pods/Target Support Files/Pods-JianDanTests/Pods-JianDanTests.release.xcconfig" afterPath="$PROJECT_DIR$/Pods/Target Support Files/Pods-JianDanTests/Pods-JianDanTests.release.xcconfig" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Pods/Target Support Files/Pods/Pods-acknowledgements.markdown" afterPath="$PROJECT_DIR$/Pods/Target Support Files/Pods/Pods-acknowledgements.markdown" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Pods/Target Support Files/Pods/Pods-acknowledgements.plist" afterPath="$PROJECT_DIR$/Pods/Target Support Files/Pods/Pods-acknowledgements.plist" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Pods/Target Support Files/Pods/Pods-resources.sh" afterPath="$PROJECT_DIR$/Pods/Target Support Files/Pods/Pods-resources.sh" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Pods/Target Support Files/Pods/Pods.debug.xcconfig" afterPath="$PROJECT_DIR$/Pods/Target Support Files/Pods/Pods.debug.xcconfig" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Pods/Target Support Files/Pods/Pods.release.xcconfig" afterPath="$PROJECT_DIR$/Pods/Target Support Files/Pods/Pods.release.xcconfig" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Pods/Target Support Files/PureLayout/PureLayout.xcconfig" afterPath="$PROJECT_DIR$/Pods/Target Support Files/PureLayout/PureLayout.xcconfig" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/JianDan/Helper/LittleTools/NSErrorHelper.h" afterPath="$PROJECT_DIR$/JianDan/Helper/LittleTools/NSErrorHelper.h" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/JianDan/Helper/LittleTools/NSErrorHelper.m" afterPath="$PROJECT_DIR$/JianDan/Helper/LittleTools/NSErrorHelper.m" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/JianDan/Section/Pictures/View/PictureCell.m" afterPath="$PROJECT_DIR$/JianDan/Section/Pictures/View/PictureCell.m" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/JianDan/Section/FreshNews/View/PushCommentController.m" afterPath="$PROJECT_DIR$/JianDan/Section/FreshNews/View/PushCommentController.m" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Pods/MJExtension/README.md" afterPath="$PROJECT_DIR$/Pods/MJExtension/README.md" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Pods/MJRefresh/README.md" afterPath="$PROJECT_DIR$/Pods/MJRefresh/README.md" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Pods/UITableView+FDTemplateLayoutCell/README.md" afterPath="$PROJECT_DIR$/Pods/UITableView+FDTemplateLayoutCell/README.md" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Pods/Target Support Files/ReactiveCocoa/ReactiveCocoa.xcconfig" afterPath="$PROJECT_DIR$/Pods/Target Support Files/ReactiveCocoa/ReactiveCocoa.xcconfig" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Pods/Target Support Files/SDWebImage/SDWebImage.xcconfig" afterPath="$PROJECT_DIR$/Pods/Target Support Files/SDWebImage/SDWebImage.xcconfig" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/JianDan/Helper/CustomView/ScaleImageView.h" afterPath="$PROJECT_DIR$/JianDan/Helper/CustomView/ScaleImageView.h" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/JianDan/Helper/CustomView/ScaleImageView.m" afterPath="$PROJECT_DIR$/JianDan/Helper/CustomView/ScaleImageView.m" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/JianDan/Section/FreshNews/ViewModel/PushCommentViewModel.h" afterPath="$PROJECT_DIR$/JianDan/Section/FreshNews/ViewModel/PushCommentViewModel.h" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/JianDan/Section/FreshNews/ViewModel/PushCommentViewModel.m" afterPath="$PROJECT_DIR$/JianDan/Section/FreshNews/ViewModel/PushCommentViewModel.m" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/JianDan/Section/LeftMenu/SettingController.m" afterPath="$PROJECT_DIR$/JianDan/Section/LeftMenu/SettingController.m" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/JianDan/Section/FreshNews/View/ShareToSinaController.m" afterPath="$PROJECT_DIR$/JianDan/Section/FreshNews/View/ShareToSinaController.m" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/JianDan/Section/FreshNews/View/SubCommentView.xib" afterPath="$PROJECT_DIR$/JianDan/Section/FreshNews/View/SubCommentView.xib" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Pods/Target Support Files/TPKeyboardAvoiding/TPKeyboardAvoiding.xcconfig" afterPath="$PROJECT_DIR$/Pods/Target Support Files/TPKeyboardAvoiding/TPKeyboardAvoiding.xcconfig" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/JianDan/Section/FreshNews/ViewModel/ShareToViewModel.m" afterPath="$PROJECT_DIR$/JianDan/Section/FreshNews/ViewModel/ShareToViewModel.m" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/JianDan/Helper/LittleTools/ToastHelper.h" afterPath="$PROJECT_DIR$/JianDan/Helper/LittleTools/ToastHelper.h" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/JianDan/Helper/LittleTools/ToastHelper.m" afterPath="$PROJECT_DIR$/JianDan/Helper/LittleTools/ToastHelper.m" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/JianDan/Helper/Category/UIImage+Scale.h" afterPath="$PROJECT_DIR$/JianDan/Helper/Category/UIImage+Scale.h" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/JianDan/Helper/Category/UIImage+Scale.m" afterPath="$PROJECT_DIR$/JianDan/Helper/Category/UIImage+Scale.m" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Pods/MJRefresh/MJRefresh/UIScrollView+MJExtension.h" afterPath="$PROJECT_DIR$/Pods/MJRefresh/MJRefresh/UIScrollView+MJExtension.h" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Pods/MJRefresh/MJRefresh/UIScrollView+MJExtension.m" afterPath="$PROJECT_DIR$/Pods/MJRefresh/MJRefresh/UIScrollView+MJExtension.m" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Pods/MJRefresh/MJRefresh/UIScrollView+MJRefresh.h" afterPath="$PROJECT_DIR$/Pods/MJRefresh/MJRefresh/UIScrollView+MJRefresh.h" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Pods/MJRefresh/MJRefresh/UIScrollView+MJRefresh.m" afterPath="$PROJECT_DIR$/Pods/MJRefresh/MJRefresh/UIScrollView+MJRefresh.m" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Pods/UITableView+FDTemplateLayoutCell/Classes/UITableView+FDTemplateLayoutCell.h" afterPath="$PROJECT_DIR$/Pods/UITableView+FDTemplateLayoutCell/Classes/UITableView+FDTemplateLayoutCell.h" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Pods/UITableView+FDTemplateLayoutCell/Classes/UITableView+FDTemplateLayoutCell.m" afterPath="$PROJECT_DIR$/Pods/UITableView+FDTemplateLayoutCell/Classes/UITableView+FDTemplateLayoutCell.m" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Pods/Target Support Files/UITableView+FDTemplateLayoutCell/UITableView+FDTemplateLayoutCell.xcconfig" afterPath="$PROJECT_DIR$/Pods/Target Support Files/UITableView+FDTemplateLayoutCell/UITableView+FDTemplateLayoutCell.xcconfig" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Pods/MJRefresh/MJRefresh/UIView+MJExtension.h" afterPath="$PROJECT_DIR$/Pods/MJRefresh/MJRefresh/UIView+MJExtension.h" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Pods/MJRefresh/MJRefresh/UIView+MJExtension.m" afterPath="$PROJECT_DIR$/Pods/MJRefresh/MJRefresh/UIView+MJExtension.m" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/JianDan/Helper/Category/UIWebView+RAC.h" afterPath="$PROJECT_DIR$/JianDan/Helper/Category/UIWebView+RAC.h" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/JianDan/Helper/Category/UIWebView+RAC.m" afterPath="$PROJECT_DIR$/JianDan/Helper/Category/UIWebView+RAC.m" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/JianDan/Main/Urls.h" afterPath="$PROJECT_DIR$/JianDan/Main/Urls.h" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/JianDan/Helper/CustomView/UIImageView+UIProgressForSDWebImage.h" afterPath="$PROJECT_DIR$/JianDan/Helper/CustomView/UIImageView+UIProgressForSDWebImage.h" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/JianDan/Helper/CustomView/UIImageView+UIProgressForSDWebImage.m" afterPath="$PROJECT_DIR$/JianDan/Helper/CustomView/UIImageView+UIProgressForSDWebImage.m" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/JianDan/Helper/CustomView/UITextViewEx.h" afterPath="$PROJECT_DIR$/JianDan/Helper/CustomView/UITextViewEx.h" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/JianDan/Helper/CustomView/UITextViewEx.m" afterPath="$PROJECT_DIR$/JianDan/Helper/CustomView/UITextViewEx.m" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/JianDan/Main/Model/Vote.h" afterPath="$PROJECT_DIR$/JianDan/Main/Model/Vote.h" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/JianDan/Section/FreshNews/ViewModel/VoteViewModel.h" afterPath="$PROJECT_DIR$/JianDan/Section/FreshNews/ViewModel/VoteViewModel.h" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/JianDan/Section/FreshNews/ViewModel/VoteViewModel.m" afterPath="$PROJECT_DIR$/JianDan/Section/FreshNews/ViewModel/VoteViewModel.m" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/JianDan/Helper/CustomView/WidthFixImageView.h" afterPath="$PROJECT_DIR$/JianDan/Helper/CustomView/WidthFixImageView.h" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/JianDan/Helper/CustomView/WidthFixImageView.m" afterPath="$PROJECT_DIR$/JianDan/Helper/CustomView/WidthFixImageView.m" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/JianDan.xcodeproj/project.pbxproj" afterPath="$PROJECT_DIR$/JianDan.xcodeproj/project.pbxproj" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Pods/Pods.xcodeproj/project.pbxproj" afterPath="$PROJECT_DIR$/Pods/Pods.xcodeproj/project.pbxproj" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="JianDanIOS.iws" />
@@ -282,7 +109,7 @@
   <component name="CreatePatchCommitExecutor">
     <option name="PATCH_PATH" value="" />
   </component>
-  <component name="ExecutionTargetManager" SELECTED_TARGET="iphoneos_de34ded74aedd341f71e54a0eb8857eb174e4c02" />
+  <component name="ExecutionTargetManager" SELECTED_TARGET="iphoneos" />
   <component name="FavoritesManager">
     <favorites_list name="JianDan">
       <favorite_root url="67A58472F02AFCDB90916FE2" type="Xcode.pbxref" klass="com.jetbrains.cidr.projectView.XcodeViewNode" />
@@ -290,36 +117,102 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="MainViewModel.m" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/JianDan/Main/ViewModel/MainViewModel.m">
+      <file leaf-file-name="HRCollectionViewBindingHelper.h" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/JianDan/Helper/UITableViewBindingHelper/HRCollectionViewBindingHelper.h">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
-              <caret line="77" column="24" selection-start-line="77" selection-start-column="24" selection-end-line="77" selection-end-column="24" />
-              <folding>
-                <element signature="e#202#227#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Podfile" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/Podfile">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.3470437">
-              <caret line="9" column="36" selection-start-line="9" selection-start-column="36" selection-end-line="9" selection-end-column="36" />
+              <caret line="28" column="8" selection-start-line="28" selection-start-column="8" selection-end-line="28" selection-end-column="8" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="LittleMovieDetailController.m" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/JianDan/Section/LittleMovie/View/LittleMovieDetailController.m">
+      <file leaf-file-name="HRCollectionViewBindingHelper.m" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/JianDan/Helper/UITableViewBindingHelper/HRCollectionViewBindingHelper.m">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
-              <caret line="51" column="0" selection-start-line="51" selection-start-column="0" selection-end-line="51" selection-end-column="0" />
-              <folding>
-                <element signature="e#135#174#0" expanded="true" />
-              </folding>
+              <caret line="31" column="0" selection-start-line="31" selection-start-column="0" selection-end-line="31" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Comments.h" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/JianDan/Main/Model/Comments.h">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0">
+              <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Comments.m" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/JianDan/Main/Model/Comments.m">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0">
+              <caret line="25" column="20" selection-start-line="25" selection-start-column="20" selection-end-line="25" selection-end-column="20" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Vote.h" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/JianDan/Main/Model/Vote.h">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0">
+              <caret line="19" column="4" selection-start-line="19" selection-start-column="4" selection-end-line="19" selection-end-column="4" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="CommentsCell.h" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/JianDan/Section/FreshNews/View/CommentsCell.h">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0">
+              <caret line="35" column="0" selection-start-line="35" selection-start-column="0" selection-end-line="35" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="FreshNewsCell.h" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/JianDan/Section/FreshNews/View/FreshNewsCell.h">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0">
+              <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="FreshNewsController.h" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/JianDan/Section/FreshNews/View/FreshNewsController.h">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0">
+              <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="FreshNewsLittleCell.h" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/JianDan/Section/FreshNews/View/FreshNewsLittleCell.h">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0">
+              <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="CommentsCell.m" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/JianDan/Section/FreshNews/View/CommentsCell.m">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0">
+              <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -335,40 +228,57 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/JianDan/AppDelegate.m" />
-        <option value="$PROJECT_DIR$/JianDan/LittleTools/AFNetWorkUtils.m" />
-        <option value="$PROJECT_DIR$/JianDan/Section/LeftMenu/Model/LeftMenu.h" />
-        <option value="$PROJECT_DIR$/JianDan/Section/LeftMenu/Model/LeftMenu.m" />
-        <option value="$PROJECT_DIR$/JianDan/Section/LeftMenu/View/LeftMenuCell.h" />
-        <option value="$PROJECT_DIR$/JianDan/Section/LeftMenu/View/LeftMenuCell.m" />
-        <option value="$PROJECT_DIR$/JianDan/Section/FreshNews/View/MainController.h" />
-        <option value="$PROJECT_DIR$/JianDan/Section/LeftMenu/View/LeftMenuController.m" />
-        <option value="$PROJECT_DIR$/JianDan/JianDan_PrefixHeader.pch" />
-        <option value="$PROJECT_DIR$/JianDan/Helper/LittleTools/NetTypeUtils.h" />
-        <option value="$PROJECT_DIR$/JianDan/Helper/LittleTools/NetTypeUtils.m" />
-        <option value="$PROJECT_DIR$/JianDan/Helper/LittleTools/CacheTools.h" />
-        <option value="$PROJECT_DIR$/JianDan/Section/FreshNews/ViewModel/FreshNewsViewModel.m" />
-        <option value="$PROJECT_DIR$/JianDan/Helper/UITableViewBindingHelper/CETableViewBindingHelper.m" />
-        <option value="$PROJECT_DIR$/JianDan/Main/AppDelegate.m" />
-        <option value="$PROJECT_DIR$/JianDan/Section/FreshNews/View/FreshNewsCell.m" />
-        <option value="$PROJECT_DIR$/JianDan/Section/FreshNews/Model/FreshNews.m" />
-        <option value="$PROJECT_DIR$/JianDan/Helper/LittleTools/CacheTools.m" />
-        <option value="$PROJECT_DIR$/JianDan/Section/FreshNews/View/FreshNewsDetailController.m" />
-        <option value="$PROJECT_DIR$/JianDan/Section/FreshNews/ViewModel/FreshNewsDetailViewModel.m" />
-        <option value="$PROJECT_DIR$/JianDan/Section/FreshNews/ViewModel/ShareToViewModel.h" />
-        <option value="$PROJECT_DIR$/JianDan/Section/FreshNews/ViewModel/ShareToViewModel.m" />
-        <option value="$PROJECT_DIR$/JianDan/Section/FreshNews/View/ShareToSinaController.m" />
-        <option value="$PROJECT_DIR$/JianDan/Section/FreshNews/ViewModel/CommentViewModel.m" />
-        <option value="$PROJECT_DIR$/JianDan/Section/FreshNews/ViewModel/CommentViewModel.h" />
-        <option value="$PROJECT_DIR$/JianDan/Helper/CustomView/DXAlertView/LTAlertView.m" />
-        <option value="$PROJECT_DIR$/JianDan/Section/FreshNews/View/FreshNewsController.m" />
-        <option value="$PROJECT_DIR$/JianDan/Section/FreshNews/View/MainController.m" />
-        <option value="$PROJECT_DIR$/JianDan/Section/LeftMenu/LeftMenu.h" />
+        <option value="$PROJECT_DIR$/JianDan/Section/LeftMenu/LeftMenuCell.m" />
         <option value="$PROJECT_DIR$/JianDan/Section/LeftMenu/LeftMenuController.m" />
-        <option value="$PROJECT_DIR$/JianDan/Main/View/MainController.m" />
-        <option value="$PROJECT_DIR$/JianDan/Main/ViewModel/MainViewModel.m" />
+        <option value="$PROJECT_DIR$/JianDan/Section/LittleMovie/View/LittleMoveController.m" />
+        <option value="$PROJECT_DIR$/JianDan/Section/LittleMovie/View/LittleMovieCollectionCell.m" />
         <option value="$PROJECT_DIR$/JianDan/Section/LittleMovie/View/LittleMovieDetailController.m" />
-        <option value="$PROJECT_DIR$/Podfile" />
+        <option value="$PROJECT_DIR$/JianDan/Helper/BaseViewController/BaseNavigationController.m" />
+        <option value="$PROJECT_DIR$/JianDan/Helper/BaseViewController/BaseTableViewCell.h" />
+        <option value="$PROJECT_DIR$/JianDan/Section/LeftMenu/SettingController.m" />
+        <option value="$PROJECT_DIR$/JianDan/Helper/BaseViewController/BaseTableViewController.m" />
+        <option value="$PROJECT_DIR$/JianDan/Helper/BaseViewController/BaseViewController.h" />
+        <option value="$PROJECT_DIR$/JianDan/Helper/BaseViewController/BaseViewController.m" />
+        <option value="$PROJECT_DIR$/JianDan/Helper/CustomView/DXAlertView/LTAlertView.h" />
+        <option value="$PROJECT_DIR$/JianDan/Helper/CustomView/DXAlertView/LTAlertView.m" />
+        <option value="$PROJECT_DIR$/JianDan/Helper/CustomView/FloorView/LTFloorView.h" />
+        <option value="$PROJECT_DIR$/JianDan/Helper/CustomView/FloorView/LTFloorView.m" />
+        <option value="$PROJECT_DIR$/JianDan/Helper/CustomView/CardView.m" />
+        <option value="$PROJECT_DIR$/JianDan/Helper/CustomView/LTProgressWebView.h" />
+        <option value="$PROJECT_DIR$/JianDan/Helper/CustomView/LTProgressWebView.m" />
+        <option value="$PROJECT_DIR$/JianDan/Helper/CustomView/UIImageView+UIProgressForSDWebImage.h" />
+        <option value="$PROJECT_DIR$/JianDan/Helper/CustomView/UIImageView+UIProgressForSDWebImage.m" />
+        <option value="$PROJECT_DIR$/JianDan/Helper/CustomView/UITextViewEx.h" />
+        <option value="$PROJECT_DIR$/JianDan/Helper/CustomView/UITextViewEx.m" />
+        <option value="$PROJECT_DIR$/JianDan/Helper/CustomView/WidthFixImageView.h" />
+        <option value="$PROJECT_DIR$/JianDan/Helper/CustomView/WidthFixImageView.m" />
+        <option value="$PROJECT_DIR$/JianDan/Helper/FastImageCacheHelper/FastImage.h" />
+        <option value="$PROJECT_DIR$/JianDan/Helper/FastImageCacheHelper/FastImage.m" />
+        <option value="$PROJECT_DIR$/JianDan/Helper/FastImageCacheHelper/FastImageCacehHelper.h" />
+        <option value="$PROJECT_DIR$/JianDan/Helper/FastImageCacheHelper/FastImageCacehHelper.m" />
+        <option value="$PROJECT_DIR$/JianDan/Helper/LittleTools/AFNetWorkUtils.h" />
+        <option value="$PROJECT_DIR$/JianDan/Helper/LittleTools/AFNetWorkUtils.m" />
+        <option value="$PROJECT_DIR$/JianDan/Helper/LittleTools/BLImageSize.h" />
+        <option value="$PROJECT_DIR$/JianDan/Helper/LittleTools/BLImageSize.m" />
+        <option value="$PROJECT_DIR$/JianDan/Helper/LittleTools/CacheTools.m" />
+        <option value="$PROJECT_DIR$/JianDan/Helper/LittleTools/CommonUtils.h" />
+        <option value="$PROJECT_DIR$/JianDan/Helper/LittleTools/CommonUtils.m" />
+        <option value="$PROJECT_DIR$/JianDan/Helper/LittleTools/MJExtensionConfig.m" />
+        <option value="$PROJECT_DIR$/JianDan/Helper/LittleTools/NSErrorHelper.h" />
+        <option value="$PROJECT_DIR$/JianDan/Helper/LittleTools/NSErrorHelper.m" />
+        <option value="$PROJECT_DIR$/JianDan/Helper/LittleTools/ToastHelper.h" />
+        <option value="$PROJECT_DIR$/JianDan/Helper/LittleTools/ToastHelper.m" />
+        <option value="$PROJECT_DIR$/JianDan/Helper/UITableViewBindingHelper/CEObservableMutableArray.h" />
+        <option value="$PROJECT_DIR$/JianDan/Helper/UITableViewBindingHelper/CEObservableMutableArray.m" />
+        <option value="$PROJECT_DIR$/JianDan/Helper/UITableViewBindingHelper/CEReactiveView.h" />
+        <option value="$PROJECT_DIR$/JianDan/Helper/UITableViewBindingHelper/CETableViewBindingHelper.h" />
+        <option value="$PROJECT_DIR$/JianDan/Helper/UITableViewBindingHelper/CETableViewBindingHelper.m" />
+        <option value="$PROJECT_DIR$/JianDan/Helper/UITableViewBindingHelper/HRCollectionViewBindingHelper.h" />
+        <option value="$PROJECT_DIR$/JianDan/Helper/UITableViewBindingHelper/HRCollectionViewBindingHelper.m" />
+        <option value="$PROJECT_DIR$/JianDan/Main/Model/Comments.h" />
+        <option value="$PROJECT_DIR$/JianDan/Main/Model/Comments.m" />
+        <option value="$PROJECT_DIR$/JianDan/Main/Model/Vote.h" />
+        <option value="$PROJECT_DIR$/JianDan/Section/FreshNews/View/CommentsCell.h" />
       </list>
     </option>
   </component>
@@ -424,24 +334,6 @@
             <PATH_ELEMENT>
               <option name="myItemId" />
               <option name="myItemType" value="com.jetbrains.cidr.projectView.XcodeRootNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="JianDan" />
-              <option name="myItemType" value="com.jetbrains.cidr.projectView.XcodeProjectNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" />
-              <option name="myItemType" value="com.jetbrains.cidr.projectView.XcodeRootNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="JianDan" />
-              <option name="myItemType" value="com.jetbrains.cidr.projectView.XcodeProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="JianDan" />
-              <option name="myItemType" value="com.jetbrains.cidr.projectView.XcodeViewNode" />
             </PATH_ELEMENT>
           </PATH>
         </subPane>
@@ -666,29 +558,29 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="0" y="23" width="1280" height="709" extended-state="6" />
-    <editor active="true" />
+    <frame x="0" y="23" width="1280" height="709" extended-state="0" />
+    <editor active="false" />
     <layout>
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.3263328" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Palette&#9;" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32901135" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32901135" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.27958697" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.27958697" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32901135" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.3263328" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
+      <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
     </layout>
   </component>
   <component name="Vcs.Log.UiProperties">
@@ -709,17 +601,23 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/JianDan/Main/ViewModel/MainViewModel.m">
+    <entry file="file://$PROJECT_DIR$/JianDan/Helper/BaseViewController/BaseTableViewController.m">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
-          <caret line="70" column="24" selection-start-line="70" selection-start-column="24" selection-end-line="70" selection-end-column="24" />
-          <folding>
-            <element signature="e#202#227#0" expanded="true" />
-          </folding>
+          <caret line="25" column="5" selection-start-line="25" selection-start-column="5" selection-end-line="25" selection-end-column="5" />
+          <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Podfile">
+    <entry file="file://$PROJECT_DIR$/JianDan/Helper/BaseViewController/BaseViewController.h">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="30" column="0" selection-start-line="30" selection-start-column="0" selection-end-line="30" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/JianDan/Helper/BaseViewController/BaseViewController.m">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
@@ -727,146 +625,223 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/JianDan/Section/LittleMovie/View/LittleMovieDetailController.m">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="51" column="0" selection-start-line="51" selection-start-column="0" selection-end-line="51" selection-end-column="0" />
-          <folding>
-            <element signature="e#135#174#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/JianDan/Main/ViewModel/MainViewModel.m">
+    <entry file="file://$PROJECT_DIR$/JianDan/Helper/CustomView/DXAlertView/LTAlertView.h">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding>
-            <element signature="e#202#227#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Podfile">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="15" column="24" selection-start-line="15" selection-start-column="24" selection-end-line="15" selection-end-column="24" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/JianDan/Main/ViewModel/MainViewModel.m">
+    <entry file="file://$PROJECT_DIR$/JianDan/Helper/CustomView/DXAlertView/LTAlertView.m">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/JianDan/Helper/CustomView/FloorView/LTFloorView.h">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/JianDan/Helper/CustomView/FloorView/LTFloorView.m">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/JianDan/Helper/CustomView/CardView.h">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/JianDan/Helper/CustomView/CardView.m">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="25" column="0" selection-start-line="25" selection-start-column="0" selection-end-line="25" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/JianDan/Helper/CustomView/LTProgressWebView.h">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="15" column="0" selection-start-line="15" selection-start-column="0" selection-end-line="15" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/JianDan/Helper/CustomView/LTProgressWebView.m">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="30" column="21" selection-start-line="30" selection-start-column="21" selection-end-line="30" selection-end-column="21" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/JianDan/Helper/CustomView/UIImageView+UIProgressForSDWebImage.h">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="38" column="4" selection-start-line="38" selection-start-column="4" selection-end-line="38" selection-end-column="4" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/JianDan/Helper/CustomView/UIImageView+UIProgressForSDWebImage.m">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="30" column="0" selection-start-line="30" selection-start-column="0" selection-end-line="30" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/JianDan/Helper/CustomView/UITextViewEx.h">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/JianDan/Helper/CustomView/UITextViewEx.m">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/JianDan/Helper/CustomView/WidthFixImageView.h">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/JianDan/Helper/CustomView/WidthFixImageView.m">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="28" column="4" selection-start-line="28" selection-start-column="4" selection-end-line="28" selection-end-column="4" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/JianDan/Helper/FastImageCacheHelper/FastImage.h">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/JianDan/Helper/FastImageCacheHelper/FastImage.m">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="23" column="0" selection-start-line="23" selection-start-column="0" selection-end-line="23" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/JianDan/Helper/FastImageCacheHelper/FastImageCacehHelper.h">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/JianDan/Helper/FastImageCacheHelper/FastImageCacehHelper.m">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/JianDan/Helper/LittleTools/AFNetWorkUtils.h">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
-            <element signature="e#202#227#0" expanded="true" />
+            <element signature="e#0#33#0" expanded="false" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/JianDan/Section/FreshNews/Model/FreshNews.m">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="31" column="80" selection-start-line="31" selection-start-column="80" selection-end-line="31" selection-end-column="80" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/JianDan/Helper/LittleTools/CacheTools.m">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="27" column="28" selection-start-line="27" selection-start-column="28" selection-end-line="27" selection-end-column="28" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Podfile">
+    <entry file="file://$PROJECT_DIR$/JianDan/Helper/LittleTools/AFNetWorkUtils.m">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding>
+            <element signature="e#0#26#0" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/JianDan/Helper/UITableViewBindingHelper/CETableViewBindingHelper.m">
+    <entry file="file://$PROJECT_DIR$/JianDan/Helper/LittleTools/BLImageSize.h">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="135" column="76" selection-start-line="135" selection-start-column="76" selection-end-line="135" selection-end-column="76" />
+        <state vertical-scroll-proportion="-11.666667">
+          <caret line="21" column="0" selection-start-line="21" selection-start-column="0" selection-end-line="21" selection-end-column="0" />
+          <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/JianDan/Section/FreshNews/View/FreshNewsCell.m">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/JianDan/Section/FreshNews/Model/FreshNews.m">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="20" column="0" selection-start-line="20" selection-start-column="0" selection-end-line="20" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/JianDan/Section/FreshNews/Model/FreshNews.h">
+    <entry file="file://$PROJECT_DIR$/JianDan/Helper/LittleTools/BLImageSize.m">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/JianDan/Helper/LittleTools/CacheTools.h">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
-          <caret line="15" column="40" selection-start-line="15" selection-start-column="40" selection-end-line="15" selection-end-column="40" />
+          <caret line="30" column="0" selection-start-line="30" selection-start-column="0" selection-end-line="30" selection-end-column="0" />
+          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/JianDan/Helper/LittleTools/CacheTools.m">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
-          <caret line="68" column="43" selection-start-line="68" selection-start-column="43" selection-end-line="68" selection-end-column="43" />
+          <caret line="33" column="1" selection-start-line="33" selection-start-column="1" selection-end-line="33" selection-end-column="1" />
+          <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/JianDan/Section/FreshNews/Model/FreshNews.m">
+    <entry file="file://$PROJECT_DIR$/JianDan/Helper/LittleTools/CommonUtils.h">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
-          <caret line="20" column="0" selection-start-line="20" selection-start-column="0" selection-end-line="20" selection-end-column="0" />
+          <caret line="30" column="0" selection-start-line="30" selection-start-column="0" selection-end-line="30" selection-end-column="0" />
+          <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/JianDan/Section/FreshNews/Model/FreshNews.h">
+    <entry file="file://$PROJECT_DIR$/JianDan/Helper/LittleTools/CommonUtils.m">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <caret line="29" column="0" selection-start-line="29" selection-start-column="0" selection-end-line="29" selection-end-column="0" />
+          <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/JianDan/Main/AppDelegate.m">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/JianDan/Helper/LittleTools/NSCodingTools.h">
+    <entry file="file://$PROJECT_DIR$/JianDan/Helper/LittleTools/HVTableView.h">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/JianDan/Helper/LittleTools/NSCodingTools.m">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-0.17256637">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file:///Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk/System/Library/Frameworks/Foundation.framework/Headers/NSFileManager.h">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.33333334">
-          <caret line="163" column="8" selection-start-line="163" selection-start-column="8" selection-end-line="163" selection-end-column="8" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -874,194 +849,166 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/JianDan/Section/FreshNews/Model/FreshNews.h">
+    <entry file="file://$PROJECT_DIR$/JianDan/Helper/LittleTools/MJExtensionConfig.m">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <caret line="26" column="12" selection-start-line="26" selection-start-column="12" selection-end-line="26" selection-end-column="12" />
+          <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/JianDan/Helper/LittleTools/AFNetWorkUtils.m">
+    <entry file="file://$PROJECT_DIR$/JianDan/Helper/LittleTools/NSErrorHelper.h">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.31862745">
-          <caret line="14" column="15" selection-start-line="14" selection-start-column="15" selection-end-line="14" selection-end-column="15" />
+        <state vertical-scroll-proportion="0.0">
+          <caret line="32" column="4" selection-start-line="32" selection-start-column="4" selection-end-line="32" selection-end-column="4" />
+          <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Pods/FMDB/src/fmdb/FMDatabase.m">
+    <entry file="file://$PROJECT_DIR$/JianDan/Helper/LittleTools/NSErrorHelper.m">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.30769232">
-          <caret line="14" column="24" selection-start-line="14" selection-start-column="19" selection-end-line="14" selection-end-column="24" />
+        <state vertical-scroll-proportion="0.0">
+          <caret line="31" column="32" selection-start-line="31" selection-start-column="32" selection-end-line="31" selection-end-column="32" />
+          <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/JianDan/Helper/LittleTools/CacheTools.h">
+    <entry file="file://$PROJECT_DIR$/JianDan/Helper/LittleTools/ToastHelper.h">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.49019608">
-          <caret line="20" column="0" selection-start-line="20" selection-start-column="0" selection-end-line="20" selection-end-column="0" />
+        <state vertical-scroll-proportion="0.0">
+          <caret line="21" column="0" selection-start-line="21" selection-start-column="0" selection-end-line="21" selection-end-column="0" />
+          <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/JianDan/Main/AppDelegate.m">
+    <entry file="file://$PROJECT_DIR$/JianDan/Helper/LittleTools/ToastHelper.m">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.46078432">
-          <caret line="34" column="50" selection-start-line="34" selection-start-column="50" selection-end-line="34" selection-end-column="50" />
+        <state vertical-scroll-proportion="0.0">
+          <caret line="100" column="0" selection-start-line="100" selection-start-column="0" selection-end-line="100" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/JianDan/Helper/UITableViewBindingHelper/CEObservableMutableArray.h">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="31" column="0" selection-start-line="31" selection-start-column="0" selection-end-line="31" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/JianDan/Helper/UITableViewBindingHelper/CEObservableMutableArray.m">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="27" column="0" selection-start-line="27" selection-start-column="0" selection-end-line="27" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/JianDan/Helper/UITableViewBindingHelper/CEReactiveView.h">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="28" column="0" selection-start-line="28" selection-start-column="0" selection-end-line="28" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/JianDan/Helper/UITableViewBindingHelper/CETableViewBindingHelper.h">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="33" column="10" selection-start-line="33" selection-start-column="10" selection-end-line="33" selection-end-column="10" />
+          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/JianDan/Helper/UITableViewBindingHelper/CETableViewBindingHelper.m">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
-          <caret line="135" column="76" selection-start-line="135" selection-start-column="76" selection-end-line="135" selection-end-column="76" />
+          <caret line="33" column="0" selection-start-line="33" selection-start-column="0" selection-end-line="33" selection-end-column="0" />
+          <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/JianDan/Section/FreshNews/View/FreshNewsCell.m">
+    <entry file="file://$PROJECT_DIR$/JianDan/Helper/UITableViewBindingHelper/HRCollectionViewBindingHelper.h">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
-          <caret line="37" column="25" selection-start-line="37" selection-start-column="25" selection-end-line="37" selection-end-column="25" />
+          <caret line="28" column="8" selection-start-line="28" selection-start-column="8" selection-end-line="28" selection-end-column="8" />
+          <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file:///Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk/System/Library/Frameworks/Foundation.framework/Headers/NSString.h">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.33333334">
-          <caret line="317" column="8" selection-start-line="317" selection-start-column="8" selection-end-line="317" selection-end-column="8" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/JianDan/Section/FreshNews/Model/FreshNews.m">
+    <entry file="file://$PROJECT_DIR$/JianDan/Helper/UITableViewBindingHelper/HRCollectionViewBindingHelper.m">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
-          <caret line="34" column="22" selection-start-line="34" selection-start-column="22" selection-end-line="34" selection-end-column="22" />
+          <caret line="31" column="0" selection-start-line="31" selection-start-column="0" selection-end-line="31" selection-end-column="0" />
+          <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/JianDan/Helper/LittleTools/CacheTools.m">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="31" column="28" selection-start-line="31" selection-start-column="28" selection-end-line="31" selection-end-column="28" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/JianDan/Section/FreshNews/ViewModel/FreshNewsDetailViewModel.m">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="33" column="7" selection-start-line="33" selection-start-column="7" selection-end-line="33" selection-end-column="7" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/JianDan/Section/FreshNews/View/FreshNewsDetailController.m">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="133" column="0" selection-start-line="133" selection-start-column="0" selection-end-line="133" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/JianDan/Section/FreshNews/View/ShareToSinaController.m">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="58" column="9" selection-start-line="58" selection-start-column="9" selection-end-line="58" selection-end-column="9" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/JianDan/Section/FreshNews/ViewModel/ShareToViewModel.h">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.40609136">
-          <caret line="16" column="0" selection-start-line="16" selection-start-column="0" selection-end-line="16" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/JianDan/Section/FreshNews/ViewModel/ShareToViewModel.m">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="61" column="19" selection-start-line="61" selection-start-column="19" selection-end-line="61" selection-end-column="19" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/JianDan/JianDan_PrefixHeader.pch">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.48349836">
-          <caret line="37" column="0" selection-start-line="37" selection-start-column="0" selection-end-line="38" selection-end-column="64" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/JianDan/Section/FreshNews/View/FreshNewsDetailController.h">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.37751678">
-          <caret line="15" column="0" selection-start-line="15" selection-start-column="0" selection-end-line="15" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/JianDan/Helper/CustomView/DXAlertView/LTAlertView.m">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="162" column="31" selection-start-line="162" selection-start-column="31" selection-end-line="162" selection-end-column="31" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/JianDan/Section/LeftMenu/LeftMenu.m">
+    <entry file="file://$PROJECT_DIR$/JianDan/Main/Model/Comments.h">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/JianDan/Section/LeftMenu/LeftMenuController.m">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-0.12690355">
-          <caret line="10" column="24" selection-start-line="10" selection-start-column="24" selection-end-line="10" selection-end-column="24" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/JianDan/Section/LeftMenu/LeftMenu.h">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.4568528">
-          <caret line="18" column="0" selection-start-line="18" selection-start-column="0" selection-end-line="18" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/JianDan/Section/FreshNews/ViewModel/CommentViewModel.h">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.2284264">
-          <caret line="9" column="10" selection-start-line="9" selection-start-column="10" selection-end-line="9" selection-end-column="10" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/JianDan/Section/FreshNews/ViewModel/CommentViewModel.m">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-0.02538071">
-          <caret line="59" column="0" selection-start-line="57" selection-start-column="0" selection-end-line="57" selection-end-column="79" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/JianDan/Main/ViewModel/MainViewModel.m">
+    <entry file="file://$PROJECT_DIR$/JianDan/Main/Model/Comments.m">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
-          <caret line="77" column="24" selection-start-line="77" selection-start-column="24" selection-end-line="77" selection-end-column="24" />
-          <folding>
-            <element signature="e#202#227#0" expanded="true" />
-          </folding>
+          <caret line="25" column="20" selection-start-line="25" selection-start-column="20" selection-end-line="25" selection-end-column="20" />
+          <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/JianDan/Section/LittleMovie/View/LittleMovieDetailController.m">
+    <entry file="file://$PROJECT_DIR$/JianDan/Main/Model/Vote.h">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
-          <caret line="51" column="0" selection-start-line="51" selection-start-column="0" selection-end-line="51" selection-end-column="0" />
-          <folding>
-            <element signature="e#135#174#0" expanded="true" />
-          </folding>
+          <caret line="19" column="4" selection-start-line="19" selection-start-column="4" selection-end-line="19" selection-end-column="4" />
+          <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Podfile">
+    <entry file="file://$PROJECT_DIR$/JianDan/Section/FreshNews/View/CommentsCell.m">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.3470437">
-          <caret line="9" column="36" selection-start-line="9" selection-start-column="36" selection-end-line="9" selection-end-column="36" />
+        <state vertical-scroll-proportion="0.0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/JianDan/Section/FreshNews/View/CommentsCell.h">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="35" column="0" selection-start-line="35" selection-start-column="0" selection-end-line="35" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/JianDan/Section/FreshNews/View/FreshNewsCell.h">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/JianDan/Section/FreshNews/View/FreshNewsController.h">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/JianDan/Section/FreshNews/View/FreshNewsLittleCell.h">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding />
         </state>
       </provider>

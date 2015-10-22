@@ -8,9 +8,10 @@
 
 #import "ShareToViewModel.h"
 #import "UITextViewEx.h"
+
 #define kMaxLen 140
 
-@interface ShareToViewModel()
+@interface ShareToViewModel ()
 
 //在开始输入中文前，保存原先的值
 @property(nonatomic, copy) NSString *previousText;
@@ -24,23 +25,24 @@
 - (instancetype)init {
     self = [super init];
     if (self) {
-      [self setUp];
+        [self setUp];
     }
     return self;
 }
 
--(void)setUp{
-   self.textViewChangedCommand=[[RACCommand alloc] initWithSignalBlock:^RACSignal *(id input) {
-       self.previousText=input;
-       return self.textViewChangedSignal;
-   }];
-    
+- (void)setUp {
+    self.textViewChangedCommand = [[RACCommand alloc] initWithSignalBlock:^RACSignal *(id input) {
+        self.previousText = input;
+        return self.textViewChangedSignal;
+    }];
+
     [[self.textViewChangedCommand.executionSignals switchToLatest] subscribeNext:^(id x) {
         [self textViewEditChanged:x];
     }];
 }
 
 #pragma mark -UITextView delegate
+
 - (BOOL)textView:(UITextViewEx *)textView shouldChangeTextInRange:(NSRange)range replacementText:(NSString *)text {
     //允许在任何时候，删除按钮可用
     if (!text.length) {
@@ -72,9 +74,8 @@
 }
 
 
-
-- (BOOL)insertText:(UITextViewEx *)textView range:(NSRange *)range text:(NSString *)text previousText:(NSString *)previousText{
-    if (!text||!text.length) {
+- (BOOL)insertText:(UITextViewEx *)textView range:(NSRange *)range text:(NSString *)text previousText:(NSString *)previousText {
+    if (!text || !text.length) {
         return YES;
     }
     //1,能全部插入
@@ -83,39 +84,40 @@
     if ((currentTextCount + newTextCount) < kMaxLen) {
         return YES;
     }
-    
-    text=[self cutText:text maxLength:self.currentCount];
+
+    text = [self cutText:text maxLength:self.currentCount];
     textView.text = [previousText stringByReplacingCharactersInRange:*range withString:text];
     [textView setSelectedRange:NSMakeRange((*range).location + text.length, 0)];
     return NO;
 }
 
 #pragma mark - Notification Method
+
 - (void)textViewEditChanged:(NSNotification *)notification {
-    UITextViewEx *textView=(UITextViewEx *)notification.object;
-    NSString *toBeString = textView.text;
+    UITextViewEx *textView = (UITextViewEx *) notification.object;
+    NSString * toBeString = textView.text;
     //中间插入 通过键盘输入汉字 联想
     NSRange range = textView.selectedRange;
     BOOL isInsert = range.location != textView.text.length;
-    if ([CommonUtils isHansInput:textView] && isInsert&&([CommonUtils isHasHighlightText:textView] || self.isHans)) {// 简体中文输入
+    if ([CommonUtils isHansInput:textView] && isInsert && ([CommonUtils isHasHighlightText:textView] || self.isHans)) {// 简体中文输入
         //新插入文字内容的长度
         NSInteger offset = textView.text.length - self.previousText.length;
-        if (offset<=0) {
+        if (offset <= 0) {
             return;
         }
         //结束时 第一个为汉字
         NSRange newRange = NSMakeRange(range.location - offset, offset);
-        if ((newRange.location+newRange.length)<textView.text.length) {
-            NSString *newText = [textView.text substringWithRange:newRange];
+        if ((newRange.location + newRange.length) < textView.text.length) {
+            NSString * newText = [textView.text substringWithRange:newRange];
             if ([CommonUtils isChinese:newText]) {
-                newRange.length=0;
-                [self insertText: textView range:&newRange text:newText previousText:self.previousText];
+                newRange.length = 0;
+                [self insertText:textView range:&newRange text:newText previousText:self.previousText];
             }
         }
         return;
     }
     self.previousText = textView.text;
-    
+
     //裁剪多余的文字
     int currentTextCount = kMaxLen - self.currentCount;
     if (currentTextCount > kMaxLen) {
@@ -123,8 +125,8 @@
     }
 }
 
-- (NSString *)cutText:(NSString *)text maxLength:(NSInteger)maxLength{
-    if (!text||[text isEqualToString:@""]) {
+- (NSString *)cutText:(NSString *)text maxLength:(NSInteger)maxLength {
+    if (!text || [text isEqualToString:@""]) {
         return nil;
     }
     //2,不能全部插入
@@ -132,7 +134,7 @@
         text = [text substringToIndex:text.length - 1];
     }
     //最后一个是半个的情况
-    NSString *last = [text substringToIndex:text.length - 1];
+    NSString * last = [text substringToIndex:text.length - 1];
     BOOL lastIsHalf = [CommonUtils convertToInt:last] == maxLength;
     if (lastIsHalf) {
         text = last;

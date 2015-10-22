@@ -8,16 +8,24 @@
       <sourceFolder url="file://$MODULE_DIR$/JianDan/Assets.xcassets" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/JianDan/Helper/BaseViewController/BaseNavigationController.h" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/JianDan/Helper/BaseViewController/BaseNavigationController.m" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/JianDan/Helper/BaseViewController/BaseTableViewCell.h" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/JianDan/Helper/BaseViewController/BaseTableViewCell.m" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/JianDan/Helper/BaseViewController/BaseTableViewController.h" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/JianDan/Helper/BaseViewController/BaseTableViewController.m" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/JianDan/Helper/BaseViewController/BaseViewController.h" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/JianDan/Helper/BaseViewController/BaseViewController.m" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/JianDan/Helper/Category/NSDate+Additions.h" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/JianDan/Helper/Category/NSDate+Additions.m" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/JianDan/Helper/Category/NSDate+MJ.h" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/JianDan/Helper/Category/NSDate+MJ.m" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/JianDan/Helper/Category/NSDictionary+JSONString.h" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/JianDan/Helper/Category/NSDictionary+JSONString.m" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/JianDan/Helper/Category/NSString+Additions.h" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/JianDan/Helper/Category/NSString+Additions.m" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/JianDan/Helper/Category/NSString+Date.h" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/JianDan/Helper/Category/NSString+Date.m" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/JianDan/Helper/Category/UIColor+Additions.h" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/JianDan/Helper/Category/UIColor+Additions.m" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/JianDan/Helper/Category/UIImage+Scale.h" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/JianDan/Helper/Category/UIImage+Scale.m" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/JianDan/Helper/Category/UITableViewCell+TableView.h" isTestSource="false" />
@@ -34,6 +42,8 @@
       <sourceFolder url="file://$MODULE_DIR$/JianDan/Helper/CustomView/FloorView/LTFloorView.m" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/JianDan/Helper/CustomView/InsetsLabel.h" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/JianDan/Helper/CustomView/InsetsLabel.m" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/JianDan/Helper/CustomView/LTProgressWebView.h" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/JianDan/Helper/CustomView/LTProgressWebView.m" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/JianDan/Helper/CustomView/PopoverView.h" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/JianDan/Helper/CustomView/PopoverView.m" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/JianDan/Helper/CustomView/ScaleImageView.h" isTestSource="false" />
@@ -64,6 +74,8 @@
       <sourceFolder url="file://$MODULE_DIR$/JianDan/Helper/LittleTools/MJExtensionConfig.m" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/JianDan/Helper/LittleTools/NSCodingTools.h" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/JianDan/Helper/LittleTools/NSCodingTools.m" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/JianDan/Helper/LittleTools/NSErrorHelper.h" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/JianDan/Helper/LittleTools/NSErrorHelper.m" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/JianDan/Helper/LittleTools/ToastHelper.h" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/JianDan/Helper/LittleTools/ToastHelper.m" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/JianDan/Helper/UITableViewBindingHelper/CEObservableMutableArray.h" isTestSource="false" />
@@ -102,6 +114,9 @@
       <sourceFolder url="file://$MODULE_DIR$/JianDan/Main/AppDelegate.h" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/JianDan/Main/AppDelegate.m" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/JianDan/Main/Constant.h" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/JianDan/Main/Model/Comments.h" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/JianDan/Main/Model/Comments.m" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/JianDan/Main/Model/Vote.h" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/JianDan/Main/Urls.h" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/JianDan/Main/View/NetErrorView.xib" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/JianDan/Main/ViewModel/MainViewModel.h" isTestSource="false" />
@@ -123,6 +138,9 @@
       <sourceFolder url="file://$MODULE_DIR$/JianDan/Section/FreshNews/View/FreshNewsController.m" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/JianDan/Section/FreshNews/View/FreshNewsDetailController.h" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/JianDan/Section/FreshNews/View/FreshNewsDetailController.m" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/JianDan/Section/FreshNews/View/FreshNewsLittleCell.h" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/JianDan/Section/FreshNews/View/FreshNewsLittleCell.m" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/JianDan/Section/FreshNews/View/FreshNewsLittleCell.xib" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/JianDan/Section/FreshNews/View/PushCommentController.h" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/JianDan/Section/FreshNews/View/PushCommentController.m" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/JianDan/Section/FreshNews/View/ShareOptionAlertView.xib" isTestSource="false" />
@@ -132,8 +150,6 @@
       <sourceFolder url="file://$MODULE_DIR$/JianDan/Section/FreshNews/View/TouristAlertView.xib" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/JianDan/Section/FreshNews/ViewModel/CommentViewModel.h" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/JianDan/Section/FreshNews/ViewModel/CommentViewModel.m" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/JianDan/Section/FreshNews/ViewModel/Comments.h" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/JianDan/Section/FreshNews/ViewModel/Comments.m" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/JianDan/Section/FreshNews/ViewModel/FreshNewsDetailViewModel.h" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/JianDan/Section/FreshNews/ViewModel/FreshNewsDetailViewModel.m" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/JianDan/Section/FreshNews/ViewModel/PushCommentViewModel.h" isTestSource="false" />
@@ -161,6 +177,8 @@
       <sourceFolder url="file://$MODULE_DIR$/JianDan/Section/LittleMovie/View/LittleMovieDetailController.xib" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/JianDan/Section/Pictures/Model/BoredPictures.h" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/JianDan/Section/Pictures/Model/BoredPictures.m" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/JianDan/Section/Pictures/Model/PictureFrame.h" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/JianDan/Section/Pictures/Model/PictureFrame.m" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/JianDan/Section/Pictures/View/BoredPicturesController.h" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/JianDan/Section/Pictures/View/BoredPicturesController.m" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/JianDan/Section/Pictures/View/BoredPicturesDetailController.h" isTestSource="false" />
@@ -172,6 +190,8 @@
       <sourceFolder url="file://$MODULE_DIR$/JianDan/Section/Pictures/View/CommentsPhotoCell.h" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/JianDan/Section/Pictures/View/CommentsPhotoCell.m" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/JianDan/Section/Pictures/View/CommentsPhotoCell.xib" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/JianDan/Section/Pictures/View/PictureCell.h" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/JianDan/Section/Pictures/View/PictureCell.m" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/JianDan/main.m" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/JianDan/style.css" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/JianDanTests/Info.plist" isTestSource="false" />
@@ -766,65 +786,79 @@
       <sourceFolder url="file://$MODULE_DIR$/Pods/TPKeyboardAvoiding/TPKeyboardAvoiding/TPKeyboardAvoidingTableView.m" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/Pods/TPKeyboardAvoiding/TPKeyboardAvoiding/UIScrollView+TPKeyboardAvoidingAdditions.h" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/Pods/TPKeyboardAvoiding/TPKeyboardAvoiding/UIScrollView+TPKeyboardAvoidingAdditions.m" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Pods/Target Support Files/AFNetworking/AFNetworking-Private.xcconfig" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/Pods/Target Support Files/AFNetworking/AFNetworking-dummy.m" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/Pods/Target Support Files/AFNetworking/AFNetworking-prefix.pch" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/Pods/Target Support Files/AFNetworking/AFNetworking.xcconfig" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Pods/Target Support Files/CocoaLumberjack/CocoaLumberjack-Private.xcconfig" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/Pods/Target Support Files/CocoaLumberjack/CocoaLumberjack-dummy.m" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/Pods/Target Support Files/CocoaLumberjack/CocoaLumberjack-prefix.pch" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/Pods/Target Support Files/CocoaLumberjack/CocoaLumberjack.xcconfig" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Pods/Target Support Files/FMDB/FMDB-Private.xcconfig" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/Pods/Target Support Files/FMDB/FMDB-dummy.m" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/Pods/Target Support Files/FMDB/FMDB-prefix.pch" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/Pods/Target Support Files/FMDB/FMDB.xcconfig" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Pods/Target Support Files/FastImageCache/FastImageCache-Private.xcconfig" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/Pods/Target Support Files/FastImageCache/FastImageCache-dummy.m" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/Pods/Target Support Files/FastImageCache/FastImageCache-prefix.pch" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/Pods/Target Support Files/FastImageCache/FastImageCache.xcconfig" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Pods/Target Support Files/Kiwi/Kiwi-Private.xcconfig" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/Pods/Target Support Files/Kiwi/Kiwi-dummy.m" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/Pods/Target Support Files/Kiwi/Kiwi-prefix.pch" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/Pods/Target Support Files/Kiwi/Kiwi.xcconfig" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Pods/Target Support Files/MBProgressHUD/MBProgressHUD-Private.xcconfig" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/Pods/Target Support Files/MBProgressHUD/MBProgressHUD-dummy.m" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/Pods/Target Support Files/MBProgressHUD/MBProgressHUD-prefix.pch" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/Pods/Target Support Files/MBProgressHUD/MBProgressHUD.xcconfig" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Pods/Target Support Files/MJExtension/MJExtension-Private.xcconfig" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/Pods/Target Support Files/MJExtension/MJExtension-dummy.m" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/Pods/Target Support Files/MJExtension/MJExtension-prefix.pch" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/Pods/Target Support Files/MJExtension/MJExtension.xcconfig" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Pods/Target Support Files/MJRefresh/MJRefresh-Private.xcconfig" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/Pods/Target Support Files/MJRefresh/MJRefresh-dummy.m" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/Pods/Target Support Files/MJRefresh/MJRefresh-prefix.pch" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/Pods/Target Support Files/MJRefresh/MJRefresh.xcconfig" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Pods/Target Support Files/MMDrawerController/MMDrawerController-Private.xcconfig" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/Pods/Target Support Files/MMDrawerController/MMDrawerController-dummy.m" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/Pods/Target Support Files/MMDrawerController/MMDrawerController-prefix.pch" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/Pods/Target Support Files/MMDrawerController/MMDrawerController.xcconfig" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Pods/Target Support Files/NJKWebViewProgress/NJKWebViewProgress-Private.xcconfig" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/Pods/Target Support Files/NJKWebViewProgress/NJKWebViewProgress-dummy.m" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/Pods/Target Support Files/NJKWebViewProgress/NJKWebViewProgress-prefix.pch" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/Pods/Target Support Files/NJKWebViewProgress/NJKWebViewProgress.xcconfig" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/Pods/Target Support Files/Pods-JianDanTests/Pods-JianDanTests-acknowledgements.markdown" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/Pods/Target Support Files/Pods-JianDanTests/Pods-JianDanTests-acknowledgements.plist" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/Pods/Target Support Files/Pods-JianDanTests/Pods-JianDanTests-dummy.m" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/Pods/Target Support Files/Pods-JianDanTests/Pods-JianDanTests-frameworks.sh" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/Pods/Target Support Files/Pods-JianDanTests/Pods-JianDanTests-resources.sh" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/Pods/Target Support Files/Pods-JianDanTests/Pods-JianDanTests.debug.xcconfig" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/Pods/Target Support Files/Pods-JianDanTests/Pods-JianDanTests.release.xcconfig" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/Pods/Target Support Files/Pods/Pods-acknowledgements.markdown" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/Pods/Target Support Files/Pods/Pods-acknowledgements.plist" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/Pods/Target Support Files/Pods/Pods-dummy.m" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/Pods/Target Support Files/Pods/Pods-frameworks.sh" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/Pods/Target Support Files/Pods/Pods-resources.sh" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/Pods/Target Support Files/Pods/Pods.debug.xcconfig" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/Pods/Target Support Files/Pods/Pods.release.xcconfig" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Pods/Target Support Files/PureLayout/PureLayout-Private.xcconfig" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/Pods/Target Support Files/PureLayout/PureLayout-dummy.m" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/Pods/Target Support Files/PureLayout/PureLayout-prefix.pch" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/Pods/Target Support Files/PureLayout/PureLayout.xcconfig" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Pods/Target Support Files/ReactiveCocoa/ReactiveCocoa-Private.xcconfig" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/Pods/Target Support Files/ReactiveCocoa/ReactiveCocoa-dummy.m" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/Pods/Target Support Files/ReactiveCocoa/ReactiveCocoa-prefix.pch" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/Pods/Target Support Files/ReactiveCocoa/ReactiveCocoa.xcconfig" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Pods/Target Support Files/SDWebImage/SDWebImage-Private.xcconfig" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/Pods/Target Support Files/SDWebImage/SDWebImage-dummy.m" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/Pods/Target Support Files/SDWebImage/SDWebImage-prefix.pch" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/Pods/Target Support Files/SDWebImage/SDWebImage.xcconfig" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Pods/Target Support Files/TMCache/TMCache-Private.xcconfig" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/Pods/Target Support Files/TMCache/TMCache-dummy.m" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/Pods/Target Support Files/TMCache/TMCache-prefix.pch" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/Pods/Target Support Files/TMCache/TMCache.xcconfig" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Pods/Target Support Files/TPKeyboardAvoiding/TPKeyboardAvoiding-Private.xcconfig" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/Pods/Target Support Files/TPKeyboardAvoiding/TPKeyboardAvoiding-dummy.m" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/Pods/Target Support Files/TPKeyboardAvoiding/TPKeyboardAvoiding-prefix.pch" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/Pods/Target Support Files/TPKeyboardAvoiding/TPKeyboardAvoiding.xcconfig" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Pods/Target Support Files/UITableView+FDTemplateLayoutCell/UITableView+FDTemplateLayoutCell-Private.xcconfig" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/Pods/Target Support Files/UITableView+FDTemplateLayoutCell/UITableView+FDTemplateLayoutCell-dummy.m" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/Pods/Target Support Files/UITableView+FDTemplateLayoutCell/UITableView+FDTemplateLayoutCell-prefix.pch" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/Pods/Target Support Files/UITableView+FDTemplateLayoutCell/UITableView+FDTemplateLayoutCell.xcconfig" isTestSource="false" />

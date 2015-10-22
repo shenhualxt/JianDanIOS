@@ -10,6 +10,6 @@
 
 @interface FreshNewsDetailViewModel : NSObject
 
-@property(nonatomic,strong,readonly) RACCommand *soureCommand;
+@property(nonatomic, strong, readonly) RACCommand *soureCommand;
 
 @end

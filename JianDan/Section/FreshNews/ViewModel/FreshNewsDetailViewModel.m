@@ -11,21 +11,21 @@
 #import "FreshNewsDetail.h"
 #import "NSDate+Additions.h"
 
-@interface FreshNewsDetailViewModel()
+@interface FreshNewsDetailViewModel ()
 
-@property(nonatomic,strong) RACCommand *soureCommand;
+@property(nonatomic, strong) RACCommand *soureCommand;
 
 @end
 
 @implementation FreshNewsDetailViewModel
 
 
--(RACCommand *)soureCommand{
+- (RACCommand *)soureCommand {
     if (!_soureCommand) {
         @weakify(self)
-        _soureCommand=[[RACCommand alloc] initWithSignalBlock:^RACSignal *(FreshNews *freshNews) {
+        _soureCommand = [[RACCommand alloc] initWithSignalBlock:^RACSignal *(FreshNews *freshNews) {
             @strongify(self)
-            NSString *url=[NSString stringWithFormat:@"%@%d",freshNewDetailUrl,freshNews.id];
+            NSString * url = [NSString stringWithFormat:@"%@%d", freshNewDetailUrl, freshNews.id];
             return [[AFNetWorkUtils racGETWithURL:url class:[FreshNewsDetail class]] map:^id(FreshNewsDetail *freshNewsDetail) {
                 return [self getHtml:freshNewsDetail.post.content freshNews:freshNews];
             }];
@@ -34,8 +34,8 @@
     return _soureCommand;
 }
 
--(NSString *)getHtml:(NSString *)content freshNews:(FreshNews *)freshNews{
-    NSMutableString *html=[NSMutableString string];
+- (NSString *)getHtml:(NSString *)content freshNews:(FreshNews *)freshNews {
+    NSMutableString *html = [NSMutableString string];
     [html appendString:@"<!DOCTYPE html>"];
     [html appendString:@"<!DOCTYPE html>"];
     [html appendString:@"<html dir=\"ltr\" lang=\"zh\">"];
@@ -55,18 +55,18 @@
     [html appendString:freshNews.title];
     [html appendString:@"</a>"];
     [html appendString:@"</h2>"];
-     NSDate *date=[NSDate dateWithTimeIntervalSince1970:[freshNews.date doubleValue]];
-    [html appendFormat:@"%@ @ %@",freshNews.authorName,[date toString]];
+    NSDate *date = [NSDate dateWithTimeIntervalSince1970:[freshNews.date doubleValue]];
+    [html appendFormat:@"%@ @ %@", freshNews.authorName, [date toString]];
     [html appendString:@"</div>"];
     [html appendString:@"<div class=\"entry\">"];
-    NSRange startRannge=[content rangeOfString:@"<iframe"];
+    NSRange startRannge = [content rangeOfString:@"<iframe"];
     if (startRannge.length) {
-        NSRange endRannge=[content rangeOfString:@"</iframe>"];
-        NSMutableString *iFrameString=[[content substringWithRange:NSMakeRange(startRannge.location, endRannge.location-startRannge.location)] mutableCopy];
-        NSRange widthStartRange=[iFrameString rangeOfString:@"width:"];
-        NSRange widthendRange=[iFrameString rangeOfString:@"height"];
-        NSString *newIFrame= [iFrameString stringByReplacingCharactersInRange:NSMakeRange(widthStartRange.location, widthendRange.location-widthStartRange.location)  withString:@"width:100%;"];
-        content=[content stringByReplacingCharactersInRange:NSMakeRange(startRannge.location, endRannge.location-startRannge.location) withString:newIFrame];
+        NSRange endRannge = [content rangeOfString:@"</iframe>"];
+        NSMutableString *iFrameString = [[content substringWithRange:NSMakeRange(startRannge.location, endRannge.location - startRannge.location)] mutableCopy];
+        NSRange widthStartRange = [iFrameString rangeOfString:@"width:"];
+        NSRange widthendRange = [iFrameString rangeOfString:@"height"];
+        NSString * newIFrame = [iFrameString stringByReplacingCharactersInRange:NSMakeRange(widthStartRange.location, widthendRange.location - widthStartRange.location) withString:@"width:100%;"];
+        content = [content stringByReplacingCharactersInRange:NSMakeRange(startRannge.location, endRannge.location - startRannge.location) withString:newIFrame];
     }
     [html appendString:content];
     [html appendString:@"</div>"];

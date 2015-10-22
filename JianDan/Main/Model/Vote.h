@@ -11,10 +11,10 @@
 @protocol Vote <NSObject>
 
 @required
--(NSString *)getPost_id;
+- (NSString *)getPost_id;
 
--(NSInteger)encreaseVote_negative;
+- (NSInteger)encreaseVote_negative;
 
--(NSInteger)encreaseVote_positive;
+- (NSInteger)encreaseVote_positive;
 
 @end

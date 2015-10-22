@@ -11,21 +11,21 @@
 
 @protocol DynamicHeightModel <NSObject>
 
--(NSString *)idStr;
+- (NSString *)idStr;
 
--(BOOL)isLoadedImage;
+- (BOOL)isLoadedImage;
 
 @end
 
 @interface CETableViewBindingHelper : NSObject
 
-@property (assign, nonatomic) BOOL isDynamicHeight;
+@property(assign, nonatomic) BOOL isDynamicHeight;
 
-@property (strong, nonatomic,readonly) NSArray *data;
+@property(strong, nonatomic, readonly) NSArray *data;
 
-@property (weak, nonatomic) id<UITableViewDelegate> delegate;
+@property(weak, nonatomic) id <UITableViewDelegate> delegate;
 
-@property (weak, nonatomic) id<UIScrollViewDelegate> scrollViewDelegate;
+@property(weak, nonatomic) id <UIScrollViewDelegate> scrollViewDelegate;
 
 
 + (instancetype)bindingHelperForTableView:(UITableView *)tableView

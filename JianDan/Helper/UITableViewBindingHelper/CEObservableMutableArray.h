@@ -17,10 +17,10 @@
 @optional
 
 /// invoked when an item is added to the array
-- (void)array:(CEObservableMutableArray *)array didAddItemAtIndex:(NSUInteger) index;
+- (void)array:(CEObservableMutableArray *)array didAddItemAtIndex:(NSUInteger)index;
 
 /// invoked when an item is removed from the aray
-- (void)array:(CEObservableMutableArray *)array didRemoveItemAtIndex:(NSUInteger) index;
+- (void)array:(CEObservableMutableArray *)array didRemoveItemAtIndex:(NSUInteger)index;
 
 /// invoked when an item is replaced
 - (void)array:(CEObservableMutableArray *)array didReplaceObjectAtIndex:(NSUInteger)index withObject:(id)anObject;
@@ -30,9 +30,9 @@
 /// a mutable array that informs the delegate of mutations
 @interface CEObservableMutableArray : NSMutableArray
 
-- (instancetype) initWithArray:(NSArray *)array;
+- (instancetype)initWithArray:(NSArray *)array;
 
-@property (nonatomic, assign) id<CEObservableMutableArrayDelegate> delegate;
+@property(nonatomic, assign) id <CEObservableMutableArrayDelegate> delegate;
 
 @end
 

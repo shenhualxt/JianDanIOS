@@ -10,7 +10,7 @@
 #import "CEReactiveView.h"
 
 @interface HRCollectionViewBindingHelper ()
-@property (nonatomic, strong) NSString * cellIdentifier;
+@property(nonatomic, strong) NSString *cellIdentifier;
 @end
 
 @implementation HRCollectionViewBindingHelper
@@ -27,7 +27,7 @@
 }
 
 + (instancetype)bindWithCollectionView:(UICollectionView *)collectionView dataSource:(RACSignal *)source selectionCommand:(RACCommand *)command templateCellClass:(Class)class {
-  return [[self alloc] initWithCollectionView:collectionView dataSource:source selectionCommand:command templateCellClass:class];
+    return [[self alloc] initWithCollectionView:collectionView dataSource:source selectionCommand:command templateCellClass:class];
 }
 
 - (instancetype)initWithCollectionView:(UICollectionView *)collectionView dataSource:(RACSignal *)source selectionCommand:(RACCommand *)command {
@@ -35,54 +35,54 @@
     NSParameterAssert(source);
     self = [super init];
     if (!self) return nil;
-    
+
     _collectionView = collectionView;
     _selectCommand = command;
     _data = [NSMutableArray array];
-    
-   _disposable=[source subscribeNext:^(NSArray *dataList) {
+
+    _disposable = [source subscribeNext:^(NSArray *dataList) {
         _data = [NSMutableArray arrayWithArray:dataList];
         [_collectionView reloadData];
     }];
-    
+
     _collectionView.dataSource = self;
     _collectionView.delegate = self;
-    
+
     return self;
 }
 
 - (instancetype)initWithCollectionView:(UICollectionView *)collectionView dataSource:(RACSignal *)source selectionCommand:(RACCommand *)command templateCell:(UINib *)nibCell {
     self = [self initWithCollectionView:collectionView dataSource:source selectionCommand:command];
     if (!self) return nil;
-    
+
     _templateCell = [[nibCell instantiateWithOwner:nil options:nil] firstObject];
     _cellIdentifier = _templateCell.reuseIdentifier;
     [_collectionView registerNib:nibCell forCellWithReuseIdentifier:_cellIdentifier];
-    
+
     [self customInitialization];
-    
+
     return self;
 }
 
 - (instancetype)initWithCollectionView:(UICollectionView *)collectionView dataSource:(RACSignal *)source selectionCommand:(RACCommand *)command templateCellClass:(Class)class {
-  self = [self initWithCollectionView:collectionView dataSource:source selectionCommand:command];
-  if (!self) return nil;
-  self.cellIdentifier =[NSString stringWithFormat:@"%s", object_getClassName(class)];
-  UINib *nib=[UINib nibWithNibName:self.cellIdentifier bundle:nil];
-   _templateCell = [[nib instantiateWithOwner:nil options:nil] firstObject];
-  [_collectionView registerClass:class forCellWithReuseIdentifier:_cellIdentifier];
+    self = [self initWithCollectionView:collectionView dataSource:source selectionCommand:command];
+    if (!self) return nil;
+    self.cellIdentifier = [NSString stringWithFormat:@"%s", object_getClassName(class)];
+    UINib *nib = [UINib nibWithNibName:self.cellIdentifier bundle:nil];
+    _templateCell = [[nib instantiateWithOwner:nil options:nil] firstObject];
+    [_collectionView registerClass:class forCellWithReuseIdentifier:_cellIdentifier];
 
-  [self customInitialization];
-  return self;
+    [self customInitialization];
+    return self;
 }
 
 - (instancetype)initWithCollectionView:(UICollectionView *)collectionView dataSource:(RACSignal *)source selectionCommand:(RACCommand *)command templateCellClassName:(NSString *)classCell {
     self = [self initWithCollectionView:collectionView dataSource:source selectionCommand:command];
     if (!self) return nil;
-    
+
     self.cellIdentifier = classCell;
     [_collectionView registerClass:NSClassFromString(classCell) forCellWithReuseIdentifier:_cellIdentifier];
-    
+
     [self customInitialization];
     return self;
 }
@@ -99,17 +99,17 @@
 - (instancetype)initForCollectionView:(UICollectionView *)collectionView sourceList:(NSArray *)source didSelectionBlock:(CollectionSelectionBlock)block {
     NSParameterAssert(collectionView);
     NSParameterAssert(source);
-    
+
     self = [super init];
     if (!self) return nil;
-    
+
     _collectionView = collectionView;
     _data = [NSMutableArray arrayWithArray:source];
     _selectBlock = [block copy];
-    
+
     _collectionView.dataSource = self;
     _collectionView.delegate = self;
-    
+
     return self;
 }
 
@@ -119,7 +119,7 @@
     _templateCell = [[templateCellNib instantiateWithOwner:nil options:nil] firstObject];
     _cellIdentifier = _templateCell.reuseIdentifier;
     [_collectionView registerNib:templateCellNib forCellWithReuseIdentifier:_cellIdentifier];
-    
+
     [self customInitialization];
     return self;
 }
@@ -129,7 +129,7 @@
     if (!self) return nil;
     self.cellIdentifier = templateCellClass;
     [_collectionView registerClass:NSClassFromString(templateCellClass) forCellWithReuseIdentifier:templateCellClass];
-    
+
     [self customInitialization];
     return self;
 }
@@ -139,6 +139,7 @@
 }
 
 #pragma mark - DataSource and Delegate
+
 - (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section {
     return _data.count;
 }
@@ -148,15 +149,15 @@
 }
 
 - (UICollectionViewCell *)dequeueCellAndBindInCollectionView:(UICollectionView *)collectionView indexPath:(NSIndexPath *)indexPath {
-    id<CEReactiveView> cell = [collectionView dequeueReusableCellWithReuseIdentifier:_cellIdentifier forIndexPath:indexPath];
+    id <CEReactiveView> cell = [collectionView dequeueReusableCellWithReuseIdentifier:_cellIdentifier forIndexPath:indexPath];
     if (!cell) {
-      cell=(id<CEReactiveView>)_templateCell;
+        cell = (id <CEReactiveView>) _templateCell;
     }
 
     if ([cell respondsToSelector:@selector(bindViewModel:forIndexPath:)]) {
-      [cell bindViewModel:_data[indexPath.row] forIndexPath:indexPath];
+        [cell bindViewModel:_data[indexPath.row] forIndexPath:indexPath];
     }
-    return (UICollectionViewCell *)cell;
+    return (UICollectionViewCell *) cell;
 }
 
 - (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath {
@@ -168,18 +169,17 @@
 }
 
 //定义每个UICollectionView 的大小
-- (CGSize)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout*)collectionViewLayout sizeForItemAtIndexPath:(NSIndexPath *)indexPath
-{
+- (CGSize)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout *)collectionViewLayout sizeForItemAtIndexPath:(NSIndexPath *)indexPath {
     if ([self.delegate respondsToSelector:@selector(collectionView:layout:sizeForItemAtIndexPath:)]) {
-      return [self.delegate collectionView:collectionView layout:collectionViewLayout sizeForItemAtIndexPath:indexPath];
+        return [self.delegate collectionView:collectionView layout:collectionViewLayout sizeForItemAtIndexPath:indexPath];
     }
-  return [collectionView cellForItemAtIndexPath:indexPath].frame.size;
+    return [collectionView cellForItemAtIndexPath:indexPath].frame.size;
 }
 
 
 #pragma mark - Custon Action
-- (void)reloadDataWithSourceList:(NSArray *)source
-{
+
+- (void)reloadDataWithSourceList:(NSArray *)source {
     if (source) {
         _data = [NSMutableArray arrayWithArray:source];
     }

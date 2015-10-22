@@ -16,7 +16,7 @@
     return self;
 }
 
-+ (instancetype)menuWithImageName:(NSString *)imageName menuName:(NSString *)menuName{
++ (instancetype)menuWithImageName:(NSString *)imageName menuName:(NSString *)menuName {
     return [[self alloc] initWithImageName:imageName menuName:menuName];
 }
 

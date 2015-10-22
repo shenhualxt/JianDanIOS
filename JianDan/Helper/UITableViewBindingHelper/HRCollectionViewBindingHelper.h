@@ -11,13 +11,12 @@
 
 typedef void (^CollectionSelectionBlock)(id model);
 
-@interface HRCollectionViewBindingHelper : NSObject <UICollectionViewDataSource, UICollectionViewDelegate>
-{
-    NSMutableArray              *_data;
-    UICollectionView            *_collectionView;
-    UICollectionViewCell        *_templateCell;
-    RACCommand                  *_selectCommand;
-    CollectionSelectionBlock     _selectBlock;
+@interface HRCollectionViewBindingHelper : NSObject <UICollectionViewDataSource, UICollectionViewDelegate> {
+    NSMutableArray *_data;
+    UICollectionView *_collectionView;
+    UICollectionViewCell *_templateCell;
+    RACCommand *_selectCommand;
+    CollectionSelectionBlock _selectBlock;
 }
 
 + (instancetype)bindWithCollectionView:(UICollectionView *)collectionView
@@ -43,11 +42,13 @@ typedef void (^CollectionSelectionBlock)(id model);
 + (instancetype)bindWithCollectionView:(UICollectionView *)collectionView dataSource:(RACSignal *)source selectionCommand:(RACCommand *)command templateCellClass:(Class)class;
 
 - (void)customInitialization;
+
 - (void)reloadDataWithSourceList:(NSArray *)source;
+
 - (UICollectionViewCell *)dequeueCellAndBindInCollectionView:(UICollectionView *)collectionView indexPath:(NSIndexPath *)indexPath;
 
 // forwards the UITableViewDelegate methods
-@property (weak, nonatomic) id<UICollectionViewDelegateFlowLayout> delegate;
+@property(weak, nonatomic) id <UICollectionViewDelegateFlowLayout> delegate;
 
-@property (strong,nonatomic) RACDisposable *disposable;
+@property(strong, nonatomic) RACDisposable *disposable;
 @end

@@ -8,19 +8,20 @@
 
 #import <UIKit/UIKit.h>
 
-@interface UITextViewEx : UITextView{
-    
+@interface UITextViewEx : UITextView {
+
     BOOL isEnablePadding;
     float paddingLeft;
     float paddingRight;
     float paddingTop;
     float paddingBottom;
-    
+
 }
 
 - (void)setPadding:(BOOL)enable top:(float)top right:(float)right bottom:(float)bottom left:(float)left;
 
-- (NSRange) selectedRange;
-- (void) setSelectedRange:(NSRange) range;
+- (NSRange)selectedRange;
+
+- (void)setSelectedRange:(NSRange)range;
 
 @end

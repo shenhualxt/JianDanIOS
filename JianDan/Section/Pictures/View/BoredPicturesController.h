@@ -8,13 +8,13 @@
 
 #import "BaseTableViewController.h"
 
-typedef NS_ENUM(NSInteger,ControllerType){
-    controllerTypeBoredPictures=1,
+typedef NS_ENUM(NSInteger, ControllerType) {
+    controllerTypeBoredPictures = 1,
     controllerTypeSisterPictures,
     controllerTypeJoke,
 };
 
-@interface BoredPicturesController :BaseTableViewController
+@interface BoredPicturesController : BaseTableViewController
 
 - (instancetype)initWithControllerType:(ControllerType)controllerType;
 

@@ -36,7 +36,7 @@
     self.tableView.backgroundColor = [UIColor darkGrayColor];
     RACCommand *menuCommand = [[RACCommand alloc] initWithSignalBlock:^RACSignal *(RACTuple *turple) {
         AppDelegate *delegate = (AppDelegate *) [UIApplication sharedApplication].delegate;
-        NSIndexPath *indexPath=turple.second;
+        NSIndexPath *indexPath = turple.second;
         [delegate replaceContentViewController:indexPath.row];
         return [RACSignal empty];
     }];
@@ -65,8 +65,8 @@
 - (NSMutableArray *)menuArray {
     if (!_menuArray) {
         _menuArray = [NSMutableArray array];
-        NSArray *imageNameArray = @[@"ic_explore_white_24dp", @"ic_mood_white_24dp", @"ic_local_florist_white_24dp", @"ic_chat_white_24dp", @"ic_movie_white_24dp"];
-        NSArray *menuNameArray = @[@"新鲜事", @"无聊图", @"妹子图", @"段子", @"小电影"];
+        NSArray * imageNameArray = @[@"ic_explore_white_24dp", @"ic_mood_white_24dp", @"ic_local_florist_white_24dp", @"ic_chat_white_24dp", @"ic_movie_white_24dp"];
+        NSArray * menuNameArray = @[@"新鲜事", @"无聊图", @"妹子图", @"段子", @"小电影"];
 
         for (int i = 0; i < [menuNameArray count]; ++i) {
             LeftMenu *menu = [LeftMenu menuWithImageName:imageNameArray[i] menuName:menuNameArray[i]];

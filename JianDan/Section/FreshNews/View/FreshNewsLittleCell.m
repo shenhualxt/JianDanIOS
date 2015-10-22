@@ -9,24 +9,24 @@
 #import "FreshNewsLittleCell.h"
 #import "FreshNews.h"
 
-@interface FreshNewsLittleCell()<CEReactiveView>
+@interface FreshNewsLittleCell () <CEReactiveView>
 
-@property (weak, nonatomic) IBOutlet UILabel *labelTitle;
+@property(weak, nonatomic) IBOutlet UILabel *labelTitle;
 
-@property (weak, nonatomic) IBOutlet UILabel *author;
+@property(weak, nonatomic) IBOutlet UILabel *author;
 
-@property (weak, nonatomic) IBOutlet UIImageView *imagePicture;
+@property(weak, nonatomic) IBOutlet UIImageView *imagePicture;
 
 @end
 
 @implementation FreshNewsLittleCell
 
--(void)bindViewModel:(FreshNews *)viewModel forIndexPath:(NSIndexPath *)indexPath{
-    self.labelTitle.text=viewModel.title;
-    self.author.text=viewModel.authorAndTagsTitle;
-    NSString *key=[[SDWebImageManager sharedManager] cacheKeyForURL:[NSURL URLWithString:viewModel.thumb_c]];
+- (void)bindViewModel:(FreshNews *)viewModel forIndexPath:(NSIndexPath *)indexPath {
+    self.labelTitle.text = viewModel.title;
+    self.author.text = viewModel.authorAndTagsTitle;
+    NSString * key = [[SDWebImageManager sharedManager] cacheKeyForURL:[NSURL URLWithString:viewModel.thumb_c]];
     [[SDImageCache sharedImageCache] queryDiskCacheForKey:key done:^(UIImage *image, SDImageCacheType cacheType) {
-        self.imagePicture.image=image?:[UIImage imageNamed:@"ic_loading_small"];
+        self.imagePicture.image = image ?: [UIImage imageNamed:@"ic_loading_small"];
     }];
     [self.imagePicture sd_setImageWithURL:[NSURL URLWithString:viewModel.thumb_c] placeholderImage:[UIImage imageNamed:@"ic_loading_small"]];
 }

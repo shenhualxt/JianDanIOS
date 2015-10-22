@@ -16,7 +16,7 @@
 
 @property(nonatomic, readwrite, assign) struct scrollViewDelegateMethodsCaching {
 
-uint scrollViewDidScroll:1;
+    uint scrollViewDidScroll:1;
 
 } scrollViewDelegateRespondsTo;
 
@@ -32,13 +32,13 @@ uint scrollViewDidScroll:1;
     BOOL scrollToToping;
 }
 
--(void)setScrollViewDelegate:(id<UIScrollViewDelegate>)scrollViewDelegate{
+- (void)setScrollViewDelegate:(id <UIScrollViewDelegate>)scrollViewDelegate {
     if (self.scrollViewDelegate != scrollViewDelegate)
         _scrollViewDelegate = scrollViewDelegate;
-    
+
     struct scrollViewDelegateMethodsCaching newMethodCaching;
     newMethodCaching.scrollViewDidScroll = [_scrollViewDelegate respondsToSelector:@selector(scrollViewDidScroll:)];
-    self.scrollViewDelegateRespondsTo=newMethodCaching;
+    self.scrollViewDelegateRespondsTo = newMethodCaching;
 }
 
 #pragma  mark - initialization
@@ -47,12 +47,12 @@ uint scrollViewDidScroll:1;
     if (self = [super init]) {
         _tableView = tableView;
         _selection = selection;
-        
+
         [source subscribeNext:^(id x) {
             _data = x;
             [_tableView reloadData];
         }];
-        
+
         needLoadArr = [[NSMutableArray alloc] init];
         _tableView.separatorStyle = UITableViewCellSelectionStyleNone;
         _tableView.dataSource = self;
@@ -80,7 +80,7 @@ uint scrollViewDidScroll:1;
     self = [self initWithTableView:tableView sourceSignal:source selectionCommand:selection];
     if (self) {
         _reuseIdentifier = NSStringFromClass(clazz);
-         _templateCell  = [[clazz alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:_reuseIdentifier];
+        _templateCell = [[clazz alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:_reuseIdentifier];
         [_tableView registerClass:clazz forCellReuseIdentifier:_reuseIdentifier];
         _tableView.rowHeight = _templateCell.bounds.size.height; // use the template cell to set the row height
     }
@@ -89,18 +89,18 @@ uint scrollViewDidScroll:1;
 
 - (CGFloat)   tableView:(UITableView *)tableView
 heightForRowAtIndexPath:(NSIndexPath *)indexPath {
-    
+
     if ([self.delegate respondsToSelector:@selector(tableView:heightForRowAtIndexPath:)]) {
-       return  [self.delegate tableView:tableView heightForRowAtIndexPath:indexPath];
+        return [self.delegate tableView:tableView heightForRowAtIndexPath:indexPath];
     }
-    
+
     CGFloat heightForRowAtIndexPath = tableView.rowHeight;
     if (_isDynamicHeight) {
-        if(IOS8){
-            heightForRowAtIndexPath=UITableViewAutomaticDimension;
-        }else{
-            id<DynamicHeightModel> model=_data[indexPath.row];
-            heightForRowAtIndexPath=[_tableView fd_heightForCellWithIdentifier:_reuseIdentifier cacheByKey:[model idStr] configuration:^(id<CEReactiveView> cell) {
+        if (IOS8) {
+            heightForRowAtIndexPath = UITableViewAutomaticDimension;
+        } else {
+            id <DynamicHeightModel> model = _data[indexPath.row];
+            heightForRowAtIndexPath = [_tableView fd_heightForCellWithIdentifier:_reuseIdentifier cacheByKey:[model idStr] configuration:^(id <CEReactiveView> cell) {
                 [cell bindViewModel:model forIndexPath:indexPath];
             }];
         }
@@ -108,11 +108,11 @@ heightForRowAtIndexPath:(NSIndexPath *)indexPath {
     return heightForRowAtIndexPath;
 }
 
--(void)configureCell:(id<CEReactiveView>)cell forIndexPath:(NSIndexPath *)indexPath{
+- (void)configureCell:(id <CEReactiveView>)cell forIndexPath:(NSIndexPath *)indexPath {
     if ([cell respondsToSelector:@selector(clear)]) {
         [cell clear];
     }
-    if (needLoadArr.count>0&&[needLoadArr indexOfObject:indexPath]==NSNotFound) {
+    if (needLoadArr.count > 0 && [needLoadArr indexOfObject:indexPath] == NSNotFound) {
         if ([cell respondsToSelector:@selector(clear)]) {
             [cell clear];
         }
@@ -122,7 +122,7 @@ heightForRowAtIndexPath:(NSIndexPath *)indexPath {
         return;
     }
 
-    id model=_data[indexPath.row];
+    id model = _data[indexPath.row];
     [cell bindViewModel:model forIndexPath:indexPath];
 }
 
@@ -137,7 +137,7 @@ heightForRowAtIndexPath:(NSIndexPath *)indexPath {
                              sourceSignal:(RACSignal *)source
                          selectionCommand:(RACCommand *)selection
                           customCellClass:(Class)clazz {
-    
+
     return [[CETableViewBindingHelper alloc] initWithTableView:tableView
                                                   sourceSignal:source
                                               selectionCommand:selection
@@ -148,7 +148,7 @@ heightForRowAtIndexPath:(NSIndexPath *)indexPath {
                              sourceSignal:(RACSignal *)source
                          selectionCommand:(RACCommand *)selection
                         templateCellClass:(Class)clazz {
-    
+
     return [[CETableViewBindingHelper alloc] initWithTableView:tableView
                                                   sourceSignal:source
                                               selectionCommand:selection
@@ -169,75 +169,73 @@ heightForRowAtIndexPath:(NSIndexPath *)indexPath {
         return;
     }
     // execute the command
-    RACTuple *turple=[RACTuple tupleWithObjects:_data[indexPath.row],indexPath, nil];
+    RACTuple *turple = [RACTuple tupleWithObjects:_data[indexPath.row], indexPath, nil];
     [_selection execute:turple];
 }
 
 
--(void)scrollViewDidScroll:(UIScrollView *)scrollView{
-    if (self.scrollViewDelegateRespondsTo.scrollViewDidScroll==1) {
+- (void)scrollViewDidScroll:(UIScrollView *)scrollView {
+    if (self.scrollViewDelegateRespondsTo.scrollViewDidScroll == 1) {
         [self.scrollViewDelegate scrollViewDidScroll:scrollView];
     }
 }
 
 
-- (void)scrollViewWillBeginDragging:(UIScrollView *)scrollView{
+- (void)scrollViewWillBeginDragging:(UIScrollView *)scrollView {
     [needLoadArr removeAllObjects];
     [[SDWebImageDownloader sharedDownloader] setMaxConcurrentDownloads:3];
 }
 
 
-- (void)scrollViewDidEndDragging:(UIScrollView *)scrollView willDecelerate:(BOOL)decelerate
-{
-    if (!decelerate)
-    {
+- (void)scrollViewDidEndDragging:(UIScrollView *)scrollView willDecelerate:(BOOL)decelerate {
+    if (!decelerate) {
         [[SDWebImageDownloader sharedDownloader] setMaxConcurrentDownloads:6];
     }
 }
 
-- (void)scrollViewDidEndDecelerating:(UIScrollView *)scrollView
-{
+- (void)scrollViewDidEndDecelerating:(UIScrollView *)scrollView {
     [[SDWebImageDownloader sharedDownloader] setMaxConcurrentDownloads:6];
 }
 
 #pragma mark-开速滑动优化
+
 //按需加载 - 如果目标行与当前行相差超过指定行数，只在目标滚动范围的前后指定3行加载。
-- (void)scrollViewWillEndDragging:(UIScrollView *)scrollView withVelocity:(CGPoint)velocity targetContentOffset:(inout CGPoint *)targetContentOffset{
+- (void)scrollViewWillEndDragging:(UIScrollView *)scrollView withVelocity:(CGPoint)velocity targetContentOffset:(inout CGPoint *)targetContentOffset {
     NSIndexPath *ip = [_tableView indexPathForRowAtPoint:CGPointMake(0, targetContentOffset->y)];
     NSIndexPath *cip = [[_tableView indexPathsForVisibleRows] firstObject];
     NSInteger skipCount = 8;
-    if (labs(cip.row-ip.row)>skipCount) {
-        NSArray *temp = [_tableView indexPathsForRowsInRect:CGRectMake(0, targetContentOffset->y, _tableView.frame.size.width,  _tableView.frame.size.height)];
+    if (labs(cip.row - ip.row) > skipCount) {
+        NSArray * temp = [_tableView indexPathsForRowsInRect:CGRectMake(0, targetContentOffset->y, _tableView.frame.size.width, _tableView.frame.size.height)];
         NSMutableArray *arr = [NSMutableArray arrayWithArray:temp];
-        if (velocity.y<0) {
+        if (velocity.y < 0) {
             NSIndexPath *indexPath = [temp lastObject];
-            if (indexPath.row+3<_data.count) {
-                [arr addObject:[NSIndexPath indexPathForRow:indexPath.row+1 inSection:0]];
-                [arr addObject:[NSIndexPath indexPathForRow:indexPath.row+2 inSection:0]];
-                [arr addObject:[NSIndexPath indexPathForRow:indexPath.row+3 inSection:0]];
+            if (indexPath.row + 3 < _data.count) {
+                [arr addObject:[NSIndexPath indexPathForRow:indexPath.row + 1 inSection:0]];
+                [arr addObject:[NSIndexPath indexPathForRow:indexPath.row + 2 inSection:0]];
+                [arr addObject:[NSIndexPath indexPathForRow:indexPath.row + 3 inSection:0]];
             }
         } else {
             NSIndexPath *indexPath = [temp firstObject];
-            if (indexPath.row>3) {
-                [arr addObject:[NSIndexPath indexPathForRow:indexPath.row-3 inSection:0]];
-                [arr addObject:[NSIndexPath indexPathForRow:indexPath.row-2 inSection:0]];
-                [arr addObject:[NSIndexPath indexPathForRow:indexPath.row-1 inSection:0]];
+            if (indexPath.row > 3) {
+                [arr addObject:[NSIndexPath indexPathForRow:indexPath.row - 3 inSection:0]];
+                [arr addObject:[NSIndexPath indexPathForRow:indexPath.row - 2 inSection:0]];
+                [arr addObject:[NSIndexPath indexPathForRow:indexPath.row - 1 inSection:0]];
             }
         }
         [needLoadArr addObjectsFromArray:arr];
     }
 }
 
-- (BOOL)scrollViewShouldScrollToTop:(UIScrollView *)scrollView{
+- (BOOL)scrollViewShouldScrollToTop:(UIScrollView *)scrollView {
     scrollToToping = YES;
     return YES;
 }
 
-- (void)scrollViewDidEndScrollingAnimation:(UIScrollView *)scrollView{
+- (void)scrollViewDidEndScrollingAnimation:(UIScrollView *)scrollView {
     scrollToToping = NO;
 }
 
-- (void)scrollViewDidScrollToTop:(UIScrollView *)scrollView{
+- (void)scrollViewDidScrollToTop:(UIScrollView *)scrollView {
     scrollToToping = NO;
 }
 

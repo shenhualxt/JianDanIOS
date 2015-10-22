@@ -8,6 +8,6 @@
 
 #import "BaseViewController.h"
 
-@interface FreshNewsDetailController : BaseViewController<UIScrollViewDelegate>
+@interface FreshNewsDetailController : BaseViewController <UIScrollViewDelegate>
 
 @end

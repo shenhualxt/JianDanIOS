@@ -12,34 +12,33 @@
 
 @implementation CommonUtils
 
-+(CGSize)getStringRect:(NSString*)aString
-{
++ (CGSize)getStringRect:(NSString *)aString {
     CGSize size;
-    NSAttributedString* atrString = [[NSAttributedString alloc] initWithString:aString];
+    NSAttributedString *atrString = [[NSAttributedString alloc] initWithString:aString];
     NSRange range = NSMakeRange(0, atrString.length);
-    NSDictionary* dic = [atrString attributesAtIndex:0 effectiveRange:&range];
-    size = [aString boundingRectWithSize:CGSizeMake(237, 200)  options:NSStringDrawingUsesLineFragmentOrigin attributes:dic context:nil].size;
-    return  size;
+    NSDictionary * dic = [atrString attributesAtIndex:0 effectiveRange:&range];
+    size = [aString boundingRectWithSize:CGSizeMake(237, 200) options:NSStringDrawingUsesLineFragmentOrigin attributes:dic context:nil].size;
+    return size;
 }
 
-+(BOOL)isMatch:(NSString*)strPlace regex:(NSString *)regex
-{
++ (BOOL)isMatch:(NSString *)strPlace regex:(NSString *)regex {
     //    NSString* regex = regex;//@"\\d{7}";
-    NSPredicate* predicateTest = [NSPredicate predicateWithFormat:@"SELF MATCHES %@", regex];
-    
+    NSPredicate *predicateTest = [NSPredicate predicateWithFormat:@"SELF MATCHES %@", regex];
+
     return [predicateTest evaluateWithObject:strPlace];
 }
 
 #pragma mark TextView method
-+(BOOL)isChinese:(const NSString *)newText {
-    if (!newText.length){
+
++ (BOOL)isChinese:(const NSString *)newText {
+    if (!newText.length) {
         return NO;
     }
     unichar c = [newText characterAtIndex:0];
     return (c >= 0x4e00 && c <= 0x9fff);
 }
 
-+(BOOL)isSpecialHansChar:(const NSString *)text {
++ (BOOL)isSpecialHansChar:(const NSString *)text {
     if (!text.length) {
         return NO;
     }
@@ -48,23 +47,23 @@
     return isSpecialHansChar;
 }
 
-+(BOOL)isHansInput:(UITextView*)textView  {
-    NSString *lang = [textView.textInputMode primaryLanguage];
++ (BOOL)isHansInput:(UITextView *)textView {
+    NSString * lang = [textView.textInputMode primaryLanguage];
     BOOL isHansInput = [lang isEqualToString:@"zh-Hans"];
     return isHansInput;
 }
 
-+ (UITextPosition *)isHasHighlightText:(UITextView*)textView {
++ (UITextPosition *)isHasHighlightText:(UITextView *)textView {
     UITextRange *selectedRange = [textView markedTextRange];
     UITextPosition *position = [textView positionFromPosition:selectedRange.start offset:0];
     return position;
 }
 
-+ (NSInteger)convertToInt:(NSString*)strtemp//判断中英混合的的字符串长度
++ (NSInteger)convertToInt:(NSString *)strtemp//判断中英混合的的字符串长度
 {
     CGFloat strlength = 0;
-    char* p = (char*)[strtemp cStringUsingEncoding:NSUnicodeStringEncoding];
-    for (int i=0 ; i<[strtemp lengthOfBytesUsingEncoding:NSUnicodeStringEncoding] ;i++) {
+    char *p = (char *) [strtemp cStringUsingEncoding:NSUnicodeStringEncoding];
+    for (int i = 0; i < [strtemp lengthOfBytesUsingEncoding:NSUnicodeStringEncoding]; i++) {
         if (*p) {
             p++;
             strlength++;
@@ -73,72 +72,67 @@
             p++;
         }
     }
-    return strlength/2;
+    return strlength / 2;
 }
 
 
-+(NSInteger)countHansNum:(NSString *)text{
-    NSInteger count=0;
++ (NSInteger)countHansNum:(NSString *)text {
+    NSInteger count = 0;
     NSInteger length = [text length];
-    for (int i=0; i<length; ++i)
-    {
+    for (int i = 0; i < length; ++i) {
         NSRange range = NSMakeRange(i, 1);
-        NSString *subString = [text substringWithRange:range];
-        const char    *cString = [subString UTF8String];
-        if (strlen(cString) == 3)
-        {
+        NSString * subString = [text substringWithRange:range];
+        const char *cString = [subString UTF8String];
+        if (strlen(cString) == 3) {
             count++;
         }
     }
-    
+
     return count;
 }
 
-+(NSInteger)countWord:(NSString *)s
-{
-    int i,n=(int)[s length],l=0,a=0,b=0;
++ (NSInteger)countWord:(NSString *)s {
+    int i, n = (int) [s length], l = 0, a = 0, b = 0;
     unichar c;
-    for(i=0;i<n;i++){
-        c=[s characterAtIndex:i];
-        if(isblank(c)){
+    for (i = 0; i < n; i++) {
+        c = [s characterAtIndex:i];
+        if (isblank(c)) {
             b++;
-        }else if(isascii(c)){
+        } else if (isascii(c)) {
             a++;
-        }else{
+        } else {
             l++;
         }
     }
-    if(a==0 && l==0) return 0;
-    return l+(int)ceilf((float)(a+b)/2.0);
+    if (a == 0 && l == 0) return 0;
+    return l + (int) ceilf((float) (a + b) / 2.0);
 }
 
-+ (UIImage *) createImageWithColor: (UIColor *) color
-{
-  CGRect rect=CGRectMake(0.0f, 0.0f, 1.0f, 1.0f);
-  UIGraphicsBeginImageContext(rect.size);
-  CGContextRef context = UIGraphicsGetCurrentContext();
-  CGContextSetFillColorWithColor(context, [color CGColor]);
-  CGContextFillRect(context, rect);
++ (UIImage *)createImageWithColor:(UIColor *)color {
+    CGRect rect = CGRectMake(0.0f, 0.0f, 1.0f, 1.0f);
+    UIGraphicsBeginImageContext(rect.size);
+    CGContextRef context = UIGraphicsGetCurrentContext();
+    CGContextSetFillColorWithColor(context, [color CGColor]);
+    CGContextFillRect(context, rect);
 
-  UIImage *theImage = UIGraphicsGetImageFromCurrentImageContext();
-  UIGraphicsEndImageContext();
-  return theImage;
+    UIImage * theImage = UIGraphicsGetImageFromCurrentImageContext();
+    UIGraphicsEndImageContext();
+    return theImage;
 }
 
 
-+(void)setLastCellSeperatorToLeft:(UITableViewCell*)cell
-{
-  if ([cell respondsToSelector:@selector(setSeparatorInset:)]) {
-    [cell setSeparatorInset:UIEdgeInsetsZero];
-  }
++ (void)setLastCellSeperatorToLeft:(UITableViewCell *)cell {
+    if ([cell respondsToSelector:@selector(setSeparatorInset:)]) {
+        [cell setSeparatorInset:UIEdgeInsetsZero];
+    }
 
-  if ([cell respondsToSelector:@selector(setLayoutMargins:)]) {
-    [cell setLayoutMargins:UIEdgeInsetsZero];
-  }
+    if ([cell respondsToSelector:@selector(setLayoutMargins:)]) {
+        [cell setLayoutMargins:UIEdgeInsetsZero];
+    }
 
-  if([cell respondsToSelector:@selector(setPreservesSuperviewLayoutMargins:)]){
-    [cell setPreservesSuperviewLayoutMargins:NO];
-  }
+    if ([cell respondsToSelector:@selector(setPreservesSuperviewLayoutMargins:)]) {
+        [cell setPreservesSuperviewLayoutMargins:NO];
+    }
 }
 
 /**
@@ -148,27 +142,25 @@
  @param andWidth 限制字符串显示区域的宽度
  @result float 返回的高度
  */
-+(float) heightForString:(NSString *)value fontSize:(UIFont *)fontSize andWidth:(float)width
-{
-  CGSize sizeToFit = [value sizeWithFont:fontSize constrainedToSize:CGSizeMake(width, CGFLOAT_MAX) lineBreakMode:UILineBreakModeWordWrap];//此处的换行类型（lineBreakMode）可根据自己的实际情况进行设置
-  return sizeToFit.height;
++ (float)heightForString:(NSString *)value fontSize:(UIFont *)fontSize andWidth:(float)width {
+    CGSize sizeToFit = [value sizeWithFont:fontSize constrainedToSize:CGSizeMake(width, CGFLOAT_MAX) lineBreakMode:UILineBreakModeWordWrap];//此处的换行类型（lineBreakMode）可根据自己的实际情况进行设置
+    return sizeToFit.height;
 }
 
 + (UIColor *)randomColor {
-  static BOOL seeded = NO;
-  if (!seeded) {
-    seeded = YES;
-    (time(NULL));
-  }
-  CGFloat red = (CGFloat)random() / (CGFloat)RAND_MAX;
-  CGFloat green = (CGFloat)random() / (CGFloat)RAND_MAX;
-  CGFloat blue = (CGFloat)random() / (CGFloat)RAND_MAX;
-  return [UIColor colorWithRed:red green:green blue:blue alpha:1.0f];
+    static BOOL seeded = NO;
+    if (!seeded) {
+        seeded = YES;
+        (time(NULL));
+    }
+    CGFloat red = (CGFloat) random() / (CGFloat) RAND_MAX;
+    CGFloat green = (CGFloat) random() / (CGFloat) RAND_MAX;
+    CGFloat blue = (CGFloat) random() / (CGFloat) RAND_MAX;
+    return [UIColor colorWithRed:red green:green blue:blue alpha:1.0f];
 }
 
-+ (NSString*)getBuild
-{
-    NSDictionary* infoDictionary = [[NSBundle mainBundle] infoDictionary];
++ (NSString *)getBuild {
+    NSDictionary * infoDictionary = [[NSBundle mainBundle] infoDictionary];
     return [infoDictionary objectForKey:@"CFBundleVersion"];
 }
 
@@ -177,19 +169,18 @@
  *
  *  @param dic 接口的返回值
  */
-+ (void)getKeyFromDictionary:(NSDictionary*)dic
-{
++ (void)getKeyFromDictionary:(NSDictionary *)dic {
     if (![dic isKindOfClass:[NSDictionary class]]) {
-      return;
+        return;
     }
-    NSMutableString* result = [NSMutableString string];
+    NSMutableString *result = [NSMutableString string];
     int i = 0;
-    for (NSString* key in dic) {
+    for (NSString *key in dic) {
         i++;
         //普通类型
-        NSString* type = @"";
-        NSString* property = @"strong";
-        NSString* isObject = @"*";
+        NSString * type = @"";
+        NSString * property = @"strong";
+        NSString * isObject = @"*";
         //还是字典
         if ([dic[key] isKindOfClass:[NSDictionary class]]) {
             [self getKeyFromDictionary:dic[key]];
@@ -198,18 +189,18 @@
 
         //是数组
         if ([dic[key] isKindOfClass:[NSArray class]]) {
-          NSArray *array=dic[key];
-            if (array.count!=0){
-            [self getKeyFromDictionary:dic[key][0]];
-            type = @"NSArray";
-                          }
+            NSArray * array = dic[key];
+            if (array.count != 0) {
+                [self getKeyFromDictionary:dic[key][0]];
+                type = @"NSArray";
+            }
         }
 
         if ([dic[key] isKindOfClass:[NSNumber class]]) {
             type = @"int";
             property = @"assign";
             isObject = @"";
-            NSString* value = [NSString stringWithFormat:@"%@", dic[key]];
+            NSString * value = [NSString stringWithFormat:@"%@", dic[key]];
             NSInteger location = [value rangeOfString:@"."].length;
             if (location > 0) {
                 type = @"float";
@@ -225,16 +216,15 @@
     NSLog(@"%@一共%d个字段", result, i);
 }
 
-+ (NSString*)sha1:(NSString*)str
-{
-    const char* cstr = [str cStringUsingEncoding:NSUTF8StringEncoding];
-    NSData* data = [NSData dataWithBytes:cstr length:str.length];
++ (NSString *)sha1:(NSString *)str {
+    const char *cstr = [str cStringUsingEncoding:NSUTF8StringEncoding];
+    NSData *data = [NSData dataWithBytes:cstr length:str.length];
 
     uint8_t digest[CC_SHA1_DIGEST_LENGTH];
 
     CC_SHA1(data.bytes, data.length, digest);
 
-    NSMutableString* output = [NSMutableString stringWithCapacity:CC_SHA1_DIGEST_LENGTH * 2];
+    NSMutableString *output = [NSMutableString stringWithCapacity:CC_SHA1_DIGEST_LENGTH * 2];
 
     for (int i = 0; i < CC_SHA1_DIGEST_LENGTH; i++) {
         [output appendFormat:@"%02x", digest[i]];
@@ -243,22 +233,20 @@
     return output;
 }
 
-+ (NSString*)md5Hash:(NSString*)str
-{
-    const char* cStr = [str UTF8String];
++ (NSString *)md5Hash:(NSString *)str {
+    const char *cStr = [str UTF8String];
     unsigned char result[16];
     CC_MD5(cStr, strlen(cStr), result);
-    NSString* md5Result = [NSString stringWithFormat:
-                                        @"%02x%02x%02x%02x%02x%02x%02x%02x%02x%02x%02x%02x%02x%02x%02x%02x",
-                                    result[0], result[1], result[2], result[3],
-                                    result[4], result[5], result[6], result[7],
-                                    result[8], result[9], result[10], result[11],
-                                    result[12], result[13], result[14], result[15]];
+    NSString * md5Result = [NSString stringWithFormat:
+            @"%02x%02x%02x%02x%02x%02x%02x%02x%02x%02x%02x%02x%02x%02x%02x%02x",
+            result[0], result[1], result[2], result[3],
+            result[4], result[5], result[6], result[7],
+            result[8], result[9], result[10], result[11],
+            result[12], result[13], result[14], result[15]];
     return md5Result;
 }
 
-+ (BOOL)isChineseWith:(unichar)c
-{
++ (BOOL)isChineseWith:(unichar)c {
     return c >= 0x4E00 && c <= 0x9FFF;
 }
 
@@ -269,30 +257,28 @@
  *
  *  @return 时间戳
  */
-+ (NSString*)getTimerWihtTimerStamp:(NSString*)stringTimer
-{
++ (NSString *)getTimerWihtTimerStamp:(NSString *)stringTimer {
     //    if ([stringTimer rangeOfString:@"-"].location > 0) {
     //        return stringTimer;
     //    }
-    NSString* string = [stringTimer stringByReplacingOccurrencesOfString:@"/Date(" withString:@""];
-    NSString* stringEnd = [string stringByReplacingOccurrencesOfString:@")/" withString:@""];
+    NSString * string = [stringTimer stringByReplacingOccurrencesOfString:@"/Date(" withString:@""];
+    NSString * stringEnd = [string stringByReplacingOccurrencesOfString:@")/" withString:@""];
 
     if (stringEnd.length > 10) {
         stringEnd = [stringEnd substringToIndex:10];
     }
 
-    NSDate* configDate = [NSDate dateWithTimeIntervalSince1970:stringEnd.intValue];
+    NSDate *configDate = [NSDate dateWithTimeIntervalSince1970:stringEnd.intValue];
     //    NSTimeZone *zone = [NSTimeZone systemTimeZone];
     //    NSInteger intervaldd = [zone secondsFromGMTForDate: configDate];
-    NSDateFormatter* formatter = [[NSDateFormatter alloc] init];
+    NSDateFormatter *formatter = [[NSDateFormatter alloc] init];
     [formatter setDateFormat:@"yyyy-MM-dd"];
-    NSString* returnTimerString = [formatter stringFromDate:configDate];
+    NSString * returnTimerString = [formatter stringFromDate:configDate];
     return returnTimerString;
 }
 
-+ (int)getRandomNumber:(int)from to:(int)to
-{
-    return (int)(from + (arc4random() % (to - from + 1)));
++ (int)getRandomNumber:(int)from to:(int)to {
+    return (int) (from + (arc4random() % (to - from + 1)));
 }
 
 /**
@@ -302,11 +288,10 @@
  *
  *  @return 要找的Controller
  */
-+ (UIViewController*)viewController:(UIView*)view
-{
-    UIResponder* nextResponder = [view nextResponder];
++ (UIViewController *)viewController:(UIView *)view {
+    UIResponder *nextResponder = [view nextResponder];
     if ([nextResponder isKindOfClass:[UIViewController class]]) {
-        return (UIViewController*)nextResponder;
+        return (UIViewController *) nextResponder;
     }
     return nil;
 }
@@ -316,11 +301,10 @@
  *
  *  @return YES-allowed,otherwise,NO.
  */
-+ (BOOL)isAllowedNotification
-{
++ (BOOL)isAllowedNotification {
     //iOS8 check if user allow notification
     if ([self isSystemVersioniOS8]) { // system is iOS8
-        UIUserNotificationSettings* setting = [[UIApplication sharedApplication] currentUserNotificationSettings];
+        UIUserNotificationSettings *setting = [[UIApplication sharedApplication] currentUserNotificationSettings];
         if (UIUserNotificationTypeNone != setting.types) {
             return YES;
         }
@@ -339,10 +323,9 @@
  *
  *  @return YES-is iOS8,otherwise,below iOS8
  */
-+ (BOOL)isSystemVersioniOS8
-{
++ (BOOL)isSystemVersioniOS8 {
     //check systemVerson of device
-    UIDevice* device = [UIDevice currentDevice];
+    UIDevice *device = [UIDevice currentDevice];
     float sysVersion = [device.systemVersion floatValue];
 
     if (sysVersion >= 8.0f) {
@@ -372,13 +355,12 @@
  *
  *  @return 天数
  */
-+ (int)numOfDaysFrom:(NSString*)dateStr
-{
-    NSDateFormatter* format = [[NSDateFormatter alloc] init];
++ (int)numOfDaysFrom:(NSString *)dateStr {
+    NSDateFormatter *format = [[NSDateFormatter alloc] init];
 
     [format setDateFormat:@"yyyy-MM-dd"];
 
-    NSDate* fromdate = [format dateFromString:dateStr];
+    NSDate *fromdate = [format dateFromString:dateStr];
     return [self numOfDaysFromDate:fromdate];
 }
 
@@ -389,97 +371,94 @@
  *
  *  @return 天数
  */
-+ (int)numOfDaysFromDate:(NSDate*)fromdate
-{
++ (int)numOfDaysFromDate:(NSDate *)fromdate {
     if (fromdate == nil) {
         return 0;
     }
-    NSCalendar* gregorian = [[NSCalendar alloc] initWithCalendarIdentifier:NSGregorianCalendar];
+    NSCalendar *gregorian = [[NSCalendar alloc] initWithCalendarIdentifier:NSGregorianCalendar];
 
     NSUInteger unitFlags = NSYearCalendarUnit | NSMonthCalendarUnit | NSDayCalendarUnit;
 
-    NSTimeZone* fromzone = [NSTimeZone systemTimeZone];
+    NSTimeZone *fromzone = [NSTimeZone systemTimeZone];
 
     NSInteger frominterval = [fromzone secondsFromGMTForDate:fromdate];
 
-    NSDate* fromDate = [fromdate dateByAddingTimeInterval:frominterval];
+    NSDate *fromDate = [fromdate dateByAddingTimeInterval:frominterval];
 
-    NSDate* date = [NSDate date];
+    NSDate *date = [NSDate date];
 
-    NSTimeZone* zone = [NSTimeZone systemTimeZone];
+    NSTimeZone *zone = [NSTimeZone systemTimeZone];
 
     NSInteger interval = [zone secondsFromGMTForDate:date];
 
-    NSDate* localeDate = [date dateByAddingTimeInterval:interval];
+    NSDate *localeDate = [date dateByAddingTimeInterval:interval];
 
-    NSDateComponents* components = [gregorian components:unitFlags fromDate:fromDate toDate:localeDate options:0];
+    NSDateComponents *components = [gregorian components:unitFlags fromDate:fromDate toDate:localeDate options:0];
 
     int days = 0;
     if (components.year) {
-        days = (int)components.year * 365;
+        days = (int) components.year * 365;
     }
 
     if (components.month) {
-        days += (int)components.month * 30;
+        days += (int) components.month * 30;
     }
 
     if (components.day > 0) {
-        days += (int)components.day;
+        days += (int) components.day;
     }
 
     return days;
 }
 
-+ (int)numOfDaysFrom:(NSString*)dateStr to:(NSString*)toDate
-{
-    NSCalendar* gregorian = [[NSCalendar alloc] initWithCalendarIdentifier:NSGregorianCalendar];
++ (int)numOfDaysFrom:(NSString *)dateStr to:(NSString *)toDate {
+    NSCalendar *gregorian = [[NSCalendar alloc] initWithCalendarIdentifier:NSGregorianCalendar];
 
     NSUInteger unitFlags = NSYearCalendarUnit | NSMonthCalendarUnit | NSDayCalendarUnit;
 
-    NSDateFormatter* format = [[NSDateFormatter alloc] init];
+    NSDateFormatter *format = [[NSDateFormatter alloc] init];
 
     [format setDateFormat:@"yyyy-MM-dd"];
 
-    NSDate* fromdate = [format dateFromString:dateStr];
+    NSDate *fromdate = [format dateFromString:dateStr];
 
-    NSTimeZone* fromzone = [NSTimeZone systemTimeZone];
+    NSTimeZone *fromzone = [NSTimeZone systemTimeZone];
 
     NSInteger frominterval = [fromzone secondsFromGMTForDate:fromdate];
 
-    NSDate* fromDate = [fromdate dateByAddingTimeInterval:frominterval];
+    NSDate *fromDate = [fromdate dateByAddingTimeInterval:frominterval];
 
-    NSDate* date = [format dateFromString:toDate];
+    NSDate *date = [format dateFromString:toDate];
 
-    NSTimeZone* zone = [NSTimeZone systemTimeZone];
+    NSTimeZone *zone = [NSTimeZone systemTimeZone];
 
     NSInteger interval = [zone secondsFromGMTForDate:date];
 
-    NSDate* localeDate = [date dateByAddingTimeInterval:interval];
+    NSDate *localeDate = [date dateByAddingTimeInterval:interval];
 
-    NSDateComponents* components = [gregorian components:unitFlags fromDate:fromDate toDate:localeDate options:0];
+    NSDateComponents *components = [gregorian components:unitFlags fromDate:fromDate toDate:localeDate options:0];
 
     int days = 0;
     if (components.year) {
-        days = (int)components.year * 365;
+        days = (int) components.year * 365;
     }
 
     if (components.month) {
-        days += (int)components.month * 30;
+        days += (int) components.month * 30;
     }
 
     if (components.day > 0) {
-        days += (int)components.day;
+        days += (int) components.day;
     }
 
     return days;
 }
 
-+ (NSString*)deviceString
-{
++ (NSString *)deviceString {
     // 需要#import "sys/utsname.h"
     struct utsname systemInfo;
     uname(&systemInfo);
-    NSString* deviceString = [NSString stringWithCString:systemInfo.machine encoding:NSUTF8StringEncoding];
+    NSString * deviceString = [NSString stringWithCString:systemInfo.machine encoding:NSUTF8StringEncoding];
 
     if ([deviceString isEqualToString:@"iPhone1,1"])
         return @"iPhone 1G";

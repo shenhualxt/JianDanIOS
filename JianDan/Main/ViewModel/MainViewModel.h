@@ -8,10 +8,10 @@
 
 #import <Foundation/Foundation.h>
 
-@interface MainViewModel : NSObject<UITableViewDelegate>
+@interface MainViewModel : NSObject <UITableViewDelegate>
 
-@property(nonatomic,strong,readonly) RACCommand *sourceCommand;
+@property(nonatomic, strong, readonly) RACCommand *sourceCommand;
 
--(void)loadNextPageData;
+- (void)loadNextPageData;
 
 @end

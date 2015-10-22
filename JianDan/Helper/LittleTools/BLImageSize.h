@@ -16,6 +16,6 @@
  如果你有使用SDWebImage就会先看下 SDWebImage有缓存过改图片没有
  支持文件头大小的格式 png、gif、jpg
  */
-+(CGSize)downloadImageSizeWithURL:(id)imageURL;
++ (CGSize)downloadImageSizeWithURL:(id)imageURL;
 
 @end

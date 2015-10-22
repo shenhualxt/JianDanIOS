@@ -32,8 +32,8 @@
 @implementation LTAlertView
 
 #pragma 公共方法
-- (instancetype)init
-{
+
+- (instancetype)init {
     self = [super init];
     if (self) {
         self.backgroundColor = [UIColor whiteColor];
@@ -55,7 +55,7 @@
     //清除蒙版
     [self.maskImageView removeFromSuperview];
     self.maskImageView = nil;
-    
+
     //使用默认的view
     if (self.alertHeight) {
         [self animateDefaultWithY:SCREEN_HEIGHT removeFromSuperView:YES];
@@ -76,10 +76,10 @@
     }
     if (self.isHasFocusView) {
         [[self appRootViewController].view insertSubview:self.maskImageView belowSubview:self];
-    }else{
+    } else {
         [[self topView] insertSubview:self.maskImageView belowSubview:self];
     }
-    
+
     //设置阴影
     self.layer.shadowColor = [UIColor colorWithRed:0 green:0 blue:0 alpha:0.5].CGColor;
     self.layer.shadowOffset = CGSizeMake(0, 1);
@@ -90,14 +90,15 @@
 
 
 #pragma mark -自定义view
+
 - (id)initWithNib:(UIView *)view {
     if (self = [self init]) {
         self.translatesAutoresizingMaskIntoConstraints = NO;
         [self addSubview:view];
         self.customView = view;
-        if ([self findAssignView:@[[UITextField class],[UITextView class]] inView:view]) {
+        if ([self findAssignView:@[[UITextField class], [UITextView class]] inView:view]) {
             [self handleKeyboard];
-            self.isHasFocusView=YES;
+            self.isHasFocusView = YES;
         }
     }
     return self;
@@ -129,7 +130,7 @@
 
     if (self.isHasFocusView) {
         [[self appRootViewController].view addSubview:self];
-    }else{
+    } else {
         [[self topView] addSubview:self];
     }
     CGSize size = [self.customView systemLayoutSizeFittingSize:UILayoutFittingCompressedSize];
@@ -147,7 +148,7 @@
     if (self.customAlertMoveOutSate) {
         return;
     }
-    NSDictionary *info = [notification userInfo];
+    NSDictionary * info = [notification userInfo];
     CGSize kbSize = [[info objectForKey:UIKeyboardFrameEndUserInfoKey] CGRectValue].size;
 
     NSInteger centerYInScreen = ([UIScreen mainScreen].bounds.size.height - kbSize.height) * 0.5;
@@ -167,7 +168,7 @@
 
 - (void)animateWithY:(NSInteger)y removeFromSuperView:(BOOL)isRemove {
     if (isRemove) {
-        self.customAlertMoveOutSate=YES;
+        self.customAlertMoveOutSate = YES;
     }
     [self layoutIfNeeded];
     [UIView animateWithDuration:1.0 delay:0.0 usingSpringWithDamping:0.6 initialSpringVelocity:0 options:0 animations:^{
@@ -179,13 +180,14 @@
                              [[NSNotificationCenter defaultCenter] removeObserver:self];
                              [self removeFromSuperview];
                              self.edgeTopConstraint = nil;
-                             self.customAlertMoveOutSate=NO;
+                             self.customAlertMoveOutSate = NO;
                          }
                      }];
 }
 
 
 #pragma mark -默认布局
+
 - (id)initWithTitle:(NSString *)title
         contentText:(NSString *)content
     leftButtonTitle:(NSString *)leftTitle
@@ -197,7 +199,7 @@
         [self addSubview:contentView];
 
         //设置标题
-        NSDictionary *dic = [NSDictionary dictionaryWithObjectsAndKeys:[UIFont systemFontOfSize:18], NSFontAttributeName, nil];
+        NSDictionary * dic = [NSDictionary dictionaryWithObjectsAndKeys:[UIFont systemFontOfSize:18], NSFontAttributeName, nil];
         CGSize size = [title boundingRectWithSize:CGSizeMake(contentW, MAXFLOAT) options:NSStringDrawingUsesLineFragmentOrigin | NSStringDrawingUsesFontLeading attributes:dic context:nil].size;
         UILabel *alertTitleLabel = [[UILabel alloc] initWithFrame:CGRectMake(0, 0, contentW, size.height)];
         alertTitleLabel.font = [UIFont systemFontOfSize:18.0f];
@@ -243,14 +245,14 @@
 
         contentView.frame = CGRectMake(28, 23, contentW, CGRectGetMaxY(rightBtn.frame));
         _alertHeight = CGRectGetMaxY(contentView.frame) + 30;
-      
+
     }
     return self;
 }
 
 - (void)showDefaultAlert {
     [self addMaskView];
-    self.frame = CGRectMake((SCREEN_WIDTH - kAlertWidth) * 0.5,_alertHeight - 30, kAlertWidth, _alertHeight);
+    self.frame = CGRectMake((SCREEN_WIDTH - kAlertWidth) * 0.5, _alertHeight - 30, kAlertWidth, _alertHeight);
     [[self topView] addSubview:self];
     [UIView animateWithDuration:1.0 delay:0.0 usingSpringWithDamping:0.6 initialSpringVelocity:0 options:0
                      animations:^{
@@ -264,18 +266,18 @@
 
 - (void)animateDefaultWithY:(NSInteger)y removeFromSuperView:(BOOL)isRemove {
     if (isRemove) {
-        self.alertHeight=0;
+        self.alertHeight = 0;
     }
     [UIView animateWithDuration:1.0 delay:0.0 usingSpringWithDamping:0.6 initialSpringVelocity:0 options:0
                      animations:^{
-                         CGRect frame=self.frame;
-                         frame.origin.y=y;
-                         self.frame=frame;
+                         CGRect frame = self.frame;
+                         frame.origin.y = y;
+                         self.frame = frame;
                      }
                      completion:^(BOOL finished) {
                          if (isRemove) {
                              [self removeFromSuperview];
-                             
+
                          }
                      }];
 }
@@ -296,25 +298,23 @@
 
 #pragma mark -工具方法
 
-- (UIView *)topView{
-    return  [[UIApplication sharedApplication].windows objectAtIndex:1];
+- (UIView *)topView {
+    return [[UIApplication sharedApplication].windows objectAtIndex:1];
 }
 
-- (UIViewController*)appRootViewController
-{
-    UIViewController* appRootVC = [UIApplication sharedApplication].keyWindow.rootViewController;
-    UIViewController* topVC = appRootVC;
+- (UIViewController *)appRootViewController {
+    UIViewController *appRootVC = [UIApplication sharedApplication].keyWindow.rootViewController;
+    UIViewController *topVC = appRootVC;
     while (topVC.presentedViewController) {
         topVC = topVC.presentedViewController;
     }
     return topVC;
 }
 
-- (BOOL)findAssignView:(NSArray *)classArray inView:(UIView*)view
-{
-    for (UIView* childView in view.subviews) {
+- (BOOL)findAssignView:(NSArray *)classArray inView:(UIView *)view {
+    for (UIView *childView in view.subviews) {
         for (Class clazz in classArray) {
-            if ([childView isKindOfClass:clazz]){
+            if ([childView isKindOfClass:clazz]) {
                 return YES;
             }
             BOOL result = [self findAssignView:classArray inView:childView];

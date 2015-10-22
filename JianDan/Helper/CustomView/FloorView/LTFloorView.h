@@ -7,6 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
+
 @class LTFloorView;
 
 @protocol LTFloorViewDataSource <NSObject>
@@ -15,7 +16,7 @@
 
 - (NSInteger)numberOfSubFloorsInFloorView:(LTFloorView *)floorView;
 
--(UIView *)floorView:(LTFloorView *)floorView subFloorViewAtIndex:(NSInteger)index;
+- (UIView *)floorView:(LTFloorView *)floorView subFloorViewAtIndex:(NSInteger)index;
 
 @end
 
@@ -29,13 +30,13 @@
 
 @interface LTFloorView : UIView
 
-@property (nonatomic, weak) id <LTFloorViewDataSource> dataSource;
+@property(nonatomic, weak) id <LTFloorViewDataSource> dataSource;
 
-@property (nonatomic, weak) id <LTFloorViewDelegate> delegate;
+@property(nonatomic, weak) id <LTFloorViewDelegate> delegate;
 
 
-@property(nonatomic,strong) UIColor *bgColor;
+@property(nonatomic, strong) UIColor *bgColor;
 
-@property(nonatomic,strong) UIColor *borderColor;
+@property(nonatomic, strong) UIColor *borderColor;
 
 @end

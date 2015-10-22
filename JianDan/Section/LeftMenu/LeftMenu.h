@@ -5,10 +5,10 @@
 
 #import <Foundation/Foundation.h>
 
-@interface LeftMenu :NSObject
+@interface LeftMenu : NSObject
 
-@property(nonatomic,strong) NSString *imageName;
-@property(nonatomic,strong) NSString *menuName;
+@property(nonatomic, strong) NSString *imageName;
+@property(nonatomic, strong) NSString *menuName;
 
 - (instancetype)initWithImageName:(NSString *)imageName menuName:(NSString *)menuName;
 

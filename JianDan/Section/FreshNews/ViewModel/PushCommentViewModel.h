@@ -17,6 +17,6 @@
 
 + (instancetype)modelWithSendObject:(id)sendObject;
 
-@property(strong,nonatomic) RACSignal *pushCommentSignal;
+@property(strong, nonatomic) RACSignal *pushCommentSignal;
 
 @end

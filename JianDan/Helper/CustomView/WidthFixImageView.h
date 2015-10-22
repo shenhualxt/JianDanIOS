@@ -10,6 +10,6 @@
 
 @interface WidthFixImageView : UIImageView
 
-@property(assign,nonatomic) NSInteger mHeight;
+@property(assign, nonatomic) NSInteger mHeight;
 
 @end

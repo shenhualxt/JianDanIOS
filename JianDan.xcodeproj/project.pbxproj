@@ -73,7 +73,6 @@
 		11A856411BC2726800863D9D /* SettingController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 11A8563F1BC2726800863D9D /* SettingController.xib */; settings = {ASSET_TAGS = (); }; };
 		11AB6ACE1BBB82CB00358621 /* PushCommentViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 11AB6ACD1BBB82CB00358621 /* PushCommentViewModel.m */; settings = {ASSET_TAGS = (); }; };
 		11B06FB81BD479B700941FC7 /* PictureCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 11B06FB71BD479B700941FC7 /* PictureCell.m */; settings = {ASSET_TAGS = (); }; };
-		11B06FBB1BD47F4C00941FC7 /* BaseTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 11B06FBA1BD47F4C00941FC7 /* BaseTableViewCell.m */; settings = {ASSET_TAGS = (); }; };
 		11B134811BD618AE00574A39 /* UIColor+Additions.m in Sources */ = {isa = PBXBuildFile; fileRef = 11B134801BD618AE00574A39 /* UIColor+Additions.m */; settings = {ASSET_TAGS = (); }; };
 		11B3954A1BB7DC2B00C5C8F5 /* ImageHelpers.m in Sources */ = {isa = PBXBuildFile; fileRef = 11B395491BB7DC2B00C5C8F5 /* ImageHelpers.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		11B82B901BA29A2700283A93 /* libUMSocial_Sdk_4.2.3.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 11B82B761BA29A2700283A93 /* libUMSocial_Sdk_4.2.3.a */; };
@@ -253,8 +252,6 @@
 		11AB6ACD1BBB82CB00358621 /* PushCommentViewModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PushCommentViewModel.m; sourceTree = "<group>"; };
 		11B06FB61BD479B700941FC7 /* PictureCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PictureCell.h; sourceTree = "<group>"; };
 		11B06FB71BD479B700941FC7 /* PictureCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PictureCell.m; sourceTree = "<group>"; };
-		11B06FB91BD47F4C00941FC7 /* BaseTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BaseTableViewCell.h; sourceTree = "<group>"; };
-		11B06FBA1BD47F4C00941FC7 /* BaseTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BaseTableViewCell.m; sourceTree = "<group>"; };
 		11B1347F1BD618AE00574A39 /* UIColor+Additions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIColor+Additions.h"; sourceTree = "<group>"; };
 		11B134801BD618AE00574A39 /* UIColor+Additions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIColor+Additions.m"; sourceTree = "<group>"; };
 		11B395481BB7DC2B00C5C8F5 /* ImageHelpers.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ImageHelpers.h; sourceTree = "<group>"; };
@@ -378,18 +375,9 @@
 		1116CBCD1BBBCD46000C9853 /* LittleMovie */ = {
 			isa = PBXGroup;
 			children = (
-				1116CBCE1BBBCD46000C9853 /* Model */,
 				1116CBCF1BBBCD46000C9853 /* View */,
-				1116CBD21BBBCD46000C9853 /* ViewModel */,
 			);
 			path = LittleMovie;
-			sourceTree = "<group>";
-		};
-		1116CBCE1BBBCD46000C9853 /* Model */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Model;
 			sourceTree = "<group>";
 		};
 		1116CBCF1BBBCD46000C9853 /* View */ = {
@@ -405,13 +393,6 @@
 				1183B9361BC1354600446067 /* LittleMovieDetailController.xib */,
 			);
 			path = View;
-			sourceTree = "<group>";
-		};
-		1116CBD21BBBCD46000C9853 /* ViewModel */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = ViewModel;
 			sourceTree = "<group>";
 		};
 		11187B601B91E4D800B8D1E0 /* Main */ = {
@@ -624,8 +605,6 @@
 				11925AA21B93360E00608BCC /* BaseNavigationController.m */,
 				11925AA01B93360E00608BCC /* BaseViewController.h */,
 				11925AA31B93360E00608BCC /* BaseViewController.m */,
-				11B06FB91BD47F4C00941FC7 /* BaseTableViewCell.h */,
-				11B06FBA1BD47F4C00941FC7 /* BaseTableViewCell.m */,
 			);
 			path = BaseViewController;
 			sourceTree = "<group>";
@@ -1071,7 +1050,6 @@
 				11439A101BB6315700AFA2D3 /* FastImage.m in Sources */,
 				11B3954A1BB7DC2B00C5C8F5 /* ImageHelpers.m in Sources */,
 				113491D31BAAE003007D133B /* LTAlertView.m in Sources */,
-				11B06FBB1BD47F4C00941FC7 /* BaseTableViewCell.m in Sources */,
 				11925AA91B93360E00608BCC /* NSCodingTools.m in Sources */,
 				11925AB11B93360E00608BCC /* BaseViewController.m in Sources */,
 				11D63CE31B92C32D0059D328 /* FreshNews.m in Sources */,

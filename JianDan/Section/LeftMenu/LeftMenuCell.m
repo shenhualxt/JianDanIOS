@@ -11,19 +11,19 @@
 
 @implementation LeftMenuCell
 
--(instancetype)initWithStyle:(UITableViewCellStyle)style reuseIdentifier:(NSString *)reuseIdentifier{
-  self=[super initWithStyle:style reuseIdentifier:reuseIdentifier];
-  if (self) {
-    self.backgroundColor=[UIColor darkGrayColor];
-    self.textLabel.textColor=[UIColor whiteColor];
-    self.textLabel.font=[UIFont systemFontOfSize:14];
-  }
-  return self;
+- (instancetype)initWithStyle:(UITableViewCellStyle)style reuseIdentifier:(NSString *)reuseIdentifier {
+    self = [super initWithStyle:style reuseIdentifier:reuseIdentifier];
+    if (self) {
+        self.backgroundColor = [UIColor darkGrayColor];
+        self.textLabel.textColor = [UIColor whiteColor];
+        self.textLabel.font = [UIFont systemFontOfSize:14];
+    }
+    return self;
 }
 
-- (void)bindViewModel:(LeftMenu *)leftMenu forIndexPath:(NSIndexPath *)indexPath{
-    self.textLabel.text=leftMenu.menuName;
-    self.imageView.image=[UIImage imageNamed:leftMenu.imageName];
+- (void)bindViewModel:(LeftMenu *)leftMenu forIndexPath:(NSIndexPath *)indexPath {
+    self.textLabel.text = leftMenu.menuName;
+    self.imageView.image = [UIImage imageNamed:leftMenu.imageName];
 }
- 
+
 @end

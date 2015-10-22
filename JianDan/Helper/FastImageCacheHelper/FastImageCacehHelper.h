@@ -7,19 +7,20 @@
 //
 
 #import <Foundation/Foundation.h>
+
 @protocol FastImageCacehHelperDelegate <NSObject>
 
 @optional
--(void)downloadProgress:(NSUInteger)progress;
+- (void)downloadProgress:(NSUInteger)progress;
 
 @end
 
 @interface FastImageCacehHelper : NSObject
 
-+(FastImageCacehHelper *)sharedFastImageCacehHelper;
++ (FastImageCacehHelper *)sharedFastImageCacehHelper;
 
--(void)createImageFormats;
+- (void)createImageFormats;
 
-@property(weak,nonatomic) id<FastImageCacehHelperDelegate> delegate;
+@property(weak, nonatomic) id <FastImageCacehHelperDelegate> delegate;
 
 @end

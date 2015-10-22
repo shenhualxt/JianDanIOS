@@ -73,9 +73,9 @@
     self.title = @"新浪微博";
     UITextViewEx *textView = [[UITextViewEx alloc] initWithFrame:self.view.frame];
     [self.view addSubview:textView];
-    NSString *text=self.sendObject;
-    if([self.sendObject isKindOfClass:[RACTuple class]]){
-        text=[(RACTuple *)self.sendObject second];
+    NSString * text = self.sendObject;
+    if ([self.sendObject isKindOfClass:[RACTuple class]]) {
+        text = [(RACTuple *) self.sendObject second];
     }
     textView.text = text;
     //解决输入汉字时界面的晃动
@@ -93,12 +93,12 @@
     @weakify(self)
     [[(UIButton *) sendItem.customView rac_signalForControlEvents:UIControlEventTouchUpInside] subscribeNext:^(id x) {
         @strongify(self)
-        NSString *urlResoures=nil;
-        if([self.sendObject isKindOfClass:[RACTuple class]]){
-            urlResoures=[(RACTuple *)self.sendObject first];
+        NSString * urlResoures = nil;
+        if ([self.sendObject isKindOfClass:[RACTuple class]]) {
+            urlResoures = [(RACTuple *) self.sendObject first];
         }
         [[UMSocialDataService defaultDataService] postSNSWithTypes:@[UMShareToSina] content:self.textView.text image:nil location:nil urlResource:[[UMSocialUrlResource alloc] initWithSnsResourceType:UMSocialUrlResourceTypeImage url:urlResoures] presentedController:self completion:^(UMSocialResponseEntity *response) {
-            if(response.responseCode==UMSResponseCodeSuccess){
+            if (response.responseCode == UMSResponseCodeSuccess) {
                 [self BackClick];
             }
             [[ToastHelper sharedToastHelper] toast:response.responseCode == UMSResponseCodeSuccess ? @"分享成功" : @"分享失败"];
@@ -116,7 +116,7 @@
 }
 
 - (void)adjustCountLabelPosition:(const NSNotification *)notification isShow:(BOOL)isShow {
-    NSDictionary *info = [notification userInfo];
+    NSDictionary * info = [notification userInfo];
     CGSize kbSize = [[info objectForKey:UIKeyboardFrameEndUserInfoKey] CGRectValue].size;
     [UIView animateWithDuration:1 animations:^{
         CGRect frame = self.countLabel.frame;

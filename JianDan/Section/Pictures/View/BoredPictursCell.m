@@ -25,99 +25,99 @@
 #import "NSString+Date.h"
 #import "PictureFrame.h"
 
-@interface BoredPictursCell()<CEReactiveView,SDWebImageManagerDelegate>
+@interface BoredPictursCell () <CEReactiveView, SDWebImageManagerDelegate>
 
-@property (weak, nonatomic) IBOutlet UILabel *labelUserName;
-@property (weak, nonatomic) IBOutlet UIImageView *imageGIF;
-@property (weak, nonatomic) IBOutlet UILabel *labelContent;
-@property (weak, nonatomic) IBOutlet UIButton *buttonOO;
-@property (weak, nonatomic) IBOutlet UIButton *buttonXX;
-@property (weak, nonatomic) IBOutlet UIButton *buttonMore;
-@property (weak, nonatomic) IBOutlet UILabel *labelTime;
-@property (weak, nonatomic) IBOutlet UIButton *buttonChat;
+@property(weak, nonatomic) IBOutlet UILabel *labelUserName;
+@property(weak, nonatomic) IBOutlet UIImageView *imageGIF;
+@property(weak, nonatomic) IBOutlet UILabel *labelContent;
+@property(weak, nonatomic) IBOutlet UIButton *buttonOO;
+@property(weak, nonatomic) IBOutlet UIButton *buttonXX;
+@property(weak, nonatomic) IBOutlet UIButton *buttonMore;
+@property(weak, nonatomic) IBOutlet UILabel *labelTime;
+@property(weak, nonatomic) IBOutlet UIButton *buttonChat;
 
-@property(assign,nonatomic) CGSize picSize;
-@property(strong,nonatomic) UIImage *placeholder;
+@property(assign, nonatomic) CGSize picSize;
+@property(strong, nonatomic) UIImage *placeholder;
 
-@property (assign,nonatomic)  BOOL drawed;
+@property(assign, nonatomic) BOOL drawed;
 
 @end
 
 @implementation BoredPictursCell
 
--(void)awakeFromNib{
-    self.placeholder=[UIImage imageNamed:@"ic_loading_large"];
+- (void)awakeFromNib {
+    self.placeholder = [UIImage imageNamed:@"ic_loading_large"];
     self.selectionStyle = UITableViewCellSelectionStyleNone;
     // Fix the bug in iOS7 - initial constraints warning
     self.contentView.bounds = [UIScreen mainScreen].bounds;
 
 }
 
--(void)bindViewModel:(BoredPictures *)boredPictures forIndexPath:(NSIndexPath *)indexPath{
+- (void)bindViewModel:(BoredPictures *)boredPictures forIndexPath:(NSIndexPath *)indexPath {
     //1、设置出图片以外的数据
-    self.labelUserName.text=boredPictures.comment_author;
-    self.labelTime.text=boredPictures.deltaToNow;
-    self.labelContent.text=boredPictures.text_content;
+    self.labelUserName.text = boredPictures.comment_author;
+    self.labelTime.text = boredPictures.deltaToNow;
+    self.labelContent.text = boredPictures.text_content;
     [self.buttonChat setTitle:boredPictures.comment_count forState:UIControlStateNormal];
-    [self.buttonOO setTitle:[NSString stringWithKey:"OO " value:(int)boredPictures.vote_positive] forState:UIControlStateNormal];
-    [self.buttonXX setTitle:[NSString stringWithKey:"XX " value:(int)boredPictures.vote_negative] forState:UIControlStateNormal];
+    [self.buttonOO setTitle:[NSString stringWithKey:"OO " value:(int) boredPictures.vote_positive] forState:UIControlStateNormal];
+    [self.buttonXX setTitle:[NSString stringWithKey:"XX " value:(int) boredPictures.vote_negative] forState:UIControlStateNormal];
     //2、cell中按钮的点击事件
     [self initClick:boredPictures];
     //3、设置ImageView初始大小
     if (!boredPictures.picUrl) return;//段子（没有图片）
-    self.picSize=boredPictures.picFrame.pictureSize;
+    self.picSize = boredPictures.picFrame.pictureSize;
     [self.imagePicture updateIntrinsicContentSize:self.picSize withMaxHeight:YES];
-    NSString *key=[[SDWebImageManager sharedManager] cacheKeyForURL:[self getImageURL:boredPictures]];
+    NSString * key = [[SDWebImageManager sharedManager] cacheKeyForURL:[self getImageURL:boredPictures]];
     [[SDImageCache sharedImageCache] queryDiskCacheForKey:key done:^(UIImage *image, SDImageCacheType cacheType) {
-        self.imagePicture.image=image?:self.placeholder;
+        self.imagePicture.image = image ?: self.placeholder;
     }];
 }
 
--(void)loadImage:(BoredPictures *)boredPictures forIndexPath:(NSIndexPath *)indexPath helper:(CETableViewBindingHelper *)helper{
-     [self.imagePicture setImageWithURL:[self getImageURL:boredPictures] placeholderImage:self.placeholder options:SDWebImageHighPriority|SDWebImageTransformAnimatedImage completed:^(UIImage *image, NSError *error, SDImageCacheType cacheType, NSURL *imageURL) {
-     }  usingProgressViewStyle:UIProgressViewStyleDefault];
+- (void)loadImage:(BoredPictures *)boredPictures forIndexPath:(NSIndexPath *)indexPath helper:(CETableViewBindingHelper *)helper {
+    [self.imagePicture setImageWithURL:[self getImageURL:boredPictures] placeholderImage:self.placeholder options:SDWebImageHighPriority | SDWebImageTransformAnimatedImage completed:^(UIImage *image, NSError *error, SDImageCacheType cacheType, NSURL *imageURL) {
+    }           usingProgressViewStyle:UIProgressViewStyleDefault];
 }
 
--(void)clear{
+- (void)clear {
     if (!self.imagePicture.hidden) {
         [self.imagePicture sd_cancelCurrentImageLoad];
     }
 }
 
--(void)initClick:(BoredPictures *)boredPictures{
+- (void)initClick:(BoredPictures *)boredPictures {
     //vote
     [[[self.buttonOO rac_signalForControlEvents:UIControlEventTouchUpInside] takeUntil:self.rac_prepareForReuseSignal] subscribeNext:^(id x) {
-        [VoteViewModel voteWithOption:OO vote:(id<Vote>)boredPictures button:x];
+        [VoteViewModel voteWithOption:OO vote:(id <Vote>) boredPictures button:x];
     }];
     [[[self.buttonXX rac_signalForControlEvents:UIControlEventTouchUpInside] takeUntil:self.rac_prepareForReuseSignal] subscribeNext:^(id x) {
-        [VoteViewModel voteWithOption:XX vote:(id<Vote>)boredPictures button:x];
+        [VoteViewModel voteWithOption:XX vote:(id <Vote>) boredPictures button:x];
     }];
-    
+
     //评论
     WS(ws)
     [[[self.buttonChat rac_signalForControlEvents:UIControlEventTouchUpInside] takeUntil:self.rac_prepareForReuseSignal] subscribeNext:^(id x) {
-        CommentController *vc=[CommentController new];
-        vc.sendObject=boredPictures.post_id;
+        CommentController *vc = [CommentController new];
+        vc.sendObject = boredPictures.post_id;
         [[ws controller].mm_drawerController.navigationController pushViewController:vc animated:YES];
     }];
 
     //分享
     [[[self.buttonMore rac_signalForControlEvents:UIControlEventTouchUpInside] takeUntil:self.rac_prepareForReuseSignal] subscribeNext:^(id x) {
-        NSString *content=[boredPictures.text_content stringByReplacingOccurrencesOfString:@"\r\n" withString:@""];
-        RACTuple *turple=[RACTuple tupleWithObjects:boredPictures.picUrl,[NSString stringWithFormat:@"%@（来自 @煎蛋网）",content], nil];
-        ShareToSinaController *shareToSinaController=[ShareToSinaController new];
-        shareToSinaController.sendObject=turple;
+        NSString * content = [boredPictures.text_content stringByReplacingOccurrencesOfString:@"\r\n" withString:@""];
+        RACTuple *turple = [RACTuple tupleWithObjects:boredPictures.picUrl, [NSString stringWithFormat:@"%@（来自 @煎蛋网）", content], nil];
+        ShareToSinaController *shareToSinaController = [ShareToSinaController new];
+        shareToSinaController.sendObject = turple;
         [[ws controller].mm_drawerController.navigationController pushViewController:shareToSinaController animated:YES];
     }];
 }
 
--(NSURL *)getImageURL:(BoredPictures *)boredPictures{
-    NSString *imageURL=boredPictures.thumnailGiFUrl;
+- (NSURL *)getImageURL:(BoredPictures *)boredPictures {
+    NSString * imageURL = boredPictures.thumnailGiFUrl;
     if (imageURL) {
-        self.imageGIF.hidden=NO;
-    }else{
-        self.imageGIF.hidden=YES;
-        imageURL=boredPictures.picUrl;
+        self.imageGIF.hidden = NO;
+    } else {
+        self.imageGIF.hidden = YES;
+        imageURL = boredPictures.picUrl;
     }
     return [NSURL URLWithString:imageURL];
 }

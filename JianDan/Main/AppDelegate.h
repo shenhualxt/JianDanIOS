@@ -10,9 +10,9 @@
 
 @interface AppDelegate : UIResponder <UIApplicationDelegate>
 
-@property (strong, nonatomic) UIWindow *window;
+@property(strong, nonatomic) UIWindow *window;
 
--(void)replaceContentViewController:(NSInteger)index;
+- (void)replaceContentViewController:(NSInteger)index;
 
 @end
 

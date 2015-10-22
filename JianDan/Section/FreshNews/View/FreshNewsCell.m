@@ -28,15 +28,15 @@
 - (void)awakeFromNib {
     [super awakeFromNib];
     self.btnTitle.titleLabel.numberOfLines = 0;
-     self.selectionStyle = UITableViewCellSelectionStyleNone;
+    self.selectionStyle = UITableViewCellSelectionStyleNone;
 }
 
-- (void)bindViewModel:(FreshNews *)freshNews forIndexPath:(NSIndexPath *)indexPath{
+- (void)bindViewModel:(FreshNews *)freshNews forIndexPath:(NSIndexPath *)indexPath {
     [self.btnTitle setTitle:freshNews.title forState:UIControlStateNormal];
     self.labelAuthorName.text = freshNews.authorName;
     [self.imageFreshNews sd_setImageWithURL:freshNews.thumb_m placeholderImage:[UIImage imageNamed:@"ic_loading_large"]];
     self.labelViewTimes.text = freshNews.viewsCount;
-    
+
 //    @weakify(self)
 //    self.buttonShare.rac_command=[[RACCommand alloc]  initWithSignalBlock:^RACSignal *(id input) {
 //         @strongify(self)

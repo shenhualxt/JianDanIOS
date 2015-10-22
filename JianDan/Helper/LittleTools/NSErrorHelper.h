@@ -10,7 +10,7 @@
 
 static NSInteger const customErrorCode = 0;
 
-static NSString * const customErrorInfoKey = @"customErrorInfoKey";
+static NSString *const customErrorInfoKey = @"customErrorInfoKey";
 
 @interface NSErrorHelper : NSObject
 
@@ -18,7 +18,7 @@ static NSString * const customErrorInfoKey = @"customErrorInfoKey";
 
 + (NSError *)createErrorWithErrorInfo:(NSString *)customErrorInfo;
 
-+(NSError *)createErrorWithDomain:(NSString *)domain code:(NSInteger)code;
++ (NSError *)createErrorWithDomain:(NSString *)domain code:(NSInteger)code;
 
 + (NSError *)createErrorWithErrorInfo:(NSString *)customErrorInfo domain:(NSString *)domain;
 

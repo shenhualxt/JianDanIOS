@@ -9,6 +9,6 @@
 #import "BaseTableViewController.h"
 
 
-@interface FreshNewsController :BaseTableViewController
+@interface FreshNewsController : BaseTableViewController
 
 @end

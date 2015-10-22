@@ -21,8 +21,8 @@
 
 - (void)loadImage:(id)viewModel forIndexPath:(NSIndexPath *)indexPath helper:(CETableViewBindingHelper *)helper;
 
--(void)clear;
+- (void)clear;
 
--(BOOL)hadLoadImage;
+- (BOOL)hadLoadImage;
 
 @end

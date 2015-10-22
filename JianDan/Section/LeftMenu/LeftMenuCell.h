@@ -6,8 +6,6 @@
 //  Copyright (c) 2015 刘献亭. All rights reserved.
 //
 
-@interface LeftMenuCell : UITableViewCell<CEReactiveView>
-
-
+@interface LeftMenuCell : UITableViewCell <CEReactiveView>
 
 @end

@@ -11,45 +11,51 @@
 
 @interface CommonUtils : NSObject
 
-+(CGSize)getStringRect:(NSString*)aString;
++ (CGSize)getStringRect:(NSString *)aString;
 
-+(BOOL)isMatch:(NSString*)strPlace regex:(NSString *)regex;
++ (BOOL)isMatch:(NSString *)strPlace regex:(NSString *)regex;
 
-+(BOOL)isChinese:(const NSString *)newText;
++ (BOOL)isChinese:(const NSString *)newText;
 
-+(BOOL)isSpecialHansChar:(const NSString *)text;
++ (BOOL)isSpecialHansChar:(const NSString *)text;
 
-+(BOOL)isHansInput:(UITextView*)textView;
++ (BOOL)isHansInput:(UITextView *)textView;
 
-+ (UITextPosition *)isHasHighlightText:(UITextView*)textView;
++ (UITextPosition *)isHasHighlightText:(UITextView *)textView;
 
-+ (NSInteger)convertToInt:(NSString*)strtemp;
++ (NSInteger)convertToInt:(NSString *)strtemp;
 
-+(NSInteger)countHansNum:(NSString *)text;
++ (NSInteger)countHansNum:(NSString *)text;
 
-//+(NSInteger)countWord:(NSString *)s;
++ (UIImage *)createImageWithColor:(UIColor *)color;
 
-+ (UIImage *) createImageWithColor: (UIColor *) color;
++ (void)setLastCellSeperatorToLeft:(UITableViewCell *)cell;
 
-//+(void)call:(NSString *)num text:(NSString *)text;
-+(void)setLastCellSeperatorToLeft:(UITableViewCell*)cell;
-
-+(float) heightForString:(NSString *)value fontSize:(UIFont *)fontSize andWidth:(float)width;
++ (float)heightForString:(NSString *)value fontSize:(UIFont *)fontSize andWidth:(float)width;
 
 + (UIColor *)randomColor;
+
 + (NSString *)getBuild;
 
 + (NSString *)sha1:(NSString *)str;
+
 + (NSString *)md5Hash:(NSString *)str;
 
 + (NSString *)getTimerWihtTimerStamp:(NSString *)stringTimer;
+
 + (NSString *)deviceString;
+
 + (UIViewController *)viewController:(UIView *)view;
+
 + (int)getRandomNumber:(int)from to:(int)to;
+
 //+ (void)getDeviceInfo4Umeng;
 + (int)numOfDaysFrom:(NSString *)dateStr;
+
 + (int)numOfDaysFrom:(NSString *)dateStr to:(NSString *)toDate;
+
 + (int)numOfDaysFromDate:(NSDate *)fromdate;
+
 + (BOOL)isChineseWith:(unichar)c;
 
 + (BOOL)isAllowedNotification;

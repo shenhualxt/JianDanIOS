@@ -20,7 +20,7 @@
 #define SIZE_FONT_CONTENT 17
 
 //数据库取出数据时，按时间排序
-static NSString *_sortArgument=@"date";
+static NSString *_sortArgument = @"date";
 
 @interface MainViewModel ()
 
@@ -41,9 +41,9 @@ static NSString *_sortArgument=@"date";
 //模型
 @property(nonatomic, assign) Class modelClass;
 //接口地址
-@property (strong,nonatomic) NSString *url;
+@property(strong, nonatomic) NSString *url;
 //最终数据对应的key
-@property (strong,nonatomic) NSString *modelArgument;
+@property(strong, nonatomic) NSString *modelArgument;
 
 @end
 
@@ -52,48 +52,48 @@ static NSString *_sortArgument=@"date";
 INITWITHSETUP
 
 - (void)setUp {
-    self.currentPage=1;
-    self.sourceArray=[NSMutableArray array];
+    self.currentPage = 1;
+    self.sourceArray = [NSMutableArray array];
     @weakify(self)
     self.sourceCommand = [[RACCommand alloc] initWithSignalBlock:^RACSignal *(RACTuple *turple) {
-        self.isLoading=YES;
+        self.isLoading = YES;
         @strongify(self)
-        self.isLoadMore=[turple.first boolValue];
-        self.modelArgument=turple.second;
-        self.modelClass=turple.third;
-        self.url=turple.fourth;
-        self.tableName=turple.fifth;
-        
+        self.isLoadMore = [turple.first boolValue];
+        self.modelArgument = turple.second;
+        self.modelClass = turple.third;
+        self.url = turple.fourth;
+        self.tableName = turple.fifth;
+
         int page = 1;
         if (self.isLoadMore) {
             page = ++self.currentPage;
         }
         //数据源信号
-        RACSignal *dbSignal=[self requestFromDBSignal:page];
-        RACSignal *netSignal=[[self requestFromNetSignal:page] map:^id(NSMutableArray *array) {
+        RACSignal *dbSignal = [self requestFromDBSignal:page];
+        RACSignal *netSignal = [[self requestFromNetSignal:page] map:^id(NSMutableArray *array) {
             return [self handleResult:array];
         }];
 
         //1、没有网络 ----只加载缓存数据
-        BOOL isNoNet=[AFNetWorkUtils sharedAFNetWorkUtils].netType==NONet;
-        if(isNoNet){
-            self.loadFromDB=YES;
+        BOOL isNoNet = [AFNetWorkUtils sharedAFNetWorkUtils].netType == NONet;
+        if (isNoNet) {
+            self.loadFromDB = YES;
             return [dbSignal doCompleted:^{
-                self.isLoading=NO;
+                self.isLoading = NO;
             }];
         }
         //2、有网络时第一次加载 先加载缓存，后加载服务器数据
-        BOOL isFirstLoad=page==1&&!self.isLoadMore&&!self.sourceArray.count&&!self.loadFromDB;
+        BOOL isFirstLoad = page == 1 && !self.isLoadMore && !self.sourceArray.count && !self.loadFromDB;
         if (isFirstLoad) {
-            self.loadFromDB=YES;
-            return [[RACSignal merge:@[dbSignal,netSignal]] doCompleted:^{
-                self.isLoading=NO;
+            self.loadFromDB = YES;
+            return [[RACSignal merge:@[dbSignal, netSignal]] doCompleted:^{
+                self.isLoading = NO;
             }];
         }
         //3、网络获取数据--- 上拉刷新，或者上拉加载更多
-        self.loadFromDB=NO;
+        self.loadFromDB = NO;
         return [netSignal doCompleted:^{
-            self.isLoading=YES;
+            self.isLoading = YES;
         }];
     }];
 }
@@ -105,46 +105,46 @@ INITWITHSETUP
  *
  *  @return 结果数据
  */
-- (RACSignal *)requestFromNetSignal:(int)page{
-    RACSignal *signal=[self getObjectArraySignal:page];
-    
+- (RACSignal *)requestFromNetSignal:(int)page {
+    RACSignal *signal = [self getObjectArraySignal:page];
+
     //新鲜事，无需下载图片大小和获取评论数
     if ([self.url isEqualToString:freshNewUrl]) {
         return signal;
     }
-    
+
     @weakify(self)
-    signal=[signal flattenMap:^RACStream *(NSMutableArray *resultArray) {
+    signal = [signal flattenMap:^RACStream *(NSMutableArray *resultArray) {
         @strongify(self)
         return [self getCommentCountsSignal:resultArray];
     }];
-    
+
     //段子 无需下载图片大小
-    if ([self.url isEqualToString:JokeUrl]||[self.url isEqualToString:littleMovieUrl]) {
+    if ([self.url isEqualToString:JokeUrl] || [self.url isEqualToString:littleMovieUrl]) {
         return signal;
     }
-    
+
     //都需要
     return [signal flattenMap:^RACStream *(NSMutableArray *resultArray) {
         @strongify(self)
-       return [self downloadImageSize:resultArray];
+        return [self downloadImageSize:resultArray];
     }];
-    
+
 }
 
 /**
  *  转成模型
  */
--(RACSignal *)getObjectArraySignal:(int)page{
-     NSString *url = [NSString stringWithFormat:@"%@%d", self.url, page];
-    
+- (RACSignal *)getObjectArraySignal:(int)page {
+    NSString * url = [NSString stringWithFormat:@"%@%d", self.url, page];
+
     @weakify(self)
     return [[[[[[AFNetWorkUtils get2racWthURL:url] filter:^BOOL(NSDictionary *result) {
-        return [result isKindOfClass:[NSDictionary class]]&&result;//保证结果不为空
+        return [result isKindOfClass:[NSDictionary class]] && result;//保证结果不为空
     }] map:^id(NSDictionary *result) {
-        return  [result objectForKey:self.modelArgument];//获取字典数组
+        return [result objectForKey:self.modelArgument];//获取字典数组
     }] filter:^BOOL(NSMutableArray *dicArray) {
-        return [dicArray isKindOfClass:[NSArray class]]&&dicArray.count;//保证数组不为空
+        return [dicArray isKindOfClass:[NSArray class]] && dicArray.count;//保证数组不为空
     }] map:^id(NSMutableArray *dicArray) {
         @strongify(self)
         return [self.modelClass objectArrayWithKeyValuesArray:dicArray];//字典转模型
@@ -159,20 +159,20 @@ INITWITHSETUP
 /**
  *  异步保存到数据库
  */
--(NSMutableArray *)handleResult:(NSMutableArray *)array{
-    if (![self.url isEqualToString:freshNewUrl]&&![self.url isEqualToString:littleMovieUrl]) {
+- (NSMutableArray *)handleResult:(NSMutableArray *)array {
+    if (![self.url isEqualToString:freshNewUrl] && ![self.url isEqualToString:littleMovieUrl]) {
         //计算frame
-        [array enumerateObjectsUsingBlock:^(BoredPictures * _Nonnull pictures, NSUInteger idx, BOOL * _Nonnull stop) {
-            PictureFrame *pictureFrame=[PictureFrame new];
-            pictureFrame.pictureSize=pictures.picSize;
+        [array enumerateObjectsUsingBlock:^(BoredPictures *_Nonnull pictures, NSUInteger idx, BOOL *_Nonnull stop) {
+            PictureFrame *pictureFrame = [PictureFrame new];
+            pictureFrame.pictureSize = pictures.picSize;
             //计算cell高度
-            pictureFrame.pictures=pictures;
-            pictures.picFrame=pictureFrame;
+            pictureFrame.pictures = pictures;
+            pictures.picFrame = pictureFrame;
         }];
     }
-    
+
     //1，第一次加载数据 或者先前加载的是缓存的数据
-    if (![self.sourceArray count]||self.loadFromDB ) {
+    if (![self.sourceArray count] || self.loadFromDB) {
         return [self firstLoad:array];
     }
     //2，上拉加载更多
@@ -186,34 +186,35 @@ INITWITHSETUP
 /**
  *  获取评论数量（除了新鲜事）
  */
--(RACSignal *)getCommentCountsSignal:(NSMutableArray *)array{
-    NSMutableString *param=[NSMutableString string];
+- (RACSignal *)getCommentCountsSignal:(NSMutableArray *)array {
+    NSMutableString *param = [NSMutableString string];
     for (BoredPictures *boredPictures in array) {
         [param appendFormat:@"comment-%@,", boredPictures.post_id];
     }
-    return [[AFNetWorkUtils get2racWthURL:appendString(commentCountUrl, param)]  map:^id(NSDictionary *resultDic) {
-        NSDictionary *response=[resultDic objectForKey:@"response"];
+    return [[AFNetWorkUtils get2racWthURL:appendString(commentCountUrl, param)] map:^id(NSDictionary *resultDic) {
+        NSDictionary * response = [resultDic objectForKey:@"response"];
         if (![response isKindOfClass:[NSDictionary class]]) {
             LogBlue(@"获取评论数量失败");
             return array;
         }
-        
-        [array enumerateObjectsUsingBlock:^(BoredPictures  *_Nonnull boredPictures, NSUInteger idx, BOOL * _Nonnull stop) {
-            NSString *key=appendString(@"comment-", boredPictures.post_id);
-            NSDictionary *result=[response objectForKey:key];
-            boredPictures.comment_count=ConvertToString([result objectForKey:@"comments"]);
+
+        [array enumerateObjectsUsingBlock:^(BoredPictures *_Nonnull boredPictures, NSUInteger idx, BOOL *_Nonnull stop) {
+            NSString * key = appendString(@"comment-", boredPictures.post_id);
+            NSDictionary * result = [response objectForKey:key];
+            boredPictures.comment_count = ConvertToString([result objectForKey:@"comments"]);
         }];
         return array;
     }];
 }
+
 /**
  *  获取缓存数据
  */
-- (RACSignal *)requestFromDBSignal:(int)page{
+- (RACSignal *)requestFromDBSignal:(int)page {
     @weakify(self)
     return [[[CacheTools sharedCacheTools] read:self.modelClass page:page tableName:self.tableName] map:^id(NSArray *array) {
         @strongify(self)
-        if(!array|| ![array count]){
+        if (!array || ![array count]) {
             return self.sourceArray;
         }
         LogBlue(@"无网络，当前显示为缓存数据(有网时，第一次正常)");
@@ -226,10 +227,10 @@ INITWITHSETUP
  *  第一次加载
  */
 - (NSMutableArray *)firstLoad:(NSMutableArray *)array {
-    self.sourceArray=array;
-    
+    self.sourceArray = array;
+
     [self save:array];
-    return  self.sourceArray;
+    return self.sourceArray;
 }
 
 /**
@@ -245,11 +246,11 @@ INITWITHSETUP
  *  下拉刷新
  */
 - (NSMutableArray *)pullDownLoadMore:(NSMutableArray *)array {
-    NSInteger prevoiusCount=self.sourceArray.count;
+    NSInteger prevoiusCount = self.sourceArray.count;
     [array enumerateObjectsUsingBlock:^(id object, NSUInteger idx, BOOL *stop) {
         if ([object isEqual:self.sourceArray[0]]) {
             *stop = YES;
-            NSArray *subArray = [array subarrayWithRange:NSMakeRange(0, idx)];
+            NSArray * subArray = [array subarrayWithRange:NSMakeRange(0, idx)];
             if (!subArray || [subArray count]) {
                 NSIndexSet *indexSet = [NSIndexSet indexSetWithIndexesInRange:NSMakeRange(0, [subArray count])];
                 [self.sourceArray insertObjects:subArray atIndexes:indexSet];
@@ -257,31 +258,31 @@ INITWITHSETUP
             }
         }
     }];
-    NSInteger offset=self.sourceArray.count-prevoiusCount;
-    [[ToastHelper sharedToastHelper] toast:offset?[NSString stringWithFormat:@"%d条新数据",(int)offset]:@"没有新数据"];
+    NSInteger offset = self.sourceArray.count - prevoiusCount;
+    [[ToastHelper sharedToastHelper] toast:offset ? [NSString stringWithFormat:@"%d条新数据", (int) offset] : @"没有新数据"];
     return self.sourceArray;
 }
 
 /**
  *  下载图片大小（除了新鲜事）并缓存到数据库
  */
--(void)save:(NSMutableArray *)array{
+- (void)save:(NSMutableArray *)array {
     [[CacheTools sharedCacheTools] save:array sortArgument:_sortArgument tableName:self.tableName];
 }
 
 /**
  *  下载图片大小
  */
--(RACSignal *)downloadImageSize:(NSMutableArray *)array{
-    return [RACSignal createSignal:^RACDisposable *(id<RACSubscriber> subscriber) {
-        NSMutableArray *tempArray=[NSMutableArray arrayWithArray:array];
+- (RACSignal *)downloadImageSize:(NSMutableArray *)array {
+    return [RACSignal createSignal:^RACDisposable *(id <RACSubscriber> subscriber) {
+        NSMutableArray *tempArray = [NSMutableArray arrayWithArray:array];
         dispatch_group_t group = dispatch_group_create();
-        [tempArray enumerateObjectsUsingBlock:^(BoredPictures *_Nonnull pictures, NSUInteger idx, BOOL * _Nonnull stop) {
-            if (!pictures.picUrl) return ;
+        [tempArray enumerateObjectsUsingBlock:^(BoredPictures *_Nonnull pictures, NSUInteger idx, BOOL *_Nonnull stop) {
+            if (!pictures.picUrl) return;
             dispatch_group_async(group, dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
-                pictures.picSize=[BLImageSize downloadImageSizeWithURL:pictures.thumnailGiFUrl?:pictures.picUrl];
+                pictures.picSize = [BLImageSize downloadImageSizeWithURL:pictures.thumnailGiFUrl ?: pictures.picUrl];
             });
-            
+
         }];
         //等group中所有的任务都执行完了，再执行其他操作
         dispatch_group_notify(group, dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
@@ -290,14 +291,15 @@ INITWITHSETUP
         });
         return nil;
     }];
-   
+
 }
 
 #pragma mark -scrollView delegate
+
 //滑到底部，自动加载新的数据
 - (void)scrollViewDidScroll:(UIScrollView *)scrollView {
     CGFloat distanceFromBottom = scrollView.contentSize.height - scrollView.contentOffset.y;
-    if (distanceFromBottom < 3*SCREEN_HEIGHT&&[self.sourceArray count]&&!self.isLoading) {
+    if (distanceFromBottom < 3 * SCREEN_HEIGHT && [self.sourceArray count] && !self.isLoading) {
         [self loadNextPageData];
     }
 }
@@ -305,8 +307,8 @@ INITWITHSETUP
 /**
  *  加载下一页的数据
  */
--(void)loadNextPageData{
-    RACTuple *newTurple=RACTuplePack(@(YES),self.modelArgument,self.modelClass,self.url,self.tableName);
+- (void)loadNextPageData {
+    RACTuple *newTurple = RACTuplePack(@(YES), self.modelArgument, self.modelClass, self.url, self.tableName);
     [self.sourceCommand execute:newTurple];
 }
 

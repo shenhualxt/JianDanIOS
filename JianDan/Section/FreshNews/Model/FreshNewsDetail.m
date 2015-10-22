@@ -7,6 +7,7 @@
 //
 
 #import "FreshNewsDetail.h"
+
 @implementation Post
 
 @end

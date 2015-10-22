@@ -12,10 +12,10 @@
 
 @interface ToastHelper : NSObject
 
-@property(nonatomic,assign) BOOL simleProgressVisiable;
+@property(nonatomic, assign) BOOL simleProgressVisiable;
 
-+(ToastHelper *)sharedToastHelper;
++ (ToastHelper *)sharedToastHelper;
 
--(void)toast:(NSString *)textString;
+- (void)toast:(NSString *)textString;
 
 @end

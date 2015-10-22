@@ -10,20 +10,20 @@
 
 @implementation WidthFixImageView
 
--(void)setImage:(UIImage *)image{
-    CGFloat ratio = self.frame.size.width/ image.size.width;
+- (void)setImage:(UIImage *)image {
+    CGFloat ratio = self.frame.size.width / image.size.width;
     CGFloat mHeight = image.size.height * ratio;
-    self.mHeight=mHeight;
+    self.mHeight = mHeight;
     [self invalidateIntrinsicContentSize];
     [super setImage:image];
 }
 
--(CGSize)intrinsicContentSize{
+- (CGSize)intrinsicContentSize {
     if (self.mHeight) {
         return CGSizeMake(self.frame.size.width, self.mHeight);
     }
     return [super intrinsicContentSize];
-    
+
 }
 
 @end

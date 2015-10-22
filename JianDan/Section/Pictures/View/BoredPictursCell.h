@@ -8,10 +8,11 @@
 
 #import <UIKit/UIKit.h>
 #import "ScaleImageView.h"
+
 @class BoredPictures;
 
 @interface BoredPictursCell : UITableViewCell
 
-@property (weak, nonatomic) IBOutlet ScaleImageView *imagePicture;
+@property(weak, nonatomic) IBOutlet ScaleImageView *imagePicture;
 
 @end

@@ -8,15 +8,15 @@
 
 #import "NSErrorHelper.h"
 
-NSString * const errorHelperDomain=@"http://NSErrorHelper";
+NSString *const errorHelperDomain = @"http://NSErrorHelper";
 
 @implementation NSErrorHelper
 
 + (NSString *)handleErrorMessage:(NSError *)error {
-    NSString *result = nil;
+    NSString * result = nil;
     switch (error.code) {
         case customErrorCode://0 自定义错误
-            result=error.userInfo[customErrorInfoKey];
+            result = error.userInfo[customErrorInfoKey];
             break;
         case kCFURLErrorTimedOut://-1001
             result = @"服务器连接超时";
@@ -35,39 +35,39 @@ NSString * const errorHelperDomain=@"http://NSErrorHelper";
             result = @"网络连接已中断";
             break;
         default:
-            result =@"其他错误";
+            result = @"其他错误";
             LogBlue(@"其他错误 error:%@", error);
             break;
     }
-    
+
     return result;
 }
 
-+(NSError *)createErrorWithErrorInfo:(NSString *)customErrorInfo{
-    return [NSError errorWithDomain:errorHelperDomain code:customErrorCode userInfo:@{customErrorInfoKey:customErrorInfo}];
++ (NSError *)createErrorWithErrorInfo:(NSString *)customErrorInfo {
+    return [NSError errorWithDomain:errorHelperDomain code:customErrorCode userInfo:@{customErrorInfoKey : customErrorInfo}];
 }
 
-+(NSError *)createErrorWithErrorInfo:(NSString *)customErrorInfo domain:(NSString *)domain{
-    return [NSError errorWithDomain:domain code:customErrorCode userInfo:@{customErrorInfoKey:customErrorInfo}];
++ (NSError *)createErrorWithErrorInfo:(NSString *)customErrorInfo domain:(NSString *)domain {
+    return [NSError errorWithDomain:domain code:customErrorCode userInfo:@{customErrorInfoKey : customErrorInfo}];
 }
 
-+(NSError *)createErrorWithErrorInfo:(NSString *)customErrorInfo domain:(NSString *)domain code:(NSInteger)code{
-    return [NSError errorWithDomain:domain code:code userInfo:@{customErrorInfoKey:customErrorInfo}];
++ (NSError *)createErrorWithErrorInfo:(NSString *)customErrorInfo domain:(NSString *)domain code:(NSInteger)code {
+    return [NSError errorWithDomain:domain code:code userInfo:@{customErrorInfoKey : customErrorInfo}];
 }
 
-+(NSError *)createErrorWithDomain:(NSString *)domain code:(NSInteger)code{
++ (NSError *)createErrorWithDomain:(NSString *)domain code:(NSInteger)code {
     return [NSError errorWithDomain:domain code:code userInfo:nil];
 }
 
-+(NSError *)createErrorWithUserInfo:(NSDictionary *)userInfo{
++ (NSError *)createErrorWithUserInfo:(NSDictionary *)userInfo {
     return [NSError errorWithDomain:errorHelperDomain code:customErrorCode userInfo:userInfo];
 }
 
-+(NSError *)createErrorWithUserInfo:(NSDictionary *)userInfo domain:(NSString *)domain{
++ (NSError *)createErrorWithUserInfo:(NSDictionary *)userInfo domain:(NSString *)domain {
     return [NSError errorWithDomain:domain code:customErrorCode userInfo:userInfo];
 }
 
-+(NSError *)createErrorWithUserInfo:(NSDictionary *)userInfo domain:(NSString *)domain code:(NSInteger)code{
++ (NSError *)createErrorWithUserInfo:(NSDictionary *)userInfo domain:(NSString *)domain code:(NSInteger)code {
     return [NSError errorWithDomain:domain code:code userInfo:userInfo];
 }
 

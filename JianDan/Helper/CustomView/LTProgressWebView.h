@@ -10,6 +10,6 @@
 
 @interface LTProgressWebView : UIWebView
 
-@property (nullable, nonatomic, assign) id <UIWebViewDelegate> progressDelegate;
+@property(nullable, nonatomic, assign) id <UIWebViewDelegate> progressDelegate;
 
 @end

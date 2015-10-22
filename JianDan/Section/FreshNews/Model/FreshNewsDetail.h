@@ -10,22 +10,22 @@
 
 @interface Post : NSObject
 
-@property (nonatomic, assign) NSInteger id;
+@property(nonatomic, assign) NSInteger id;
 
-@property (nonatomic, copy) NSString *content;
+@property(nonatomic, copy) NSString *content;
 
 @end
 
 @interface FreshNewsDetail : NSObject
 
 
-@property (nonatomic, copy) NSString *status;
+@property(nonatomic, copy) NSString *status;
 
-@property (nonatomic, strong) Post *post;
+@property(nonatomic, strong) Post *post;
 
-@property (nonatomic, copy) NSString *previous_url;
+@property(nonatomic, copy) NSString *previous_url;
 
-@property (nonatomic, copy) NSString *next_url;
+@property(nonatomic, copy) NSString *next_url;
 
 
 @end

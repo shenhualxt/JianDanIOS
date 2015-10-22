@@ -9,15 +9,15 @@
 #import <Foundation/Foundation.h>
 #import "FastImageCache/FICEntity.h"
 
-static NSString  *fastImageFormatFamily = @"FastImageFormatFamily";
+static NSString *fastImageFormatFamily = @"FastImageFormatFamily";
 static NSString *fastImage32BitBGRAFormatName = @"FastImage32BitBGRAFormatName";
 static NSString *fastImage32BitBGRFormatName = @"FastImage32BitBGRFormatName";
 
 static CGSize fastImageSize = {320, 200};
 
-@interface FastImage : NSObject<FICEntity>
+@interface FastImage : NSObject <FICEntity>
 
-@property (nonatomic, copy) NSString *sourceUrl;
+@property(nonatomic, copy) NSString *sourceUrl;
 
 - (id)initWithResUrl:(NSString *)resUrl;
 

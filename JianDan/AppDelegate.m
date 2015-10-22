@@ -14,10 +14,10 @@
 #import "AFNetworkReachabilityManager.h"
 #import "UMSocial.h"
 #import "MMDrawerBarButtonItem.h"
-#import "BoredPicturesController.h"
+#import "PicturesController.h"
 #import "UIImage+Scale.h"
 #import "FastImageCacehHelper.h"
-#import "LittleMoveController.h"
+#import "VideoController.h"
 
 #define UmengAppkey @"55f2639e67e58ed7da000371"
 
@@ -74,10 +74,10 @@
             case 1://无聊图
             case 2://妹子图
             case 3://段子
-                vc = [[BoredPicturesController alloc] initWithControllerType:index];
+                vc = [[PicturesController alloc] initWithControllerType:index];
                 break;
             case 4:
-                vc = [LittleMoveController new];
+                vc = [VideoController new];
                 break;
             default:
                 break;

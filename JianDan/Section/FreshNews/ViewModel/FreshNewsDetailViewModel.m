@@ -59,14 +59,21 @@
     [html appendFormat:@"%@ @ %@", freshNews.authorName, [date toString]];
     [html appendString:@"</div>"];
     [html appendString:@"<div class=\"entry\">"];
-    NSRange startRannge = [content rangeOfString:@"<iframe"];
-    if (startRannge.length) {
-        NSRange endRannge = [content rangeOfString:@"</iframe>"];
-        NSMutableString *iFrameString = [[content substringWithRange:NSMakeRange(startRannge.location, endRannge.location - startRannge.location)] mutableCopy];
-        NSRange widthStartRange = [iFrameString rangeOfString:@"width:"];
-        NSRange widthendRange = [iFrameString rangeOfString:@"height"];
-        NSString * newIFrame = [iFrameString stringByReplacingCharactersInRange:NSMakeRange(widthStartRange.location, widthendRange.location - widthStartRange.location) withString:@"width:100%;"];
-        content = [content stringByReplacingCharactersInRange:NSMakeRange(startRannge.location, endRannge.location - startRannge.location) withString:newIFrame];
+    @try {
+        NSRange startRannge = [content rangeOfString:@"<iframe"];
+        if (startRannge.length) {
+            NSRange endRannge = [content rangeOfString:@"</iframe>"];
+            NSMutableString *iFrameString = [[content substringWithRange:NSMakeRange(startRannge.location, endRannge.location - startRannge.location)] mutableCopy];
+            NSRange widthStartRange = [iFrameString rangeOfString:@"width:"];
+            if (widthStartRange.length) {
+                NSRange widthendRange = [iFrameString rangeOfString:@"height"];
+                NSString * newIFrame = [iFrameString stringByReplacingCharactersInRange:NSMakeRange(widthStartRange.location, widthendRange.location - widthStartRange.location) withString:@"width:100%;"];
+                content = [content stringByReplacingCharactersInRange:NSMakeRange(startRannge.location, endRannge.location - startRannge.location) withString:newIFrame];
+            }
+        }
+    }
+    @catch (NSException *exception) {
+        
     }
     [html appendString:content];
     [html appendString:@"</div>"];

@@ -1,17 +1,17 @@
 //
-//  BoredPictures.m
+//  Picture.m
 //  JianDan
 //
 //  Created by 刘献亭 on 15/9/19.
 //  Copyright (c) 2015年 刘献亭. All rights reserved.
 //
 
-#import "BoredPictures.h"
+#import "Picture.h"
 #import "NSDate+MJ.h"
 #import "NSString+Date.h"
 #import "FastImage.h"
 
-@interface BoredPictures()
+@interface Picture()
 
 @end
 
@@ -33,7 +33,7 @@ MJCodingImplementation
 
 @end
 
-@implementation BoredPictures{
+@implementation Picture{
     NSString *_comment_count;
 }
 
@@ -79,7 +79,7 @@ MJCodingImplementation
 -(void)setPicUrl:(NSString *)picUrl{
     _picUrl=picUrl;
     if ([_picUrl hasSuffix:@".gif"]) {
-        _thumnailGiFUrl=[BoredPictures thumbGIFURLFromURL:[_picUrl copy]];
+        _thumnailGiFUrl=[Picture thumbGIFURLFromURL:[_picUrl copy]];
     }
 }
 

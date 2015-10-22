@@ -8,6 +8,6 @@
 
 #import "BaseViewController.h"
 
-@interface LittleMovieDetailController : BaseViewController
+@interface VideoDetailController : BaseViewController
 
 @end

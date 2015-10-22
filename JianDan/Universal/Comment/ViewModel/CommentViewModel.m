@@ -32,15 +32,13 @@
         if (self.commentsType == CommentsTypeFreshNews) {
             return [self getFreshNewsCommentArray:input];
         } else {
-            return [self getBoredPicturesCommentArray:input];
+            return [self getPicturesCommentArray:input];
         }
     }];
 
 }
 
-#pragma mark -BoredPictures
-
-- (RACSignal *)getBoredPicturesCommentArray:(id)input {
+- (RACSignal *)getPicturesCommentArray:(id)input {
     NSString * url = [NSString stringWithFormat:@"%@comment-%@", duoShuoCommentListlUrl, input];
     return [[AFNetWorkUtils get2racWthURL:url] map:^id(NSDictionary *resultDic) {
         //获得thread_id

@@ -11,11 +11,8 @@
 #import "LeftMenuCell.h"
 #import "UIViewController+MMDrawerController.h"
 #import "FreshNews.h"
-#import "BoredPictures.h"
-#import "FreshNewsCell.h"
-#import "BoredPictursCell.h"
+#import "Picture.h"
 #import "AppDelegate.h"
-#import "BoredPicturesController.h"
 #import "SettingController.h"
 
 @interface LeftMenuController ()

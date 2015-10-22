@@ -93,7 +93,6 @@
     //加载网页
     @weakify(self)
     [[viewModel.soureCommand.executionSignals switchToLatest] subscribeNext:^(NSString *html) {
-        NSLog(@"%@", html);
         @strongify(self)
         //引用css文件的相对路径
         NSString * path = [[NSBundle mainBundle] bundlePath];

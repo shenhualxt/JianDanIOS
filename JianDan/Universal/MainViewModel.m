@@ -12,7 +12,7 @@
 
 #import "MainViewModel.h"
 #import "CacheTools.h"
-#import "BoredPictures.h"
+#import "Picture.h"
 #import "BLImageSize.h"
 #import "NSString+Additions.h"
 #import "PictureFrame.h"
@@ -162,12 +162,12 @@ INITWITHSETUP
 - (NSMutableArray *)handleResult:(NSMutableArray *)array {
     if (![self.url isEqualToString:freshNewUrl] && ![self.url isEqualToString:littleMovieUrl]) {
         //计算frame
-        [array enumerateObjectsUsingBlock:^(BoredPictures *_Nonnull pictures, NSUInteger idx, BOOL *_Nonnull stop) {
+        [array enumerateObjectsUsingBlock:^(Picture *_Nonnull picture, NSUInteger idx, BOOL *_Nonnull stop) {
             PictureFrame *pictureFrame = [PictureFrame new];
-            pictureFrame.pictureSize = pictures.picSize;
+            pictureFrame.pictureSize = picture.picSize;
             //计算cell高度
-            pictureFrame.pictures = pictures;
-            pictures.picFrame = pictureFrame;
+            pictureFrame.pictures = picture;
+            picture.picFrame = pictureFrame;
         }];
     }
 
@@ -188,8 +188,8 @@ INITWITHSETUP
  */
 - (RACSignal *)getCommentCountsSignal:(NSMutableArray *)array {
     NSMutableString *param = [NSMutableString string];
-    for (BoredPictures *boredPictures in array) {
-        [param appendFormat:@"comment-%@,", boredPictures.post_id];
+    for (Picture *pictures in array) {
+        [param appendFormat:@"comment-%@,", pictures.post_id];
     }
     return [[AFNetWorkUtils get2racWthURL:appendString(commentCountUrl, param)] map:^id(NSDictionary *resultDic) {
         NSDictionary * response = [resultDic objectForKey:@"response"];
@@ -198,10 +198,10 @@ INITWITHSETUP
             return array;
         }
 
-        [array enumerateObjectsUsingBlock:^(BoredPictures *_Nonnull boredPictures, NSUInteger idx, BOOL *_Nonnull stop) {
-            NSString * key = appendString(@"comment-", boredPictures.post_id);
+        [array enumerateObjectsUsingBlock:^(Picture *_Nonnull pictures, NSUInteger idx, BOOL *_Nonnull stop) {
+            NSString * key = appendString(@"comment-", pictures.post_id);
             NSDictionary * result = [response objectForKey:key];
-            boredPictures.comment_count = ConvertToString([result objectForKey:@"comments"]);
+            pictures.comment_count = ConvertToString([result objectForKey:@"comments"]);
         }];
         return array;
     }];
@@ -277,7 +277,7 @@ INITWITHSETUP
     return [RACSignal createSignal:^RACDisposable *(id <RACSubscriber> subscriber) {
         NSMutableArray *tempArray = [NSMutableArray arrayWithArray:array];
         dispatch_group_t group = dispatch_group_create();
-        [tempArray enumerateObjectsUsingBlock:^(BoredPictures *_Nonnull pictures, NSUInteger idx, BOOL *_Nonnull stop) {
+        [tempArray enumerateObjectsUsingBlock:^(Picture *_Nonnull pictures, NSUInteger idx, BOOL *_Nonnull stop) {
             if (!pictures.picUrl) return;
             dispatch_group_async(group, dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
                 pictures.picSize = [BLImageSize downloadImageSizeWithURL:pictures.thumnailGiFUrl ?: pictures.picUrl];
@@ -299,7 +299,7 @@ INITWITHSETUP
 //滑到底部，自动加载新的数据
 - (void)scrollViewDidScroll:(UIScrollView *)scrollView {
     CGFloat distanceFromBottom = scrollView.contentSize.height - scrollView.contentOffset.y;
-    if (distanceFromBottom < 3 * SCREEN_HEIGHT && [self.sourceArray count] && !self.isLoading) {
+    if (distanceFromBottom < 8 * SCREEN_HEIGHT && [self.sourceArray count] && !self.isLoading) {
         [self loadNextPageData];
     }
 }
@@ -308,6 +308,7 @@ INITWITHSETUP
  *  加载下一页的数据
  */
 - (void)loadNextPageData {
+    [[SDImageCache sharedImageCache] clearMemory];
     RACTuple *newTurple = RACTuplePack(@(YES), self.modelArgument, self.modelClass, self.url, self.tableName);
     [self.sourceCommand execute:newTurple];
 }

@@ -8,7 +8,7 @@
 
 #import "PictureCell.h"
 #import "NSString+Additions.h"
-#import "BoredPictures.h"
+#import "Picture.h"
 #import "NSString+Date.h"
 #import "PictureFrame.h"
 #import "UIColor+Additions.h"
@@ -28,7 +28,7 @@
 
 @property(strong, nonatomic) UIView *gifImageView;
 
-@property(weak, nonatomic) BoredPictures *picture;
+@property(weak, nonatomic) Picture *picture;
 
 @property(assign, nonatomic) NSInteger drawColorFlag;
 
@@ -70,7 +70,7 @@
 }
 
 
-- (void)bindViewModel:(BoredPictures *)viewModel forIndexPath:(NSIndexPath *)indexPath {
+- (void)bindViewModel:(Picture *)viewModel forIndexPath:(NSIndexPath *)indexPath {
     self.picture = viewModel;
     if (!viewModel.picUrl) {//段子
         [self draw];
@@ -101,13 +101,13 @@
             [_picture.text_content drawInRect:_picture.picFrame.textContentFrame fromFont:kContentFont];
         }
         //OO
-        [_picture.vote_positiveStr drawAtPoint:_picture.picFrame.OOPoint fromFont:kDateFont];
+        [_picture.vote_positiveStr drawAtPoint:_picture.picFrame.OOPoint fromFont:kDateFont color:[UIColor grayColor]];
         //XX
-        [_picture.vote_negativeStr drawAtPoint:_picture.picFrame.XXPoint fromFont:kDateFont];
+        [_picture.vote_negativeStr drawAtPoint:_picture.picFrame.XXPoint fromFont:kDateFont color:[UIColor grayColor]];
         //吐槽
-        [_picture.comment_count drawAtPoint:_picture.picFrame.commentPoint fromFont:kDateFont];
+        [_picture.comment_count drawAtPoint:_picture.picFrame.commentPoint fromFont:kDateFont color:[UIColor grayColor]];
         //share
-        [@"•••" drawAtPoint:_picture.picFrame.sharePoint fromFont:kDateFont];
+        [@"•••" drawAtPoint:_picture.picFrame.sharePoint fromFont:kDateFont color:[UIColor grayColor]];
         //获得组合的图片
         UIImage * temp = UIGraphicsGetImageFromCurrentImageContext();
         UIGraphicsEndImageContext();
@@ -134,12 +134,12 @@
     [self clear];
 }
 
-- (NSURL *)getImageURL:(BoredPictures *)boredPictures {
-    NSString * imageURL = boredPictures.thumnailGiFUrl;
+- (NSURL *)getImageURL:(Picture *)picture {
+    NSString * imageURL = picture.thumnailGiFUrl;
     if (!imageURL) {
         _gifImageView.frame = CGRectZero;
         _gifImageView.hidden = YES;
-        imageURL = boredPictures.picUrl;
+        imageURL = picture.picUrl;
     } else {
         _gifImageView.frame = _picture.picFrame.gifFrame;
         _gifImageView.hidden = NO;
@@ -177,10 +177,12 @@
     BOOL isInShareButton = CGRectContainsPoint(shareFrame, touchPoint);
     if (isInShareButton) {
         NSString * content = [_picture.text_content stringByReplacingOccurrencesOfString:@"\r\n" withString:@""];
-        RACTuple *turple = [RACTuple tupleWithObjects:_picture.picUrl, [NSString stringWithFormat:@"%@（来自 @煎蛋网）", content], nil];
-        ShareToSinaController *shareToSinaController = [ShareToSinaController new];
-        shareToSinaController.sendObject = turple;
-        [[self controller].mm_drawerController.navigationController pushViewController:shareToSinaController animated:YES];
+        ShareToSinaController *vc = [ShareToSinaController new];
+        vc.sendObject=[NSString stringWithFormat:@"%@（来自 @煎蛋网）", content];
+        if (_picture.picUrl) {
+            vc.sendObject= [RACTuple tupleWithObjects:_picture.picUrl, vc.sendObject, nil];
+        }
+        [[self controller].mm_drawerController.navigationController pushViewController:vc animated:YES];
         return;
     }
 }

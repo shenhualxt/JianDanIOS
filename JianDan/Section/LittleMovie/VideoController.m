@@ -6,16 +6,16 @@
 //  Copyright © 2015年 刘献亭. All rights reserved.
 //
 
-#import "LittleMoveController.h"
+#import "VideoController.h"
 #import "UIViewController+MMDrawerController.h"
 #import "MJRefresh.h"
-#import "LittleMovieCollectionCell.h"
-#import "BoredPictures.h"
+#import "Picture.h"
 #import "MainViewModel.h"
 #import "BaseViewController.h"
-#import "LittleMovieDetailController.h"
+#import "VideoDetailController.h"
+#import "VideoCollectionCell.h"
 
-@interface LittleMoveController () <UICollectionViewDelegateFlowLayout>
+@interface VideoController () <UICollectionViewDelegateFlowLayout>
 
 @property(strong, nonatomic) MainViewModel *viewModel;
 
@@ -25,7 +25,7 @@
 
 @end
 
-@implementation LittleMoveController
+@implementation VideoController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -47,7 +47,7 @@
     UIButton *btn = (UIButton *) self.mm_drawerController.navigationItem.rightBarButtonItem.customView;
     btn.rac_command = [[RACCommand alloc] initWithEnabled:[self.viewModel.sourceCommand.executing map:^id(id value) {
         return @(![value boolValue]);
-    }]                                        signalBlock:^RACSignal *(id input) {
+    }] signalBlock:^RACSignal *(id input) {
         return [self.viewModel.sourceCommand execute:self.turple];
     }];
 
@@ -65,27 +65,27 @@
 
 - (void)bindingViewModel {
     self.viewModel = [MainViewModel new];
-    self.turple = [RACTuple tupleWithObjects:@(NO), @"comments", [BoredPictures class], littleMovieUrl, @"Video", nil];
+    self.turple = [RACTuple tupleWithObjects:@(NO), @"comments", [Picture class], littleMovieUrl, @"Video", nil];
     //数据源信号
     RACSignal *sourceSignal = [[[self.viewModel.sourceCommand executionSignals] switchToLatest] map:^id(NSMutableArray *resultArray) {
         NSArray * tempArray = [NSArray arrayWithArray:resultArray];
-        for (BoredPictures *boredPictures in tempArray) {
-            if (!boredPictures.videos.count) {
-                [resultArray removeObject:boredPictures];
+        for (Picture *picture in tempArray) {
+            if (!picture.videos.count) {
+                [resultArray removeObject:picture];
             }
         }
         return resultArray;
     }];
     self.collectionView.panGestureRecognizer.delaysTouchesBegan = self.collectionView.delaysContentTouches;
-    RACCommand *selectionCommand = [[RACCommand alloc] initWithSignalBlock:^RACSignal *(BoredPictures *boredPictures) {
-        LittleMovieDetailController *vc = [LittleMovieDetailController new];
-        vc.sendObject = boredPictures.text_content;
+    RACCommand *selectionCommand = [[RACCommand alloc] initWithSignalBlock:^RACSignal *(Picture *picture) {
+        VideoDetailController *vc = [VideoDetailController new];
+        vc.sendObject = picture.text_content;
         [self.mm_drawerController.navigationController pushViewController:vc animated:YES];
         return [RACSignal empty];
     }];
 
     //列表绑定数据
-    self.helper = [HRCollectionViewBindingHelper bindWithCollectionView:self.collectionView dataSource:sourceSignal selectionCommand:selectionCommand templateCellClass:[LittleMovieCollectionCell class]];
+    self.helper = [HRCollectionViewBindingHelper bindWithCollectionView:self.collectionView dataSource:sourceSignal selectionCommand:selectionCommand templateCellClass:[VideoCollectionCell class]];
     self.helper.delegate = self;
 
     //执行完关闭下拉刷新
@@ -95,9 +95,11 @@
         [UIApplication sharedApplication].networkActivityIndicatorVisible = [x boolValue];
         if (self.collectionView.header.isRefreshing && ![x boolValue]) {
             [self.collectionView.header endRefreshing];
+            [self.collectionView.footer endRefreshing];
         }
     }];
 
+    //错误处理
     [self.viewModel.sourceCommand.errors subscribeNext:^(id x) {
         [[ToastHelper sharedToastHelper] toast:[NSErrorHelper handleErrorMessage:x]];
     }];
@@ -106,10 +108,13 @@
     self.collectionView.header = [MJRefreshNormalHeader headerWithRefreshingBlock:^{
         [self.viewModel.sourceCommand execute:self.turple];
     }];
-    [[self.viewModel.sourceCommand execute:self.turple] subscribeCompleted:^{
-        if ([AFNetWorkUtils sharedAFNetWorkUtils].netType != NONet) {
-            [self.collectionView.header beginRefreshing];
-        }
+    
+    [self.collectionView.header beginRefreshing];
+    
+    //设置上拉加载更多
+    self.collectionView.footer = [MJRefreshAutoNormalFooter footerWithRefreshingBlock:^{
+        @strongify(self)
+        [self.viewModel loadNextPageData];
     }];
 }
 

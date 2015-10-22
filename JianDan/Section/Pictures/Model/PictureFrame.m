@@ -9,12 +9,12 @@
 #import "PictureFrame.h"
 #import "NSString+Additions.h"
 #import "NSString+Date.h"
-#import "BoredPictures.h"
+#import "Picture.h"
 
 
 @implementation PictureFrame
 
--(void)setPictures:(BoredPictures *)picture{
+-(void)setPictures:(Picture *)picture{
     //Author
     CGSize authorSze=[picture.comment_author sizeOfSimpleTextWithContrainedToSize:CGSizeMake(CGFLOAT_MAX, CGFLOAT_MAX) fromFont:kAuthorFont];
     _authorFrame=CGRectMake(kLeftMargin, kLeftMargin, authorSze.width, authorSze.height);

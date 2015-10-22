@@ -10,7 +10,6 @@
 #import "CEReactiveView.h"
 #import <ReactiveCocoa/RACEXTScope.h>
 #import "UITableView+FDTemplateLayoutCell.h"
-#import "BoredPictures.h"
 
 @interface CETableViewBindingHelper () <UITableViewDataSource, UITableViewDelegate>
 

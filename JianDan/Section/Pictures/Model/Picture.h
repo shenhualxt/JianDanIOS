@@ -1,5 +1,5 @@
 //
-//  BoredPictures.h
+//  Picture.h
 //  JianDan
 //
 //  Created by 刘献亭 on 15/9/19.
@@ -23,7 +23,7 @@
 @end
 
 
-@interface BoredPictures : NSObject
+@interface Picture : NSObject
 
 @property (nonatomic, assign) NSInteger vote_positive;
 
@@ -40,7 +40,6 @@
 @property (nonatomic, strong) NSString *comment_author;
 
 @property (nonatomic, copy) NSString *text_content;
-
 //小视频
 @property (nonatomic, strong) NSArray *videos;
 
@@ -49,13 +48,10 @@
 @property (nonatomic, strong) NSString *picUrl;
 
 @property (nonatomic, strong) NSString *thumnailGiFUrl;
-
 //评论数量
 @property (nonatomic, strong) NSString *comment_count;
-
 //用来排序的日期
 @property (nonatomic, strong) NSString *date;
-
 //离现在时间差
 @property (nonatomic, strong) NSString *deltaToNow;
 

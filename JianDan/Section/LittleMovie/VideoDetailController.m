@@ -6,7 +6,7 @@
 //  Copyright © 2015年 刘献亭. All rights reserved.
 //
 
-#import "LittleMovieDetailController.h"
+#import "VideoDetailController.h"
 #import "PopoverView.h"
 #import "ShareToSinaController.h"
 #import "NJKWebViewProgress.h"
@@ -14,7 +14,7 @@
 #import "UIWebView+RAC.h"
 #import "LTProgressWebView.h"
 
-@interface LittleMovieDetailController () <UIWebViewDelegate>
+@interface VideoDetailController () <UIWebViewDelegate>
 
 @property(weak, nonatomic) IBOutlet LTProgressWebView *webView;
 @property(weak, nonatomic) IBOutlet UIButton *buttonPrevious;
@@ -25,7 +25,7 @@
 
 @end
 
-@implementation LittleMovieDetailController
+@implementation VideoDetailController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -36,8 +36,9 @@
 }
 
 - (void)initView {
-    //加载网页 self.sendObject:urlString
+    //加载网页 self.sendObject:网页地址
     [self.webView loadRequest:[NSURLRequest requestWithURL:[NSURL URLWithString:self.sendObject]]];
+    self.webView.progressDelegate=self;
 
     //添加右菜单
     UIBarButtonItem *item = [self createButtonItem:@"abc_ic_menu_moreoverflow_mtrl_alpha"];

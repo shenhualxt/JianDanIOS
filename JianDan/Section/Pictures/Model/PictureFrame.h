@@ -7,7 +7,7 @@
 //
 
 #import <Foundation/Foundation.h>
-@class BoredPictures;
+@class Picture;
 
 #define kLeftMargin 8
 
@@ -59,7 +59,7 @@
 @property (nonatomic, assign) CGFloat cellHeight;
 
 /** 数据源 */
-@property (nonatomic, strong) BoredPictures *pictures;
+@property (nonatomic, strong) Picture *pictures;
 
 +(CGSize)scaleSize:(CGSize)oldSize;
 

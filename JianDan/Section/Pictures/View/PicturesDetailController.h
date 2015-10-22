@@ -1,5 +1,5 @@
 //
-//  BoredPicturesDetailController.h
+//  PicturesDetailController.h
 //  JianDan
 //
 //  Created by 刘献亭 on 15/9/24.
@@ -8,6 +8,6 @@
 
 #import "BaseViewController.h"
 
-@interface BoredPicturesDetailController : BaseViewController
+@interface PicturesDetailController : BaseViewController
 
 @end

@@ -1,16 +1,16 @@
 //
-//  BoredPicturesController.m
+//  PicturesController.m
 //  JianDan
 //
 //  Created by 刘献亭 on 15/9/21.
 //  Copyright (c) 2015年 刘献亭. All rights reserved.
 //
 
-#import "BoredPicturesController.h"
-#import "BoredPictures.h"
-#import "BoredPictursCell.h"
+#import "PicturesController.h"
+#import "Picture.h"
+#import "PicturesDetailController.h"
 #import "UIViewController+MMDrawerController.h"
-#import "BoredPicturesDetailController.h"
+#import "PicturesDetailController.h"
 #import "MJRefresh.h"
 #import "MainViewModel.h"
 #import "PictureCell.h"
@@ -18,7 +18,7 @@
 #import "PictureFrame.h"
 #import "UIImage+Scale.h"
 
-@interface BoredPicturesController () <SDWebImageManagerDelegate>
+@interface PicturesController () <SDWebImageManagerDelegate>
 
 @property(strong, nonatomic) MainViewModel *viewModel;
 
@@ -30,7 +30,7 @@
 
 @end
 
-@implementation BoredPicturesController
+@implementation PicturesController
 
 - (instancetype)initWithControllerType:(ControllerType)controllerType {
     self = [super init];
@@ -47,7 +47,7 @@
             tableName = @"Joke";
             url = JokeUrl;
         }
-        _turple = [RACTuple tupleWithObjects:@(NO), @"comments", [BoredPictures class], url, tableName, nil];
+        _turple = [RACTuple tupleWithObjects:@(NO), @"comments", [Picture class], url, tableName, nil];
     }
     return self;
 }
@@ -63,7 +63,7 @@
     RACCommand *selectCommand=nil;
     if (![self.turple.fourth isEqualToString:JokeUrl]) {
         selectCommand = [[RACCommand alloc] initWithSignalBlock:^RACSignal *(RACTuple *turple) {
-            BoredPicturesDetailController *vc = [BoredPicturesDetailController controllerWithSendObject:(BoredPictures *) turple.first];
+            PicturesDetailController *vc = [PicturesDetailController controllerWithSendObject:(Picture *) turple.first];
             [self.mm_drawerController.navigationController pushViewController:vc animated:YES];
             return [RACSignal empty];
         }];

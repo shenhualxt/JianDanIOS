@@ -1,12 +1,12 @@
 //
-//  BoredPicturesDetailController.m
+//  pictureDetailController.m
 //  JianDan
 //
 //  Created by 刘献亭 on 15/9/24.
 //  Copyright © 2015年 刘献亭. All rights reserved.
 //
-#import "BoredPicturesDetailController.h"
-#import "BoredPictures.h"
+#import "PicturesDetailController.h"
+#import "Picture.h"
 #import "ShareToSinaController.h"
 #import "BaseNavigationController.h"
 #import "VoteViewModel.h"
@@ -21,7 +21,7 @@
 #import "PictureFrame.h"
 #import "UIColor+Additions.h"
 
-@interface BoredPicturesDetailController () <UIScrollViewDelegate>
+@interface PicturesDetailController () <UIScrollViewDelegate>
 @property(weak, nonatomic) IBOutlet UIScrollView *scrollView;
 @property(weak, nonatomic) IBOutlet UIButton *buttonBack;
 @property(weak, nonatomic) IBOutlet UIButton *buttonShare;
@@ -39,20 +39,20 @@
 @property(nonatomic) CGFloat lastZoomScale;
 @end
 
-@implementation BoredPicturesDetailController
+@implementation PicturesDetailController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.navigationBarHidden = YES;
     self.statusBarStyle = UIStatusBarStyleLightContent;
     [self initClick];
-    BoredPictures *boredPictures = (BoredPictures *) self.sendObject;
-    NSString * imageURL = boredPictures.picUrl;
+    Picture *picture = (Picture *) self.sendObject;
+    NSString * imageURL = picture.picUrl;
     if (!imageURL)return;
 
-     UIImage *placeHoler=[UIColorFromRGB(0xDDDDDD) createImageWithText:@"煎蛋" size:boredPictures.picFrame.pictureFrame.size textColor:[UIColor grayColor]];
+     UIImage *placeHoler=[UIColorFromRGB(0xDDDDDD) createImageWithText:@"煎蛋" size:picture.picFrame.pictureFrame.size textColor:[UIColor grayColor]];
     self.imageViewDetail.image = placeHoler;
-    self.imageViewDetail.frame = boredPictures.picFrame.pictureFrame;
+    self.imageViewDetail.frame = picture.picFrame.pictureFrame;
     [self adjustLocation:YES];
 
     //gif
@@ -85,13 +85,13 @@
 }
 
 - (void)initClick {
-    BoredPictures *boredPictures = (BoredPictures *) self.sendObject;
-    if (!boredPictures.picUrl)return;
-    NSString * imageURL = boredPictures.picUrl;
+    Picture *picture = (Picture *) self.sendObject;
+    if (!picture.picUrl)return;
+    NSString * imageURL = picture.picUrl;
     //分享图片和内容
     WS(ws)
     [[self.buttonShare rac_signalForControlEvents:UIControlEventTouchUpInside] subscribeNext:^(id x) {
-        NSString * content = [boredPictures.text_content stringByReplacingOccurrencesOfString:@"\r\n" withString:@""];
+        NSString * content = [picture.text_content stringByReplacingOccurrencesOfString:@"\r\n" withString:@""];
         RACTuple *turple = [RACTuple tupleWithObjects:imageURL, [NSString stringWithFormat:@"%@（来自 @煎蛋网）", content], nil];
         [ws presentViewController:[ShareToSinaController class] object:turple];
     }];
@@ -100,13 +100,13 @@
         [ws BackClick];
     }];
     //vote
-    [self.buttonOO setTitle:[NSString stringWithKey:"OO " value:(int) boredPictures.vote_positive] forState:UIControlStateNormal];
-    [self.buttonXX setTitle:[NSString stringWithKey:"XX " value:(int) boredPictures.vote_negative] forState:UIControlStateNormal];
+    [self.buttonOO setTitle:[NSString stringWithKey:"OO " value:(int) picture.vote_positive] forState:UIControlStateNormal];
+    [self.buttonXX setTitle:[NSString stringWithKey:"XX " value:(int) picture.vote_negative] forState:UIControlStateNormal];
     [[self.buttonOO rac_signalForControlEvents:UIControlEventTouchUpInside] subscribeNext:^(id x) {
-        [VoteViewModel voteWithOption:OO vote:(id <Vote>) boredPictures button:x];
+        [VoteViewModel voteWithOption:OO vote:(id <Vote>) picture button:x];
     }];
     [[self.buttonXX rac_signalForControlEvents:UIControlEventTouchUpInside] subscribeNext:^(id x) {
-        [VoteViewModel voteWithOption:XX vote:(id <Vote>) boredPictures button:x];
+        [VoteViewModel voteWithOption:XX vote:(id <Vote>) picture button:x];
     }];
     //下载图片
     [[self.buttonDownload rac_signalForControlEvents:UIControlEventTouchUpInside] subscribeNext:^(id x) {
@@ -123,7 +123,7 @@
     }];
     //查看评论
     [[self.buttonChat rac_signalForControlEvents:UIControlEventTouchUpInside] subscribeNext:^(id x) {
-        [ws pushViewController:[CommentController class] object:boredPictures.post_id];
+        [ws pushViewController:[CommentController class] object:picture.post_id];
     }];
     //隐藏显示按钮
     UITapGestureRecognizer *gesture = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(hideOrShowTopView)];
@@ -153,8 +153,8 @@
 
 - (void)adjustLocation:(BOOL)isPlaceHolder {
     dispatch_main_async_safe(^{
-        BoredPictures *boredPictures = (BoredPictures *) self.sendObject;
-        CGSize oldSize = boredPictures.picSize;
+        Picture *picture = (Picture *) self.sendObject;
+        CGSize oldSize = picture.picSize;
         CGFloat ratio = (SCREEN_WIDTH) / oldSize.width;
         NSInteger mHeight = oldSize.height * ratio;
 
@@ -173,8 +173,8 @@
 }
 
 - (void)updateConstraints {
-    BoredPictures *boredPictures = (BoredPictures *) self.sendObject;
-    float vPadding = (SCREEN_HEIGHT - self.scrollView.zoomScale * boredPictures.picFrame.pictureSize.height) / 2;
+    Picture *picture = (Picture *) self.sendObject;
+    float vPadding = (SCREEN_HEIGHT - self.scrollView.zoomScale * picture.picFrame.pictureSize.height) / 2;
     if (vPadding < 0) vPadding = 0;
     self.constraintTop.constant = vPadding;
     [self.view layoutIfNeeded];

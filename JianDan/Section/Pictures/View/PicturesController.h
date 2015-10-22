@@ -1,5 +1,5 @@
 //
-//  BoredPicturesController.h
+//  PicturesController.h
 //  JianDan
 //
 //  Created by 刘献亭 on 15/9/21.
@@ -14,7 +14,7 @@ typedef NS_ENUM(NSInteger, ControllerType) {
     controllerTypeJoke,
 };
 
-@interface BoredPicturesController : FreshNewsController
+@interface PicturesController : FreshNewsController
 
 - (instancetype)initWithControllerType:(ControllerType)controllerType;
 

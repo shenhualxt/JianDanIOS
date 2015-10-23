@@ -19,6 +19,8 @@
 
 @property(nonatomic, strong) NSMutableArray *menuArray;
 
+@property(nonatomic,assign) BOOL loadSister;;
+
 @end
 
 @implementation LeftMenuController
@@ -34,21 +36,26 @@
     RACCommand *menuCommand = [[RACCommand alloc] initWithSignalBlock:^RACSignal *(RACTuple *turple) {
         AppDelegate *delegate = (AppDelegate *) [UIApplication sharedApplication].delegate;
         NSIndexPath *indexPath = turple.second;
-         BOOL loadSister=[[NSUserDefaults standardUserDefaults] boolForKey:kLoadSisterKey];
         NSInteger index=indexPath.row;
-        if (!loadSister&&indexPath.row>1) {
+        if (!self.loadSister&&indexPath.row>1) {
             index++;
         }
         [delegate replaceContentViewController:index];
         return [RACSignal empty];
     }];
     [CETableViewBindingHelper bindingHelperForTableView:self.tableView sourceSignal:RACObserve(self, menuArray) selectionCommand:menuCommand templateCellClass:[LeftMenuCell class]];
+    
+    self.loadSister=[[NSUserDefaults standardUserDefaults] boolForKey:kLoadSisterKey];
+    self.menuArray=[self menuArray:self.loadSister];
 }
 
 -(void)viewWillAppear:(BOOL)animated{
     [super viewWillAppear:animated];
-    BOOL loadSister=[[NSUserDefaults standardUserDefaults] boolForKey:kLoadSisterKey];
-    self.menuArray=[self menuArray:loadSister];
+     BOOL loadSister=[[NSUserDefaults standardUserDefaults] boolForKey:kLoadSisterKey];
+    if (loadSister!=self.loadSister) {
+        self.loadSister=loadSister;
+        self.menuArray=[self menuArray:loadSister];
+    }
 }
 
 - (void)addSettingButton {

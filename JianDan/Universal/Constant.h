@@ -9,6 +9,10 @@
 #ifndef JianDan_Constant_h
 #define JianDan_Constant_h
 
+#define kAutoLoadGIFKey @"autoLoadGIF"
+
+#define kLoadSisterKey @"loadSister"
+
 static NSString* const touristInfoNotEnough = @"请填写游客信息";
 
 static NSString* const commentTooShort = @"你的..太短..";

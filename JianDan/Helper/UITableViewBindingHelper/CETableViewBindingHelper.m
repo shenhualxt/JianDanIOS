@@ -107,27 +107,25 @@ heightForRowAtIndexPath:(NSIndexPath *)indexPath {
     return heightForRowAtIndexPath;
 }
 
-- (void)configureCell:(id <CEReactiveView>)cell forIndexPath:(NSIndexPath *)indexPath {
-    if ([cell respondsToSelector:@selector(clear)]) {
-        [cell clear];
-    }
-    if (needLoadArr.count > 0 && [needLoadArr indexOfObject:indexPath] == NSNotFound) {
-        if ([cell respondsToSelector:@selector(clear)]) {
-            [cell clear];
-        }
-        return;
-    }
-    if (scrollToToping) {
-        return;
-    }
-
-    id model = _data[indexPath.row];
-    [cell bindViewModel:model forIndexPath:indexPath];
-}
+//- (void)configureCell:(id <CEReactiveView>)cell forIndexPath:(NSIndexPath *)indexPath {
+//    if ([cell respondsToSelector:@selector(clear)]) {
+//        [cell clear];
+//    }
+//    if (needLoadArr.count > 0 && [needLoadArr indexOfObject:indexPath] == NSNotFound) {
+//        if ([cell respondsToSelector:@selector(clear)]) {
+//            [cell clear];
+//        }
+//        return;
+//    }
+//    if (scrollToToping) {
+//        return;
+//    }
+    
+//}
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     id <CEReactiveView> cell = [tableView dequeueReusableCellWithIdentifier:_reuseIdentifier forIndexPath:indexPath];
-    [self configureCell:cell forIndexPath:indexPath];
+    [cell bindViewModel:_data[indexPath.row] forIndexPath:indexPath];
     return (UITableViewCell *) cell;
 }
 
@@ -200,29 +198,29 @@ heightForRowAtIndexPath:(NSIndexPath *)indexPath {
 
 //按需加载 - 如果目标行与当前行相差超过指定行数，只在目标滚动范围的前后指定3行加载。
 - (void)scrollViewWillEndDragging:(UIScrollView *)scrollView withVelocity:(CGPoint)velocity targetContentOffset:(inout CGPoint *)targetContentOffset {
-    NSIndexPath *ip = [_tableView indexPathForRowAtPoint:CGPointMake(0, targetContentOffset->y)];
-    NSIndexPath *cip = [[_tableView indexPathsForVisibleRows] firstObject];
-    NSInteger skipCount = 8;
-    if (labs(cip.row - ip.row) > skipCount) {
-        NSArray * temp = [_tableView indexPathsForRowsInRect:CGRectMake(0, targetContentOffset->y, _tableView.frame.size.width, _tableView.frame.size.height)];
-        NSMutableArray *arr = [NSMutableArray arrayWithArray:temp];
-        if (velocity.y < 0) {
-            NSIndexPath *indexPath = [temp lastObject];
-            if (indexPath.row + 3 < _data.count) {
-                [arr addObject:[NSIndexPath indexPathForRow:indexPath.row + 1 inSection:0]];
-                [arr addObject:[NSIndexPath indexPathForRow:indexPath.row + 2 inSection:0]];
-                [arr addObject:[NSIndexPath indexPathForRow:indexPath.row + 3 inSection:0]];
-            }
-        } else {
-            NSIndexPath *indexPath = [temp firstObject];
-            if (indexPath.row > 3) {
-                [arr addObject:[NSIndexPath indexPathForRow:indexPath.row - 3 inSection:0]];
-                [arr addObject:[NSIndexPath indexPathForRow:indexPath.row - 2 inSection:0]];
-                [arr addObject:[NSIndexPath indexPathForRow:indexPath.row - 1 inSection:0]];
-            }
-        }
-        [needLoadArr addObjectsFromArray:arr];
-    }
+//    NSIndexPath *ip = [_tableView indexPathForRowAtPoint:CGPointMake(0, targetContentOffset->y)];
+//    NSIndexPath *cip = [[_tableView indexPathsForVisibleRows] firstObject];
+//    NSInteger skipCount = 8;
+//    if (labs(cip.row - ip.row) > skipCount) {
+//        NSArray * temp = [_tableView indexPathsForRowsInRect:CGRectMake(0, targetContentOffset->y, _tableView.frame.size.width, _tableView.frame.size.height)];
+//        NSMutableArray *arr = [NSMutableArray arrayWithArray:temp];
+//        if (velocity.y < 0) {
+//            NSIndexPath *indexPath = [temp lastObject];
+//            if (indexPath.row + 3 < _data.count) {
+//                [arr addObject:[NSIndexPath indexPathForRow:indexPath.row + 1 inSection:0]];
+//                [arr addObject:[NSIndexPath indexPathForRow:indexPath.row + 2 inSection:0]];
+//                [arr addObject:[NSIndexPath indexPathForRow:indexPath.row + 3 inSection:0]];
+//            }
+//        } else {
+//            NSIndexPath *indexPath = [temp firstObject];
+//            if (indexPath.row > 3) {
+//                [arr addObject:[NSIndexPath indexPathForRow:indexPath.row - 3 inSection:0]];
+//                [arr addObject:[NSIndexPath indexPathForRow:indexPath.row - 2 inSection:0]];
+//                [arr addObject:[NSIndexPath indexPathForRow:indexPath.row - 1 inSection:0]];
+//            }
+//        }
+//        [needLoadArr addObjectsFromArray:arr];
+//    }
 }
 
 - (BOOL)scrollViewShouldScrollToTop:(UIScrollView *)scrollView {

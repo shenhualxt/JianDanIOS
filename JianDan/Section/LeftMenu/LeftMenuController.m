@@ -34,10 +34,21 @@
     RACCommand *menuCommand = [[RACCommand alloc] initWithSignalBlock:^RACSignal *(RACTuple *turple) {
         AppDelegate *delegate = (AppDelegate *) [UIApplication sharedApplication].delegate;
         NSIndexPath *indexPath = turple.second;
-        [delegate replaceContentViewController:indexPath.row];
+         BOOL loadSister=[[NSUserDefaults standardUserDefaults] boolForKey:kLoadSisterKey];
+        NSInteger index=indexPath.row;
+        if (!loadSister&&indexPath.row>1) {
+            index++;
+        }
+        [delegate replaceContentViewController:index];
         return [RACSignal empty];
     }];
     [CETableViewBindingHelper bindingHelperForTableView:self.tableView sourceSignal:RACObserve(self, menuArray) selectionCommand:menuCommand templateCellClass:[LeftMenuCell class]];
+}
+
+-(void)viewWillAppear:(BOOL)animated{
+    [super viewWillAppear:animated];
+    BOOL loadSister=[[NSUserDefaults standardUserDefaults] boolForKey:kLoadSisterKey];
+    self.menuArray=[self menuArray:loadSister];
 }
 
 - (void)addSettingButton {
@@ -64,16 +75,16 @@
     }];
 }
 
-- (NSMutableArray *)menuArray {
-    if (!_menuArray) {
-        _menuArray = [NSMutableArray array];
-        NSArray * imageNameArray = @[@"ic_explore_white_24dp", @"ic_mood_white_24dp", @"ic_local_florist_white_24dp", @"ic_chat_white_24dp", @"ic_movie_white_24dp"];
-        NSArray * menuNameArray = @[@"新鲜事", @"无聊图", @"妹子图", @"段子", @"小电影"];
-
-        for (int i = 0; i < [menuNameArray count]; ++i) {
-            LeftMenu *menu = [LeftMenu menuWithImageName:imageNameArray[i] menuName:menuNameArray[i]];
-            [_menuArray addObject:menu];
-        }
+- (NSMutableArray *)menuArray:(BOOL)hasSister{
+    _menuArray = [NSMutableArray array];
+    NSArray *imageNameArray = @[@"ic_explore_white_24dp", @"ic_mood_white_24dp",@"ic_local_florist_white_24dp", @"ic_chat_white_24dp", @"ic_movie_white_24dp"];
+    NSArray *menuNameArray=@[@"新鲜事", @"无聊图", @"妹子图", @"段子", @"小电影"];
+    for (int i = 0; i < [menuNameArray count]; ++i) {
+        LeftMenu *menu = [LeftMenu menuWithImageName:imageNameArray[i] menuName:menuNameArray[i]];
+        [_menuArray addObject:menu];
+    }
+    if (!hasSister) {
+        [_menuArray removeObjectAtIndex:2];
     }
     return _menuArray;
 }

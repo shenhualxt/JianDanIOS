@@ -45,6 +45,8 @@ static NSString *_sortArgument = @"date";
 //最终数据对应的key
 @property(strong, nonatomic) NSString *modelArgument;
 
+@property(assign,nonatomic) CGFloat lastOffsetY;
+
 @end
 
 @implementation MainViewModel
@@ -298,6 +300,10 @@ INITWITHSETUP
 
 //滑到底部，自动加载新的数据
 - (void)scrollViewDidScroll:(UIScrollView *)scrollView {
+    if (scrollView.contentOffset.y-self.lastOffsetY>2*SCREEN_HEIGHT) {
+         [[SDImageCache sharedImageCache] clearMemory];
+         self.lastOffsetY=scrollView.contentOffset.y;
+    }
     CGFloat distanceFromBottom = scrollView.contentSize.height - scrollView.contentOffset.y;
     if (distanceFromBottom < 8 * SCREEN_HEIGHT && [self.sourceArray count] && !self.isLoading) {
         [self loadNextPageData];
@@ -308,7 +314,6 @@ INITWITHSETUP
  *  加载下一页的数据
  */
 - (void)loadNextPageData {
-    [[SDImageCache sharedImageCache] clearMemory];
     RACTuple *newTurple = RACTuplePack(@(YES), self.modelArgument, self.modelClass, self.url, self.tableName);
     [self.sourceCommand execute:newTurple];
 }

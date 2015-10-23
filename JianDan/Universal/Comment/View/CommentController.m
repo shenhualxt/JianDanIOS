@@ -6,6 +6,7 @@
 #import "PushCommentController.h"
 #import "LTAlertView.h"
 #import "Comments.h"
+#import "NSString+Additions.h"
 
 static NSString *reuseIdentifier = @"CommentsCell";
 static NSString *reuseIdentifierWithParent = @"CommentsCellWithParentComent";
@@ -16,6 +17,8 @@ static NSString *reuseIdentifierWithParent = @"CommentsCellWithParentComent";
 @property(nonatomic, strong) CommentsCell *prototypeCell;
 @property(nonatomic, strong) CommentViewModel *viewModel;
 @property(nonatomic, strong) NSString *thread_id;
+
+@property(nonatomic,strong) UILabel *noCommentLabel;
 
 @end
 
@@ -55,15 +58,38 @@ static NSString *reuseIdentifierWithParent = @"CommentsCellWithParentComent";
 
         if (self.commentsArray.count) {
             [self.tableView reloadData];
+            if (_noCommentLabel) {
+                [_noCommentLabel removeFromSuperview];
+            }
         } else {
+            //没有评论
+           [self.tableView addSubview:self.noCommentLabel];
             self.tableView.tableFooterView = [UIView new];
         }
+    } error:^(NSError *error) {
+        [self.tableView addSubview:self.noCommentLabel];
+        self.noCommentLabel.text=[NSErrorHelper handleErrorMessage:error];
     }];
     [self.viewModel.sourceCommand execute:self.thread_id];
 
     [self.viewModel.sourceCommand.executing subscribeNext:^(id x) {
         [ToastHelper sharedToastHelper].simleProgressVisiable = [x boolValue];
     }];
+}
+
+-(UILabel *)noCommentLabel{
+    if (!_noCommentLabel) {
+        UIFont *textFont=[UIFont fontWithName:@"zikutanghzkt" size:30];
+        _noCommentLabel=[[UILabel alloc] initWithFrame:CGRectZero];
+        _noCommentLabel.text=@"NO COMMMENTS";
+        _noCommentLabel.font=textFont;
+        _noCommentLabel.textColor=[UIColor purpleColor];
+        _noCommentLabel.textAlignment=NSTextAlignmentCenter;
+        [UIView animateWithDuration:1.0f animations:^{
+            _noCommentLabel.frame=(CGRect){CGPointZero,self.view.frame.size};
+        }];
+    }
+    return _noCommentLabel;
 }
 
 - (void)viewWillAppear:(BOOL)animated {
@@ -79,6 +105,9 @@ static NSString *reuseIdentifierWithParent = @"CommentsCellWithParentComent";
         [[self.commentsArray objectAtIndex:hasHotComments ? 1 : 0] insertObject:self.resultObject atIndex:0];
         NSIndexPath *indexPath = [NSIndexPath indexPathForRow:0 inSection:hasHotComments ? 1 : 0];
         [self.tableView insertRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationNone];
+        if (_noCommentLabel) {
+            [_noCommentLabel removeFromSuperview];
+        }
     }
 }
 

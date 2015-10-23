@@ -82,7 +82,10 @@
             default:
                 break;
         }
-        [self.controllerArray replaceObjectAtIndex:index withObject:vc];
+        if (vc) {
+            [self.controllerArray replaceObjectAtIndex:index withObject:vc];
+
+        }
     }
     MMDrawerController *drawerController = self.window.rootViewController.childViewControllers[0];
     BaseNavigationController *mainNavigationVC = [[BaseNavigationController alloc] initWithRootViewController:self.controllerArray[index]];

@@ -63,8 +63,6 @@
         _gifImageView.layer.contents =(__bridge id _Nullable)([UIImage imageNamed:@"ic_play_gif"].CGImage);
         [self addSubview:_gifImageView];
         self.backgroundColor = UIColorFromRGB(0xDDDDDD);
-        
-        
     }
     return self;
 }

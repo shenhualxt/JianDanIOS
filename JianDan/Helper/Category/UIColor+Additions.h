@@ -12,6 +12,6 @@
 
 - (UIImage*) createImage;
 
-- (UIImage*) createImageWithText:(NSString *)text size:(CGSize)size textColor:(UIColor*)textColor;
+- (UIImage*) createPlaceholderWithSize:(CGSize)size;
 
 @end

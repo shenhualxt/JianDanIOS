@@ -36,4 +36,6 @@
 
 - (void)addProgressViewWithReceivedSize:(NSInteger)receivedSize expectedSize:(NSInteger)expectedSize;
 
+-(void)onlyDownloadGIFImageWithURL:(NSURL *)url options:(SDWebImageOptions)options usingProgressViewStyle:(UIProgressViewStyle)progressViewStyle;
+
 @end

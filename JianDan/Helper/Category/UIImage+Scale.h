@@ -10,10 +10,6 @@
 
 @interface UIImage (Scale)
 
-
-
--(BOOL)isEqual:(UIImage*)image;
-
 - (UIImage *)scaleImageToSize:(CGSize)newSize;
 
 -(UIImage *)getImageFromImageWithRect:(CGRect)rect;
@@ -25,7 +21,5 @@
 + (UIImage *)imageWithColor:(UIColor *)color ;
 
 - (UIImage*)imageCompressWithScale:(float)scale;
-
-+(BOOL)image1IsEqual:(UIImage *)image1 image2:(UIImage *)image2;
 
 @end

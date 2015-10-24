@@ -73,7 +73,7 @@
     }];
     
     //wifi下自动下载GIF
-    RACChannelTerminal *gifChannel=self.switchSister.rac_newOnChannel;
+    RACChannelTerminal *gifChannel=self.switchGIF.rac_newOnChannel;
     RACChannelTerminal *loadGifChannal=[[NSUserDefaults standardUserDefaults] rac_channelTerminalForKey:kAutoLoadGIFKey];
     [gifChannel subscribe:loadGifChannal];
     [loadGifChannal subscribe:gifChannel];

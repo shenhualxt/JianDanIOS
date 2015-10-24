@@ -50,7 +50,7 @@
     NSString * imageURL = picture.picUrl;
     if (!imageURL)return;
 
-     UIImage *placeHoler=[UIColorFromRGB(0xDDDDDD) createImageWithText:@"煎蛋" size:picture.picFrame.pictureFrame.size textColor:[UIColor grayColor]];
+     UIImage *placeHoler=[UIColorFromRGB(0xDDDDDD) createPlaceholderWithSize:picture.picFrame.pictureSize];
     self.imageViewDetail.image = placeHoler;
     self.imageViewDetail.frame = picture.picFrame.pictureFrame;
     [self adjustLocation:YES];
@@ -59,18 +59,20 @@
     if ([imageURL hasSuffix:@".gif"]) {
         [[TMCache sharedCache] objectForKey:imageURL block:^(TMCache *cache, NSString *key, id object) {
             if (object) {
-                UIImage * image = [UIImage sd_animatedGIFWithData:object];
+                UIImage * image =object;
+                if ([object isKindOfClass:[NSData class]]) {
+                    image = [UIImage sd_animatedGIFWithData:object];
+                }
                 self.imageViewDetail.image = image;
                 [self adjustLocation:NO];
             } else {
                 [self.imageViewDetail setGIFImageWithURL:[NSURL URLWithString:imageURL] placeholderImage:placeHoler options:SDWebImageDownloaderLowPriority completed:^(UIImage *image, NSData *data, NSError *error, BOOL finished) {
                     if (image && finished) {
                         if ([imageURL hasSuffix:@".gif"]) {
-                            [[TMCache sharedCache] setObject:data forKey:imageURL];
                             [self adjustLocation:NO];
                         }
                     }
-                }                 usingProgressViewStyle:UIProgressViewStyleDefault];
+                } usingProgressViewStyle:UIProgressViewStyleDefault];
             }
         }];
         return;

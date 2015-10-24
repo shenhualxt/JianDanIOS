@@ -8,6 +8,8 @@
 
 #import "UIImageView+UIProgressForSDWebImage.h"
 #import <objc/runtime.h>
+#import "TMCache.h"
+#import "UIImage+GIF.h"
 
 static char TAG_PROGRESSVIEW;
 
@@ -101,7 +103,7 @@ static char TAG_PROGRESSVIEW;
             progressBlock(receivedSize, expectedSize);
         }
         [weakSelf addProgressViewWithReceivedSize:receivedSize expectedSize:expectedSize];
-    }                                                   completed:^(UIImage *image, NSData *data, NSError *error, BOOL finished) {
+    }   completed:^(UIImage *image, NSData *data, NSError *error, BOOL finished) {
         [weakSelf removeProgressView];
         if (image && finished) {
             dispatch_async(dispatch_get_main_queue(), ^(void) {
@@ -113,8 +115,38 @@ static char TAG_PROGRESSVIEW;
             completedBlock(image, data, error, finished);
         }
     }];
-
 }
+
+-(void)onlyDownloadGIFImageWithURL:(NSURL *)url options:(SDWebImageOptions)options usingProgressViewStyle:(UIProgressViewStyle)progressViewStyle{
+    [self onlyDownloadGIFImageWithURL:url  options:options progress:^(NSInteger receivedSize, NSInteger expectedSize) {
+        
+    } completed:^(UIImage *image, NSError *error, SDImageCacheType cacheType, BOOL finished, NSURL *imageURL) {
+        
+    } usingProgressViewStyle:progressViewStyle];
+}
+
+-(void)onlyDownloadGIFImageWithURL:(NSURL *)url  options:(SDWebImageOptions)options progress:(SDWebImageDownloaderProgressBlock)progressBlock completed:(SDWebImageCompletionWithFinishedBlock)completedBlock usingProgressViewStyle:(UIProgressViewStyle)progressViewStyle{
+    UIImage *image=[[TMCache sharedCache] objectForKey:url.absoluteString];
+    if (image) {
+        return;
+    }
+    __weak typeof(self) weakSelf = self;
+    [[SDWebImageManager sharedManager] downloadImageWithURL:url options:options|SDWebImageCacheMemoryOnly progress:^(NSInteger receivedSize, NSInteger expectedSize) {
+        if (progressBlock) {
+            progressBlock(receivedSize, expectedSize);
+        }
+        [weakSelf addProgressViewWithReceivedSize:receivedSize expectedSize:expectedSize];
+    } completed:^(UIImage *image, NSError *error, SDImageCacheType cacheType, BOOL finished, NSURL *imageURL) {
+        [weakSelf removeProgressView];
+        if (image&&cacheType==SDImageCacheTypeNone&&finished) {
+            [[TMCache sharedCache] setObject:image forKey:imageURL.absoluteString];
+        }
+        if (completedBlock) {
+            completedBlock(image, error, cacheType,finished,imageURL);
+        }
+    }];
+}
+
 
 - (void)setImageWithURL:(NSURL *)url placeholderImage:(UIImage *)placeholder options:(SDWebImageOptions)options progress:(SDWebImageDownloaderProgressBlock)progressBlock completed:(SDWebImageCompletionBlock)completedBlock usingProgressViewStyle:(UIProgressViewStyle)progressViewStyle {
 

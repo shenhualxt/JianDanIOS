@@ -54,8 +54,6 @@
 
 #pragma mark 父类调用
 - (void)bindingViewModel{
-   
-    
     self.viewModel = [MainViewModel new];
     
     RACSignal *sourceSignal = [[self.viewModel.sourceCommand executionSignals] switchToLatest];
@@ -69,6 +67,7 @@
         }];
     }
 
+    self.tableView.panGestureRecognizer.delaysTouchesBegan = self.tableView.delaysContentTouches;
     self.helper = [CETableViewBindingHelper bindingHelperForTableView:self.tableView sourceSignal:sourceSignal selectionCommand:selectCommand templateCellClass:[PictureCell class]];
     self.helper.delegate = self;
     self.tableView.backgroundColor = [UIColor lightGrayColor];

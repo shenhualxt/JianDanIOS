@@ -305,7 +305,7 @@ INITWITHSETUP
          self.lastOffsetY=scrollView.contentOffset.y;
     }
     CGFloat distanceFromBottom = scrollView.contentSize.height - scrollView.contentOffset.y;
-    if (distanceFromBottom < 8 * SCREEN_HEIGHT && [self.sourceArray count] && !self.isLoading) {
+    if (distanceFromBottom < 12 * SCREEN_HEIGHT && [self.sourceArray count] && !self.isLoading) {
         [self loadNextPageData];
     }
 }

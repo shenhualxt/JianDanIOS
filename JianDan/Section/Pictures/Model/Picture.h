@@ -59,7 +59,5 @@
 
 @property (nonatomic, strong) PictureFrame *picFrame;
 
-@property (weak, nonatomic) UIImage *image;
-
 @end
 

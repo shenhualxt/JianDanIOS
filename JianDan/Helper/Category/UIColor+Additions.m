@@ -23,7 +23,7 @@
     return theImage;
 }
 
-- (UIImage*) createImageWithText:(NSString *)text size:(CGSize)size textColor:(UIColor*)textColor
+- (UIImage*) createPlaceholderWithSize:(CGSize)size
 {
     CGRect rect=(CGRect){CGPointZero,size};
     UIGraphicsBeginImageContextWithOptions(size, NO, [UIScreen mainScreen].scale);
@@ -31,8 +31,8 @@
     CGContextSetFillColorWithColor(context, [self CGColor]);
     CGContextFillRect(context, rect);
     UIFont *textFont=[UIFont fontWithName:@"zikutanghzkt" size:50];
-    CGSize textSize=[text sizeOfSimpleTextWithContrainedToSize:CGSizeMake(CGFLOAT_MAX, CGFLOAT_MAX) fromFont:textFont];
-    [text drawAtPoint:CGPointMake((size.width-textSize.width)/2,(size.height-textSize.height)/2) fromFont:textFont color:textColor];
+    CGSize textSize=[@"煎蛋" sizeOfSimpleTextWithContrainedToSize:CGSizeMake(CGFLOAT_MAX, CGFLOAT_MAX) fromFont:textFont];
+    [@"煎蛋" drawAtPoint:CGPointMake((size.width-textSize.width)/2,(size.height-textSize.height)/2) fromFont:textFont color:[UIColor grayColor]];
     UIImage *theImage = UIGraphicsGetImageFromCurrentImageContext();
     UIGraphicsEndImageContext();
     return theImage;

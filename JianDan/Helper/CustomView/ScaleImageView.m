@@ -9,6 +9,7 @@
 #import "ScaleImageView.h"
 #import "UIImage+Scale.h"
 #import "PureLayout.h"
+#import "NSString+Additions.h"
 
 #define kPlaceholderSize [UIImage imageNamed:@"ic_loading_large"].size
 
@@ -22,6 +23,11 @@
     }else{
         self.layer.contentsGravity=kCAGravityResize;
     }
+    if (image.images.count) {
+        [super setImage:image];
+        return;
+    }
+    
      CGImageRef imageRef=image.CGImage;
     // 1，设定基本动画参数
     CABasicAnimation *contentsAnimation = [CABasicAnimation animationWithKeyPath:@"contents"];

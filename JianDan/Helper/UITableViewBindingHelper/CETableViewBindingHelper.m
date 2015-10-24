@@ -125,6 +125,9 @@ heightForRowAtIndexPath:(NSIndexPath *)indexPath {
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     id <CEReactiveView> cell = [tableView dequeueReusableCellWithIdentifier:_reuseIdentifier forIndexPath:indexPath];
+    if ([cell respondsToSelector:@selector(clear)]) {
+                [cell clear];
+    }
     [cell bindViewModel:_data[indexPath.row] forIndexPath:indexPath];
     return (UITableViewCell *) cell;
 }

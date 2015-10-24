@@ -83,9 +83,15 @@ MJCodingImplementation
     }
 }
 
+//http:/\/ww2.sinaimg.cn/mw600/bfc243a3gw1exavl0cvioj20dw0hvwge.jpg
 +(NSString *)thumbGIFURLFromURL:(NSString *)imageURL{
-    imageURL=[imageURL stringByReplacingOccurrencesOfString:@"mw600" withString:@"small"];
-    imageURL=[imageURL stringByReplacingOccurrencesOfString:@"mw1200" withString:@"small"];
+    NSRange mwRange=[imageURL rangeOfString:@"mw"];
+    if (mwRange.length) {
+       NSRange slashRange=[imageURL rangeOfString:@"/" options:NSCaseInsensitiveSearch range:NSMakeRange(mwRange.location, 8)];
+        if (slashRange.length) {
+            imageURL=[imageURL stringByReplacingCharactersInRange:NSMakeRange(mwRange.location, slashRange.location-mwRange.location) withString:@"small"];
+        }
+    }
     return [imageURL stringByReplacingOccurrencesOfString:@"large" withString:@"small"];
 }
 

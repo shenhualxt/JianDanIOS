@@ -19,6 +19,8 @@
 #import "UITableViewCell+TableView.h"
 #import "UIImageView+UIProgressForSDWebImage.h"
 #import "UIViewController+MMDrawerController.h"
+#import "TMCache.h"
+#import "UIImage+GIF.h"
 
 @interface PictureCell () <CEReactiveView>
 
@@ -77,8 +79,22 @@
 
     [self draw];
     self.netImageView.frame = viewModel.picFrame.pictureFrame;
-    UIImage *placeHoler=[self.backgroundColor createImageWithText:@"煎蛋" size:viewModel.picFrame.pictureFrame.size textColor:[UIColor grayColor]];
-    [self.netImageView setImageWithURL:[self getImageURL:viewModel] placeholderImage:placeHoler options:SDWebImageHighPriority | SDWebImageTransformAnimatedImage usingProgressViewStyle:UIProgressViewStyleDefault];
+   
+    BOOL autoLoadImage=[[NSUserDefaults standardUserDefaults] boolForKey:kAutoLoadGIFKey]&&[AFNetWorkUtils sharedAFNetWorkUtils].netType==WiFiNet&&[viewModel.picUrl hasSuffix:@".gif"];
+    UIImage *image=[[SDImageCache sharedImageCache] imageFromMemoryCacheForKey:[self getImageURL:viewModel autoLoadImage:autoLoadImage].absoluteString];
+    if (image) {
+        self.netImageView.image=image;
+        return;
+    }
+    [self.netImageView setNeedsDisplay];
+     UIImage *placeHoler=[self.backgroundColor createPlaceholderWithSize:viewModel.picFrame.pictureSize];
+    if (autoLoadImage) {
+        //下载GIF，显示下载GIF的进度，显示缩略图
+        [self.netImageView onlyDownloadGIFImageWithURL:[self getImageURL:viewModel autoLoadImage:autoLoadImage] options:SDWebImageHighPriority usingProgressViewStyle:UIProgressViewStyleDefault];
+        [self.netImageView sd_setImageWithURL:[NSURL URLWithString:viewModel.thumnailGiFUrl] placeholderImage:placeHoler options:SDWebImageHighPriority|SDWebImageTransformAnimatedImage];
+    }else{
+        [self.netImageView setImageWithURL:[self getImageURL:viewModel autoLoadImage:autoLoadImage] placeholderImage:placeHoler options:SDWebImageHighPriority|SDWebImageTransformAnimatedImage usingProgressViewStyle:UIProgressViewStyleDefault];
+    }
 }
 
 - (void)draw {
@@ -109,6 +125,7 @@
         //获得组合的图片
         UIImage * temp = UIGraphicsGetImageFromCurrentImageContext();
         UIGraphicsEndImageContext();
+       
         dispatch_async(dispatch_get_main_queue(), ^{
             if (flag == _drawColorFlag) {
                 self.bgView.frame = _picture.picFrame.bgViewFrame;
@@ -132,8 +149,8 @@
     [self clear];
 }
 
-- (NSURL *)getImageURL:(Picture *)picture {
-    NSString * imageURL = picture.thumnailGiFUrl;
+- (NSURL *)getImageURL:(Picture *)picture autoLoadImage:(BOOL)autoLoadImage{
+    NSString *imageURL = picture.thumnailGiFUrl;
     if (!imageURL) {
         _gifImageView.frame = CGRectZero;
         _gifImageView.hidden = YES;
@@ -141,6 +158,9 @@
     } else {
         _gifImageView.frame = _picture.picFrame.gifFrame;
         _gifImageView.hidden = NO;
+    }
+    if (autoLoadImage) {
+        imageURL=picture.picUrl;
     }
     return [NSURL URLWithString:imageURL];
 }

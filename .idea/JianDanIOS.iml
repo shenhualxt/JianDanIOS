@@ -5,11 +5,13 @@
       <sourceFolder url="file:///Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk/usr/lib/libz.tbd" isTestSource="false" />
     </content>
     <content url="file://$MODULE_DIR$">
+      <sourceFolder url="file://$MODULE_DIR$/JianDan/AppDelegate.h" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/JianDan/AppDelegate.m" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/JianDan/Assets.xcassets" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/JianDan/File/style.css" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/JianDan/File/zikutanghzkt.ttf" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/JianDan/Helper/BaseViewController/BaseNavigationController.h" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/JianDan/Helper/BaseViewController/BaseNavigationController.m" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/JianDan/Helper/BaseViewController/BaseTableViewCell.h" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/JianDan/Helper/BaseViewController/BaseTableViewCell.m" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/JianDan/Helper/BaseViewController/BaseTableViewController.h" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/JianDan/Helper/BaseViewController/BaseTableViewController.m" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/JianDan/Helper/BaseViewController/BaseViewController.h" isTestSource="false" />
@@ -85,6 +87,17 @@
       <sourceFolder url="file://$MODULE_DIR$/JianDan/Helper/UITableViewBindingHelper/CETableViewBindingHelper.m" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/JianDan/Helper/UITableViewBindingHelper/HRCollectionViewBindingHelper.h" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/JianDan/Helper/UITableViewBindingHelper/HRCollectionViewBindingHelper.m" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/JianDan/Helper/Vender/OLImageView/AFNetworking/OLImageResponseSerializer.h" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/JianDan/Helper/Vender/OLImageView/AFNetworking/OLImageResponseSerializer.m" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/JianDan/Helper/Vender/OLImageView/AFNetworking/OLImageStrictResponseSerializer.h" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/JianDan/Helper/Vender/OLImageView/AFNetworking/OLImageStrictResponseSerializer.m" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/JianDan/Helper/Vender/OLImageView/Categories/AFImageRequestOperation+OLImage.h" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/JianDan/Helper/Vender/OLImageView/Categories/AFImageRequestOperation+OLImage.m" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/JianDan/Helper/Vender/OLImageView/OLImage.h" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/JianDan/Helper/Vender/OLImageView/OLImage.m" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/JianDan/Helper/Vender/OLImageView/OLImageView.h" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/JianDan/Helper/Vender/OLImageView/OLImageView.m" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/JianDan/Helper/Vender/OLImageView/OLImageViewDelegate.h" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/JianDan/Helper/Vender/UMSocial_Sdk_4.2.3/Header/UMSocial.h" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/JianDan/Helper/Vender/UMSocial_Sdk_4.2.3/Header/UMSocialAccountManager.h" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/JianDan/Helper/Vender/UMSocial_Sdk_4.2.3/Header/UMSocialBar.h" isTestSource="false" />
@@ -111,26 +124,10 @@
       <sourceFolder url="file://$MODULE_DIR$/JianDan/Info.plist" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/JianDan/JianDan_PrefixHeader.pch" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/JianDan/LaunchScreen.xib" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/JianDan/Main/AppDelegate.h" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/JianDan/Main/AppDelegate.m" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/JianDan/Main/Constant.h" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/JianDan/Main/Model/Comments.h" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/JianDan/Main/Model/Comments.m" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/JianDan/Main/Model/Vote.h" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/JianDan/Main/Urls.h" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/JianDan/Main/View/NetErrorView.xib" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/JianDan/Main/ViewModel/MainViewModel.h" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/JianDan/Main/ViewModel/MainViewModel.m" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/JianDan/Section/FreshNews/Model/FreshNews.h" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/JianDan/Section/FreshNews/Model/FreshNews.m" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/JianDan/Section/FreshNews/Model/FreshNewsDetail.h" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/JianDan/Section/FreshNews/Model/FreshNewsDetail.m" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/JianDan/Section/FreshNews/View/CommentClickAlertView.xib" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/JianDan/Section/FreshNews/View/CommentController.h" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/JianDan/Section/FreshNews/View/CommentController.m" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/JianDan/Section/FreshNews/View/CommentsCell.h" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/JianDan/Section/FreshNews/View/CommentsCell.m" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/JianDan/Section/FreshNews/View/CommentsCell.xib" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/JianDan/Section/FreshNews/View/FreshNewsCell.h" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/JianDan/Section/FreshNews/View/FreshNewsCell.m" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/JianDan/Section/FreshNews/View/FreshNewsCell.xib" isTestSource="false" />
@@ -141,23 +138,8 @@
       <sourceFolder url="file://$MODULE_DIR$/JianDan/Section/FreshNews/View/FreshNewsLittleCell.h" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/JianDan/Section/FreshNews/View/FreshNewsLittleCell.m" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/JianDan/Section/FreshNews/View/FreshNewsLittleCell.xib" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/JianDan/Section/FreshNews/View/PushCommentController.h" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/JianDan/Section/FreshNews/View/PushCommentController.m" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/JianDan/Section/FreshNews/View/ShareOptionAlertView.xib" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/JianDan/Section/FreshNews/View/ShareToSinaController.h" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/JianDan/Section/FreshNews/View/ShareToSinaController.m" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/JianDan/Section/FreshNews/View/SubCommentView.xib" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/JianDan/Section/FreshNews/View/TouristAlertView.xib" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/JianDan/Section/FreshNews/ViewModel/CommentViewModel.h" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/JianDan/Section/FreshNews/ViewModel/CommentViewModel.m" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/JianDan/Section/FreshNews/ViewModel/FreshNewsDetailViewModel.h" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/JianDan/Section/FreshNews/ViewModel/FreshNewsDetailViewModel.m" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/JianDan/Section/FreshNews/ViewModel/PushCommentViewModel.h" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/JianDan/Section/FreshNews/ViewModel/PushCommentViewModel.m" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/JianDan/Section/FreshNews/ViewModel/ShareToViewModel.h" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/JianDan/Section/FreshNews/ViewModel/ShareToViewModel.m" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/JianDan/Section/FreshNews/ViewModel/VoteViewModel.h" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/JianDan/Section/FreshNews/ViewModel/VoteViewModel.m" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/JianDan/Section/LeftMenu/LeftMenu.h" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/JianDan/Section/LeftMenu/LeftMenu.m" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/JianDan/Section/LeftMenu/LeftMenuCell.h" isTestSource="false" />
@@ -167,33 +149,55 @@
       <sourceFolder url="file://$MODULE_DIR$/JianDan/Section/LeftMenu/SettingController.h" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/JianDan/Section/LeftMenu/SettingController.m" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/JianDan/Section/LeftMenu/SettingController.xib" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/JianDan/Section/LittleMovie/View/LittleMoveController.h" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/JianDan/Section/LittleMovie/View/LittleMoveController.m" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/JianDan/Section/LittleMovie/View/LittleMovieCollectionCell.h" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/JianDan/Section/LittleMovie/View/LittleMovieCollectionCell.m" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/JianDan/Section/LittleMovie/View/LittleMovieCollectionCell.xib" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/JianDan/Section/LittleMovie/View/LittleMovieDetailController.h" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/JianDan/Section/LittleMovie/View/LittleMovieDetailController.m" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/JianDan/Section/LittleMovie/View/LittleMovieDetailController.xib" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/JianDan/Section/Pictures/Model/BoredPictures.h" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/JianDan/Section/Pictures/Model/BoredPictures.m" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/JianDan/Section/LittleMovie/VideoCollectionCell.h" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/JianDan/Section/LittleMovie/VideoCollectionCell.m" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/JianDan/Section/LittleMovie/VideoCollectionCell.xib" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/JianDan/Section/LittleMovie/VideoController.h" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/JianDan/Section/LittleMovie/VideoController.m" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/JianDan/Section/LittleMovie/VideoDetailController.h" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/JianDan/Section/LittleMovie/VideoDetailController.m" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/JianDan/Section/LittleMovie/VideoDetailController.xib" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/JianDan/Section/Pictures/Model/Picture.h" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/JianDan/Section/Pictures/Model/Picture.m" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/JianDan/Section/Pictures/Model/PictureFrame.h" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/JianDan/Section/Pictures/Model/PictureFrame.m" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/JianDan/Section/Pictures/View/BoredPicturesController.h" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/JianDan/Section/Pictures/View/BoredPicturesController.m" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/JianDan/Section/Pictures/View/BoredPicturesDetailController.h" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/JianDan/Section/Pictures/View/BoredPicturesDetailController.m" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/JianDan/Section/Pictures/View/BoredPicturesDetailController.xib" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/JianDan/Section/Pictures/View/BoredPictursCell.h" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/JianDan/Section/Pictures/View/BoredPictursCell.m" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/JianDan/Section/Pictures/View/BoredPictursCell.xib" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/JianDan/Section/Pictures/View/CommentsPhotoCell.h" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/JianDan/Section/Pictures/View/CommentsPhotoCell.m" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/JianDan/Section/Pictures/View/CommentsPhotoCell.xib" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/JianDan/Section/Pictures/View/PictureCell.h" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/JianDan/Section/Pictures/View/PictureCell.m" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/JianDan/Section/Pictures/View/PicturesController.h" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/JianDan/Section/Pictures/View/PicturesController.m" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/JianDan/Section/Pictures/View/PicturesDetailController.h" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/JianDan/Section/Pictures/View/PicturesDetailController.m" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/JianDan/Section/Pictures/View/PicturesDetailController.xib" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/JianDan/Universal/Comment/Model/Comments.h" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/JianDan/Universal/Comment/Model/Comments.m" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/JianDan/Universal/Comment/Model/Vote.h" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/JianDan/Universal/Comment/View/CommentClickAlertView.xib" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/JianDan/Universal/Comment/View/CommentController.h" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/JianDan/Universal/Comment/View/CommentController.m" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/JianDan/Universal/Comment/View/CommentsCell.h" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/JianDan/Universal/Comment/View/CommentsCell.m" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/JianDan/Universal/Comment/View/CommentsCell.xib" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/JianDan/Universal/Comment/View/PushCommentController.h" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/JianDan/Universal/Comment/View/PushCommentController.m" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/JianDan/Universal/Comment/View/SubCommentView.xib" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/JianDan/Universal/Comment/View/TouristAlertView.xib" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/JianDan/Universal/Comment/ViewModel/CommentViewModel.h" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/JianDan/Universal/Comment/ViewModel/CommentViewModel.m" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/JianDan/Universal/Comment/ViewModel/PushCommentViewModel.h" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/JianDan/Universal/Comment/ViewModel/PushCommentViewModel.m" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/JianDan/Universal/Comment/ViewModel/VoteViewModel.h" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/JianDan/Universal/Comment/ViewModel/VoteViewModel.m" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/JianDan/Universal/Constant.h" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/JianDan/Universal/MainViewModel.h" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/JianDan/Universal/MainViewModel.m" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/JianDan/Universal/NetErrorView.xib" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/JianDan/Universal/Share/View/ShareOptionAlertView.xib" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/JianDan/Universal/Share/View/ShareToSinaController.h" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/JianDan/Universal/Share/View/ShareToSinaController.m" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/JianDan/Universal/Share/ViewModel/ShareToViewModel.h" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/JianDan/Universal/Share/ViewModel/ShareToViewModel.m" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/JianDan/Universal/Urls.h" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/JianDan/main.m" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/JianDan/style.css" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/JianDanTests/Info.plist" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/JianDanTests/JianDanTests.m" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/Podfile" isTestSource="false" />

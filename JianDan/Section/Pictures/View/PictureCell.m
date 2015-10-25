@@ -21,18 +21,26 @@
 #import "UIViewController+MMDrawerController.h"
 #import "TMCache.h"
 #import "UIImage+GIF.h"
+#import "OLImageView.h"
+#import "OLImage.h"
+#import <AFNetworking/UIImageView+AFNetworking.h>
+#import "OLImageResponseSerializer.h"
+#import "OLImageStrictResponseSerializer.h"
+
+#import "OLImageViewDelegate.h"
 
 @interface PictureCell () <CEReactiveView>
 
 @property(strong, nonatomic) UIView *bgView;
 
-@property(strong, nonatomic) ScaleImageView *netImageView;
+@property(strong, nonatomic) UIImageView *netImageView;
 
 @property(strong, nonatomic) UIView *gifImageView;
 
 @property(weak, nonatomic) Picture *picture;
 
 @property(assign, nonatomic) NSInteger drawColorFlag;
+
 
 @end
 
@@ -56,7 +64,7 @@
         [_bgView addGestureRecognizer:oneTap];
 
         //2、网络图片
-        _netImageView = [ScaleImageView new];
+        _netImageView = [OLImageView new];
         _netImageView.userInteractionEnabled = YES;
         [self addSubview:_netImageView];
 
@@ -69,7 +77,6 @@
     return self;
 }
 
-
 - (void)bindViewModel:(Picture *)viewModel forIndexPath:(NSIndexPath *)indexPath {
     self.picture = viewModel;
     if (!viewModel.picUrl) {//段子
@@ -78,22 +85,22 @@
     }
 
     [self draw];
-    self.netImageView.frame = viewModel.picFrame.pictureFrame;
-   
-    BOOL autoLoadImage=[[NSUserDefaults standardUserDefaults] boolForKey:kAutoLoadGIFKey]&&[AFNetWorkUtils sharedAFNetWorkUtils].netType==WiFiNet&&[viewModel.picUrl hasSuffix:@".gif"];
-    UIImage *image=[[SDImageCache sharedImageCache] imageFromMemoryCacheForKey:[self getImageURL:viewModel autoLoadImage:autoLoadImage].absoluteString];
-    if (image) {
-        self.netImageView.image=image;
-        return;
-    }
-    [self.netImageView setNeedsDisplay];
+    BOOL isGIF=viewModel.thumnailGiFUrl;
+    _gifImageView.frame = isGIF?_picture.picFrame.gifFrame: CGRectZero;
+    _gifImageView.hidden = !isGIF; 
+    BOOL autoLoadImage=[[NSUserDefaults standardUserDefaults] boolForKey:kAutoLoadGIFKey]&&[AFNetWorkUtils sharedAFNetWorkUtils].netType==WiFiNet&&isGIF;
      UIImage *placeHoler=[self.backgroundColor createPlaceholderWithSize:viewModel.picFrame.pictureSize];
+    
+    self.netImageView.frame=viewModel.picFrame.pictureFrame;
+
     if (autoLoadImage) {
         //下载GIF，显示下载GIF的进度，显示缩略图
-        [self.netImageView onlyDownloadGIFImageWithURL:[self getImageURL:viewModel autoLoadImage:autoLoadImage] options:SDWebImageHighPriority usingProgressViewStyle:UIProgressViewStyleDefault];
+        [self.netImageView onlyDownloadImagWithURL:[NSURL URLWithString:viewModel.picUrl] usingProgressViewStyle:UIProgressViewStyleDefault];
+        //显示缩略图
         [self.netImageView sd_setImageWithURL:[NSURL URLWithString:viewModel.thumnailGiFUrl] placeholderImage:placeHoler options:SDWebImageHighPriority|SDWebImageTransformAnimatedImage];
     }else{
-        [self.netImageView setImageWithURL:[self getImageURL:viewModel autoLoadImage:autoLoadImage] placeholderImage:placeHoler options:SDWebImageHighPriority|SDWebImageTransformAnimatedImage usingProgressViewStyle:UIProgressViewStyleDefault];
+        //下载普通图片
+        [self.netImageView setImageWithURL:[NSURL URLWithString:viewModel.thumnailGiFUrl?:viewModel.picUrl] placeholderImage:placeHoler options:SDWebImageHighPriority usingProgressViewStyle:UIProgressViewStyleDefault];
     }
 }
 
@@ -147,22 +154,6 @@
 - (void)removeFromSuperview {
     [super removeFromSuperview];
     [self clear];
-}
-
-- (NSURL *)getImageURL:(Picture *)picture autoLoadImage:(BOOL)autoLoadImage{
-    NSString *imageURL = picture.thumnailGiFUrl;
-    if (!imageURL) {
-        _gifImageView.frame = CGRectZero;
-        _gifImageView.hidden = YES;
-        imageURL = picture.picUrl;
-    } else {
-        _gifImageView.frame = _picture.picFrame.gifFrame;
-        _gifImageView.hidden = NO;
-    }
-    if (autoLoadImage) {
-        imageURL=picture.picUrl;
-    }
-    return [NSURL URLWithString:imageURL];
 }
 
 - (void)clickButton:(UIGestureRecognizer *)getsture {

@@ -58,7 +58,6 @@ INITWITHSETUP
     self.sourceArray = [NSMutableArray array];
     @weakify(self)
     self.sourceCommand = [[RACCommand alloc] initWithSignalBlock:^RACSignal *(RACTuple *turple) {
-        self.isLoading = YES;
         @strongify(self)
         self.isLoadMore = [turple.first boolValue];
         self.modelArgument = turple.second;
@@ -80,24 +79,20 @@ INITWITHSETUP
         BOOL isNoNet = [AFNetWorkUtils sharedAFNetWorkUtils].netType == NONet;
         if (isNoNet) {
             self.loadFromDB = YES;
-            return [dbSignal doCompleted:^{
-                self.isLoading = NO;
-            }];
+            return dbSignal;
         }
         //2、有网络时第一次加载 先加载缓存，后加载服务器数据
         BOOL isFirstLoad = page == 1 && !self.isLoadMore && !self.sourceArray.count && !self.loadFromDB;
         if (isFirstLoad) {
             self.loadFromDB = YES;
-            return [[RACSignal merge:@[dbSignal, netSignal]] doCompleted:^{
-                self.isLoading = NO;
-            }];
+            return [RACSignal merge:@[dbSignal, netSignal]];
         }
         //3、网络获取数据--- 上拉刷新，或者上拉加载更多
         self.loadFromDB = NO;
-        return [netSignal doCompleted:^{
-            self.isLoading = YES;
-        }];
+        return netSignal;
     }];
+    
+    RAC(self, isLoading)=self.sourceCommand.executing;
 }
 
 /**
@@ -283,6 +278,10 @@ INITWITHSETUP
             if (!pictures.picUrl) return;
             dispatch_group_async(group, dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
                 pictures.picSize = [BLImageSize downloadImageSizeWithURL:pictures.thumnailGiFUrl ?: pictures.picUrl];
+                if (pictures.picSize.height==0) {
+                    //默认值
+                    pictures.picSize=CGSizeMake(200, 200);
+                }
             });
 
         }];
@@ -293,7 +292,6 @@ INITWITHSETUP
         });
         return nil;
     }];
-
 }
 
 #pragma mark -scrollView delegate
@@ -304,6 +302,9 @@ INITWITHSETUP
          [[SDImageCache sharedImageCache] clearMemory];
          self.lastOffsetY=scrollView.contentOffset.y;
     }
+}
+
+-(void)scrollViewDidEndDecelerating:(UIScrollView *)scrollView{
     CGFloat distanceFromBottom = scrollView.contentSize.height - scrollView.contentOffset.y;
     if (distanceFromBottom < 12 * SCREEN_HEIGHT && [self.sourceArray count] && !self.isLoading) {
         [self loadNextPageData];

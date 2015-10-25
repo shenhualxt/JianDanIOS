@@ -16,6 +16,7 @@
 @property(nonatomic, readwrite, assign) struct scrollViewDelegateMethodsCaching {
 
     uint scrollViewDidScroll:1;
+    uint scrollViewDidEndDecelerating:1;
 
 } scrollViewDelegateRespondsTo;
 
@@ -37,6 +38,7 @@
 
     struct scrollViewDelegateMethodsCaching newMethodCaching;
     newMethodCaching.scrollViewDidScroll = [_scrollViewDelegate respondsToSelector:@selector(scrollViewDidScroll:)];
+    newMethodCaching.scrollViewDidEndDecelerating=[_scrollViewDelegate respondsToSelector:@selector(scrollViewDidEndDecelerating:)];
     self.scrollViewDelegateRespondsTo = newMethodCaching;
 }
 
@@ -162,7 +164,6 @@ heightForRowAtIndexPath:(NSIndexPath *)indexPath {
     return _data.count;
 }
 
-
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
     if (!_selection) {
@@ -194,74 +195,11 @@ heightForRowAtIndexPath:(NSIndexPath *)indexPath {
 }
 
 - (void)scrollViewDidEndDecelerating:(UIScrollView *)scrollView {
+    if (self.scrollViewDelegateRespondsTo.scrollViewDidEndDecelerating == 1) {
+        [self.scrollViewDelegate scrollViewDidEndDecelerating:scrollView];
+    }
     [[SDWebImageDownloader sharedDownloader] setMaxConcurrentDownloads:6];
 }
-
-#pragma mark-开速滑动优化
-
-//按需加载 - 如果目标行与当前行相差超过指定行数，只在目标滚动范围的前后指定3行加载。
-- (void)scrollViewWillEndDragging:(UIScrollView *)scrollView withVelocity:(CGPoint)velocity targetContentOffset:(inout CGPoint *)targetContentOffset {
-//    NSIndexPath *ip = [_tableView indexPathForRowAtPoint:CGPointMake(0, targetContentOffset->y)];
-//    NSIndexPath *cip = [[_tableView indexPathsForVisibleRows] firstObject];
-//    NSInteger skipCount = 8;
-//    if (labs(cip.row - ip.row) > skipCount) {
-//        NSArray * temp = [_tableView indexPathsForRowsInRect:CGRectMake(0, targetContentOffset->y, _tableView.frame.size.width, _tableView.frame.size.height)];
-//        NSMutableArray *arr = [NSMutableArray arrayWithArray:temp];
-//        if (velocity.y < 0) {
-//            NSIndexPath *indexPath = [temp lastObject];
-//            if (indexPath.row + 3 < _data.count) {
-//                [arr addObject:[NSIndexPath indexPathForRow:indexPath.row + 1 inSection:0]];
-//                [arr addObject:[NSIndexPath indexPathForRow:indexPath.row + 2 inSection:0]];
-//                [arr addObject:[NSIndexPath indexPathForRow:indexPath.row + 3 inSection:0]];
-//            }
-//        } else {
-//            NSIndexPath *indexPath = [temp firstObject];
-//            if (indexPath.row > 3) {
-//                [arr addObject:[NSIndexPath indexPathForRow:indexPath.row - 3 inSection:0]];
-//                [arr addObject:[NSIndexPath indexPathForRow:indexPath.row - 2 inSection:0]];
-//                [arr addObject:[NSIndexPath indexPathForRow:indexPath.row - 1 inSection:0]];
-//            }
-//        }
-//        [needLoadArr addObjectsFromArray:arr];
-//    }
-}
-
-- (BOOL)scrollViewShouldScrollToTop:(UIScrollView *)scrollView {
-    scrollToToping = YES;
-    return YES;
-}
-
-- (void)scrollViewDidEndScrollingAnimation:(UIScrollView *)scrollView {
-    scrollToToping = NO;
-}
-
-- (void)scrollViewDidScrollToTop:(UIScrollView *)scrollView {
-    scrollToToping = NO;
-}
-
-////用户触摸时第一时间加载内容
-//- (void)hitTest{
-//    if (!scrollToToping) {
-//        [needLoadArr removeAllObjects];
-//        [self loadContent];
-//    }
-//}
-//
-//- (void)loadContent{
-//    if (scrollToToping) {
-//        return;
-//    }
-//    if (_tableView.indexPathsForVisibleRows.count<=0) {
-//        return;
-//    }
-//    if (_tableView.visibleCells&&_tableView.visibleCells.count>0) {
-//        for (id temp in [_tableView.visibleCells copy]) {
-//            id<CEReactiveView> cell = temp;
-//             NSIndexPath *indexPath = [_tableView indexPathForCell:(UITableViewCell *)cell];
-//            [cell bindViewModel:_data[indexPath.row] forIndexPath:indexPath];
-//        }
-//    }
-//}
 
 
 @end

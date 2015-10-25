@@ -65,6 +65,10 @@
 		11925AAF1B93360E00608BCC /* BaseTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 11925AA11B93360E00608BCC /* BaseTableViewController.m */; };
 		11925AB01B93360E00608BCC /* BaseNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 11925AA21B93360E00608BCC /* BaseNavigationController.m */; };
 		11925AB11B93360E00608BCC /* BaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 11925AA31B93360E00608BCC /* BaseViewController.m */; };
+		11994BDD1BDBC61200BE4A33 /* OLImageResponseSerializer.m in Sources */ = {isa = PBXBuildFile; fileRef = 11994BD31BDBC61200BE4A33 /* OLImageResponseSerializer.m */; settings = {ASSET_TAGS = (); }; };
+		11994BDE1BDBC61200BE4A33 /* OLImageStrictResponseSerializer.m in Sources */ = {isa = PBXBuildFile; fileRef = 11994BD51BDBC61200BE4A33 /* OLImageStrictResponseSerializer.m */; settings = {ASSET_TAGS = (); }; };
+		11994BE01BDBC61200BE4A33 /* OLImage.m in Sources */ = {isa = PBXBuildFile; fileRef = 11994BDA1BDBC61200BE4A33 /* OLImage.m */; settings = {ASSET_TAGS = (); }; };
+		11994BE11BDBC61200BE4A33 /* OLImageView.m in Sources */ = {isa = PBXBuildFile; fileRef = 11994BDC1BDBC61200BE4A33 /* OLImageView.m */; settings = {ASSET_TAGS = (); }; };
 		119D60C41BD8E28500BC1920 /* VideoController.m in Sources */ = {isa = PBXBuildFile; fileRef = 119D60BD1BD8E28500BC1920 /* VideoController.m */; settings = {ASSET_TAGS = (); }; };
 		119D60C51BD8E28500BC1920 /* VideoCollectionCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 119D60BF1BD8E28500BC1920 /* VideoCollectionCell.m */; settings = {ASSET_TAGS = (); }; };
 		119D60C61BD8E28500BC1920 /* VideoCollectionCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 119D60C01BD8E28500BC1920 /* VideoCollectionCell.xib */; settings = {ASSET_TAGS = (); }; };
@@ -77,8 +81,6 @@
 		11A0C9011BC669FE008656BC /* PicturesController.m in Sources */ = {isa = PBXBuildFile; fileRef = 11A0C8F61BC669FE008656BC /* PicturesController.m */; settings = {ASSET_TAGS = (); }; };
 		11A0C9021BC669FE008656BC /* PicturesDetailController.m in Sources */ = {isa = PBXBuildFile; fileRef = 11A0C8F81BC669FE008656BC /* PicturesDetailController.m */; settings = {ASSET_TAGS = (); }; };
 		11A0C9031BC669FE008656BC /* PicturesDetailController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 11A0C8F91BC669FE008656BC /* PicturesDetailController.xib */; settings = {ASSET_TAGS = (); }; };
-		11A0C9041BC669FE008656BC /* PictureXibCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 11A0C8FB1BC669FE008656BC /* PictureXibCell.m */; settings = {ASSET_TAGS = (); }; };
-		11A0C9051BC669FE008656BC /* PictureXibCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 11A0C8FC1BC669FE008656BC /* PictureXibCell.xib */; settings = {ASSET_TAGS = (); }; };
 		11A5E73D1BCF32B300168A8E /* NSErrorHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 11A5E73C1BCF32B300168A8E /* NSErrorHelper.m */; settings = {ASSET_TAGS = (); }; };
 		11A856401BC2726800863D9D /* SettingController.m in Sources */ = {isa = PBXBuildFile; fileRef = 11A8563E1BC2726800863D9D /* SettingController.m */; settings = {ASSET_TAGS = (); }; };
 		11A856411BC2726800863D9D /* SettingController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 11A8563F1BC2726800863D9D /* SettingController.xib */; settings = {ASSET_TAGS = (); }; };
@@ -240,6 +242,15 @@
 		11925AA11B93360E00608BCC /* BaseTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BaseTableViewController.m; sourceTree = "<group>"; };
 		11925AA21B93360E00608BCC /* BaseNavigationController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BaseNavigationController.m; sourceTree = "<group>"; };
 		11925AA31B93360E00608BCC /* BaseViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BaseViewController.m; sourceTree = "<group>"; };
+		11994BD21BDBC61200BE4A33 /* OLImageResponseSerializer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OLImageResponseSerializer.h; sourceTree = "<group>"; };
+		11994BD31BDBC61200BE4A33 /* OLImageResponseSerializer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OLImageResponseSerializer.m; sourceTree = "<group>"; };
+		11994BD41BDBC61200BE4A33 /* OLImageStrictResponseSerializer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OLImageStrictResponseSerializer.h; sourceTree = "<group>"; };
+		11994BD51BDBC61200BE4A33 /* OLImageStrictResponseSerializer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OLImageStrictResponseSerializer.m; sourceTree = "<group>"; };
+		11994BD91BDBC61200BE4A33 /* OLImage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OLImage.h; sourceTree = "<group>"; };
+		11994BDA1BDBC61200BE4A33 /* OLImage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OLImage.m; sourceTree = "<group>"; };
+		11994BDB1BDBC61200BE4A33 /* OLImageView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OLImageView.h; sourceTree = "<group>"; };
+		11994BDC1BDBC61200BE4A33 /* OLImageView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OLImageView.m; sourceTree = "<group>"; };
+		11994BE21BDBCB6600BE4A33 /* OLImageViewDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OLImageViewDelegate.h; sourceTree = "<group>"; };
 		119D60BC1BD8E28500BC1920 /* VideoController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VideoController.h; sourceTree = "<group>"; };
 		119D60BD1BD8E28500BC1920 /* VideoController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VideoController.m; sourceTree = "<group>"; };
 		119D60BE1BD8E28500BC1920 /* VideoCollectionCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VideoCollectionCell.h; sourceTree = "<group>"; };
@@ -258,9 +269,6 @@
 		11A0C8F71BC669FE008656BC /* PicturesDetailController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PicturesDetailController.h; sourceTree = "<group>"; };
 		11A0C8F81BC669FE008656BC /* PicturesDetailController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PicturesDetailController.m; sourceTree = "<group>"; };
 		11A0C8F91BC669FE008656BC /* PicturesDetailController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PicturesDetailController.xib; sourceTree = "<group>"; };
-		11A0C8FA1BC669FE008656BC /* PictureXibCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PictureXibCell.h; sourceTree = "<group>"; };
-		11A0C8FB1BC669FE008656BC /* PictureXibCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PictureXibCell.m; sourceTree = "<group>"; };
-		11A0C8FC1BC669FE008656BC /* PictureXibCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PictureXibCell.xib; sourceTree = "<group>"; };
 		11A5E73B1BCF32B300168A8E /* NSErrorHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NSErrorHelper.h; sourceTree = "<group>"; };
 		11A5E73C1BCF32B300168A8E /* NSErrorHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NSErrorHelper.m; sourceTree = "<group>"; };
 		11A8563D1BC2726800863D9D /* SettingController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SettingController.h; sourceTree = "<group>"; };
@@ -671,6 +679,30 @@
 			path = BaseViewController;
 			sourceTree = "<group>";
 		};
+		11994BD01BDBC61200BE4A33 /* OLImageView */ = {
+			isa = PBXGroup;
+			children = (
+				11994BD11BDBC61200BE4A33 /* AFNetworking */,
+				11994BD91BDBC61200BE4A33 /* OLImage.h */,
+				11994BDA1BDBC61200BE4A33 /* OLImage.m */,
+				11994BDB1BDBC61200BE4A33 /* OLImageView.h */,
+				11994BDC1BDBC61200BE4A33 /* OLImageView.m */,
+				11994BE21BDBCB6600BE4A33 /* OLImageViewDelegate.h */,
+			);
+			path = OLImageView;
+			sourceTree = "<group>";
+		};
+		11994BD11BDBC61200BE4A33 /* AFNetworking */ = {
+			isa = PBXGroup;
+			children = (
+				11994BD21BDBC61200BE4A33 /* OLImageResponseSerializer.h */,
+				11994BD31BDBC61200BE4A33 /* OLImageResponseSerializer.m */,
+				11994BD41BDBC61200BE4A33 /* OLImageStrictResponseSerializer.h */,
+				11994BD51BDBC61200BE4A33 /* OLImageStrictResponseSerializer.m */,
+			);
+			path = AFNetworking;
+			sourceTree = "<group>";
+		};
 		11A0C8F01BC669FE008656BC /* Pictures */ = {
 			isa = PBXGroup;
 			children = (
@@ -699,9 +731,6 @@
 				11A0C8F71BC669FE008656BC /* PicturesDetailController.h */,
 				11A0C8F81BC669FE008656BC /* PicturesDetailController.m */,
 				11A0C8F91BC669FE008656BC /* PicturesDetailController.xib */,
-				11A0C8FA1BC669FE008656BC /* PictureXibCell.h */,
-				11A0C8FB1BC669FE008656BC /* PictureXibCell.m */,
-				11A0C8FC1BC669FE008656BC /* PictureXibCell.xib */,
 				11B06FB61BD479B700941FC7 /* PictureCell.h */,
 				11B06FB71BD479B700941FC7 /* PictureCell.m */,
 			);
@@ -711,6 +740,7 @@
 		11B82B741BA29A2700283A93 /* Vender */ = {
 			isa = PBXGroup;
 			children = (
+				11994BD01BDBC61200BE4A33 /* OLImageView */,
 				11B82B751BA29A2700283A93 /* UMSocial_Sdk_4.2.3 */,
 			);
 			path = Vender;
@@ -982,7 +1012,6 @@
 				111127A81BD3944300350C6B /* FreshNewsLittleCell.xib in Resources */,
 				116DD3291BD8E0B4004ED7CA /* CommentClickAlertView.xib in Resources */,
 				11B82B911BA29A2700283A93 /* UMSocialLocalizable.strings in Resources */,
-				11A0C9051BC669FE008656BC /* PictureXibCell.xib in Resources */,
 				11B82B971BA29A2700283A93 /* UMSCommentInputControlleriPad.xib in Resources */,
 				118BBDC71BA5A84F002D79A2 /* LaunchScreen.xib in Resources */,
 				11A856411BC2726800863D9D /* SettingController.xib in Resources */,
@@ -1084,7 +1113,6 @@
 				11B06FB81BD479B700941FC7 /* PictureCell.m in Sources */,
 				119D60C71BD8E28500BC1920 /* VideoDetailController.m in Sources */,
 				11F43D731B9FCF0E003EDFAF /* DMLazyScrollView.m in Sources */,
-				11A0C9041BC669FE008656BC /* PictureXibCell.m in Sources */,
 				11B134811BD618AE00574A39 /* UIColor+Additions.m in Sources */,
 				1164BA761B9C17D800764636 /* LeftMenu.m in Sources */,
 				11B82BA01BA2A7BD00283A93 /* ToastHelper.m in Sources */,
@@ -1117,9 +1145,12 @@
 				116DD32B1BD8E0B4004ED7CA /* CommentsCell.m in Sources */,
 				116DD32A1BD8E0B4004ED7CA /* CommentController.m in Sources */,
 				11925AAF1B93360E00608BCC /* BaseTableViewController.m in Sources */,
+				11994BE01BDBC61200BE4A33 /* OLImage.m in Sources */,
 				11A0C9021BC669FE008656BC /* PicturesDetailController.m in Sources */,
 				116DD33C1BD8E0DF004ED7CA /* ShareToSinaController.m in Sources */,
 				116DD3331BD8E0B4004ED7CA /* MainViewModel.m in Sources */,
+				11994BE11BDBC61200BE4A33 /* OLImageView.m in Sources */,
+				11994BDD1BDBC61200BE4A33 /* OLImageResponseSerializer.m in Sources */,
 				111740E21BD4E6E300E10F43 /* PictureFrame.m in Sources */,
 				115DCC3A1BB0EF4D00943B6F /* UITableViewCell+TableView.m in Sources */,
 				11C0F8081BC238D3007FBEAA /* PopoverView.m in Sources */,
@@ -1137,6 +1168,7 @@
 				11A5E73D1BCF32B300168A8E /* NSErrorHelper.m in Sources */,
 				11925AA71B93360E00608BCC /* CommonUtils.m in Sources */,
 				11925AA51B93360E00608BCC /* AFNetWorkUtils.m in Sources */,
+				11994BDE1BDBC61200BE4A33 /* OLImageStrictResponseSerializer.m in Sources */,
 				11FEBA921BBA198400490946 /* WidthFixImageView.m in Sources */,
 				11A856401BC2726800863D9D /* SettingController.m in Sources */,
 				11F43D791B9FE616003EDFAF /* FreshNewsDetail.m in Sources */,

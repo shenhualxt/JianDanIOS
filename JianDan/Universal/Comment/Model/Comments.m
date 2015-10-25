@@ -59,9 +59,15 @@
 
 - (void)setMessage:(NSString *)message {
     if (!_message) {
-        _message = message;
-        _content = message;
+        _message = [self getContentOnlySelf:message];
+        _content = _message;
     }
+}
+
+- (NSString *)getContentOnlySelf:(NSString *)originContent {
+    originContent = [originContent stringByReplacingOccurrencesOfString:@"</p>" withString:@""];
+    originContent = [originContent stringByReplacingOccurrencesOfString:@"<p>" withString:@""];
+    return [originContent stringByReplacingOccurrencesOfString:@"<br />" withString:@""];
 }
 
 - (void)setAuthorName:(NSString *)authorName {
@@ -70,7 +76,6 @@
         _name = authorName;
     }
 }
-
 
 - (NSString *)getPost_id {
     return self.post_id;

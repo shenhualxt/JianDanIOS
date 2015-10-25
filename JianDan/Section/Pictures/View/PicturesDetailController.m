@@ -54,36 +54,10 @@
     self.imageViewDetail.image = placeHoler;
     self.imageViewDetail.frame = picture.picFrame.pictureFrame;
     [self adjustLocation:YES];
-
-    //gif
-    if ([imageURL hasSuffix:@".gif"]) {
-        [[TMCache sharedCache] objectForKey:imageURL block:^(TMCache *cache, NSString *key, id object) {
-            if (object) {
-                UIImage * image =object;
-                if ([object isKindOfClass:[NSData class]]) {
-                    image = [UIImage sd_animatedGIFWithData:object];
-                }
-                self.imageViewDetail.image = image;
-                [self adjustLocation:NO];
-            } else {
-                [self.imageViewDetail setGIFImageWithURL:[NSURL URLWithString:imageURL] placeholderImage:placeHoler options:SDWebImageDownloaderLowPriority completed:^(UIImage *image, NSData *data, NSError *error, BOOL finished) {
-                    if (image && finished) {
-                        if ([imageURL hasSuffix:@".gif"]) {
-                            [self adjustLocation:NO];
-                        }
-                    }
-                } usingProgressViewStyle:UIProgressViewStyleDefault];
-            }
-        }];
-        return;
-    }
-
-    //普通图片
+    
     [self.imageViewDetail setImageWithURL:[NSURL URLWithString:imageURL] placeholderImage:placeHoler completed:^(UIImage *image, NSError *error, SDImageCacheType cacheType, NSURL *imageURL) {
-        if (image) {
-            [self adjustLocation:NO];
-        }
-    }              usingProgressViewStyle:UIProgressViewStyleDefault];
+        if (image) [self adjustLocation:NO];
+        } usingProgressViewStyle:UIProgressViewStyleDefault];
 }
 
 - (void)initClick {
@@ -112,15 +86,10 @@
     }];
     //下载图片
     [[self.buttonDownload rac_signalForControlEvents:UIControlEventTouchUpInside] subscribeNext:^(id x) {
-        BOOL isGIF = [imageURL hasSuffix:@".gif"];
-        if (isGIF) {
-            NSData *data = [[TMCache sharedCache] objectForKey:imageURL];
-            ALAssetsLibrary *assetsLib = [ALAssetsLibrary new];
-            [assetsLib writeImageDataToSavedPhotosAlbum:data metadata:nil completionBlock:^(NSURL *assetURL, NSError *error) {
-                [self imageSavedToPhotosAlbum:nil didFinishSavingWithError:error contextInfo:nil];
-            }];
-        } else {
-            UIImageWriteToSavedPhotosAlbum(self.imageViewDetail.image, self, @selector(imageSavedToPhotosAlbum:didFinishSavingWithError:contextInfo:), nil);
+        if (self.imageViewDetail.image) {
+             UIImageWriteToSavedPhotosAlbum(self.imageViewDetail.image, self, @selector(imageSavedToPhotosAlbum:didFinishSavingWithError:contextInfo:), nil);
+        }else{
+            //正在下载中
         }
     }];
     //查看评论

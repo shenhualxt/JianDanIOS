@@ -150,8 +150,6 @@
         //逆序
         comment.parentCommentsArray = [[tempCommentsArray reverseObjectEnumerator] allObjects];
         comment.content = [self getContentWithParent:comment.content];
-    } else {
-        comment.content = [self getContentOnlySelf:comment.content];
     }
 }
 

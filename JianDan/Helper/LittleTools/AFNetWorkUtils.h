@@ -16,19 +16,17 @@ typedef NS_ENUM(NSInteger, NetType) {
 
 + (AFNetWorkUtils *)sharedAFNetWorkUtils;
 
-@property(nonatomic, strong) RACSignal *excuting;
-
 - (void)startMonitoring;
 
 - (RACSignal *)startMonitoringNet;
 
-+ (RACSignal *)post2racWthURL:(NSString *)url params:(NSDictionary *)params;
++ (RACSignal *)racPOSTWthURL:(NSString *)url params:(NSDictionary *)params;
 
 + (RACSignal *)racPOSTWithURL:(NSString *)url params:(NSDictionary *)params class:(Class)clazz;
 
-+ (RACSignal *)get2racWthURL:(NSString *)url;
++ (RACSignal *)racGETUNJSONWthURL:(NSString *)url;
 
-+ (RACSignal *)get2racUNJSONWthURL:(NSString *)url;
++ (RACSignal *)racGETWthURL:(NSString *)url;
 
 + (RACSignal *)racGETWithURL:(NSString *)url class:(Class)clazz;
 

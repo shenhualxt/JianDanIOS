@@ -13,6 +13,8 @@
 
 - (void)deleteDatabse;
 
+- (void)clearDatabase;
+
 - (void)save:(NSArray *)objectArray sortArgument:(NSString *)idStr;
 
 - (void)save:(NSArray *)objectArray sortArgument:(NSString *)idStr tableName:(NSString *)tableName;

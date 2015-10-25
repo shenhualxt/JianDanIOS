@@ -40,7 +40,7 @@
 
 - (RACSignal *)getPicturesCommentArray:(id)input {
     NSString * url = [NSString stringWithFormat:@"%@comment-%@", duoShuoCommentListlUrl, input];
-    return [[AFNetWorkUtils get2racWthURL:url] map:^id(NSDictionary *resultDic) {
+    return [[AFNetWorkUtils racGETWthURL:url] map:^id(NSDictionary *resultDic) {
         //获得thread_id
         NSString * thread_id = [[resultDic objectForKey:@"thread"] objectForKey:@"thread_id"];
 
@@ -90,7 +90,7 @@
 
 - (RACSignal *)getFreshNewsCommentArray:(id)input {
     NSString * url = [NSString stringWithFormat:@"%@%@", freshNewCommentlUrl, input];
-    return [[[[AFNetWorkUtils get2racWthURL:url] map:^id(NSDictionary *resultDic) {
+    return [[[[AFNetWorkUtils racGETWthURL:url] map:^id(NSDictionary *resultDic) {
         NSDictionary * post = [resultDic objectForKey:@"post"];
         NSArray * commentsDic = [post objectForKey:@"comments"];
         if (commentsDic.count) {
@@ -150,6 +150,8 @@
         //逆序
         comment.parentCommentsArray = [[tempCommentsArray reverseObjectEnumerator] allObjects];
         comment.content = [self getContentWithParent:comment.content];
+    }else{
+        comment.content=[self getContentOnlySelf:comment.content];
     }
 }
 

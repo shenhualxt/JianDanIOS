@@ -93,15 +93,14 @@ static char TAG_PROGRESSVIEW;
     [self setImageWithURL:url placeholderImage:placeholder options:options progress:nil completed:completedBlock usingProgressViewStyle:progressViewStyle];
 }
 
--(void)onlyDownloadImagWithURL:(NSURL *)url usingProgressViewStyle:(UIProgressViewStyle)progressViewStyle{
+-(id <SDWebImageOperation>)onlyDownloadImagWithURL:(NSURL *)url usingProgressViewStyle:(UIProgressViewStyle)progressViewStyle{
     __weak typeof(self) weakSelf = self;
-    [[SDWebImageManager sharedManager] downloadImageWithURL:url options:SDWebImageRetryFailed progress:^(NSInteger receivedSize, NSInteger expectedSize) {
+  return  [[SDWebImageManager sharedManager] downloadImageWithURL:url options:SDWebImageRetryFailed progress:^(NSInteger receivedSize, NSInteger expectedSize) {
         [weakSelf addProgressViewWithReceivedSize:receivedSize expectedSize:expectedSize];
     } completed:^(UIImage *image, NSError *error, SDImageCacheType cacheType, BOOL finished, NSURL *imageURL) {
          [weakSelf removeProgressView];
     }];
 }
-
 
 - (void)setImageWithURL:(NSURL *)url placeholderImage:(UIImage *)placeholder options:(SDWebImageOptions)options progress:(SDWebImageDownloaderProgressBlock)progressBlock completed:(SDWebImageCompletionBlock)completedBlock usingProgressViewStyle:(UIProgressViewStyle)progressViewStyle {
 

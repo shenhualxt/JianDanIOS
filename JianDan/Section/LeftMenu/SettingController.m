@@ -97,9 +97,7 @@
 - (RACSignal *)getTotalCacheSize {
     return [RACSignal createSignal:^RACDisposable *(id<RACSubscriber> subscriber) {
         [[SDImageCache sharedImageCache] calculateSizeWithCompletionBlock:^(NSUInteger fileCount, NSUInteger imageSize) {
-            float gifImageSize = [[[TMCache sharedCache] diskCache] byteCount];
-            float sqlSize = [[CacheTools sharedCacheTools] getSize];
-            float totalSize = (imageSize+ gifImageSize + sqlSize) / 1024.0 / 1024.0;
+            float totalSize = imageSize / 1024.0 / 1024.0;
             [subscriber sendNext:[NSString stringWithFormat:@"%.2fM", totalSize]];
             [subscriber sendCompleted];
         }];
@@ -111,8 +109,7 @@
     return [RACSignal createSignal:^RACDisposable *(id<RACSubscriber> subscriber) {
         [[SDImageCache sharedImageCache]  clearDiskOnCompletion:^{
             [[NSURLCache sharedURLCache] removeAllCachedResponses];
-            [[TMCache sharedCache] removeAllObjects];
-            [[CacheTools sharedCacheTools] deleteDatabse];
+            [[CacheTools sharedCacheTools] clearDatabase];
             [subscriber sendNext:nil];
             [subscriber sendCompleted];
         }];

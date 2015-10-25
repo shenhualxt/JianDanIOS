@@ -37,7 +37,7 @@
 
 + (RACSignal *)voteWithOption:(VoteOption)option commentId:(NSString *)commentId {
     NSString * url = [NSString stringWithFormat:commentVoteUrl, @(option), commentId];
-    return [[AFNetWorkUtils get2racUNJSONWthURL:url] map:^id(id value) {
+    return [[AFNetWorkUtils racGETUNJSONWthURL:url] map:^id(id value) {
         //2941297|THANK YOU  |1
         NSString * result = [[NSString alloc] initWithData:value encoding:NSUTF8StringEncoding];
         NSArray * splitStrings = [result componentsSeparatedByString:@"|"];

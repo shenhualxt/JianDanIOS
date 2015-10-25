@@ -19,21 +19,13 @@
 #import "UITableViewCell+TableView.h"
 #import "UIImageView+UIProgressForSDWebImage.h"
 #import "UIViewController+MMDrawerController.h"
-#import "TMCache.h"
 #import "UIImage+GIF.h"
-#import "OLImageView.h"
-#import "OLImage.h"
-#import <AFNetworking/UIImageView+AFNetworking.h>
-#import "OLImageResponseSerializer.h"
-#import "OLImageStrictResponseSerializer.h"
-
-#import "OLImageViewDelegate.h"
 
 @interface PictureCell () <CEReactiveView>
 
 @property(strong, nonatomic) UIView *bgView;
 
-@property(strong, nonatomic) UIImageView *netImageView;
+@property(strong, nonatomic) ScaleImageView *netImageView;
 
 @property(strong, nonatomic) UIView *gifImageView;
 
@@ -41,6 +33,7 @@
 
 @property(assign, nonatomic) NSInteger drawColorFlag;
 
+@property (weak,nonatomic) id <SDWebImageOperation> previusOperation;
 
 @end
 
@@ -64,7 +57,7 @@
         [_bgView addGestureRecognizer:oneTap];
 
         //2、网络图片
-        _netImageView = [OLImageView new];
+        _netImageView = [ScaleImageView new];
         _netImageView.userInteractionEnabled = YES;
         [self addSubview:_netImageView];
 
@@ -92,10 +85,13 @@
      UIImage *placeHoler=[self.backgroundColor createPlaceholderWithSize:viewModel.picFrame.pictureSize];
     
     self.netImageView.frame=viewModel.picFrame.pictureFrame;
-
+    if (self.previusOperation) {
+        [self.previusOperation cancel];
+        [self.netImageView removeProgressView];
+    }
     if (autoLoadImage) {
         //下载GIF，显示下载GIF的进度，显示缩略图
-        [self.netImageView onlyDownloadImagWithURL:[NSURL URLWithString:viewModel.picUrl] usingProgressViewStyle:UIProgressViewStyleDefault];
+        self.previusOperation=[self.netImageView onlyDownloadImagWithURL:[NSURL URLWithString:viewModel.picUrl] usingProgressViewStyle:UIProgressViewStyleDefault];
         //显示缩略图
         [self.netImageView sd_setImageWithURL:[NSURL URLWithString:viewModel.thumnailGiFUrl] placeholderImage:placeHoler options:SDWebImageHighPriority|SDWebImageTransformAnimatedImage];
     }else{

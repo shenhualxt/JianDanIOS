@@ -61,6 +61,7 @@
     if (!_message) {
         _message = [self getContentOnlySelf:message];
         _content = _message;
+        
     }
 }
 

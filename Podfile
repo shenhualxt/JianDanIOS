@@ -12,7 +12,6 @@ pod 'TPKeyboardAvoiding'
 pod 'MBProgressHUD', '~> 0.9.1'
 pod 'UITableView+FDTemplateLayoutCell', '~> 1.4beta'
 pod 'FastImageCache'
-pod 'TMCache'
 pod 'NJKWebViewProgress'
 
 target :JianDanTests, :exclusive => true do

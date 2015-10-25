@@ -11,18 +11,26 @@
 
 NSString *const CacheToolsDomain = @"http://CacheTools";
 
+static NSString *dbName = @"jiandan.sqlite";
+
+static NSInteger pageNum = 24;
+
+@interface CacheTools()
+
+@property (strong,nonatomic) NSMutableArray *tableNameArray;
+
+@property (strong,nonatomic) FMDatabaseQueue *queue;
+
+@end
 
 @implementation CacheTools
 
-static NSString *dbName = @"jiandan.sqlite";
-static NSInteger pageNum = 24;
-
-static FMDatabaseQueue *queue;
 
 DEFINE_SINGLETON_IMPLEMENTATION(CacheTools)
 
 - (void)setUp {
-    queue = [FMDatabaseQueue databaseQueueWithPath:[self getPath:dbName] flags:SQLITE_OPEN_READWRITE | SQLITE_OPEN_CREATE];
+    _tableNameArray=[NSMutableArray array];
+    _queue = [FMDatabaseQueue databaseQueueWithPath:[self getPath:dbName] flags:SQLITE_OPEN_READWRITE | SQLITE_OPEN_CREATE];
 }
 
 - (RACSignal *)read:(Class)clazz {
@@ -49,15 +57,14 @@ DEFINE_SINGLETON_IMPLEMENTATION(CacheTools)
             [subscriber sendError:[self createError:@"page不能小于0" tableName:tableName]];
             return nil;
         };
-        if (!queue) {
+        if (!_queue) {
             [self createError:@"create database queue failed" tableName:tableName];
             [subscriber sendError:nil];
             return nil;
         }
         dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
-            [queue inTransaction:^(FMDatabase *db, BOOL *rollback) {
+            [_queue inTransaction:^(FMDatabase *db, BOOL *rollback) {
                 if (![self isTableExist:tableName database:db]) {
-                    [self createError:@"不存在(可能是第一次还未缓存数据)" tableName:tableName];
                     [subscriber sendCompleted];
                     return;
                 }
@@ -124,7 +131,7 @@ DEFINE_SINGLETON_IMPLEMENTATION(CacheTools)
             length = 0;
         }
         // 实现分页
-        [querySql appendFormat:@" limit %d offset %d", length, start];
+        [querySql appendFormat:@" limit %ld offset %ld", (long)length, (long)start];
     }
     return RACTuplePack(@(length), querySql);
 }
@@ -147,6 +154,9 @@ DEFINE_SINGLETON_IMPLEMENTATION(CacheTools)
 
 // 向数据库中存数据
 - (RACSignal *)racSave:(NSArray *)objectArray sortArgument:(NSString *)idStr tableName:(NSString *)tableName {
+    if (![self.tableNameArray containsObject:tableName]) {
+        [self.tableNameArray addObject:tableName];
+    }
     if (!objectArray.count) return [RACSignal empty];
     //创建表格
     Class clazz = [objectArray[0] class];
@@ -163,7 +173,7 @@ DEFINE_SINGLETON_IMPLEMENTATION(CacheTools)
         //存入数据
         dispatch_queue_t concurrentQueue = dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0);
         dispatch_async(concurrentQueue, ^{
-            [queue inTransaction:^(FMDatabase *db, BOOL *rollback) {
+            [_queue inTransaction:^(FMDatabase *db, BOOL *rollback) {
                 if (![self createTable:tableName database:db]) {
                     //创建表失败
                     [subscriber sendError:[self createError:@"创建表失败" tableName:tableName]];
@@ -255,7 +265,47 @@ DEFINE_SINGLETON_IMPLEMENTATION(CacheTools)
     return NO;
 }
 
-// 删除数据库
+// 删除表
+- (BOOL) deleteTable:(NSString *)tableName database:(FMDatabase *)db
+{
+    NSString *sqlstr = [NSString stringWithFormat:@"DROP TABLE %@", tableName];
+    if (![db executeUpdate:sqlstr])
+    {
+        NSLog(@"Delete table error!");
+        return NO;
+    }
+    
+    return YES;
+}
+
+// 清除表
+- (BOOL) eraseTable:(NSString *)tableName database:(FMDatabase *)db
+{
+    NSString *sqlstr = [NSString stringWithFormat:@"DELETE FROM %@", tableName];
+    if (![db executeUpdate:sqlstr])
+    {
+        NSLog(@"Erase table error!");
+        return NO;
+    }
+    
+    return YES;
+}
+
+
+-(void)clearDatabase{
+    WS(ws)
+    dispatch_queue_t concurrentQueue = dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0);
+    dispatch_async(concurrentQueue, ^{
+        [_queue inTransaction:^(FMDatabase *db, BOOL *rollback) {
+            for (NSString *tableName in ws.tableNameArray) {
+                 [ws deleteTable:tableName database:db];
+            }
+            [ws.tableNameArray removeAllObjects];
+        }];
+    });
+}
+
+// 删除数据库文件
 - (void)deleteDatabse {
     BOOL success;
     NSError * error;

@@ -38,10 +38,6 @@ DEFINE_SINGLETON_IMPLEMENTATION(AFNetWorkUtils)
     }];
 }
 
-- (RACSignal *)excuting {
-    return RACObserve([AFNetworkActivityIndicatorManager sharedManager], isNetworkActivityIndicatorVisible);
-}
-
 - (RACSignal *)startMonitoringNet {
     [AFNetworkActivityIndicatorManager sharedManager].enabled = YES;
     AFNetworkReachabilityManager *mgr = [AFNetworkReachabilityManager sharedManager];
@@ -91,7 +87,7 @@ DEFINE_SINGLETON_IMPLEMENTATION(AFNetWorkUtils)
  *
  *  @return 带请求结果（字典）的信号
  */
-+ (RACSignal *)post2racWthURL:(NSString *)url params:(NSDictionary *)params {
++ (RACSignal *)racPOSTWthURL:(NSString *)url params:(NSDictionary *)params {
     if ([AFNetWorkUtils sharedAFNetWorkUtils].netType == NONet) {
         return [self getNoNetSignal];
     }
@@ -109,15 +105,15 @@ DEFINE_SINGLETON_IMPLEMENTATION(AFNetWorkUtils)
     }] setNameWithFormat:@"<%@: %p> -post2racWthURL: %@, params: %@", self.class, self, url, params];
 }
 
-+ (RACSignal *)get2racWthURL:(NSString *)url {
-    return [[self get2racWthURL:url isJSON:YES] setNameWithFormat:@"<%@: %p> -get2racWthURL: %@", self.class, self, url];
++ (RACSignal *)racGETWthURL:(NSString *)url {
+    return [[self racGETWthURL:url isJSON:YES] setNameWithFormat:@"<%@: %p> -get2racWthURL: %@", self.class, self, url];
 }
 
-+ (RACSignal *)get2racUNJSONWthURL:(NSString *)url {
-    return [[self get2racWthURL:url isJSON:NO] setNameWithFormat:@"<%@: %p> -get2racUNJSONWthURL: %@", self.class, self, url];
++ (RACSignal *)racGETUNJSONWthURL:(NSString *)url {
+    return [[self racGETWthURL:url isJSON:NO] setNameWithFormat:@"<%@: %p> -get2racUNJSONWthURL: %@", self.class, self, url];
 }
 
-+ (RACSignal *)get2racWthURL:(NSString *)url isJSON:(BOOL)isJSON {
++ (RACSignal *)racGETWthURL:(NSString *)url isJSON:(BOOL)isJSON {
     if ([AFNetWorkUtils sharedAFNetWorkUtils].netType == NONet) {
         return [self getNoNetSignal];
     }
@@ -161,7 +157,7 @@ DEFINE_SINGLETON_IMPLEMENTATION(AFNetWorkUtils)
         return [self getNoNetSignal];
     }
     //有网络
-    return [[[[self post2racWthURL:url params:params] map:^id(id responseObject) {
+    return [[[[self racPOSTWthURL:url params:params] map:^id(id responseObject) {
         if ([responseObject isKindOfClass:[NSArray class]]) {
             return [clazz objectArrayWithKeyValuesArray:responseObject];
         } else {
@@ -176,7 +172,7 @@ DEFINE_SINGLETON_IMPLEMENTATION(AFNetWorkUtils)
         return [self getNoNetSignal];
     }
     //有网络
-    return [[[[self get2racWthURL:url] map:^id(id responseObject) {
+    return [[[[self racGETWthURL:url] map:^id(id responseObject) {
         if ([responseObject isKindOfClass:[NSArray class]]) {
             return [clazz objectArrayWithKeyValuesArray:responseObject];
         } else {
@@ -209,6 +205,7 @@ DEFINE_SINGLETON_IMPLEMENTATION(AFNetWorkUtils)
         [subscriber sendCompleted];
         return;
     }
+   
 
     //统一格式接口
     NSString * status = [responseObject objectForKey:@"status"];

@@ -67,7 +67,7 @@
         }];
     }
 
-    self.tableView.panGestureRecognizer.delaysTouchesBegan = self.tableView.delaysContentTouches;
+    self.tableView.panGestureRecognizer.delaysTouchesBegan = self.tableView.delaysContentTouches=NO;
     self.helper = [CETableViewBindingHelper bindingHelperForTableView:self.tableView sourceSignal:sourceSignal selectionCommand:selectCommand templateCellClass:[PictureCell class]];
     self.helper.delegate = self;
     self.tableView.backgroundColor = [UIColor lightGrayColor];

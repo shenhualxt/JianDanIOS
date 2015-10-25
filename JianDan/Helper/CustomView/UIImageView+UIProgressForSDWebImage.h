@@ -34,5 +34,5 @@
 
 - (void)addProgressViewWithReceivedSize:(NSInteger)receivedSize expectedSize:(NSInteger)expectedSize;
 
--(void)onlyDownloadImagWithURL:(NSURL *)url usingProgressViewStyle:(UIProgressViewStyle)progressViewStyle;
+-(id <SDWebImageOperation>)onlyDownloadImagWithURL:(NSURL *)url usingProgressViewStyle:(UIProgressViewStyle)progressViewStyle;
 @end

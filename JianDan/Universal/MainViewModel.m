@@ -127,6 +127,7 @@ INITWITHSETUP
         return [self downloadImageSize:resultArray];
     }];
 
+
 }
 
 /**
@@ -136,7 +137,7 @@ INITWITHSETUP
     NSString * url = [NSString stringWithFormat:@"%@%d", self.url, page];
 
     @weakify(self)
-    return [[[[[[AFNetWorkUtils get2racWthURL:url] filter:^BOOL(NSDictionary *result) {
+    return [[[[[[AFNetWorkUtils racGETWthURL:url] filter:^BOOL(NSDictionary *result) {
         return [result isKindOfClass:[NSDictionary class]] && result;//保证结果不为空
     }] map:^id(NSDictionary *result) {
         return [result objectForKey:self.modelArgument];//获取字典数组
@@ -188,7 +189,7 @@ INITWITHSETUP
     for (Picture *pictures in array) {
         [param appendFormat:@"comment-%@,", pictures.post_id];
     }
-    return [[AFNetWorkUtils get2racWthURL:appendString(commentCountUrl, param)] map:^id(NSDictionary *resultDic) {
+    return [[AFNetWorkUtils racGETWthURL:appendString(commentCountUrl, param)] map:^id(NSDictionary *resultDic) {
         NSDictionary * response = [resultDic objectForKey:@"response"];
         if (![response isKindOfClass:[NSDictionary class]]) {
             LogBlue(@"获取评论数量失败");
@@ -214,7 +215,6 @@ INITWITHSETUP
         if (!array || ![array count]) {
             return self.sourceArray;
         }
-        LogBlue(@"无网络，当前显示为缓存数据(有网时，第一次正常)");
         [self.sourceArray addObjectsFromArray:array];
         return self.sourceArray;
     }];

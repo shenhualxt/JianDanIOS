@@ -78,7 +78,7 @@
     }
 
     [self draw];
-    BOOL isGIF=viewModel.thumnailGiFUrl;
+    BOOL isGIF=viewModel.thumnailGiFUrl?YES:NO;;
     _gifImageView.frame = isGIF?_picture.picFrame.gifFrame: CGRectZero;
     _gifImageView.hidden = !isGIF; 
     BOOL autoLoadImage=[[NSUserDefaults standardUserDefaults] boolForKey:kAutoLoadGIFKey]&&[AFNetWorkUtils sharedAFNetWorkUtils].netType==WiFiNet&&isGIF;
@@ -96,7 +96,7 @@
         [self.netImageView sd_setImageWithURL:[NSURL URLWithString:viewModel.thumnailGiFUrl] placeholderImage:placeHoler options:SDWebImageHighPriority|SDWebImageTransformAnimatedImage];
     }else{
         //下载普通图片
-        [self.netImageView setImageWithURL:[NSURL URLWithString:viewModel.thumnailGiFUrl?:viewModel.picUrl] placeholderImage:placeHoler options:SDWebImageHighPriority usingProgressViewStyle:UIProgressViewStyleDefault];
+        [self.netImageView setImageWithURL:[NSURL URLWithString:viewModel.thumnailGiFUrl?:viewModel.picUrl] placeholderImage:placeHoler options:SDWebImageHighPriority|SDWebImageTransformAnimatedImage usingProgressViewStyle:UIProgressViewStyleDefault];
     }
 }
 

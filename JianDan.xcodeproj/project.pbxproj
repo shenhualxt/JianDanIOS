@@ -961,7 +961,7 @@
 				TargetAttributes = {
 					1119C48D1B9005B5007C8C56 = {
 						CreatedOnToolsVersion = 7.0;
-						DevelopmentTeam = NL23PW9H44;
+						DevelopmentTeam = 93QP7RMD2S;
 					};
 					1119C4A61B9005B7007C8C56 = {
 						CreatedOnToolsVersion = 7.0;
@@ -1224,8 +1224,8 @@
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				CODE_SIGN_IDENTITY = "iPhone Developer";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CODE_SIGN_IDENTITY = "iPhone Developer: Shao Jie Yang (A83P794JC4)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Shao Jie Yang (A83P794JC4)";
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = dwarf;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
@@ -1247,7 +1247,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
-				PROVISIONING_PROFILE = "";
+				PROVISIONING_PROFILE = "af43c441-88f8-4408-8922-b4b4bb5be103";
 				SDKROOT = iphoneos;
 			};
 			name = Debug;
@@ -1269,8 +1269,8 @@
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				CODE_SIGN_IDENTITY = "iPhone Developer";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CODE_SIGN_IDENTITY = "iPhone Developer: Shao Jie Yang (A83P794JC4)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Shao Jie Yang (A83P794JC4)";
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				ENABLE_NS_ASSERTIONS = NO;
@@ -1285,7 +1285,7 @@
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
-				PROVISIONING_PROFILE = "";
+				PROVISIONING_PROFILE = "af43c441-88f8-4408-8922-b4b4bb5be103";
 				SDKROOT = iphoneos;
 				VALIDATE_PRODUCT = YES;
 			};
@@ -1340,7 +1340,7 @@
 					"-framework",
 					"\"SystemConfiguration\"",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.shenhualxt.jiandan;
+				PRODUCT_BUNDLE_IDENTIFIER = com.shenhualxt.jiandans;
 				PRODUCT_NAME = JianDan;
 				PROVISIONING_PROFILE = "";
 			};
@@ -1368,7 +1368,7 @@
 					"$(inherited)",
 					"$(PROJECT_DIR)/JianDan/Helper/Vender/UMSocial_Sdk_4.2.3",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.shenhualxt.jiandan;
+				PRODUCT_BUNDLE_IDENTIFIER = com.shenhualxt.jiandans;
 				PRODUCT_NAME = JianDan;
 				PROVISIONING_PROFILE = "";
 			};

@@ -123,6 +123,7 @@
 }
 
 - (UIImage *)imageManager:(SDWebImageManager *)imageManager transformDownloadedImage:(UIImage *)image withURL:(NSURL *)imageURL {
+    //调整图片大小和控件大小一致
     CGSize itemSize = [PictureFrame scaleSizeWithoutMaxHeight:image.size];
     return [image scaleImageToSize:itemSize];
 }

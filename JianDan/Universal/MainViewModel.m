@@ -210,7 +210,7 @@ INITWITHSETUP
  */
 - (RACSignal *)requestFromDBSignal:(int)page {
     @weakify(self)
-    return [[[CacheTools sharedCacheTools] read:self.modelClass page:page tableName:self.tableName] map:^id(NSArray *array) {
+    return [[[CacheTools sharedCacheTools] racRead:self.modelClass page:page tableName:self.tableName] map:^id(NSArray *array) {
         @strongify(self)
         if (!array || ![array count]) {
             return self.sourceArray;

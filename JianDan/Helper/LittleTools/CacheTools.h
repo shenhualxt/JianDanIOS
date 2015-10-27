@@ -23,11 +23,11 @@
 
 - (RACSignal *)racSave:(NSArray *)objectArray sortArgument:(NSString *)idStr tableName:(NSString *)tableName;
 
-- (RACSignal *)read:(Class)clazz;
+- (RACSignal *)racRead:(Class)clazz;
 
-- (RACSignal *)read:(Class)clazz page:(NSInteger)page;
+- (RACSignal *)racRead:(Class)clazz page:(NSInteger)page;
 
-- (RACSignal *)read:(Class)clazz page:(NSInteger)page tableName:(NSString *)tableName;
+- (RACSignal *)racRead:(Class)clazz page:(NSInteger)page tableName:(NSString *)tableName;
 
 - (CGFloat)getSize;
 

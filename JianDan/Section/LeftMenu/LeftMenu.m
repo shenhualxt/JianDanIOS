@@ -12,7 +12,6 @@
         self.imageName = imageName;
         self.menuName = menuName;
     }
-
     return self;
 }
 

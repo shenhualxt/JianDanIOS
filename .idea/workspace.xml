@@ -2,732 +2,11 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="6450072b-e65c-48d5-a992-224fe3e6d909" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/JianDan/Helper/Vender/OLImageView/OLImageViewDelegate.h" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/JianDan/Section/Pictures/View/PictureXibCell.h" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/JianDan/Section/Pictures/View/PictureXibCell.m" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/JianDan/Section/Pictures/View/PictureXibCell.xib" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Pods/Headers/Private/AFNetworking/AFHTTPRequestOperation.h" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Pods/Headers/Private/AFNetworking/AFHTTPRequestOperationManager.h" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Pods/Headers/Private/AFNetworking/AFHTTPSessionManager.h" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Pods/Headers/Private/AFNetworking/AFNetworkActivityIndicatorManager.h" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Pods/Headers/Private/AFNetworking/AFNetworkReachabilityManager.h" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Pods/Headers/Private/AFNetworking/AFNetworking.h" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Pods/Headers/Private/AFNetworking/AFSecurityPolicy.h" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Pods/Headers/Private/AFNetworking/AFURLConnectionOperation.h" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Pods/Headers/Private/AFNetworking/AFURLRequestSerialization.h" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Pods/Headers/Private/AFNetworking/AFURLResponseSerialization.h" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Pods/Headers/Private/AFNetworking/AFURLSessionManager.h" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Pods/Headers/Private/AFNetworking/UIActivityIndicatorView+AFNetworking.h" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Pods/Headers/Private/AFNetworking/UIAlertView+AFNetworking.h" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Pods/Headers/Private/AFNetworking/UIButton+AFNetworking.h" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Pods/Headers/Private/AFNetworking/UIImage+AFNetworking.h" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Pods/Headers/Private/AFNetworking/UIImageView+AFNetworking.h" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Pods/Headers/Private/AFNetworking/UIKit+AFNetworking.h" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Pods/Headers/Private/AFNetworking/UIProgressView+AFNetworking.h" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Pods/Headers/Private/AFNetworking/UIRefreshControl+AFNetworking.h" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Pods/Headers/Private/AFNetworking/UIWebView+AFNetworking.h" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Pods/Headers/Private/CocoaLumberjack/CocoaLumberjack.h" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Pods/Headers/Private/CocoaLumberjack/DDASLLogCapture.h" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Pods/Headers/Private/CocoaLumberjack/DDASLLogger.h" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Pods/Headers/Private/CocoaLumberjack/DDAbstractDatabaseLogger.h" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Pods/Headers/Private/CocoaLumberjack/DDAssertMacros.h" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Pods/Headers/Private/CocoaLumberjack/DDContextFilterLogFormatter.h" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Pods/Headers/Private/CocoaLumberjack/DDDispatchQueueLogFormatter.h" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Pods/Headers/Private/CocoaLumberjack/DDFileLogger.h" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Pods/Headers/Private/CocoaLumberjack/DDLegacyMacros.h" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Pods/Headers/Private/CocoaLumberjack/DDLog+LOGV.h" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Pods/Headers/Private/CocoaLumberjack/DDLog.h" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Pods/Headers/Private/CocoaLumberjack/DDLogMacros.h" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Pods/Headers/Private/CocoaLumberjack/DDMultiFormatter.h" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Pods/Headers/Private/CocoaLumberjack/DDTTYLogger.h" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Pods/Headers/Private/FMDB/FMDB.h" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Pods/Headers/Private/FMDB/FMDatabase.h" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Pods/Headers/Private/FMDB/FMDatabaseAdditions.h" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Pods/Headers/Private/FMDB/FMDatabasePool.h" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Pods/Headers/Private/FMDB/FMDatabaseQueue.h" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Pods/Headers/Private/FMDB/FMResultSet.h" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Pods/Headers/Private/FastImageCache/FICEntity.h" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Pods/Headers/Private/FastImageCache/FICImageCache+FICErrorLogging.h" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Pods/Headers/Private/FastImageCache/FICImageCache.h" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Pods/Headers/Private/FastImageCache/FICImageFormat.h" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Pods/Headers/Private/FastImageCache/FICImageTable.h" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Pods/Headers/Private/FastImageCache/FICImageTableChunk.h" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Pods/Headers/Private/FastImageCache/FICImageTableEntry.h" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Pods/Headers/Private/FastImageCache/FICImports.h" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Pods/Headers/Private/FastImageCache/FICUtilities.h" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Pods/Headers/Private/Kiwi/KWAfterAllNode.h" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Pods/Headers/Private/Kiwi/KWAfterEachNode.h" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Pods/Headers/Private/Kiwi/KWAny.h" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Pods/Headers/Private/Kiwi/KWAsyncVerifier.h" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Pods/Headers/Private/Kiwi/KWBackgroundTask.h" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Pods/Headers/Private/Kiwi/KWBeBetweenMatcher.h" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Pods/Headers/Private/Kiwi/KWBeEmptyMatcher.h" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Pods/Headers/Private/Kiwi/KWBeIdenticalToMatcher.h" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Pods/Headers/Private/Kiwi/KWBeKindOfClassMatcher.h" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Pods/Headers/Private/Kiwi/KWBeMemberOfClassMatcher.h" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Pods/Headers/Private/Kiwi/KWBeSubclassOfClassMatcher.h" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Pods/Headers/Private/Kiwi/KWBeTrueMatcher.h" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Pods/Headers/Private/Kiwi/KWBeWithinMatcher.h" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Pods/Headers/Private/Kiwi/KWBeZeroMatcher.h" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Pods/Headers/Private/Kiwi/KWBeforeAllNode.h" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Pods/Headers/Private/Kiwi/KWBeforeEachNode.h" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Pods/Headers/Private/Kiwi/KWBlock.h" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Pods/Headers/Private/Kiwi/KWBlockNode.h" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Pods/Headers/Private/Kiwi/KWBlockRaiseMatcher.h" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Pods/Headers/Private/Kiwi/KWCallSite.h" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Pods/Headers/Private/Kiwi/KWCaptureSpy.h" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Pods/Headers/Private/Kiwi/KWChangeMatcher.h" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Pods/Headers/Private/Kiwi/KWConformToProtocolMatcher.h" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Pods/Headers/Private/Kiwi/KWContainMatcher.h" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Pods/Headers/Private/Kiwi/KWContainStringMatcher.h" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Pods/Headers/Private/Kiwi/KWContextNode.h" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Pods/Headers/Private/Kiwi/KWCountType.h" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Pods/Headers/Private/Kiwi/KWDeviceInfo.h" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Pods/Headers/Private/Kiwi/KWEqualMatcher.h" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Pods/Headers/Private/Kiwi/KWExample.h" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Pods/Headers/Private/Kiwi/KWExampleDelegate.h" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Pods/Headers/Private/Kiwi/KWExampleNode.h" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Pods/Headers/Private/Kiwi/KWExampleNodeVisitor.h" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Pods/Headers/Private/Kiwi/KWExampleSuite.h" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Pods/Headers/Private/Kiwi/KWExampleSuiteBuilder.h" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Pods/Headers/Private/Kiwi/KWExistVerifier.h" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Pods/Headers/Private/Kiwi/KWExpectationType.h" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Pods/Headers/Private/Kiwi/KWFailure.h" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Pods/Headers/Private/Kiwi/KWFormatter.h" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Pods/Headers/Private/Kiwi/KWFutureObject.h" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Pods/Headers/Private/Kiwi/KWGenericMatchEvaluator.h" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Pods/Headers/Private/Kiwi/KWGenericMatcher.h" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Pods/Headers/Private/Kiwi/KWGenericMatchingAdditions.h" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Pods/Headers/Private/Kiwi/KWHaveMatcher.h" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Pods/Headers/Private/Kiwi/KWHaveValueMatcher.h" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Pods/Headers/Private/Kiwi/KWInequalityMatcher.h" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Pods/Headers/Private/Kiwi/KWIntercept.h" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Pods/Headers/Private/Kiwi/KWInvocationCapturer.h" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Pods/Headers/Private/Kiwi/KWItNode.h" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Pods/Headers/Private/Kiwi/KWLet.h" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Pods/Headers/Private/Kiwi/KWLetNode.h" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Pods/Headers/Private/Kiwi/KWMatchVerifier.h" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Pods/Headers/Private/Kiwi/KWMatcher.h" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Pods/Headers/Private/Kiwi/KWMatcherFactory.h" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Pods/Headers/Private/Kiwi/KWMatchers.h" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Pods/Headers/Private/Kiwi/KWMatching.h" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Pods/Headers/Private/Kiwi/KWMessagePattern.h" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Pods/Headers/Private/Kiwi/KWMessageSpying.h" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Pods/Headers/Private/Kiwi/KWMessageTracker.h" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Pods/Headers/Private/Kiwi/KWMock.h" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Pods/Headers/Private/Kiwi/KWNilMatcher.h" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Pods/Headers/Private/Kiwi/KWNotificationMatcher.h" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Pods/Headers/Private/Kiwi/KWNull.h" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Pods/Headers/Private/Kiwi/KWObjCUtilities.h" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Pods/Headers/Private/Kiwi/KWPendingNode.h" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Pods/Headers/Private/Kiwi/KWProbe.h" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Pods/Headers/Private/Kiwi/KWProbePoller.h" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Pods/Headers/Private/Kiwi/KWReceiveMatcher.h" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Pods/Headers/Private/Kiwi/KWRegisterMatchersNode.h" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Pods/Headers/Private/Kiwi/KWRegularExpressionPatternMatcher.h" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Pods/Headers/Private/Kiwi/KWReporting.h" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Pods/Headers/Private/Kiwi/KWRespondToSelectorMatcher.h" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Pods/Headers/Private/Kiwi/KWSharedExample.h" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Pods/Headers/Private/Kiwi/KWSharedExampleRegistry.h" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Pods/Headers/Private/Kiwi/KWSpec.h" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Pods/Headers/Private/Kiwi/KWStringContainsMatcher.h" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Pods/Headers/Private/Kiwi/KWStringPrefixMatcher.h" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Pods/Headers/Private/Kiwi/KWStringUtilities.h" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Pods/Headers/Private/Kiwi/KWStub.h" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Pods/Headers/Private/Kiwi/KWSuiteConfigurationBase.h" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Pods/Headers/Private/Kiwi/KWSymbolicator.h" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Pods/Headers/Private/Kiwi/KWUserDefinedMatcher.h" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Pods/Headers/Private/Kiwi/KWValue.h" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Pods/Headers/Private/Kiwi/KWVerifying.h" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Pods/Headers/Private/Kiwi/KWWorkarounds.h" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Pods/Headers/Private/Kiwi/Kiwi.h" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Pods/Headers/Private/Kiwi/KiwiBlockMacros.h" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Pods/Headers/Private/Kiwi/KiwiConfiguration.h" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Pods/Headers/Private/Kiwi/KiwiMacros.h" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Pods/Headers/Private/Kiwi/NSInvocation+KiwiAdditions.h" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Pods/Headers/Private/Kiwi/NSInvocation+OCMAdditions.h" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Pods/Headers/Private/Kiwi/NSMethodSignature+KiwiAdditions.h" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Pods/Headers/Private/Kiwi/NSNumber+KiwiAdditions.h" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Pods/Headers/Private/Kiwi/NSObject+KiwiMockAdditions.h" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Pods/Headers/Private/Kiwi/NSObject+KiwiSpyAdditions.h" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Pods/Headers/Private/Kiwi/NSObject+KiwiStubAdditions.h" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Pods/Headers/Private/Kiwi/NSObject+KiwiVerifierAdditions.h" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Pods/Headers/Private/Kiwi/NSProxy+KiwiVerifierAdditions.h" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Pods/Headers/Private/Kiwi/NSValue+KiwiAdditions.h" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Pods/Headers/Private/MBProgressHUD/MBProgressHUD.h" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Pods/Headers/Private/MJExtension/MJDictionaryCache.h" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Pods/Headers/Private/MJExtension/MJExtension.h" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Pods/Headers/Private/MJExtension/MJExtensionConst.h" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Pods/Headers/Private/MJExtension/MJFoundation.h" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Pods/Headers/Private/MJExtension/MJProperty.h" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Pods/Headers/Private/MJExtension/MJPropertyKey.h" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Pods/Headers/Private/MJExtension/MJPropertyType.h" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Pods/Headers/Private/MJExtension/NSObject+MJClass.h" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Pods/Headers/Private/MJExtension/NSObject+MJCoding.h" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Pods/Headers/Private/MJExtension/NSObject+MJKeyValue.h" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Pods/Headers/Private/MJExtension/NSObject+MJProperty.h" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Pods/Headers/Private/MJExtension/NSString+MJExtension.h" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Pods/Headers/Private/MJRefresh/MJRefresh.h" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Pods/Headers/Private/MJRefresh/MJRefreshAutoFooter.h" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Pods/Headers/Private/MJRefresh/MJRefreshAutoGifFooter.h" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Pods/Headers/Private/MJRefresh/MJRefreshAutoNormalFooter.h" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Pods/Headers/Private/MJRefresh/MJRefreshAutoStateFooter.h" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Pods/Headers/Private/MJRefresh/MJRefreshBackFooter.h" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Pods/Headers/Private/MJRefresh/MJRefreshBackGifFooter.h" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Pods/Headers/Private/MJRefresh/MJRefreshBackNormalFooter.h" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Pods/Headers/Private/MJRefresh/MJRefreshBackStateFooter.h" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Pods/Headers/Private/MJRefresh/MJRefreshComponent.h" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Pods/Headers/Private/MJRefresh/MJRefreshConst.h" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Pods/Headers/Private/MJRefresh/MJRefreshFooter.h" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Pods/Headers/Private/MJRefresh/MJRefreshGifHeader.h" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Pods/Headers/Private/MJRefresh/MJRefreshHeader.h" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Pods/Headers/Private/MJRefresh/MJRefreshNormalHeader.h" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Pods/Headers/Private/MJRefresh/MJRefreshStateHeader.h" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Pods/Headers/Private/MJRefresh/UIScrollView+MJExtension.h" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Pods/Headers/Private/MJRefresh/UIScrollView+MJRefresh.h" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Pods/Headers/Private/MJRefresh/UIView+MJExtension.h" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Pods/Headers/Private/MMDrawerController/MMDrawerBarButtonItem.h" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Pods/Headers/Private/MMDrawerController/MMDrawerController+Subclass.h" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Pods/Headers/Private/MMDrawerController/MMDrawerController.h" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Pods/Headers/Private/MMDrawerController/MMDrawerVisualState.h" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Pods/Headers/Private/MMDrawerController/UIViewController+MMDrawerController.h" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Pods/Headers/Private/NJKWebViewProgress/NJKWebViewProgress.h" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Pods/Headers/Private/NJKWebViewProgress/NJKWebViewProgressView.h" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Pods/Headers/Private/PureLayout/ALView+PureLayout.h" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Pods/Headers/Private/PureLayout/NSArray+PureLayout.h" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Pods/Headers/Private/PureLayout/NSLayoutConstraint+PureLayout.h" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Pods/Headers/Private/PureLayout/PureLayout+Internal.h" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Pods/Headers/Private/PureLayout/PureLayout.h" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Pods/Headers/Private/PureLayout/PureLayoutDefines.h" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Pods/Headers/Private/ReactiveCocoa/MKAnnotationView+RACSignalSupport.h" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Pods/Headers/Private/ReactiveCocoa/NSArray+RACSequenceAdditions.h" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Pods/Headers/Private/ReactiveCocoa/NSData+RACSupport.h" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Pods/Headers/Private/ReactiveCocoa/NSDictionary+RACSequenceAdditions.h" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Pods/Headers/Private/ReactiveCocoa/NSEnumerator+RACSequenceAdditions.h" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Pods/Headers/Private/ReactiveCocoa/NSFileHandle+RACSupport.h" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Pods/Headers/Private/ReactiveCocoa/NSIndexSet+RACSequenceAdditions.h" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Pods/Headers/Private/ReactiveCocoa/NSInvocation+RACTypeParsing.h" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Pods/Headers/Private/ReactiveCocoa/NSNotificationCenter+RACSupport.h" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Pods/Headers/Private/ReactiveCocoa/NSObject+RACDeallocating.h" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Pods/Headers/Private/ReactiveCocoa/NSObject+RACDescription.h" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Pods/Headers/Private/ReactiveCocoa/NSObject+RACKVOWrapper.h" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Pods/Headers/Private/ReactiveCocoa/NSObject+RACLifting.h" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Pods/Headers/Private/ReactiveCocoa/NSObject+RACPropertySubscribing.h" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Pods/Headers/Private/ReactiveCocoa/NSObject+RACSelectorSignal.h" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Pods/Headers/Private/ReactiveCocoa/NSOrderedSet+RACSequenceAdditions.h" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Pods/Headers/Private/ReactiveCocoa/NSSet+RACSequenceAdditions.h" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Pods/Headers/Private/ReactiveCocoa/NSString+RACKeyPathUtilities.h" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Pods/Headers/Private/ReactiveCocoa/NSString+RACSequenceAdditions.h" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Pods/Headers/Private/ReactiveCocoa/NSString+RACSupport.h" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Pods/Headers/Private/ReactiveCocoa/NSURLConnection+RACSupport.h" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Pods/Headers/Private/ReactiveCocoa/NSUserDefaults+RACSupport.h" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Pods/Headers/Private/ReactiveCocoa/RACArraySequence.h" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Pods/Headers/Private/ReactiveCocoa/RACBehaviorSubject.h" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Pods/Headers/Private/ReactiveCocoa/RACBlockTrampoline.h" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Pods/Headers/Private/ReactiveCocoa/RACChannel.h" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Pods/Headers/Private/ReactiveCocoa/RACCommand.h" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Pods/Headers/Private/ReactiveCocoa/RACCompoundDisposable.h" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Pods/Headers/Private/ReactiveCocoa/RACDelegateProxy.h" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Pods/Headers/Private/ReactiveCocoa/RACDisposable.h" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Pods/Headers/Private/ReactiveCocoa/RACDynamicSequence.h" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Pods/Headers/Private/ReactiveCocoa/RACDynamicSignal.h" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Pods/Headers/Private/ReactiveCocoa/RACEXTKeyPathCoding.h" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Pods/Headers/Private/ReactiveCocoa/RACEXTRuntimeExtensions.h" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Pods/Headers/Private/ReactiveCocoa/RACEXTScope.h" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Pods/Headers/Private/ReactiveCocoa/RACEagerSequence.h" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Pods/Headers/Private/ReactiveCocoa/RACEmptySequence.h" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Pods/Headers/Private/ReactiveCocoa/RACEmptySignal.h" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Pods/Headers/Private/ReactiveCocoa/RACErrorSignal.h" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Pods/Headers/Private/ReactiveCocoa/RACEvent.h" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Pods/Headers/Private/ReactiveCocoa/RACGroupedSignal.h" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Pods/Headers/Private/ReactiveCocoa/RACImmediateScheduler.h" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Pods/Headers/Private/ReactiveCocoa/RACIndexSetSequence.h" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Pods/Headers/Private/ReactiveCocoa/RACKVOChannel.h" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Pods/Headers/Private/ReactiveCocoa/RACKVOProxy.h" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Pods/Headers/Private/ReactiveCocoa/RACKVOTrampoline.h" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Pods/Headers/Private/ReactiveCocoa/RACMulticastConnection+Private.h" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Pods/Headers/Private/ReactiveCocoa/RACMulticastConnection.h" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Pods/Headers/Private/ReactiveCocoa/RACObjCRuntime.h" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Pods/Headers/Private/ReactiveCocoa/RACPassthroughSubscriber.h" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Pods/Headers/Private/ReactiveCocoa/RACQueueScheduler+Subclass.h" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Pods/Headers/Private/ReactiveCocoa/RACQueueScheduler.h" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Pods/Headers/Private/ReactiveCocoa/RACReplaySubject.h" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Pods/Headers/Private/ReactiveCocoa/RACReturnSignal.h" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Pods/Headers/Private/ReactiveCocoa/RACScheduler+Private.h" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Pods/Headers/Private/ReactiveCocoa/RACScheduler+Subclass.h" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Pods/Headers/Private/ReactiveCocoa/RACScheduler.h" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Pods/Headers/Private/ReactiveCocoa/RACScopedDisposable.h" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Pods/Headers/Private/ReactiveCocoa/RACSequence.h" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Pods/Headers/Private/ReactiveCocoa/RACSerialDisposable.h" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Pods/Headers/Private/ReactiveCocoa/RACSignal+Operations.h" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Pods/Headers/Private/ReactiveCocoa/RACSignal.h" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Pods/Headers/Private/ReactiveCocoa/RACSignalSequence.h" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Pods/Headers/Private/ReactiveCocoa/RACStream+Private.h" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Pods/Headers/Private/ReactiveCocoa/RACStream.h" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Pods/Headers/Private/ReactiveCocoa/RACStringSequence.h" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Pods/Headers/Private/ReactiveCocoa/RACSubject.h" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Pods/Headers/Private/ReactiveCocoa/RACSubscriber+Private.h" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Pods/Headers/Private/ReactiveCocoa/RACSubscriber.h" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Pods/Headers/Private/ReactiveCocoa/RACSubscriptingAssignmentTrampoline.h" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Pods/Headers/Private/ReactiveCocoa/RACSubscriptionScheduler.h" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Pods/Headers/Private/ReactiveCocoa/RACTargetQueueScheduler.h" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Pods/Headers/Private/ReactiveCocoa/RACTestScheduler.h" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Pods/Headers/Private/ReactiveCocoa/RACTuple.h" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Pods/Headers/Private/ReactiveCocoa/RACTupleSequence.h" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Pods/Headers/Private/ReactiveCocoa/RACUnarySequence.h" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Pods/Headers/Private/ReactiveCocoa/RACUnit.h" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Pods/Headers/Private/ReactiveCocoa/RACValueTransformer.h" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Pods/Headers/Private/ReactiveCocoa/RACmetamacros.h" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Pods/Headers/Private/ReactiveCocoa/ReactiveCocoa.h" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Pods/Headers/Private/ReactiveCocoa/UIActionSheet+RACSignalSupport.h" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Pods/Headers/Private/ReactiveCocoa/UIAlertView+RACSignalSupport.h" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Pods/Headers/Private/ReactiveCocoa/UIBarButtonItem+RACCommandSupport.h" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Pods/Headers/Private/ReactiveCocoa/UIButton+RACCommandSupport.h" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Pods/Headers/Private/ReactiveCocoa/UICollectionReusableView+RACSignalSupport.h" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Pods/Headers/Private/ReactiveCocoa/UIControl+RACSignalSupport.h" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Pods/Headers/Private/ReactiveCocoa/UIControl+RACSignalSupportPrivate.h" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Pods/Headers/Private/ReactiveCocoa/UIDatePicker+RACSignalSupport.h" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Pods/Headers/Private/ReactiveCocoa/UIGestureRecognizer+RACSignalSupport.h" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Pods/Headers/Private/ReactiveCocoa/UIImagePickerController+RACSignalSupport.h" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Pods/Headers/Private/ReactiveCocoa/UIRefreshControl+RACCommandSupport.h" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Pods/Headers/Private/ReactiveCocoa/UISegmentedControl+RACSignalSupport.h" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Pods/Headers/Private/ReactiveCocoa/UISlider+RACSignalSupport.h" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Pods/Headers/Private/ReactiveCocoa/UIStepper+RACSignalSupport.h" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Pods/Headers/Private/ReactiveCocoa/UISwitch+RACSignalSupport.h" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Pods/Headers/Private/ReactiveCocoa/UITableViewCell+RACSignalSupport.h" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Pods/Headers/Private/ReactiveCocoa/UITableViewHeaderFooterView+RACSignalSupport.h" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Pods/Headers/Private/ReactiveCocoa/UITextField+RACSignalSupport.h" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Pods/Headers/Private/ReactiveCocoa/UITextView+RACSignalSupport.h" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Pods/Headers/Private/SDWebImage/NSData+ImageContentType.h" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Pods/Headers/Private/SDWebImage/SDImageCache.h" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Pods/Headers/Private/SDWebImage/SDWebImageCompat.h" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Pods/Headers/Private/SDWebImage/SDWebImageDecoder.h" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Pods/Headers/Private/SDWebImage/SDWebImageDownloader.h" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Pods/Headers/Private/SDWebImage/SDWebImageDownloaderOperation.h" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Pods/Headers/Private/SDWebImage/SDWebImageManager.h" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Pods/Headers/Private/SDWebImage/SDWebImageOperation.h" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Pods/Headers/Private/SDWebImage/SDWebImagePrefetcher.h" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Pods/Headers/Private/SDWebImage/UIButton+WebCache.h" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Pods/Headers/Private/SDWebImage/UIImage+GIF.h" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Pods/Headers/Private/SDWebImage/UIImage+MultiFormat.h" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Pods/Headers/Private/SDWebImage/UIImageView+HighlightedWebCache.h" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Pods/Headers/Private/SDWebImage/UIImageView+WebCache.h" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Pods/Headers/Private/SDWebImage/UIView+WebCacheOperation.h" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Pods/Headers/Private/TMCache/TMCache.h" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Pods/Headers/Private/TMCache/TMCacheBackgroundTaskManager.h" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Pods/Headers/Private/TMCache/TMDiskCache.h" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Pods/Headers/Private/TMCache/TMMemoryCache.h" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Pods/Headers/Private/TPKeyboardAvoiding/TPKeyboardAvoidingCollectionView.h" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Pods/Headers/Private/TPKeyboardAvoiding/TPKeyboardAvoidingScrollView.h" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Pods/Headers/Private/TPKeyboardAvoiding/TPKeyboardAvoidingTableView.h" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Pods/Headers/Private/TPKeyboardAvoiding/UIScrollView+TPKeyboardAvoidingAdditions.h" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Pods/Headers/Private/UITableView+FDTemplateLayoutCell/UITableView+FDIndexPathHeightCache.h" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Pods/Headers/Private/UITableView+FDTemplateLayoutCell/UITableView+FDKeyedHeightCache.h" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Pods/Headers/Private/UITableView+FDTemplateLayoutCell/UITableView+FDTemplateLayoutCell.h" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Pods/Headers/Private/UITableView+FDTemplateLayoutCell/UITableView+FDTemplateLayoutCellDebug.h" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Pods/Headers/Public/AFNetworking/AFHTTPRequestOperation.h" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Pods/Headers/Public/AFNetworking/AFHTTPRequestOperationManager.h" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Pods/Headers/Public/AFNetworking/AFHTTPSessionManager.h" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Pods/Headers/Public/AFNetworking/AFNetworkActivityIndicatorManager.h" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Pods/Headers/Public/AFNetworking/AFNetworkReachabilityManager.h" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Pods/Headers/Public/AFNetworking/AFNetworking.h" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Pods/Headers/Public/AFNetworking/AFSecurityPolicy.h" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Pods/Headers/Public/AFNetworking/AFURLConnectionOperation.h" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Pods/Headers/Public/AFNetworking/AFURLRequestSerialization.h" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Pods/Headers/Public/AFNetworking/AFURLResponseSerialization.h" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Pods/Headers/Public/AFNetworking/AFURLSessionManager.h" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Pods/Headers/Public/AFNetworking/UIActivityIndicatorView+AFNetworking.h" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Pods/Headers/Public/AFNetworking/UIAlertView+AFNetworking.h" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Pods/Headers/Public/AFNetworking/UIButton+AFNetworking.h" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Pods/Headers/Public/AFNetworking/UIImage+AFNetworking.h" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Pods/Headers/Public/AFNetworking/UIImageView+AFNetworking.h" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Pods/Headers/Public/AFNetworking/UIKit+AFNetworking.h" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Pods/Headers/Public/AFNetworking/UIProgressView+AFNetworking.h" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Pods/Headers/Public/AFNetworking/UIRefreshControl+AFNetworking.h" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Pods/Headers/Public/AFNetworking/UIWebView+AFNetworking.h" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Pods/Headers/Public/CocoaLumberjack/CocoaLumberjack.h" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Pods/Headers/Public/CocoaLumberjack/DDASLLogCapture.h" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Pods/Headers/Public/CocoaLumberjack/DDASLLogger.h" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Pods/Headers/Public/CocoaLumberjack/DDAbstractDatabaseLogger.h" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Pods/Headers/Public/CocoaLumberjack/DDAssertMacros.h" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Pods/Headers/Public/CocoaLumberjack/DDContextFilterLogFormatter.h" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Pods/Headers/Public/CocoaLumberjack/DDDispatchQueueLogFormatter.h" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Pods/Headers/Public/CocoaLumberjack/DDFileLogger.h" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Pods/Headers/Public/CocoaLumberjack/DDLegacyMacros.h" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Pods/Headers/Public/CocoaLumberjack/DDLog+LOGV.h" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Pods/Headers/Public/CocoaLumberjack/DDLog.h" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Pods/Headers/Public/CocoaLumberjack/DDLogMacros.h" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Pods/Headers/Public/CocoaLumberjack/DDMultiFormatter.h" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Pods/Headers/Public/CocoaLumberjack/DDTTYLogger.h" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Pods/Headers/Public/FMDB/FMDB.h" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Pods/Headers/Public/FMDB/FMDatabase.h" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Pods/Headers/Public/FMDB/FMDatabaseAdditions.h" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Pods/Headers/Public/FMDB/FMDatabasePool.h" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Pods/Headers/Public/FMDB/FMDatabaseQueue.h" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Pods/Headers/Public/FMDB/FMResultSet.h" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Pods/Headers/Public/FastImageCache/FICEntity.h" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Pods/Headers/Public/FastImageCache/FICImageCache+FICErrorLogging.h" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Pods/Headers/Public/FastImageCache/FICImageCache.h" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Pods/Headers/Public/FastImageCache/FICImageFormat.h" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Pods/Headers/Public/FastImageCache/FICImageTable.h" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Pods/Headers/Public/FastImageCache/FICImageTableChunk.h" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Pods/Headers/Public/FastImageCache/FICImageTableEntry.h" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Pods/Headers/Public/FastImageCache/FICImports.h" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Pods/Headers/Public/FastImageCache/FICUtilities.h" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Pods/Headers/Public/Kiwi/KWAfterAllNode.h" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Pods/Headers/Public/Kiwi/KWAfterEachNode.h" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Pods/Headers/Public/Kiwi/KWAny.h" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Pods/Headers/Public/Kiwi/KWAsyncVerifier.h" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Pods/Headers/Public/Kiwi/KWBackgroundTask.h" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Pods/Headers/Public/Kiwi/KWBeBetweenMatcher.h" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Pods/Headers/Public/Kiwi/KWBeEmptyMatcher.h" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Pods/Headers/Public/Kiwi/KWBeIdenticalToMatcher.h" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Pods/Headers/Public/Kiwi/KWBeKindOfClassMatcher.h" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Pods/Headers/Public/Kiwi/KWBeMemberOfClassMatcher.h" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Pods/Headers/Public/Kiwi/KWBeSubclassOfClassMatcher.h" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Pods/Headers/Public/Kiwi/KWBeTrueMatcher.h" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Pods/Headers/Public/Kiwi/KWBeWithinMatcher.h" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Pods/Headers/Public/Kiwi/KWBeZeroMatcher.h" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Pods/Headers/Public/Kiwi/KWBeforeAllNode.h" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Pods/Headers/Public/Kiwi/KWBeforeEachNode.h" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Pods/Headers/Public/Kiwi/KWBlock.h" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Pods/Headers/Public/Kiwi/KWBlockNode.h" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Pods/Headers/Public/Kiwi/KWBlockRaiseMatcher.h" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Pods/Headers/Public/Kiwi/KWCallSite.h" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Pods/Headers/Public/Kiwi/KWCaptureSpy.h" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Pods/Headers/Public/Kiwi/KWChangeMatcher.h" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Pods/Headers/Public/Kiwi/KWConformToProtocolMatcher.h" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Pods/Headers/Public/Kiwi/KWContainMatcher.h" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Pods/Headers/Public/Kiwi/KWContainStringMatcher.h" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Pods/Headers/Public/Kiwi/KWContextNode.h" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Pods/Headers/Public/Kiwi/KWCountType.h" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Pods/Headers/Public/Kiwi/KWDeviceInfo.h" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Pods/Headers/Public/Kiwi/KWEqualMatcher.h" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Pods/Headers/Public/Kiwi/KWExample.h" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Pods/Headers/Public/Kiwi/KWExampleDelegate.h" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Pods/Headers/Public/Kiwi/KWExampleNode.h" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Pods/Headers/Public/Kiwi/KWExampleNodeVisitor.h" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Pods/Headers/Public/Kiwi/KWExampleSuite.h" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Pods/Headers/Public/Kiwi/KWExampleSuiteBuilder.h" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Pods/Headers/Public/Kiwi/KWExistVerifier.h" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Pods/Headers/Public/Kiwi/KWExpectationType.h" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Pods/Headers/Public/Kiwi/KWFailure.h" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Pods/Headers/Public/Kiwi/KWFormatter.h" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Pods/Headers/Public/Kiwi/KWFutureObject.h" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Pods/Headers/Public/Kiwi/KWGenericMatchEvaluator.h" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Pods/Headers/Public/Kiwi/KWGenericMatcher.h" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Pods/Headers/Public/Kiwi/KWGenericMatchingAdditions.h" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Pods/Headers/Public/Kiwi/KWHaveMatcher.h" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Pods/Headers/Public/Kiwi/KWHaveValueMatcher.h" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Pods/Headers/Public/Kiwi/KWInequalityMatcher.h" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Pods/Headers/Public/Kiwi/KWIntercept.h" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Pods/Headers/Public/Kiwi/KWInvocationCapturer.h" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Pods/Headers/Public/Kiwi/KWItNode.h" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Pods/Headers/Public/Kiwi/KWLet.h" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Pods/Headers/Public/Kiwi/KWLetNode.h" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Pods/Headers/Public/Kiwi/KWMatchVerifier.h" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Pods/Headers/Public/Kiwi/KWMatcher.h" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Pods/Headers/Public/Kiwi/KWMatcherFactory.h" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Pods/Headers/Public/Kiwi/KWMatchers.h" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Pods/Headers/Public/Kiwi/KWMatching.h" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Pods/Headers/Public/Kiwi/KWMessagePattern.h" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Pods/Headers/Public/Kiwi/KWMessageSpying.h" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Pods/Headers/Public/Kiwi/KWMessageTracker.h" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Pods/Headers/Public/Kiwi/KWMock.h" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Pods/Headers/Public/Kiwi/KWNilMatcher.h" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Pods/Headers/Public/Kiwi/KWNotificationMatcher.h" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Pods/Headers/Public/Kiwi/KWNull.h" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Pods/Headers/Public/Kiwi/KWObjCUtilities.h" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Pods/Headers/Public/Kiwi/KWPendingNode.h" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Pods/Headers/Public/Kiwi/KWProbe.h" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Pods/Headers/Public/Kiwi/KWProbePoller.h" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Pods/Headers/Public/Kiwi/KWReceiveMatcher.h" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Pods/Headers/Public/Kiwi/KWRegisterMatchersNode.h" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Pods/Headers/Public/Kiwi/KWRegularExpressionPatternMatcher.h" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Pods/Headers/Public/Kiwi/KWReporting.h" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Pods/Headers/Public/Kiwi/KWRespondToSelectorMatcher.h" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Pods/Headers/Public/Kiwi/KWSharedExample.h" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Pods/Headers/Public/Kiwi/KWSharedExampleRegistry.h" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Pods/Headers/Public/Kiwi/KWSpec.h" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Pods/Headers/Public/Kiwi/KWStringContainsMatcher.h" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Pods/Headers/Public/Kiwi/KWStringPrefixMatcher.h" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Pods/Headers/Public/Kiwi/KWStringUtilities.h" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Pods/Headers/Public/Kiwi/KWStub.h" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Pods/Headers/Public/Kiwi/KWSuiteConfigurationBase.h" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Pods/Headers/Public/Kiwi/KWSymbolicator.h" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Pods/Headers/Public/Kiwi/KWUserDefinedMatcher.h" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Pods/Headers/Public/Kiwi/KWValue.h" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Pods/Headers/Public/Kiwi/KWVerifying.h" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Pods/Headers/Public/Kiwi/KWWorkarounds.h" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Pods/Headers/Public/Kiwi/Kiwi.h" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Pods/Headers/Public/Kiwi/KiwiBlockMacros.h" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Pods/Headers/Public/Kiwi/KiwiConfiguration.h" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Pods/Headers/Public/Kiwi/KiwiMacros.h" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Pods/Headers/Public/Kiwi/NSInvocation+KiwiAdditions.h" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Pods/Headers/Public/Kiwi/NSInvocation+OCMAdditions.h" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Pods/Headers/Public/Kiwi/NSMethodSignature+KiwiAdditions.h" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Pods/Headers/Public/Kiwi/NSNumber+KiwiAdditions.h" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Pods/Headers/Public/Kiwi/NSObject+KiwiMockAdditions.h" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Pods/Headers/Public/Kiwi/NSObject+KiwiSpyAdditions.h" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Pods/Headers/Public/Kiwi/NSObject+KiwiStubAdditions.h" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Pods/Headers/Public/Kiwi/NSObject+KiwiVerifierAdditions.h" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Pods/Headers/Public/Kiwi/NSProxy+KiwiVerifierAdditions.h" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Pods/Headers/Public/Kiwi/NSValue+KiwiAdditions.h" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Pods/Headers/Public/MBProgressHUD/MBProgressHUD.h" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Pods/Headers/Public/MJExtension/MJDictionaryCache.h" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Pods/Headers/Public/MJExtension/MJExtension.h" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Pods/Headers/Public/MJExtension/MJExtensionConst.h" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Pods/Headers/Public/MJExtension/MJFoundation.h" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Pods/Headers/Public/MJExtension/MJProperty.h" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Pods/Headers/Public/MJExtension/MJPropertyKey.h" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Pods/Headers/Public/MJExtension/MJPropertyType.h" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Pods/Headers/Public/MJExtension/NSObject+MJClass.h" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Pods/Headers/Public/MJExtension/NSObject+MJCoding.h" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Pods/Headers/Public/MJExtension/NSObject+MJKeyValue.h" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Pods/Headers/Public/MJExtension/NSObject+MJProperty.h" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Pods/Headers/Public/MJExtension/NSString+MJExtension.h" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Pods/Headers/Public/MJRefresh/MJRefresh.h" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Pods/Headers/Public/MJRefresh/MJRefreshAutoFooter.h" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Pods/Headers/Public/MJRefresh/MJRefreshAutoGifFooter.h" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Pods/Headers/Public/MJRefresh/MJRefreshAutoNormalFooter.h" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Pods/Headers/Public/MJRefresh/MJRefreshAutoStateFooter.h" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Pods/Headers/Public/MJRefresh/MJRefreshBackFooter.h" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Pods/Headers/Public/MJRefresh/MJRefreshBackGifFooter.h" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Pods/Headers/Public/MJRefresh/MJRefreshBackNormalFooter.h" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Pods/Headers/Public/MJRefresh/MJRefreshBackStateFooter.h" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Pods/Headers/Public/MJRefresh/MJRefreshComponent.h" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Pods/Headers/Public/MJRefresh/MJRefreshConst.h" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Pods/Headers/Public/MJRefresh/MJRefreshFooter.h" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Pods/Headers/Public/MJRefresh/MJRefreshGifHeader.h" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Pods/Headers/Public/MJRefresh/MJRefreshHeader.h" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Pods/Headers/Public/MJRefresh/MJRefreshNormalHeader.h" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Pods/Headers/Public/MJRefresh/MJRefreshStateHeader.h" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Pods/Headers/Public/MJRefresh/UIScrollView+MJExtension.h" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Pods/Headers/Public/MJRefresh/UIScrollView+MJRefresh.h" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Pods/Headers/Public/MJRefresh/UIView+MJExtension.h" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Pods/Headers/Public/MMDrawerController/MMDrawerBarButtonItem.h" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Pods/Headers/Public/MMDrawerController/MMDrawerController+Subclass.h" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Pods/Headers/Public/MMDrawerController/MMDrawerController.h" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Pods/Headers/Public/MMDrawerController/MMDrawerVisualState.h" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Pods/Headers/Public/MMDrawerController/UIViewController+MMDrawerController.h" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Pods/Headers/Public/NJKWebViewProgress/NJKWebViewProgress.h" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Pods/Headers/Public/NJKWebViewProgress/NJKWebViewProgressView.h" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Pods/Headers/Public/PureLayout/ALView+PureLayout.h" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Pods/Headers/Public/PureLayout/NSArray+PureLayout.h" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Pods/Headers/Public/PureLayout/NSLayoutConstraint+PureLayout.h" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Pods/Headers/Public/PureLayout/PureLayout+Internal.h" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Pods/Headers/Public/PureLayout/PureLayout.h" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Pods/Headers/Public/PureLayout/PureLayoutDefines.h" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Pods/Headers/Public/ReactiveCocoa/MKAnnotationView+RACSignalSupport.h" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Pods/Headers/Public/ReactiveCocoa/NSArray+RACSequenceAdditions.h" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Pods/Headers/Public/ReactiveCocoa/NSData+RACSupport.h" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Pods/Headers/Public/ReactiveCocoa/NSDictionary+RACSequenceAdditions.h" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Pods/Headers/Public/ReactiveCocoa/NSEnumerator+RACSequenceAdditions.h" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Pods/Headers/Public/ReactiveCocoa/NSFileHandle+RACSupport.h" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Pods/Headers/Public/ReactiveCocoa/NSIndexSet+RACSequenceAdditions.h" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Pods/Headers/Public/ReactiveCocoa/NSInvocation+RACTypeParsing.h" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Pods/Headers/Public/ReactiveCocoa/NSNotificationCenter+RACSupport.h" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Pods/Headers/Public/ReactiveCocoa/NSObject+RACDeallocating.h" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Pods/Headers/Public/ReactiveCocoa/NSObject+RACDescription.h" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Pods/Headers/Public/ReactiveCocoa/NSObject+RACKVOWrapper.h" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Pods/Headers/Public/ReactiveCocoa/NSObject+RACLifting.h" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Pods/Headers/Public/ReactiveCocoa/NSObject+RACPropertySubscribing.h" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Pods/Headers/Public/ReactiveCocoa/NSObject+RACSelectorSignal.h" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Pods/Headers/Public/ReactiveCocoa/NSOrderedSet+RACSequenceAdditions.h" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Pods/Headers/Public/ReactiveCocoa/NSSet+RACSequenceAdditions.h" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Pods/Headers/Public/ReactiveCocoa/NSString+RACKeyPathUtilities.h" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Pods/Headers/Public/ReactiveCocoa/NSString+RACSequenceAdditions.h" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Pods/Headers/Public/ReactiveCocoa/NSString+RACSupport.h" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Pods/Headers/Public/ReactiveCocoa/NSURLConnection+RACSupport.h" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Pods/Headers/Public/ReactiveCocoa/NSUserDefaults+RACSupport.h" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Pods/Headers/Public/ReactiveCocoa/RACArraySequence.h" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Pods/Headers/Public/ReactiveCocoa/RACBehaviorSubject.h" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Pods/Headers/Public/ReactiveCocoa/RACBlockTrampoline.h" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Pods/Headers/Public/ReactiveCocoa/RACChannel.h" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Pods/Headers/Public/ReactiveCocoa/RACCommand.h" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Pods/Headers/Public/ReactiveCocoa/RACCompoundDisposable.h" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Pods/Headers/Public/ReactiveCocoa/RACDelegateProxy.h" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Pods/Headers/Public/ReactiveCocoa/RACDisposable.h" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Pods/Headers/Public/ReactiveCocoa/RACDynamicSequence.h" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Pods/Headers/Public/ReactiveCocoa/RACDynamicSignal.h" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Pods/Headers/Public/ReactiveCocoa/RACEXTKeyPathCoding.h" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Pods/Headers/Public/ReactiveCocoa/RACEXTRuntimeExtensions.h" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Pods/Headers/Public/ReactiveCocoa/RACEXTScope.h" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Pods/Headers/Public/ReactiveCocoa/RACEagerSequence.h" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Pods/Headers/Public/ReactiveCocoa/RACEmptySequence.h" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Pods/Headers/Public/ReactiveCocoa/RACEmptySignal.h" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Pods/Headers/Public/ReactiveCocoa/RACErrorSignal.h" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Pods/Headers/Public/ReactiveCocoa/RACEvent.h" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Pods/Headers/Public/ReactiveCocoa/RACGroupedSignal.h" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Pods/Headers/Public/ReactiveCocoa/RACImmediateScheduler.h" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Pods/Headers/Public/ReactiveCocoa/RACIndexSetSequence.h" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Pods/Headers/Public/ReactiveCocoa/RACKVOChannel.h" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Pods/Headers/Public/ReactiveCocoa/RACKVOProxy.h" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Pods/Headers/Public/ReactiveCocoa/RACKVOTrampoline.h" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Pods/Headers/Public/ReactiveCocoa/RACMulticastConnection.h" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Pods/Headers/Public/ReactiveCocoa/RACObjCRuntime.h" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Pods/Headers/Public/ReactiveCocoa/RACPassthroughSubscriber.h" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Pods/Headers/Public/ReactiveCocoa/RACQueueScheduler+Subclass.h" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Pods/Headers/Public/ReactiveCocoa/RACQueueScheduler.h" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Pods/Headers/Public/ReactiveCocoa/RACReplaySubject.h" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Pods/Headers/Public/ReactiveCocoa/RACReturnSignal.h" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Pods/Headers/Public/ReactiveCocoa/RACScheduler+Subclass.h" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Pods/Headers/Public/ReactiveCocoa/RACScheduler.h" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Pods/Headers/Public/ReactiveCocoa/RACScopedDisposable.h" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Pods/Headers/Public/ReactiveCocoa/RACSequence.h" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Pods/Headers/Public/ReactiveCocoa/RACSerialDisposable.h" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Pods/Headers/Public/ReactiveCocoa/RACSignal+Operations.h" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Pods/Headers/Public/ReactiveCocoa/RACSignal.h" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Pods/Headers/Public/ReactiveCocoa/RACSignalSequence.h" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Pods/Headers/Public/ReactiveCocoa/RACStream.h" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Pods/Headers/Public/ReactiveCocoa/RACStringSequence.h" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Pods/Headers/Public/ReactiveCocoa/RACSubject.h" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Pods/Headers/Public/ReactiveCocoa/RACSubscriber.h" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Pods/Headers/Public/ReactiveCocoa/RACSubscriptingAssignmentTrampoline.h" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Pods/Headers/Public/ReactiveCocoa/RACSubscriptionScheduler.h" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Pods/Headers/Public/ReactiveCocoa/RACTargetQueueScheduler.h" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Pods/Headers/Public/ReactiveCocoa/RACTestScheduler.h" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Pods/Headers/Public/ReactiveCocoa/RACTuple.h" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Pods/Headers/Public/ReactiveCocoa/RACTupleSequence.h" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Pods/Headers/Public/ReactiveCocoa/RACUnarySequence.h" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Pods/Headers/Public/ReactiveCocoa/RACUnit.h" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Pods/Headers/Public/ReactiveCocoa/RACValueTransformer.h" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Pods/Headers/Public/ReactiveCocoa/RACmetamacros.h" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Pods/Headers/Public/ReactiveCocoa/ReactiveCocoa.h" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Pods/Headers/Public/ReactiveCocoa/UIActionSheet+RACSignalSupport.h" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Pods/Headers/Public/ReactiveCocoa/UIAlertView+RACSignalSupport.h" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Pods/Headers/Public/ReactiveCocoa/UIBarButtonItem+RACCommandSupport.h" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Pods/Headers/Public/ReactiveCocoa/UIButton+RACCommandSupport.h" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Pods/Headers/Public/ReactiveCocoa/UICollectionReusableView+RACSignalSupport.h" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Pods/Headers/Public/ReactiveCocoa/UIControl+RACSignalSupport.h" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Pods/Headers/Public/ReactiveCocoa/UIControl+RACSignalSupportPrivate.h" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Pods/Headers/Public/ReactiveCocoa/UIDatePicker+RACSignalSupport.h" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Pods/Headers/Public/ReactiveCocoa/UIGestureRecognizer+RACSignalSupport.h" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Pods/Headers/Public/ReactiveCocoa/UIImagePickerController+RACSignalSupport.h" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Pods/Headers/Public/ReactiveCocoa/UIRefreshControl+RACCommandSupport.h" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Pods/Headers/Public/ReactiveCocoa/UISegmentedControl+RACSignalSupport.h" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Pods/Headers/Public/ReactiveCocoa/UISlider+RACSignalSupport.h" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Pods/Headers/Public/ReactiveCocoa/UIStepper+RACSignalSupport.h" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Pods/Headers/Public/ReactiveCocoa/UISwitch+RACSignalSupport.h" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Pods/Headers/Public/ReactiveCocoa/UITableViewCell+RACSignalSupport.h" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Pods/Headers/Public/ReactiveCocoa/UITableViewHeaderFooterView+RACSignalSupport.h" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Pods/Headers/Public/ReactiveCocoa/UITextField+RACSignalSupport.h" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Pods/Headers/Public/ReactiveCocoa/UITextView+RACSignalSupport.h" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Pods/Headers/Public/SDWebImage/NSData+ImageContentType.h" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Pods/Headers/Public/SDWebImage/SDImageCache.h" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Pods/Headers/Public/SDWebImage/SDWebImageCompat.h" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Pods/Headers/Public/SDWebImage/SDWebImageDecoder.h" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Pods/Headers/Public/SDWebImage/SDWebImageDownloader.h" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Pods/Headers/Public/SDWebImage/SDWebImageDownloaderOperation.h" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Pods/Headers/Public/SDWebImage/SDWebImageManager.h" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Pods/Headers/Public/SDWebImage/SDWebImageOperation.h" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Pods/Headers/Public/SDWebImage/SDWebImagePrefetcher.h" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Pods/Headers/Public/SDWebImage/UIButton+WebCache.h" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Pods/Headers/Public/SDWebImage/UIImage+GIF.h" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Pods/Headers/Public/SDWebImage/UIImage+MultiFormat.h" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Pods/Headers/Public/SDWebImage/UIImageView+HighlightedWebCache.h" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Pods/Headers/Public/SDWebImage/UIImageView+WebCache.h" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Pods/Headers/Public/SDWebImage/UIView+WebCacheOperation.h" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Pods/Headers/Public/TMCache/TMCache.h" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Pods/Headers/Public/TMCache/TMCacheBackgroundTaskManager.h" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Pods/Headers/Public/TMCache/TMDiskCache.h" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Pods/Headers/Public/TMCache/TMMemoryCache.h" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Pods/Headers/Public/TPKeyboardAvoiding/TPKeyboardAvoidingCollectionView.h" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Pods/Headers/Public/TPKeyboardAvoiding/TPKeyboardAvoidingScrollView.h" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Pods/Headers/Public/TPKeyboardAvoiding/TPKeyboardAvoidingTableView.h" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Pods/Headers/Public/TPKeyboardAvoiding/UIScrollView+TPKeyboardAvoidingAdditions.h" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Pods/Headers/Public/UITableView+FDTemplateLayoutCell/UITableView+FDIndexPathHeightCache.h" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Pods/Headers/Public/UITableView+FDTemplateLayoutCell/UITableView+FDKeyedHeightCache.h" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Pods/Headers/Public/UITableView+FDTemplateLayoutCell/UITableView+FDTemplateLayoutCell.h" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Pods/Headers/Public/UITableView+FDTemplateLayoutCell/UITableView+FDTemplateLayoutCellDebug.h" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Pods/Target Support Files/AFNetworking/AFNetworking-Private.xcconfig" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Pods/Target Support Files/AFNetworking/AFNetworking-dummy.m" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Pods/Target Support Files/AFNetworking/AFNetworking-prefix.pch" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Pods/Target Support Files/AFNetworking/AFNetworking.xcconfig" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Pods/Target Support Files/CocoaLumberjack/CocoaLumberjack-Private.xcconfig" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Pods/Target Support Files/CocoaLumberjack/CocoaLumberjack-dummy.m" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Pods/Target Support Files/CocoaLumberjack/CocoaLumberjack-prefix.pch" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Pods/Target Support Files/CocoaLumberjack/CocoaLumberjack.xcconfig" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Pods/Target Support Files/FMDB/FMDB-Private.xcconfig" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Pods/Target Support Files/FMDB/FMDB-dummy.m" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Pods/Target Support Files/FMDB/FMDB-prefix.pch" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Pods/Target Support Files/FMDB/FMDB.xcconfig" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Pods/Target Support Files/FastImageCache/FastImageCache-Private.xcconfig" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Pods/Target Support Files/FastImageCache/FastImageCache-dummy.m" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Pods/Target Support Files/FastImageCache/FastImageCache-prefix.pch" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Pods/Target Support Files/FastImageCache/FastImageCache.xcconfig" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Pods/Target Support Files/Kiwi/Kiwi-Private.xcconfig" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Pods/Target Support Files/Kiwi/Kiwi-dummy.m" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Pods/Target Support Files/Kiwi/Kiwi-prefix.pch" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Pods/Target Support Files/Kiwi/Kiwi.xcconfig" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Pods/Target Support Files/MBProgressHUD/MBProgressHUD-Private.xcconfig" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Pods/Target Support Files/MBProgressHUD/MBProgressHUD-dummy.m" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Pods/Target Support Files/MBProgressHUD/MBProgressHUD-prefix.pch" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Pods/Target Support Files/MBProgressHUD/MBProgressHUD.xcconfig" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Pods/Target Support Files/MJExtension/MJExtension-Private.xcconfig" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Pods/Target Support Files/MJExtension/MJExtension-dummy.m" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Pods/Target Support Files/MJExtension/MJExtension-prefix.pch" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Pods/Target Support Files/MJExtension/MJExtension.xcconfig" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Pods/Target Support Files/MJRefresh/MJRefresh-Private.xcconfig" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Pods/Target Support Files/MJRefresh/MJRefresh-dummy.m" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Pods/Target Support Files/MJRefresh/MJRefresh-prefix.pch" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Pods/Target Support Files/MJRefresh/MJRefresh.xcconfig" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Pods/Target Support Files/MMDrawerController/MMDrawerController-Private.xcconfig" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Pods/Target Support Files/MMDrawerController/MMDrawerController-dummy.m" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Pods/Target Support Files/MMDrawerController/MMDrawerController-prefix.pch" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Pods/Target Support Files/MMDrawerController/MMDrawerController.xcconfig" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Pods/Target Support Files/NJKWebViewProgress/NJKWebViewProgress-Private.xcconfig" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Pods/Target Support Files/NJKWebViewProgress/NJKWebViewProgress-dummy.m" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Pods/Target Support Files/NJKWebViewProgress/NJKWebViewProgress-prefix.pch" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Pods/Target Support Files/NJKWebViewProgress/NJKWebViewProgress.xcconfig" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Pods/Target Support Files/Pods-JianDanTests/Pods-JianDanTests-acknowledgements.markdown" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Pods/Target Support Files/Pods-JianDanTests/Pods-JianDanTests-acknowledgements.plist" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Pods/Target Support Files/Pods-JianDanTests/Pods-JianDanTests-dummy.m" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Pods/Target Support Files/Pods-JianDanTests/Pods-JianDanTests-resources.sh" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Pods/Target Support Files/Pods-JianDanTests/Pods-JianDanTests.debug.xcconfig" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Pods/Target Support Files/Pods-JianDanTests/Pods-JianDanTests.release.xcconfig" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Pods/Target Support Files/Pods/Pods-acknowledgements.markdown" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Pods/Target Support Files/Pods/Pods-acknowledgements.plist" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Pods/Target Support Files/Pods/Pods-dummy.m" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Pods/Target Support Files/Pods/Pods-resources.sh" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Pods/Target Support Files/Pods/Pods.debug.xcconfig" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Pods/Target Support Files/Pods/Pods.release.xcconfig" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Pods/Target Support Files/PureLayout/PureLayout-Private.xcconfig" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Pods/Target Support Files/PureLayout/PureLayout-dummy.m" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Pods/Target Support Files/PureLayout/PureLayout-prefix.pch" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Pods/Target Support Files/PureLayout/PureLayout.xcconfig" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Pods/Target Support Files/ReactiveCocoa/ReactiveCocoa-Private.xcconfig" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Pods/Target Support Files/ReactiveCocoa/ReactiveCocoa-dummy.m" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Pods/Target Support Files/ReactiveCocoa/ReactiveCocoa-prefix.pch" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Pods/Target Support Files/ReactiveCocoa/ReactiveCocoa.xcconfig" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Pods/Target Support Files/SDWebImage/SDWebImage-Private.xcconfig" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Pods/Target Support Files/SDWebImage/SDWebImage-dummy.m" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Pods/Target Support Files/SDWebImage/SDWebImage-prefix.pch" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Pods/Target Support Files/SDWebImage/SDWebImage.xcconfig" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Pods/Target Support Files/TMCache/TMCache-Private.xcconfig" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Pods/Target Support Files/TMCache/TMCache-dummy.m" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Pods/Target Support Files/TMCache/TMCache-prefix.pch" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Pods/Target Support Files/TMCache/TMCache.xcconfig" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Pods/Target Support Files/TPKeyboardAvoiding/TPKeyboardAvoiding-Private.xcconfig" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Pods/Target Support Files/TPKeyboardAvoiding/TPKeyboardAvoiding-dummy.m" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Pods/Target Support Files/TPKeyboardAvoiding/TPKeyboardAvoiding-prefix.pch" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Pods/Target Support Files/TPKeyboardAvoiding/TPKeyboardAvoiding.xcconfig" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Pods/Target Support Files/UITableView+FDTemplateLayoutCell/UITableView+FDTemplateLayoutCell-Private.xcconfig" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Pods/Target Support Files/UITableView+FDTemplateLayoutCell/UITableView+FDTemplateLayoutCell-dummy.m" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Pods/Target Support Files/UITableView+FDTemplateLayoutCell/UITableView+FDTemplateLayoutCell-prefix.pch" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Pods/Target Support Files/UITableView+FDTemplateLayoutCell/UITableView+FDTemplateLayoutCell.xcconfig" afterPath="" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/JianDan/Helper/UITableViewBindingHelper/CETableViewBindingHelper.m" afterPath="$PROJECT_DIR$/JianDan/Helper/UITableViewBindingHelper/CETableViewBindingHelper.m" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/JianDan/Universal/Comment/ViewModel/CommentViewModel.m" afterPath="$PROJECT_DIR$/JianDan/Universal/Comment/ViewModel/CommentViewModel.m" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/JianDan/Universal/Comment/Model/Comments.m" afterPath="$PROJECT_DIR$/JianDan/Universal/Comment/Model/Comments.m" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/JianDan/Helper/LittleTools/CacheTools.h" afterPath="$PROJECT_DIR$/JianDan/Helper/LittleTools/CacheTools.h" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/JianDan/Helper/LittleTools/CacheTools.m" afterPath="$PROJECT_DIR$/JianDan/Helper/LittleTools/CacheTools.m" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/JianDanIOS.iml" afterPath="$PROJECT_DIR$/.idea/JianDanIOS.iml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/JianDan/Universal/MainViewModel.m" afterPath="$PROJECT_DIR$/JianDan/Universal/MainViewModel.m" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/JianDan/Section/Pictures/View/PictureCell.m" afterPath="$PROJECT_DIR$/JianDan/Section/Pictures/View/PictureCell.m" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/JianDan/Section/Pictures/View/PicturesDetailController.m" afterPath="$PROJECT_DIR$/JianDan/Section/Pictures/View/PicturesDetailController.m" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/JianDan/Helper/CustomView/UIImageView+UIProgressForSDWebImage.h" afterPath="$PROJECT_DIR$/JianDan/Helper/CustomView/UIImageView+UIProgressForSDWebImage.h" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/JianDan/Helper/CustomView/UIImageView+UIProgressForSDWebImage.m" afterPath="$PROJECT_DIR$/JianDan/Helper/CustomView/UIImageView+UIProgressForSDWebImage.m" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/JianDan.xcodeproj/project.pbxproj" afterPath="$PROJECT_DIR$/JianDan.xcodeproj/project.pbxproj" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Pods/Pods.xcodeproj/project.pbxproj" afterPath="$PROJECT_DIR$/Pods/Pods.xcodeproj/project.pbxproj" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/JianDan/Section/LeftMenu/LeftMenu.m" afterPath="$PROJECT_DIR$/JianDan/Section/LeftMenu/LeftMenu.m" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/JianDan/Section/Pictures/View/PicturesController.m" afterPath="$PROJECT_DIR$/JianDan/Section/Pictures/View/PicturesController.m" />
     </list>
     <ignored path="JianDanIOS.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -800,11 +79,21 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Podfile" pinned="false" current-in-tab="true">
+      <file leaf-file-name="Podfile" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Podfile">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.73264784">
-              <caret line="19" column="3" selection-start-line="19" selection-start-column="3" selection-end-line="19" selection-end-column="3" />
+            <state vertical-scroll-proportion="0.0">
+              <caret line="18" column="3" selection-start-line="18" selection-start-column="3" selection-end-line="18" selection-end-column="3" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="LeftMenu.m" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/JianDan/Section/LeftMenu/LeftMenu.m">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.50933784">
+              <caret line="20" column="0" selection-start-line="20" selection-start-column="0" selection-end-line="20" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -821,7 +110,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/JianDan/Section/LeftMenu/LeftMenuController.m" />
         <option value="$PROJECT_DIR$/JianDan/Section/LittleMovie/View/LittleMoveController.m" />
         <option value="$PROJECT_DIR$/JianDan/Section/LittleMovie/View/LittleMovieCollectionCell.m" />
         <option value="$PROJECT_DIR$/JianDan/Section/LittleMovie/View/LittleMovieDetailController.m" />
@@ -872,6 +160,7 @@
         <option value="$PROJECT_DIR$/JianDan/Main/Model/Vote.h" />
         <option value="$PROJECT_DIR$/JianDan/Section/FreshNews/View/CommentsCell.h" />
         <option value="$PROJECT_DIR$/Podfile" />
+        <option value="$PROJECT_DIR$/JianDan/Section/LeftMenu/LeftMenu.m" />
       </list>
     </option>
   </component>
@@ -917,6 +206,70 @@
             <PATH_ELEMENT>
               <option name="myItemId" />
               <option name="myItemType" value="com.jetbrains.cidr.projectView.XcodeRootNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" />
+              <option name="myItemType" value="com.jetbrains.cidr.projectView.XcodeRootNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="JianDan" />
+              <option name="myItemType" value="com.jetbrains.cidr.projectView.XcodeProjectNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" />
+              <option name="myItemType" value="com.jetbrains.cidr.projectView.XcodeRootNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="JianDan" />
+              <option name="myItemType" value="com.jetbrains.cidr.projectView.XcodeProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="JianDan" />
+              <option name="myItemType" value="com.jetbrains.cidr.projectView.XcodeViewNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" />
+              <option name="myItemType" value="com.jetbrains.cidr.projectView.XcodeRootNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="JianDan" />
+              <option name="myItemType" value="com.jetbrains.cidr.projectView.XcodeProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="JianDan" />
+              <option name="myItemType" value="com.jetbrains.cidr.projectView.XcodeViewNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Section" />
+              <option name="myItemType" value="com.jetbrains.cidr.projectView.XcodeViewNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" />
+              <option name="myItemType" value="com.jetbrains.cidr.projectView.XcodeRootNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="JianDan" />
+              <option name="myItemType" value="com.jetbrains.cidr.projectView.XcodeProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="JianDan" />
+              <option name="myItemType" value="com.jetbrains.cidr.projectView.XcodeViewNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Section" />
+              <option name="myItemType" value="com.jetbrains.cidr.projectView.XcodeViewNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="LeftMenu" />
+              <option name="myItemType" value="com.jetbrains.cidr.projectView.XcodeViewNode" />
             </PATH_ELEMENT>
           </PATH>
         </subPane>
@@ -1142,14 +495,12 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="23" width="1280" height="709" extended-state="6" />
-    <editor active="false" />
+    <editor active="true" />
     <layout>
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.3263328" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Palette&#9;" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3279483" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3279483" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.27958697" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
@@ -1158,12 +509,14 @@
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.3263328" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
+      <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
     </layout>
   </component>
   <component name="Vcs.Log.UiProperties">
@@ -1184,6 +537,30 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/JianDan/Section/FreshNews/View/FreshNewsController.h">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/JianDan/Section/FreshNews/View/FreshNewsLittleCell.h">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Podfile">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/JianDan/Helper/BaseViewController/BaseTableViewController.m">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
@@ -1513,8 +890,16 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/Podfile">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.73264784">
-          <caret line="19" column="3" selection-start-line="19" selection-start-column="3" selection-end-line="19" selection-end-column="3" />
+        <state vertical-scroll-proportion="0.0">
+          <caret line="18" column="3" selection-start-line="18" selection-start-column="3" selection-end-line="18" selection-end-column="3" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/JianDan/Section/LeftMenu/LeftMenu.m">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.50933784">
+          <caret line="20" column="0" selection-start-line="20" selection-start-column="0" selection-end-line="20" selection-end-column="0" />
           <folding />
         </state>
       </provider>

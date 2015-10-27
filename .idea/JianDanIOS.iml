@@ -91,8 +91,6 @@
       <sourceFolder url="file://$MODULE_DIR$/JianDan/Helper/Vender/OLImageView/AFNetworking/OLImageResponseSerializer.m" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/JianDan/Helper/Vender/OLImageView/AFNetworking/OLImageStrictResponseSerializer.h" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/JianDan/Helper/Vender/OLImageView/AFNetworking/OLImageStrictResponseSerializer.m" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/JianDan/Helper/Vender/OLImageView/Categories/AFImageRequestOperation+OLImage.h" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/JianDan/Helper/Vender/OLImageView/Categories/AFImageRequestOperation+OLImage.m" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/JianDan/Helper/Vender/OLImageView/OLImage.h" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/JianDan/Helper/Vender/OLImageView/OLImage.m" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/JianDan/Helper/Vender/OLImageView/OLImageView.h" isTestSource="false" />
@@ -123,7 +121,6 @@
       <sourceFolder url="file://$MODULE_DIR$/JianDan/Helper/Vender/UMSocial_Sdk_4.2.3/zh-Hans.lproj/UMSocialLocalizable.strings" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/JianDan/Info.plist" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/JianDan/JianDan_PrefixHeader.pch" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/JianDan/LaunchScreen.xib" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/JianDan/Section/FreshNews/Model/FreshNews.h" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/JianDan/Section/FreshNews/Model/FreshNews.m" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/JianDan/Section/FreshNews/Model/FreshNewsDetail.h" isTestSource="false" />

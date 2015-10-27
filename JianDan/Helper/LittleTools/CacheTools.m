@@ -33,19 +33,19 @@ DEFINE_SINGLETON_IMPLEMENTATION(CacheTools)
     _queue = [FMDatabaseQueue databaseQueueWithPath:[self getPath:dbName] flags:SQLITE_OPEN_READWRITE | SQLITE_OPEN_CREATE];
 }
 
-- (RACSignal *)read:(Class)clazz {
-    return [self read:clazz page:0 tableName:nil];
+- (RACSignal *)racRead:(Class)clazz {
+    return [self racRead:clazz page:0 tableName:nil];
 }
 
-- (RACSignal *)read:(Class)clazz page:(NSInteger)page {
-    return [self read:clazz page:page tableName:nil];
+- (RACSignal *)racRead:(Class)clazz page:(NSInteger)page {
+    return [self racRead:clazz page:page tableName:nil];
 }
 
-- (RACSignal *)read:(NSInteger)page tableName:(NSString *)tableName {
-    return [self read:nil page:page tableName:tableName];
+- (RACSignal *)racRead:(NSInteger)page tableName:(NSString *)tableName {
+    return [self racRead:nil page:page tableName:tableName];
 }
 
-- (RACSignal *)read:(Class)clazz page:(NSInteger)page tableName:(NSString *)tableName {
+- (RACSignal *)racRead:(Class)clazz page:(NSInteger)page tableName:(NSString *)tableName {
     RACScheduler *scheduler = [RACScheduler schedulerWithPriority:RACSchedulerPriorityBackground];
     if (!tableName) {
         tableName = [NSString stringWithFormat:@"%@", clazz];
@@ -303,6 +303,8 @@ DEFINE_SINGLETON_IMPLEMENTATION(CacheTools)
             [ws.tableNameArray removeAllObjects];
         }];
     });
+    
+    
 }
 
 // 删除数据库文件

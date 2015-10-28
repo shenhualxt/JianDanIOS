@@ -1,7 +1,6 @@
 # JianDanIOS
-一个仿煎蛋项目的iOS程序(性能和代码优雅兼顾)
-![开发模式](https://github.com/shenhualxt/JianDanIOS/blob/master/image/%E7%85%8E%E8%9B%8B%E6%BC%94%E7%A4%BA%E5%8A%A8%E7%94%BB.gif)
 
+##gif动画较大，加载时间可能较长
 
 # 开发模式
   ![开发模式](https://github.com/shenhualxt/JianDanIOS/blob/master/image/QQ20151022-1%402x.png)

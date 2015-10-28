@@ -2,6 +2,9 @@
 
 ##gif动画较大，加载时间可能较长
 
+
+![项目演示动画](https://github.com/shenhualxt/JianDanIOS/blob/master/image/%E7%85%8E%E8%9B%8B%E6%BC%94%E7%A4%BA%E5%8A%A8%E7%94%BB.gif)
+
 # 开发模式
   ![开发模式](https://github.com/shenhualxt/JianDanIOS/blob/master/image/QQ20151022-1%402x.png)
   
@@ -33,18 +36,4 @@
 + ReactiveCocoa的深入使用：配合MVVM,解决MVC的问题、RACCommand、RACSignal+Operations、配合AFNetWorking网络访问工具类的封装、配合FMDB数据库的封装、响应式替代代理,notification,target-action,KVO,block；
 + 持续在改善中
 
-
-##3、相关博客（持续更新）：
-+ [Objective-C代码规范（1）](http://blog.csdn.net/shenhualxt/article/details/48053045)
-
-+ [高仿煎蛋iOS项目基础配置（2）](http://blog.csdn.net/shenhualxt/article/details/48057169)
-
-
-+ [使用AFNetWorking和ReactiveCocoa对网络请求进行封装（仿煎蛋iOS）（3）](http://blog.csdn.net/shenhualxt/article/details/48087147)
-
-+ [UITableView数据绑定的简化，及性能优化（4）](http://blog.csdn.net/shenhualxt/article/details/48264811)
-
-+ [一句代码解决UITableView的数据加载，点击事件，自定义cell,摆脱代理方法（5）](http://blog.csdn.net/shenhualxt/article/details/48265065)
-
-+ [iOS项目的列表数据缓存，通用解决方案（sqllite）（6）](http://blog.csdn.net/shenhualxt/article/details/48266229)
 

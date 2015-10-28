@@ -35,7 +35,7 @@
     [self bindingViewModel];
 }
 
-- (void)initView {
+- (void)initView{
     //加载网页 self.sendObject:网页地址
     [self.webView loadRequest:[NSURLRequest requestWithURL:[NSURL URLWithString:self.sendObject]]];
     self.webView.progressDelegate=self;

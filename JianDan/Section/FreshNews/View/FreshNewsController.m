@@ -70,7 +70,7 @@
  */
 - (void)bindingViewModel {
     self.viewModel = [MainViewModel new];
-     self.turple = [RACTuple tupleWithObjects:@(NO), @"posts", [FreshNews class], freshNewUrl, @"FreshNews", nil];
+    self.turple = [RACTuple tupleWithObjects:@(NO), @"posts", [FreshNews class], freshNewUrl, @"FreshNews", nil];
     //数据源信号
     RACSignal *sourceSignal = [[self.viewModel.sourceCommand executionSignals] switchToLatest];
     

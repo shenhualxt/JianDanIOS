@@ -7,7 +7,6 @@
 //
 #import "CacheTools.h"
 #import "FMDB.h"
-#import "NSErrorHelper.h"
 
 NSString *const CacheToolsDomain = @"http://CacheTools";
 

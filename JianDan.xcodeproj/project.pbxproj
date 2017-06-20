@@ -80,7 +80,6 @@
 		11A0C9011BC669FE008656BC /* PicturesController.m in Sources */ = {isa = PBXBuildFile; fileRef = 11A0C8F61BC669FE008656BC /* PicturesController.m */; };
 		11A0C9021BC669FE008656BC /* PicturesDetailController.m in Sources */ = {isa = PBXBuildFile; fileRef = 11A0C8F81BC669FE008656BC /* PicturesDetailController.m */; };
 		11A0C9031BC669FE008656BC /* PicturesDetailController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 11A0C8F91BC669FE008656BC /* PicturesDetailController.xib */; };
-		11A5E73D1BCF32B300168A8E /* NSErrorHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 11A5E73C1BCF32B300168A8E /* NSErrorHelper.m */; };
 		11A856401BC2726800863D9D /* SettingController.m in Sources */ = {isa = PBXBuildFile; fileRef = 11A8563E1BC2726800863D9D /* SettingController.m */; };
 		11A856411BC2726800863D9D /* SettingController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 11A8563F1BC2726800863D9D /* SettingController.xib */; };
 		11B06FB81BD479B700941FC7 /* PictureCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 11B06FB71BD479B700941FC7 /* PictureCell.m */; };
@@ -267,8 +266,6 @@
 		11A0C8F71BC669FE008656BC /* PicturesDetailController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PicturesDetailController.h; sourceTree = "<group>"; };
 		11A0C8F81BC669FE008656BC /* PicturesDetailController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PicturesDetailController.m; sourceTree = "<group>"; };
 		11A0C8F91BC669FE008656BC /* PicturesDetailController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PicturesDetailController.xib; sourceTree = "<group>"; };
-		11A5E73B1BCF32B300168A8E /* NSErrorHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NSErrorHelper.h; sourceTree = "<group>"; };
-		11A5E73C1BCF32B300168A8E /* NSErrorHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NSErrorHelper.m; sourceTree = "<group>"; };
 		11A8563D1BC2726800863D9D /* SettingController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SettingController.h; sourceTree = "<group>"; };
 		11A8563E1BC2726800863D9D /* SettingController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SettingController.m; sourceTree = "<group>"; };
 		11A8563F1BC2726800863D9D /* SettingController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SettingController.xib; sourceTree = "<group>"; };
@@ -643,8 +640,6 @@
 				11B82B9F1BA2A7BD00283A93 /* ToastHelper.m */,
 				110EFA601BC7988D00D46333 /* BLImageSize.h */,
 				110EFA611BC7988D00D46333 /* BLImageSize.m */,
-				11A5E73B1BCF32B300168A8E /* NSErrorHelper.h */,
-				11A5E73C1BCF32B300168A8E /* NSErrorHelper.m */,
 			);
 			path = LittleTools;
 			sourceTree = "<group>";
@@ -961,7 +956,7 @@
 				TargetAttributes = {
 					1119C48D1B9005B5007C8C56 = {
 						CreatedOnToolsVersion = 7.0;
-						DevelopmentTeam = 93QP7RMD2S;
+						DevelopmentTeam = DAEKU72LQU;
 					};
 					1119C4A61B9005B7007C8C56 = {
 						CreatedOnToolsVersion = 7.0;
@@ -1161,7 +1156,6 @@
 				11F567B91BA65A45000F3393 /* UIWebView+RAC.m in Sources */,
 				11A0C9011BC669FE008656BC /* PicturesController.m in Sources */,
 				116DD3301BD8E0B4004ED7CA /* CommentViewModel.m in Sources */,
-				11A5E73D1BCF32B300168A8E /* NSErrorHelper.m in Sources */,
 				11925AA71B93360E00608BCC /* CommonUtils.m in Sources */,
 				11925AA51B93360E00608BCC /* AFNetWorkUtils.m in Sources */,
 				11994BDE1BDBC61200BE4A33 /* OLImageStrictResponseSerializer.m in Sources */,
@@ -1297,8 +1291,10 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CLANG_ENABLE_OBJC_WEAK = YES;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				DEVELOPMENT_TEAM = DAEKU72LQU;
 				ENABLE_BITCODE = NO;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
@@ -1352,8 +1348,10 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CLANG_ENABLE_OBJC_WEAK = YES;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				DEVELOPMENT_TEAM = DAEKU72LQU;
 				ENABLE_BITCODE = NO;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",

@@ -87,6 +87,7 @@ INITWITHSETUP
             self.loadFromDB = YES;
             return [RACSignal merge:@[dbSignal, netSignal]];
         }
+        
         //3、网络获取数据--- 上拉刷新，或者上拉加载更多
         self.loadFromDB = NO;
         return netSignal;

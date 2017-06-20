@@ -112,10 +112,10 @@ INITWITHSETUP
     }
 
     @weakify(self)
-    signal = [signal flattenMap:^RACStream *(NSMutableArray *resultArray) {
-        @strongify(self)
-        return [self getCommentCountsSignal:resultArray];
-    }];
+//    signal = [signal flattenMap:^RACStream *(NSMutableArray *resultArray) {
+//        @strongify(self)
+//        return [self getCommentCountsSignal:resultArray];
+//    }];
 
     //段子 无需下载图片大小
     if ([self.url isEqualToString:JokeUrl] || [self.url isEqualToString:littleMovieUrl]) {

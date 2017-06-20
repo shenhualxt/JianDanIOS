@@ -13,16 +13,18 @@
 static NSString* const freshNewUrl = @"http://jandan.net/?oxwlxojflwblxbsapi=get_recent_posts&include=url,date,tags,author,title,comment_count,custom_fields&custom_fields=thumb_c,views&dev=1&page=";
 
 //无聊图列表
-static NSString* const BoredPicturesUrl = @"http://jandan.net/?oxwlxojflwblxbsapi=jandan.get_pic_comments&page=";
+//static NSString* const BoredPicturesUrl = @"http://jandan.net/?oxwlxojflwblxbsapi=jandan.get_pic_comments&page=";
+
+static NSString* const BoredPicturesUrl = @"http://i.jandan.net/?oxwlxojflwblxbsapi=jandan.get_pic_comments&page=";
 
 //妹子图
-static NSString* const SisterPicturesUrl = @"http://jandan.net/?oxwlxojflwblxbsapi=jandan.get_ooxx_comments&page=";
+static NSString* const SisterPicturesUrl = @"http://i.jandan.net/?oxwlxojflwblxbsapi=jandan.get_ooxx_comments&page=";
 
 //段子
-static NSString* const JokeUrl = @"http://jandan.net/?oxwlxojflwblxbsapi=jandan.get_duan_comments&page=";
+static NSString* const JokeUrl = @"http://i.jandan.net/?oxwlxojflwblxbsapi=jandan.get_duan_comments&page=";
 
 //小视频
-static NSString* const littleMovieUrl = @"http://jandan.net/?oxwlxojflwblxbsapi=jandan.get_video_comments&page=";
+static NSString* const littleMovieUrl = @"http://i.jandan.net/?oxwlxojflwblxbsapi=jandan.get_video_comments&page=";
 
 //评论数量
 static NSString* const commentCountUrl = @"http://jandan.duoshuo.com/api/threads/counts.json?threads=";
